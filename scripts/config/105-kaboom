@@ -1,0 +1,22 @@
+#!/bin/sh
+
+Kaboom ()
+{
+	# Checking if package is installed
+	if [ ! -e /var/lib/dpkg/info/kaboom.list ]
+	then
+		return
+	fi
+
+	echo -n " kaboom"
+
+	Configure_kaboom
+}
+
+Configure_kaboom ()
+{
+	mkdir -p /home/${USERNAME}/.local
+	touch /home/${USERNAME}/.local/kaboom
+}
+
+Kaboom

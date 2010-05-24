@@ -1,0 +1,35 @@
+#!/bin/sh
+
+Kdm ()
+{
+	# Checking if package is installed
+	if [ ! -e /var/lib/dpkg/info/kdm.list ]
+	then
+		return
+	fi
+
+	echo -n " kdm"
+
+	Configure_kdm
+}
+
+Configure_kdm ()
+{
+	if [ -e /etc/kde4/kdm/kdmrc ]
+	then
+		# squeeze
+		sed -i -r -e "s|^#?AutoLoginEnable=.*\$|AutoLoginEnable=true|" \
+			  -e "s|^#?AutoLoginAgain=.*\$|AutoLoginAgain=true|" \
+			  -e "s|^#?AutoLoginUser=.*\$|AutoLoginUser=${USERNAME}|" \
+		/etc/kde4/kdm/kdmrc
+	elif [ -e /etc/kde3/kdm/kdmrc ]
+	then
+		# lenny
+		sed -i -r -e "s|^#?AutoLoginEnable=.*\$|AutoLoginEnable=true|" \
+			  -e "s|^#?AutoLoginAgain=.*\$|AutoLoginAgain=true|" \
+			  -e "s|^#?AutoLoginUser=.*\$|AutoLoginUser=${USERNAME}|" \
+		/etc/kde3/kdm/kdmrc
+	fi
+}
+
+Kdm

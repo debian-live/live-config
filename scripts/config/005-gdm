@@ -1,0 +1,33 @@
+#!/bin/sh
+
+Gdm ()
+{
+	# Checking if package is installed
+	if [ ! -e /var/lib/dpkg/info/gdm.list ]
+	then
+		return
+	fi
+
+	echo -n " gdm"
+
+	Configure_gdm
+}
+
+Configure_gdm ()
+{
+	# Checking if if package is already configured
+	if grep -qs AutomaticLoginEnable /etc/gdm/gdm.conf
+	then
+		return
+	fi
+
+	GDM_OPTIONS="AutomaticLoginEnable=true\n\
+AutomaticLogin=${USERNAME}\n\
+TimedLoginEnable=true\n\
+TimedLogin=${USERNAME}\n\
+TimedLoginDelay=10"
+
+	sed -i -e "s|\[daemon\]|\[daemon\]\n${GDM_OPTIONS}|" /etc/gdm/gdm.conf
+}
+
+Gdm

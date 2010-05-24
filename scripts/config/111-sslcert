@@ -1,0 +1,21 @@
+#!/bin/sh
+
+Sslcert ()
+{
+	# Checking if package is installed
+	if [ ! -e /var/lib/dpkg/info/sslcert.list ]
+	then
+		return
+	fi
+
+	echo -n " sslcert"
+
+	Configure_sslcert
+}
+
+Configure_sslcert ()
+{
+	make-ssl-cert generate-default-snakeoil --force-overwrite
+}
+
+Sslcert

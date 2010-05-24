@@ -1,0 +1,5 @@
+live-config-foo (1-1) unstable; urgency=low
+
+  * Initial release.
+
+ -- Daniel Baumann <daniel@debian.org>  Sun, 16 May 2010 06:09:37 +0200

@@ -1,0 +1,21 @@
+#!/bin/sh
+
+Gnome_panel_data ()
+{
+	# Checking if package is installed
+	if [ ! -e /var/lib/dpkg/info/gnome-panel-data.list ]
+	then
+		return
+	fi
+
+	echo -n " gnome-panel-data"
+
+	Configure_gnome_panel_data
+}
+
+Configure_gnome_panel_data ()
+{
+	sudo -u "${USERNAME}" gconftool-2 -s -t bool /apps/panel/global/disable_lock_screen true
+}
+
+Gnome_panel_data

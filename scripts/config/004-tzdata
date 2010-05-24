@@ -1,0 +1,45 @@
+#!/bin/sh
+
+Tzdata ()
+{
+	# Checking if package is installed
+	if [ ! -e /var/lib/dpkg/info/tzdata.list ]
+	then
+		return
+	fi
+
+	echo -n " tzdata"
+
+	Configure_tzdata
+}
+
+Configure_tzdata ()
+{
+	if [ -n "${TIMEZONE}" ]
+	then
+		AREA="$(echo ${TIMEZONE} | cut -f1 -d '/')"
+		ZONE="$(echo ${TIMEZONE} | cut -f2 -d '/')"
+
+debconf-communicate -fnoninteractive live-config > /dev/null << EOF
+set tzdata/Areas ${AREA}
+set tzdata/Zones/${AREA} ${ZONE}
+EOF
+
+		cp -f /usr/share/zoneinfo/${AREA}/${ZONE} /etc/localtime
+	else
+
+debconf-communicate -fnoninteractive live-config > /dev/null << EOF
+set tzdata/Areas Etc
+set tzdata/Zones/Etc UTC
+EOF
+
+		cp -f /usr/share/zoneinfo/UTC /etc/localtime
+	fi
+
+	if [ -n "${UTC}" ]
+	then
+		sed -i -e "s|UTC=.*|UTC=${UTC}|" /etc/default/rcS
+	fi
+}
+
+Tzdata
