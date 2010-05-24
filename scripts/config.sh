@@ -45,6 +45,11 @@ Cmdline ()
 				USER_FULLNAME="${PARAMETER#live-config.user-fullname=}"
 				;;
 
+			# 005-locales
+			live-config.locales=*)
+				LOCALES="${PARAMETER#live-config.locales=}"
+				;;
+
 			# 999-hook
 			live-config.hook=*)
 				HOOK="${PARAMETER#live-config.hook=}"

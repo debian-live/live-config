@@ -1,0 +1,90 @@
+#!/bin/sh
+
+Locales ()
+{
+	# Checking if package is installed
+	if [ ! -e /var/lib/dpkg/info/locales.list ]
+	then
+		return
+	fi
+
+	echo -n " locales"
+
+	Configure_locales
+}
+
+Configure_locales ()
+{
+	if [ -e /etc/default/locale ]
+	then
+		# use rootfs configured locale
+		LOCALE="$(grep -s 'LANG=' /etc/default/locale | sed s/'LANG='// | tr -d '"' )"
+	fi
+
+	if [ -n "${LOCALES}" ]
+	then
+		LOCALE="${LOCALES}"
+		SET_LOCALE="true"
+	fi
+
+	if [ -z "${LOCALE}" ]
+	then
+		# Set a default one
+		LOCALE="en_US.UTF-8"
+		SET_LOCALE="true"
+	fi
+
+	LANGUAGE="$(echo $locale | cut -d. -f1)"
+	export LANGUAGE
+
+	if [ -z "${SET_LOCALE}" ]
+	then
+		# Actually, we should check here if the locale is generated
+		return
+	fi
+
+	if echo "${LOCALE}" | grep -sqE '^[[:lower:]]{2}$'
+	then
+		# input is like "locale=it", so we will convert and setup also the keyboard if not already set
+		if [ -z "${KBD}" ]
+		then
+			# FIXME: look if this keyb is supported
+			KBD="${LOCALE}"
+			export KBD
+		fi
+
+		LOCALE_UP=$(echo "${LOCALE}" | tr '[a-z]' '[A-Z]')
+		LOCALE="${LOCALE}_${LOCALE_UP}.UTF-8"
+	fi
+
+	LANG=
+	LANGUAGE="$(echo ${LOCALE} | cut -d. -f1)"
+	eval $(awk '/^'"${LOCALE}"'/ { print "LANG=" $1 " codepage=" $2; exit; }' /usr/share/i18n/SUPPORTED)
+
+	if [ -z "${LANG}" ]
+	then
+		# Try and fallback to another codepage for this language.
+		eval $(awk '/^'"${LANGUAGE}"'/ { print "LANG=" $1 " codepage=" $2; exit; }' /usr/share/i18n/SUPPORTED)
+
+		if [ -n "${LANG}" ]
+		then
+			echo "Choosing locale '${LANG}' as '${LOCALE}' is unsupported."
+		fi
+	fi
+
+	if [ -z "${LANG}" ]
+	then
+		echo "Locale '${LOCALE}' is unsupported."
+		CODEPAGE="UTF-8"
+		LANGUAGE="en_US"
+		LOCALE="${LANGUAGE}.${CODEPAGE}"
+		LANG="${LANGUAGE}.${CODEPAGE}"
+	fi
+
+	printf 'LANG="%s"\n' "${LANG}" > /etc/default/locale
+	sed -i -e "s|# ${LANG} ${CODEPAGE}|${LANG} ${CODEPAGE}|" /etc/locale.gen
+
+	locale-gen --keep-existing > /dev/null 2>&1
+}
+
+Locales
