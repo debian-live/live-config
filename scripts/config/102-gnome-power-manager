@@ -1,0 +1,23 @@
+#!/bin/sh
+
+Gnome_power_manager ()
+{
+	# Checking if package is installed
+	if [ ! -e /var/lib/dpkg/info/gnome-power-manager.list ]
+	then
+		return
+	fi
+
+	echo -n " gnome-screensaver"
+
+	Configure_gnome_power_manager
+}
+
+Configure_gnome_power_manager ()
+{
+	# Not authorizing the user to hibernate the computer
+	# (might damage existing swap partitions).
+	sudo -u "${USERNAME}" gconftool-2 -s -t bool /apps/gnome-power-manager/general/can_hibernate false
+}
+
+Gnome_power_manager

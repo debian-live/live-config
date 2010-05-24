@@ -1,0 +1,30 @@
+#!/bin/sh
+
+Nodm ()
+{
+	# Checking if package is installed
+	if [ ! -e /var/lib/dpkg/info/nodm.list ]
+	then
+		return
+	fi
+
+	echo -n " nodm"
+
+	Configure_nodm
+}
+
+Configure_nodm ()
+{
+
+cat > /tmp/debconf.live << EOF
+nodm nodm/enabled boolean true
+nodm nodm/user string ${USERNAME}
+EOF
+
+	debconf-set-selections < /tmp/debconf.live
+	rm -f /tmp/debconf.live
+
+	dpkg-reconfigure -f non-interactive -p critical nodm
+}
+
+Nodm

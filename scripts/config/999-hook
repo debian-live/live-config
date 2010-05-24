@@ -1,0 +1,51 @@
+#!/bin/sh
+
+Hook ()
+{
+	if [ -z "${HOOK}" ]
+	then
+		return
+	fi
+
+	echo -n " hook"
+
+	Process_hook
+}
+
+Process_hook ()
+{
+	HOOKS="$(echo ${HOOK} | sed -e 's/|/ /g')"
+
+	for HOOK in ${HOOKS}
+	do
+		TMPFILE="$(mktemp -t live-config.XXXXXXXX)"
+
+		if $(echo "${HOOK}" | grep file:\/\/)
+		then
+			# local file
+			HOOK="$(echo ${HOOK} | sed 's|file\://||')"
+			cp "${HOOK}" "${TMPFILE}"
+		else
+			# remote file
+
+			if [ -z "${NETWORK}" ] && [ -e /etc/init.d/live-config-sysvinit ]
+			then
+				/etc/init.d/mountkernfs.sh start > /dev/null 2>&1
+				/etc/init.d/mountdevsubfs.sh start > /dev/null 2>&1
+				/etc/init.d/ifupdown-clean start > /dev/null 2>&1
+				/etc/init.d/ifupdown start > /dev/null 2>&1
+				/etc/init.d/networking start > /dev/null 2>&1
+
+				NETWORK="true"
+			fi
+
+			wget --quiet "${HOOK}" -O "${TMPFILE}"
+		fi
+
+		chmod 0755 "${TMPFILE}"
+		./"${TMPFILE}"
+		rm -f "${TMPFILE}"
+	done
+}
+
+Hook

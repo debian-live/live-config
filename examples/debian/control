@@ -1,0 +1,15 @@
+Source: live-config-foo
+Section: misc
+Priority: optional
+Maintainer: Daniel Baumann <daniel@debian.org>
+Build-Depends: debhelper (>= 7.0.50~)
+Standards-Version: 3.8.4
+
+Package: live-config-foo
+Architecture: all
+Depends: ${misc:Depends}, live-config
+Description: Additional Configuration Scripts for Debian Live (foo)
+ live-config contains the scripts needed to perform late-userspace actions
+ on Debian Live systems.
+ .
+ This package contains the additional foo script(s).

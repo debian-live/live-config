@@ -1,0 +1,33 @@
+#!/bin/sh
+
+Gdm3 ()
+{
+	# Checking if package is installed
+	if [ ! -e /var/lib/dpkg/info/gdm3.list ]
+	then
+		return
+	fi
+
+	echo -n " gdm3"
+
+	Configure_gdm3
+}
+
+Configure_gdm3 ()
+{
+	# Checking if if package is already configured
+	if grep -qs AutomaticLoginEnable /etc/gdm3/daemon.conf
+	then
+		return
+	fi
+
+	GDM3_OPTIONS="AutomaticLoginEnable=true\n\
+AutomaticLogin=${USERNAME}\n\
+TimedLoginEnable=true\n\
+TimedLogin=${USERNAME}\n\
+TimedLoginDelay=10"
+
+	sed -i -e "s|\[daemon\]|\[daemon\]\n${GDM3_OPTIONS}|" /etc/gdm3/daemon.conf
+}
+
+Gdm3

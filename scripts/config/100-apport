@@ -1,0 +1,22 @@
+#!/bin/sh
+
+Apport ()
+{
+	# Checking if package is installed
+	if [ ! -e /var/lib/dpkg/info/apport.list ]
+	then
+		return
+	fi
+
+	echo -n " apport"
+
+	Configure_apport
+}
+
+Configure_apport ()
+{
+	# Enabling detection of crashes
+	sed -i -e 's|enabled=0|enabled=1|' /etc/default/apport
+}
+
+Apport

@@ -1,0 +1,25 @@
+#!/bin/sh
+
+Foo ()
+{
+	# Checking if package is installed
+	if [ ! -e /var/lib/dpkg/info/foo.list ]
+	then
+		return
+	fi
+
+	echo -n " foo"
+
+	Configure_foo
+}
+
+Configure_foo ()
+{
+	# Checking if apckage is already configured
+	sleep 1
+
+	# Configuring foo
+	sleep 1
+}
+
+Foo

@@ -1,0 +1,33 @@
+Source: live-config
+Section: misc
+Priority: optional
+Maintainer: Debian Live Project <debian-live@lists.debian.org>
+Uploaders: Daniel Baumann <daniel@debian.org>
+Build-Depends: debhelper (>= 7.0.50~)
+Standards-Version: 3.8.4
+Homepage: http://live.debian.net/devel/live-config/
+Vcs-Browser: http://live.debian.net/gitweb/?p=live-config.git
+Vcs-Git: git://live.debian.net/git/live-config.git
+
+Package: live-config
+Architecture: all
+Depends: ${misc:Depends}
+Recommends: user-setup, sudo
+Description: Debian Live - System Configuration Scripts
+ live-config contains the scripts that configure a Debian Live system during
+ the boot process (late userspace).
+ .
+ In addition to live-config, a backend for an init system is required, such as
+ live-config-sysvinit.
+
+Package: live-config-sysvinit
+Architecture: all
+Depends: ${misc:Depends}, live-config (>= ${source:Version}), sysvinit (>= 2.86)
+Conflicts: live-config-backend
+Replaces: live-config-backend
+Provides: live-config-backend
+Description: Debian Live - System Configuration Scripts (sysvinit backend)
+ live-config contains the scripts that configure a Debian Live system during
+ the boot process (late userspace).
+ .
+ This package contains the sysvinit backend.

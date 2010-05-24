@@ -1,0 +1,32 @@
+#!/bin/sh
+
+Kde_services ()
+{
+	# Checking if package is installed
+	# we're only checking for KDE4 here (FIXME).
+	if [ ! -e /usr/share/kde4 ]
+	then
+		return
+	fi
+
+	echo -n " kde-services"
+
+	Configure_kde_services
+}
+
+Configure_kde_services ()
+{
+	# Disabling unnecessary KDE services
+	rm -f /usr/share/autostart/kab2kabc.desktop
+	rm -f /usr/share/autostart/kabcdistlistupdater.desktop
+	rm -f /usr/share/autostart/korgac.desktop
+	rm -f /usr/share/autostart/printer-applet.desktop
+	rm -f /usr/share/autostart/nepomukserver.desktop
+	rm -f /usr/share/kde4/services/kwalletd.desktop
+	rm -f /usr/share/kde4/services/kded/kpackagekitd.desktop
+	rm -f /usr/share/kde4/services/kded/freespacenotifier.desktop
+	rm -f /usr/share/kde4/services/plasma-runner-contacts.desktop  # starts akonadi
+	rm -f /usr/share/kde4/services/kded/notificationhelper.desktop
+}
+
+Kde_services

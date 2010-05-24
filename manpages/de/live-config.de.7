@@ -1,0 +1,121 @@
+.\"*******************************************************************
+.\"
+.\" This file was generated with po4a. Translate the source file.
+.\"
+.\"*******************************************************************
+.TH LIVE\-CONFIG 7 24.05.2010 2.0~a1 "Debian Live Projekt"
+
+.SH NAME
+\fBlive\-config\fP \- System Konfiguration Skripte
+
+.SH BESCHREIBUNG
+\fBlive\-config\fP enthaelt die Skripte welche ein Debian Live System waehrend
+des Startvorganes (late userspace) konfigurieren.
+
+.SH KONFIGURATION
+\fBlive\-config\fP kann durch Boot Parameter oder durch Konfigurationsdateien
+konfiguriert werden.
+
+.SS "Kernel Parameter"
+\fBlive\-config\fP ist nur dann aktiv, wenn 'live\-config',
+\&'live\-config=\fISCRIPT\fP' oder
+\&'live\-config=\fISCRIPT1\fP,\fISCRIPT2\fP,...\fISCRIPTN\fP' als Kernel Parameter
+benutzt wird.
+.PP
+Wird kein Skript angegeben (standard), dann werden alle Skripte
+ausgefuehrt. Das ist dasselbe wie 'live\-config=all'.
+.PP
+Falls kein Script ausgefuehrt werden soll, kann 'live\-config=none' verwendet
+werden.
+.PP
+Wenn bestimmte Skripte angegeben wurden, dann werden nur diese
+ausgefuehrt. Die Reihenfolge ist wesentlich,
+d.h. 'live\-config=sudo,user\-setup' wuerde nicht  funktionieren da der
+Benutzer zuerst angelegt werden muss bevor fuer ihn sudo konfiguriert werden
+kann. Siehe Dateinamen der Skripte in /lib/live/config fuer ihre
+Ordnungsnummer.
+
+.SS Konfigurationsdateien
+\fBlive\-config\fP kann durch Konfigurationsdateien konfiguriert (nicht aber
+aktiviert) werden. Die Konfigurationsdatei kann entweder im Root Dateisystem
+selbst plaziert werden (/etc/live/config.conf) oder auf dem Live Medium
+(live/config.conf).
+
+.SH SKRIPTE
+\fBlive\-config\fP enthaelt derzeit folgende Skripte in /lib/live/config.
+.IP \fBhostname\fP 4
+konfiguriert /etc/hostname und /etc/hosts.
+.IP \fBuser\-setup\fP 4
+fuegt das Live Benutzerkonto hinzu.
+.IP \fBsudo\fP 4
+raeumt dem Live Benutzer sudo Privilegien ein.
+.IP \fBtzdata\fP 4
+konfiguriert /etc/timezone.
+.IP \fBgdm\fP 4
+konfiguriert Autologin in gdm (lenny).
+.IP \fBgdm3\fP 4
+konfiguriert Autologin in gdm3 (squeeze und neuer).
+.IP \fBkdm\fP 4
+konfiguriert Autologin in kdm.
+.IP \fBlxdm\fP 4
+konfiguriert Autologin in lxdm.
+.IP \fBnodm\fP 4
+konfiguriert Autologin in nodm.
+.IP \fBapport\fP 4
+aktiviert apport.
+.IP \fBgnome\-panel\-data\fP 4
+entfernt den Sperrknopf fuer den Bildschirm.
+.IP \fBgnome\-power\-manager\fP 4
+verhindert Hibernation.
+.IP \fBgnome\-screensaver\fP 4
+schaltet das Sperren des Bildschirmes waehrend der Bildschirmschoner laeuft
+ab.
+.IP \fBinitramfs\-tools\fP 4
+laesst update\-initramfs auch das Live Medium zu aktualisieren falls
+Persistency benutzt wird.
+.IP \fBkaboom\fP 4
+schaltet den KDE Migration Wizard ab (squeeze und neuer).
+.IP \fBkde\-services\fP 4
+schaltet ein paar ungewollte KDE Services ab (squeeze und neuer).
+.IP \fBkpersonalizer\fP 4
+schaltet den KDE Configuration Wizard ab (lenny).
+.IP \fBlive\-installer\-launcher\fP 4
+fuegt live\-installer\-launcher auf dem Benutzer Desktop hinzu.
+.IP \fBmodule\-init\-tools\fP 4
+laedt automatisch gewisse Module auf bestimmten Architekturen.
+.IP \fBpolicykit\fP 4
+raeumt dem Benutzer Privilegien durch policykit ein.
+.IP \fBsslcert\fP 4
+erneuert SSL snake\-oil Zertifikate.
+.IP \fBupdate\-notifier\fP 4
+schaltet update\-notifier ab.
+.IP \fBhook\fP 4
+erlaubt beliebige Kommands von einem Skript auf dem Live Medium oder von
+einem HTTP/FTP Server auszufuehren.
+
+.SH DATEIEN
+.IP \fB/etc/live/config.conf\fP 4
+.IP \fBlive/config.conf\fP 4
+.IP \fB/lib/live/config.sh\fP 4
+.IP \fB/lib/live/config/\fP 4
+
+.SH "SIEHE AUCH"
+\fIlive\-helper\fP(7)
+.PP
+\fIlive\-initramfs\fP(7)
+
+.SH HOMEPAGE
+Weitere Informationen ueber live\-config und das Debian Live Projekt koennen
+auf der Homepage unter <\fIhttp://live.debian.net/\fP> und im Handbuch
+unter <\fIhttp://live.debian.net/manual/\fP> gefunden werden.
+
+.SH FEHLER
+Fehler koennen durch Einreichen eines Fehlerberichtes fuer das live\-config
+Paket im Debian Bug Tracking System unter
+<\fIhttp://bugs.debian.org/\fP> oder durch Senden einer E\-Mail an die
+Debian Live Mailing Liste unter <\fIdebian\-live@lists.debian.org\fP>
+(englischsprachig) mitgeteilt werden.
+
+.SH AUTOR
+live\-config wurde von Daniel Baumann <\fIdaniel@debian.org\fP> fuer das
+Debian Projekt geschrieben.

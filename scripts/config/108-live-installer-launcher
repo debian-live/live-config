@@ -1,0 +1,21 @@
+#!/bin/sh
+
+Live_installer_launcher ()
+{
+	# Checking if package is installed
+	if [ ! -e /var/lib/dpkg/info/live-installer-launcher.list ]
+	then
+		return
+	fi
+
+	echo -n " live-installer-launcher"
+
+	Configure_live_installer_launcher
+}
+
+Configure_live_installer_launcher ()
+{
+	install -D -o ${USERNAME} -g ${USERNAME} /usr/share/applications/live-installer-launcher.desktop /home/${USERNAME}/Desktop/live-installer-launcher.desktop
+}
+
+Live_installer_launcher

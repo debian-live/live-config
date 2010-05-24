@@ -1,0 +1,22 @@
+#!/bin/sh
+
+Gnome_screensaver ()
+{
+	# Checking if package is installed
+	if [ ! -e /var/lib/dpkg/info/gnome-screensaver.list ]
+	then
+		return
+	fi
+
+	echo -n " gnome-screesnaver"
+
+	Configure_gnome_screensaver
+}
+
+Configure_gnome_screensaver ()
+{
+	# Disabling to lock the screen when the screensaver goes active.
+	sudo -u "${USERNAME}" gconftool-2 -t bool -s /apps/gnome-screensaver/lock_enabled false
+}
+
+Gnome_screensaver

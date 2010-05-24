@@ -1,0 +1,48 @@
+#!/bin/sh
+
+Hostname ()
+{
+	# Checking if package is installed
+	if [ -z "${HOST}" ]
+	then
+		return
+	fi
+
+	echo -n " hostname"
+
+	Configure_hostname
+}
+
+Configure_hostname ()
+{
+	# Change hostname only if it is not set
+	if [ ! -e /etc/hostname ] || grep -qs localhost\.localdomain /etc/hostname
+	then
+		echo "${HOST}" > /etc/hostname
+	else
+		HOST="$(cat /etc/hostname)"
+	fi
+
+	# Create /etc/hosts only if it is not present or empty
+	if [ ! -s /etc/hosts ]
+	then
+
+cat > /etc/hosts << EOF
+127.0.0.1 localhost
+127.0.1.1 ${HOST}
+
+# The following lines are desirable for IPv6 capable hosts
+::1     ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+ff02::3 ip6-allhosts
+EOF
+
+	fi
+
+	hostname "${HOST}"
+}
+
+Hostname

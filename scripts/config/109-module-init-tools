@@ -1,0 +1,33 @@
+#!/bin/sh
+
+Module_init_tools ()
+{
+	# Checking if package is installed
+	case "$(dpkg --print-architecture)" in
+		powerpc|ppc64)
+
+			;;
+
+		*)
+			return
+			;;
+	esac
+
+	echo -n " module-init-tools"
+
+	Configure_module_init_tools
+}
+
+Configure_module_init_tools ()
+{
+	# Checking if apckage is already configured
+	if grep -qs "snd_powermac" /etc/modules
+	then
+		return
+	fi
+
+	# Preconfiguring /etc/modules
+	echo "snd_powermac" >> /etc/modules
+}
+
+Module_init_tools

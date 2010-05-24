@@ -1,0 +1,26 @@
+#!/bin/sh
+
+Lxdm ()
+{
+	# Checking if package is installed
+	if [ ! -e /var/lib/dpkg/info/lxdm.list ]
+	then
+		return
+	fi
+
+	echo -n " lxdm"
+
+	Configure_lxdm
+}
+
+Configure_lxdm ()
+{
+	if [ -e /etc/lxdm/lxdm.conf ]
+	then
+		sed -i -r -e "s|^#?autologin=.*\$|autologin=${USERNAME}|" \
+			  -e "s|^#?session.*\$|session|" \
+		/etc/lxdm/lxdm.conf
+	fi
+}
+
+Lxdm

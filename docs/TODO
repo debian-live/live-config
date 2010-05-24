@@ -1,0 +1,24 @@
+TODO
+====
+
+
+1. Status
+
+live-config works quite well already, however, it's software in development and
+we continue to release pre-releases until:
+
+  * documentation is more complete.
+  * boot parameters don't change anymore and we agreed on a common layout of
+    everything.
+
+
+2. Todo items
+
+  * use build-time distribution detection, remove dead code from build.
+  * use verbose/quiet/debug/interactive modes for scripts.
+  * write documentation:
+    - explain customization.
+    - explain precomupted configuration (requires dropping boot parameter and
+      having config.conf).
+  * add upstart integration.
+  * enable display managers only if they are the selected one.

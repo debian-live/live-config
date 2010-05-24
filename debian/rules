@@ -1,0 +1,16 @@
+#!/usr/bin/make -f
+
+%:
+	dh ${@}
+
+override_dh_auto_build:
+	# disabled
+
+override_dh_auto_install:
+	$(MAKE) DESTDIR=$(CURDIR)/debian/live-config install
+
+	# Removing useless files
+	rm -f debian/live-config/usr/share/doc/live-config/COPYING
+
+override_dh_installinit:
+	dh_installinit -p live-config-sysvinit --no-restart-on-upgrade --no-start --update-rcd-params='start 00 S .' --name live-config
