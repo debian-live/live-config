@@ -4,12 +4,14 @@ SHELL := sh -e
 
 LANGUAGES = de
 
+SCRIPTS = examples/scripts/* scripts/config.sh scripts/config/*
+
 all: test build
 
 test:
 	@echo -n "Checking for syntax errors"
 
-	@for SCRIPT in examples/scripts/* scripts/config.sh scripts/config/*; \
+	@for SCRIPT in $(SCRIPTS); \
 	do \
 		sh -n $${SCRIPT}; \
 		echo -n "."; \
@@ -21,7 +23,7 @@ test:
 
 	@if [ -x /usr/bin/checkbashisms ]; \
 	then \
-		for SCRIPT in examples/scripts/* scripts/config.sh scripts/config/*; \
+		for SCRIPT in $(SCRIPTS); \
 		do \
 			checkbashisms $${SCRIPT}; \
 			echo -n "."; \
