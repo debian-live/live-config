@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config 2.0~a1\n"
-"POT-Creation-Date: 2010-05-24 10:18+0300\n"
+"POT-Creation-Date: 2010-05-24 11:34+0300\n"
 "PO-Revision-Date: 2010-05-24 09:59+0300\n"
 "Last-Translator: Daniel Baumann <daniel@debian.org>\n"
 "Language-Team: none\n"
@@ -139,12 +139,13 @@ msgstr "Konfigurationsdateien"
 msgid ""
 "B<live-config> can be configured (but not activated) through configuration "
 "files. Those files can be placed either in the root filesystem itself (/etc/"
-"live/config.conf), or on the live media (live/config.conf)."
+"live/config.conf, /etc/live/config.conf.d/), or on the live media (live/"
+"config.conf, live/config.conf.d/)."
 msgstr ""
 "B<live-config> kann durch Konfigurationsdateien konfiguriert (nicht aber "
 "aktiviert) werden. Die Konfigurationsdatei kann entweder im Root Dateisystem "
-"selbst plaziert werden (/etc/live/config.conf) oder auf dem Live Medium "
-"(live/config.conf)."
+"selbst plaziert werden (/etc/live/config.conf, /etc/live/config.conf.d/) "
+"oder auf dem Live Medium (live/config.conf, live/config.conf.d/)."
 
 #. type: SH
 #: en/live-config.7:24
@@ -435,45 +436,57 @@ msgstr "B</etc/live/config.conf>"
 #. type: IP
 #: en/live-config.7:75
 #, no-wrap
+msgid "B</etc/live/config.conf.d/>"
+msgstr "B</etc/live/config.conf.d/>"
+
+#. type: IP
+#: en/live-config.7:76
+#, no-wrap
 msgid "B<live/config.conf>"
 msgstr "B<live/config.conf>"
 
 #. type: IP
-#: en/live-config.7:76
+#: en/live-config.7:77
+#, no-wrap
+msgid "B<live/config.conf.d/>"
+msgstr "B<live/config.conf.d/>"
+
+#. type: IP
+#: en/live-config.7:78
 #, no-wrap
 msgid "B</lib/live/config.sh>"
 msgstr "B</lib/live/config.sh>"
 
 #. type: IP
-#: en/live-config.7:77
+#: en/live-config.7:79
 #, no-wrap
 msgid "B</lib/live/config/>"
 msgstr "B</lib/live/config/>"
 
 #. type: SH
-#: en/live-config.7:79
+#: en/live-config.7:81
 #, no-wrap
 msgid "SEE ALSO"
 msgstr "SIEHE AUCH"
 
 #. type: Plain text
-#: en/live-config.7:81
+#: en/live-config.7:83
 msgid "I<live-helper>(7)"
 msgstr "I<live-helper>(7)"
 
 #. type: Plain text
-#: en/live-config.7:83
+#: en/live-config.7:85
 msgid "I<live-initramfs>(7)"
 msgstr "I<live-initramfs>(7)"
 
 #. type: SH
-#: en/live-config.7:84
+#: en/live-config.7:86
 #, no-wrap
 msgid "HOMEPAGE"
 msgstr "HOMEPAGE"
 
 #. type: Plain text
-#: en/live-config.7:86
+#: en/live-config.7:88
 msgid ""
 "More information about live-config and the Debian Live project can be found "
 "on the homepage at E<lt>I<http://live.debian.net/>E<gt> and in the manual at "
@@ -484,13 +497,13 @@ msgstr ""
 "unter E<lt>I<http://live.debian.net/manual/>E<gt> gefunden werden."
 
 #. type: SH
-#: en/live-config.7:87
+#: en/live-config.7:89
 #, no-wrap
 msgid "BUGS"
 msgstr "FEHLER"
 
 #. type: Plain text
-#: en/live-config.7:89
+#: en/live-config.7:91
 msgid ""
 "Bugs can be reported by submitting a bugreport for the live-config package "
 "in the Debian Bug Tracking System at E<lt>I<http://bugs.debian.org/>E<gt> or "
@@ -504,13 +517,13 @@ msgstr ""
 "werden."
 
 #. type: SH
-#: en/live-config.7:90
+#: en/live-config.7:92
 #, no-wrap
 msgid "AUTHOR"
 msgstr "AUTOR"
 
 #. type: Plain text
-#: en/live-config.7:91
+#: en/live-config.7:93
 msgid ""
 "live-config was written by Daniel Baumann E<lt>I<daniel@debian.org>E<gt> for "
 "the Debian project."

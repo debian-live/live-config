@@ -96,10 +96,26 @@ Main ()
 		. /etc/live/config.conf
 	fi
 
+	if ls /etc/live/config.conf.d/* > /dev/null 2>&1
+	then
+		for FILE in /etc/live/config.conf.d/*
+		do
+			. ${FILE}
+		done
+	fi
+
 	# Reading configuration file from live-media (FIXME: needs better name)
 	if [ -e /live/image/live/config.conf ]
 	then
 		. /live/image/live/config.conf
+	fi
+
+	if ls /live/image/live/config.conf.d/* > /dev/null 2>&1
+	then
+		for FILE in /live/image/live/config.conf.d/*
+		do
+			. ${FILE}
+		done
 	fi
 
 	# Reading kernel command line

@@ -38,8 +38,8 @@ Ordnungsnummer.
 .SS Konfigurationsdateien
 \fBlive\-config\fP kann durch Konfigurationsdateien konfiguriert (nicht aber
 aktiviert) werden. Die Konfigurationsdatei kann entweder im Root Dateisystem
-selbst plaziert werden (/etc/live/config.conf) oder auf dem Live Medium
-(live/config.conf).
+selbst plaziert werden (/etc/live/config.conf, /etc/live/config.conf.d/)
+oder auf dem Live Medium (live/config.conf, live/config.conf.d/).
 
 .SH SKRIPTE
 \fBlive\-config\fP enthaelt derzeit folgende Skripte in /lib/live/config.
@@ -95,7 +95,9 @@ einem HTTP/FTP Server auszufuehren.
 
 .SH DATEIEN
 .IP \fB/etc/live/config.conf\fP 4
+.IP \fB/etc/live/config.conf.d/\fP 4
 .IP \fBlive/config.conf\fP 4
+.IP \fBlive/config.conf.d/\fP 4
 .IP \fB/lib/live/config.sh\fP 4
 .IP \fB/lib/live/config/\fP 4
 
