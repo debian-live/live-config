@@ -4,12 +4,14 @@ SHELL := sh -e
 
 LANGUAGES = de
 
+SCRIPTS = examples/scripts/* scripts/config.sh scripts/config/*
+
 all: test build
 
 test:
 	@echo -n "Checking for syntax errors"
 
-	@for SCRIPT in examples/scripts/* scripts/config.sh scripts/config/*; \
+	@for SCRIPT in $(SCRIPTS); \
 	do \
 		sh -n $${SCRIPT}; \
 		echo -n "."; \
@@ -21,7 +23,7 @@ test:
 
 	@if [ -x /usr/bin/checkbashisms ]; \
 	then \
-		for SCRIPT in examples/scripts/* scripts/config.sh scripts/config/*; \
+		for SCRIPT in $(SCRIPTS); \
 		do \
 			checkbashisms $${SCRIPT}; \
 			echo -n "."; \
@@ -48,7 +50,7 @@ install:
 	for MANPAGE in manpages/en/*; \
 	do \
 		SECTION="$$(basename $${MANPAGE} | awk -F. '{ print $$2 }')"; \
-		install -D -m 0644 $${MANPAGE} $(DESTDIR)/usr/share/man/man$${SECTION}/$$(basename $${MANPAGE} .en.$${SECTION}).$${SECTION}; \
+		install -D -m 0644 $${MANPAGE} $(DESTDIR)/usr/share/man/man$${SECTION}/$$(basename $${MANPAGE}); \
 	done
 
 	for LANGUAGE in $(LANGUAGES); \

@@ -1,4 +1,4 @@
-.TH LIVE\-CONFIG 7 2010\-05\-24 2.0~a1 "Debian Live Project"
+.TH LIVE\-CONFIG 7 2010\-05\-27 2.0~a2 "Debian Live Project"
 
 .SH NAME
 \fBlive\-config\fR \- System Configuration Scripts
@@ -19,7 +19,7 @@ If no script should be execured, 'live\-config=none' can be used.
 If some scripts are specified, then only those scripts are executed. Note that the order matters, e.g. 'live\-config=sudo,user-setup' would not work since the user needs to be added before it can be configured for sudo. Look at the filenames of the scripts in /lib/live/config for their ordering number.
 
 .SS Configuration Files
-\fBlive\-config\fR can be configured (but not activated) through configuration files. Those files can be placed either in the root filesystem itself (/etc/live/config.conf), or on the live media (live/config.conf).
+\fBlive\-config\fR can be configured (but not activated) through configuration files. Those files can be placed either in the root filesystem itself (/etc/live/config.conf, /etc/live/config.conf.d/), or on the live media (live/config.conf, live/config.conf.d/).
 
 .SH SCRIPTS
 \fBlive\-config\fR currently features the following scripts in /lib/live/config.
@@ -72,7 +72,9 @@ allows to run arbitrary commands from a script placed on the live media or an ht
 
 .SH FILES
 .IP "\fB/etc/live/config.conf\fR" 4
+.IP "\fB/etc/live/config.conf.d/\fR" 4
 .IP "\fBlive/config.conf\fR" 4
+.IP "\fBlive/config.conf.d/\fR" 4
 .IP "\fB/lib/live/config.sh\fR" 4
 .IP "\fB/lib/live/config/\fR" 4
 

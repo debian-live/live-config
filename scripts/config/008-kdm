@@ -18,17 +18,35 @@ Configure_kdm ()
 	if [ -e /etc/kde4/kdm/kdmrc ]
 	then
 		# squeeze
+
+		# autologin
 		sed -i -r -e "s|^#?AutoLoginEnable=.*\$|AutoLoginEnable=true|" \
 			  -e "s|^#?AutoLoginAgain=.*\$|AutoLoginAgain=true|" \
 			  -e "s|^#?AutoLoginUser=.*\$|AutoLoginUser=${USERNAME}|" \
 		/etc/kde4/kdm/kdmrc
+
+		# language
+		if [ -n "${LANGUAGE}" ]
+		then
+			sed -i -r -e "s|^#?Language=.*\$|Language=${LANGUAGE}|" \
+				/etc/kde4/kdm/kdmrc
+		fi
 	elif [ -e /etc/kde3/kdm/kdmrc ]
 	then
 		# lenny
+
+		# autologin
 		sed -i -r -e "s|^#?AutoLoginEnable=.*\$|AutoLoginEnable=true|" \
 			  -e "s|^#?AutoLoginAgain=.*\$|AutoLoginAgain=true|" \
 			  -e "s|^#?AutoLoginUser=.*\$|AutoLoginUser=${USERNAME}|" \
 		/etc/kde3/kdm/kdmrc
+
+		# language
+		if [ -n "${LANGUAGE}" ]
+		then
+			sed -i -r -e "s|^#?Language=.*\$|Language=${LANGUAGE}|" \
+				/etc/kde3/kdm/kdmrc
+		fi
 	fi
 }
 

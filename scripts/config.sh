@@ -45,6 +45,11 @@ Cmdline ()
 				USER_FULLNAME="${PARAMETER#live-config.user-fullname=}"
 				;;
 
+			# 005-locales
+			live-config.locales=*)
+				LOCALES="${PARAMETER#live-config.locales=}"
+				;;
+
 			# 999-hook
 			live-config.hook=*)
 				HOOK="${PARAMETER#live-config.hook=}"
@@ -96,10 +101,26 @@ Main ()
 		. /etc/live/config.conf
 	fi
 
+	if ls /etc/live/config.conf.d/* > /dev/null 2>&1
+	then
+		for FILE in /etc/live/config.conf.d/*
+		do
+			. ${FILE}
+		done
+	fi
+
 	# Reading configuration file from live-media (FIXME: needs better name)
 	if [ -e /live/image/live/config.conf ]
 	then
 		. /live/image/live/config.conf
+	fi
+
+	if ls /live/image/live/config.conf.d/* > /dev/null 2>&1
+	then
+		for FILE in /live/image/live/config.conf.d/*
+		do
+			. ${FILE}
+		done
 	fi
 
 	# Reading kernel command line
