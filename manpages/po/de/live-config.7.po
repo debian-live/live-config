@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config 2.0~a1\n"
-"POT-Creation-Date: 2010-05-28 09:53+0300\n"
+"POT-Creation-Date: 2010-05-28 10:09+0300\n"
 "PO-Revision-Date: 2010-05-24 09:59+0300\n"
 "Last-Translator: Daniel Baumann <daniel@debian.org>\n"
 "Language-Team: none\n"
@@ -23,10 +23,9 @@ msgstr "LIVE-CONFIG"
 
 #. type: TH
 #: en/live-config.7:1
-#, fuzzy, no-wrap
-#| msgid "2010-05-27"
+#, no-wrap
 msgid "2010-05-28"
-msgstr "27.05.2010"
+msgstr "28.05.2010"
 
 #. type: TH
 #: en/live-config.7:1
@@ -100,18 +99,15 @@ msgstr ""
 
 #. type: Plain text
 #: en/live-config.7:16
-msgid ""
-"If no script is specified (default), then all scripts are executed. This is "
-"the same as using 'live-config=all'."
+msgid "If no script is specified (default), then all scripts are executed."
 msgstr ""
 "Wird kein Skript angegeben (standard), dann werden alle Skripte ausgefuehrt. "
-"Das ist dasselbe wie 'live-config=all'."
 
 #. type: Plain text
 #: en/live-config.7:18
-msgid "If no script should be execured, 'live-config=none' can be used."
+msgid "If no script should be executed, 'live-noconfig' can be used."
 msgstr ""
-"Falls kein Script ausgefuehrt werden soll, kann 'live-config=none' verwendet "
+"Falls kein Script ausgefuehrt werden soll, kann 'live-noconfig' verwendet "
 "werden."
 
 #. type: Plain text
@@ -197,14 +193,12 @@ msgstr "raeumt dem Live Benutzer sudo Privilegien ein."
 #: en/live-config.7:32
 #, no-wrap
 msgid "B<locales>"
-msgstr ""
+msgstr "B<locales>"
 
 #. type: Plain text
 #: en/live-config.7:34
-#, fuzzy
-#| msgid "configures /etc/timezone."
 msgid "configures locales."
-msgstr "konfiguriert /etc/timezone."
+msgstr "konfiguriert locales."
 
 #. type: IP
 #: en/live-config.7:34

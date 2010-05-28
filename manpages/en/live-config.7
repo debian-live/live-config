@@ -12,9 +12,9 @@
 .SS Kernel Parameters
 \fBlive\-config\fR is only activated if 'live\-config', 'live\-config=\fISCRIPT\fR', or 'live\-config=\fISCRIPT1\fR,\fISCRIPT2\fR,...\fISCRIPTN\fR' was used as a kernel parameter.
 .PP
-If no script is specified (default), then all scripts are executed. This is the same as using 'live\-config=all'.
+If no script is specified (default), then all scripts are executed.
 .PP
-If no script should be execured, 'live\-config=none' can be used.
+If no script should be executed, 'live\-noconfig' can be used.
 .PP
 If some scripts are specified, then only those scripts are executed. Note that the order matters, e.g. 'live\-config=sudo,user-setup' would not work since the user needs to be added before it can be configured for sudo. Look at the filenames of the scripts in /lib/live/config for their ordering number.
 

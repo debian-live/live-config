@@ -19,7 +19,17 @@ Cmdline ()
 
 			live-config=*)
 				# Only run requested scripts
-				OPTIONS="${PARAMETER#live-config=}"
+				CONFIGS="${PARAMETER#live-config=}"
+				;;
+
+			live-noconfig)
+				# Don't run any script
+				SCRIPTS=""
+				;;
+
+			live-noconfig=*)
+				# Don't run requested scripts
+				NOCONFIGS="${PARAMETER#live-noconfig=}"
 				;;
 
 			# 001-hostname
@@ -58,12 +68,21 @@ Cmdline ()
 		esac
 	done
 
-	# Assemble scripts selection
-	if [ -z "${SCRIPTS}" ] && [ "${OPTIONS}" != "none" ]
+	# Include requested scripts
+	if [ -n "${CONFIGS}" ]
 	then
-		for OPTION in $(echo ${OPTIONS} | sed -e 's|,| |g')
+		for CONFIG in $(echo ${CONFIGS} | sed -e 's|,| |g')
 		do
-			SCRIPTS="${SCRIPTS} $(ls /lib/live/config/???-${OPTION})"
+			SCRIPTS="${SCRIPTS} $(ls /lib/live/config/???-${CONFIG})"
+		done
+	fi
+
+	# Exclude requested scripts
+	if [ -n "${NOCONFIGS}" ]
+	then
+		for NOCONFIG in $(echo ${NOCONFIGS} | sed -e 's|,| |g')
+		do
+			SCRIPTS="$(echo ${SCRIPTS} | sed -e "s|$(ls /lib/live/config/???-${NOCONFIG})||")"
 		done
 	fi
 }

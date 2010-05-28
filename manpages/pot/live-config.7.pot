@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config VERSION\n"
-"POT-Creation-Date: 2010-05-28 09:53+0300\n"
+"POT-Creation-Date: 2010-05-28 10:09+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -92,14 +92,12 @@ msgstr ""
 
 #. type: Plain text
 #: en/live-config.7:16
-msgid ""
-"If no script is specified (default), then all scripts are executed. This is "
-"the same as using 'live-config=all'."
+msgid "If no script is specified (default), then all scripts are executed."
 msgstr ""
 
 #. type: Plain text
 #: en/live-config.7:18
-msgid "If no script should be execured, 'live-config=none' can be used."
+msgid "If no script should be executed, 'live-noconfig' can be used."
 msgstr ""
 
 #. type: Plain text
