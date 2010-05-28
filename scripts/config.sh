@@ -37,16 +37,7 @@ Cmdline ()
 				HOST="${PARAMETER#live-config.hostname=}"
 				;;
 
-			# 003-tzdata
-			live-config.timezone=*)
-				TIMEZONE="${PARAMETER#live-config.timezone=}"
-				;;
-
-			live-config.utc=*)
-				UTC="${PARAMETER#live-config.utc=}"
-				;;
-
-			# 004-user-setup
+			# 002-user-setup
 			live-config.username=*)
 				USERNAME="${PARAMETER#live-config.username=}"
 				;;
@@ -55,9 +46,18 @@ Cmdline ()
 				USER_FULLNAME="${PARAMETER#live-config.user-fullname=}"
 				;;
 
-			# 005-locales
+			# 004-locales
 			live-config.locales=*)
 				LOCALES="${PARAMETER#live-config.locales=}"
+				;;
+
+			# 005-tzdata
+			live-config.timezone=*)
+				TIMEZONE="${PARAMETER#live-config.timezone=}"
+				;;
+
+			live-config.utc=*)
+				UTC="${PARAMETER#live-config.utc=}"
 				;;
 
 			# 999-hook
