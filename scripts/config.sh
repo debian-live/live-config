@@ -95,7 +95,7 @@ Main ()
 	echo -n "live-config:"
 	trap 'Trap' EXIT HUP INT QUIT TERM
 
-	# Reading configuration file from filesystem (FIXME: needs better name)
+	# Reading configuration file from filesystem
 	if [ -e /etc/live/config.conf ]
 	then
 		. /etc/live/config.conf
@@ -109,7 +109,7 @@ Main ()
 		done
 	fi
 
-	# Reading configuration file from live-media (FIXME: needs better name)
+	# Reading configuration file from live-media
 	if [ -e /live/image/live/config.conf ]
 	then
 		. /live/image/live/config.conf
