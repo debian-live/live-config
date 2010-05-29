@@ -29,6 +29,7 @@ Cmdline ()
 
 			live-noconfig=*)
 				# Don't run requested scripts
+				SCRIPTS="$(ls /lib/live/config/*)"
 				NOCONFIGS="${PARAMETER#live-noconfig=}"
 				;;
 
