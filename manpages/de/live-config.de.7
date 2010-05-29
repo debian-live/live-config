@@ -19,10 +19,11 @@ benutzt, so gehen die Boot Parameter den Konfigurationsdateien vor.
 
 .SS "Boot Parameter (Skripte)"
 \fBlive\-config\fP ist nur aktiviert, wenn 'boot=live' als Boot Parameter
-benutzt wird. Zusätzlich muss \fBlive\-config\fP durch die Parameter
-\&'live\-config' oder 'live\-noconfig' angegeben werden, welche Skripte
-ausgeführt werden sollen. Werden beide beide Parameter oder mehrmals
-benützt, so geht der in der Reihenfolge lezte allen vorhergehenden vor.
+benutzt wird. Zusätzlich muss \fBlive\-config\fP durch den Parameter
+\&'live\-config' angegeben werden, welche Skripte ausgeführt werden sollen,
+oder mit dem Parameter 'live\-noconfig', welche Skripte nicht ausgeführt
+werden sollen. Werden beide beide Parameter oder mehrmals benützt, so geht
+der in der Reihenfolge lezte allen vorhergehenden vor.
 
 .IP \fBlive\-config\fP 4
 Alle Skripte werden ausgeführt. Auf Debian Live Images ist dies das
