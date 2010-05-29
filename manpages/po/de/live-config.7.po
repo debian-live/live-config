@@ -11,7 +11,7 @@ msgstr ""
 "Language-Team: none\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ASCII\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
@@ -62,8 +62,8 @@ msgid ""
 "B<live-config> contains the scripts that configure a Debian Live system "
 "during the boot process (late userspace)."
 msgstr ""
-"B<live-config> enthaelt die Skripte welche ein Debian Live System waehrend "
-"des Startvorganes (late userspace) konfigurieren."
+"B<live-config> enthält die Skripte welche ein Debian Live System während des "
+"Startvorganes (late userspace) konfigurieren."
 
 #. type: SH
 #: en/live-config.7:9
@@ -79,7 +79,7 @@ msgid ""
 "take precedence over the configuration files."
 msgstr ""
 "B<live-config> kann durch Boot Parameter oder Konfigurationsdateien "
-"konfiguriert werden. Werden beide Mechanismen fuer eine bestimmte Option "
+"konfiguriert werden. Werden beide Mechanismen für eine bestimmte Option "
 "benutzt, so gehen die Boot Parameter den Konfigurationsdateien vor."
 
 #. type: SS
@@ -98,9 +98,9 @@ msgid ""
 "always the later one takes precedence over the previous one(s)."
 msgstr ""
 "B<live-config> ist nur aktiviert, wenn 'boot=live' als Boot Parameter "
-"benutzt wird. Zusaetzlich muss B<live-config> durch die Parameter 'live-"
-"config' oder 'live-noconfig' angegeben werden, welche Skripte ausgefuehrt "
-"werden sollen. Werden beide beide Parameter oder mehrmals benuetzt, so geht "
+"benutzt wird. Zusätzlich muss B<live-config> durch die Parameter 'live-"
+"config' oder 'live-noconfig' angegeben werden, welche Skripte ausgeführt "
+"werden sollen. Werden beide beide Parameter oder mehrmals benützt, so geht "
 "der in der Reihenfolge lezte allen vorhergehenden vor."
 
 #. type: IP
@@ -113,7 +113,7 @@ msgstr "B<live-config>"
 #: en/live-config.7:17
 msgid "All scripts are run. This is what Debian Live images use by default."
 msgstr ""
-"Alle Skripte werden ausgefuehrt. Auf Debian Live Images ist dies das "
+"Alle Skripte werden ausgeführt. Auf Debian Live Images ist dies das "
 "Standardverhalten."
 
 #. type: IP
@@ -130,10 +130,10 @@ msgid ""
 "before it can be configured for sudo. Look at the filenames of the scripts "
 "in /lib/live/config for their ordering number."
 msgstr ""
-"Nur angegebene Skripte werden ausgefuehrt. Die Reihenfolge ist wesentlich, d."
-"h. 'live-config=sudo,user-setup' wuerde nicht  funktionieren da der Benutzer "
-"zuerst angelegt werden muss bevor fuer ihn sudo konfiguriert werden kann. "
-"Siehe Dateinamen der Skripte in /lib/live/config fuer ihre Ordnungsnummer."
+"Nur angegebene Skripte werden ausgeführt. Die Reihenfolge ist wesentlich, d."
+"h. 'live-config=sudo,user-setup' würde nicht  funktionieren da der Benutzer "
+"zürst angelegt werden muss bevor für ihn sudo konfiguriert werden kann. "
+"Siehe Dateinamen der Skripte in /lib/live/config für ihre Ordnungsnummer."
 
 #. type: IP
 #: en/live-config.7:19
@@ -147,7 +147,7 @@ msgid ""
 "No script is run. This is the same as not using any of 'live-config' or "
 "'live-noconfig'."
 msgstr ""
-"Kein Skript wird ausgefuehrt. Dies ist das Gleiche, wie wenn weder 'live-"
+"Kein Skript wird ausgeführt. Dies ist das Gleiche, wie wenn weder 'live-"
 "config' noch 'live-noconfig' verwendet wird."
 
 #. type: IP
@@ -160,7 +160,7 @@ msgstr "B<live-noconfig>=I<SKRIPT1>,I<SKRIPT2>, ... I<SKRIPTn>"
 #: en/live-config.7:23
 msgid "All scripts are run, except the specified ones."
 msgstr ""
-"Alle Skripte werden ausgefuehrt, ausser die hier spezifizierten Ausnahmen."
+"Alle Skripte werden ausgeführt, ausser die hier spezifizierten Ausnahmen."
 
 #. type: SS
 #: en/live-config.7:24
@@ -191,7 +191,7 @@ msgstr "SKRIPTE"
 #: en/live-config.7:29
 msgid ""
 "B<live-config> currently features the following scripts in /lib/live/config."
-msgstr "B<live-config> enthaelt derzeit folgende Skripte in /lib/live/config."
+msgstr "B<live-config> enthält derzeit folgende Skripte in /lib/live/config."
 
 #. type: IP
 #: en/live-config.7:29
@@ -213,7 +213,7 @@ msgstr "B<user-setup>"
 #. type: Plain text
 #: en/live-config.7:33
 msgid "adds an live user account."
-msgstr "fuegt das Live Benutzerkonto hinzu."
+msgstr "fügt das Live Benutzerkonto hinzu."
 
 #. type: IP
 #: en/live-config.7:33
@@ -224,7 +224,7 @@ msgstr "B<sudo>"
 #. type: Plain text
 #: en/live-config.7:35
 msgid "grants sudo privileges to the live user."
-msgstr "raeumt dem Live Benutzer sudo Privilegien ein."
+msgstr "räumt dem Live Benutzer sudo Privilegien ein."
 
 #. type: IP
 #: en/live-config.7:35
@@ -323,7 +323,7 @@ msgstr "B<gnome-panel-data>"
 #. type: Plain text
 #: en/live-config.7:53
 msgid "disables lock button for the screen."
-msgstr "entfernt den Sperrknopf fuer den Bildschirm."
+msgstr "entfernt den Sperrknopf für den Bildschirm."
 
 #. type: IP
 #: en/live-config.7:53
@@ -346,8 +346,7 @@ msgstr "B<gnome-screensaver>"
 #: en/live-config.7:57
 msgid "disables the screensaver locking the screen."
 msgstr ""
-"schaltet das Sperren des Bildschirmes waehrend der Bildschirmschoner laeuft "
-"ab."
+"schaltet das Sperren des Bildschirmes während der Bildschirmschoner läuft ab."
 
 #. type: IP
 #: en/live-config.7:57
@@ -360,7 +359,7 @@ msgstr "B<initramfs-tools>"
 msgid ""
 "makes update-initramfs to also update the live media when using persistency."
 msgstr ""
-"laesst update-initramfs auch das Live Medium zu aktualisieren falls "
+"lässt update-initramfs auch das Live Medium zu aktualisieren falls "
 "Persistency benutzt wird."
 
 #. type: IP
@@ -405,7 +404,7 @@ msgstr "B<live-installer-launcher>"
 #. type: Plain text
 #: en/live-config.7:67
 msgid "adds live-installer-launcher on users desktop."
-msgstr "fuegt live-installer-launcher auf dem Benutzer Desktop hinzu."
+msgstr "fügt live-installer-launcher auf dem Benutzer Desktop hinzu."
 
 #. type: IP
 #: en/live-config.7:67
@@ -416,7 +415,7 @@ msgstr "B<module-init-tools>"
 #. type: Plain text
 #: en/live-config.7:69
 msgid "automatically load some modules on some architectures."
-msgstr "laedt automatisch gewisse Module auf bestimmten Architekturen."
+msgstr "lädt automatisch gewisse Module auf bestimmten Architekturen."
 
 #. type: IP
 #: en/live-config.7:69
@@ -427,7 +426,7 @@ msgstr "B<policykit>"
 #. type: Plain text
 #: en/live-config.7:71
 msgid "grant user privilegies through policykit."
-msgstr "raeumt dem Benutzer Privilegien durch policykit ein."
+msgstr "räumt dem Benutzer Privilegien durch policykit ein."
 
 #. type: IP
 #: en/live-config.7:71
@@ -464,7 +463,7 @@ msgid ""
 "an http/ftp server."
 msgstr ""
 "erlaubt beliebige Kommands von einem Skript auf dem Live Medium oder von "
-"einem HTTP/FTP Server auszufuehren."
+"einem HTTP/FTP Server auszuführen."
 
 #. type: SH
 #: en/live-config.7:78
@@ -537,7 +536,7 @@ msgid ""
 "on the homepage at E<lt>I<http://live.debian.net/>E<gt> and in the manual at "
 "E<lt>I<http://live.debian.net/manual/>E<gt>."
 msgstr ""
-"Weitere Informationen ueber live-config und das Debian Live Projekt koennen "
+"Weitere Informationen über live-config und das Debian Live Projekt können "
 "auf der Homepage unter E<lt>I<http://live.debian.net/>E<gt> und im Handbuch "
 "unter E<lt>I<http://live.debian.net/manual/>E<gt> gefunden werden."
 
@@ -555,7 +554,7 @@ msgid ""
 "by writing a mail to the Debian Live mailing list at E<lt>I<debian-"
 "live@lists.debian.org>E<gt>."
 msgstr ""
-"Fehler koennen durch Einreichen eines Fehlerberichtes fuer das live-config "
+"Fehler können durch Einreichen eines Fehlerberichtes für das live-config "
 "Paket im Debian Bug Tracking System unter E<lt>I<http://bugs.debian.org/"
 ">E<gt> oder durch Senden einer E-Mail an die Debian Live Mailing Liste unter "
 "E<lt>I<debian-live@lists.debian.org>E<gt> (englischsprachig) mitgeteilt "
@@ -573,5 +572,5 @@ msgid ""
 "live-config was written by Daniel Baumann E<lt>I<daniel@debian.org>E<gt> for "
 "the Debian project."
 msgstr ""
-"live-config wurde von Daniel Baumann E<lt>I<daniel@debian.org>E<gt> fuer das "
+"live-config wurde von Daniel Baumann E<lt>I<daniel@debian.org>E<gt> für das "
 "Debian Projekt geschrieben."
