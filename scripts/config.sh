@@ -5,7 +5,7 @@ set -e
 # Defaults
 HOST="debian"
 USERNAME="user"
-USER_FULLNAME="Live user"
+USER_FULLNAME="Debian Live user"
 
 Cmdline ()
 {
