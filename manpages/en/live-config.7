@@ -1,4 +1,4 @@
-.TH LIVE\-CONFIG 7 2010\-05\-28 2.0~a2 "Debian Live Project"
+.TH LIVE\-CONFIG 7 2010\-05\-29 2.0~a2 "Debian Live Project"
 
 .SH NAME
 \fBlive\-config\fR \- System Configuration Scripts
@@ -7,16 +7,19 @@
 \fBlive\-config\fR contains the scripts that configure a Debian Live system during the boot process (late userspace).
 
 .SH CONFIGURATION
-\fBlive\-config\fR can be configured through a boot parameter or a configuration file.
+\fBlive\-config\fR can be configured through boot parameters or configuration files. If both mechanisms are used for a certain option, the boot parameters take precedence over the configuration files.
 
-.SS Kernel Parameters
-\fBlive\-config\fR is only activated if 'live\-config', 'live\-config=\fISCRIPT\fR', or 'live\-config=\fISCRIPT1\fR,\fISCRIPT2\fR,...\fISCRIPTN\fR' was used as a kernel parameter.
-.PP
-If no script is specified (default), then all scripts are executed.
-.PP
-If no script should be executed, 'live\-noconfig' can be used.
-.PP
-If some scripts are specified, then only those scripts are executed. Note that the order matters, e.g. 'live\-config=sudo,user-setup' would not work since the user needs to be added before it can be configured for sudo. Look at the filenames of the scripts in /lib/live/config for their ordering number.
+.SS Boot Parameters
+\fBlive\-config\fR is only activated if 'boot=live' is used as a boot parameter. Additionally, \fBlive\-config\fR needs to be told which scripts to run trough the 'live\-config' or 'live\-noconfig' parameter. If both 'live\-config' and 'live\-noconfig' are used, or, if either one is specified multiple times, always the later one takes precedence over the previous one(s).
+
+.IP "\fBlive\-config\fR" 4
+All scripts are run. This is what Debian Live images use by default.
+.IP "\fBlive\-config\fR=\fISCRIPT1\fR,\fISCRIPT2\fR, ... \fISCRIPTn\fR" 4
+Only the specified scripts are run. Note that the order matters, e.g. 'live\-config=sudo,user-setup' would not work since the user needs to be added before it can be configured for sudo. Look at the filenames of the scripts in /lib/live/config for their ordering number.
+.IP "\fBlive-noconfig\fR" 4
+No script is run. This is the same as not using any of 'live\-config' or 'live\-noconfig'.
+.IP "\fBlive-noconfig\fR=\fISCRIPT1\fR,\fISCRIPT2\fR, ... \fISCRIPTn\fR" 4
+All scripts are run, except the specified ones.
 
 .SS Configuration Files
 \fBlive\-config\fR can be configured (but not activated) through configuration files. Those files can be placed either in the root filesystem itself (/etc/live/config.conf, /etc/live/config.conf.d/), or on the live media (live/config.conf, live/config.conf.d/).

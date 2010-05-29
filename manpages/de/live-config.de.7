@@ -3,7 +3,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 28.05.2010 2.0~a2 "Debian Live Projekt"
+.TH LIVE\-CONFIG 7 29.05.2010 2.0~a2 "Debian Live Projekt"
 
 .SH NAME
 \fBlive\-config\fP \- System Konfiguration Skripte
@@ -13,27 +13,31 @@
 des Startvorganes (late userspace) konfigurieren.
 
 .SH KONFIGURATION
-\fBlive\-config\fP kann durch Boot Parameter oder durch Konfigurationsdateien
-konfiguriert werden.
+\fBlive\-config\fP kann durch Boot Parameter oder Konfigurationsdateien
+konfiguriert werden. Werden beide Mechanismen fuer eine bestimmte Option
+benutzt, so gehen die Boot Parameter den Konfigurationsdateien vor.
 
-.SS "Kernel Parameter"
-\fBlive\-config\fP ist nur dann aktiv, wenn 'live\-config',
-\&'live\-config=\fISCRIPT\fP' oder
-\&'live\-config=\fISCRIPT1\fP,\fISCRIPT2\fP,...\fISCRIPTN\fP' als Kernel Parameter
-benutzt wird.
-.PP
-Wird kein Skript angegeben (standard), dann werden alle Skripte
-ausgefuehrt.
-.PP
-Falls kein Script ausgefuehrt werden soll, kann 'live\-noconfig' verwendet
-werden.
-.PP
-Wenn bestimmte Skripte angegeben wurden, dann werden nur diese
-ausgefuehrt. Die Reihenfolge ist wesentlich,
+.SS "Boot Parameter"
+\fBlive\-config\fP ist nur aktiviert, wenn 'boot=live' als Boot Parameter
+benutzt wird. Zusaetzlich muss \fBlive\-config\fP durch die Parameter
+\&'live\-config' oder 'live\-noconfig' angegeben werden, welche Skripte
+ausgefuehrt werden sollen. Werden beide beide Parameter oder mehrmals
+benuetzt, so geht der in der Reihenfolge lezte allen vorhergehenden vor.
+
+.IP \fBlive\-config\fP 4
+Alle Skripte werden ausgefuehrt. Auf Debian Live Images ist dies das
+Standardverhalten.
+.IP "\fBlive\-config\fP=\fISKRIPT1\fP,\fISKRIPT2\fP, ... \fISKRIPTn\fP" 4
+Nur angegebene Skripte werden ausgefuehrt. Die Reihenfolge ist wesentlich,
 d.h. 'live\-config=sudo,user\-setup' wuerde nicht  funktionieren da der
 Benutzer zuerst angelegt werden muss bevor fuer ihn sudo konfiguriert werden
 kann. Siehe Dateinamen der Skripte in /lib/live/config fuer ihre
 Ordnungsnummer.
+.IP \fBlive\-noconfig\fP 4
+Kein Skript wird ausgefuehrt. Dies ist das Gleiche, wie wenn weder
+\&'live\-config' noch 'live\-noconfig' verwendet wird.
+.IP "\fBlive\-noconfig\fP=\fISKRIPT1\fP,\fISKRIPT2\fP, ... \fISKRIPTn\fP" 4
+Alle Skripte werden ausgefuehrt, ausser die hier spezifizierten Ausnahmen.
 
 .SS Konfigurationsdateien
 \fBlive\-config\fP kann durch Konfigurationsdateien konfiguriert (nicht aber
