@@ -17,7 +17,7 @@ Startvorganes (late userspace) konfigurieren.
 konfiguriert werden. Werden beide Mechanismen für eine bestimmte Option
 benutzt, so gehen die Boot Parameter den Konfigurationsdateien vor.
 
-.SS "Boot Parameter"
+.SS "Boot Parameter (Skripte)"
 \fBlive\-config\fP ist nur aktiviert, wenn 'boot=live' als Boot Parameter
 benutzt wird. Zusätzlich muss \fBlive\-config\fP durch die Parameter
 \&'live\-config' oder 'live\-noconfig' angegeben werden, welche Skripte
@@ -38,6 +38,46 @@ Kein Skript wird ausgeführt. Dies ist das Gleiche, wie wenn weder
 \&'live\-config' noch 'live\-noconfig' verwendet wird.
 .IP "\fBlive\-noconfig\fP=\fISKRIPT1\fP,\fISKRIPT2\fP, ... \fISKRIPTn\fP" 4
 Alle Skripte werden ausgeführt, ausser die hier spezifizierten Ausnahmen.
+
+.SS "Boot Parameter (Optionen)"
+Manche einzelne Skripte können durch Boot Parameter in ihrem Verhalten
+beinflusst werden.
+
+.IP \fBlive\-config.hostname\fP=\fIRECHNERNAME\fP 4
+Ermöglicht den Rechnernamen des Systems zu wählen. Der Standardname ist
+\&'debian'.
+.IP \fBlive\-config.username\fP=\fIBENUTZERNAME\fP 4
+Ermöglicht den Namen des Benutzers zu wählen, welcher für den automatischen
+Login angelegt wird. Der Standardname ist 'user'.
+.IP \fBlive\-config.user\-fullname\fP=\fIVOLLER_BENUTZERNAME\fP 4
+Ermöglicht den vollen Name für den Benutzer zu wählen, welcher für den
+automatischen Login angelegt wird. Der Standard ist 'Debian Live user'.
+.IP \fBlive\-config.locales\fP=\fIGEBIETSSCHEMA\fP 4
+Ermöglicht das Gebietsschema des Systems zu wählen, zum Beispiel
+\&'de_CH.UTF\-8'. Der Standard ist 'en_US.UTF\-8'. Falls das gewünschte
+Gebietsschema nicht schon auf dem System verfügbar ist, wird es automatisch
+bei Bedarf generiert.
+.IP \fBlive\-config.timezone\fP=\fIZEITZONE\fP 4
+Ermöglicht die Zeitzone des Systems einzustellen, zum Beispiel
+\&'Europe/Zurich'. Der Standard ist 'UTC'.
+.IP \fBlive\-config.utc\fP=\fByes\fP|no 4
+Ermöglicht zu bestimmen, ob das System davon ausgehen soll, dass die
+Hardwareuhr auf UTC gestellt ist oder nicht. Der Standard ist 'yes'.
+.IP \fBlive\-config.hook\fP=\fIURL\fP 4
+Ermöglicht eine beliebige Datei herunterzuladen und auszuführen. Beachte
+dass die URL durch wget aufösbar sein muss und dass alle Abhängigkeiten, die
+für das Ausführen der Datei notwendig sind, installiert sind, zum Beispiel
+muss für ein Python Skript bereits python auf dem System installiert sein.
+
+.SS "Boot Parameter (Abkürzungen)"
+\fBlive\-config\fP stellt Abkürzungen für einige häufige verwendete
+Anwendungsfälle wo sonst verschiedene einzelne Parameter kombiniert werden
+müssten. Dies gewährleistet sowohl feine Kontrolle über alle Optionen, als
+einfache Benutzbarkeit.
+
+.IP \fBlive\-config.noroot\fP 4
+Schaltet das sudo und policykit Skript ab, ein Benutzer kann keine root
+Privilegien auf dem System mehr erlangen.
 
 .SS Konfigurationsdateien
 \fBlive\-config\fP kann durch Konfigurationsdateien konfiguriert (nicht aber
