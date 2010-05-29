@@ -66,6 +66,12 @@ Cmdline ()
 				HOOK="${PARAMETER#live-config.hook=}"
 				;;
 
+			# Shortcuts
+			live-config.noroot)
+				# Disable root access, no matter what mechanism
+				SCRIPTS="${SCRIPTS:-$(ls /lib/live/config/*)}"
+				NOCONFIGS="${NOCONFIGS},sudo,policykit"
+				;;
 		esac
 	done
 
