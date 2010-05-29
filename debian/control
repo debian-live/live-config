@@ -13,6 +13,7 @@ Package: live-config
 Architecture: all
 Depends: ${misc:Depends}
 Recommends: user-setup, sudo
+Suggests: wget
 Description: Debian Live - System Configuration Scripts
  live-config contains the scripts that configure a Debian Live system during
  the boot process (late userspace).
