@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config VERSION\n"
-"POT-Creation-Date: 2010-05-29 08:44+0300\n"
+"POT-Creation-Date: 2010-05-29 12:54+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -487,12 +487,12 @@ msgstr ""
 
 #. type: Plain text
 #: en/live-config.7:88
-msgid "I<live-helper>(7)"
+msgid "I<live-boot>(7)"
 msgstr ""
 
 #. type: Plain text
 #: en/live-config.7:90
-msgid "I<live-initramfs>(7)"
+msgid "I<live-helper>(7)"
 msgstr ""
 
 #. type: SH
