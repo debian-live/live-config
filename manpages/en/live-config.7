@@ -44,6 +44,8 @@ For some common use cases where it would require to combine several individual p
 
 .IP "\fBlive-config.noroot\fR" 4
 Disables the sudo and policykit, the user cannot gain root privileges on the system.
+.IP "\fBlive-config.noxlogin\fR" 4
+Disables the automatic login with any display manager, not affecting tty autologin.
 
 .SS Configuration Files
 \fBlive\-config\fR can be configured (but not activated) through configuration files. Those files can be placed either in the root filesystem itself (/etc/live/config.conf, /etc/live/config.conf.d/), or on the live media (live/config.conf, live/config.conf.d/).

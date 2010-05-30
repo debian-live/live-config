@@ -72,6 +72,13 @@ Cmdline ()
 				SCRIPTS="${SCRIPTS:-$(ls /lib/live/config/*)}"
 				NOCONFIGS="${NOCONFIGS},sudo,policykit"
 				;;
+
+			live-config.noxlogin)
+				# Disables graphical autologin, no matter what
+				# mechanism
+				SCRIPTS="${SCRIPTS:-$(ls /lib/live/config/*)}"
+				NOCONFIGS="${NOCONFIGS},gdm,gdm3,kdm,lxdm,nodm"
+				;;
 		esac
 	done
 
