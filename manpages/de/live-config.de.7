@@ -10,7 +10,7 @@
 
 .SH BESCHREIBUNG
 \fBlive\-config\fP enthält die Skripte welche ein Debian Live System während des
-Startvorganes (late userspace) konfigurieren.
+Startvorganges (late userspace) konfigurieren.
 
 .SH KONFIGURATION
 \fBlive\-config\fP kann durch Boot Parameter oder Konfigurationsdateien
@@ -30,8 +30,8 @@ Alle Skripte werden ausgeführt. Auf Debian Live Images ist dies das
 Standardverhalten.
 .IP "\fBlive\-config\fP=\fISKRIPT1\fP,\fISKRIPT2\fP, ... \fISKRIPTn\fP" 4
 Nur angegebene Skripte werden ausgeführt. Die Reihenfolge ist wesentlich,
-d.h. 'live\-config=sudo,user\-setup' würde nicht  funktionieren da der
-Benutzer zürst angelegt werden muss bevor für ihn sudo konfiguriert werden
+d.h. 'live\-config=sudo,user\-setup' würde nicht funktionieren da der Benutzer
+zuerst angelegt werden muss bevor für ihn sudo konfiguriert werden
 kann. Siehe Dateinamen der Skripte in /lib/live/config für ihre
 Ordnungsnummer.
 .IP \fBlive\-noconfig\fP 4
@@ -65,10 +65,10 @@ Ermöglicht die Zeitzone des Systems einzustellen, zum Beispiel
 Ermöglicht zu bestimmen, ob das System davon ausgehen soll, dass die
 Hardwareuhr auf UTC gestellt ist oder nicht. Der Standard ist 'yes'.
 .IP \fBlive\-config.hook\fP=\fIURL\fP 4
-Ermöglicht eine beliebige Datei herunterzuladen und auszuführen. Beachte
-dass die URL durch wget aufösbar sein muss und dass alle Abhängigkeiten, die
-für das Ausführen der Datei notwendig sind, installiert sind, zum Beispiel
-muss für ein Python Skript bereits python auf dem System installiert sein.
+Ermöglicht eine beliebige Datei herunterzuladen und auszuführen. Die URL
+muss durch wget aufösbar sein muss und alle Abhängigkeiten, die für das
+Ausführen der Datei notwendig sind, müssen installiert sind, zum Beispiel
+muss für ein Python Skript bereits Python auf dem System installiert sein.
 
 .SS "Boot Parameter (Abkürzungen)"
 \fBlive\-config\fP stellt Abkürzungen für einige häufige verwendete
@@ -77,7 +77,7 @@ müssten. Dies gewährleistet sowohl feine Kontrolle über alle Optionen, als
 einfache Benutzbarkeit.
 
 .IP \fBlive\-config.noroot\fP 4
-Schaltet das sudo und policykit Skript ab, ein Benutzer kann keine root
+Schaltet die sudo und policykit Skripte ab, ein Benutzer kann keine root
 Privilegien auf dem System mehr erlangen.
 
 .SS Konfigurationsdateien
@@ -118,8 +118,8 @@ verhindert Hibernation.
 schaltet das Sperren des Bildschirmes während der Bildschirmschoner läuft
 ab.
 .IP \fBinitramfs\-tools\fP 4
-lässt update\-initramfs auch das Live Medium zu aktualisieren falls
-Persistency benutzt wird.
+lässt update\-initramfs auch das Live Medium aktualisieren falls Persistency
+benutzt wird.
 .IP \fBkaboom\fP 4
 schaltet den KDE Migration Wizard ab (squeeze und neuer).
 .IP \fBkde\-services\fP 4

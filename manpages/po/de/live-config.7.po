@@ -63,7 +63,7 @@ msgid ""
 "during the boot process (late userspace)."
 msgstr ""
 "B<live-config> enthält die Skripte welche ein Debian Live System während des "
-"Startvorganes (late userspace) konfigurieren."
+"Startvorganges (late userspace) konfigurieren."
 
 #. type: SH
 #: en/live-config.7:9
@@ -133,8 +133,8 @@ msgid ""
 "in /lib/live/config for their ordering number."
 msgstr ""
 "Nur angegebene Skripte werden ausgeführt. Die Reihenfolge ist wesentlich, d."
-"h. 'live-config=sudo,user-setup' würde nicht  funktionieren da der Benutzer "
-"zürst angelegt werden muss bevor für ihn sudo konfiguriert werden kann. "
+"h. 'live-config=sudo,user-setup' würde nicht funktionieren da der Benutzer "
+"zuerst angelegt werden muss bevor für ihn sudo konfiguriert werden kann. "
 "Siehe Dateinamen der Skripte in /lib/live/config für ihre Ordnungsnummer."
 
 #. type: IP
@@ -283,10 +283,10 @@ msgid ""
 "installed, e.g. if a python script should be executed the system needs "
 "python installed."
 msgstr ""
-"Ermöglicht eine beliebige Datei herunterzuladen und auszuführen. Beachte "
-"dass die URL durch wget aufösbar sein muss und dass alle Abhängigkeiten, die "
-"für das Ausführen der Datei notwendig sind, installiert sind, zum Beispiel "
-"muss für ein Python Skript bereits python auf dem System installiert sein."
+"Ermöglicht eine beliebige Datei herunterzuladen und auszuführen. Die URL "
+"muss durch wget aufösbar sein muss und alle Abhängigkeiten, die für das "
+"Ausführen der Datei notwendig sind, müssen installiert sind, zum Beispiel "
+"muss für ein Python Skript bereits Python auf dem System installiert sein."
 
 #. type: SS
 #: en/live-config.7:42
@@ -318,7 +318,7 @@ msgid ""
 "Disables the sudo and policykit, the user cannot gain root privileges on the "
 "system."
 msgstr ""
-"Schaltet das sudo und policykit Skript ab, ein Benutzer kann keine root "
+"Schaltet die sudo und policykit Skripte ab, ein Benutzer kann keine root "
 "Privilegien auf dem System mehr erlangen."
 
 #. type: SS
@@ -518,8 +518,8 @@ msgstr "B<initramfs-tools>"
 msgid ""
 "makes update-initramfs to also update the live media when using persistency."
 msgstr ""
-"lässt update-initramfs auch das Live Medium zu aktualisieren falls "
-"Persistency benutzt wird."
+"lässt update-initramfs auch das Live Medium aktualisieren falls Persistency "
+"benutzt wird."
 
 #. type: IP
 #: en/live-config.7:83
