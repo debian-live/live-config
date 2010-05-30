@@ -1,3 +1,26 @@
+live-config (2.0~a3-1) unstable; urgency=low
+
+  * Removing fixme note about configuration filename.
+  * Adding note about a logfile to todo.
+  * Adding reference to locales script in manpages.
+  * Adding live-noconfig option to exclude specific scripts from being
+    run (Closes: #583533).
+  * Reordering parameters to match ordering of scripts.
+  * Allow to use live-noconfig for excluding scripts without the need of
+    specifying live-config too.
+  * Updating German manpage translation.
+  * Using UTF-8 and umlauts in German manpage translation.
+  * Adding shortcut parameter to disable root privileges, no matter what
+    mechanism would be used.
+  * Replacing reference to live-initramfs with live-boot in manpage.
+  * Setting default user fullname to 'Debian Live user'.
+  * Adding wget to suggests.
+  * Adding script options in manpages.
+  * Improving wording in boot parameter (scripts) section of manpage.
+  * Improving German manpages translation.
+
+ -- Daniel Baumann <daniel@debian.org>  Sun, 30 May 2010 09:35:32 +0200
+
 live-config (2.0~a2-1) unstable; urgency=low
 
   * Additionally supporting configuration directories for configuration
