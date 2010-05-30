@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config VERSION\n"
-"POT-Creation-Date: 2010-05-30 10:00+0300\n"
+"POT-Creation-Date: 2010-05-30 10:10+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -183,7 +183,7 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:31
 #, no-wrap
-msgid "B<live-config.user-fullname>=I<USER_FULLNAME>"
+msgid "B<live-config.user-fullname>=\"I<USER_FULLNAME>\""
 msgstr ""
 
 #. type: Plain text
