@@ -36,8 +36,8 @@ Allows to set the locale of the system, e.g. 'de_CH.UTF\-8'. The default is 'en_
 Allows to set the timezone of the system, e.g. 'Europe/Zurich'. The default is 'UTC'.
 .IP "\fBlive-config.utc\fR=\fByes\fR|no" 4
 Allows to change if the system is assuming that the hardware clock is set to UTC or not. The default is 'yes'.
-.IP "\fBlive-config.hook\fR=\fIURL\fR" 4
-Allows to execute fetch and execute an arbitrary file. Note that the URL must be fetchable by wget, and that the file needs its dependencies if any installed, e.g. if a python script should be executed the system needs python installed.
+.IP "\fBlive-config.hook\fR=\fIURL1\fR|\fIURL2\fR| ... |\fIURLn\fR" 4
+Allows to execute fetch and execute one or more arbitrary files. Note that the URLs must be fetchable by wget, and that the files needs their dependencies, if any, already installed, e.g. if a python script should be executed the system needs python installed.
 
 .SS Boot Parameters (shortcuts)
 For some common use cases where it would require to combine several individual parameters, \fBlive\-config\fR provides shortcuts. This allows both to have full granularity over all the options, as well keep things simple.
@@ -70,8 +70,8 @@ This variable equals the '\fBlive\-config.locales\fR=\fILOCALE\fR' parameter.
 This variable equals the '\fBlive\-config.timezone\fR=\fITIMEZONE\fR' parameter.
 .IP "\fBUTC\fR=\fByes\fR|no" 4
 This variable equals the '\fBlive\-config.utc\fR=\fByes\fR|no' parameter.
-.IP "\fBHOOK\fR=\fIURL\fR" 4
-This variable equals the '\fBlive\-config.hook\fR=\fIURL\fR' parameter.
+.IP "\fBHOOK\fR=\fIURL1\fR|\fIURL2\fR| ... |\fIURLn\fR" 4
+This variable equals the '\fBlive\-config.hook\fR=\fIURL1\fR|\fIURL2\fR| ... |\fIURLn\fR' parameter.
 
 .SH SCRIPTS
 \fBlive\-config\fR currently features the following scripts in /lib/live/config.

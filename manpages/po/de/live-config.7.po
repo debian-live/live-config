@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config 2.0~a2\n"
-"POT-Creation-Date: 2010-05-30 11:53+0300\n"
+"POT-Creation-Date: 2010-05-30 11:59+0300\n"
 "PO-Revision-Date: 2010-05-24 09:59+0300\n"
 "Last-Translator: Daniel Baumann <daniel@debian.org>\n"
 "Language-Team: none\n"
@@ -272,21 +272,22 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:39
 #, no-wrap
-msgid "B<live-config.hook>=I<URL>"
-msgstr "B<live-config.hook>=I<URL>"
+msgid "B<live-config.hook>=I<URL1>|I<URL2>| ... |I<URLn>"
+msgstr "B<live-config.hook>=I<URL1>|I<URL2>| ...|I<URLn>"
 
 #. type: Plain text
 #: en/live-config.7:41
 msgid ""
-"Allows to execute fetch and execute an arbitrary file. Note that the URL "
-"must be fetchable by wget, and that the file needs its dependencies if any "
-"installed, e.g. if a python script should be executed the system needs "
-"python installed."
+"Allows to execute fetch and execute one or more arbitrary files. Note that "
+"the URLs must be fetchable by wget, and that the files needs their "
+"dependencies, if any, already installed, e.g. if a python script should be "
+"executed the system needs python installed."
 msgstr ""
-"Ermöglicht eine beliebige Datei herunterzuladen und auszuführen. Die URL "
-"muss durch wget aufösbar sein muss und alle Abhängigkeiten, die für das "
-"Ausführen der Datei notwendig sind, müssen installiert sind, zum Beispiel "
-"muss für ein Python Skript bereits Python auf dem System installiert sein."
+"Ermöglicht eine oder mehrere beliebige Dateien herunterzuladen und "
+"auszuführen. Die URLs müssen durch wget aufösbar sein und es müssen alle "
+"Abhängigkeiten, die für das Ausführen der Dateien notwendig sind, bereits "
+"installiert sein, zum Beispiel muss für ein Python Skript bereits Python auf "
+"dem System installiert sein."
 
 #. type: SS
 #: en/live-config.7:42
@@ -502,13 +503,17 @@ msgstr "Diese Variable enspricht dem 'B<live-config.utc>=B<yes>|no' Parameter."
 #. type: IP
 #: en/live-config.7:73
 #, no-wrap
-msgid "B<HOOK>=I<URL>"
-msgstr "B<HOOK>=I<URL>"
+msgid "B<HOOK>=I<URL1>|I<URL2>| ... |I<URLn>"
+msgstr ""
 
 #. type: Plain text
 #: en/live-config.7:75
-msgid "This variable equals the 'B<live-config.hook>=I<URL>' parameter."
-msgstr "Diese Variable enspricht dem 'B<live-config.hook>=I<URL>' Parameter."
+msgid ""
+"This variable equals the 'B<live-config.hook>=I<URL1>|I<URL2>| ... |I<URLn>' "
+"parameter."
+msgstr ""
+"Diese Variable enspricht dem 'B<live-config.hook>=I<URL1>|I<URL2>| ... |"
+"I<URLn>' Parameter."
 
 #. type: SH
 #: en/live-config.7:76

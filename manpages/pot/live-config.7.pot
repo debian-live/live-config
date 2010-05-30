@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config VERSION\n"
-"POT-Creation-Date: 2010-05-30 11:53+0300\n"
+"POT-Creation-Date: 2010-05-30 11:59+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -236,16 +236,16 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:39
 #, no-wrap
-msgid "B<live-config.hook>=I<URL>"
+msgid "B<live-config.hook>=I<URL1>|I<URL2>| ... |I<URLn>"
 msgstr ""
 
 #. type: Plain text
 #: en/live-config.7:41
 msgid ""
-"Allows to execute fetch and execute an arbitrary file. Note that the URL "
-"must be fetchable by wget, and that the file needs its dependencies if any "
-"installed, e.g. if a python script should be executed the system needs "
-"python installed."
+"Allows to execute fetch and execute one or more arbitrary files. Note that "
+"the URLs must be fetchable by wget, and that the files needs their "
+"dependencies, if any, already installed, e.g. if a python script should be "
+"executed the system needs python installed."
 msgstr ""
 
 #. type: SS
@@ -424,12 +424,14 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:73
 #, no-wrap
-msgid "B<HOOK>=I<URL>"
+msgid "B<HOOK>=I<URL1>|I<URL2>| ... |I<URLn>"
 msgstr ""
 
 #. type: Plain text
 #: en/live-config.7:75
-msgid "This variable equals the 'B<live-config.hook>=I<URL>' parameter."
+msgid ""
+"This variable equals the 'B<live-config.hook>=I<URL1>|I<URL2>| ... |I<URLn>' "
+"parameter."
 msgstr ""
 
 #. type: SH
