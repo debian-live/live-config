@@ -3,37 +3,82 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 27.05.2010 2.0~a2 "Debian Live Projekt"
+.TH LIVE\-CONFIG 7 30.05.2010 2.0~a3 "Debian Live Projekt"
 
 .SH NAME
 \fBlive\-config\fP \- System Konfiguration Skripte
 
 .SH BESCHREIBUNG
-\fBlive\-config\fP enthaelt die Skripte welche ein Debian Live System waehrend
-des Startvorganes (late userspace) konfigurieren.
+\fBlive\-config\fP enthält die Skripte welche ein Debian Live System während des
+Startvorganges (late userspace) konfigurieren.
 
 .SH KONFIGURATION
-\fBlive\-config\fP kann durch Boot Parameter oder durch Konfigurationsdateien
-konfiguriert werden.
+\fBlive\-config\fP kann durch Boot Parameter oder Konfigurationsdateien
+konfiguriert werden. Werden beide Mechanismen für eine bestimmte Option
+benutzt, so gehen die Boot Parameter den Konfigurationsdateien vor.
 
-.SS "Kernel Parameter"
-\fBlive\-config\fP ist nur dann aktiv, wenn 'live\-config',
-\&'live\-config=\fISCRIPT\fP' oder
-\&'live\-config=\fISCRIPT1\fP,\fISCRIPT2\fP,...\fISCRIPTN\fP' als Kernel Parameter
-benutzt wird.
-.PP
-Wird kein Skript angegeben (standard), dann werden alle Skripte
-ausgefuehrt. Das ist dasselbe wie 'live\-config=all'.
-.PP
-Falls kein Script ausgefuehrt werden soll, kann 'live\-config=none' verwendet
-werden.
-.PP
-Wenn bestimmte Skripte angegeben wurden, dann werden nur diese
-ausgefuehrt. Die Reihenfolge ist wesentlich,
-d.h. 'live\-config=sudo,user\-setup' wuerde nicht  funktionieren da der
-Benutzer zuerst angelegt werden muss bevor fuer ihn sudo konfiguriert werden
-kann. Siehe Dateinamen der Skripte in /lib/live/config fuer ihre
+.SS "Boot Parameter (Skripte)"
+\fBlive\-config\fP ist nur aktiviert, wenn 'boot=live' als Boot Parameter
+benutzt wird. Zusätzlich muss \fBlive\-config\fP durch den Parameter
+\&'live\-config' angegeben werden, welche Skripte ausgeführt werden sollen,
+oder mit dem Parameter 'live\-noconfig', welche Skripte nicht ausgeführt
+werden sollen. Werden beide beide Parameter oder mehrmals benützt, so geht
+der in der Reihenfolge lezte allen vorhergehenden vor.
+
+.IP \fBlive\-config\fP 4
+Alle Skripte werden ausgeführt. Auf Debian Live Images ist dies das
+Standardverhalten.
+.IP "\fBlive\-config\fP=\fISKRIPT1\fP,\fISKRIPT2\fP, ... \fISKRIPTn\fP" 4
+Nur angegebene Skripte werden ausgeführt. Die Reihenfolge ist wesentlich,
+d.h. 'live\-config=sudo,user\-setup' würde nicht funktionieren da der Benutzer
+zuerst angelegt werden muss bevor für ihn sudo konfiguriert werden
+kann. Siehe Dateinamen der Skripte in /lib/live/config für ihre
 Ordnungsnummer.
+.IP \fBlive\-noconfig\fP 4
+Kein Skript wird ausgeführt. Dies ist das Gleiche, wie wenn weder
+\&'live\-config' noch 'live\-noconfig' verwendet wird.
+.IP "\fBlive\-noconfig\fP=\fISKRIPT1\fP,\fISKRIPT2\fP, ... \fISKRIPTn\fP" 4
+Alle Skripte werden ausgeführt, ausser die hier spezifizierten Ausnahmen.
+
+.SS "Boot Parameter (Optionen)"
+Manche einzelne Skripte können durch Boot Parameter in ihrem Verhalten
+beinflusst werden.
+
+.IP \fBlive\-config.hostname\fP=\fIRECHNERNAME\fP 4
+Ermöglicht den Rechnernamen des Systems zu wählen. Der Standardname ist
+\&'debian'.
+.IP \fBlive\-config.username\fP=\fIBENUTZERNAME\fP 4
+Ermöglicht den Namen des Benutzers zu wählen, welcher für den automatischen
+Login angelegt wird. Der Standardname ist 'user'.
+.IP \fBlive\-config.user\-fullname\fP=\fIVOLLER_BENUTZERNAME\fP 4
+Ermöglicht den vollen Name für den Benutzer zu wählen, welcher für den
+automatischen Login angelegt wird. Der Standard ist 'Debian Live user'.
+.IP \fBlive\-config.locales\fP=\fIGEBIETSSCHEMA\fP 4
+Ermöglicht das Gebietsschema des Systems zu wählen, zum Beispiel
+\&'de_CH.UTF\-8'. Der Standard ist 'en_US.UTF\-8'. Falls das gewünschte
+Gebietsschema nicht schon auf dem System verfügbar ist, wird es automatisch
+bei Bedarf generiert.
+.IP \fBlive\-config.timezone\fP=\fIZEITZONE\fP 4
+Ermöglicht die Zeitzone des Systems einzustellen, zum Beispiel
+\&'Europe/Zurich'. Der Standard ist 'UTC'.
+.IP \fBlive\-config.utc\fP=\fByes\fP|no 4
+Ermöglicht zu bestimmen, ob das System davon ausgehen soll, dass die
+Hardwareuhr auf UTC gestellt ist oder nicht. Der Standard ist 'yes'.
+.IP \fBlive\-config.hook\fP=\fIURL\fP 4
+Ermöglicht eine beliebige Datei herunterzuladen und auszuführen. Die URL
+muss durch wget aufösbar sein muss und alle Abhängigkeiten, die für das
+Ausführen der Datei notwendig sind, müssen installiert sind, zum Beispiel
+muss für ein Python Skript bereits Python auf dem System installiert sein.
+
+.SS "Boot Parameter (Abkürzungen)"
+\fBlive\-config\fP stellt Abkürzungen für einige häufige verwendete
+Anwendungsfälle wo sonst verschiedene einzelne Parameter kombiniert werden
+müssten. Dies gewährleistet sowohl feine Kontrolle über alle Optionen, als
+einfache Benutzbarkeit.
+
+.IP \fBlive\-config.noroot\fP 4
+Schaltet die sudo und policykit Skripte ab, ein Benutzer kann keine root
+Privilegien auf dem System mehr erlangen.
 
 .SS Konfigurationsdateien
 \fBlive\-config\fP kann durch Konfigurationsdateien konfiguriert (nicht aber
@@ -42,13 +87,15 @@ selbst plaziert werden (/etc/live/config.conf, /etc/live/config.conf.d/)
 oder auf dem Live Medium (live/config.conf, live/config.conf.d/).
 
 .SH SKRIPTE
-\fBlive\-config\fP enthaelt derzeit folgende Skripte in /lib/live/config.
+\fBlive\-config\fP enthält derzeit folgende Skripte in /lib/live/config.
 .IP \fBhostname\fP 4
 konfiguriert /etc/hostname und /etc/hosts.
 .IP \fBuser\-setup\fP 4
-fuegt das Live Benutzerkonto hinzu.
+fügt das Live Benutzerkonto hinzu.
 .IP \fBsudo\fP 4
-raeumt dem Live Benutzer sudo Privilegien ein.
+räumt dem Live Benutzer sudo Privilegien ein.
+.IP \fBlocales\fP 4
+konfiguriert locales.
 .IP \fBtzdata\fP 4
 konfiguriert /etc/timezone.
 .IP \fBgdm\fP 4
@@ -64,15 +111,15 @@ konfiguriert Autologin in nodm.
 .IP \fBapport\fP 4
 aktiviert apport.
 .IP \fBgnome\-panel\-data\fP 4
-entfernt den Sperrknopf fuer den Bildschirm.
+entfernt den Sperrknopf für den Bildschirm.
 .IP \fBgnome\-power\-manager\fP 4
 verhindert Hibernation.
 .IP \fBgnome\-screensaver\fP 4
-schaltet das Sperren des Bildschirmes waehrend der Bildschirmschoner laeuft
+schaltet das Sperren des Bildschirmes während der Bildschirmschoner läuft
 ab.
 .IP \fBinitramfs\-tools\fP 4
-laesst update\-initramfs auch das Live Medium zu aktualisieren falls
-Persistency benutzt wird.
+lässt update\-initramfs auch das Live Medium aktualisieren falls Persistency
+benutzt wird.
 .IP \fBkaboom\fP 4
 schaltet den KDE Migration Wizard ab (squeeze und neuer).
 .IP \fBkde\-services\fP 4
@@ -80,18 +127,18 @@ schaltet ein paar ungewollte KDE Services ab (squeeze und neuer).
 .IP \fBkpersonalizer\fP 4
 schaltet den KDE Configuration Wizard ab (lenny).
 .IP \fBlive\-installer\-launcher\fP 4
-fuegt live\-installer\-launcher auf dem Benutzer Desktop hinzu.
+fügt live\-installer\-launcher auf dem Benutzer Desktop hinzu.
 .IP \fBmodule\-init\-tools\fP 4
-laedt automatisch gewisse Module auf bestimmten Architekturen.
+lädt automatisch gewisse Module auf bestimmten Architekturen.
 .IP \fBpolicykit\fP 4
-raeumt dem Benutzer Privilegien durch policykit ein.
+räumt dem Benutzer Privilegien durch policykit ein.
 .IP \fBsslcert\fP 4
 erneuert SSL snake\-oil Zertifikate.
 .IP \fBupdate\-notifier\fP 4
 schaltet update\-notifier ab.
 .IP \fBhook\fP 4
 erlaubt beliebige Kommands von einem Skript auf dem Live Medium oder von
-einem HTTP/FTP Server auszufuehren.
+einem HTTP/FTP Server auszuführen.
 
 .SH DATEIEN
 .IP \fB/etc/live/config.conf\fP 4
@@ -102,22 +149,22 @@ einem HTTP/FTP Server auszufuehren.
 .IP \fB/lib/live/config/\fP 4
 
 .SH "SIEHE AUCH"
-\fIlive\-helper\fP(7)
+\fIlive\-boot\fP(7)
 .PP
-\fIlive\-initramfs\fP(7)
+\fIlive\-helper\fP(7)
 
 .SH HOMEPAGE
-Weitere Informationen ueber live\-config und das Debian Live Projekt koennen
+Weitere Informationen über live\-config und das Debian Live Projekt können
 auf der Homepage unter <\fIhttp://live.debian.net/\fP> und im Handbuch
 unter <\fIhttp://live.debian.net/manual/\fP> gefunden werden.
 
 .SH FEHLER
-Fehler koennen durch Einreichen eines Fehlerberichtes fuer das live\-config
+Fehler können durch Einreichen eines Fehlerberichtes für das live\-config
 Paket im Debian Bug Tracking System unter
 <\fIhttp://bugs.debian.org/\fP> oder durch Senden einer E\-Mail an die
 Debian Live Mailing Liste unter <\fIdebian\-live@lists.debian.org\fP>
 (englischsprachig) mitgeteilt werden.
 
 .SH AUTOR
-live\-config wurde von Daniel Baumann <\fIdaniel@debian.org\fP> fuer das
+live\-config wurde von Daniel Baumann <\fIdaniel@debian.org\fP> für das
 Debian Projekt geschrieben.

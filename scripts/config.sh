@@ -5,7 +5,7 @@ set -e
 # Defaults
 HOST="debian"
 USERNAME="user"
-USER_FULLNAME="Live user"
+USER_FULLNAME="Debian Live user"
 
 Cmdline ()
 {
@@ -19,7 +19,18 @@ Cmdline ()
 
 			live-config=*)
 				# Only run requested scripts
-				OPTIONS="${PARAMETER#live-config=}"
+				CONFIGS="${PARAMETER#live-config=}"
+				;;
+
+			live-noconfig)
+				# Don't run any script
+				SCRIPTS=""
+				;;
+
+			live-noconfig=*)
+				# Don't run requested scripts
+				SCRIPTS="$(ls /lib/live/config/*)"
+				NOCONFIGS="${PARAMETER#live-noconfig=}"
 				;;
 
 			# 001-hostname
@@ -27,16 +38,7 @@ Cmdline ()
 				HOST="${PARAMETER#live-config.hostname=}"
 				;;
 
-			# 003-tzdata
-			live-config.timezone=*)
-				TIMEZONE="${PARAMETER#live-config.timezone=}"
-				;;
-
-			live-config.utc=*)
-				UTC="${PARAMETER#live-config.utc=}"
-				;;
-
-			# 004-user-setup
+			# 002-user-setup
 			live-config.username=*)
 				USERNAME="${PARAMETER#live-config.username=}"
 				;;
@@ -45,9 +47,18 @@ Cmdline ()
 				USER_FULLNAME="${PARAMETER#live-config.user-fullname=}"
 				;;
 
-			# 005-locales
+			# 004-locales
 			live-config.locales=*)
 				LOCALES="${PARAMETER#live-config.locales=}"
+				;;
+
+			# 005-tzdata
+			live-config.timezone=*)
+				TIMEZONE="${PARAMETER#live-config.timezone=}"
+				;;
+
+			live-config.utc=*)
+				UTC="${PARAMETER#live-config.utc=}"
 				;;
 
 			# 999-hook
@@ -55,15 +66,30 @@ Cmdline ()
 				HOOK="${PARAMETER#live-config.hook=}"
 				;;
 
+			# Shortcuts
+			live-config.noroot)
+				# Disable root access, no matter what mechanism
+				SCRIPTS="${SCRIPTS:-$(ls /lib/live/config/*)}"
+				NOCONFIGS="${NOCONFIGS},sudo,policykit"
+				;;
 		esac
 	done
 
-	# Assemble scripts selection
-	if [ -z "${SCRIPTS}" ] && [ "${OPTIONS}" != "none" ]
+	# Include requested scripts
+	if [ -n "${CONFIGS}" ]
 	then
-		for OPTION in $(echo ${OPTIONS} | sed -e 's|,| |g')
+		for CONFIG in $(echo ${CONFIGS} | sed -e 's|,| |g')
 		do
-			SCRIPTS="${SCRIPTS} $(ls /lib/live/config/???-${OPTION})"
+			SCRIPTS="${SCRIPTS} $(ls /lib/live/config/???-${CONFIG})"
+		done
+	fi
+
+	# Exclude requested scripts
+	if [ -n "${NOCONFIGS}" ]
+	then
+		for NOCONFIG in $(echo ${NOCONFIGS} | sed -e 's|,| |g')
+		do
+			SCRIPTS="$(echo ${SCRIPTS} | sed -e "s|$(ls /lib/live/config/???-${NOCONFIG})||")"
 		done
 	fi
 }
@@ -95,7 +121,7 @@ Main ()
 	echo -n "live-config:"
 	trap 'Trap' EXIT HUP INT QUIT TERM
 
-	# Reading configuration file from filesystem (FIXME: needs better name)
+	# Reading configuration file from filesystem
 	if [ -e /etc/live/config.conf ]
 	then
 		. /etc/live/config.conf
@@ -109,7 +135,7 @@ Main ()
 		done
 	fi
 
-	# Reading configuration file from live-media (FIXME: needs better name)
+	# Reading configuration file from live-media
 	if [ -e /live/image/live/config.conf ]
 	then
 		. /live/image/live/config.conf
