@@ -28,7 +28,7 @@ Some individual scripts can change their behaviour upon a boot parameter.
 Allows to set the hostname of the system. The default is 'debian'.
 .IP "\fBlive-config.username\fR=\fIUSERNAME\fR" 4
 Allows to set the username that gets created for autologin. The default is 'user'.
-.IP "\fBlive-config.user-fullname\fR=""\fIUSER_FULLNAME\fR""" 4
+.IP "\fBlive-config.user-fullname\fR=""\fIUSER FULLNAME\fR""" 4
 Allows to set the fullname of the users that gets created for autologin. The default is 'Debian Live user'.
 .IP "\fBlive-config.locales\fR=\fILOCALE\fR" 4
 Allows to set the locale of the system, e.g. 'de_CH.UTF\-8'. The default is 'en_US.UTF\-8'. In case the selected locale is not already available on the system, it is automatically generated on the fly.
@@ -48,10 +48,34 @@ Disables the sudo and policykit, the user cannot gain root privileges on the sys
 Disables the automatic login with any display manager, not affecting tty autologin.
 
 .SS Configuration Files
-\fBlive\-config\fR can be configured (but not activated) through configuration files. Those files can be placed either in the root filesystem itself (/etc/live/config.conf, /etc/live/config.conf.d/), or on the live media (live/config.conf, live/config.conf.d/).
+\fBlive\-config\fR can be configured (but not activated) through configuration files. Everything but the shortcuts that can be configured with a boot parameter can be alternatively also be configured through one or more files. If configuration files are used, the 'boot=live' parameter is still required to activate \fBlive\-config\fR.
+.PP
+Configuration files can be placed either in the root filesystem itself (/etc/live/config.conf, /etc/live/config.conf.d/), or on the live media (live/config.conf, live/config.conf.d/). If both places are used for a certain option, the ones from the live media take precedence over the ones from the root filesystem.
+.PP
+Although the configuration files placed in the conf.d directories do not require a particular name or suffix, it's suggest for consistency to either use 'vendor.conf' or 'project.conf' as a naming scheme (whereas 'vendor' or 'project' is replaced with the actual name, resulting in a filename like 'debian-eeepc.conf').
+
+.IP "\fBCONFIGS\fR=\fISCRIPT1\fR,\fISCRIPT2\fR, ... \fISCRIPTn\fR" 4
+This variable equals the '\fBlive\-config\fR=\fISCRIPT1\fR,\fISCRIPT2\fR, ... \fISCRIPTn\fR' parameter.
+.IP "\fBNOCONFIGS\fR=\fISCRIPT1\fR,\fISCRIPT2\fR, ... \fISCRIPTn\fR" 4
+This variable equals the '\fBlive\-noconfig\fR=\fISCRIPT1\fR,\fISCRIPT2\fR, ... \fISCRIPTn\fR' parameter.
+.IP "\fBHOST\fR=\fIHOSTNAME\fR" 4
+This variable equals the '\fBlive\-config.hostname\fR=\fIHOSTAME\fR' parameter.
+.IP "\fBUSERNAME\fR=\fIUSERNAME\fR" 4
+This variable equals the '\fBlive\-config.username\fR=\fIUSERNAME\fR' parameter.
+.IP "\fBUSER_FULLNAME\fR=""\fIUSER FULLNAME""\fR" 4
+This variable equals the '\fBlive\-config.user-fullname\fR="\fIUSER FULLNAME\fR"' parameter.
+.IP "\fBLOCALES\fR=\fILOCALE\fR" 4
+This variable equals the '\fBlive\-config.locales\fR=\fILOCALE\fR' parameter.
+.IP "\fBTIMEZONE\fR=\fITIMEZONE\fR" 4
+This variable equals the '\fBlive\-config.timezone\fR=\fITIMEZONE\fR' parameter.
+.IP "\fBUTC\fR=\fByes\fR|no" 4
+This variable equals the '\fBlive\-config.utc\fR=\fByes\fR|no' parameter.
+.IP "\fBHOOK\fR=\fIURL\fR" 4
+This variable equals the '\fBlive\-config.hook\fR=\fIURL\fR' parameter.
 
 .SH SCRIPTS
 \fBlive\-config\fR currently features the following scripts in /lib/live/config.
+
 .IP "\fBhostname\fR" 4
 configures /etc/hostname and /etc/hosts.
 .IP "\fBuser-setup\fR" 4
