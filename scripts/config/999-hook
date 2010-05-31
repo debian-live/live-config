@@ -28,7 +28,7 @@ Process_hook ()
 		else
 			# remote file
 
-			if [ -z "${NETWORK}" ] && [ -e /etc/init.d/live-config-sysvinit ]
+			if [ -z "${NETWORK}" ] && [ -e /etc/init.d/live-config ]
 			then
 				/etc/init.d/mountkernfs.sh start > /dev/null 2>&1
 				/etc/init.d/mountdevsubfs.sh start > /dev/null 2>&1
