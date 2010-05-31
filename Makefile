@@ -25,7 +25,7 @@ test:
 	then \
 		for SCRIPT in $(SCRIPTS); \
 		do \
-			checkbashisms $${SCRIPT}; \
+			checkbashisms -f -x $${SCRIPT}; \
 			echo -n "."; \
 		done; \
 	else \
