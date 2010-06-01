@@ -2,8 +2,9 @@
 
 Kaboom ()
 {
-	# Checking if package is installed
-	if [ ! -e /var/lib/dpkg/info/kaboom.list ]
+	# Checking if package is installed or already configured
+	if [ ! -e /var/lib/dpkg/info/kaboom.list ] || \
+	   [ -e /var/lib/live/config/kaboom ]
 	then
 		return
 	fi
@@ -15,8 +16,11 @@ Kaboom ()
 
 Configure_kaboom ()
 {
-	mkdir -p /home/${USERNAME}/.local
-	touch /home/${USERNAME}/.local/kaboom
+	mkdir -p /home/${LIVE_USERNAME}/.local
+	touch /home/${LIVE_USERNAME}/.local/kaboom
+
+	# Creating state file
+	touch /var/lib/live/config/kaboom
 }
 
 Kaboom

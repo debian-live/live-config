@@ -3,109 +3,109 @@
 set -e
 
 # Defaults
-HOST="debian"
-USERNAME="user"
-USER_FULLNAME="Debian Live user"
+LIVE_HOSTNAME="debian"
+LIVE_USERNAME="user"
+LIVE_USER_FULLNAME="Debian Live user"
 
 Cmdline ()
 {
-	for PARAMETER in $(cat /proc/cmdline)
+	for _PARAMETER in $(cat /proc/cmdline)
 	do
-		case "${PARAMETER}" in
+		case "${_PARAMETER}" in
 			live-config)
 				# Run all scripts
-				SCRIPTS="$(ls /lib/live/config/*)"
+				_SCRIPTS="$(ls /lib/live/config/*)"
 				;;
 
 			live-config=*)
 				# Only run requested scripts
-				CONFIGS="${PARAMETER#live-config=}"
+				LIVE_CONFIGS="${_PARAMETER#live-config=}"
 				;;
 
 			live-noconfig)
 				# Don't run any script
-				SCRIPTS=""
+				_SCRIPTS=""
 				;;
 
 			live-noconfig=*)
 				# Don't run requested scripts
-				SCRIPTS="$(ls /lib/live/config/*)"
-				NOCONFIGS="${PARAMETER#live-noconfig=}"
+				_SCRIPTS="$(ls /lib/live/config/*)"
+				LIVE_NOCONFIGS="${_PARAMETER#live-noconfig=}"
 				;;
 
 			# 001-hostname
 			live-config.hostname=*)
-				HOST="${PARAMETER#live-config.hostname=}"
+				LIVE_HOSTNAME="${_PARAMETER#live-config.hostname=}"
 				;;
 
 			# 002-user-setup
 			live-config.username=*)
-				USERNAME="${PARAMETER#live-config.username=}"
+				LIVE_USERNAME="${_PARAMETER#live-config.username=}"
 				;;
 
 			live-config.user-fullname=*)
-				USER_FULLNAME="${PARAMETER#live-config.user-fullname=}"
+				LIVE_USER_FULLNAME="${_PARAMETER#live-config.user-fullname=}"
 				;;
 
 			# 004-locales
 			live-config.locales=*)
-				LOCALES="${PARAMETER#live-config.locales=}"
+				LIVE_LOCALES="${_PARAMETER#live-config.locales=}"
 				;;
 
 			# 005-tzdata
 			live-config.timezone=*)
-				TIMEZONE="${PARAMETER#live-config.timezone=}"
+				LIVE_TIMEZONE="${_PARAMETER#live-config.timezone=}"
 				;;
 
 			live-config.utc=*)
-				UTC="${PARAMETER#live-config.utc=}"
+				LIVE_UTC="${_PARAMETER#live-config.utc=}"
 				;;
 
 			# 999-hook
 			live-config.hook=*)
-				HOOK="${PARAMETER#live-config.hook=}"
+				LIVE_HOOK="${_PARAMETER#live-config.hook=}"
 				;;
 
 			# Shortcuts
 			live-config.noroot)
 				# Disable root access, no matter what mechanism
-				SCRIPTS="${SCRIPTS:-$(ls /lib/live/config/*)}"
-				NOCONFIGS="${NOCONFIGS},sudo,policykit"
+				_SCRIPTS="${_SCRIPTS:-$(ls /lib/live/config/*)}"
+				LIVE_NOCONFIGS="${LIVE_NOCONFIGS},sudo,policykit"
 				;;
 
 			live-config.noxlogin)
 				# Disables graphical autologin, no matter what
 				# mechanism
-				SCRIPTS="${SCRIPTS:-$(ls /lib/live/config/*)}"
-				NOCONFIGS="${NOCONFIGS},gdm,gdm3,kdm,lxdm,nodm"
+				_SCRIPTS="${_SCRIPTS:-$(ls /lib/live/config/*)}"
+				LIVE_NOCONFIGS="${LIVE_NOCONFIGS},gdm,gdm3,kdm,lxdm,nodm"
 				;;
 		esac
 	done
 
 	# Include requested scripts
-	if [ -n "${CONFIGS}" ]
+	if [ -n "${LIVE_CONFIGS}" ]
 	then
-		for CONFIG in $(echo ${CONFIGS} | sed -e 's|,| |g')
+		for LIVE_CONFIG in $(echo ${LIVE_CONFIGS} | sed -e 's|,| |g')
 		do
-			SCRIPTS="${SCRIPTS} $(ls /lib/live/config/???-${CONFIG})"
+			_SCRIPTS="${_SCRIPTS} $(ls /lib/live/config/???-${LIVE_CONFIG})"
 		done
 	fi
 
 	# Exclude requested scripts
-	if [ -n "${NOCONFIGS}" ]
+	if [ -n "${LIVE_NOCONFIGS}" ]
 	then
-		for NOCONFIG in $(echo ${NOCONFIGS} | sed -e 's|,| |g')
+		for LIVE_NOCONFIG in $(echo ${LIVE_NOCONFIGS} | sed -e 's|,| |g')
 		do
-			SCRIPTS="$(echo ${SCRIPTS} | sed -e "s|$(ls /lib/live/config/???-${NOCONFIG})||")"
+			_SCRIPTS="$(echo ${_SCRIPTS} | sed -e "s|$(ls /lib/live/config/???-${LIVE_NOCONFIG})||")"
 		done
 	fi
 }
 
 Trap ()
 {
-	RETURN="${?}"
+	_RETURN="${?}"
 
-	case "${RETURN}" in
+	case "${_RETURN}" in
 		0)
 
 			;;
@@ -115,7 +115,7 @@ Trap ()
 			;;
 	esac
 
-	return ${RETURN}
+	return ${_RETURN}
 }
 
 Main ()
@@ -136,9 +136,9 @@ Main ()
 
 	if ls /etc/live/config.conf.d/* > /dev/null 2>&1
 	then
-		for FILE in /etc/live/config.conf.d/*
+		for _FILE in /etc/live/config.conf.d/*
 		do
-			. ${FILE}
+			. ${_FILE}
 		done
 	fi
 
@@ -152,7 +152,7 @@ Main ()
 	then
 		for FILE in /live/image/live/config.conf.d/*
 		do
-			. ${FILE}
+			. ${_FILE}
 		done
 	fi
 
@@ -160,9 +160,9 @@ Main ()
 	Cmdline
 
 	# Configuring system
-	for SCRIPT in ${SCRIPTS}
+	for _SCRIPT in ${_SCRIPTS}
 	do
-		. ${SCRIPT}
+		. ${_SCRIPT}
 	done
 
 	echo "."

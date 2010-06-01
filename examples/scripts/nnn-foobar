@@ -2,8 +2,9 @@
 
 Foo ()
 {
-	# Checking if package is installed
-	if [ ! -e /var/lib/dpkg/info/foo.list ]
+	# Checking if package is installed or already configured
+	if [ ! -e /var/lib/dpkg/info/foo.list ] || \
+	   [ -e /var/lib/live/config/foo ]
 	then
 		return
 	fi
@@ -20,6 +21,9 @@ Configure_foo ()
 
 	# Configuring foo
 	sleep 1
+
+	# Creating state file
+	touch /var/lib/live/config/foo
 }
 
 Foo

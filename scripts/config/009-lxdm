@@ -2,8 +2,9 @@
 
 Lxdm ()
 {
-	# Checking if package is installed
-	if [ ! -e /var/lib/dpkg/info/lxdm.list ]
+	# Checking if package is installed or already configured
+	if [ ! -e /var/lib/dpkg/info/lxdm.list ] || \
+	   [ -e /var/lib/live/config/lxdm ]
 	then
 		return
 	fi
@@ -17,10 +18,13 @@ Configure_lxdm ()
 {
 	if [ -e /etc/lxdm/lxdm.conf ]
 	then
-		sed -i -r -e "s|^#?autologin=.*\$|autologin=${USERNAME}|" \
+		sed -i -r -e "s|^#?autologin=.*\$|autologin=${LIVE_USERNAME}|" \
 			  -e "s|^#?session.*\$|session|" \
 		/etc/lxdm/lxdm.conf
 	fi
+
+	# Creating state file
+	touch /var/lib/live/config/lxdm
 }
 
 Lxdm

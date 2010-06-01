@@ -2,8 +2,9 @@
 
 Initramfs_tools ()
 {
-	# Checking if package is installed
-	if [ ! -e /var/lib/dpkg/info/initramfs-tools.list ]
+	# Checking if package is installed or already configured
+	if [ ! -e /var/lib/dpkg/info/initramfs-tools.list ] || \
+	   [ -e /var/lib/live/config/initramfs-tools ]
 	then
 		return
 	fi
@@ -15,7 +16,7 @@ Initramfs_tools ()
 
 Configure_update_initramfs ()
 {
-	# Checking if apckage is already configured
+	# Checking if apckage is already configured differently
 	if [ -e /usr/sbin/update-initramfs.debian ]
 	then
 		return
@@ -63,6 +64,9 @@ EOF
 fi
 
 	chmod 0755 /usr/sbin/update-initramfs
+
+	# Creating state file
+	touch /var/lib/live/config/initramfs-tools
 }
 
 Initramfs_tools

@@ -3,7 +3,8 @@
 Policykit ()
 {
 	# Checking if package is installed
-	if [ ! -e /var/lib/dpkg/info/policykit-1.list ]
+	if [ ! -e /var/lib/dpkg/info/policykit-1.list ] || \
+	   [ -e /var/lib/live/config/policykit ]
 	then
 		return
 	fi
@@ -34,12 +35,12 @@ cat > /etc/PolicyKit/PolicyKit.conf << EOF
 	</match>
 EOF
 
-	if [ -n "${USERNAME}" ]
+	if [ -n "${LIVE_USERNAME}" ]
 	then
 
 cat >> /etc/PolicyKit/PolicyKit.conf << EOF
 	<!-- don't ask password for user in live session -->
-	<match user="${USERNAME}">
+	<match user="${LIVE_USERNAME}">
 		<return result="yes"/>
 	</match>
 EOF
@@ -56,13 +57,15 @@ EOF
 cat > /var/lib/polkit-1/localauthority/10-vendor.d/10-live-cd.pkla << EOF
 # Policy to allow the livecd user to bypass policykit
 [Live CD user permissions]
-Identity=unix-user:${USERNAME}
+Identity=unix-user:${LIVE_USERNAME}
 Action=*
 ResultAny=no
 ResultInactive=no
 ResultActive=yes
 EOF
 
+	# Creating state file
+	touch /var/lib/live/config/policykit
 }
 
 Policykit

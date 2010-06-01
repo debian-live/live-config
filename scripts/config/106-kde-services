@@ -2,9 +2,10 @@
 
 Kde_services ()
 {
-	# Checking if package is installed
+	# Checking if package is installed or already configured
 	# we're only checking for KDE4 here (FIXME).
-	if [ ! -e /usr/share/kde4 ]
+	if [ ! -e /usr/share/kde4 ] || \
+	   [ -e /var/lib/live/config/kde-services ]
 	then
 		return
 	fi
@@ -27,6 +28,9 @@ Configure_kde_services ()
 	rm -f /usr/share/kde4/services/kded/freespacenotifier.desktop
 	rm -f /usr/share/kde4/services/plasma-runner-contacts.desktop  # starts akonadi
 	rm -f /usr/share/kde4/services/kded/notificationhelper.desktop
+
+	# Creating state file
+	touch /var/lib/live/config/kde-services
 }
 
 Kde_services

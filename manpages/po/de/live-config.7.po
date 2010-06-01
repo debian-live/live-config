@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config 2.0~a2\n"
-"POT-Creation-Date: 2010-05-30 15:46+0300\n"
+"POT-Creation-Date: 2010-06-02 22:14+0300\n"
 "PO-Revision-Date: 2010-05-24 09:59+0300\n"
 "Last-Translator: Daniel Baumann <daniel@debian.org>\n"
 "Language-Team: none\n"
@@ -24,8 +24,8 @@ msgstr "LIVE-CONFIG"
 #. type: TH
 #: en/live-config.7:1
 #, no-wrap
-msgid "2010-05-30"
-msgstr "30.05.2010"
+msgid "2010-06-02"
+msgstr "02.06.2010"
 
 #. type: TH
 #: en/live-config.7:1
@@ -76,11 +76,14 @@ msgstr "KONFIGURATION"
 msgid ""
 "B<live-config> can be configured through boot parameters or configuration "
 "files. If both mechanisms are used for a certain option, the boot parameters "
-"take precedence over the configuration files."
+"take precedence over the configuration files. When using persistency, B<live-"
+"config> scripts are only run once."
 msgstr ""
 "B<live-config> kann durch Boot Parameter oder Konfigurationsdateien "
 "konfiguriert werden. Werden beide Mechanismen für eine bestimmte Option "
-"benutzt, so gehen die Boot Parameter den Konfigurationsdateien vor."
+"benutzt, so gehen die Boot Parameter den Konfigurationsdateien vor. Wird "
+"Persistenz benutzt, so werden die B<live-config> Skripte nur einmal "
+"ausgeführt."
 
 #. type: SS
 #: en/live-config.7:12
@@ -393,8 +396,8 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:57
 #, no-wrap
-msgid "B<CONFIGS>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn>"
-msgstr "B<CONFIGS>=I<SKRIPT1>,I<SKRIPT2>, ... I<SKRIPTn>"
+msgid "B<LIVE_CONFIGS>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn>"
+msgstr "B<LIVE_CONFIGS>=I<SKRIPT1>,I<SKRIPT2>, ... I<SKRIPTn>"
 
 #. type: Plain text
 #: en/live-config.7:59
@@ -408,8 +411,8 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:59
 #, no-wrap
-msgid "B<NOCONFIGS>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn>"
-msgstr "B<NOCONFIGS>=I<SKRIPT1>,I<SKRIPT2>, ... I<SKRIPTn>"
+msgid "B<LIVE_NOCONFIGS>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn>"
+msgstr "B<LIVE_NOCONFIGS>=I<SKRIPT1>,I<SKRIPT2>, ... I<SKRIPTn>"
 
 #. type: Plain text
 #: en/live-config.7:61
@@ -423,8 +426,8 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:61
 #, no-wrap
-msgid "B<HOST>=I<HOSTNAME>"
-msgstr "B<HOST>=I<RECHNERNAME>"
+msgid "B<LIVE_HOSTNAME>=I<HOSTNAME>"
+msgstr "B<LIVE_HOSTNAME>=I<RECHNERNAME>"
 
 #. type: Plain text
 #: en/live-config.7:63
@@ -437,8 +440,8 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:63
 #, no-wrap
-msgid "B<USERNAME>=I<USERNAME>"
-msgstr "B<USERNAME>=I<BENUTZERNAME>"
+msgid "B<LIVE_USERNAME>=I<USERNAME>"
+msgstr "B<LIVE_USERNAME>=I<BENUTZERNAME>"
 
 #. type: Plain text
 #: en/live-config.7:65
@@ -451,8 +454,8 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:65
 #, no-wrap
-msgid "B<USER_FULLNAME>=\"I<USER FULLNAME\">"
-msgstr "B<USER_FULLNAME>=\"I<VOLLER BENUTZERNAME\">"
+msgid "B<LIVE_USER_FULLNAME>=\"I<USER FULLNAME\">"
+msgstr "B<LIVE_USER_FULLNAME>=\"I<VOLLER BENUTZERNAME\">"
 
 #. type: Plain text
 #: en/live-config.7:67
@@ -466,8 +469,8 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:67
 #, no-wrap
-msgid "B<LOCALES>=I<LOCALE>"
-msgstr "B<LOCALES>=I<GEBIETSSCHEMA>"
+msgid "B<LIVE_LOCALES>=I<LOCALE>"
+msgstr "B<LIVE_LOCALES>=I<GEBIETSSCHEMA>"
 
 #. type: Plain text
 #: en/live-config.7:69
@@ -479,8 +482,8 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:69
 #, no-wrap
-msgid "B<TIMEZONE>=I<TIMEZONE>"
-msgstr "B<TIMEZONE>=I<ZEITZONE>"
+msgid "B<LIVE_TIMEZONE>=I<TIMEZONE>"
+msgstr "B<LIVE_TIMEZONE>=I<ZEITZONE>"
 
 #. type: Plain text
 #: en/live-config.7:71
@@ -492,8 +495,8 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:71
 #, no-wrap
-msgid "B<UTC>=B<yes>|no"
-msgstr "B<UTC>=B<yes>|no"
+msgid "B<LIVE_UTC>=B<yes>|no"
+msgstr "B<LIVE_UTC>=B<yes>|no"
 
 #. type: Plain text
 #: en/live-config.7:73
@@ -503,8 +506,8 @@ msgstr "Diese Variable enspricht dem 'B<live-config.utc>=B<yes>|no' Parameter."
 #. type: IP
 #: en/live-config.7:73
 #, no-wrap
-msgid "B<HOOK>=I<URL1>|I<URL2>| ... |I<URLn>"
-msgstr ""
+msgid "B<LIVE_HOOK>=I<URL1>|I<URL2>| ... |I<URLn>"
+msgstr "B<LIVE_HOOK>=I<URL1>|I<URL2>| ... |I<URLn>"
 
 #. type: Plain text
 #: en/live-config.7:75
@@ -841,30 +844,36 @@ msgstr "B</lib/live/config.sh>"
 msgid "B</lib/live/config/>"
 msgstr "B</lib/live/config/>"
 
+#. type: IP
+#: en/live-config.7:135
+#, no-wrap
+msgid "B</var/lib/live/config/>"
+msgstr "B</var/lib/live/config/>"
+
 #. type: SH
-#: en/live-config.7:136
+#: en/live-config.7:137
 #, no-wrap
 msgid "SEE ALSO"
 msgstr "SIEHE AUCH"
 
 #. type: Plain text
-#: en/live-config.7:138
+#: en/live-config.7:139
 msgid "I<live-boot>(7)"
 msgstr "I<live-boot>(7)"
 
 #. type: Plain text
-#: en/live-config.7:140
+#: en/live-config.7:141
 msgid "I<live-helper>(7)"
 msgstr "I<live-helper>(7)"
 
 #. type: SH
-#: en/live-config.7:141
+#: en/live-config.7:142
 #, no-wrap
 msgid "HOMEPAGE"
 msgstr "HOMEPAGE"
 
 #. type: Plain text
-#: en/live-config.7:143
+#: en/live-config.7:144
 msgid ""
 "More information about live-config and the Debian Live project can be found "
 "on the homepage at E<lt>I<http://live.debian.net/>E<gt> and in the manual at "
@@ -875,13 +884,13 @@ msgstr ""
 "unter E<lt>I<http://live.debian.net/manual/>E<gt> gefunden werden."
 
 #. type: SH
-#: en/live-config.7:144
+#: en/live-config.7:145
 #, no-wrap
 msgid "BUGS"
 msgstr "FEHLER"
 
 #. type: Plain text
-#: en/live-config.7:146
+#: en/live-config.7:147
 msgid ""
 "Bugs can be reported by submitting a bugreport for the live-config package "
 "in the Debian Bug Tracking System at E<lt>I<http://bugs.debian.org/>E<gt> or "
@@ -895,13 +904,13 @@ msgstr ""
 "werden."
 
 #. type: SH
-#: en/live-config.7:147
+#: en/live-config.7:148
 #, no-wrap
 msgid "AUTHOR"
 msgstr "AUTOR"
 
 #. type: Plain text
-#: en/live-config.7:148
+#: en/live-config.7:149
 msgid ""
 "live-config was written by Daniel Baumann E<lt>I<daniel@debian.org>E<gt> for "
 "the Debian project."

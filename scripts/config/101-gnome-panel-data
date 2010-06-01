@@ -2,8 +2,9 @@
 
 Gnome_panel_data ()
 {
-	# Checking if package is installed
-	if [ ! -e /var/lib/dpkg/info/gnome-panel-data.list ]
+	# Checking if package is installed or already configured
+	if [ ! -e /var/lib/dpkg/info/gnome-panel-data.list ] || \
+	   [ -e /var/lib/live/config/gnome-panel-data ]
 	then
 		return
 	fi
@@ -15,7 +16,10 @@ Gnome_panel_data ()
 
 Configure_gnome_panel_data ()
 {
-	sudo -u "${USERNAME}" gconftool-2 -s -t bool /apps/panel/global/disable_lock_screen true
+	sudo -u "${LIVE_USERNAME}" gconftool-2 -s -t bool /apps/panel/global/disable_lock_screen true
+
+	# Creating state file
+	touch /var/lib/live/config/gnome-panel-data
 }
 
 Gnome_panel_data

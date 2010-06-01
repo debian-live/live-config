@@ -3,7 +3,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 30.05.2010 2.0~a3 "Debian Live Projekt"
+.TH LIVE\-CONFIG 7 02.06.2010 2.0~a3 "Debian Live Projekt"
 
 .SH NAME
 \fBlive\-config\fP \- System Konfiguration Skripte
@@ -15,7 +15,9 @@ Startvorganges (late userspace) konfigurieren.
 .SH KONFIGURATION
 \fBlive\-config\fP kann durch Boot Parameter oder Konfigurationsdateien
 konfiguriert werden. Werden beide Mechanismen für eine bestimmte Option
-benutzt, so gehen die Boot Parameter den Konfigurationsdateien vor.
+benutzt, so gehen die Boot Parameter den Konfigurationsdateien vor. Wird
+Persistenz benutzt, so werden die \fBlive\-config\fP Skripte nur einmal
+ausgeführt.
 
 .SS "Boot Parameter (Skripte)"
 \fBlive\-config\fP ist nur aktiviert, wenn 'boot=live' als Boot Parameter
@@ -65,10 +67,11 @@ Ermöglicht die Zeitzone des Systems einzustellen, zum Beispiel
 Ermöglicht zu bestimmen, ob das System davon ausgehen soll, dass die
 Hardwareuhr auf UTC gestellt ist oder nicht. Der Standard ist 'yes'.
 .IP "\fBlive\-config.hook\fP=\fIURL1\fP|\fIURL2\fP| ...|\fIURLn\fP" 4
-Allows to fetch and execute one or more arbitrary files. Note that the URLs
-must be fetchable by wget, and that the files needs their dependencies, if
-any, already installed, e.g. if a python script should be executed the
-system needs python installed.
+Ermöglicht eine oder mehrere beliebige Dateien herunterzuladen und
+auszuführen. Die URLs müssen durch wget aufösbar sein und es müssen alle
+Abhängigkeiten, die für das Ausführen der Dateien notwendig sind, bereits
+installiert sein, zum Beispiel muss für ein Python Skript bereits Python auf
+dem System installiert sein.
 
 .SS "Boot Parameter (Abkürzungen)"
 \fBlive\-config\fP stellt Abkürzungen für einige häufige verwendete
@@ -104,30 +107,30 @@ Namensschema zu verwenden (wobei 'vendor' oder 'project' mit dem
 eigentlichen Namen ersetzt wird, resultierend in einem Dateinamen wie
 \&'debian\-eeepc.conf').
 
-.IP "\fBCONFIGS\fP=\fISKRIPT1\fP,\fISKRIPT2\fP, ... \fISKRIPTn\fP" 4
+.IP "\fBLIVE_CONFIGS\fP=\fISKRIPT1\fP,\fISKRIPT2\fP, ... \fISKRIPTn\fP" 4
 Diese Variable enspricht dem '\fBlive\-config\fP=\fISKRIPT1\fP,\fISKRIPT2\fP,
 \&... \fISKRIPTn\fP' Parameter.
-.IP "\fBNOCONFIGS\fP=\fISKRIPT1\fP,\fISKRIPT2\fP, ... \fISKRIPTn\fP" 4
+.IP "\fBLIVE_NOCONFIGS\fP=\fISKRIPT1\fP,\fISKRIPT2\fP, ... \fISKRIPTn\fP" 4
 Diese Variable enspricht dem '\fBlive\-noconfig\fP=\fISKRIPT1\fP,\fISKRIPT2\fP,
 \&... \fISKRIPTn\fP' Parameter.
-.IP \fBHOST\fP=\fIRECHNERNAME\fP 4
+.IP \fBLIVE_HOSTNAME\fP=\fIRECHNERNAME\fP 4
 Diese Variable enspricht dem '\fBlive\-config.hostname\fP=\fIRECHNERNAME\fP'
 Parameter.
-.IP \fBUSERNAME\fP=\fIBENUTZERNAME\fP 4
+.IP \fBLIVE_USERNAME\fP=\fIBENUTZERNAME\fP 4
 Diese Variable enspricht dem '\fBlive\-config.username\fP=\fIBENUTZERNAME\fP'
 Parameter.
-.IP "\fBUSER_FULLNAME\fP=\(dq\fIVOLLER BENUTZERNAME\(dq\fP" 4
+.IP "\fBLIVE_USER_FULLNAME\fP=\(dq\fIVOLLER BENUTZERNAME\(dq\fP" 4
 Diese Variable enspricht dem '\fBlive\-config.user\-fullname\fP="\fIVOLLER
 BENUTZERNAME\fP"' Parameter.
-.IP \fBLOCALES\fP=\fIGEBIETSSCHEMA\fP 4
+.IP \fBLIVE_LOCALES\fP=\fIGEBIETSSCHEMA\fP 4
 Diese Variable enspricht dem '\fBlive\-config.locales\fP=\fIGEBIETSSCHEMA\fP'
 Parameter.
-.IP \fBTIMEZONE\fP=\fIZEITZONE\fP 4
+.IP \fBLIVE_TIMEZONE\fP=\fIZEITZONE\fP 4
 Diese Variable enspricht dem '\fBlive\-config.timezone\fP=\fIZEITZONE\fP'
 Parameter.
-.IP \fBUTC\fP=\fByes\fP|no 4
+.IP \fBLIVE_UTC\fP=\fByes\fP|no 4
 Diese Variable enspricht dem '\fBlive\-config.utc\fP=\fByes\fP|no' Parameter.
-.IP "\fBHOOK\fP=\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
+.IP "\fBLIVE_HOOK\fP=\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
 Diese Variable enspricht dem '\fBlive\-config.hook\fP=\fIURL1\fP|\fIURL2\fP|
 \&... |\fIURLn\fP' Parameter.
 
@@ -193,6 +196,7 @@ einem HTTP/FTP Server auszuführen.
 .IP \fBlive/config.conf.d/\fP 4
 .IP \fB/lib/live/config.sh\fP 4
 .IP \fB/lib/live/config/\fP 4
+.IP \fB/var/lib/live/config/\fP 4
 
 .SH "SIEHE AUCH"
 \fIlive\-boot\fP(7)
