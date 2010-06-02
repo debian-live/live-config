@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config VERSION\n"
-"POT-Creation-Date: 2010-06-02 22:14+0300\n"
+"POT-Creation-Date: 2010-06-02 22:18+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,7 +30,7 @@ msgstr ""
 #. type: TH
 #: en/live-config.7:1
 #, no-wrap
-msgid "2.0~a3"
+msgid "2.0~a4"
 msgstr ""
 
 #. type: TH

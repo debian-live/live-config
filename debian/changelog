@@ -1,3 +1,20 @@
+live-config (2.0~a4-1) unstable; urgency=low
+
+  * Adding shortcut parameter to disable automatic graphical login, no
+    matter which display manager would be used.
+  * Adding quotes in manpage for live-config.user-fullname.
+  * Documenting usable variables in configuration files in the manpage.
+  * Updating manpage to reflect that multiple hooks are supported at the
+    same time.
+  * Correcting typo in configuration files section of manpage.
+  * Running checkbashisms with -f and -x in Makefile.
+  * Correcting outdated check on /etc/init.d/live-config-sysvinit in
+    hook config script.
+  * Adding checks to ensure that scripts are not re-run with
+    persistency.
+
+ -- Daniel Baumann <daniel@debian.org>  Wed, 02 Jun 2010 22:19:18 +0200
+
 live-config (2.0~a3-1) unstable; urgency=low
 
   * Removing fixme note about configuration filename.
