@@ -2,8 +2,9 @@
 
 User_setup ()
 {
-	# Checking if package is installed
-	if [ ! -e /var/lib/dpkg/info/user-setup.list ]
+	# Checking if package is installed or already configured
+	if [ ! -e /var/lib/dpkg/info/user-setup.list ] || \
+	   [ -e /var/lib/live/config/user-setup ]
 	then
 		return
 	fi
@@ -15,8 +16,8 @@ User_setup ()
 
 Configure_user_setup ()
 {
-	# Checking if if package is already configured
-	if grep -q "^${USERNAME}" /etc/passwd
+	# Checking if if package is already configured differently
+	if grep -q "^${LIVE_USERNAME}" /etc/passwd
 	then
 		return
 	fi
@@ -24,14 +25,14 @@ Configure_user_setup ()
 	# Default password is: live
 	# passwords can be generated with 'echo "live" | mkpasswd -s',
 	# a blank password is 'U6aMy0wojraho'.
-	PASSWORD="8Ab05sVQ4LLps"
+	_PASSWORD="8Ab05sVQ4LLps"
 
 cat > /tmp/debconf.live << EOF
 user-setup passwd/make-user boolean true
 user-setup passwd/root-password-crypted string *
-user-setup passwd/user-password-crypted string ${PASSWORD}
-user-setup passwd/user-fullname string ${USER_FULLNAME}
-user-setup passwd/username string ${USERNAME}
+user-setup passwd/user-password-crypted string ${_PASSWORD}
+user-setup passwd/user-fullname string ${LIVE_USER_FULLNAME}
+user-setup passwd/username string ${LIVE_USERNAME}
 user-setup passwd/user-uid string 999
 EOF
 
@@ -46,6 +47,9 @@ EOF
 	/usr/lib/user-setup/user-setup-apply 2>&1 \
 	| grep -v "Shadow passwords are now on"
 	set -e
+
+	# Creating state file
+	touch /var/lib/live/config/user-setup
 }
 
 User_setup

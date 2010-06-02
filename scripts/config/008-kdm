@@ -2,8 +2,9 @@
 
 Kdm ()
 {
-	# Checking if package is installed
-	if [ ! -e /var/lib/dpkg/info/kdm.list ]
+	# Checking if package is installed or already configured
+	if [ ! -e /var/lib/dpkg/info/kdm.list ] || \
+	   [ -e /var/lib/live/config/kdm ]
 	then
 		return
 	fi
@@ -22,13 +23,13 @@ Configure_kdm ()
 		# autologin
 		sed -i -r -e "s|^#?AutoLoginEnable=.*\$|AutoLoginEnable=true|" \
 			  -e "s|^#?AutoLoginAgain=.*\$|AutoLoginAgain=true|" \
-			  -e "s|^#?AutoLoginUser=.*\$|AutoLoginUser=${USERNAME}|" \
+			  -e "s|^#?AutoLoginUser=.*\$|AutoLoginUser=${LIVE_USERNAME}|" \
 		/etc/kde4/kdm/kdmrc
 
 		# language
-		if [ -n "${LANGUAGE}" ]
+		if [ -n "${_LANGUAGE}" ]
 		then
-			sed -i -r -e "s|^#?Language=.*\$|Language=${LANGUAGE}|" \
+			sed -i -r -e "s|^#?Language=.*\$|Language=${_LANGUAGE}|" \
 				/etc/kde4/kdm/kdmrc
 		fi
 	elif [ -e /etc/kde3/kdm/kdmrc ]
@@ -38,16 +39,19 @@ Configure_kdm ()
 		# autologin
 		sed -i -r -e "s|^#?AutoLoginEnable=.*\$|AutoLoginEnable=true|" \
 			  -e "s|^#?AutoLoginAgain=.*\$|AutoLoginAgain=true|" \
-			  -e "s|^#?AutoLoginUser=.*\$|AutoLoginUser=${USERNAME}|" \
+			  -e "s|^#?AutoLoginUser=.*\$|AutoLoginUser=${LIVE_USERNAME}|" \
 		/etc/kde3/kdm/kdmrc
 
 		# language
-		if [ -n "${LANGUAGE}" ]
+		if [ -n "${_LANGUAGE}" ]
 		then
-			sed -i -r -e "s|^#?Language=.*\$|Language=${LANGUAGE}|" \
+			sed -i -r -e "s|^#?Language=.*\$|Language=${_LANGUAGE}|" \
 				/etc/kde3/kdm/kdmrc
 		fi
 	fi
+
+	# Creating state file
+	touch /var/lib/live/config/kdm
 }
 
 Kdm

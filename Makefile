@@ -25,7 +25,7 @@ test:
 	then \
 		for SCRIPT in $(SCRIPTS); \
 		do \
-			checkbashisms $${SCRIPT}; \
+			checkbashisms -f -x $${SCRIPT}; \
 			echo -n "."; \
 		done; \
 	else \
@@ -41,6 +41,7 @@ install:
 	# Installing scripts
 	mkdir -p $(DESTDIR)/lib/live
 	cp -r scripts/config.sh scripts/config $(DESTDIR)/lib/live
+	mkdir -p $(DESTDIR)/var/lib/live/config
 
 	# Installing docs
 	mkdir -p $(DESTDIR)/usr/share/doc/live-config
@@ -66,6 +67,8 @@ uninstall:
 	# Uninstalling scripts
 	rm -rf $(DESTDIR)/lib/live/config.sh $(DESTDIR)/lib/live/config
 	rmdir --ignore-fail-on-non-empty $(DESTDIR)/lib/live || true
+	rmdir --ignore-fail-on-non-empty $(DESTDIR)/var/lib/live/config || true
+	rmdir --ignore-fail-on-non-empty $(DESTDIR)/var/lib/live || true
 
 	# Uninstalling docs
 	rm -rf $(DESTDIR)/usr/share/doc/live-config

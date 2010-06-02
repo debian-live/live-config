@@ -3,7 +3,8 @@
 Sslcert ()
 {
 	# Checking if package is installed
-	if [ ! -e /var/lib/dpkg/info/sslcert.list ]
+	if [ ! -e /var/lib/dpkg/info/sslcert.list ] || \
+	   [ -e /var/lib/live/config/sslcert ]
 	then
 		return
 	fi
@@ -16,6 +17,9 @@ Sslcert ()
 Configure_sslcert ()
 {
 	make-ssl-cert generate-default-snakeoil --force-overwrite
+
+	# Creating state file
+	touch /var/lib/live/config/sslcert
 }
 
 Sslcert

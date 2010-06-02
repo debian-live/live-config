@@ -2,8 +2,9 @@
 
 Hostname ()
 {
-	# Checking if package is installed
-	if [ -z "${HOST}" ]
+	# Checking if package is installed or already configured
+	if [ -z "${LIVE_HOSTNAME}" ] || \
+	   [ -e /var/lib/live/config/hostname ]
 	then
 		return
 	fi
@@ -18,9 +19,9 @@ Configure_hostname ()
 	# Change hostname only if it is not set
 	if [ ! -e /etc/hostname ] || grep -qs localhost\.localdomain /etc/hostname
 	then
-		echo "${HOST}" > /etc/hostname
+		echo "${LIVE_HOSTNAME}" > /etc/hostname
 	else
-		HOST="$(cat /etc/hostname)"
+		LIVE_HOSTNAME="$(cat /etc/hostname)"
 	fi
 
 	# Create /etc/hosts only if it is not present or empty
@@ -29,7 +30,7 @@ Configure_hostname ()
 
 cat > /etc/hosts << EOF
 127.0.0.1 localhost
-127.0.1.1 ${HOST}
+127.0.1.1 ${LIVE_HOSTNAME}
 
 # The following lines are desirable for IPv6 capable hosts
 ::1     ip6-localhost ip6-loopback
@@ -42,7 +43,10 @@ EOF
 
 	fi
 
-	hostname "${HOST}"
+	hostname "${LIVE_HOSTNAME}"
+
+	# Creating state file
+	touch /var/lib/live/config/hostname
 }
 
 Hostname

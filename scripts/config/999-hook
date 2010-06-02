@@ -2,7 +2,7 @@
 
 Hook ()
 {
-	if [ -z "${HOOK}" ]
+	if [ -z "${LIVE_HOOK}" ]
 	then
 		return
 	fi
@@ -14,21 +14,18 @@ Hook ()
 
 Process_hook ()
 {
-	HOOKS="$(echo ${HOOK} | sed -e 's/|/ /g')"
-
-	for HOOK in ${HOOKS}
+	for _HOOK in $(echo ${LIVE_HOOK} | sed -e 's/|/ /g')
 	do
-		TMPFILE="$(mktemp -t live-config.XXXXXXXX)"
+		_TMPFILE="$(mktemp -t live-config.XXXXXXXX)"
 
-		if $(echo "${HOOK}" | grep file:\/\/)
+		if $(echo "${_HOOK}" | grep file:\/\/)
 		then
 			# local file
-			HOOK="$(echo ${HOOK} | sed 's|file\://||')"
-			cp "${HOOK}" "${TMPFILE}"
+			cp $(echo ${_HOOK} | sed 's|file\://||') "${_TMPFILE}"
 		else
 			# remote file
 
-			if [ -z "${NETWORK}" ] && [ -e /etc/init.d/live-config-sysvinit ]
+			if [ -z "${_NETWORK}" ] && [ -e /etc/init.d/live-config ]
 			then
 				/etc/init.d/mountkernfs.sh start > /dev/null 2>&1
 				/etc/init.d/mountdevsubfs.sh start > /dev/null 2>&1
@@ -36,15 +33,15 @@ Process_hook ()
 				/etc/init.d/ifupdown start > /dev/null 2>&1
 				/etc/init.d/networking start > /dev/null 2>&1
 
-				NETWORK="true"
+				_NETWORK="true"
 			fi
 
-			wget --quiet "${HOOK}" -O "${TMPFILE}"
+			wget --quiet "${_HOOK}" -O "${_TMPFILE}"
 		fi
 
-		chmod 0755 "${TMPFILE}"
-		./"${TMPFILE}"
-		rm -f "${TMPFILE}"
+		chmod 0755 "${_TMPFILE}"
+		./"${_TMPFILE}"
+		rm -f "${_TMPFILE}"
 	done
 }
 

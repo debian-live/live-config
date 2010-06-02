@@ -5,7 +5,11 @@ Module_init_tools ()
 	# Checking if package is installed
 	case "$(dpkg --print-architecture)" in
 		powerpc|ppc64)
-
+			# Checking if package is already configured
+			if [ -e /var/lib/live/config/module-init-tools ]
+			then
+				return
+			fi
 			;;
 
 		*)
@@ -20,7 +24,7 @@ Module_init_tools ()
 
 Configure_module_init_tools ()
 {
-	# Checking if apckage is already configured
+	# Checking if apckage is already configured differently
 	if grep -qs "snd_powermac" /etc/modules
 	then
 		return
@@ -28,6 +32,9 @@ Configure_module_init_tools ()
 
 	# Preconfiguring /etc/modules
 	echo "snd_powermac" >> /etc/modules
+
+	# Creating state file
+	touch /var/lib/live/config/module-init-tools
 }
 
 Module_init_tools

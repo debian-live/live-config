@@ -14,6 +14,7 @@ we continue to release pre-releases until:
 
 2. Todo items
 
+  * allow some scripts (most prominently locales) to be run even in persistent mode.
   * use build-time distribution detection, remove dead code from build.
   * use verbose/quiet/debug/interactive modes for scripts.
   * use logfile.

@@ -2,8 +2,9 @@
 
 Tzdata ()
 {
-	# Checking if package is installed
-	if [ ! -e /var/lib/dpkg/info/tzdata.list ]
+	# Checking if package is installed or already configured
+	if [ ! -e /var/lib/dpkg/info/tzdata.list ] || \
+	   [ -e /var/lib/live/config/tzdata ]
 	then
 		return
 	fi
@@ -15,17 +16,17 @@ Tzdata ()
 
 Configure_tzdata ()
 {
-	if [ -n "${TIMEZONE}" ]
+	if [ -n "${LIVE_TIMEZONE}" ]
 	then
-		AREA="$(echo ${TIMEZONE} | cut -f1 -d '/')"
-		ZONE="$(echo ${TIMEZONE} | cut -f2 -d '/')"
+		_AREA="$(echo ${LIVE_TIMEZONE} | cut -f1 -d '/')"
+		_ZONE="$(echo ${LIVE_TIMEZONE} | cut -f2 -d '/')"
 
 debconf-communicate -fnoninteractive live-config > /dev/null << EOF
-set tzdata/Areas ${AREA}
-set tzdata/Zones/${AREA} ${ZONE}
+set tzdata/Areas ${_AREA}
+set tzdata/Zones/${_AREA} ${_ZONE}
 EOF
 
-		cp -f /usr/share/zoneinfo/${AREA}/${ZONE} /etc/localtime
+		cp -f /usr/share/zoneinfo/${_AREA}/${_ZONE} /etc/localtime
 	else
 
 debconf-communicate -fnoninteractive live-config > /dev/null << EOF
@@ -36,10 +37,13 @@ EOF
 		cp -f /usr/share/zoneinfo/UTC /etc/localtime
 	fi
 
-	if [ -n "${UTC}" ]
+	if [ -n "${LIVE_UTC}" ]
 	then
-		sed -i -e "s|UTC=.*|UTC=${UTC}|" /etc/default/rcS
+		sed -i -e "s|UTC=.*|UTC=${LIVE_UTC}|" /etc/default/rcS
 	fi
+
+	# Creating state file
+	touch /var/lib/live/config/tzdata
 }
 
 Tzdata

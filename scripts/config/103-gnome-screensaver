@@ -2,8 +2,9 @@
 
 Gnome_screensaver ()
 {
-	# Checking if package is installed
-	if [ ! -e /var/lib/dpkg/info/gnome-screensaver.list ]
+	# Checking if package is installed or already configured
+	if [ ! -e /var/lib/dpkg/info/gnome-screensaver.list ] || \
+	   [ -e /var/lib/live/config/gnome-screensaver ]
 	then
 		return
 	fi
@@ -16,7 +17,10 @@ Gnome_screensaver ()
 Configure_gnome_screensaver ()
 {
 	# Disabling to lock the screen when the screensaver goes active.
-	sudo -u "${USERNAME}" gconftool-2 -t bool -s /apps/gnome-screensaver/lock_enabled false
+	sudo -u "${LIVE_USERNAME}" gconftool-2 -t bool -s /apps/gnome-screensaver/lock_enabled false
+
+	# Creating state file
+	touch /var/lib/live/config/gnome-screensaver
 }
 
 Gnome_screensaver

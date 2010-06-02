@@ -3,7 +3,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 30.05.2010 2.0~a3 "Debian Live Projekt"
+.TH LIVE\-CONFIG 7 02.06.2010 2.0~a4 "Debian Live Projekt"
 
 .SH NAME
 \fBlive\-config\fP \- System Konfiguration Skripte
@@ -15,7 +15,9 @@ Startvorganges (late userspace) konfigurieren.
 .SH KONFIGURATION
 \fBlive\-config\fP kann durch Boot Parameter oder Konfigurationsdateien
 konfiguriert werden. Werden beide Mechanismen für eine bestimmte Option
-benutzt, so gehen die Boot Parameter den Konfigurationsdateien vor.
+benutzt, so gehen die Boot Parameter den Konfigurationsdateien vor. Wird
+Persistenz benutzt, so werden die \fBlive\-config\fP Skripte nur einmal
+ausgeführt.
 
 .SS "Boot Parameter (Skripte)"
 \fBlive\-config\fP ist nur aktiviert, wenn 'boot=live' als Boot Parameter
@@ -50,7 +52,7 @@ Ermöglicht den Rechnernamen des Systems zu wählen. Der Standardname ist
 .IP \fBlive\-config.username\fP=\fIBENUTZERNAME\fP 4
 Ermöglicht den Namen des Benutzers zu wählen, welcher für den automatischen
 Login angelegt wird. Der Standardname ist 'user'.
-.IP \fBlive\-config.user\-fullname\fP=\fIVOLLER_BENUTZERNAME\fP 4
+.IP "\fBlive\-config.user\-fullname\fP=\(dq\fIVOLLER BENUTZERNAME\fP\(dq" 4
 Ermöglicht den vollen Name für den Benutzer zu wählen, welcher für den
 automatischen Login angelegt wird. Der Standard ist 'Debian Live user'.
 .IP \fBlive\-config.locales\fP=\fIGEBIETSSCHEMA\fP 4
@@ -64,11 +66,12 @@ Ermöglicht die Zeitzone des Systems einzustellen, zum Beispiel
 .IP \fBlive\-config.utc\fP=\fByes\fP|no 4
 Ermöglicht zu bestimmen, ob das System davon ausgehen soll, dass die
 Hardwareuhr auf UTC gestellt ist oder nicht. Der Standard ist 'yes'.
-.IP \fBlive\-config.hook\fP=\fIURL\fP 4
-Ermöglicht eine beliebige Datei herunterzuladen und auszuführen. Die URL
-muss durch wget aufösbar sein muss und alle Abhängigkeiten, die für das
-Ausführen der Datei notwendig sind, müssen installiert sind, zum Beispiel
-muss für ein Python Skript bereits Python auf dem System installiert sein.
+.IP "\fBlive\-config.hook\fP=\fIURL1\fP|\fIURL2\fP| ...|\fIURLn\fP" 4
+Ermöglicht eine oder mehrere beliebige Dateien herunterzuladen und
+auszuführen. Die URLs müssen durch wget aufösbar sein und es müssen alle
+Abhängigkeiten, die für das Ausführen der Dateien notwendig sind, bereits
+installiert sein, zum Beispiel muss für ein Python Skript bereits Python auf
+dem System installiert sein.
 
 .SS "Boot Parameter (Abkürzungen)"
 \fBlive\-config\fP stellt Abkürzungen für einige häufige verwendete
@@ -79,15 +82,61 @@ einfache Benutzbarkeit.
 .IP \fBlive\-config.noroot\fP 4
 Schaltet die sudo und policykit Skripte ab, ein Benutzer kann keine root
 Privilegien auf dem System mehr erlangen.
+.IP \fBlive\-config.noxlogin\fP 4
+Schaltet den automatischen Login via Display Manager ab, dies beeinflusst
+den automatischen tty Login.
 
 .SS Konfigurationsdateien
 \fBlive\-config\fP kann durch Konfigurationsdateien konfiguriert (nicht aber
-aktiviert) werden. Die Konfigurationsdatei kann entweder im Root Dateisystem
-selbst plaziert werden (/etc/live/config.conf, /etc/live/config.conf.d/)
-oder auf dem Live Medium (live/config.conf, live/config.conf.d/).
+aktiviert) werden. Abgesehen von Abkürzungen können alle Optionen die durch
+Boot Parameter konfiguriert werden, auch alternativ durch eine oder mehrere
+Dateien konfiguriert werden. Wenn Konfigurationsdateien benützt werden, so
+ist der 'boot=live' Parameter trotzdem noch notwendig um \fBlive\-config\fP zu
+aktivieren.
+.PP
+Die Konfigurationsdateien können entweder im Root Dateisystem selbst
+plaziert werden (/etc/live/config.conf, /etc/live/config.conf.d/) oder auf
+dem Live Medium (live/config.conf, live/config.conf.d/). Wenn beide Orte für
+eine bestimmte Option verwendet werden, geht die Konfigurationsdatei auf dem
+Live Medium dem der im Root Dateisystem enthaltenen vor.
+.PP
+Obwohl die Konfigurationsdateien welche in die conf.d Verzeichnisse abgelegt
+werden können keinen bestimmten Namen oder Endung brauchen, ist es aus
+Konsistenzgründen empfohlen, für diese 'vendor.conf' oder 'project.conf' als
+Namensschema zu verwenden (wobei 'vendor' oder 'project' mit dem
+eigentlichen Namen ersetzt wird, resultierend in einem Dateinamen wie
+\&'debian\-eeepc.conf').
+
+.IP "\fBLIVE_CONFIGS\fP=\fISKRIPT1\fP,\fISKRIPT2\fP, ... \fISKRIPTn\fP" 4
+Diese Variable enspricht dem '\fBlive\-config\fP=\fISKRIPT1\fP,\fISKRIPT2\fP,
+\&... \fISKRIPTn\fP' Parameter.
+.IP "\fBLIVE_NOCONFIGS\fP=\fISKRIPT1\fP,\fISKRIPT2\fP, ... \fISKRIPTn\fP" 4
+Diese Variable enspricht dem '\fBlive\-noconfig\fP=\fISKRIPT1\fP,\fISKRIPT2\fP,
+\&... \fISKRIPTn\fP' Parameter.
+.IP \fBLIVE_HOSTNAME\fP=\fIRECHNERNAME\fP 4
+Diese Variable enspricht dem '\fBlive\-config.hostname\fP=\fIRECHNERNAME\fP'
+Parameter.
+.IP \fBLIVE_USERNAME\fP=\fIBENUTZERNAME\fP 4
+Diese Variable enspricht dem '\fBlive\-config.username\fP=\fIBENUTZERNAME\fP'
+Parameter.
+.IP "\fBLIVE_USER_FULLNAME\fP=\(dq\fIVOLLER BENUTZERNAME\(dq\fP" 4
+Diese Variable enspricht dem '\fBlive\-config.user\-fullname\fP="\fIVOLLER
+BENUTZERNAME\fP"' Parameter.
+.IP \fBLIVE_LOCALES\fP=\fIGEBIETSSCHEMA\fP 4
+Diese Variable enspricht dem '\fBlive\-config.locales\fP=\fIGEBIETSSCHEMA\fP'
+Parameter.
+.IP \fBLIVE_TIMEZONE\fP=\fIZEITZONE\fP 4
+Diese Variable enspricht dem '\fBlive\-config.timezone\fP=\fIZEITZONE\fP'
+Parameter.
+.IP \fBLIVE_UTC\fP=\fByes\fP|no 4
+Diese Variable enspricht dem '\fBlive\-config.utc\fP=\fByes\fP|no' Parameter.
+.IP "\fBLIVE_HOOK\fP=\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
+Diese Variable enspricht dem '\fBlive\-config.hook\fP=\fIURL1\fP|\fIURL2\fP|
+\&... |\fIURLn\fP' Parameter.
 
 .SH SKRIPTE
 \fBlive\-config\fP enthält derzeit folgende Skripte in /lib/live/config.
+
 .IP \fBhostname\fP 4
 konfiguriert /etc/hostname und /etc/hosts.
 .IP \fBuser\-setup\fP 4
@@ -147,6 +196,7 @@ einem HTTP/FTP Server auszuführen.
 .IP \fBlive/config.conf.d/\fP 4
 .IP \fB/lib/live/config.sh\fP 4
 .IP \fB/lib/live/config/\fP 4
+.IP \fB/var/lib/live/config/\fP 4
 
 .SH "SIEHE AUCH"
 \fIlive\-boot\fP(7)
