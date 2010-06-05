@@ -18,9 +18,5 @@ we continue to release pre-releases until:
   * use build-time distribution detection, remove dead code from build.
   * use verbose/quiet/debug/interactive modes for scripts.
   * use logfile.
-  * write documentation:
-    - explain customization.
-    - explain precomupted configuration (requires dropping boot parameter and
-      having config.conf).
   * add upstart integration.
   * enable display managers only if they are the selected one.
