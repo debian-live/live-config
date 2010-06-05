@@ -142,6 +142,32 @@ Diese Variable enspricht dem '\fBlive\-config.utc\fP=\fByes\fP|no' Parameter.
 Diese Variable enspricht dem '\fBlive\-config.hook\fP=\fIURL1\fP|\fIURL2\fP|
 \&... |\fIURLn\fP' Parameter.
 
+.SH ANPASSUNG
+\fBlive\-config\fP kann sehr einfach angepasst werden für Downstream Projekte
+oder lokale Verwendung.
+
+.SS "Hinzufügen von neuen Konfigurationsskripten"
+Downstream Projekte können ihre Skripte in /lib/live/config ablegen und
+müssen nichts weiteres tun, die Skripte werden automatisch während des
+Startens ausgeführt.
+.PP
+Am Besten werden die Skripte in ein eigenes Debian Paket untergebracht. Ein
+Beispielpaket und \-skript befindet sich in
+/usr/share/doc/live\-config/examples.
+
+.SS "Entfernen von neuen Konfigurationsskripten"
+Es ist derzeit nicht möglich in einer vernünftigen Art und Weise Skripte zu
+entfernen ohne das ein lokal verändertes \fBlive\-config\fP Paket verwendet
+werden muss. Jedoch kann das selbe erreicht werden, indem bestimmte Skripte
+durch den live\-noconfig Mechanismus abgeschaltet werden, siehe oben. Um zu
+verhindern, dass die abzuschaltenden Skripte immer durch einen Boot
+Parameter angegeben werden müssen, kann eine Konfigurationsdatei verwendet
+werden, siehe oben.
+.PP
+Die Konfigurationsdateien für das Live System selber werden am Besten in
+einem eigenen Debian Paket untergebracht. Ein Beispielpaket und
+\-konfigurationsdatei befindet sich in /usr/share/doc/live\-config/examples.
+
 .SH SKRIPTE
 \fBlive\-config\fP enthält derzeit folgende Skripte in /lib/live/config.
 
