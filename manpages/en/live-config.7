@@ -52,7 +52,7 @@ Allows to change the keyboard layout. There is no default value set.
 Allows to change the keyboard variant. There is no default value set.
 .IP "\fBlive\-config.keyboard\-options\fR=\fIKEYBOARD_OPTIONS\fR" 4
 Allows to change the keyboard options. There are no default value set.
-.IP "\fBlive\-config.hook\fR=\fIURL1\fR|\fIURL2\fR| ... |\fIURLn\fR" 4
+.IP "\fBlive\-config.hooks\fR=\fIURL1\fR|\fIURL2\fR| ... |\fIURLn\fR" 4
 Allows to fetch and execute one or more arbitrary files. Note that the URLs must be fetchable by wget, and that the files needs their dependencies, if any, already installed, e.g. if a python script should be executed the system needs python installed.
 
 .SS Boot Parameters (shortcuts)
@@ -94,8 +94,8 @@ This variable equals the '\fBlive\-config.keyboard\-layout\fR=\fIKEYBOARD_LAYOUT
 This variable equals the '\fBlive\-config.keyboard\-variant\fR=\fIKEYBOARD_VARIANT\fR' parameter.
 .IP "\fBLIVE_KEYBOARD_OPTIONS\fR=\fIKEYBOARD_OPTIONS\fR" 4
 This variable equals the '\fBlive\-config.keyboard\-options\fR=\fIKEYBOARD_OPTIONS\fR' parameter.
-.IP "\fBLIVE_HOOK\fR=\fIURL1\fR|\fIURL2\fR| ... |\fIURLn\fR" 4
-This variable equals the '\fBlive\-config.hook\fR=\fIURL1\fR|\fIURL2\fR| ... |\fIURLn\fR' parameter.
+.IP "\fBLIVE_HOOKS\fR=\fIURL1\fR|\fIURL2\fR| ... |\fIURLn\fR" 4
+This variable equals the '\fBlive\-config.hooks\fR=\fIURL1\fR|\fIURL2\fR| ... |\fIURLn\fR' parameter.
 
 .SH CUSTOMIZATION
 \fBlive\-config\fR can be easily customized for downstream projects or local usage.
@@ -161,7 +161,7 @@ grant user privilegies through policykit.
 regenerating ssl snake\-oil certificates.
 .IP "\fBupdate\-notifier\fR" 4
 disables update\-notifier.
-.IP "\fBhook\fR" 4
+.IP "\fBhooks\fR" 4
 allows to run arbitrary commands from a script placed on the live media or an http/ftp server.
 
 .SH FILES

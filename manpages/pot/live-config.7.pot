@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config VERSION\n"
-"POT-Creation-Date: 2010-06-07 11:47+0300\n"
+"POT-Creation-Date: 2010-06-07 13:40+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -281,7 +281,7 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:55
 #, no-wrap
-msgid "B<live-config.hook>=I<URL1>|I<URL2>| ... |I<URLn>"
+msgid "B<live-config.hooks>=I<URL1>|I<URL2>| ... |I<URLn>"
 msgstr ""
 
 #. type: Plain text
@@ -521,14 +521,14 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:97
 #, no-wrap
-msgid "B<LIVE_HOOK>=I<URL1>|I<URL2>| ... |I<URLn>"
+msgid "B<LIVE_HOOKS>=I<URL1>|I<URL2>| ... |I<URLn>"
 msgstr ""
 
 #. type: Plain text
 #: en/live-config.7:99
 msgid ""
-"This variable equals the 'B<live-config.hook>=I<URL1>|I<URL2>| ... |I<URLn>' "
-"parameter."
+"This variable equals the 'B<live-config.hooks>=I<URL1>|I<URL2>| ... |"
+"I<URLn>' parameter."
 msgstr ""
 
 #. type: SH
@@ -871,7 +871,7 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:164
 #, no-wrap
-msgid "B<hook>"
+msgid "B<hooks>"
 msgstr ""
 
 #. type: Plain text

@@ -8,21 +8,21 @@
 # under certain conditions; see COPYING for details.
 
 
-Hook ()
+Hooks ()
 {
-	if [ -z "${LIVE_HOOK}" ]
+	if [ -z "${LIVE_HOOKS}" ]
 	then
 		return
 	fi
 
-	echo -n " hook"
+	echo -n " hooks"
 
-	Process_hook
+	Process_hooks
 }
 
-Process_hook ()
+Process_hooks ()
 {
-	for _HOOK in $(echo ${LIVE_HOOK} | sed -e 's/|/ /g')
+	for _HOOK in $(echo ${LIVE_HOOKS} | sed -e 's/|/ /g')
 	do
 		_TMPFILE="$(mktemp -t live-config.XXXXXXXX)"
 
@@ -53,4 +53,4 @@ Process_hook ()
 	done
 }
 
-Hook
+Hooks

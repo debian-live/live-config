@@ -98,9 +98,9 @@ Cmdline ()
 				LIVE_KEYBOARD_OPTIONS="${_PARAMETER#live-config.keyboard-options=}"
 				;;
 
-			# 999-hook
-			live-config.hook=*)
-				LIVE_HOOK="${_PARAMETER#live-config.hook=}"
+			# 999-hooks
+			live-config.hooks=*)
+				LIVE_HOOKS="${_PARAMETER#live-config.hooks=}"
 				;;
 
 			# Shortcuts
