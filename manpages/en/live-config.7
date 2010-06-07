@@ -23,44 +23,44 @@
 .IP "\fBlive\-config\fR" 4
 All scripts are run. This is what Debian Live images use by default.
 .IP "\fBlive\-config\fR=\fISCRIPT1\fR,\fISCRIPT2\fR, ... \fISCRIPTn\fR" 4
-Only the specified scripts are run. Note that the order matters, e.g. 'live\-config=sudo,user-setup' would not work since the user needs to be added before it can be configured for sudo. Look at the filenames of the scripts in /lib/live/config for their ordering number.
-.IP "\fBlive-noconfig\fR" 4
+Only the specified scripts are run. Note that the order matters, e.g. 'live\-config=sudo,user\-setup' would not work since the user needs to be added before it can be configured for sudo. Look at the filenames of the scripts in /lib/live/config for their ordering number.
+.IP "\fBlive\-noconfig\fR" 4
 No script is run. This is the same as not using any of 'live\-config' or 'live\-noconfig'.
-.IP "\fBlive-noconfig\fR=\fISCRIPT1\fR,\fISCRIPT2\fR, ... \fISCRIPTn\fR" 4
+.IP "\fBlive\-noconfig\fR=\fISCRIPT1\fR,\fISCRIPT2\fR, ... \fISCRIPTn\fR" 4
 All scripts are run, except the specified ones.
 
 .SS Boot Parameters (options)
 Some individual scripts can change their behaviour upon a boot parameter.
 
-.IP "\fBlive-config.hostname\fR=\fIHOSTNAME\fR" 4
+.IP "\fBlive\-config.hostname\fR=\fIHOSTNAME\fR" 4
 Allows to set the hostname of the system. The default is 'debian'.
-.IP "\fBlive-config.username\fR=\fIUSERNAME\fR" 4
+.IP "\fBlive\-config.username\fR=\fIUSERNAME\fR" 4
 Allows to set the username that gets created for autologin. The default is 'user'.
-.IP "\fBlive-config.user-fullname\fR=""\fIUSER FULLNAME\fR""" 4
+.IP "\fBlive\-config.user\-fullname\fR=""\fIUSER FULLNAME\fR""" 4
 Allows to set the fullname of the users that gets created for autologin. The default is 'Debian Live user'.
-.IP "\fBlive-config.locales\fR=\fILOCALE\fR" 4
+.IP "\fBlive\-config.locales\fR=\fILOCALE\fR" 4
 Allows to set the locale of the system, e.g. 'de_CH.UTF\-8'. The default is 'en_US.UTF\-8'. In case the selected locale is not already available on the system, it is automatically generated on the fly.
-.IP "\fBlive-config.timezone\fR=\fITIMEZONE\fR" 4
+.IP "\fBlive\-config.timezone\fR=\fITIMEZONE\fR" 4
 Allows to set the timezone of the system, e.g. 'Europe/Zurich'. The default is 'UTC'.
-.IP "\fBlive-config.utc\fR=\fByes\fR|no" 4
+.IP "\fBlive\-config.utc\fR=\fByes\fR|no" 4
 Allows to change if the system is assuming that the hardware clock is set to UTC or not. The default is 'yes'.
-.IP "\fBlive-config.keyboard\-model\fR=\fIKEYBOARD_MODEL\fR" 4
+.IP "\fBlive\-config.keyboard\-model\fR=\fIKEYBOARD_MODEL\fR" 4
 Allows to change the keyboard model. There is no default value set.
-.IP "\fBlive-config.keyboard\-layout\fR=\fIKEYBOARD_LAYOUT\fR" 4
+.IP "\fBlive\-config.keyboard\-layout\fR=\fIKEYBOARD_LAYOUT\fR" 4
 Allows to change the keyboard layout. There is no default value set.
-.IP "\fBlive-config.keyboard\-variant\fR=\fIKEYBOARD_VARIANT\fR" 4
+.IP "\fBlive\-config.keyboard\-variant\fR=\fIKEYBOARD_VARIANT\fR" 4
 Allows to change the keyboard variant. There is no default value set.
-.IP "\fBlive-config.keyboard\-options\fR=\fIKEYBOARD_OPTIONS\fR" 4
+.IP "\fBlive\-config.keyboard\-options\fR=\fIKEYBOARD_OPTIONS\fR" 4
 Allows to change the keyboard options. There are no default value set.
-.IP "\fBlive-config.hook\fR=\fIURL1\fR|\fIURL2\fR| ... |\fIURLn\fR" 4
+.IP "\fBlive\-config.hook\fR=\fIURL1\fR|\fIURL2\fR| ... |\fIURLn\fR" 4
 Allows to fetch and execute one or more arbitrary files. Note that the URLs must be fetchable by wget, and that the files needs their dependencies, if any, already installed, e.g. if a python script should be executed the system needs python installed.
 
 .SS Boot Parameters (shortcuts)
 For some common use cases where it would require to combine several individual parameters, \fBlive\-config\fR provides shortcuts. This allows both to have full granularity over all the options, as well keep things simple.
 
-.IP "\fBlive-config.noroot\fR" 4
+.IP "\fBlive\-config.noroot\fR" 4
 Disables the sudo and policykit, the user cannot gain root privileges on the system.
-.IP "\fBlive-config.noxlogin\fR" 4
+.IP "\fBlive\-config.noxlogin\fR" 4
 Disables the automatic login with any display manager, not affecting tty autologin.
 
 .SS Configuration Files
@@ -68,7 +68,7 @@ Disables the automatic login with any display manager, not affecting tty autolog
 .PP
 Configuration files can be placed either in the root filesystem itself (/etc/live/config.conf, /etc/live/config.conf.d/), or on the live media (live/config.conf, live/config.conf.d/). If both places are used for a certain option, the ones from the live media take precedence over the ones from the root filesystem.
 .PP
-Although the configuration files placed in the conf.d directories do not require a particular name or suffix, it's suggest for consistency to either use 'vendor.conf' or 'project.conf' as a naming scheme (whereas 'vendor' or 'project' is replaced with the actual name, resulting in a filename like 'debian-eeepc.conf').
+Although the configuration files placed in the conf.d directories do not require a particular name or suffix, it's suggest for consistency to either use 'vendor.conf' or 'project.conf' as a naming scheme (whereas 'vendor' or 'project' is replaced with the actual name, resulting in a filename like 'debian\-eeepc.conf').
 
 .IP "\fBLIVE_CONFIGS\fR=\fISCRIPT1\fR,\fISCRIPT2\fR, ... \fISCRIPTn\fR" 4
 This variable equals the '\fBlive\-config\fR=\fISCRIPT1\fR,\fISCRIPT2\fR, ... \fISCRIPTn\fR' parameter.
@@ -79,7 +79,7 @@ This variable equals the '\fBlive\-config.hostname\fR=\fIHOSTAME\fR' parameter.
 .IP "\fBLIVE_USERNAME\fR=\fIUSERNAME\fR" 4
 This variable equals the '\fBlive\-config.username\fR=\fIUSERNAME\fR' parameter.
 .IP "\fBLIVE_USER_FULLNAME\fR=""\fIUSER FULLNAME""\fR" 4
-This variable equals the '\fBlive\-config.user-fullname\fR="\fIUSER FULLNAME\fR"' parameter.
+This variable equals the '\fBlive\-config.user\-fullname\fR="\fIUSER FULLNAME\fR"' parameter.
 .IP "\fBLIVE_LOCALES\fR=\fILOCALE\fR" 4
 This variable equals the '\fBlive\-config.locales\fR=\fILOCALE\fR' parameter.
 .IP "\fBLIVE_TIMEZONE\fR=\fITIMEZONE\fR" 4
@@ -103,19 +103,19 @@ This variable equals the '\fBlive\-config.hook\fR=\fIURL1\fR|\fIURL2\fR| ... |\f
 .SS Adding new config scripts
 Downstream projects can put their scripts into /lib/live/config and don't need to do anything else, the scripts will be called automatically during boot.
 .PP
-The scripts are best put into an own debian package. A sample package containing an example script can be found in /usr/share/doc/live-config/examples.
+The scripts are best put into an own debian package. A sample package containing an example script can be found in /usr/share/doc/live\-config/examples.
 
 .SS Removing existing config scripts
 It's not really possible to remove scripts itself in a sane way yet without requiring to ship a locally modified \fBlive\-config\fR package. However, the same can be acchieved by disabling the respective scripts through the live\-noconfig mechanism, see above. To avoid to always need specifing disabled scripts through the boot parameter, a configuration file should be used, see above.
 .PP
-The configuration files for the live system itself are best put into an own debian package. A sample package containing an example configuration can be found in /usr/share/doc/live-config/examples.
+The configuration files for the live system itself are best put into an own debian package. A sample package containing an example configuration can be found in /usr/share/doc/live\-config/examples.
 
 .SH SCRIPTS
 \fBlive\-config\fR currently features the following scripts in /lib/live/config.
 
 .IP "\fBhostname\fR" 4
 configures /etc/hostname and /etc/hosts.
-.IP "\fBuser-setup\fR" 4
+.IP "\fBuser\-setup\fR" 4
 adds an live user account.
 .IP "\fBsudo\fR" 4
 grants sudo privileges to the live user.
@@ -133,34 +133,34 @@ configures autologin in kdm.
 configures autologin in lxdm.
 .IP "\fBnodm\fR" 4
 configures autologin in nodm.
-.IP "\fBconsole-common\fR, console-setup\fR (lenny), \fBkeyboard\-configuration\fR (squeeze and newer)" 4
+.IP "\fBconsole\-common\fR, console\-setup\fR (lenny), \fBkeyboard\-configuration\fR (squeeze and newer)" 4
 configures the keyboard.
 .IP "\fBapport\fR" 4
 enables apport.
-.IP "\fBgnome-panel-data\fR" 4
+.IP "\fBgnome\-panel\-data\fR" 4
 disables lock button for the screen.
-.IP "\fBgnome-power-manager\fR" 4
+.IP "\fBgnome\-power\-manager\fR" 4
 disables hibernation.
-.IP "\fBgnome-screensaver\fR" 4
+.IP "\fBgnome\-screensaver\fR" 4
 disables the screensaver locking the screen.
-.IP "\fBinitramfs-tools\fR" 4
-makes update-initramfs to also update the live media when using persistency.
+.IP "\fBinitramfs\-tools\fR" 4
+makes update\-initramfs to also update the live media when using persistency.
 .IP "\fBkaboom\fR" 4
 disables kde migration wizard (squeeze and newer).
-.IP "\fBkde-services\fR" 4
+.IP "\fBkde\-services\fR" 4
 disables some unwanted KDE services (squeeze and newer).
 .IP "\fBkpersonalizer\fR" 4
 disables kde configuration wizard (lenny).
-.IP "\fBlive-installer-launcher\fR" 4
-adds live-installer-launcher on users desktop.
-.IP "\fBmodule-init-tools\fR" 4
+.IP "\fBlive\-installer\-launcher\fR" 4
+adds live\-installer\-launcher on users desktop.
+.IP "\fBmodule\-init\-tools\fR" 4
 automatically load some modules on some architectures.
 .IP "\fBpolicykit\fR" 4
 grant user privilegies through policykit.
 .IP "\fBsslcert\fR" 4
-regenerating ssl snake-oil certificates.
-.IP "\fBupdate-notifier\fR" 4
-disables update-notifier.
+regenerating ssl snake\-oil certificates.
+.IP "\fBupdate\-notifier\fR" 4
+disables update\-notifier.
 .IP "\fBhook\fR" 4
 allows to run arbitrary commands from a script placed on the live media or an http/ftp server.
 
@@ -182,7 +182,7 @@ allows to run arbitrary commands from a script placed on the live media or an ht
 More information about live\-config and the Debian Live project can be found on the homepage at <\fIhttp://live.debian.net/\fR> and in the manual at <\fIhttp://live.debian.net/manual/\fR>.
 
 .SH BUGS
-Bugs can be reported by submitting a bugreport for the live\-config package in the Debian Bug Tracking System at <\fIhttp://bugs.debian.org/\fR> or by writing a mail to the Debian Live mailing list at <\fIdebian-live@lists.debian.org\fR>.
+Bugs can be reported by submitting a bugreport for the live\-config package in the Debian Bug Tracking System at <\fIhttp://bugs.debian.org/\fR> or by writing a mail to the Debian Live mailing list at <\fIdebian\-live@lists.debian.org\fR>.
 
 .SH AUTHOR
 live\-config was written by Daniel Baumann <\fIdaniel@debian.org\fR> for the Debian project.
