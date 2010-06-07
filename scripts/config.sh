@@ -110,6 +110,11 @@ Cmdline ()
 				LIVE_NOCONFIGS="${LIVE_NOCONFIGS},sudo,policykit"
 				;;
 
+			live-config.nottyautologin)
+				_SCRIPTS="${_SCRIPTS:-$(ls /lib/live/config/*)}"
+				LIVE_NOCONFIGS="${LIVE_NOCONFIGS},sysvinit"
+				;;
+
 			live-config.noxautologin)
 				# Disables graphical autologin, no matter what
 				# mechanism

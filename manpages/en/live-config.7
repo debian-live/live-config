@@ -60,6 +60,8 @@ For some common use cases where it would require to combine several individual p
 
 .IP "\fBlive\-config.noroot\fR" 4
 Disables the sudo and policykit, the user cannot gain root privileges on the system.
+.IP "\fBlive\-config.nottyautologin\fR" 4
+Disables the automatic login on the terminal, not affecting the graphical autologin.
 .IP "\fBlive\-config.noxautologin\fR" 4
 Disables the automatic login with any display manager, not affecting tty autologin.
 
@@ -135,6 +137,8 @@ configures autologin in lxdm.
 configures autologin in nodm.
 .IP "\fBconsole\-common\fR, console\-setup\fR (lenny), \fBkeyboard\-configuration\fR (squeeze and newer)" 4
 configures the keyboard.
+.IP "\fBsysvinit\fR" 4
+configures sysvinit.
 .IP "\fBapport\fR" 4
 enables apport.
 .IP "\fBgnome\-panel\-data\fR" 4

@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config VERSION\n"
-"POT-Creation-Date: 2010-06-07 13:47+0300\n"
+"POT-Creation-Date: 2010-06-07 15:36+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -323,24 +323,37 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:63
 #, no-wrap
-msgid "B<live-config.noxautologin>"
+msgid "B<live-config.nottyautologin>"
 msgstr ""
 
 #. type: Plain text
 #: en/live-config.7:65
+msgid ""
+"Disables the automatic login on the terminal, not affecting the graphical "
+"autologin."
+msgstr ""
+
+#. type: IP
+#: en/live-config.7:65
+#, no-wrap
+msgid "B<live-config.noxautologin>"
+msgstr ""
+
+#. type: Plain text
+#: en/live-config.7:67
 msgid ""
 "Disables the automatic login with any display manager, not affecting tty "
 "autologin."
 msgstr ""
 
 #. type: SS
-#: en/live-config.7:66
+#: en/live-config.7:68
 #, no-wrap
 msgid "Configuration Files"
 msgstr ""
 
 #. type: Plain text
-#: en/live-config.7:68
+#: en/live-config.7:70
 msgid ""
 "B<live-config> can be configured (but not activated) through configuration "
 "files. Everything but the shortcuts that can be configured with a boot "
@@ -350,7 +363,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/live-config.7:70
+#: en/live-config.7:72
 msgid ""
 "Configuration files can be placed either in the root filesystem itself (/etc/"
 "live/config.conf, /etc/live/config.conf.d/), or on the live media (live/"
@@ -360,7 +373,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/live-config.7:72
+#: en/live-config.7:74
 msgid ""
 "Although the configuration files placed in the conf.d directories do not "
 "require a particular name or suffix, it's suggest for consistency to either "
@@ -370,188 +383,188 @@ msgid ""
 msgstr ""
 
 #. type: IP
-#: en/live-config.7:73
+#: en/live-config.7:75
 #, no-wrap
 msgid "B<LIVE_CONFIGS>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn>"
 msgstr ""
 
 #. type: Plain text
-#: en/live-config.7:75
+#: en/live-config.7:77
 msgid ""
 "This variable equals the 'B<live-config>=I<SCRIPT1>,I<SCRIPT2>, ... "
 "I<SCRIPTn>' parameter."
 msgstr ""
 
 #. type: IP
-#: en/live-config.7:75
+#: en/live-config.7:77
 #, no-wrap
 msgid "B<LIVE_NOCONFIGS>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn>"
 msgstr ""
 
 #. type: Plain text
-#: en/live-config.7:77
+#: en/live-config.7:79
 msgid ""
 "This variable equals the 'B<live-noconfig>=I<SCRIPT1>,I<SCRIPT2>, ... "
 "I<SCRIPTn>' parameter."
 msgstr ""
 
 #. type: IP
-#: en/live-config.7:77
+#: en/live-config.7:79
 #, no-wrap
 msgid "B<LIVE_HOSTNAME>=I<HOSTNAME>"
 msgstr ""
 
 #. type: Plain text
-#: en/live-config.7:79
+#: en/live-config.7:81
 msgid ""
 "This variable equals the 'B<live-config.hostname>=I<HOSTAME>' parameter."
 msgstr ""
 
 #. type: IP
-#: en/live-config.7:79
+#: en/live-config.7:81
 #, no-wrap
 msgid "B<LIVE_USERNAME>=I<USERNAME>"
 msgstr ""
 
 #. type: Plain text
-#: en/live-config.7:81
+#: en/live-config.7:83
 msgid ""
 "This variable equals the 'B<live-config.username>=I<USERNAME>' parameter."
 msgstr ""
 
 #. type: IP
-#: en/live-config.7:81
+#: en/live-config.7:83
 #, no-wrap
 msgid "B<LIVE_USER_FULLNAME>=\"I<USER FULLNAME\">"
 msgstr ""
 
 #. type: Plain text
-#: en/live-config.7:83
+#: en/live-config.7:85
 msgid ""
 "This variable equals the 'B<live-config.user-fullname>=\"I<USER FULLNAME>\"' "
 "parameter."
 msgstr ""
 
 #. type: IP
-#: en/live-config.7:83
+#: en/live-config.7:85
 #, no-wrap
 msgid "B<LIVE_LOCALES>=I<LOCALE>"
 msgstr ""
 
 #. type: Plain text
-#: en/live-config.7:85
+#: en/live-config.7:87
 msgid "This variable equals the 'B<live-config.locales>=I<LOCALE>' parameter."
 msgstr ""
 
 #. type: IP
-#: en/live-config.7:85
+#: en/live-config.7:87
 #, no-wrap
 msgid "B<LIVE_TIMEZONE>=I<TIMEZONE>"
 msgstr ""
 
 #. type: Plain text
-#: en/live-config.7:87
+#: en/live-config.7:89
 msgid ""
 "This variable equals the 'B<live-config.timezone>=I<TIMEZONE>' parameter."
 msgstr ""
 
 #. type: IP
-#: en/live-config.7:87
+#: en/live-config.7:89
 #, no-wrap
 msgid "B<LIVE_UTC>=B<yes>|no"
 msgstr ""
 
 #. type: Plain text
-#: en/live-config.7:89
+#: en/live-config.7:91
 msgid "This variable equals the 'B<live-config.utc>=B<yes>|no' parameter."
 msgstr ""
 
 #. type: IP
-#: en/live-config.7:89
+#: en/live-config.7:91
 #, no-wrap
 msgid "B<LIVE_KEYBOARD_MODEL>=I<KEYBOARD_MODEL>"
 msgstr ""
 
 #. type: Plain text
-#: en/live-config.7:91
+#: en/live-config.7:93
 msgid ""
 "This variable equals the 'B<live-config.keyboard-model>=I<KEYBOARD_MODEL>' "
 "parameter."
 msgstr ""
 
 #. type: IP
-#: en/live-config.7:91
+#: en/live-config.7:93
 #, no-wrap
 msgid "B<LIVE_KEYBOARD_LAYOUT>=I<KEYBOARD_LAYOUT>"
 msgstr ""
 
 #. type: Plain text
-#: en/live-config.7:93
+#: en/live-config.7:95
 msgid ""
 "This variable equals the 'B<live-config.keyboard-layout>=I<KEYBOARD_LAYOUT>' "
 "parameter."
 msgstr ""
 
 #. type: IP
-#: en/live-config.7:93
+#: en/live-config.7:95
 #, no-wrap
 msgid "B<LIVE_KEYBOARD_VARIANT>=I<KEYBOARD_VARIANT>"
 msgstr ""
 
 #. type: Plain text
-#: en/live-config.7:95
+#: en/live-config.7:97
 msgid ""
 "This variable equals the 'B<live-config.keyboard-"
 "variant>=I<KEYBOARD_VARIANT>' parameter."
 msgstr ""
 
 #. type: IP
-#: en/live-config.7:95
+#: en/live-config.7:97
 #, no-wrap
 msgid "B<LIVE_KEYBOARD_OPTIONS>=I<KEYBOARD_OPTIONS>"
 msgstr ""
 
 #. type: Plain text
-#: en/live-config.7:97
+#: en/live-config.7:99
 msgid ""
 "This variable equals the 'B<live-config.keyboard-"
 "options>=I<KEYBOARD_OPTIONS>' parameter."
 msgstr ""
 
 #. type: IP
-#: en/live-config.7:97
+#: en/live-config.7:99
 #, no-wrap
 msgid "B<LIVE_HOOKS>=I<URL1>|I<URL2>| ... |I<URLn>"
 msgstr ""
 
 #. type: Plain text
-#: en/live-config.7:99
+#: en/live-config.7:101
 msgid ""
 "This variable equals the 'B<live-config.hooks>=I<URL1>|I<URL2>| ... |"
 "I<URLn>' parameter."
 msgstr ""
 
 #. type: SH
-#: en/live-config.7:100
+#: en/live-config.7:102
 #, no-wrap
 msgid "CUSTOMIZATION"
 msgstr ""
 
 #. type: Plain text
-#: en/live-config.7:102
+#: en/live-config.7:104
 msgid ""
 "B<live-config> can be easily customized for downstream projects or local "
 "usage."
 msgstr ""
 
 #. type: SS
-#: en/live-config.7:103
+#: en/live-config.7:105
 #, no-wrap
 msgid "Adding new config scripts"
 msgstr ""
 
 #. type: Plain text
-#: en/live-config.7:105
+#: en/live-config.7:107
 msgid ""
 "Downstream projects can put their scripts into /lib/live/config and don't "
 "need to do anything else, the scripts will be called automatically during "
@@ -559,7 +572,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/live-config.7:107
+#: en/live-config.7:109
 msgid ""
 "The scripts are best put into an own debian package. A sample package "
 "containing an example script can be found in /usr/share/doc/live-config/"
@@ -567,13 +580,13 @@ msgid ""
 msgstr ""
 
 #. type: SS
-#: en/live-config.7:108
+#: en/live-config.7:110
 #, no-wrap
 msgid "Removing existing config scripts"
 msgstr ""
 
 #. type: Plain text
-#: en/live-config.7:110
+#: en/live-config.7:112
 msgid ""
 "It's not really possible to remove scripts itself in a sane way yet without "
 "requiring to ship a locally modified B<live-config> package. However, the "
@@ -584,7 +597,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: en/live-config.7:112
+#: en/live-config.7:114
 msgid ""
 "The configuration files for the live system itself are best put into an own "
 "debian package. A sample package containing an example configuration can be "
@@ -592,367 +605,378 @@ msgid ""
 msgstr ""
 
 #. type: SH
-#: en/live-config.7:113
+#: en/live-config.7:115
 #, no-wrap
 msgid "SCRIPTS"
 msgstr ""
 
 #. type: Plain text
-#: en/live-config.7:115
+#: en/live-config.7:117
 msgid ""
 "B<live-config> currently features the following scripts in /lib/live/config."
 msgstr ""
 
 #. type: IP
-#: en/live-config.7:116
+#: en/live-config.7:118
 #, no-wrap
 msgid "B<hostname>"
 msgstr ""
 
 #. type: Plain text
-#: en/live-config.7:118
+#: en/live-config.7:120
 msgid "configures /etc/hostname and /etc/hosts."
 msgstr ""
 
 #. type: IP
-#: en/live-config.7:118
+#: en/live-config.7:120
 #, no-wrap
 msgid "B<user-setup>"
 msgstr ""
 
 #. type: Plain text
-#: en/live-config.7:120
+#: en/live-config.7:122
 msgid "adds an live user account."
 msgstr ""
 
 #. type: IP
-#: en/live-config.7:120
+#: en/live-config.7:122
 #, no-wrap
 msgid "B<sudo>"
 msgstr ""
 
 #. type: Plain text
-#: en/live-config.7:122
+#: en/live-config.7:124
 msgid "grants sudo privileges to the live user."
 msgstr ""
 
 #. type: IP
-#: en/live-config.7:122
+#: en/live-config.7:124
 #, no-wrap
 msgid "B<locales>"
 msgstr ""
 
 #. type: Plain text
-#: en/live-config.7:124
+#: en/live-config.7:126
 msgid "configures locales."
 msgstr ""
 
 #. type: IP
-#: en/live-config.7:124
+#: en/live-config.7:126
 #, no-wrap
 msgid "B<tzdata>"
 msgstr ""
 
 #. type: Plain text
-#: en/live-config.7:126
+#: en/live-config.7:128
 msgid "configures /etc/timezone."
 msgstr ""
 
 #. type: IP
-#: en/live-config.7:126
+#: en/live-config.7:128
 #, no-wrap
 msgid "B<gdm>"
 msgstr ""
 
 #. type: Plain text
-#: en/live-config.7:128
+#: en/live-config.7:130
 msgid "configures autologin in gdm (lenny)."
 msgstr ""
 
 #. type: IP
-#: en/live-config.7:128
+#: en/live-config.7:130
 #, no-wrap
 msgid "B<gdm3>"
 msgstr ""
 
 #. type: Plain text
-#: en/live-config.7:130
+#: en/live-config.7:132
 msgid "configures autologin in gdm3 (squeeze and newer)."
 msgstr ""
 
 #. type: IP
-#: en/live-config.7:130
+#: en/live-config.7:132
 #, no-wrap
 msgid "B<kdm>"
 msgstr ""
 
 #. type: Plain text
-#: en/live-config.7:132
+#: en/live-config.7:134
 msgid "configures autologin in kdm."
 msgstr ""
 
 #. type: IP
-#: en/live-config.7:132
+#: en/live-config.7:134
 #, no-wrap
 msgid "B<lxdm>"
 msgstr ""
 
 #. type: Plain text
-#: en/live-config.7:134
+#: en/live-config.7:136
 msgid "configures autologin in lxdm."
 msgstr ""
 
 #. type: IP
-#: en/live-config.7:134
+#: en/live-config.7:136
 #, no-wrap
 msgid "B<nodm>"
 msgstr ""
 
 #. type: Plain text
-#: en/live-config.7:136
+#: en/live-config.7:138
 msgid "configures autologin in nodm."
 msgstr ""
 
 #. type: IP
-#: en/live-config.7:136
+#: en/live-config.7:138
 #, no-wrap
 msgid "B<console-common>, console-setup (lenny), B<keyboard-configuration> (squeeze and newer)"
 msgstr ""
 
 #. type: Plain text
-#: en/live-config.7:138
+#: en/live-config.7:140
 msgid "configures the keyboard."
 msgstr ""
 
 #. type: IP
-#: en/live-config.7:138
+#: en/live-config.7:140
+#, no-wrap
+msgid "B<sysvinit>"
+msgstr ""
+
+#. type: Plain text
+#: en/live-config.7:142
+msgid "configures sysvinit."
+msgstr ""
+
+#. type: IP
+#: en/live-config.7:142
 #, no-wrap
 msgid "B<apport>"
 msgstr ""
 
 #. type: Plain text
-#: en/live-config.7:140
+#: en/live-config.7:144
 msgid "enables apport."
 msgstr ""
 
 #. type: IP
-#: en/live-config.7:140
+#: en/live-config.7:144
 #, no-wrap
 msgid "B<gnome-panel-data>"
 msgstr ""
 
 #. type: Plain text
-#: en/live-config.7:142
+#: en/live-config.7:146
 msgid "disables lock button for the screen."
 msgstr ""
 
 #. type: IP
-#: en/live-config.7:142
+#: en/live-config.7:146
 #, no-wrap
 msgid "B<gnome-power-manager>"
 msgstr ""
 
 #. type: Plain text
-#: en/live-config.7:144
+#: en/live-config.7:148
 msgid "disables hibernation."
 msgstr ""
 
 #. type: IP
-#: en/live-config.7:144
+#: en/live-config.7:148
 #, no-wrap
 msgid "B<gnome-screensaver>"
 msgstr ""
 
 #. type: Plain text
-#: en/live-config.7:146
+#: en/live-config.7:150
 msgid "disables the screensaver locking the screen."
 msgstr ""
 
 #. type: IP
-#: en/live-config.7:146
+#: en/live-config.7:150
 #, no-wrap
 msgid "B<initramfs-tools>"
 msgstr ""
 
 #. type: Plain text
-#: en/live-config.7:148
+#: en/live-config.7:152
 msgid ""
 "makes update-initramfs to also update the live media when using persistency."
 msgstr ""
 
 #. type: IP
-#: en/live-config.7:148
+#: en/live-config.7:152
 #, no-wrap
 msgid "B<kaboom>"
 msgstr ""
 
 #. type: Plain text
-#: en/live-config.7:150
+#: en/live-config.7:154
 msgid "disables kde migration wizard (squeeze and newer)."
 msgstr ""
 
 #. type: IP
-#: en/live-config.7:150
+#: en/live-config.7:154
 #, no-wrap
 msgid "B<kde-services>"
 msgstr ""
 
 #. type: Plain text
-#: en/live-config.7:152
+#: en/live-config.7:156
 msgid "disables some unwanted KDE services (squeeze and newer)."
 msgstr ""
 
 #. type: IP
-#: en/live-config.7:152
+#: en/live-config.7:156
 #, no-wrap
 msgid "B<kpersonalizer>"
 msgstr ""
 
 #. type: Plain text
-#: en/live-config.7:154
+#: en/live-config.7:158
 msgid "disables kde configuration wizard (lenny)."
 msgstr ""
 
 #. type: IP
-#: en/live-config.7:154
+#: en/live-config.7:158
 #, no-wrap
 msgid "B<live-installer-launcher>"
 msgstr ""
 
 #. type: Plain text
-#: en/live-config.7:156
+#: en/live-config.7:160
 msgid "adds live-installer-launcher on users desktop."
 msgstr ""
 
 #. type: IP
-#: en/live-config.7:156
+#: en/live-config.7:160
 #, no-wrap
 msgid "B<module-init-tools>"
 msgstr ""
 
 #. type: Plain text
-#: en/live-config.7:158
+#: en/live-config.7:162
 msgid "automatically load some modules on some architectures."
 msgstr ""
 
 #. type: IP
-#: en/live-config.7:158
+#: en/live-config.7:162
 #, no-wrap
 msgid "B<policykit>"
 msgstr ""
 
 #. type: Plain text
-#: en/live-config.7:160
+#: en/live-config.7:164
 msgid "grant user privilegies through policykit."
 msgstr ""
 
 #. type: IP
-#: en/live-config.7:160
+#: en/live-config.7:164
 #, no-wrap
 msgid "B<sslcert>"
 msgstr ""
 
 #. type: Plain text
-#: en/live-config.7:162
+#: en/live-config.7:166
 msgid "regenerating ssl snake-oil certificates."
 msgstr ""
 
 #. type: IP
-#: en/live-config.7:162
+#: en/live-config.7:166
 #, no-wrap
 msgid "B<update-notifier>"
 msgstr ""
 
 #. type: Plain text
-#: en/live-config.7:164
+#: en/live-config.7:168
 msgid "disables update-notifier."
 msgstr ""
 
 #. type: IP
-#: en/live-config.7:164
+#: en/live-config.7:168
 #, no-wrap
 msgid "B<hooks>"
 msgstr ""
 
 #. type: Plain text
-#: en/live-config.7:166
+#: en/live-config.7:170
 msgid ""
 "allows to run arbitrary commands from a script placed on the live media or "
 "an http/ftp server."
 msgstr ""
 
 #. type: SH
-#: en/live-config.7:167
+#: en/live-config.7:171
 #, no-wrap
 msgid "FILES"
 msgstr ""
 
 #. type: IP
-#: en/live-config.7:168
+#: en/live-config.7:172
 #, no-wrap
 msgid "B</etc/live/config.conf>"
 msgstr ""
 
 #. type: IP
-#: en/live-config.7:169
+#: en/live-config.7:173
 #, no-wrap
 msgid "B</etc/live/config.conf.d/>"
 msgstr ""
 
 #. type: IP
-#: en/live-config.7:170
+#: en/live-config.7:174
 #, no-wrap
 msgid "B<live/config.conf>"
 msgstr ""
 
 #. type: IP
-#: en/live-config.7:171
+#: en/live-config.7:175
 #, no-wrap
 msgid "B<live/config.conf.d/>"
 msgstr ""
 
 #. type: IP
-#: en/live-config.7:172
+#: en/live-config.7:176
 #, no-wrap
 msgid "B</lib/live/config.sh>"
 msgstr ""
 
 #. type: IP
-#: en/live-config.7:173
+#: en/live-config.7:177
 #, no-wrap
 msgid "B</lib/live/config/>"
 msgstr ""
 
 #. type: IP
-#: en/live-config.7:174
+#: en/live-config.7:178
 #, no-wrap
 msgid "B</var/lib/live/config/>"
 msgstr ""
 
 #. type: SH
-#: en/live-config.7:176
+#: en/live-config.7:180
 #, no-wrap
 msgid "SEE ALSO"
 msgstr ""
 
 #. type: Plain text
-#: en/live-config.7:178
+#: en/live-config.7:182
 msgid "I<live-boot>(7)"
 msgstr ""
 
 #. type: Plain text
-#: en/live-config.7:180
+#: en/live-config.7:184
 msgid "I<live-helper>(7)"
 msgstr ""
 
 #. type: SH
-#: en/live-config.7:181
+#: en/live-config.7:185
 #, no-wrap
 msgid "HOMEPAGE"
 msgstr ""
 
 #. type: Plain text
-#: en/live-config.7:183
+#: en/live-config.7:187
 msgid ""
 "More information about live-config and the Debian Live project can be found "
 "on the homepage at E<lt>I<http://live.debian.net/>E<gt> and in the manual at "
@@ -960,13 +984,13 @@ msgid ""
 msgstr ""
 
 #. type: SH
-#: en/live-config.7:184
+#: en/live-config.7:188
 #, no-wrap
 msgid "BUGS"
 msgstr ""
 
 #. type: Plain text
-#: en/live-config.7:186
+#: en/live-config.7:190
 msgid ""
 "Bugs can be reported by submitting a bugreport for the live-config package "
 "in the Debian Bug Tracking System at E<lt>I<http://bugs.debian.org/>E<gt> or "
@@ -975,13 +999,13 @@ msgid ""
 msgstr ""
 
 #. type: SH
-#: en/live-config.7:187
+#: en/live-config.7:191
 #, no-wrap
 msgid "AUTHOR"
 msgstr ""
 
 #. type: Plain text
-#: en/live-config.7:188
+#: en/live-config.7:192
 msgid ""
 "live-config was written by Daniel Baumann E<lt>I<daniel@debian.org>E<gt> for "
 "the Debian project."

@@ -102,9 +102,12 @@ einfache Benutzbarkeit.
 .IP \fBlive\-config.noroot\fP 4
 Schaltet die sudo und policykit Skripte ab, ein Benutzer kann keine root
 Privilegien auf dem System mehr erlangen.
+.IP \fBlive\-config.nottyautologin\fP 4
+Schaltet den automatischen Login via TTY ab, dies beeinflusst den
+automatisch graphischen Login nicht.
 .IP \fBlive\-config.noxautologin\fP 4
 Schaltet den automatischen Login via Display Manager ab, dies beeinflusst
-den automatischen tty Login.
+den automatischen tty Login nicht.
 
 .SS Konfigurationsdateien
 \fBlive\-config\fP kann durch Konfigurationsdateien konfiguriert (nicht aber
@@ -217,6 +220,8 @@ konfiguriert Autologin in lxdm.
 konfiguriert Autologin in nodm.
 .IP "\fBconsole\-common\fP, console\-setup (lenny), \fBkeyboard\-configuration\fP (squeeze and newer)" 4
 konfiguriert die Tastatur.
+.IP \fBsysvinit\fP 4
+konfiguriert sysvinit.
 .IP \fBapport\fP 4
 aktiviert apport.
 .IP \fBgnome\-panel\-data\fP 4
