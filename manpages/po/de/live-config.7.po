@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config 2.0~a5\n"
-"POT-Creation-Date: 2010-06-07 15:42+0300\n"
+"POT-Creation-Date: 2010-06-07 15:47+0300\n"
 "PO-Revision-Date: 2010-05-24 09:59+0300\n"
 "Last-Translator: Daniel Baumann <daniel@debian.org>\n"
 "Language-Team: none\n"
@@ -860,7 +860,7 @@ msgstr "konfiguriert die Tastatur."
 #: en/live-config.7:140
 #, no-wrap
 msgid "B<sysvinit>"
-msgstr ""
+msgstr "B<sysvinit>"
 
 #. type: Plain text
 #: en/live-config.7:142
@@ -1028,11 +1028,22 @@ msgstr "schaltet anacron aus."
 #. type: IP
 #: en/live-config.7:170
 #, no-wrap
+msgid "B<util-linux>"
+msgstr "B<util-linux>"
+
+#. type: Plain text
+#: en/live-config.7:172
+msgid "disables util-linux' hwclock."
+msgstr "schaltet hwclock von util-linux ab."
+
+#. type: IP
+#: en/live-config.7:172
+#, no-wrap
 msgid "B<hooks>"
 msgstr "B<hooks>"
 
 #. type: Plain text
-#: en/live-config.7:172
+#: en/live-config.7:174
 msgid ""
 "allows to run arbitrary commands from a script placed on the live media or "
 "an http/ftp server."
@@ -1041,77 +1052,77 @@ msgstr ""
 "einem HTTP/FTP Server auszuführen."
 
 #. type: SH
-#: en/live-config.7:173
+#: en/live-config.7:175
 #, no-wrap
 msgid "FILES"
 msgstr "DATEIEN"
 
 #. type: IP
-#: en/live-config.7:174
+#: en/live-config.7:176
 #, no-wrap
 msgid "B</etc/live/config.conf>"
 msgstr "B</etc/live/config.conf>"
 
 #. type: IP
-#: en/live-config.7:175
+#: en/live-config.7:177
 #, no-wrap
 msgid "B</etc/live/config.conf.d/>"
 msgstr "B</etc/live/config.conf.d/>"
 
 #. type: IP
-#: en/live-config.7:176
+#: en/live-config.7:178
 #, no-wrap
 msgid "B<live/config.conf>"
 msgstr "B<live/config.conf>"
 
 #. type: IP
-#: en/live-config.7:177
+#: en/live-config.7:179
 #, no-wrap
 msgid "B<live/config.conf.d/>"
 msgstr "B<live/config.conf.d/>"
 
 #. type: IP
-#: en/live-config.7:178
+#: en/live-config.7:180
 #, no-wrap
 msgid "B</lib/live/config.sh>"
 msgstr "B</lib/live/config.sh>"
 
 #. type: IP
-#: en/live-config.7:179
+#: en/live-config.7:181
 #, no-wrap
 msgid "B</lib/live/config/>"
 msgstr "B</lib/live/config/>"
 
 #. type: IP
-#: en/live-config.7:180
+#: en/live-config.7:182
 #, no-wrap
 msgid "B</var/lib/live/config/>"
 msgstr "B</var/lib/live/config/>"
 
 #. type: SH
-#: en/live-config.7:182
+#: en/live-config.7:184
 #, no-wrap
 msgid "SEE ALSO"
 msgstr "SIEHE AUCH"
 
 #. type: Plain text
-#: en/live-config.7:184
+#: en/live-config.7:186
 msgid "I<live-boot>(7)"
 msgstr "I<live-boot>(7)"
 
 #. type: Plain text
-#: en/live-config.7:186
+#: en/live-config.7:188
 msgid "I<live-helper>(7)"
 msgstr "I<live-helper>(7)"
 
 #. type: SH
-#: en/live-config.7:187
+#: en/live-config.7:189
 #, no-wrap
 msgid "HOMEPAGE"
 msgstr "HOMEPAGE"
 
 #. type: Plain text
-#: en/live-config.7:189
+#: en/live-config.7:191
 msgid ""
 "More information about live-config and the Debian Live project can be found "
 "on the homepage at E<lt>I<http://live.debian.net/>E<gt> and in the manual at "
@@ -1122,13 +1133,13 @@ msgstr ""
 "unter E<lt>I<http://live.debian.net/manual/>E<gt> gefunden werden."
 
 #. type: SH
-#: en/live-config.7:190
+#: en/live-config.7:192
 #, no-wrap
 msgid "BUGS"
 msgstr "FEHLER"
 
 #. type: Plain text
-#: en/live-config.7:192
+#: en/live-config.7:194
 msgid ""
 "Bugs can be reported by submitting a bugreport for the live-config package "
 "in the Debian Bug Tracking System at E<lt>I<http://bugs.debian.org/>E<gt> or "
@@ -1142,13 +1153,13 @@ msgstr ""
 "werden."
 
 #. type: SH
-#: en/live-config.7:193
+#: en/live-config.7:195
 #, no-wrap
 msgid "AUTHOR"
 msgstr "AUTOR"
 
 #. type: Plain text
-#: en/live-config.7:194
+#: en/live-config.7:196
 msgid ""
 "live-config was written by Daniel Baumann E<lt>I<daniel@debian.org>E<gt> for "
 "the Debian project."
