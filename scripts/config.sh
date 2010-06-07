@@ -81,6 +81,23 @@ Cmdline ()
 				LIVE_UTC="${_PARAMETER#live-config.utc=}"
 				;;
 
+			# 012-console-setup, 013-keyboard-configuration
+			live-config.keyboard-model=*)
+				LIVE_KEYBOARD_MODEL="${_PARAMETER#live-config.keyboard-model=}"
+				;;
+
+			live-config.keyboard-layout=*)
+				LIVE_KEYBOARD_LAYOUT="${_PARAMETER#live-config.keyboard-layout=}"
+				;;
+
+			live-config.keyboard-variant=*)
+				LIVE_KEYBOARD_VARIANT="${_PARAMETER#live-config.keyboard-variant=}"
+				;;
+
+			live-config.keyboard-options=*)
+				LIVE_KEYBOARD_OPTIONS="${_PARAMETER#live-config.keyboard-options=}"
+				;;
+
 			# 999-hook
 			live-config.hook=*)
 				LIVE_HOOK="${_PARAMETER#live-config.hook=}"

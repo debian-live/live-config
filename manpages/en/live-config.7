@@ -6,7 +6,7 @@
 .\" under certain conditions; see COPYING for details.
 .\"
 .\"
-.TH LIVE\-CONFIG 7 2010\-06\-05 2.0~a5 "Debian Live Project"
+.TH LIVE\-CONFIG 7 2010\-06\-07 2.0~a5 "Debian Live Project"
 
 .SH NAME
 \fBlive\-config\fR \- System Configuration Scripts
@@ -44,6 +44,14 @@ Allows to set the locale of the system, e.g. 'de_CH.UTF\-8'. The default is 'en_
 Allows to set the timezone of the system, e.g. 'Europe/Zurich'. The default is 'UTC'.
 .IP "\fBlive-config.utc\fR=\fByes\fR|no" 4
 Allows to change if the system is assuming that the hardware clock is set to UTC or not. The default is 'yes'.
+.IP "\fBlive-config.keyboard\-model\fR=\fIKEYBOARD_MODEL\fR" 4
+Allows to change the keyboard model. There is no default value set.
+.IP "\fBlive-config.keyboard\-layout\fR=\fIKEYBOARD_LAYOUT\fR" 4
+Allows to change the keyboard layout. There is no default value set.
+.IP "\fBlive-config.keyboard\-variant\fR=\fIKEYBOARD_VARIANT\fR" 4
+Allows to change the keyboard variant. There is no default value set.
+.IP "\fBlive-config.keyboard\-options\fR=\fIKEYBOARD_OPTIONS\fR" 4
+Allows to change the keyboard options. There are no default value set.
 .IP "\fBlive-config.hook\fR=\fIURL1\fR|\fIURL2\fR| ... |\fIURLn\fR" 4
 Allows to fetch and execute one or more arbitrary files. Note that the URLs must be fetchable by wget, and that the files needs their dependencies, if any, already installed, e.g. if a python script should be executed the system needs python installed.
 
@@ -78,6 +86,14 @@ This variable equals the '\fBlive\-config.locales\fR=\fILOCALE\fR' parameter.
 This variable equals the '\fBlive\-config.timezone\fR=\fITIMEZONE\fR' parameter.
 .IP "\fBLIVE_UTC\fR=\fByes\fR|no" 4
 This variable equals the '\fBlive\-config.utc\fR=\fByes\fR|no' parameter.
+.IP "\fBLIVE_KEYBOARD_MODEL\fR=\fIKEYBOARD_MODEL\fR" 4
+This variable equals the '\fBlive\-config.keyboard\-model\fR=\fIKEYBOARD_MODEL\fR' parameter.
+.IP "\fBLIVE_KEYBOARD_LAYOUT\fR=\fIKEYBOARD_LAYOUT\fR" 4
+This variable equals the '\fBlive\-config.keyboard\-layout\fR=\fIKEYBOARD_LAYOUT\fR' parameter.
+.IP "\fBLIVE_KEYBOARD_VARIANT\fR=\fIKEYBOARD_VARIANT\fR" 4
+This variable equals the '\fBlive\-config.keyboard\-variant\fR=\fIKEYBOARD_VARIANT\fR' parameter.
+.IP "\fBLIVE_KEYBOARD_OPTIONS\fR=\fIKEYBOARD_OPTIONS\fR" 4
+This variable equals the '\fBlive\-config.keyboard\-options\fR=\fIKEYBOARD_OPTIONS\fR' parameter.
 .IP "\fBLIVE_HOOK\fR=\fIURL1\fR|\fIURL2\fR| ... |\fIURLn\fR" 4
 This variable equals the '\fBlive\-config.hook\fR=\fIURL1\fR|\fIURL2\fR| ... |\fIURLn\fR' parameter.
 
@@ -117,6 +133,8 @@ configures autologin in kdm.
 configures autologin in lxdm.
 .IP "\fBnodm\fR" 4
 configures autologin in nodm.
+.IP "\fBconsole-common\fR, console-setup\fR (lenny), \fBkeyboard\-configuration\fR (squeeze and newer)" 4
+configures the keyboard.
 .IP "\fBapport\fR" 4
 enables apport.
 .IP "\fBgnome-panel-data\fR" 4

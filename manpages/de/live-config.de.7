@@ -11,7 +11,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 05.06.2010 2.0~a5 "Debian Live Projekt"
+.TH LIVE\-CONFIG 7 07.06.2010 2.0~a5 "Debian Live Projekt"
 
 .SH NAME
 \fBlive\-config\fP \- System Konfiguration Skripte
@@ -74,6 +74,18 @@ Ermöglicht die Zeitzone des Systems einzustellen, zum Beispiel
 .IP \fBlive\-config.utc\fP=\fByes\fP|no 4
 Ermöglicht zu bestimmen, ob das System davon ausgehen soll, dass die
 Hardwareuhr auf UTC gestellt ist oder nicht. Der Standard ist 'yes'.
+.IP \fBlive\-config.keyboard\-model\fP=\fITASTATUR_MODELL\fP 4
+Ermöglicht das Tastatur Modell zu bestimmen. Es ist kein Standardwert
+gesetzt.
+.IP \fBlive\-config.keyboard\-layout\fP=\fITASTATUR_LAYOUT\fP 4
+Ermöglicht das Tastatur Layout zu bestimmen. Es ist kein Standardwert
+gesetzt.
+.IP \fBlive\-config.keyboard\-variant\fP=\fITASTATUR_VARIANTE\fP 4
+Ermöglicht die Tastatur Variante zu bestimmen. Es ist kein Standardwert
+gesetzt.
+.IP \fBlive\-config.keyboard\-options\fP=\fITASTATUR_OPTIONEN\fP 4
+Ermöglicht die Tastatur Optionen zu bestimmen. Es ist kein Standardwert
+gesetzt.
 .IP "\fBlive\-config.hook\fP=\fIURL1\fP|\fIURL2\fP| ...|\fIURLn\fP" 4
 Ermöglicht eine oder mehrere beliebige Dateien herunterzuladen und
 auszuführen. Die URLs müssen durch wget aufösbar sein und es müssen alle
@@ -138,6 +150,18 @@ Diese Variable enspricht dem '\fBlive\-config.timezone\fP=\fIZEITZONE\fP'
 Parameter.
 .IP \fBLIVE_UTC\fP=\fByes\fP|no 4
 Diese Variable enspricht dem '\fBlive\-config.utc\fP=\fByes\fP|no' Parameter.
+.IP \fBLIVE_KEYBOARD_MODEL\fP=\fIKEYBOARD_MODEL\fP 4
+Diese Variable enspricht dem
+\&'\fBlive\-config.keyboard\-model\fP=\fITASTATUR_MODELL\fP' Parameter.
+.IP \fBLIVE_KEYBOARD_LAYOUT\fP=\fIKEYBOARD_LAYOUT\fP 4
+Diese Variable enspricht dem
+\&'\fBlive\-config.keyboard\-layout\fP=\fITASTATUR_LAYOUT\fP' Parameter.
+.IP \fBLIVE_KEYBOARD_VARIANT\fP=\fIKEYBOARD_VARIANT\fP 4
+Diese Variable enspricht dem
+\&'\fBlive\-config.keyboard\-variant\fP=\fITASTATUR_VARIANTE\fP' Parameter.
+.IP \fBLIVE_KEYBOARD_OPTIONS\fP=\fIKEYBOARD_OPTIONS\fP 4
+Diese Variable enspricht dem
+\&'\fBlive\-config.keyboard\-options\fP=\fITASTATUR_OPTIONEN\fP' Parameter.
 .IP "\fBLIVE_HOOK\fP=\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
 Diese Variable enspricht dem '\fBlive\-config.hook\fP=\fIURL1\fP|\fIURL2\fP|
 \&... |\fIURLn\fP' Parameter.
@@ -191,6 +215,8 @@ konfiguriert Autologin in kdm.
 konfiguriert Autologin in lxdm.
 .IP \fBnodm\fP 4
 konfiguriert Autologin in nodm.
+.IP "\fBconsole\-common\fP, console\-setup (lenny), \fBkeyboard\-configuration\fP (squeeze and newer)" 4
+konfiguriert die Tastatur.
 .IP \fBapport\fP 4
 aktiviert apport.
 .IP \fBgnome\-panel\-data\fP 4
