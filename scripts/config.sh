@@ -110,7 +110,7 @@ Cmdline ()
 				LIVE_NOCONFIGS="${LIVE_NOCONFIGS},sudo,policykit"
 				;;
 
-			live-config.noxlogin)
+			live-config.noxautologin)
 				# Disables graphical autologin, no matter what
 				# mechanism
 				_SCRIPTS="${_SCRIPTS:-$(ls /lib/live/config/*)}"
