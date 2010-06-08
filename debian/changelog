@@ -1,3 +1,10 @@
+live-config (2.0~a7-1) unstable; urgency=low
+
+  * Updating TODO file.
+  * Adding xserver-xorg script.
+
+ -- Daniel Baumann <daniel@debian.org>  Tue, 08 Jun 2010 20:22:20 +0200
+
 live-config (2.0~a6-1) unstable; urgency=low
 
   * Moving customization example in an own directory within the example
