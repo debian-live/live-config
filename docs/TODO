@@ -21,3 +21,4 @@ we continue to release pre-releases until:
   * add upstart integration.
   * enable display managers only if they are the selected one.
   * when not using persistency, do not import options into the debconf db.
+  * cleanup the scripts order and splitting.

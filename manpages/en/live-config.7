@@ -6,7 +6,7 @@
 .\" under certain conditions; see COPYING for details.
 .\"
 .\"
-.TH LIVE\-CONFIG 7 2010\-06\-08 2.0~a6 "Debian Live Project"
+.TH LIVE\-CONFIG 7 2010\-06\-08 2.0~a7 "Debian Live Project"
 
 .SH NAME
 \fBlive\-config\fR \- System Configuration Scripts
@@ -52,6 +52,10 @@ Allows to change the keyboard layout. There is no default value set.
 Allows to change the keyboard variant. There is no default value set.
 .IP "\fBlive\-config.keyboard\-options\fR=\fIKEYBOARD_OPTIONS\fR" 4
 Allows to change the keyboard options. There are no default value set.
+.IP "\fBlive\-config.xorg\-driver\fR=\fIXORG_DRIVER\fR" 4
+Allows to set xorg driver instead of autodetecting it.
+.IP "\fBlive\-config.xorg\-resolution\fR=\fIXORG_RESOLUTION\fR" 4
+Allows to set xorg resolution instead of autodetecting it.
 .IP "\fBlive\-config.hooks\fR=\fIURL1\fR|\fIURL2\fR| ... |\fIURLn\fR" 4
 Allows to fetch and execute one or more arbitrary files. Note that the URLs must be fetchable by wget, and that the files needs their dependencies, if any, already installed, e.g. if a python script should be executed the system needs python installed.
 
@@ -96,6 +100,10 @@ This variable equals the '\fBlive\-config.keyboard\-layout\fR=\fIKEYBOARD_LAYOUT
 This variable equals the '\fBlive\-config.keyboard\-variant\fR=\fIKEYBOARD_VARIANT\fR' parameter.
 .IP "\fBLIVE_KEYBOARD_OPTIONS\fR=\fIKEYBOARD_OPTIONS\fR" 4
 This variable equals the '\fBlive\-config.keyboard\-options\fR=\fIKEYBOARD_OPTIONS\fR' parameter.
+.IP "\fBLIVE_XORG_DRIVER\fR=\fIXORG_DRIVER\fR" 4
+This variable equals the '\fBlive\-config.xorg\-driver\fR=\fIXORG_DRIVER\fR' parameter.
+.IP "\fBLIVE_XORG_RESOLUTION\fR=\fIXORG_RESOLUTION\fR" 4
+This variable equals the '\fBlive\-config.xorg\-resolution\fR=\fIXORG_RESOLUTION\fR' parameter.
 .IP "\fBLIVE_HOOKS\fR=\fIURL1\fR|\fIURL2\fR| ... |\fIURLn\fR" 4
 This variable equals the '\fBlive\-config.hooks\fR=\fIURL1\fR|\fIURL2\fR| ... |\fIURLn\fR' parameter.
 
@@ -135,7 +143,7 @@ configures autologin in kdm.
 configures autologin in lxdm.
 .IP "\fBnodm\fR" 4
 configures autologin in nodm.
-.IP "\fBconsole\-common\fR, console\-setup\fR (lenny), \fBkeyboard\-configuration\fR (squeeze and newer)" 4
+.IP "\fBconsole\-common\fR, \fBconsole\-setup\fR (lenny), \fBkeyboard\-configuration\fR (squeeze and newer)" 4
 configures the keyboard.
 .IP "\fBsysvinit\fR" 4
 configures sysvinit.
@@ -171,6 +179,10 @@ disables update\-notifier.
 disables anacron.
 .IP "\fButil-linux\fR" 4
 disables util-linux' hwclock.
+.IP "\fBlogin\fR" 4
+disables lastlog.
+.IP "\fBxserver\-xorg\fR" 4
+configures xserver-xorg.
 .IP "\fBhooks\fR" 4
 allows to run arbitrary commands from a script placed on the live media or an http/ftp server.
 
