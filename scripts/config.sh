@@ -98,6 +98,15 @@ Cmdline ()
 				LIVE_KEYBOARD_OPTIONS="${_PARAMETER#live-config.keyboard-options=}"
 				;;
 
+			# 116-xserver-xorg
+			live-config.xorg-driver=*)
+				LIVE_XORG_DRIVER="${_PARAMETER#live-config.xorg-driver=}"
+				;;
+
+			live-config.xorg-resolution=*)
+				LIVE_XORG_RESOLUTION="${_PARAMETER#live-config.xorg-resolution=}"
+				;;
+
 			# 999-hooks
 			live-config.hooks=*)
 				LIVE_HOOKS="${_PARAMETER#live-config.hooks=}"
