@@ -54,12 +54,11 @@ Configure_locales ()
 
 	if echo "${_LOCALE}" | grep -sqE '^[[:lower:]]{2}$'
 	then
-		# input is like "locale=it", so we will convert and setup also the keyboard if not already set
-		if [ -z "${KBD}" ]
+		# input is like "locale=ch", so we will convert and setup also the keyboard if not already set
+		if [ -z "${_KEYBOARD}" ]
 		then
-			# FIXME: look if this keyb is supported
-			KBD="${_LOCALE}"
-			export KBD
+			_KEYBOARD="${_LOCALE}"
+			export _KEYBOARD
 		fi
 
 		_LOCALE_UP=$(echo "${_LOCALE}" | tr '[a-z]' '[A-Z]')

@@ -11,7 +11,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 05.06.2010 2.0~a5 "Debian Live Projekt"
+.TH LIVE\-CONFIG 7 2010\-06\-08 2.0~a6 "Debian Live Projekt"
 
 .SH NAME
 \fBlive\-config\fP \- System Konfiguration Skripte
@@ -74,7 +74,19 @@ Ermöglicht die Zeitzone des Systems einzustellen, zum Beispiel
 .IP \fBlive\-config.utc\fP=\fByes\fP|no 4
 Ermöglicht zu bestimmen, ob das System davon ausgehen soll, dass die
 Hardwareuhr auf UTC gestellt ist oder nicht. Der Standard ist 'yes'.
-.IP "\fBlive\-config.hook\fP=\fIURL1\fP|\fIURL2\fP| ...|\fIURLn\fP" 4
+.IP \fBlive\-config.keyboard\-model\fP=\fITASTATUR_MODELL\fP 4
+Ermöglicht das Tastatur Modell zu bestimmen. Es ist kein Standardwert
+gesetzt.
+.IP \fBlive\-config.keyboard\-layout\fP=\fITASTATUR_LAYOUT\fP 4
+Ermöglicht das Tastatur Layout zu bestimmen. Es ist kein Standardwert
+gesetzt.
+.IP \fBlive\-config.keyboard\-variant\fP=\fITASTATUR_VARIANTE\fP 4
+Ermöglicht die Tastatur Variante zu bestimmen. Es ist kein Standardwert
+gesetzt.
+.IP \fBlive\-config.keyboard\-options\fP=\fITASTATUR_OPTIONEN\fP 4
+Ermöglicht die Tastatur Optionen zu bestimmen. Es ist kein Standardwert
+gesetzt.
+.IP "\fBlive\-config.hooks\fP=\fIURL1\fP|\fIURL2\fP| ...|\fIURLn\fP" 4
 Ermöglicht eine oder mehrere beliebige Dateien herunterzuladen und
 auszuführen. Die URLs müssen durch wget aufösbar sein und es müssen alle
 Abhängigkeiten, die für das Ausführen der Dateien notwendig sind, bereits
@@ -90,9 +102,12 @@ einfache Benutzbarkeit.
 .IP \fBlive\-config.noroot\fP 4
 Schaltet die sudo und policykit Skripte ab, ein Benutzer kann keine root
 Privilegien auf dem System mehr erlangen.
-.IP \fBlive\-config.noxlogin\fP 4
+.IP \fBlive\-config.nottyautologin\fP 4
+Schaltet den automatischen Login via TTY ab, dies beeinflusst den
+automatisch graphischen Login nicht.
+.IP \fBlive\-config.noxautologin\fP 4
 Schaltet den automatischen Login via Display Manager ab, dies beeinflusst
-den automatischen tty Login.
+den automatischen tty Login nicht.
 
 .SS Konfigurationsdateien
 \fBlive\-config\fP kann durch Konfigurationsdateien konfiguriert (nicht aber
@@ -138,9 +153,47 @@ Diese Variable enspricht dem '\fBlive\-config.timezone\fP=\fIZEITZONE\fP'
 Parameter.
 .IP \fBLIVE_UTC\fP=\fByes\fP|no 4
 Diese Variable enspricht dem '\fBlive\-config.utc\fP=\fByes\fP|no' Parameter.
-.IP "\fBLIVE_HOOK\fP=\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
-Diese Variable enspricht dem '\fBlive\-config.hook\fP=\fIURL1\fP|\fIURL2\fP|
+.IP \fBLIVE_KEYBOARD_MODEL\fP=\fIKEYBOARD_MODEL\fP 4
+Diese Variable enspricht dem
+\&'\fBlive\-config.keyboard\-model\fP=\fITASTATUR_MODELL\fP' Parameter.
+.IP \fBLIVE_KEYBOARD_LAYOUT\fP=\fIKEYBOARD_LAYOUT\fP 4
+Diese Variable enspricht dem
+\&'\fBlive\-config.keyboard\-layout\fP=\fITASTATUR_LAYOUT\fP' Parameter.
+.IP \fBLIVE_KEYBOARD_VARIANT\fP=\fIKEYBOARD_VARIANT\fP 4
+Diese Variable enspricht dem
+\&'\fBlive\-config.keyboard\-variant\fP=\fITASTATUR_VARIANTE\fP' Parameter.
+.IP \fBLIVE_KEYBOARD_OPTIONS\fP=\fIKEYBOARD_OPTIONS\fP 4
+Diese Variable enspricht dem
+\&'\fBlive\-config.keyboard\-options\fP=\fITASTATUR_OPTIONEN\fP' Parameter.
+.IP "\fBLIVE_HOOKS\fP=\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
+Diese Variable enspricht dem '\fBlive\-config.hooks\fP=\fIURL1\fP|\fIURL2\fP|
 \&... |\fIURLn\fP' Parameter.
+
+.SH ANPASSUNG
+\fBlive\-config\fP kann sehr einfach angepasst werden für Downstream Projekte
+oder lokale Verwendung.
+
+.SS "Hinzufügen von neuen Konfigurationsskripten"
+Downstream Projekte können ihre Skripte in /lib/live/config ablegen und
+müssen nichts weiteres tun, die Skripte werden automatisch während des
+Startens ausgeführt.
+.PP
+Am Besten werden die Skripte in ein eigenes Debian Paket untergebracht. Ein
+Beispielpaket und \-skript befindet sich in
+/usr/share/doc/live\-config/examples.
+
+.SS "Entfernen von neuen Konfigurationsskripten"
+Es ist derzeit nicht möglich in einer vernünftigen Art und Weise Skripte zu
+entfernen ohne das ein lokal verändertes \fBlive\-config\fP Paket verwendet
+werden muss. Jedoch kann das selbe erreicht werden, indem bestimmte Skripte
+durch den live\-noconfig Mechanismus abgeschaltet werden, siehe oben. Um zu
+verhindern, dass die abzuschaltenden Skripte immer durch einen Boot
+Parameter angegeben werden müssen, kann eine Konfigurationsdatei verwendet
+werden, siehe oben.
+.PP
+Die Konfigurationsdateien für das Live System selber werden am Besten in
+einem eigenen Debian Paket untergebracht. Ein Beispielpaket und
+\-konfigurationsdatei befindet sich in /usr/share/doc/live\-config/examples.
 
 .SH SKRIPTE
 \fBlive\-config\fP enthält derzeit folgende Skripte in /lib/live/config.
@@ -165,6 +218,12 @@ konfiguriert Autologin in kdm.
 konfiguriert Autologin in lxdm.
 .IP \fBnodm\fP 4
 konfiguriert Autologin in nodm.
+.IP "\fBconsole\-common\fP, console\-setup (lenny), \fBkeyboard\-configuration\fP (squeeze and newer)" 4
+konfiguriert die Tastatur.
+.IP \fBsysvinit\fP 4
+konfiguriert sysvinit.
+.IP \fBlogin\fP 4
+schaltet lastlog ab.
 .IP \fBapport\fP 4
 aktiviert apport.
 .IP \fBgnome\-panel\-data\fP 4
@@ -193,7 +252,11 @@ räumt dem Benutzer Privilegien durch policykit ein.
 erneuert SSL snake\-oil Zertifikate.
 .IP \fBupdate\-notifier\fP 4
 schaltet update\-notifier ab.
-.IP \fBhook\fP 4
+.IP \fBanacron\fP 4
+schaltet anacron aus.
+.IP \fButil\-linux\fP 4
+schaltet hwclock von util\-linux ab.
+.IP \fBhooks\fP 4
 erlaubt beliebige Kommands von einem Skript auf dem Live Medium oder von
 einem HTTP/FTP Server auszuführen.
 
