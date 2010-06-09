@@ -37,6 +37,9 @@ Configure_kde_services ()
 	rm -f /usr/share/kde4/services/plasma-runner-contacts.desktop  # starts akonadi
 	rm -f /usr/share/kde4/services/kded/notificationhelper.desktop
 
+	# should enable kxkb in ~/.kde/share/config/kxkbrc
+	# if multiple layouts are specified. gnome does it per default.
+
 	# Creating state file
 	touch /var/lib/live/config/kde-services
 }
