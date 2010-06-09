@@ -92,11 +92,17 @@ Ermöglicht den Xorg Treiber manuell statt automatisch zu bestimmen.
 Ermöglicht die Xorg Auflösung manuell statt automatisch zu bestimmen.
 .IP "\fBlive\-config.hooks\fP=\fIURL1\fP|\fIURL2\fP| ...|\fIURLn\fP" 4
 Ermöglicht eine oder mehrere beliebige Dateien herunterzuladen und
-auszuführen. Die URLs müssen durch wget aufösbar sein und es müssen alle
-Abhängigkeiten, die für das Ausführen der Dateien notwendig sind, bereits
-installiert sein, zum Beispiel muss für ein Python Skript bereits Python auf
-dem System installiert sein. Einige Hooks für häufige Anwendungsfälle sind
-unter  <\fIhttp://live.debian.net/other/hooks\fP> verfügbar.
+auszuführen. Die URLs müssen durch wget (http, ftp oder file://) aufösbar
+sein, die Dateien werden in /tmp des laufenden Live Systems ausgeführt und
+es müssen alle Abhängigkeiten, die für das Ausführen der Dateien notwendig
+sind,bereits installiert sein, zum Beispiel muss für ein Python Skript
+bereits Python auf dem System installiert sein. Einige Hooks für häufige
+Anwendungsfälle sind unter  <\fIhttp://live.debian.net/other/hooks\fP>
+verfügbar.
+.br
+Falls die Datei sich auf dem Live Medium befindet, kann sie mittels
+file:///live/image/\fIFILE\fP benutzt werden, falls sie sich im Root
+Dateisystem des Live Systems selbst befindet, mittels file:///\fIFILE\fP.
 
 .SS "Boot Parameter (Abkürzungen)"
 \fBlive\-config\fP stellt Abkürzungen für einige häufige verwendete
