@@ -24,9 +24,6 @@ Foobar ()
 
 Configure_foobar ()
 {
-	# Checking if package is already configured
-	sleep 1
-
 	# Boot parameters can be acted up either this way...
 	if ! grep -qs "live-helper.foobar" /proc/cmdline
 	then
