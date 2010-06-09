@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config 2.0~a7\n"
-"POT-Creation-Date: 2010-06-08 20:21+0300\n"
+"POT-Creation-Date: 2010-06-09 10:29+0300\n"
 "PO-Revision-Date: 2010-05-24 09:59+0300\n"
 "Last-Translator: Daniel Baumann <daniel@debian.org>\n"
 "Language-Team: none\n"
@@ -23,9 +23,8 @@ msgstr "LIVE-CONFIG"
 
 #. type: TH
 #: en/live-config.7:9
-#, no-wrap
-msgid "2010-06-08"
-msgstr "08.06.2010"
+msgid "2010-06-09"
+msgstr "09.06.2010"
 
 #. type: TH
 #: en/live-config.7:9
@@ -417,8 +416,8 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:69
 #, no-wrap
-msgid "B<live-config.noxautologin>"
-msgstr "B<live-config.noxautologin>"
+msgid "B<live-config.nox11autologin>"
+msgstr "B<live-config.nox11autologin>"
 
 #. type: Plain text
 #: en/live-config.7:71

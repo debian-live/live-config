@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config VERSION\n"
-"POT-Creation-Date: 2010-06-08 20:21+0300\n"
+"POT-Creation-Date: 2010-06-09 10:29+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,7 +24,7 @@ msgstr ""
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "2010-06-08"
+msgid "2010-06-09"
 msgstr ""
 
 #. type: TH
@@ -358,7 +358,7 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:69
 #, no-wrap
-msgid "B<live-config.noxautologin>"
+msgid "B<live-config.nox11autologin>"
 msgstr ""
 
 #. type: Plain text
