@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config 2.0~a7\n"
-"POT-Creation-Date: 2010-06-09 10:29+0300\n"
+"POT-Creation-Date: 2010-06-09 10:51+0300\n"
 "PO-Revision-Date: 2010-05-24 09:59+0300\n"
 "Last-Translator: Daniel Baumann <daniel@debian.org>\n"
 "Language-Team: none\n"
@@ -23,6 +23,7 @@ msgstr "LIVE-CONFIG"
 
 #. type: TH
 #: en/live-config.7:9
+#, no-wrap
 msgid "2010-06-09"
 msgstr "09.06.2010"
 
@@ -357,13 +358,15 @@ msgid ""
 "Allows to fetch and execute one or more arbitrary files. Note that the URLs "
 "must be fetchable by wget, and that the files needs their dependencies, if "
 "any, already installed, e.g. if a python script should be executed the "
-"system needs python installed."
+"system needs python installed. Some hooks for some common use-cases are "
+"available at E<lt>I<http://live.debian.net/other/hooks>E<gt>."
 msgstr ""
 "Ermöglicht eine oder mehrere beliebige Dateien herunterzuladen und "
 "auszuführen. Die URLs müssen durch wget aufösbar sein und es müssen alle "
 "Abhängigkeiten, die für das Ausführen der Dateien notwendig sind, bereits "
 "installiert sein, zum Beispiel muss für ein Python Skript bereits Python auf "
-"dem System installiert sein."
+"dem System installiert sein. Einige Hooks für häufige Anwendungsfälle sind "
+"unter  E<lt>I<http://live.debian.net/other/hooks>E<gt> verfügbar."
 
 #. type: SS
 #: en/live-config.7:62
