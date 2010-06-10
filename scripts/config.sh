@@ -128,7 +128,7 @@ Cmdline ()
 				# Disables graphical autologin, no matter what
 				# mechanism
 				_SCRIPTS="${_SCRIPTS:-$(ls /lib/live/config/*)}"
-				LIVE_NOCONFIGS="${LIVE_NOCONFIGS},gdm,gdm3,kdm,lxdm,nodm"
+				LIVE_NOCONFIGS="${LIVE_NOCONFIGS},gdm,gdm3,kdm,lxdm,nodm,slim"
 				;;
 		esac
 	done
