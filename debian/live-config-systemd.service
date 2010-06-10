@@ -1,0 +1,7 @@
+[Unit]
+Description=live-config contains the scripts that configure a Debian Live system during the boot process (late userspace).
+
+[Service]
+ExecStart=/lib/live/config.sh
+Type=finish
+ValidNoProcess=yes
