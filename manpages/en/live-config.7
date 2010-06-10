@@ -52,6 +52,8 @@ Allows to change the keyboard layout. If more than one is specified, the tools o
 Allows to change the keyboard variant. There is no default value set.
 .IP "\fBlive\-config.keyboard\-options\fR=\fIKEYBOARD_OPTIONS\fR" 4
 Allows to change the keyboard options. There are no default value set.
+.IP "\fBlive\-config.sysv-rc\fR=\fISERVICE1\fR,\fISERVICE2\fR ... \fISERVICEn\fR" 4
+Allows to disable sysv services through update-rc.d.
 .IP "\fBlive\-config.xorg\-driver\fR=\fIXORG_DRIVER\fR" 4
 Allows to set xorg driver instead of autodetecting it.
 .IP "\fBlive\-config.xorg\-resolution\fR=\fIXORG_RESOLUTION\fR" 4
@@ -102,6 +104,8 @@ This variable equals the '\fBlive\-config.keyboard\-layout\fR=\fIKEYBOARD_LAYOUT
 This variable equals the '\fBlive\-config.keyboard\-variant\fR=\fIKEYBOARD_VARIANT\fR' parameter.
 .IP "\fBLIVE_KEYBOARD_OPTIONS\fR=\fIKEYBOARD_OPTIONS\fR" 4
 This variable equals the '\fBlive\-config.keyboard\-options\fR=\fIKEYBOARD_OPTIONS\fR' parameter.
+.IP "\fBLIVE_SYSV_RC\fR=\fISERVICE1\fR,\fISERVICE2\fR ... \fISERVICEn\fR" 4
+This variable equals the '\fBlive\-config.sysv-rc\fR=\fISERVICE1\fR,\fISERVICE2\fR ... \fISERVICEn\fR' parameter.
 .IP "\fBLIVE_XORG_DRIVER\fR=\fIXORG_DRIVER\fR" 4
 This variable equals the '\fBlive\-config.xorg\-driver\fR=\fIXORG_DRIVER\fR' parameter.
 .IP "\fBLIVE_XORG_RESOLUTION\fR=\fIXORG_RESOLUTION\fR" 4
@@ -151,6 +155,8 @@ configures autologin in slim.
 configures the keyboard.
 .IP "\fBsysvinit\fR" 4
 configures sysvinit.
+.IP "\fBsysv-rc\fR" 4
+configures sysv-rc by disabling listed services.
 .IP "\fBlogin\fR" 4
 disables lastlog.
 .IP "\fBapport\fR" 4

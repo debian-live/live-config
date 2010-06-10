@@ -98,6 +98,11 @@ Cmdline ()
 				LIVE_KEYBOARD_OPTIONS="${_PARAMETER#live-config.keyboard-options=}"
 				;;
 
+			# 014-sysv-rc
+			live-config.sysv-rc=*)
+				LIVE_SYSV_RC="${_PARAMETER#live-config.sysv-rc=}"
+				;;
+
 			# 116-xserver-xorg
 			live-config.xorg-driver=*)
 				LIVE_XORG_DRIVER="${_PARAMETER#live-config.xorg-driver=}"
