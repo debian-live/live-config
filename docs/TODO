@@ -11,8 +11,19 @@ we continue to release pre-releases until:
   * boot parameters don't change anymore and we agreed on a common layout of
     everything.
 
+2. Regressions
 
-2. Todo items
+Everything that worked with live-initramfs works with live-boot/live-config,
+except for the following things:
+
+  * temporarily no serial console support during booting. this will be added
+    back in some time.
+  * the locale script temporarily doesn't automatically configures the keyboard
+    when a 'short' locale is specified (like locales=de).
+  * not exactely a regression, but some boot parameters did change, have a look
+    at the manpage of live-config.
+
+3. Todo items
 
   * allow some scripts (most prominently locales) to be run even in persistent mode.
   * use build-time distribution detection, remove dead code from build.
