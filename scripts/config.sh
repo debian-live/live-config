@@ -124,7 +124,7 @@ Cmdline ()
 				LIVE_NOCONFIGS="${LIVE_NOCONFIGS},sysvinit"
 				;;
 
-			live-config.noxautologin)
+			live-config.nox11autologin)
 				# Disables graphical autologin, no matter what
 				# mechanism
 				_SCRIPTS="${_SCRIPTS:-$(ls /lib/live/config/*)}"

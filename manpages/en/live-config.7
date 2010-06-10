@@ -6,7 +6,7 @@
 .\" under certain conditions; see COPYING for details.
 .\"
 .\"
-.TH LIVE\-CONFIG 7 2010\-06\-08 2.0~a7 "Debian Live Project"
+.TH LIVE\-CONFIG 7 2010\-06\-10 2.0~a8 "Debian Live Project"
 
 .SH NAME
 \fBlive\-config\fR \- System Configuration Scripts
@@ -46,8 +46,8 @@ Allows to set the timezone of the system, e.g. 'Europe/Zurich'. The default is '
 Allows to change if the system is assuming that the hardware clock is set to UTC or not. The default is 'yes'.
 .IP "\fBlive\-config.keyboard\-model\fR=\fIKEYBOARD_MODEL\fR" 4
 Allows to change the keyboard model. There is no default value set.
-.IP "\fBlive\-config.keyboard\-layout\fR=\fIKEYBOARD_LAYOUT\fR" 4
-Allows to change the keyboard layout. There is no default value set.
+.IP "\fBlive\-config.keyboard\-layout\fR=\fIKEYBOARD_LAYOUT1\fR,\fIKEYBOARD_LAYOUT2\fR ... \fIKEYBOARD_LAYOUTn\fR" 4
+Allows to change the keyboard layout. If more than one is specified, the tools of the desktop environment will allow to switch it under X11. There is no default value set.
 .IP "\fBlive\-config.keyboard\-variant\fR=\fIKEYBOARD_VARIANT\fR" 4
 Allows to change the keyboard variant. There is no default value set.
 .IP "\fBlive\-config.keyboard\-options\fR=\fIKEYBOARD_OPTIONS\fR" 4
@@ -57,7 +57,9 @@ Allows to set xorg driver instead of autodetecting it.
 .IP "\fBlive\-config.xorg\-resolution\fR=\fIXORG_RESOLUTION\fR" 4
 Allows to set xorg resolution instead of autodetecting it.
 .IP "\fBlive\-config.hooks\fR=\fIURL1\fR|\fIURL2\fR| ... |\fIURLn\fR" 4
-Allows to fetch and execute one or more arbitrary files. Note that the URLs must be fetchable by wget, and that the files needs their dependencies, if any, already installed, e.g. if a python script should be executed the system needs python installed.
+Allows to fetch and execute one or more arbitrary files. Note that the URLs must be fetchable by wget (http, ftp or file://), the files are executed in /tmp of the running live system, and that the files needs their dependencies, if any, already installed, e.g. if a python script should be executed the system needs python installed. Some hooks for some common use-cases are available at <\fIhttp://live.debian.net/other/hooks\fR>.
+.br
+If the file is placed on the live media, it can be fetched with file:///live/image/\fIFILE\fR, or with file:///\fIFILE\fR if it is in the root filesystem of the live system itself.
 
 .SS Boot Parameters (shortcuts)
 For some common use cases where it would require to combine several individual parameters, \fBlive\-config\fR provides shortcuts. This allows both to have full granularity over all the options, as well keep things simple.
@@ -66,7 +68,7 @@ For some common use cases where it would require to combine several individual p
 Disables the sudo and policykit, the user cannot gain root privileges on the system.
 .IP "\fBlive\-config.nottyautologin\fR" 4
 Disables the automatic login on the terminal, not affecting the graphical autologin.
-.IP "\fBlive\-config.noxautologin\fR" 4
+.IP "\fBlive\-config.nox11autologin\fR" 4
 Disables the automatic login with any display manager, not affecting tty autologin.
 
 .SS Configuration Files
