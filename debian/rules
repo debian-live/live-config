@@ -9,6 +9,10 @@ override_dh_auto_build:
 override_dh_auto_install:
 	$(MAKE) DESTDIR=$(CURDIR)/debian/live-config install
 
+	# live-config-sysvinit
+	mkdir -p debian/live-config-sysvinit/lib/live/config
+	mv debian/live-config/lib/live/config/*-sysvinit debian/live-config-sysvinit/lib/live/config
+
 	# Removing useless files
 	rm -f debian/live-config/usr/share/doc/live-config/COPYING
 
