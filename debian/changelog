@@ -1,3 +1,21 @@
+live-config (2.0~a8-1) unstable; urgency=low
+
+  * Renaming noxautologin parameter to nox11autologin for consistency.
+  * Renaming foobar example configuration file to foobar.conf for
+    consistency.
+  * Removing some confusing code from example script.
+  * Using example script with proper order number.
+  * Adding reference to http://live.debian.net/other/hooks/ in manpage.
+  * Improving live-config.hooks description in manpage.
+  * Updating manpage to reflect that there can be more than one keyboard
+    layout specified at the time.
+  * Adding comment about enabling kxkb in kde-services config script.
+  * Moving sysvinit config script to live-config-sysvinit package.
+  * Adding initial systemd backend.
+  * Documenting 'regressions' in TOOD file.
+
+ -- Daniel Baumann <daniel@debian.org>  Thu, 10 Jun 2010 12:40:26 +0200
+
 live-config (2.0~a7-1) unstable; urgency=low
 
   * Updating TODO file.
