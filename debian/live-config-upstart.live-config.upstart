@@ -1,0 +1,15 @@
+# Debian Live - System Configuration Scripts
+#
+# live-config contains the scripts that configure a Debian Live system during
+# the boot process (late userspace).
+#
+# This is the upstart job for live-config.
+
+
+description	"live-config"
+author		"Daniel Baumann <daniel@debian.org>"
+
+start on runlevel S
+stop on runlevel [!2345]
+
+exec /lib/live/config.sh
