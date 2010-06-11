@@ -1,3 +1,13 @@
+live-config (2.0~a9-1) unstable; urgency=low
+
+  * Adding slim config script.
+  * Adding sysv-rc script, thanks to Michal Suchanek
+    <hramrach@centrum.cz> for the idea.
+  * Correcting nodm script.
+  * Adding initial upstart backend.
+
+ -- Daniel Baumann <daniel@debian.org>  Fri, 11 Jun 2010 18:36:11 +0200
+
 live-config (2.0~a8-1) unstable; urgency=low
 
   * Renaming noxautologin parameter to nox11autologin for consistency.
