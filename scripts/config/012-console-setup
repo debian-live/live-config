@@ -37,11 +37,11 @@ Configure_console_setup ()
 		sed -i -e "s|^XKBMODEL=.*$|XKBMODEL=\"${LIVE_KEYBOARD_MODEL}\"|" /etc/default/console-setup
 	fi
 
-	if [ -n "${LIVE_KEYBOARD_LAYOUT}" ]
+	if [ -n "${LIVE_KEYBOARD_LAYOUTS}" ]
 	then
-		echo "console-setup console-setup/layoutcode select ${LIVE_KEYBOARD_LAYOUT}" >> /tmp/debconf.live
+		echo "console-setup console-setup/layoutcode select ${LIVE_KEYBOARD_LAYOUTS}" >> /tmp/debconf.live
 
-		sed -i -e "s|^XKBLAYOUT=.*$|XKBLAYOUT=\"${LIVE_KEYBOARD_LAYOUT}\"|" /etc/default/console-setup
+		sed -i -e "s|^XKBLAYOUT=.*$|XKBLAYOUT=\"${LIVE_KEYBOARD_LAYOUTS}\"|" /etc/default/console-setup
 	fi
 
 	if [ -n "${LIVE_KEYBOARD_VARIANT}" ]

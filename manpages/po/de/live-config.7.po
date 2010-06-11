@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config 2.0~a9\n"
-"POT-Creation-Date: 2010-06-11 18:35+0300\n"
+"POT-Creation-Date: 2010-06-11 22:24+0300\n"
 "PO-Revision-Date: 2010-05-24 09:59+0300\n"
 "Last-Translator: Daniel Baumann <daniel@debian.org>\n"
 "Language-Team: none\n"
@@ -288,17 +288,17 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:49
 #, no-wrap
-msgid "B<live-config.keyboard-layout>=I<KEYBOARD_LAYOUT1>,I<KEYBOARD_LAYOUT2> ... I<KEYBOARD_LAYOUTn>"
-msgstr "B<live-config.keyboard-layout>=I<TASTATUR_LAYOUT1>,I<TASTATUR_LAYOUT2> ... I<TASTATUR_LAYOUTn>"
+msgid "B<live-config.keyboard-layouts>=I<KEYBOARD_LAYOUT1>,I<KEYBOARD_LAYOUT2> ... I<KEYBOARD_LAYOUTn>"
+msgstr "B<live-config.keyboard-layouts>=I<TASTATUR_LAYOUT1>,I<TASTATUR_LAYOUT2> ... I<TASTATUR_LAYOUTn>"
 
 #. type: Plain text
 #: en/live-config.7:51
 msgid ""
-"Allows to change the keyboard layout. If more than one is specified, the "
+"Allows to change the keyboard layouts. If more than one is specified, the "
 "tools of the desktop environment will allow to switch it under X11. There is "
 "no default value set."
 msgstr ""
-"Ermöglicht das Tastatur Layout zu bestimmen. Wenn mehr als ein Layout "
+"Ermöglicht die Tastatur Layouts zu bestimmen. Wenn mehr als ein Layout "
 "angegeben wird, ermöglichen die Tools der Desktopumgebung das Wechseln unter "
 "X11. Es ist kein Standardwert gesetzt."
 
@@ -641,17 +641,19 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:101
 #, no-wrap
-msgid "B<LIVE_KEYBOARD_LAYOUT>=I<KEYBOARD_LAYOUT>"
-msgstr "B<LIVE_KEYBOARD_LAOUT>=I<TASTATUR_LAYOUT>"
+msgid "B<LIVE_KEYBOARD_LAYOUTS>=I<KEYBOARD_LAYOUT1>,I<KEYBOARD_LAYOUT2> ... I<KEYBOARD_LAYOUTn>"
+msgstr "B<LIVE_KEYBOARD_LAYOUTS>=I<TASTATUR_LAYOUT1>,I<TASTATUR_LAYOUT2> ... I<TASTATUR_LAYOUTn>"
 
 #. type: Plain text
 #: en/live-config.7:103
 msgid ""
-"This variable equals the 'B<live-config.keyboard-layout>=I<KEYBOARD_LAYOUT>' "
+"This variable equals the 'B<live-config.keyboard-"
+"layouts>=I<KEYBOARD_LAYOUT1>,I<KEYBOARD_LAYOUT2> ... I<KEYBOARD_LAYOUTn>' "
 "parameter."
 msgstr ""
 "Diese Variable enspricht dem 'B<live-config.keyboard-"
-"layout>=I<TASTATUR_LAYOUT>' Parameter."
+"layouts>=I<TASTATUR_LAYOUT1>,I<TASTATUR_LAYOUT2> ... I<TASTATUR_LAYOUTn>' "
+"Parameter."
 
 #. type: IP
 #: en/live-config.7:103

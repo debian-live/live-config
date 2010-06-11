@@ -86,8 +86,8 @@ Cmdline ()
 				LIVE_KEYBOARD_MODEL="${_PARAMETER#live-config.keyboard-model=}"
 				;;
 
-			live-config.keyboard-layout=*)
-				LIVE_KEYBOARD_LAYOUT="${_PARAMETER#live-config.keyboard-layout=}"
+			live-config.keyboard-layouts=*)
+				LIVE_KEYBOARD_LAYOUTS="${_PARAMETER#live-config.keyboard-layouts=}"
 				;;
 
 			live-config.keyboard-variant=*)
