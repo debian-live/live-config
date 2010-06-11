@@ -17,6 +17,7 @@ override_dh_auto_install:
 	# live-config-sysvinit
 	mkdir -p debian/live-config-sysvinit/lib/live/config
 	mv debian/live-config/lib/live/config/*-sysvinit debian/live-config-sysvinit/lib/live/config
+	mv debian/live-config/lib/live/config/*-sysv-rc debian/live-config-sysvinit/lib/live/config
 
 	# Removing useless files
 	rm -f debian/live-config/usr/share/doc/live-config/COPYING
