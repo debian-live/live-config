@@ -11,7 +11,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 10.06.2010 2.0~a8 "Debian Live Projekt"
+.TH LIVE\-CONFIG 7 11.06.2010 2.0~a9 "Debian Live Projekt"
 
 .SH NAME
 \fBlive\-config\fP \- System Konfiguration Skripte
@@ -87,6 +87,8 @@ gesetzt.
 .IP \fBlive\-config.keyboard\-options\fP=\fITASTATUR_OPTIONEN\fP 4
 Ermöglicht die Tastatur Optionen zu bestimmen. Es ist kein Standardwert
 gesetzt.
+.IP "\fBlive\-config.sysv\-rc\fP=\fISERVICE1\fP,\fISERVICE2\fP ... \fISERVICEn\fP" 4
+Ermöglicht Services durch update\-rc.d abzuschalten.
 .IP \fBlive\-config.xorg\-driver\fP=\fIXORG_TREIBER\fP 4
 Ermöglicht den Xorg Treiber manuell statt automatisch zu bestimmen.
 .IP \fBlive\-config.xorg\-resolution\fP=\fIXORG_AUFLÖSUNG\fP 4
@@ -177,6 +179,9 @@ Diese Variable enspricht dem
 .IP \fBLIVE_KEYBOARD_OPTIONS\fP=\fITASTATUR_OPTIONEN\fP 4
 Diese Variable enspricht dem
 \&'\fBlive\-config.keyboard\-options\fP=\fITASTATUR_OPTIONEN\fP' Parameter.
+.IP "\fBLIVE_SYSV_RC\fP=\fISERVICE1\fP,\fISERVICE2\fP ... \fISERVICEn\fP" 4
+Diese Variable enspricht dem '\fBlive\-config.sysv\-rc\fP=\fISERVICE1\fP,\fISERVICE2\fP
+\&... \fISERVICEn\fP' Parameter.
 .IP \fBLIVE_XORG_DRIVER\fP=\fIXORG_TREIBER\fP 4
 Diese Variable enspricht dem '\fBlive\-config.xorg\-driver\fP=\fIXORG_TREIBER\fP'
 Parameter.
@@ -236,10 +241,14 @@ konfiguriert Autologin in kdm.
 konfiguriert Autologin in lxdm.
 .IP \fBnodm\fP 4
 konfiguriert Autologin in nodm.
+.IP \fBslim\fP 4
+konfiguriert Autologin in slim.
 .IP "\fBconsole\-common\fP, \fBconsole\-setup\fP (lenny), \fBkeyboard\-configuration\fP (squeeze und neuer)" 4
 konfiguriert die Tastatur.
 .IP \fBsysvinit\fP 4
 konfiguriert sysvinit.
+.IP \fBsysv\-rc\fP 4
+konfiguriert sysv\-rc durch abschalten von angegebenen Services.
 .IP \fBlogin\fP 4
 schaltet lastlog ab.
 .IP \fBapport\fP 4
