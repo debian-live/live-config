@@ -29,7 +29,7 @@ except for the following things:
   * use build-time distribution detection, remove dead code from build.
   * use verbose/quiet/debug/interactive modes for scripts.
   * use logfile.
-  * add upstart integration.
   * enable display managers only if they are the selected one.
+  * add option to specify the xsession.
   * when not using persistency, do not import options into the debconf db.
   * cleanup the scripts order and splitting.
