@@ -42,6 +42,7 @@ Process_hooks ()
 				/etc/init.d/networking start > /dev/null 2>&1
 
 				_NETWORK="true"
+				export _NETWORK
 			fi
 
 			wget --quiet "${_HOOK}" -O "${_TMPFILE}"
