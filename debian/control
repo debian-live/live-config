@@ -24,7 +24,7 @@ Description: Debian Live - System Configuration Scripts
 
 Package: live-config-systemd
 Architecture: all
-Depends: ${misc:Depends}, live-config (>= ${source:Version})
+Depends: ${misc:Depends}, live-config (>= ${source:Version}), systemd
 Conflicts: live-config-backend
 Replaces: live-config-backend
 Provides: live-config-backend
