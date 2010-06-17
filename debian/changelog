@@ -1,3 +1,23 @@
+live-config (2.0~a10-1) unstable; urgency=low
+
+  * Adding commentary description in systemd service file.
+  * Adding commentary description in sysvinit script file.
+  * Also moving sysv-rc script to sysvinit backend package.
+  * Renaming live-config.keyboard-layout parameter to live-
+    config.keyboard-layouts for consistency.
+  * Correcting typo in sysv-rc script.
+  * Updating TODO file.
+  * Export network status in hook script.
+  * Sorting dh_installinit calls in rules file.
+  * Adding debug boot option.
+  * Automatically determine on which distribution the package is built
+    through lsb_release and removing unecessary config scripts from the
+    resulting package.
+  * Moving build-depends on lsb-release to build-depends-indep.
+  * Adding depends to systemd now that it passed the NEW queue.
+
+ -- Daniel Baumann <daniel@debian.org>  Thu, 17 Jun 2010 21:47:33 +0200
+
 live-config (2.0~a9-1) unstable; urgency=low
 
   * Adding slim config script.
