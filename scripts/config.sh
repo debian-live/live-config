@@ -135,6 +135,11 @@ Cmdline ()
 				_SCRIPTS="${_SCRIPTS:-$(ls /lib/live/config/*)}"
 				LIVE_NOCONFIGS="${LIVE_NOCONFIGS},gdm,gdm3,kdm,lxdm,nodm,slim"
 				;;
+
+			# Special options
+			live-config.debug)
+				LIVE_DEBUG="true"
+				;;
 		esac
 	done
 
@@ -214,6 +219,11 @@ Main ()
 
 	# Reading kernel command line
 	Cmdline
+
+	if [ "${LIVE_DEBUG}" = "true" ]
+	then
+		set -x
+	fi
 
 	# Configuring system
 	for _SCRIPT in ${_SCRIPTS}
