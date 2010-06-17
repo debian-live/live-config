@@ -11,7 +11,7 @@ live-config (2.0~a10-1) unstable; urgency=low
   * Sorting dh_installinit calls in rules file.
   * Adding debug boot option.
   * Automatically determine on which distribution the package is built
-    through lsb_release and removing unecessary config scripts from the
+    through lsb_release and removing unnecessary config scripts from the
     resulting package.
   * Moving build-depends on lsb-release to build-depends-indep.
   * Adding depends to systemd now that it passed the NEW queue.
