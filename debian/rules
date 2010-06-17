@@ -23,5 +23,5 @@ override_dh_auto_install:
 	rm -f debian/live-config/usr/share/doc/live-config/COPYING
 
 override_dh_installinit:
-	dh_installinit -p live-config-sysvinit --no-restart-on-upgrade --no-start --update-rcd-params='start 00 S .' --name live-config
 	dh_installinit -p live-config-upstart --no-restart-on-upgrade --no-start --name live-config
+	dh_installinit -p live-config-sysvinit --no-restart-on-upgrade --no-start --update-rcd-params='start 00 S .' --name live-config
