@@ -31,11 +31,11 @@ Configure_keyboard_configuration ()
 		sed -i -e "s|^XKBMODEL=.*$|XKBMODEL=\"${LIVE_KEYBOARD_MODEL}\"|" /etc/default/keyboard
 	fi
 
-	if [ -n "${LIVE_KEYBOARD_LAYOUT}" ]
+	if [ -n "${LIVE_KEYBOARD_LAYOUTS}" ]
 	then
-		echo "keyboard-configuration keyboard-configuration/layoutcode select ${LIVE_KEYBOARD_LAYOUT}" >> /tmp/debconf.live
+		echo "keyboard-configuration keyboard-configuration/layoutcode select ${LIVE_KEYBOARD_LAYOUTS}" >> /tmp/debconf.live
 
-		sed -i -e "s|^XKBLAYOUT=.*$|XKBLAYOUT=\"${LIVE_KEYBOARD_LAYOUT}\"|" /etc/default/keyboard
+		sed -i -e "s|^XKBLAYOUT=.*$|XKBLAYOUT=\"${LIVE_KEYBOARD_LAYOUTS}\"|" /etc/default/keyboard
 	fi
 
 	if [ -n "${LIVE_KEYBOARD_VARIANT}" ]

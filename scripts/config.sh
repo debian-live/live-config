@@ -86,8 +86,8 @@ Cmdline ()
 				LIVE_KEYBOARD_MODEL="${_PARAMETER#live-config.keyboard-model=}"
 				;;
 
-			live-config.keyboard-layout=*)
-				LIVE_KEYBOARD_LAYOUT="${_PARAMETER#live-config.keyboard-layout=}"
+			live-config.keyboard-layouts=*)
+				LIVE_KEYBOARD_LAYOUTS="${_PARAMETER#live-config.keyboard-layouts=}"
 				;;
 
 			live-config.keyboard-variant=*)
@@ -134,6 +134,11 @@ Cmdline ()
 				# mechanism
 				_SCRIPTS="${_SCRIPTS:-$(ls /lib/live/config/*)}"
 				LIVE_NOCONFIGS="${LIVE_NOCONFIGS},gdm,gdm3,kdm,lxdm,nodm,slim"
+				;;
+
+			# Special options
+			live-config.debug)
+				LIVE_DEBUG="true"
 				;;
 		esac
 	done
@@ -214,6 +219,11 @@ Main ()
 
 	# Reading kernel command line
 	Cmdline
+
+	if [ "${LIVE_DEBUG}" = "true" ]
+	then
+		set -x
+	fi
 
 	# Configuring system
 	for _SCRIPT in ${_SCRIPTS}

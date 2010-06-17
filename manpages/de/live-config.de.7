@@ -11,7 +11,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 11.06.2010 2.0~a9 "Debian Live Projekt"
+.TH LIVE\-CONFIG 7 17.06.2010 2.0~a10 "Debian Live Projekt"
 
 .SH NAME
 \fBlive\-config\fP \- System Konfiguration Skripte
@@ -77,8 +77,8 @@ Hardwareuhr auf UTC gestellt ist oder nicht. Der Standard ist 'yes'.
 .IP \fBlive\-config.keyboard\-model\fP=\fITASTATUR_MODELL\fP 4
 Ermöglicht das Tastatur Modell zu bestimmen. Es ist kein Standardwert
 gesetzt.
-.IP "\fBlive\-config.keyboard\-layout\fP=\fITASTATUR_LAYOUT1\fP,\fITASTATUR_LAYOUT2\fP ... \fITASTATUR_LAYOUTn\fP" 4
-Ermöglicht das Tastatur Layout zu bestimmen. Wenn mehr als ein Layout
+.IP "\fBlive\-config.keyboard\-layouts\fP=\fITASTATUR_LAYOUT1\fP,\fITASTATUR_LAYOUT2\fP ... \fITASTATUR_LAYOUTn\fP" 4
+Ermöglicht die Tastatur Layouts zu bestimmen. Wenn mehr als ein Layout
 angegeben wird, ermöglichen die Tools der Desktopumgebung das Wechseln unter
 X11. Es ist kein Standardwert gesetzt.
 .IP \fBlive\-config.keyboard\-variant\fP=\fITASTATUR_VARIANTE\fP 4
@@ -122,6 +122,12 @@ automatisch graphischen Login nicht.
 .IP \fBlive\-config.nox11autologin\fP 4
 Schaltet den automatischen Login via Display Manager ab, dies beeinflusst
 den automatischen tty Login nicht.
+
+.SS "Boot Parameter (Spezielle Optionen)"
+Für spezielle Anwendungsfälle gibt es ein paar spezielle Bootparameter.
+
+.IP \fBlive\-config.debug\fP 4
+Schaltet debug Ausgaben in live\-config an.
 
 .SS Konfigurationsdateien
 \fBlive\-config\fP kann durch Konfigurationsdateien konfiguriert (nicht aber
@@ -170,9 +176,10 @@ Diese Variable enspricht dem '\fBlive\-config.utc\fP=\fByes\fP|no' Parameter.
 .IP \fBLIVE_KEYBOARD_MODEL\fP=\fITASTATUR_MODELL\fP 4
 Diese Variable enspricht dem
 \&'\fBlive\-config.keyboard\-model\fP=\fITASTATUR_MODELL\fP' Parameter.
-.IP \fBLIVE_KEYBOARD_LAOUT\fP=\fITASTATUR_LAYOUT\fP 4
+.IP "\fBLIVE_KEYBOARD_LAYOUTS\fP=\fITASTATUR_LAYOUT1\fP,\fITASTATUR_LAYOUT2\fP ... \fITASTATUR_LAYOUTn\fP" 4
 Diese Variable enspricht dem
-\&'\fBlive\-config.keyboard\-layout\fP=\fITASTATUR_LAYOUT\fP' Parameter.
+\&'\fBlive\-config.keyboard\-layouts\fP=\fITASTATUR_LAYOUT1\fP,\fITASTATUR_LAYOUT2\fP
+\&... \fITASTATUR_LAYOUTn\fP' Parameter.
 .IP \fBLIVE_KEYBOARD_VARIANT\fP=\fITASTATUR_VARIANTE\fP 4
 Diese Variable enspricht dem
 \&'\fBlive\-config.keyboard\-variant\fP=\fITASTATUR_VARIANTE\fP' Parameter.

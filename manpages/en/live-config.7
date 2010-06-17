@@ -6,7 +6,7 @@
 .\" under certain conditions; see COPYING for details.
 .\"
 .\"
-.TH LIVE\-CONFIG 7 2010\-06\-11 2.0~a9 "Debian Live Project"
+.TH LIVE\-CONFIG 7 2010\-06\-17 2.0~a10 "Debian Live Project"
 
 .SH NAME
 \fBlive\-config\fR \- System Configuration Scripts
@@ -46,8 +46,8 @@ Allows to set the timezone of the system, e.g. 'Europe/Zurich'. The default is '
 Allows to change if the system is assuming that the hardware clock is set to UTC or not. The default is 'yes'.
 .IP "\fBlive\-config.keyboard\-model\fR=\fIKEYBOARD_MODEL\fR" 4
 Allows to change the keyboard model. There is no default value set.
-.IP "\fBlive\-config.keyboard\-layout\fR=\fIKEYBOARD_LAYOUT1\fR,\fIKEYBOARD_LAYOUT2\fR ... \fIKEYBOARD_LAYOUTn\fR" 4
-Allows to change the keyboard layout. If more than one is specified, the tools of the desktop environment will allow to switch it under X11. There is no default value set.
+.IP "\fBlive\-config.keyboard\-layouts\fR=\fIKEYBOARD_LAYOUT1\fR,\fIKEYBOARD_LAYOUT2\fR ... \fIKEYBOARD_LAYOUTn\fR" 4
+Allows to change the keyboard layouts. If more than one is specified, the tools of the desktop environment will allow to switch it under X11. There is no default value set.
 .IP "\fBlive\-config.keyboard\-variant\fR=\fIKEYBOARD_VARIANT\fR" 4
 Allows to change the keyboard variant. There is no default value set.
 .IP "\fBlive\-config.keyboard\-options\fR=\fIKEYBOARD_OPTIONS\fR" 4
@@ -72,6 +72,12 @@ Disables the sudo and policykit, the user cannot gain root privileges on the sys
 Disables the automatic login on the terminal, not affecting the graphical autologin.
 .IP "\fBlive\-config.nox11autologin\fR" 4
 Disables the automatic login with any display manager, not affecting tty autologin.
+
+.SS Boot Parameters (special options)
+For special use cases there are some special boot paramters.
+
+.IP "\fBlive\-config.debug\fR" 4
+Enables debug output in live\-config.
 
 .SS Configuration Files
 \fBlive\-config\fR can be configured (but not activated) through configuration files. Everything but the shortcuts that can be configured with a boot parameter can be alternatively also be configured through one or more files. If configuration files are used, the 'boot=live' parameter is still required to activate \fBlive\-config\fR.
@@ -98,8 +104,8 @@ This variable equals the '\fBlive\-config.timezone\fR=\fITIMEZONE\fR' parameter.
 This variable equals the '\fBlive\-config.utc\fR=\fByes\fR|no' parameter.
 .IP "\fBLIVE_KEYBOARD_MODEL\fR=\fIKEYBOARD_MODEL\fR" 4
 This variable equals the '\fBlive\-config.keyboard\-model\fR=\fIKEYBOARD_MODEL\fR' parameter.
-.IP "\fBLIVE_KEYBOARD_LAYOUT\fR=\fIKEYBOARD_LAYOUT\fR" 4
-This variable equals the '\fBlive\-config.keyboard\-layout\fR=\fIKEYBOARD_LAYOUT\fR' parameter.
+.IP "\fBLIVE_KEYBOARD_LAYOUTS\fR=\fIKEYBOARD_LAYOUT1\fR,\fIKEYBOARD_LAYOUT2\fR ... \fIKEYBOARD_LAYOUTn\fR" 4
+This variable equals the '\fBlive\-config.keyboard\-layouts\fR=\fIKEYBOARD_LAYOUT1\fR,\fIKEYBOARD_LAYOUT2\fR ... \fIKEYBOARD_LAYOUTn\fR' parameter.
 .IP "\fBLIVE_KEYBOARD_VARIANT\fR=\fIKEYBOARD_VARIANT\fR" 4
 This variable equals the '\fBlive\-config.keyboard\-variant\fR=\fIKEYBOARD_VARIANT\fR' parameter.
 .IP "\fBLIVE_KEYBOARD_OPTIONS\fR=\fIKEYBOARD_OPTIONS\fR" 4

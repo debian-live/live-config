@@ -19,7 +19,7 @@ Sysv_rc ()
 
 	echo -n " sysv-rc"
 
-	Configure_sysv-rc
+	Configure_sysv_rc
 }
 
 Configure_sysv_rc ()
