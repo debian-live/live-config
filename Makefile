@@ -2,7 +2,7 @@
 
 SHELL := sh -e
 
-LANGUAGES = de
+LANGUAGES = de fr
 
 SCRIPTS = scripts/config.sh scripts/config/*
 
