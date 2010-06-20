@@ -1,3 +1,13 @@
+live-config (2.0~a11-1) unstable; urgency=low
+
+  * Correcting spelling mistake in changelog.
+  * Degrading systemd depends to suggests for the time that systemd
+    resides in experimental only.
+  * Adding initial French manpage translation from Thierry Lépicier
+    <thierry.lepicier@free.fr>.
+
+ -- Daniel Baumann <daniel@debian.org>  Sun, 20 Jun 2010 19:18:11 +0200
+
 live-config (2.0~a10-1) unstable; urgency=low
 
   * Adding commentary description in systemd service file.
