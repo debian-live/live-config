@@ -179,6 +179,21 @@ Trap ()
 	return ${_RETURN}
 }
 
+Start_network ()
+{
+	if [ -z "${_NETWORK}" ] && [ -e /etc/init.d/live-config ]
+	then
+		/etc/init.d/mountkernfs.sh start > /dev/null 2>&1
+		/etc/init.d/mountdevsubfs.sh start > /dev/null 2>&1
+		/etc/init.d/ifupdown-clean start > /dev/null 2>&1
+		/etc/init.d/ifupdown start > /dev/null 2>&1
+		/etc/init.d/networking start > /dev/null 2>&1
+
+		_NETWORK="true"
+		export _NETWORK
+	fi
+}
+
 Main ()
 {
 	if ! grep -qs "boot=live" /proc/cmdline

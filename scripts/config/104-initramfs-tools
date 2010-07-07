@@ -46,17 +46,24 @@ cat > /usr/sbin/update-initramfs << 'EOF'
 # Updating initramfs
 update-initramfs.debian "${@}"
 
+if [ -e /initrd.img ]
+then
+	_DIRECTORY=""
+else
+	_DIRECTORY="/boot"
+fi
+
 # Copying kernel and initrd to live media
 if [ -e /cdrom/live/initrd.lz ]
 then
-	zcat /initrd.img | lzma -9c >/cdrom/live/initrd.lz.new
+	zcat "${_DIRECTORY}/initrd.img" | lzma -9c > /cdrom/live/initrd.lz.new
 	mv /cdrom/live/initrd.lz.new /cdrom/live/initrd.lz
 else
-	cp /initrd.img /cdrom/live/initrd.gz.new
+	cp "${_DIRECTORY}/initrd.img" /cdrom/live/initrd.gz.new
 	mv /cdrom/live/initrd.gz.new /cdrom/live/initrd.gz
 fi
 
-cp /vmlinuz /cdrom/live/vmlinuz.new
+cp "${_DIRECTORY}/vmlinuz" /cdrom/live/vmlinuz.new
 mv /cdrom/live/vmlinuz.new /cdrom/live/vmlinuz
 EOF
 
