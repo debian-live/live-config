@@ -1,3 +1,12 @@
+live-config (2.0~a12-1) unstable; urgency=low
+
+  * Factoring out common function to start network.
+  * Updating replacement update-initramfs cope with files being in /boot
+    rather than root.
+  * Updating package to standards version 3.9.0.
+
+ -- Daniel Baumann <daniel@debian.org>  Wed, 07 Jul 2010 20:20:02 +0200
+
 live-config (2.0~a11-1) unstable; urgency=low
 
   * Correcting spelling mistake in changelog.
