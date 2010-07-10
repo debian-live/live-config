@@ -33,7 +33,7 @@ case "${DISTRIBUTION}" in
 			# Removing lenny legacy scripts
 			rm -f "${DIRECTORY}"/*-console-common
 			rm -f "${DIRECTORY}"/*-console-setup
-			rm -f "${DIRECTORY}"/*-gdm
+			#rm -f "${DIRECTORY}"/*-gdm
 			rm -f "${DIRECTORY}"/*-kpersonalizer
 			;;
 		esac
