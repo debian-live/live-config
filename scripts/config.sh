@@ -146,18 +146,18 @@ Cmdline ()
 	# Include requested scripts
 	if [ -n "${LIVE_CONFIGS}" ]
 	then
-		for LIVE_CONFIG in $(echo ${LIVE_CONFIGS} | sed -e 's|,| |g')
+		for _CONFIG in $(echo ${LIVE_CONFIGS} | sed -e 's|,| |g')
 		do
-			_SCRIPTS="${_SCRIPTS} $(ls /lib/live/config/???-${LIVE_CONFIG})"
+			_SCRIPTS="${_SCRIPTS} $(ls /lib/live/config/???-${_CONFIG})"
 		done
 	fi
 
 	# Exclude requested scripts
 	if [ -n "${LIVE_NOCONFIGS}" ]
 	then
-		for LIVE_NOCONFIG in $(echo ${LIVE_NOCONFIGS} | sed -e 's|,| |g')
+		for _NOCONFIG in $(echo ${LIVE_NOCONFIGS} | sed -e 's|,| |g')
 		do
-			_SCRIPTS="$(echo ${_SCRIPTS} | sed -e "s|$(ls /lib/live/config/???-${LIVE_NOCONFIG})||")"
+			_SCRIPTS="$(echo ${_SCRIPTS} | sed -e "s|$(ls /lib/live/config/???-${_NOCONFIG})||")"
 		done
 	fi
 }
