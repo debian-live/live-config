@@ -1,3 +1,25 @@
+live-config (2.0~a14-1) unstable; urgency=low
+
+  * Prefixing local variables in update-live-config script.
+  * Adding check for lsb_release in update-live-config script.
+  * Updating example package to standards 3.9.0.
+  * Adding README for example debian package.
+  * Adding note about live-config in copyright file of live-config-
+    foobar example package.
+  * Regenerating manpages po files.
+  * Enabling short options (foo instead of live-config.foo).
+  * Updating manpages to reflect that the gdm script was reenabled for
+    squeeze and newer.
+  * Updating manpages to reflect that short options are enabled now.
+  * Using two hashes for license headers.
+  * Prefixing some forgotten internal variables.
+  * Adding live-config.noautologin parameter to disable both console and
+    graphical autologin.
+  * Updating manpages to reflect addition of live-config.noautologin
+    parameter.
+
+ -- Daniel Baumann <daniel@debian.org>  Fri, 16 Jul 2010 01:44:26 +0200
+
 live-config (2.0~a13-1) unstable; urgency=low
 
   * Because lxde still uses gdm instead of gdm3 on squeeze, also
