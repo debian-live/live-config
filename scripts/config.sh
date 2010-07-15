@@ -54,82 +54,82 @@ Cmdline ()
 				;;
 
 			# 001-hostname
-			live-config.hostname=*)
-				LIVE_HOSTNAME="${_PARAMETER#live-config.hostname=}"
+			live-config.hostname=*|hostname=*)
+				LIVE_HOSTNAME="${_PARAMETER#*hostname=}"
 				;;
 
 			# 002-user-setup
-			live-config.username=*)
-				LIVE_USERNAME="${_PARAMETER#live-config.username=}"
+			live-config.username=*|username=*)
+				LIVE_USERNAME="${_PARAMETER#*username=}"
 				;;
 
-			live-config.user-fullname=*)
-				LIVE_USER_FULLNAME="${_PARAMETER#live-config.user-fullname=}"
+			live-config.user-fullname=*|user-fullname=*)
+				LIVE_USER_FULLNAME="${_PARAMETER#*user-fullname=}"
 				;;
 
 			# 004-locales
-			live-config.locales=*)
-				LIVE_LOCALES="${_PARAMETER#live-config.locales=}"
+			live-config.locales=*|locales=*)
+				LIVE_LOCALES="${_PARAMETER#*locales=}"
 				;;
 
 			# 005-tzdata
-			live-config.timezone=*)
-				LIVE_TIMEZONE="${_PARAMETER#live-config.timezone=}"
+			live-config.timezone=*|timezone=*)
+				LIVE_TIMEZONE="${_PARAMETER#*timezone=}"
 				;;
 
-			live-config.utc=*)
-				LIVE_UTC="${_PARAMETER#live-config.utc=}"
+			live-config.utc=*|utc=*)
+				LIVE_UTC="${_PARAMETER#*utc=}"
 				;;
 
 			# 012-console-setup, 013-keyboard-configuration
-			live-config.keyboard-model=*)
-				LIVE_KEYBOARD_MODEL="${_PARAMETER#live-config.keyboard-model=}"
+			live-config.keyboard-model=*|keyboard-model=*)
+				LIVE_KEYBOARD_MODEL="${_PARAMETER#*keyboard-model=}"
 				;;
 
-			live-config.keyboard-layouts=*)
-				LIVE_KEYBOARD_LAYOUTS="${_PARAMETER#live-config.keyboard-layouts=}"
+			live-config.keyboard-layouts=*|keyboard-layouts=*)
+				LIVE_KEYBOARD_LAYOUTS="${_PARAMETER#*keyboard-layouts=}"
 				;;
 
-			live-config.keyboard-variant=*)
-				LIVE_KEYBOARD_VARIANT="${_PARAMETER#live-config.keyboard-variant=}"
+			live-config.keyboard-variant=*|keyboard-variant=*)
+				LIVE_KEYBOARD_VARIANT="${_PARAMETER#*keyboard-variant=}"
 				;;
 
-			live-config.keyboard-options=*)
-				LIVE_KEYBOARD_OPTIONS="${_PARAMETER#live-config.keyboard-options=}"
+			live-config.keyboard-options=*|keyboard-options=*)
+				LIVE_KEYBOARD_OPTIONS="${_PARAMETER#*keyboard-options=}"
 				;;
 
 			# 014-sysv-rc
-			live-config.sysv-rc=*)
-				LIVE_SYSV_RC="${_PARAMETER#live-config.sysv-rc=}"
+			live-config.sysv-rc=*|sysv-rc=*)
+				LIVE_SYSV_RC="${_PARAMETER#*sysv-rc=}"
 				;;
 
 			# 116-xserver-xorg
-			live-config.xorg-driver=*)
-				LIVE_XORG_DRIVER="${_PARAMETER#live-config.xorg-driver=}"
+			live-config.xorg-driver=*|xorg-driver=*)
+				LIVE_XORG_DRIVER="${_PARAMETER#*xorg-driver=}"
 				;;
 
-			live-config.xorg-resolution=*)
-				LIVE_XORG_RESOLUTION="${_PARAMETER#live-config.xorg-resolution=}"
+			live-config.xorg-resolution=*|xorg-resolution=*)
+				LIVE_XORG_RESOLUTION="${_PARAMETER#*xorg-resolution=}"
 				;;
 
 			# 999-hooks
-			live-config.hooks=*)
-				LIVE_HOOKS="${_PARAMETER#live-config.hooks=}"
+			live-config.hooks=*|hooks=*)
+				LIVE_HOOKS="${_PARAMETER#*hooks=}"
 				;;
 
 			# Shortcuts
-			live-config.noroot)
+			live-config.noroot|noroot)
 				# Disable root access, no matter what mechanism
 				_SCRIPTS="${_SCRIPTS:-$(ls /lib/live/config/*)}"
 				LIVE_NOCONFIGS="${LIVE_NOCONFIGS},sudo,policykit"
 				;;
 
-			live-config.nottyautologin)
+			live-config.nottyautologin|nottyautologin)
 				_SCRIPTS="${_SCRIPTS:-$(ls /lib/live/config/*)}"
 				LIVE_NOCONFIGS="${LIVE_NOCONFIGS},sysvinit"
 				;;
 
-			live-config.nox11autologin)
+			live-config.nox11autologin|nox11autologin)
 				# Disables graphical autologin, no matter what
 				# mechanism
 				_SCRIPTS="${_SCRIPTS:-$(ls /lib/live/config/*)}"
@@ -137,7 +137,7 @@ Cmdline ()
 				;;
 
 			# Special options
-			live-config.debug)
+			live-config.debug|debug)
 				LIVE_DEBUG="true"
 				;;
 		esac
