@@ -11,6 +11,7 @@ then
 fi
 
 if [ ! -x "$(which lsb_release 2>/dev/null)" ]
+then
 	echo "E: lsb_release - command not found"
 	echo "I: lsb_release can be optained from:"
 	echo "I:   http://www.linux-foundation.org/en/LSB"
