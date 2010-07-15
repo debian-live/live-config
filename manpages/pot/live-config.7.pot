@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config VERSION\n"
-"POT-Creation-Date: 2010-07-16 00:57+0300\n"
+"POT-Creation-Date: 2010-07-16 01:06+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -160,7 +160,7 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:35
 #, no-wrap
-msgid "B<live-config.hostname>=I<HOSTNAME>"
+msgid "B<live-config.hostname>=I<HOSTNAME> | B<hostname>=I<HOSTNAME>"
 msgstr ""
 
 #. type: Plain text
@@ -171,7 +171,7 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:37
 #, no-wrap
-msgid "B<live-config.username>=I<USERNAME>"
+msgid "B<live-config.username>=I<USERNAME> | B<username>=I<USERNAME>"
 msgstr ""
 
 #. type: Plain text
@@ -184,7 +184,7 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:39
 #, no-wrap
-msgid "B<live-config.user-fullname>=\"I<USER FULLNAME>\""
+msgid "B<live-config.user-fullname>=\"I<USER FULLNAME>\" | B<user-fullname>=\"I<USER FULLNAME>\""
 msgstr ""
 
 #. type: Plain text
@@ -197,7 +197,7 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:41
 #, no-wrap
-msgid "B<live-config.locales>=I<LOCALE>"
+msgid "B<live-config.locales>=I<LOCALE> | B<locales>=I<LOCALE>"
 msgstr ""
 
 #. type: Plain text
@@ -211,7 +211,7 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:43
 #, no-wrap
-msgid "B<live-config.timezone>=I<TIMEZONE>"
+msgid "B<live-config.timezone>=I<TIMEZONE> | B<timezone>=I<TIMEZONE>"
 msgstr ""
 
 #. type: Plain text
@@ -224,7 +224,7 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:45
 #, no-wrap
-msgid "B<live-config.utc>=B<yes>|no"
+msgid "B<live-config.utc>=B<yes>|no | B<utc>=B<yes>|no"
 msgstr ""
 
 #. type: Plain text
@@ -237,7 +237,7 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:47
 #, no-wrap
-msgid "B<live-config.keyboard-model>=I<KEYBOARD_MODEL>"
+msgid "B<live-config.keyboard-model>=I<KEYBOARD_MODEL> | B<keyboard-model>=I<KEYBOARD_MODEL>"
 msgstr ""
 
 #. type: Plain text
@@ -248,7 +248,7 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:49
 #, no-wrap
-msgid "B<live-config.keyboard-layouts>=I<KEYBOARD_LAYOUT1>,I<KEYBOARD_LAYOUT2> ... I<KEYBOARD_LAYOUTn>"
+msgid "B<live-config.keyboard-layouts>=I<KEYBOARD_LAYOUT1>,I<KEYBOARD_LAYOUT2> ... I<KEYBOARD_LAYOUTn> | B<keyboard-layouts>=I<KEYBOARD_LAYOUT1>,I<KEYBOARD_LAYOUT2> ... I<KEYBOARD_LAYOUTn>"
 msgstr ""
 
 #. type: Plain text
@@ -262,7 +262,7 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:51
 #, no-wrap
-msgid "B<live-config.keyboard-variant>=I<KEYBOARD_VARIANT>"
+msgid "B<live-config.keyboard-variant>=I<KEYBOARD_VARIANT> | B<keyboard-variant>=I<KEYBOARD_VARIANT>"
 msgstr ""
 
 #. type: Plain text
@@ -273,7 +273,7 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:53
 #, no-wrap
-msgid "B<live-config.keyboard-options>=I<KEYBOARD_OPTIONS>"
+msgid "B<live-config.keyboard-options>=I<KEYBOARD_OPTIONS> | B<keyboard-options>=I<KEYBOARD_OPTIONS>"
 msgstr ""
 
 #. type: Plain text
@@ -284,7 +284,7 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:55
 #, no-wrap
-msgid "B<live-config.sysv-rc>=I<SERVICE1>,I<SERVICE2> ... I<SERVICEn>"
+msgid "B<live-config.sysv-rc>=I<SERVICE1>,I<SERVICE2> ... I<SERVICEn> | B<sysv-rc>=I<SERVICE1>,I<SERVICE2> ... I<SERVICEn>"
 msgstr ""
 
 #. type: Plain text
@@ -295,7 +295,7 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:57
 #, no-wrap
-msgid "B<live-config.xorg-driver>=I<XORG_DRIVER>"
+msgid "B<live-config.xorg-driver>=I<XORG_DRIVER> | B<xorg-driver>=I<XORG_DRIVER>"
 msgstr ""
 
 #. type: Plain text
@@ -306,7 +306,7 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:59
 #, no-wrap
-msgid "B<live-config.xorg-resolution>=I<XORG_RESOLUTION>"
+msgid "B<live-config.xorg-resolution>=I<XORG_RESOLUTION> | B<xorg-resolution>=I<XORG_RESOLUTION>"
 msgstr ""
 
 #. type: Plain text
@@ -317,7 +317,7 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:61
 #, no-wrap
-msgid "B<live-config.hooks>=I<URL1>|I<URL2>| ... |I<URLn>"
+msgid "B<live-config.hooks>=I<URL1>|I<URL2>| ... |I<URLn> | B<hooks>=I<URL1>|I<URL2>| ... |I<URLn>"
 msgstr ""
 
 #. type: Plain text
@@ -356,7 +356,7 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:69
 #, no-wrap
-msgid "B<live-config.noroot>"
+msgid "B<live-config.noroot> | B<noroot>"
 msgstr ""
 
 #. type: Plain text
@@ -369,7 +369,7 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:71
 #, no-wrap
-msgid "B<live-config.nottyautologin>"
+msgid "B<live-config.nottyautologin> | B<nottyautologin>"
 msgstr ""
 
 #. type: Plain text
@@ -382,7 +382,7 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:73
 #, no-wrap
-msgid "B<live-config.nox11autologin>"
+msgid "B<live-config.nox11autologin> | B<nox11autologin>"
 msgstr ""
 
 #. type: Plain text
@@ -406,7 +406,7 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:79
 #, no-wrap
-msgid "B<live-config.debug>"
+msgid "B<live-config.debug> | B<debug>"
 msgstr ""
 
 #. type: Plain text

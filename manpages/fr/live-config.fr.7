@@ -54,49 +54,49 @@ Tous les scripts sont lancés, à l'exception de ceux spécifiés.
 Quelques scripts particuliers peuvent changer leur comportement sur un
 paramètre d'amorçage.
 
-.IP \fBlive\-config.hostname\fP=\fIHOSTNAME\fP 4
+.IP "\fBlive\-config.hostname\fP=\fIHOSTNAME\fP | \fBhostname\fP=\fIHOSTNAME\fP" 4
 Permet de spécifier un nom d'hôte (hostname) au système. Par défaut ce nom
 est 'debian'.
-.IP \fBlive\-config.username\fP=\fIUSERNAME\fP 4
+.IP "\fBlive\-config.username\fP=\fIUSERNAME\fP | \fBusername\fP=\fIUSERNAME\fP" 4
 Permet de spécifier le login du user créé pour l'auto\-login. Par défaut ce
 nom est 'user'.
-.IP "\fBlive\-config.user\-fullname\fP=\(dq\fIUSER FULLNAME\fP\(dq" 4
+.IP "\fBlive\-config.user\-fullname\fP=\(dq\fIUSER FULLNAME\fP\(dq | \fBuser\-fullname\fP=\(dq\fIUSER FULLNAME\fP\(dq" 4
 Permet de spécifier le nom complet des utilisateurs créés pour
 l'auto\-login. Par défaut il s'agit de 'Debian Live user'.
-.IP \fBlive\-config.locales\fP=\fILOCALE\fP 4
+.IP "\fBlive\-config.locales\fP=\fILOCALE\fP | \fBlocales\fP=\fILOCALE\fP" 4
 Permet de spécifier la localisation du système, par exemple 'fr_FR'. Par
 défaut il s'agit de 'en_US.UTF\-8'. Dans le cas où la locale spécifiée n'est
 pas nativement disponible sur le système, elle est automatiquement générée à
 la volée.
-.IP \fBlive\-config.timezone\fP=\fITIMEZONE\fP 4
+.IP "\fBlive\-config.timezone\fP=\fITIMEZONE\fP | \fBtimezone\fP=\fITIMEZONE\fP" 4
 Permet de spécifier la timezone du système, par exemple 'Europe/Zurich'. Par
 défaut il s'agit de 'UTC'.
-.IP \fBlive\-config.utc\fP=\fByes\fP|no 4
+.IP "\fBlive\-config.utc\fP=\fByes\fP|no | \fButc\fP=\fByes\fP|no" 4
 Permet de modifier si le système assume, ou non, que l'horloge hardware soit
 réglée sur UTC. Par défaut 'oui'.
-.IP \fBlive\-config.keyboard\-model\fP=\fIKEYBOARD_MODEL\fP 4
+.IP "\fBlive\-config.keyboard\-model\fP=\fIKEYBOARD_MODEL\fP | \fBkeyboard\-model\fP=\fIKEYBOARD_MODEL\fP" 4
 Permet de changer le modèle de clavier. Aucune valeur par défaut n'est
 indiquée.
-.IP "\fBlive\-config.keyboard\-layouts\fP=\fIKEYBOARD_LAYOUT1\fP,\fIKEYBOARD_LAYOUT2\fP ... \fIKEYBOARD_LAYOUTn\fP" 4
+.IP "\fBlive\-config.keyboard\-layouts\fP=\fIKEYBOARD_LAYOUT1\fP,\fIKEYBOARD_LAYOUT2\fP ... \fIKEYBOARD_LAYOUTn\fP | \fBkeyboard\-layouts\fP=\fIKEYBOARD_LAYOUT1\fP,\fIKEYBOARD_LAYOUT2\fP ... \fIKEYBOARD_LAYOUTn\fP" 4
 Permet de changer la configuration du clavier. Si plus d'une configuration
 est spécifiée, les utilitaires de l'environnement de bureau permettront de
 passer de l'une à l'autre sous X11. Aucune valeur par défaut n'est
 spécifiée.
-.IP \fBlive\-config.keyboard\-variant\fP=\fIKEYBOARD_VARIANT\fP 4
+.IP "\fBlive\-config.keyboard\-variant\fP=\fIKEYBOARD_VARIANT\fP | \fBkeyboard\-variant\fP=\fIKEYBOARD_VARIANT\fP" 4
 Permet de changer le type de clavier. Aucune valeur par défaut n'est
 spécifiée.
-.IP \fBlive\-config.keyboard\-options\fP=\fIKEYBOARD_OPTIONS\fP 4
+.IP "\fBlive\-config.keyboard\-options\fP=\fIKEYBOARD_OPTIONS\fP | \fBkeyboard\-options\fP=\fIKEYBOARD_OPTIONS\fP" 4
 Permet de changer les options du clavier. Aucune valeur par défaut n'est
 spécifiée.
-.IP "\fBlive\-config.sysv\-rc\fP=\fISERVICE1\fP,\fISERVICE2\fP ... \fISERVICEn\fP" 4
+.IP "\fBlive\-config.sysv\-rc\fP=\fISERVICE1\fP,\fISERVICE2\fP ... \fISERVICEn\fP | \fBsysv\-rc\fP=\fISERVICE1\fP,\fISERVICE2\fP ... \fISERVICEn\fP" 4
 Permet de désactiver des services du sysV via update\-rc.d.
-.IP \fBlive\-config.xorg\-driver\fP=\fIXORG_DRIVER\fP 4
+.IP "\fBlive\-config.xorg\-driver\fP=\fIXORG_DRIVER\fP | \fBxorg\-driver\fP=\fIXORG_DRIVER\fP" 4
 Permet de spécifier le driver utilisé par xorg plutôt que d'utiliser
 l'auto\-détection.
-.IP \fBlive\-config.xorg\-resolution\fP=\fIXORG_RESOLUTION\fP 4
+.IP "\fBlive\-config.xorg\-resolution\fP=\fIXORG_RESOLUTION\fP | \fBxorg\-resolution\fP=\fIXORG_RESOLUTION\fP" 4
 Permet de spécifier la résolution utilisée par xorg, plutôt que d'utiliser
 l'auto\-détection.
-.IP "\fBlive\-config.hooks\fP=\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
+.IP "\fBlive\-config.hooks\fP=\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP | \fBhooks\fP=\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
 Permet de soumettre et d'exécuter un ou plusieurs fichiers/scripts
 spécifiques. Notez que les URLs doivent pouvoir être utilisées par wget
 (http, ftp or file://), que les fichiers sont exécutés dans /tmp sur le
@@ -115,20 +115,20 @@ Dans le cas où il est nécessaire de combiner plusieurs paramètres
 individuels, \fBlive\-config\fP fournit des raccourcis. Il permet de mixer
 facilement plusieurs options.
 
-.IP \fBlive\-config.noroot\fP 4
+.IP "\fBlive\-config.noroot\fP | \fBnoroot\fP" 4
 Désactive les règles du sudo; dans ce cas l'utilisateur ne peut pas
 bénéficier des privilèges administrateur (root) sur le système.
-.IP \fBlive\-config.nottyautologin\fP 4
+.IP "\fBlive\-config.nottyautologin\fP | \fBnottyautologin\fP" 4
 Désactive l'auto\-login sur la console, mais ne concerne pas l'auto\-login
 graphique.
-.IP \fBlive\-config.nox11autologin\fP 4
+.IP "\fBlive\-config.nox11autologin\fP | \fBnox11autologin\fP" 4
 Désactive l'auto\-login avec les gestionnaires graphiques, sans affecter
 l'auto\-login en console (tty).
 
 .SS "Boot Parameters (special options)"
 For special use cases there are some special boot paramters.
 
-.IP \fBlive\-config.debug\fP 4
+.IP "\fBlive\-config.debug\fP | \fBdebug\fP" 4
 Enables debug output in live\-config.
 
 .SS "Fichiers de configuration"
