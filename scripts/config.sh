@@ -124,7 +124,14 @@ Cmdline ()
 				LIVE_NOCONFIGS="${LIVE_NOCONFIGS},sudo,policykit"
 				;;
 
+			live-config.noautologin|noautologin)
+				# Disables both console and graphical autologin.
+				_SCRIPTS="${_SCRIPTS:-$(ls /lib/live/config/*)}"
+				LIVE_NOCONFIGS="${LIVE_NOCONFIGS},sysvinit,gdm,gdm3,kdm,lxdm,nodm,slim"
+				;;
+
 			live-config.nottyautologin|nottyautologin)
+				# Disables console autologin.
 				_SCRIPTS="${_SCRIPTS:-$(ls /lib/live/config/*)}"
 				LIVE_NOCONFIGS="${LIVE_NOCONFIGS},sysvinit"
 				;;
