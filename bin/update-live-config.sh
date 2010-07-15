@@ -2,39 +2,39 @@
 
 set -e
 
-DIRECTORY="${1:-/lib/live/config}"
+_DIRECTORY="${1:-/lib/live/config}"
 
-if [ ! -e "${DIRECTORY}" ]
+if [ ! -e "${_DIRECTORY}" ]
 then
-	echo "E: ${DIRECTORY} - not found."
+	echo "E: ${_DIRECTORY} - not found."
 	exit 1
 fi
 
-DISTRIBUTION="$(lsb_release -is | tr [A-Z] [a-z])"
-RELEASE="$(lsb_release -cs | tr [A-Z] [a-z])"
+_DISTRIBUTION="$(lsb_release -is | tr [A-Z] [a-z])"
+_RELEASE="$(lsb_release -cs | tr [A-Z] [a-z])"
 
 echo "Removing unused scripts..."
 
-case "${DISTRIBUTION}" in
+case "${_DISTRIBUTION}" in
 	debian)
 		# Removing ubuntu scripts
-		rm -f "${DIRECTORY}"/*-apport
+		rm -f "${_DIRECTORY}"/*-apport
 
-		case "${RELEASE}" in
+		case "${_RELEASE}" in
 		lenny)
 			# Removing squeeze and newer scripts
-			rm -f "${DIRECTORY}"/*-gdm3
-			rm -f "${DIRECTORY}"/*-kaboom
-			rm -f "${DIRECTORY}"/*-kde-services
-			rm -f "${DIRECTORY}"/*-keyboard-configuration
+			rm -f "${_DIRECTORY}"/*-gdm3
+			rm -f "${_DIRECTORY}"/*-kaboom
+			rm -f "${_DIRECTORY}"/*-kde-services
+			rm -f "${_DIRECTORY}"/*-keyboard-configuration
 			;;
 
 		*)
 			# Removing lenny legacy scripts
-			rm -f "${DIRECTORY}"/*-console-common
-			rm -f "${DIRECTORY}"/*-console-setup
-			#rm -f "${DIRECTORY}"/*-gdm
-			rm -f "${DIRECTORY}"/*-kpersonalizer
+			rm -f "${_DIRECTORY}"/*-console-common
+			rm -f "${_DIRECTORY}"/*-console-setup
+			#rm -f "${_DIRECTORY}"/*-gdm
+			rm -f "${_DIRECTORY}"/*-kpersonalizer
 			;;
 		esac
 		;;
