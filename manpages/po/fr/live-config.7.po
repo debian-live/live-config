@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config 2.0~a13\n"
-"POT-Creation-Date: 2010-07-16 00:43+0300\n"
+"POT-Creation-Date: 2010-07-16 00:57+0300\n"
 "PO-Revision-Date: 2010-05-24 09:59+0300\n"
 "Last-Translator: Thierry Lépicier <thierry.lepicier@free.fr>\n"
 "Language-Team: none\n"
@@ -23,6 +23,7 @@ msgstr "LIVE-CONFIG"
 
 #. type: TH
 #: en/live-config.7:9
+#, no-wrap
 msgid "2010-07-16"
 msgstr "16.07.2010"
 
@@ -876,8 +877,8 @@ msgstr "B<gdm>"
 
 #. type: Plain text
 #: en/live-config.7:150
-msgid "configures autologin in gdm (lenny)."
-msgstr "configure l'auto-login dans gdm (lenny)."
+msgid "configures autologin in gdm."
+msgstr "configure l'auto-login dans gdm."
 
 #. type: IP
 #: en/live-config.7:150
