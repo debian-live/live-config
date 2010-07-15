@@ -1,3 +1,6 @@
+This package is based on the live-config-foobar example package included in
+live-config which can be optained from http://live.debian.net/.
+
 Files: *
 Copyright: (C) 2010 John Doe <john@example.org>
 License: GPL-3+

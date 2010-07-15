@@ -1,23 +1,23 @@
 #!/bin/sh
 
-# live-config(7) - System Configuration Scripts
-# Copyright (C) 2006-2010 Daniel Baumann <daniel@debian.org>
-#
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-# GNU General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License
-# along with this program. If not, see <http://www.gnu.org/licenses/>.
-#
-# On Debian systems, the complete text of the GNU General Public License
-# can be found in /usr/share/common-licenses/GPL-3 file.
+## live-config(7) - System Configuration Scripts
+## Copyright (C) 2006-2010 Daniel Baumann <daniel@debian.org>
+##
+## This program is free software: you can redistribute it and/or modify
+## it under the terms of the GNU General Public License as published by
+## the Free Software Foundation, either version 3 of the License, or
+## (at your option) any later version.
+##
+## This program is distributed in the hope that it will be useful,
+## but WITHOUT ANY WARRANTY; without even the implied warranty of
+## MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+## GNU General Public License for more details.
+##
+## You should have received a copy of the GNU General Public License
+## along with this program. If not, see <http://www.gnu.org/licenses/>.
+##
+## On Debian systems, the complete text of the GNU General Public License
+## can be found in /usr/share/common-licenses/GPL-3 file.
 
 
 set -e
@@ -54,82 +54,89 @@ Cmdline ()
 				;;
 
 			# 001-hostname
-			live-config.hostname=*)
-				LIVE_HOSTNAME="${_PARAMETER#live-config.hostname=}"
+			live-config.hostname=*|hostname=*)
+				LIVE_HOSTNAME="${_PARAMETER#*hostname=}"
 				;;
 
 			# 002-user-setup
-			live-config.username=*)
-				LIVE_USERNAME="${_PARAMETER#live-config.username=}"
+			live-config.username=*|username=*)
+				LIVE_USERNAME="${_PARAMETER#*username=}"
 				;;
 
-			live-config.user-fullname=*)
-				LIVE_USER_FULLNAME="${_PARAMETER#live-config.user-fullname=}"
+			live-config.user-fullname=*|user-fullname=*)
+				LIVE_USER_FULLNAME="${_PARAMETER#*user-fullname=}"
 				;;
 
 			# 004-locales
-			live-config.locales=*)
-				LIVE_LOCALES="${_PARAMETER#live-config.locales=}"
+			live-config.locales=*|locales=*)
+				LIVE_LOCALES="${_PARAMETER#*locales=}"
 				;;
 
 			# 005-tzdata
-			live-config.timezone=*)
-				LIVE_TIMEZONE="${_PARAMETER#live-config.timezone=}"
+			live-config.timezone=*|timezone=*)
+				LIVE_TIMEZONE="${_PARAMETER#*timezone=}"
 				;;
 
-			live-config.utc=*)
-				LIVE_UTC="${_PARAMETER#live-config.utc=}"
+			live-config.utc=*|utc=*)
+				LIVE_UTC="${_PARAMETER#*utc=}"
 				;;
 
 			# 012-console-setup, 013-keyboard-configuration
-			live-config.keyboard-model=*)
-				LIVE_KEYBOARD_MODEL="${_PARAMETER#live-config.keyboard-model=}"
+			live-config.keyboard-model=*|keyboard-model=*)
+				LIVE_KEYBOARD_MODEL="${_PARAMETER#*keyboard-model=}"
 				;;
 
-			live-config.keyboard-layouts=*)
-				LIVE_KEYBOARD_LAYOUTS="${_PARAMETER#live-config.keyboard-layouts=}"
+			live-config.keyboard-layouts=*|keyboard-layouts=*)
+				LIVE_KEYBOARD_LAYOUTS="${_PARAMETER#*keyboard-layouts=}"
 				;;
 
-			live-config.keyboard-variant=*)
-				LIVE_KEYBOARD_VARIANT="${_PARAMETER#live-config.keyboard-variant=}"
+			live-config.keyboard-variant=*|keyboard-variant=*)
+				LIVE_KEYBOARD_VARIANT="${_PARAMETER#*keyboard-variant=}"
 				;;
 
-			live-config.keyboard-options=*)
-				LIVE_KEYBOARD_OPTIONS="${_PARAMETER#live-config.keyboard-options=}"
+			live-config.keyboard-options=*|keyboard-options=*)
+				LIVE_KEYBOARD_OPTIONS="${_PARAMETER#*keyboard-options=}"
 				;;
 
 			# 014-sysv-rc
-			live-config.sysv-rc=*)
-				LIVE_SYSV_RC="${_PARAMETER#live-config.sysv-rc=}"
+			live-config.sysv-rc=*|sysv-rc=*)
+				LIVE_SYSV_RC="${_PARAMETER#*sysv-rc=}"
 				;;
 
 			# 116-xserver-xorg
-			live-config.xorg-driver=*)
-				LIVE_XORG_DRIVER="${_PARAMETER#live-config.xorg-driver=}"
+			live-config.xorg-driver=*|xorg-driver=*)
+				LIVE_XORG_DRIVER="${_PARAMETER#*xorg-driver=}"
 				;;
 
-			live-config.xorg-resolution=*)
-				LIVE_XORG_RESOLUTION="${_PARAMETER#live-config.xorg-resolution=}"
+			live-config.xorg-resolution=*|xorg-resolution=*)
+				LIVE_XORG_RESOLUTION="${_PARAMETER#*xorg-resolution=}"
 				;;
 
 			# 999-hooks
-			live-config.hooks=*)
-				LIVE_HOOKS="${_PARAMETER#live-config.hooks=}"
+			live-config.hooks=*|hooks=*)
+				LIVE_HOOKS="${_PARAMETER#*hooks=}"
 				;;
 
 			# Shortcuts
-			live-config.noroot)
+			live-config.noroot|noroot)
 				# Disable root access, no matter what mechanism
 				_SCRIPTS="${_SCRIPTS:-$(ls /lib/live/config/*)}"
 				LIVE_NOCONFIGS="${LIVE_NOCONFIGS},sudo,policykit"
 				;;
 
-			live-config.nottyautologin)
+			live-config.noautologin|noautologin)
+				# Disables both console and graphical autologin.
+				_SCRIPTS="${_SCRIPTS:-$(ls /lib/live/config/*)}"
+				LIVE_NOCONFIGS="${LIVE_NOCONFIGS},sysvinit,gdm,gdm3,kdm,lxdm,nodm,slim"
+				;;
+
+			live-config.nottyautologin|nottyautologin)
+				# Disables console autologin.
 				_SCRIPTS="${_SCRIPTS:-$(ls /lib/live/config/*)}"
 				LIVE_NOCONFIGS="${LIVE_NOCONFIGS},sysvinit"
 				;;
 
-			live-config.nox11autologin)
+			live-config.nox11autologin|nox11autologin)
 				# Disables graphical autologin, no matter what
 				# mechanism
 				_SCRIPTS="${_SCRIPTS:-$(ls /lib/live/config/*)}"
@@ -137,7 +144,7 @@ Cmdline ()
 				;;
 
 			# Special options
-			live-config.debug)
+			live-config.debug|debug)
 				LIVE_DEBUG="true"
 				;;
 		esac
@@ -146,18 +153,18 @@ Cmdline ()
 	# Include requested scripts
 	if [ -n "${LIVE_CONFIGS}" ]
 	then
-		for LIVE_CONFIG in $(echo ${LIVE_CONFIGS} | sed -e 's|,| |g')
+		for _CONFIG in $(echo ${LIVE_CONFIGS} | sed -e 's|,| |g')
 		do
-			_SCRIPTS="${_SCRIPTS} $(ls /lib/live/config/???-${LIVE_CONFIG})"
+			_SCRIPTS="${_SCRIPTS} $(ls /lib/live/config/???-${_CONFIG})"
 		done
 	fi
 
 	# Exclude requested scripts
 	if [ -n "${LIVE_NOCONFIGS}" ]
 	then
-		for LIVE_NOCONFIG in $(echo ${LIVE_NOCONFIGS} | sed -e 's|,| |g')
+		for _NOCONFIG in $(echo ${LIVE_NOCONFIGS} | sed -e 's|,| |g')
 		do
-			_SCRIPTS="$(echo ${_SCRIPTS} | sed -e "s|$(ls /lib/live/config/???-${LIVE_NOCONFIG})||")"
+			_SCRIPTS="$(echo ${_SCRIPTS} | sed -e "s|$(ls /lib/live/config/???-${_NOCONFIG})||")"
 		done
 	fi
 }
