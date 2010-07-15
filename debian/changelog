@@ -1,3 +1,12 @@
+live-config (2.0~a13-1) unstable; urgency=low
+
+  * Because lxde still uses gdm instead of gdm3 on squeeze, also
+    including gdm config scripts when building on squeeze and newer.
+  * Improving test targets in Makefile a bit.
+  * Improving clean target in manpages Makefile a bit.
+
+ -- Daniel Baumann <daniel@debian.org>  Thu, 15 Jul 2010 19:25:37 +0200
+
 live-config (2.0~a12-1) unstable; urgency=low
 
   * Factoring out common function to start network.
