@@ -10,6 +10,15 @@ then
 	exit 1
 fi
 
+if [ ! -x "$(which lsb_release 2>/dev/null)" ]
+	echo "E: lsb_release - command not found"
+	echo "I: lsb_release can be optained from:"
+	echo "I:   http://www.linux-foundation.org/en/LSB"
+	echo "I: On Debian systems, lsb_release can be installed with:"
+	echo "I:   apt-get install lsb-release"
+	exit 1
+fi
+
 _DISTRIBUTION="$(lsb_release -is | tr [A-Z] [a-z])"
 _RELEASE="$(lsb_release -cs | tr [A-Z] [a-z])"
 
