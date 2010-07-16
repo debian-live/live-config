@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config VERSION\n"
-"POT-Creation-Date: 2010-07-16 20:16+0300\n"
+"POT-Creation-Date: 2010-07-16 20:24+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -197,7 +197,7 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:41
 #, no-wrap
-msgid "B<live-config.locales>=I<LOCALE> | B<locales>=I<LOCALE>"
+msgid "B<live-config.locales>=I<LOCALE1>,I<LOCALE2> ... I<LOCALEn> | B<locales>=I<LOCALE1>,I<LOCALE2> ... I<LOCALEn>"
 msgstr ""
 
 #. type: Plain text
@@ -528,12 +528,14 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:101
 #, no-wrap
-msgid "B<LIVE_LOCALES>=I<LOCALE>"
+msgid "B<LIVE_LOCALES>=I<LOCALE1>,I<LOCALE2> ... I<LOCALEn>"
 msgstr ""
 
 #. type: Plain text
 #: en/live-config.7:103
-msgid "This variable equals the 'B<live-config.locales>=I<LOCALE>' parameter."
+msgid ""
+"This variable equals the 'B<live-config.locales>=I<LOCALE1>,I<LOCALE2> ... "
+"I<LOCALEn>' parameter."
 msgstr ""
 
 #. type: IP

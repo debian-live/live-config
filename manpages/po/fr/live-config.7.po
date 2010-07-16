@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config 2.0~a14\n"
-"POT-Creation-Date: 2010-07-16 20:16+0300\n"
+"POT-Creation-Date: 2010-07-16 20:24+0300\n"
 "PO-Revision-Date: 2010-05-24 09:59+0300\n"
 "Last-Translator: Thierry Lépicier <thierry.lepicier@free.fr>\n"
 "Language-Team: none\n"
@@ -227,8 +227,8 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:41
 #, no-wrap
-msgid "B<live-config.locales>=I<LOCALE> | B<locales>=I<LOCALE>"
-msgstr "B<live-config.locales>=I<LOLCAISATION> | B<locales>=I<LOCALISATION>"
+msgid "B<live-config.locales>=I<LOCALE1>,I<LOCALE2> ... I<LOCALEn> | B<locales>=I<LOCALE1>,I<LOCALE2> ... I<LOCALEn>"
+msgstr "B<live-config.locales>=I<LOCALISATION1>,I<LOCALISATION2> ... I<LOCALISATIONn> | B<locales>=I<LOCALISATION1>,I<LOCALISATION2> ... I<LOCALISATIONn>"
 
 #. type: Plain text
 #: en/live-config.7:43
@@ -620,15 +620,17 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:101
 #, no-wrap
-msgid "B<LIVE_LOCALES>=I<LOCALE>"
-msgstr "B<LIVE_LOCALES>=I<LOCALISATION>"
+msgid "B<LIVE_LOCALES>=I<LOCALE1>,I<LOCALE2> ... I<LOCALEn>"
+msgstr "B<LIVE_LOCALES>=I<LOCALISATION>,I<LOCALISATION> ... I<LOCALISATION>"
 
 #. type: Plain text
 #: en/live-config.7:103
-msgid "This variable equals the 'B<live-config.locales>=I<LOCALE>' parameter."
+msgid ""
+"This variable equals the 'B<live-config.locales>=I<LOCALE1>,I<LOCALE2> ... "
+"I<LOCALEn>' parameter."
 msgstr ""
 "Cette variable correspond au paramètre 'B<live-config."
-"locales>=I<LOCALISATION>'."
+"locales>=I<LOCALISATION>,I<LOCALISATION> ... I<LOCALISATION>'."
 
 #. type: IP
 #: en/live-config.7:103

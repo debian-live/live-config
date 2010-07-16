@@ -63,7 +63,7 @@ Login angelegt wird. Der Standardname ist 'user'.
 .IP "\fBlive\-config.user\-fullname\fP=\(dq\fIVOLLER BENUTZERNAME\fP\(dq | \fBuser\-fullname\fP=\(dq\fIVOLLER BENUTZERNAME\fP\(dq" 4
 Ermöglicht den vollen Name für den Benutzer zu wählen, welcher für den
 automatischen Login angelegt wird. Der Standard ist 'Debian Live user'.
-.IP "\fBlive\-config.locales\fP=\fIGEBIETSSCHEMA\fP | \fBlocales\fP=\fIGEBIETSSCHEMA\fP" 4
+.IP "\fBlive\-config.locales\fP=\fIGEBIETSSCHEMA1\fP,\fIGEBIETSSCHEMA2\fP ... \fIGEBIETSSCHEMAn\fP | \fBlocales\fP=\fIGEBIETSSCHEMA1\fP,\fIGEBIETSSCHEMA2\fP ... \fIGEBIETSSCHEMAn\fP" 4
 Ermöglicht das Gebietsschema des Systems zu wählen, zum Beispiel
 \&'de_CH.UTF\-8'. Der Standard ist 'en_US.UTF\-8'. Falls das gewünschte
 Gebietsschema nicht schon auf dem System verfügbar ist, wird es automatisch
@@ -168,9 +168,10 @@ Parameter.
 .IP "\fBLIVE_USER_FULLNAME\fP=\(dq\fIVOLLER BENUTZERNAME\(dq\fP" 4
 Diese Variable enspricht dem '\fBlive\-config.user\-fullname\fP="\fIVOLLER
 BENUTZERNAME\fP"' Parameter.
-.IP \fBLIVE_LOCALES\fP=\fIGEBIETSSCHEMA\fP 4
-Diese Variable enspricht dem '\fBlive\-config.locales\fP=\fIGEBIETSSCHEMA\fP'
-Parameter.
+.IP "\fBLIVE_LOCALES\fP=\fIGEBIETSSCHEMA1\fP,\fIGEBIETSSCHEMA2\fP ... \fIGEBIETSSCHEMAn\fP" 4
+Diese Variable enspricht dem
+\&'\fBlive\-config.locales\fP=\fIGEBIETSSCHEMA1\fP,\fIGEBIETSSCHEMA2\fP
+\&... \fIGEBIETSSCHEMAn\fP' Parameter.
 .IP \fBLIVE_TIMEZONE\fP=\fIZEITZONE\fP 4
 Diese Variable enspricht dem '\fBlive\-config.timezone\fP=\fIZEITZONE\fP'
 Parameter.
