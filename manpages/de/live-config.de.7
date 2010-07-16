@@ -11,7 +11,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 16.07.2010 2.0~a14 "Debian Live Projekt"
+.TH LIVE\-CONFIG 7 17.07.2010 2.0~a15 "Debian Live Projekt"
 
 .SH NAME
 \fBlive\-config\fP \- System Konfiguration Skripte
@@ -63,7 +63,7 @@ Login angelegt wird. Der Standardname ist 'user'.
 .IP "\fBlive\-config.user\-fullname\fP=\(dq\fIVOLLER BENUTZERNAME\fP\(dq | \fBuser\-fullname\fP=\(dq\fIVOLLER BENUTZERNAME\fP\(dq" 4
 Ermöglicht den vollen Name für den Benutzer zu wählen, welcher für den
 automatischen Login angelegt wird. Der Standard ist 'Debian Live user'.
-.IP "\fBlive\-config.locales\fP=\fIGEBIETSSCHEMA\fP | \fBlocales\fP=\fIGEBIETSSCHEMA\fP" 4
+.IP "\fBlive\-config.locales\fP=\fIGEBIETSSCHEMA1\fP,\fIGEBIETSSCHEMA2\fP ... \fIGEBIETSSCHEMAn\fP | \fBlocales\fP=\fIGEBIETSSCHEMA1\fP,\fIGEBIETSSCHEMA2\fP ... \fIGEBIETSSCHEMAn\fP" 4
 Ermöglicht das Gebietsschema des Systems zu wählen, zum Beispiel
 \&'de_CH.UTF\-8'. Der Standard ist 'en_US.UTF\-8'. Falls das gewünschte
 Gebietsschema nicht schon auf dem System verfügbar ist, wird es automatisch
@@ -93,19 +93,29 @@ Ermöglicht Services durch update\-rc.d abzuschalten.
 Ermöglicht den Xorg Treiber manuell statt automatisch zu bestimmen.
 .IP "\fBlive\-config.xorg\-resolution\fP=\fIXORG_AUFLÖSUNG\fP | \fBxorg\-resolution\fP=\fIXORG_AUFLÖSUNG\fP" 4
 Ermöglicht die Xorg Auflösung manuell statt automatisch zu bestimmen.
-.IP "\fBlive\-config.hooks\fP=\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP | \fBhooks\fP=\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
+.IP "\fBlive\-config.hooks\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP | \fBhooks\fP=\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
 Ermöglicht eine oder mehrere beliebige Dateien herunterzuladen und
 auszuführen. Die URLs müssen durch wget (http, ftp oder file://) aufösbar
 sein, die Dateien werden in /tmp des laufenden Live Systems ausgeführt und
 es müssen alle Abhängigkeiten, die für das Ausführen der Dateien notwendig
 sind,bereits installiert sein, zum Beispiel muss für ein Python Skript
 bereits Python auf dem System installiert sein. Einige Hooks für häufige
-Anwendungsfälle sind unter  <\fIhttp://live.debian.net/other/hooks\fP>
-verfügbar.
+Anwendungsfälle sind in /usr/share/doc/live\-config/examples/hooks/ und unter
+<\fIhttp://live.debian.net/other/hooks\fP> verfügbar.
 .br
 Falls die Datei sich auf dem Live Medium befindet, kann sie mittels
 file:///live/image/\fIFILE\fP benutzt werden, falls sie sich im Root
 Dateisystem des Live Systems selbst befindet, mittels file:///\fIFILE\fP.
+.br
+Alle Dateien in /lib/live/hooks/ im Root Dateisystem des Live Systems können
+mit der Option 'filesystem' automatisch aktiviert werden.
+.br
+Alle Dateien in /live/hooks/ auf dem Live Medium können mit der Option
+\&'medium' automatisch aktiviert werden.
+.br
+Werden verschiedene Mechanismen kombiniert, so werden die Dateisystem Hooks
+zuerst ausgeführt, dann die des Mediums und zuletzt die sich im Netzwerk
+befindende.
 
 .SS "Boot Parameter (Abkürzungen)"
 \fBlive\-config\fP stellt Abkürzungen für einige häufige verwendete
@@ -168,9 +178,10 @@ Parameter.
 .IP "\fBLIVE_USER_FULLNAME\fP=\(dq\fIVOLLER BENUTZERNAME\(dq\fP" 4
 Diese Variable enspricht dem '\fBlive\-config.user\-fullname\fP="\fIVOLLER
 BENUTZERNAME\fP"' Parameter.
-.IP \fBLIVE_LOCALES\fP=\fIGEBIETSSCHEMA\fP 4
-Diese Variable enspricht dem '\fBlive\-config.locales\fP=\fIGEBIETSSCHEMA\fP'
-Parameter.
+.IP "\fBLIVE_LOCALES\fP=\fIGEBIETSSCHEMA1\fP,\fIGEBIETSSCHEMA2\fP ... \fIGEBIETSSCHEMAn\fP" 4
+Diese Variable enspricht dem
+\&'\fBlive\-config.locales\fP=\fIGEBIETSSCHEMA1\fP,\fIGEBIETSSCHEMA2\fP
+\&... \fIGEBIETSSCHEMAn\fP' Parameter.
 .IP \fBLIVE_TIMEZONE\fP=\fIZEITZONE\fP 4
 Diese Variable enspricht dem '\fBlive\-config.timezone\fP=\fIZEITZONE\fP'
 Parameter.
@@ -198,9 +209,10 @@ Parameter.
 .IP \fBLIVE_XORG_RESOLUTION\fP=\fIXORG_AUFLÖSUNG\fP 4
 Diese Variable enspricht dem
 \&'\fBlive\-config.xorg\-resolution\fP=\fIXORG_AUFLÖSUNG\fP' Parameter.
-.IP "\fBLIVE_HOOKS\fP=\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
-Diese Variable enspricht dem '\fBlive\-config.hooks\fP=\fIURL1\fP|\fIURL2\fP|
-\&... |\fIURLn\fP' Parameter.
+.IP "\fBLIVE_HOOKS\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
+Diese Variable enspricht dem
+\&'\fBlive\-config.hooks\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP'
+Parameter.
 
 .SH ANPASSUNG
 \fBlive\-config\fP kann sehr einfach angepasst werden für Downstream Projekte
@@ -261,8 +273,8 @@ konfiguriert sysvinit.
 konfiguriert sysv\-rc durch abschalten von angegebenen Services.
 .IP \fBlogin\fP 4
 schaltet lastlog ab.
-.IP \fBapport\fP 4
-aktiviert apport.
+.IP "\fBapport\fP (nur Ubuntu)" 4
+schaltet apport ab.
 .IP \fBgnome\-panel\-data\fP 4
 entfernt den Sperrknopf für den Bildschirm.
 .IP \fBgnome\-power\-manager\fP 4
@@ -297,6 +309,8 @@ schaltet hwclock von util\-linux ab.
 schaltet lastlog ab.
 .IP \fBxserver\-xorg\fP 4
 konfiguriert xserver\-xorg.
+.IP "\fBureadahead\fP (nur Ubuntu)" 4
+schaltet ureadahead ab.
 .IP \fBhooks\fP 4
 erlaubt beliebige Kommands von einem Skript auf dem Live Medium oder von
 einem HTTP/FTP Server auszuführen.

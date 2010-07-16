@@ -11,6 +11,7 @@ then
 fi
 
 if [ ! -x "$(which lsb_release 2>/dev/null)" ]
+then
 	echo "E: lsb_release - command not found"
 	echo "I: lsb_release can be optained from:"
 	echo "I:   http://www.linux-foundation.org/en/LSB"
@@ -28,6 +29,7 @@ case "${_DISTRIBUTION}" in
 	debian)
 		# Removing ubuntu scripts
 		rm -f "${_DIRECTORY}"/*-apport
+		rm -f "${_DIRECTORY}"/*-ureadahead
 
 		case "${_RELEASE}" in
 		lenny)
@@ -46,5 +48,9 @@ case "${_DISTRIBUTION}" in
 			rm -f "${_DIRECTORY}"/*-kpersonalizer
 			;;
 		esac
+		;;
+	ubuntu)
+		# Removing debian scripts
+		rm -f "${_DIRECTORY}"/*-gdm3
 		;;
 esac

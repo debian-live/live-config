@@ -27,6 +27,7 @@ except for the following things:
 
 3. Todo items
 
+  * verify modifications with a d-i sample installation.
   * allow some scripts (most prominently locales) to be run even in persistent mode.
   * use verbose/quiet/interactive modes for scripts.
   * use logfile.
@@ -34,3 +35,4 @@ except for the following things:
   * add option to specify the xsession.
   * when not using persistency, do not import options into the debconf db.
   * cleanup the scripts order and splitting.
+  * check if we have the most important scripts for ubuntu so that live-config supports both.

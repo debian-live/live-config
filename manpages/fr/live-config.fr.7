@@ -11,7 +11,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 16.07.2010 2.0~a14 "Projet Debian Live"
+.TH LIVE\-CONFIG 7 17.07.2010 2.0~a15 "Projet Debian Live"
 
 .SH NOM
 \fBlive\-config\fP \- Scripts de configuration du système
@@ -54,49 +54,49 @@ Tous les scripts sont lancés, à l'exception de ceux spécifiés.
 Quelques scripts particuliers peuvent changer leur comportement sur un
 paramètre d'amorçage.
 
-.IP "\fBlive\-config.hostname\fP=\fIHOSTNAME\fP | \fBhostname\fP=\fIHOSTNAME\fP" 4
+.IP "\fBlive\-config.hostname\fP=\fINOM_D_HÔTE\fP | \fBhostname\fP=\fINOM_D_HÔTE\fP" 4
 Permet de spécifier un nom d'hôte (hostname) au système. Par défaut ce nom
 est 'debian'.
-.IP "\fBlive\-config.username\fP=\fIUSERNAME\fP | \fBusername\fP=\fIUSERNAME\fP" 4
+.IP "\fBlive\-config.username\fP=\fINOM_D_UTILISATEUR\fP | \fBusername\fP=\fINOM_D_UTILISATEUR\fP" 4
 Permet de spécifier le login du user créé pour l'auto\-login. Par défaut ce
 nom est 'user'.
-.IP "\fBlive\-config.user\-fullname\fP=\(dq\fIUSER FULLNAME\fP\(dq | \fBuser\-fullname\fP=\(dq\fIUSER FULLNAME\fP\(dq" 4
+.IP "\fBlive\-config.user\-fullname\fP=\(dq\fINOM_COMPLET_D_UTILISATEUR\fP\(dq | \fBuser\-fullname\fP=\(dq\fINOM_COMPLET_D_UTILISATEUR\fP\(dq" 4
 Permet de spécifier le nom complet des utilisateurs créés pour
 l'auto\-login. Par défaut il s'agit de 'Debian Live user'.
-.IP "\fBlive\-config.locales\fP=\fILOCALE\fP | \fBlocales\fP=\fILOCALE\fP" 4
-Permet de spécifier la localisation du système, par exemple 'fr_FR'. Par
-défaut il s'agit de 'en_US.UTF\-8'. Dans le cas où la locale spécifiée n'est
-pas nativement disponible sur le système, elle est automatiquement générée à
-la volée.
+.IP "\fBlive\-config.locales\fP=\fILOCALISATION1\fP,\fILOCALISATION2\fP ... \fILOCALISATIONn\fP | \fBlocales\fP=\fILOCALISATION1\fP,\fILOCALISATION2\fP ... \fILOCALISATIONn\fP" 4
+Permet de spécifier la localisation du système, par exemple
+\&'fr_FR.UTF\-8'. Par défaut il s'agit de 'en_US.UTF\-8'. Dans le cas où la
+locale spécifiée n'est pas nativement disponible sur le système, elle est
+automatiquement générée à la volée.
 .IP "\fBlive\-config.timezone\fP=\fITIMEZONE\fP | \fBtimezone\fP=\fITIMEZONE\fP" 4
-Permet de spécifier la timezone du système, par exemple 'Europe/Zurich'. Par
+Permet de spécifier la timezone du système, par exemple 'Europe/Paris'. Par
 défaut il s'agit de 'UTC'.
 .IP "\fBlive\-config.utc\fP=\fByes\fP|no | \fButc\fP=\fByes\fP|no" 4
 Permet de modifier si le système assume, ou non, que l'horloge hardware soit
 réglée sur UTC. Par défaut 'oui'.
-.IP "\fBlive\-config.keyboard\-model\fP=\fIKEYBOARD_MODEL\fP | \fBkeyboard\-model\fP=\fIKEYBOARD_MODEL\fP" 4
+.IP "\fBlive\-config.keyboard\-model\fP=\fIMODÈLE_DE_CLAVIER\fP | \fBkeyboard\-model\fP=\fIMODÈLE_DE_CLAVIER\fP" 4
 Permet de changer le modèle de clavier. Aucune valeur par défaut n'est
 indiquée.
-.IP "\fBlive\-config.keyboard\-layouts\fP=\fIKEYBOARD_LAYOUT1\fP,\fIKEYBOARD_LAYOUT2\fP ... \fIKEYBOARD_LAYOUTn\fP | \fBkeyboard\-layouts\fP=\fIKEYBOARD_LAYOUT1\fP,\fIKEYBOARD_LAYOUT2\fP ... \fIKEYBOARD_LAYOUTn\fP" 4
+.IP "\fBlive\-config.keyboard\-layouts\fP=\fICONFIGURATION_DU_CLAVIER1\fP,\fICONFIGURATION_DU_CLAVIER2\fP ... \fICONFIGURATION_DU_CLAVIERn\fP | \fBkeyboard\-layouts\fP=\fICONFIGURATION_DU_CLAVIER1\fP,\fICONFIGURATION_DU_CLAVIER2\fP ... \fICONFIGURATION_DU_CLAVIERn\fP" 4
 Permet de changer la configuration du clavier. Si plus d'une configuration
 est spécifiée, les utilitaires de l'environnement de bureau permettront de
 passer de l'une à l'autre sous X11. Aucune valeur par défaut n'est
 spécifiée.
-.IP "\fBlive\-config.keyboard\-variant\fP=\fIKEYBOARD_VARIANT\fP | \fBkeyboard\-variant\fP=\fIKEYBOARD_VARIANT\fP" 4
+.IP "\fBlive\-config.keyboard\-variant\fP=\fITYPE_DE_CLAVIER\fP | \fBkeyboard\-variant\fP=\fITYPE_DE_CLAVIER\fP" 4
 Permet de changer le type de clavier. Aucune valeur par défaut n'est
 spécifiée.
-.IP "\fBlive\-config.keyboard\-options\fP=\fIKEYBOARD_OPTIONS\fP | \fBkeyboard\-options\fP=\fIKEYBOARD_OPTIONS\fP" 4
+.IP "\fBlive\-config.keyboard\-options\fP=\fIOPTIONS_DU_CLAVIER\fP | \fBkeyboard\-options\fP=\fIOPTIONS_DU_CLAVIER\fP" 4
 Permet de changer les options du clavier. Aucune valeur par défaut n'est
 spécifiée.
 .IP "\fBlive\-config.sysv\-rc\fP=\fISERVICE1\fP,\fISERVICE2\fP ... \fISERVICEn\fP | \fBsysv\-rc\fP=\fISERVICE1\fP,\fISERVICE2\fP ... \fISERVICEn\fP" 4
-Permet de désactiver des services du sysV via update\-rc.d.
-.IP "\fBlive\-config.xorg\-driver\fP=\fIXORG_DRIVER\fP | \fBxorg\-driver\fP=\fIXORG_DRIVER\fP" 4
+Permet de désactiver des services du sysv via update\-rc.d.
+.IP "\fBlive\-config.xorg\-driver\fP=\fIDRIVER_PAR_XORG\fP | \fBxorg\-driver\fP=\fIDRIVER_PAR_XORG\fP" 4
 Permet de spécifier le driver utilisé par xorg plutôt que d'utiliser
 l'auto\-détection.
-.IP "\fBlive\-config.xorg\-resolution\fP=\fIXORG_RESOLUTION\fP | \fBxorg\-resolution\fP=\fIXORG_RESOLUTION\fP" 4
+.IP "\fBlive\-config.xorg\-resolution\fP=\fIRÉSOLUTION_PAR_XORG\fP | \fBxorg\-resolution\fP=\fIRÉSOLUTION_PAR_XORG\fP" 4
 Permet de spécifier la résolution utilisée par xorg, plutôt que d'utiliser
 l'auto\-détection.
-.IP "\fBlive\-config.hooks\fP=\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP | \fBhooks\fP=\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
+.IP "\fBlive\-config.hooks\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP | \fBhooks\fP=\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
 Permet de soumettre et d'exécuter un ou plusieurs fichiers/scripts
 spécifiques. Notez que les URLs doivent pouvoir être utilisées par wget
 (http, ftp or file://), que les fichiers sont exécutés dans /tmp sur le
@@ -104,11 +104,21 @@ système live, et que les dépendances éventuelles des fichiers doivent être
 préalablement installées; si vous devez en effet exécuter un script python,
 vous devez préalablement installer sur le système l'interpréteur
 python. Quelques modèles (hooks) pour certains cas d'utilisation sont
-proposés sur <\fIhttp://live.debian.net/other/hooks\fP>.
+proposés dans /usr/share/doc/live\-config/examples/hooks/ et sur
+<\fIhttp://live.debian.net/other/hooks\fP>.
 .br
 Si le fichier est placé dans le média live, il peut être utilisé avec
 file:///live/image/\fIFILE\fP, ou bien avec file:///\fIFILE\fP s'il n'est pas
 placé dans la racine du système de fichier du live système.
+.br
+All hooks in /lib/live/hooks/ in the root filesystem of the live system can
+be automatically be enabled with the keyword 'filesystem'.
+.br
+All hooks in /live/hooks/ of the live medium can be automatically be enabled
+with the keyword 'medium'.
+.br
+If several mechanisms are combined, then filesystem hooks are executed
+first, then medium hooks, and last the network hooks.
 
 .SS "Paramètres d'amorçage (raccourcis)"
 Dans le cas où il est nécessaire de combiner plusieurs paramètres
@@ -153,49 +163,54 @@ nommage ('vendeur' ou 'projet' étant remplacés par le nom réel issu du nom
 de fichier comme 'debian\-eeepc.conf').
 
 .IP "\fBLIVE_CONFIGS\fP=\fISCRIPT1\fP,\fISCRIPT2\fP, ... \fISCRIPTn\fP" 4
-This variable equals the '\fBlive\-config\fP=\fISCRIPT1\fP,\fISCRIPT2\fP,
-\&... \fISCRIPTn\fP' parameter.
+Cette variable correspond au paramètre
+\&'\fBlive\-config\fP=\fISCRIPT1\fP,\fISCRIPT2\fP, ... \fISCRIPTn\fP'.
 .IP "\fBLIVE_NOCONFIGS\fP=\fISCRIPT1\fP,\fISCRIPT2\fP, ... \fISCRIPTn\fP" 4
-This variable equals the '\fBlive\-noconfig\fP=\fISCRIPT1\fP,\fISCRIPT2\fP,
-\&... \fISCRIPTn\fP' parameter.
-.IP \fBLIVE_HOSTNAME\fP=\fIHOSTNAME\fP 4
-This variable equals the '\fBlive\-config.hostname\fP=\fIHOSTAME\fP' parameter.
-.IP \fBLIVE_USERNAME\fP=\fIUSERNAME\fP 4
-This variable equals the '\fBlive\-config.username\fP=\fIUSERNAME\fP' parameter.
-.IP "\fBLIVE_USER_FULLNAME\fP=\(dq\fIUSER FULLNAME\(dq\fP" 4
-This variable equals the '\fBlive\-config.user\-fullname\fP="\fIUSER FULLNAME\fP"'
-parameter.
-.IP \fBLIVE_LOCALES\fP=\fILOCALE\fP 4
-This variable equals the '\fBlive\-config.locales\fP=\fILOCALE\fP' parameter.
+Cette variable correspond au paramètre
+\&'\fBlive\-noconfig\fP=\fISCRIPT1\fP,\fISCRIPT2\fP, ... \fISCRIPTn\fP'.
+.IP \fBLIVE_HOSTNAME\fP=\fINOM_D_HÔTE\fP 4
+Cette variable correspond au paramètre
+\&'\fBlive\-config.hostname\fP=\fINOM_D_HÔTE\fP'.
+.IP \fBLIVE_USERNAME\fP=\fINOM_D_UTILISATEUR\fP 4
+Cette variable correspond au paramètre
+\&'\fBlive\-config.username\fP=\fINOM_D_UTILISATEUR\fP'.
+.IP \fBLIVE_USER_FULLNAME\fP=\(dq\fINOM_COMPLET_D_UTILISATEUR\(dq\fP 4
+Cette variable correspond au paramètre
+\&'\fBlive\-config.user\-fullname\fP="\fINOM_COMPLET_D_UTILISATEUR"\fP'.
+.IP "\fBLIVE_LOCALES\fP=\fILOCALISATION\fP,\fILOCALISATION\fP ... \fILOCALISATION\fP" 4
+Cette variable correspond au paramètre
+\&'\fBlive\-config.locales\fP=\fILOCALISATION\fP,\fILOCALISATION\fP
+\&... \fILOCALISATION\fP'.
 .IP \fBLIVE_TIMEZONE\fP=\fITIMEZONE\fP 4
-This variable equals the '\fBlive\-config.timezone\fP=\fITIMEZONE\fP' parameter.
+Cette variable correspond au paramètre
+\&'\fBlive\-config.timezone\fP=\fITIMEZONE\fP'.
 .IP \fBLIVE_UTC\fP=\fByes\fP|no 4
 Cette variable correspond au paramètre '\fBlive\-config.utc\fP=\fByes\fP|no'.
-.IP \fBLIVE_KEYBOARD_MODEL\fP=\fIKEYBOARD_MODEL\fP 4
-This variable equals the '\fBlive\-config.keyboard\-model\fP=\fIKEYBOARD_MODEL\fP'
-parameter.
-.IP "\fBLIVE_KEYBOARD_LAYOUTS\fP=\fIKEYBOARD_LAYOUT1\fP,\fIKEYBOARD_LAYOUT2\fP ... \fIKEYBOARD_LAYOUTn\fP" 4
-This variable equals the
-\&'\fBlive\-config.keyboard\-layouts\fP=\fIKEYBOARD_LAYOUT1\fP,\fIKEYBOARD_LAYOUT2\fP
-\&... \fIKEYBOARD_LAYOUTn\fP' parameter.
-.IP \fBLIVE_KEYBOARD_VARIANT\fP=\fIKEYBOARD_VARIANT\fP 4
-This variable equals the
-\&'\fBlive\-config.keyboard\-variant\fP=\fIKEYBOARD_VARIANT\fP' parameter.
-.IP \fBLIVE_KEYBOARD_OPTIONS\fP=\fIKEYBOARD_OPTIONS\fP 4
-This variable equals the
-\&'\fBlive\-config.keyboard\-options\fP=\fIKEYBOARD_OPTIONS\fP' parameter.
-.IP "\fBLIVE_SYSV_RC\fP=\fISERVICE1\fP,\fISERVICE2\fP ... \fISERVICEn\fP" 4
-This variable equals the '\fBlive\-config.sysv\-rc\fP=\fISERVICE1\fP,\fISERVICE2\fP
-\&... \fISERVICEn\fP' parameter.
-.IP \fBLIVE_XORG_DRIVER\fP=\fIXORG_DRIVER\fP 4
-This variable equals the '\fBlive\-config.xorg\-driver\fP=\fIXORG_DRIVER\fP'
-parameter.
-.IP \fBLIVE_XORG_RESOLUTION\fP=\fIXORG_RESOLUTION\fP 4
-This variable equals the '\fBlive\-config.xorg\-resolution\fP=\fIXORG_RESOLUTION\fP'
-parameter.
-.IP "\fBLIVE_HOOKS\fP=\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
+.IP \fBLIVE_KEYBOARD_MODEL\fP=\fIMODÈLE_DE_CLAVIER\fP 4
 Cette variable correspond au paramètre
-\&'\fBlive\-config.hooks\fP=\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP'.
+\&'\fBlive\-config.keyboard\-model\fP=\fIMODÈLE_DE_CLAVIER\fP'.
+.IP "\fBLIVE_KEYBOARD_LAYOUTS\fP=\fICONFIGURATION_DU_CLAVIER1\fP,\fICONFIGURATION_DU_CLAVIER2\fP ... \fICONFIGURATION_DU_CLAVIERn\fP" 4
+Cette variable correspond au paramètre
+\&'\fBlive\-config.keyboard\-layouts\fP=\fICONFIGURATION_DU_CLAVIER1\fP,\fICONFIGURATION_DU_CLAVIER2\fP
+\&... \fICONFIGURATION_DU_CLAVIERn\fP'.
+.IP \fBLIVE_KEYBOARD_VARIANT\fP=\fITYPE_DE_CLAVIER\fP 4
+Cette variable correspond au paramètre
+\&'\fBlive\-config.keyboard\-variant\fP=\fITYPE_DE_CLAVIER\fP'.
+.IP \fBLIVE_KEYBOARD_OPTIONS\fP=\fIOPTIONS_DU_CLAVIER\fP 4
+Cette variable correspond au paramètre
+\&'\fBlive\-config.keyboard\-options\fP=\fIOPTIONS_DU_CLAVIER\fP'.
+.IP "\fBLIVE_SYSV_RC\fP=\fISERVICE1\fP,\fISERVICE2\fP ... \fISERVICEn\fP" 4
+Cette variable correspond au paramètre
+\&'\fBlive\-config.sysv\-rc\fP=\fISERVICE1\fP,\fISERVICE2\fP ... \fISERVICEn\fP'.
+.IP \fBLIVE_XORG_DRIVER\fP=\fIDRIVER_PAR_XORG\fP 4
+Cette variable correspond au paramètre
+\&'\fBlive\-config.xorg\-driver\fP=\fIDRIVER_PAR_XORG\fP.
+.IP \fBLIVE_XORG_RESOLUTION\fP=\fIRÉSOLUTION_PAR_XORG\fP 4
+Cette variable correspond au paramètre
+\&'\fBlive\-config.xorg\-resolution\fP=\fIRÉSOLUTION_PAR_XORG\fP'.
+.IP "\fBLIVE_HOOKS\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
+Cette variable correspond au paramètre
+\&'\fBlive\-config.hooks\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP'.
 
 .SH CUSTOMIZATION
 \fBlive\-config\fP can be easily customized for downstream projects or local
@@ -256,8 +271,8 @@ configure sysvinit.
 configure sysv\-rc en désactivant les services listés.
 .IP \fBlogin\fP 4
 désactive lastlog.
-.IP \fBapport\fP 4
-enables apport.
+.IP "\fBapport\fP (seulement ubuntu)" 4
+désactive apport.
 .IP \fBgnome\-panel\-data\fP 4
 désactive le bouton de verrouillage de l'écran.
 .IP \fBgnome\-power\-manager\fP 4
@@ -292,6 +307,8 @@ désactive util\-linux' heure hardware.
 désactive lastlog.
 .IP \fBxserver\-xorg\fP 4
 configure xserver\-xorg.
+.IP "\fBureadahead\fP (seulement ubuntu)" 4
+désactive ureadahead.
 .IP \fBhooks\fP 4
 permet de lancer des commandes particulières depuis un script placés sur le
 média live, ou sur un serveur http/ftp.
