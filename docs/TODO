@@ -34,3 +34,4 @@ except for the following things:
   * add option to specify the xsession.
   * when not using persistency, do not import options into the debconf db.
   * cleanup the scripts order and splitting.
+  * check if we have the most important scripts for ubuntu so that live-config supports both.
