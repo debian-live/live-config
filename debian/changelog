@@ -1,3 +1,25 @@
+live-config (2.0~a15-1) unstable; urgency=low
+
+  * Correcting typo in update-live-config script.
+  * Also including bin directory in test target of makefile.
+  * Updating TODO file.
+  * Adding ureadahead script (ubuntu only).
+  * Removing debian specific scripts when being used on ubuntu.
+  * Updating TODO file.
+  * Improving and updating French manpage translation.
+  * Improving backend dependencies.
+  * Adding example hooks.
+  * Correcting manpage syntax regarding multiple locales.
+  * Adding filesystem and media options to hook script to automatically
+    execute hooks in default locations.
+  * Allowing to combine different hook methods at the same time.
+  * Preconfiguring kxkb to show kde keyboard selector when using
+    multiple layouts.
+  * Ensuring that kde configuration is owned by the live user.
+  * Updating kxkbrc default values.
+
+ -- Daniel Baumann <daniel@debian.org>  Sat, 17 Jul 2010 00:40:49 +0200
+
 live-config (2.0~a14-1) unstable; urgency=low
 
   * Prefixing local variables in update-live-config script.
