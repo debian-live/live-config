@@ -49,4 +49,8 @@ case "${_DISTRIBUTION}" in
 			;;
 		esac
 		;;
+	ubuntu)
+		# Removing debian scripts
+		rm -f "${_DIRECTORY}"/*-gdm3
+		;;
 esac
