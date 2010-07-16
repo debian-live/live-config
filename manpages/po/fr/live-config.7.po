@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config 2.0~a14\n"
-"POT-Creation-Date: 2010-07-16 01:43+0300\n"
+"POT-Creation-Date: 2010-07-16 03:55+0300\n"
 "PO-Revision-Date: 2010-05-24 09:59+0300\n"
 "Last-Translator: Thierry Lépicier <thierry.lepicier@free.fr>\n"
 "Language-Team: none\n"
@@ -29,6 +29,7 @@ msgstr "16.07.2010"
 
 #. type: TH
 #: en/live-config.7:9
+#, no-wrap
 msgid "2.0~a14"
 msgstr "2.0~a14"
 
@@ -992,13 +993,13 @@ msgstr "désactive lastlog."
 #. type: IP
 #: en/live-config.7:170
 #, no-wrap
-msgid "B<apport>"
-msgstr "B<apport>"
+msgid "B<apport> (ubuntu only)"
+msgstr "B<apport> (seulement ubuntu)"
 
 #. type: Plain text
 #: en/live-config.7:172
-msgid "enables apport."
-msgstr ""
+msgid "disables apport."
+msgstr "désactive apport."
 
 #. type: IP
 #: en/live-config.7:172
@@ -1172,11 +1173,22 @@ msgstr "configure xserver-xorg."
 #. type: IP
 #: en/live-config.7:204
 #, no-wrap
+msgid "B<ureadahead> (ubuntu only)"
+msgstr "B<ureadahead> (seulement ubuntu)"
+
+#. type: Plain text
+#: en/live-config.7:206
+msgid "disables ureadahead."
+msgstr "désactive ureadahead."
+
+#. type: IP
+#: en/live-config.7:206
+#, no-wrap
 msgid "B<hooks>"
 msgstr "B<hooks>"
 
 #. type: Plain text
-#: en/live-config.7:206
+#: en/live-config.7:208
 msgid ""
 "allows to run arbitrary commands from a script placed on the live media or "
 "an http/ftp server."
@@ -1185,77 +1197,77 @@ msgstr ""
 "média live, ou sur un serveur http/ftp."
 
 #. type: SH
-#: en/live-config.7:207
+#: en/live-config.7:209
 #, no-wrap
 msgid "FILES"
 msgstr ""
 
 #. type: IP
-#: en/live-config.7:208
+#: en/live-config.7:210
 #, no-wrap
 msgid "B</etc/live/config.conf>"
 msgstr "B</etc/live/config.conf>"
 
 #. type: IP
-#: en/live-config.7:209
+#: en/live-config.7:211
 #, no-wrap
 msgid "B</etc/live/config.conf.d/>"
 msgstr "B</etc/live/config.conf.d/>"
 
 #. type: IP
-#: en/live-config.7:210
+#: en/live-config.7:212
 #, no-wrap
 msgid "B<live/config.conf>"
 msgstr "B<live/config.conf>"
 
 #. type: IP
-#: en/live-config.7:211
+#: en/live-config.7:213
 #, no-wrap
 msgid "B<live/config.conf.d/>"
 msgstr "B<live/config.conf.d/>"
 
 #. type: IP
-#: en/live-config.7:212
+#: en/live-config.7:214
 #, no-wrap
 msgid "B</lib/live/config.sh>"
 msgstr "B</lib/live/config.sh>"
 
 #. type: IP
-#: en/live-config.7:213
+#: en/live-config.7:215
 #, no-wrap
 msgid "B</lib/live/config/>"
 msgstr "B</lib/live/config/>"
 
 #. type: IP
-#: en/live-config.7:214
+#: en/live-config.7:216
 #, no-wrap
 msgid "B</var/lib/live/config/>"
 msgstr "B</var/lib/live/config/>"
 
 #. type: SH
-#: en/live-config.7:216
+#: en/live-config.7:218
 #, no-wrap
 msgid "SEE ALSO"
 msgstr ""
 
 #. type: Plain text
-#: en/live-config.7:218
+#: en/live-config.7:220
 msgid "I<live-boot>(7)"
 msgstr "I<live-boot>(7)"
 
 #. type: Plain text
-#: en/live-config.7:220
+#: en/live-config.7:222
 msgid "I<live-helper>(7)"
 msgstr "I<live-helper>(7)"
 
 #. type: SH
-#: en/live-config.7:221
+#: en/live-config.7:223
 #, no-wrap
 msgid "HOMEPAGE"
 msgstr ""
 
 #. type: Plain text
-#: en/live-config.7:223
+#: en/live-config.7:225
 msgid ""
 "More information about live-config and the Debian Live project can be found "
 "on the homepage at E<lt>I<http://live.debian.net/>E<gt> and in the manual at "
@@ -1266,13 +1278,13 @@ msgstr ""
 "sur E<lt>I<http://live.debian.net/manual/>E<gt>."
 
 #. type: SH
-#: en/live-config.7:224
+#: en/live-config.7:226
 #, no-wrap
 msgid "BUGS"
 msgstr "BUGS"
 
 #. type: Plain text
-#: en/live-config.7:226
+#: en/live-config.7:228
 msgid ""
 "Bugs can be reported by submitting a bugreport for the live-config package "
 "in the Debian Bug Tracking System at E<lt>I<http://bugs.debian.org/>E<gt> or "
@@ -1285,13 +1297,13 @@ msgstr ""
 "E<lt>I<debian-live@lists.debian.org>E<gt>"
 
 #. type: SH
-#: en/live-config.7:227
+#: en/live-config.7:229
 #, no-wrap
 msgid "AUTHOR"
 msgstr "AUTEUR"
 
 #. type: Plain text
-#: en/live-config.7:228
+#: en/live-config.7:230
 msgid ""
 "live-config was written by Daniel Baumann E<lt>I<daniel@debian.org>E<gt> for "
 "the Debian project."

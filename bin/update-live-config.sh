@@ -29,6 +29,7 @@ case "${_DISTRIBUTION}" in
 	debian)
 		# Removing ubuntu scripts
 		rm -f "${_DIRECTORY}"/*-apport
+		rm -f "${_DIRECTORY}"/*-ureadahead
 
 		case "${_RELEASE}" in
 		lenny)
