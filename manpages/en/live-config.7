@@ -66,6 +66,8 @@ If the file is placed on the live medium, it can be fetched with file:///live/im
 All hooks in /lib/live/hooks/ in the root filesystem of the live system can be automatically be enabled with the keyword 'filesystem'.
 .br
 All hooks in /live/hooks/ of the live medium can be automatically be enabled with the keyword 'medium'.
+.br
+If several mechanisms are combined, then filesystem hooks are executed first, then medium hooks, and last the network hooks.
 
 .SS Boot Parameters (shortcuts)
 For some common use cases where it would require to combine several individual parameters, \fBlive\-config\fR provides shortcuts. This allows both to have full granularity over all the options, as well keep things simple.

@@ -116,6 +116,9 @@ be automatically be enabled with the keyword 'filesystem'.
 .br
 All hooks in /live/hooks/ of the live medium can be automatically be enabled
 with the keyword 'medium'.
+.br
+If several mechanisms are combined, then filesystem hooks are executed
+first, then medium hooks, and last the network hooks.
 
 .SS "Paramètres d'amorçage (raccourcis)"
 Dans le cas où il est nécessaire de combiner plusieurs paramètres
