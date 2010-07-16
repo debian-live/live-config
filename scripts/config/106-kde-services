@@ -43,6 +43,7 @@ SwitchMode=Global
 Use=true
 EOF
 
+			chown ${LIVE_USERNAME}:${LIVE_USERNAME} "/home/${LIVE_USERNAME}/.kde" -R
 		fi
 	fi
 
