@@ -12,7 +12,7 @@ Vcs-Git: git://live.debian.net/git/live-config.git
 
 Package: live-config
 Architecture: all
-Depends: ${misc:Depends}
+Depends: ${misc:Depends}, live-config-sysvinit | live-config-backend
 Recommends: user-setup, sudo
 Suggests: wget
 Description: Debian Live - System Configuration Scripts
@@ -24,7 +24,7 @@ Description: Debian Live - System Configuration Scripts
 
 Package: live-config-systemd
 Architecture: all
-Depends: ${misc:Depends}, live-config (>= ${source:Version})
+Depends: ${misc:Depends}
 Conflicts: live-config-backend
 Replaces: live-config-backend
 Provides: live-config-backend
@@ -37,7 +37,7 @@ Description: Debian Live - System Configuration Scripts (systemd backend)
 
 Package: live-config-sysvinit
 Architecture: all
-Depends: ${misc:Depends}, live-config (>= ${source:Version}), sysvinit (>= 2.86)
+Depends: ${misc:Depends}, sysvinit (>= 2.86)
 Conflicts: live-config-backend
 Replaces: live-config-backend
 Provides: live-config-backend
@@ -49,7 +49,7 @@ Description: Debian Live - System Configuration Scripts (sysvinit backend)
 
 Package: live-config-upstart
 Architecture: all
-Depends: ${misc:Depends}, live-config (>= ${source:Version}), upstart
+Depends: ${misc:Depends}, upstart
 Conflicts: live-config-backend
 Replaces: live-config-backend
 Provides: live-config-backend
