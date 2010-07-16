@@ -25,6 +25,27 @@ Kde_services ()
 
 Configure_kde_services ()
 {
+	# Enabling keyboard selector
+	if echo "${LIVE_KEYBOARD_LAYOUTS}" | grep -qs ','
+	then
+		if [ ! -e "/home/${LIVE_USERNAME}/.kde/share/config/kxkbrc" ]
+		then
+			mkdir -p "/home/${LIVE_USERNAME}/.kde/share/config/"
+
+cat > "/home/${LIVE_USERNAME}/.kde/share/config/kxkbrc" << EOF
+[Layout]
+DisplayNames=${LIVE_KEYBOARD_LAYOUTS}
+IndicatorOnly=false
+LayoutList=${LIVE_KEYBOARD_LAYOUTS}
+ShowFlag=false
+ShowSingle=false
+SwitchMode=Global
+Use=true
+EOF
+
+		fi
+	fi
+
 	# Disabling unnecessary KDE services
 	rm -f /usr/share/autostart/kab2kabc.desktop
 	rm -f /usr/share/autostart/kabcdistlistupdater.desktop
