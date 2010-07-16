@@ -126,7 +126,7 @@ msgstr ""
 #: en/live-config.7:25
 #, no-wrap
 msgid "B<live-config>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn>"
-msgstr ""
+msgstr "B<live-config>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn>"
 
 #. type: Plain text
 #: en/live-config.7:27
@@ -160,7 +160,7 @@ msgstr ""
 #: en/live-config.7:29
 #, no-wrap
 msgid "B<live-noconfig>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn>"
-msgstr ""
+msgstr "B<live-noconfig>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn>"
 
 #. type: Plain text
 #: en/live-config.7:31
@@ -185,7 +185,7 @@ msgstr ""
 #: en/live-config.7:35
 #, no-wrap
 msgid "B<live-config.hostname>=I<HOSTNAME> | B<hostname>=I<HOSTNAME>"
-msgstr ""
+msgstr "B<live-config.hostname>=I<NOM_D_HÔTE> | B<hostname>=I<NOM_D_HÔTE>"
 
 #. type: Plain text
 #: en/live-config.7:37
@@ -198,7 +198,7 @@ msgstr ""
 #: en/live-config.7:37
 #, no-wrap
 msgid "B<live-config.username>=I<USERNAME> | B<username>=I<USERNAME>"
-msgstr ""
+msgstr "B<live-config.username>=I<NOM_D_UTILISATEUR> | B<username>=I<NOM_D_UTILISATEUR>"
 
 #. type: Plain text
 #: en/live-config.7:39
@@ -213,7 +213,7 @@ msgstr ""
 #: en/live-config.7:39
 #, no-wrap
 msgid "B<live-config.user-fullname>=\"I<USER FULLNAME>\" | B<user-fullname>=\"I<USER FULLNAME>\""
-msgstr ""
+msgstr "B<live-config.user-fullname>=\"I<NOM_COMPLET_D_UTILISATEUR>\" | B<user-fullname>=\"I<NOM_COMPLET_D_UTILISATEUR>\""
 
 #. type: Plain text
 #: en/live-config.7:41
@@ -228,7 +228,7 @@ msgstr ""
 #: en/live-config.7:41
 #, no-wrap
 msgid "B<live-config.locales>=I<LOCALE> | B<locales>=I<LOCALE>"
-msgstr ""
+msgstr "B<live-config.locales>=I<LOLCAISATION> | B<locales>=I<LOCALISATION>"
 
 #. type: Plain text
 #: en/live-config.7:43
@@ -237,16 +237,16 @@ msgid ""
 "'en_US.UTF-8'. In case the selected locale is not already available on the "
 "system, it is automatically generated on the fly."
 msgstr ""
-"Permet de spécifier la localisation du système, par exemple 'fr_FR'. Par "
-"défaut il s'agit de 'en_US.UTF-8'. Dans le cas où la locale spécifiée n'est "
-"pas nativement disponible sur le système, elle est automatiquement générée à "
-"la volée."
+"Permet de spécifier la localisation du système, par exemple 'fr_FR.UTF-8'. "
+"Par défaut il s'agit de 'en_US.UTF-8'. Dans le cas où la locale spécifiée "
+"n'est pas nativement disponible sur le système, elle est automatiquement "
+"générée à la volée."
 
 #. type: IP
 #: en/live-config.7:43
 #, no-wrap
 msgid "B<live-config.timezone>=I<TIMEZONE> | B<timezone>=I<TIMEZONE>"
-msgstr ""
+msgstr "B<live-config.timezone>=I<TIMEZONE> | B<timezone>=I<TIMEZONE>"
 
 #. type: Plain text
 #: en/live-config.7:45
@@ -254,7 +254,7 @@ msgid ""
 "Allows to set the timezone of the system, e.g. 'Europe/Zurich'. The default "
 "is 'UTC'."
 msgstr ""
-"Permet de spécifier la timezone du système, par exemple 'Europe/Zurich'. Par "
+"Permet de spécifier la timezone du système, par exemple 'Europe/Paris'. Par "
 "défaut il s'agit de 'UTC'."
 
 #. type: IP
@@ -276,7 +276,7 @@ msgstr ""
 #: en/live-config.7:47
 #, no-wrap
 msgid "B<live-config.keyboard-model>=I<KEYBOARD_MODEL> | B<keyboard-model>=I<KEYBOARD_MODEL>"
-msgstr ""
+msgstr "B<live-config.keyboard-model>=I<MODÈLE_DE_CLAVIER> | B<keyboard-model>=I<MODÈLE_DE_CLAVIER>"
 
 #. type: Plain text
 #: en/live-config.7:49
@@ -289,7 +289,7 @@ msgstr ""
 #: en/live-config.7:49
 #, no-wrap
 msgid "B<live-config.keyboard-layouts>=I<KEYBOARD_LAYOUT1>,I<KEYBOARD_LAYOUT2> ... I<KEYBOARD_LAYOUTn> | B<keyboard-layouts>=I<KEYBOARD_LAYOUT1>,I<KEYBOARD_LAYOUT2> ... I<KEYBOARD_LAYOUTn>"
-msgstr ""
+msgstr "B<live-config.keyboard-layouts>=I<CONFIGURATION_DU_CLAVIER1>,I<CONFIGURATION_DU_CLAVIER2> ... I<CONFIGURATION_DU_CLAVIERn> | B<keyboard-layouts>=I<CONFIGURATION_DU_CLAVIER1>,I<CONFIGURATION_DU_CLAVIER2> ... I<CONFIGURATION_DU_CLAVIERn>"
 
 #. type: Plain text
 #: en/live-config.7:51
@@ -306,7 +306,7 @@ msgstr ""
 #: en/live-config.7:51
 #, no-wrap
 msgid "B<live-config.keyboard-variant>=I<KEYBOARD_VARIANT> | B<keyboard-variant>=I<KEYBOARD_VARIANT>"
-msgstr ""
+msgstr "B<live-config.keyboard-variant>=I<TYPE_DE_CLAVIER> | B<keyboard-variant>=I<TYPE_DE_CLAVIER>"
 
 #. type: Plain text
 #: en/live-config.7:53
@@ -319,7 +319,7 @@ msgstr ""
 #: en/live-config.7:53
 #, no-wrap
 msgid "B<live-config.keyboard-options>=I<KEYBOARD_OPTIONS> | B<keyboard-options>=I<KEYBOARD_OPTIONS>"
-msgstr ""
+msgstr "B<live-config.keyboard-options>=I<OPTIONS_DU_CLAVIER> | B<keyboard-options>=I<OPTIONS_DU_CLAVIER>"
 
 #. type: Plain text
 #: en/live-config.7:55
@@ -332,18 +332,18 @@ msgstr ""
 #: en/live-config.7:55
 #, no-wrap
 msgid "B<live-config.sysv-rc>=I<SERVICE1>,I<SERVICE2> ... I<SERVICEn> | B<sysv-rc>=I<SERVICE1>,I<SERVICE2> ... I<SERVICEn>"
-msgstr ""
+msgstr "B<live-config.sysv-rc>=I<SERVICE1>,I<SERVICE2> ... I<SERVICEn> | B<sysv-rc>=I<SERVICE1>,I<SERVICE2> ... I<SERVICEn>"
 
 #. type: Plain text
 #: en/live-config.7:57
 msgid "Allows to disable sysv services through update-rc.d."
-msgstr "Permet de désactiver des services du sysV via update-rc.d."
+msgstr "Permet de désactiver des services du sysv via update-rc.d."
 
 #. type: IP
 #: en/live-config.7:57
 #, no-wrap
 msgid "B<live-config.xorg-driver>=I<XORG_DRIVER> | B<xorg-driver>=I<XORG_DRIVER>"
-msgstr ""
+msgstr "B<live-config.xorg-driver>=I<DRIVER_PAR_XORG> | B<xorg-driver>=I<DRIVER_PAR_XORG>"
 
 #. type: Plain text
 #: en/live-config.7:59
@@ -356,7 +356,7 @@ msgstr ""
 #: en/live-config.7:59
 #, no-wrap
 msgid "B<live-config.xorg-resolution>=I<XORG_RESOLUTION> | B<xorg-resolution>=I<XORG_RESOLUTION>"
-msgstr ""
+msgstr "B<live-config.xorg-resolution>=I<RÉSOLUTION_PAR_XORG> | B<xorg-resolution>=I<RÉSOLUTION_PAR_XORG>"
 
 #. type: Plain text
 #: en/live-config.7:61
@@ -546,7 +546,7 @@ msgstr ""
 #: en/live-config.7:91
 #, no-wrap
 msgid "B<LIVE_CONFIGS>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn>"
-msgstr ""
+msgstr "B<LIVE_CONFIGS>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn>"
 
 #. type: Plain text
 #: en/live-config.7:93
@@ -554,12 +554,14 @@ msgid ""
 "This variable equals the 'B<live-config>=I<SCRIPT1>,I<SCRIPT2>, ... "
 "I<SCRIPTn>' parameter."
 msgstr ""
+"Cette variable correspond au paramètre 'B<live-config>=I<SCRIPT1>,"
+"I<SCRIPT2>, ... I<SCRIPTn>'."
 
 #. type: IP
 #: en/live-config.7:93
 #, no-wrap
 msgid "B<LIVE_NOCONFIGS>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn>"
-msgstr ""
+msgstr "B<LIVE_NOCONFIGS>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn>"
 
 #. type: Plain text
 #: en/live-config.7:95
@@ -567,36 +569,42 @@ msgid ""
 "This variable equals the 'B<live-noconfig>=I<SCRIPT1>,I<SCRIPT2>, ... "
 "I<SCRIPTn>' parameter."
 msgstr ""
+"Cette variable correspond au paramètre 'B<live-noconfig>=I<SCRIPT1>,"
+"I<SCRIPT2>, ... I<SCRIPTn>'."
 
 #. type: IP
 #: en/live-config.7:95
 #, no-wrap
 msgid "B<LIVE_HOSTNAME>=I<HOSTNAME>"
-msgstr ""
+msgstr "B<LIVE_HOSTNAME>=I<NOM_D_HÔTE>"
 
 #. type: Plain text
 #: en/live-config.7:97
 msgid ""
 "This variable equals the 'B<live-config.hostname>=I<HOSTAME>' parameter."
 msgstr ""
+"Cette variable correspond au paramètre 'B<live-config."
+"hostname>=I<NOM_D_HÔTE>'."
 
 #. type: IP
 #: en/live-config.7:97
 #, no-wrap
 msgid "B<LIVE_USERNAME>=I<USERNAME>"
-msgstr ""
+msgstr "B<LIVE_USERNAME>=I<NOM_D_UTILISATEUR>"
 
 #. type: Plain text
 #: en/live-config.7:99
 msgid ""
 "This variable equals the 'B<live-config.username>=I<USERNAME>' parameter."
 msgstr ""
+"Cette variable correspond au paramètre 'B<live-config."
+"username>=I<NOM_D_UTILISATEUR>'."
 
 #. type: IP
 #: en/live-config.7:99
 #, no-wrap
 msgid "B<LIVE_USER_FULLNAME>=\"I<USER FULLNAME\">"
-msgstr ""
+msgstr "B<LIVE_USER_FULLNAME>=\"I<NOM_COMPLET_D_UTILISATEUR\">"
 
 #. type: Plain text
 #: en/live-config.7:101
@@ -604,29 +612,34 @@ msgid ""
 "This variable equals the 'B<live-config.user-fullname>=\"I<USER FULLNAME>\"' "
 "parameter."
 msgstr ""
+"Cette variable correspond au paramètre 'B<live-config.user-fullname>="
+"\"I<NOM_COMPLET_D_UTILISATEUR\">'."
 
 #. type: IP
 #: en/live-config.7:101
 #, no-wrap
 msgid "B<LIVE_LOCALES>=I<LOCALE>"
-msgstr ""
+msgstr "B<LIVE_LOCALES>=I<LOCALISATION>"
 
 #. type: Plain text
 #: en/live-config.7:103
 msgid "This variable equals the 'B<live-config.locales>=I<LOCALE>' parameter."
 msgstr ""
+"Cette variable correspond au paramètre 'B<live-config."
+"locales>=I<LOCALISATION>'."
 
 #. type: IP
 #: en/live-config.7:103
 #, no-wrap
 msgid "B<LIVE_TIMEZONE>=I<TIMEZONE>"
-msgstr ""
+msgstr "B<LIVE_TIMEZONE>=I<TIMEZONE>"
 
 #. type: Plain text
 #: en/live-config.7:105
 msgid ""
 "This variable equals the 'B<live-config.timezone>=I<TIMEZONE>' parameter."
 msgstr ""
+"Cette variable correspond au paramètre 'B<live-config.timezone>=I<TIMEZONE>'."
 
 #. type: IP
 #: en/live-config.7:105
@@ -643,7 +656,7 @@ msgstr "Cette variable correspond au paramètre 'B<live-config.utc>=B<yes>|no'."
 #: en/live-config.7:107
 #, no-wrap
 msgid "B<LIVE_KEYBOARD_MODEL>=I<KEYBOARD_MODEL>"
-msgstr ""
+msgstr "B<LIVE_KEYBOARD_MODEL>=I<MODÈLE_DE_CLAVIER>"
 
 #. type: Plain text
 #: en/live-config.7:109
@@ -651,12 +664,14 @@ msgid ""
 "This variable equals the 'B<live-config.keyboard-model>=I<KEYBOARD_MODEL>' "
 "parameter."
 msgstr ""
+"Cette variable correspond au paramètre 'B<live-config.keyboard-"
+"model>=I<MODÈLE_DE_CLAVIER>'."
 
 #. type: IP
 #: en/live-config.7:109
 #, no-wrap
 msgid "B<LIVE_KEYBOARD_LAYOUTS>=I<KEYBOARD_LAYOUT1>,I<KEYBOARD_LAYOUT2> ... I<KEYBOARD_LAYOUTn>"
-msgstr ""
+msgstr "B<LIVE_KEYBOARD_LAYOUTS>=I<CONFIGURATION_DU_CLAVIER1>,I<CONFIGURATION_DU_CLAVIER2> ... I<CONFIGURATION_DU_CLAVIERn>"
 
 #. type: Plain text
 #: en/live-config.7:111
@@ -665,12 +680,15 @@ msgid ""
 "layouts>=I<KEYBOARD_LAYOUT1>,I<KEYBOARD_LAYOUT2> ... I<KEYBOARD_LAYOUTn>' "
 "parameter."
 msgstr ""
+"Cette variable correspond au paramètre 'B<live-config.keyboard-"
+"layouts>=I<CONFIGURATION_DU_CLAVIER1>,I<CONFIGURATION_DU_CLAVIER2> ... "
+"I<CONFIGURATION_DU_CLAVIERn>'."
 
 #. type: IP
 #: en/live-config.7:111
 #, no-wrap
 msgid "B<LIVE_KEYBOARD_VARIANT>=I<KEYBOARD_VARIANT>"
-msgstr ""
+msgstr "B<LIVE_KEYBOARD_VARIANT>=I<TYPE_DE_CLAVIER>"
 
 #. type: Plain text
 #: en/live-config.7:113
@@ -678,12 +696,14 @@ msgid ""
 "This variable equals the 'B<live-config.keyboard-"
 "variant>=I<KEYBOARD_VARIANT>' parameter."
 msgstr ""
+"Cette variable correspond au paramètre 'B<live-config.keyboard-"
+"variant>=I<TYPE_DE_CLAVIER>'."
 
 #. type: IP
 #: en/live-config.7:113
 #, no-wrap
 msgid "B<LIVE_KEYBOARD_OPTIONS>=I<KEYBOARD_OPTIONS>"
-msgstr ""
+msgstr "B<LIVE_KEYBOARD_OPTIONS>=I<OPTIONS_DU_CLAVIER>"
 
 #. type: Plain text
 #: en/live-config.7:115
@@ -691,12 +711,14 @@ msgid ""
 "This variable equals the 'B<live-config.keyboard-"
 "options>=I<KEYBOARD_OPTIONS>' parameter."
 msgstr ""
+"Cette variable correspond au paramètre 'B<live-config.keyboard-"
+"options>=I<OPTIONS_DU_CLAVIER>'."
 
 #. type: IP
 #: en/live-config.7:115
 #, no-wrap
 msgid "B<LIVE_SYSV_RC>=I<SERVICE1>,I<SERVICE2> ... I<SERVICEn>"
-msgstr ""
+msgstr "B<LIVE_SYSV_RC>=I<SERVICE1>,I<SERVICE2> ... I<SERVICEn>"
 
 #. type: Plain text
 #: en/live-config.7:117
@@ -704,12 +726,14 @@ msgid ""
 "This variable equals the 'B<live-config.sysv-rc>=I<SERVICE1>,I<SERVICE2> ... "
 "I<SERVICEn>' parameter."
 msgstr ""
+"Cette variable correspond au paramètre 'B<live-config.sysv-rc>=I<SERVICE1>,"
+"I<SERVICE2> ... I<SERVICEn>'."
 
 #. type: IP
 #: en/live-config.7:117
 #, no-wrap
 msgid "B<LIVE_XORG_DRIVER>=I<XORG_DRIVER>"
-msgstr ""
+msgstr "B<LIVE_XORG_DRIVER>=I<DRIVER_PAR_XORG>"
 
 #. type: Plain text
 #: en/live-config.7:119
@@ -717,12 +741,14 @@ msgid ""
 "This variable equals the 'B<live-config.xorg-driver>=I<XORG_DRIVER>' "
 "parameter."
 msgstr ""
+"Cette variable correspond au paramètre 'B<live-config.xorg-"
+"driver>=I<DRIVER_PAR_XORG>."
 
 #. type: IP
 #: en/live-config.7:119
 #, no-wrap
 msgid "B<LIVE_XORG_RESOLUTION>=I<XORG_RESOLUTION>"
-msgstr ""
+msgstr "B<LIVE_XORG_RESOLUTION>=I<RÉSOLUTION_PAR_XORG>"
 
 #. type: Plain text
 #: en/live-config.7:121
@@ -730,6 +756,8 @@ msgid ""
 "This variable equals the 'B<live-config.xorg-resolution>=I<XORG_RESOLUTION>' "
 "parameter."
 msgstr ""
+"Cette variable correspond au paramètre 'B<live-config.xorg-"
+"resolution>=I<RÉSOLUTION_PAR_XORG>'."
 
 #. type: IP
 #: en/live-config.7:121
@@ -817,7 +845,7 @@ msgstr ""
 #: en/live-config.7:137
 #, no-wrap
 msgid "SCRIPTS"
-msgstr ""
+msgstr "SCRIPTS"
 
 #. type: Plain text
 #: en/live-config.7:139
