@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config VERSION\n"
-"POT-Creation-Date: 2010-07-16 03:55+0300\n"
+"POT-Creation-Date: 2010-07-16 20:16+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -328,7 +328,8 @@ msgid ""
 "tmp of the running live system, and that the files needs their dependencies, "
 "if any, already installed, e.g. if a python script should be executed the "
 "system needs python installed. Some hooks for some common use-cases are "
-"available at E<lt>I<http://live.debian.net/other/hooks>E<gt>."
+"available at /usr/share/doc/live-config/examples/hooks/ and E<lt>I<http://"
+"live.debian.net/other/hooks>E<gt>."
 msgstr ""
 
 #. type: Plain text
