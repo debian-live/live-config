@@ -58,10 +58,14 @@ Allows to disable sysv services through update-rc.d.
 Allows to set xorg driver instead of autodetecting it.
 .IP "\fBlive\-config.xorg\-resolution\fR=\fIXORG_RESOLUTION\fR | \fBxorg\-resolution\fR=\fIXORG_RESOLUTION\fR" 4
 Allows to set xorg resolution instead of autodetecting it.
-.IP "\fBlive\-config.hooks\fR=\fIURL1\fR|\fIURL2\fR| ... |\fIURLn\fR | \fBhooks\fR=\fIURL1\fR|\fIURL2\fR| ... |\fIURLn\fR" 4
+.IP "\fBlive\-config.hooks\fR=filesystem|medium|\fIURL1\fR|\fIURL2\fR| ... |\fIURLn\fR | \fBhooks\fR=medium|filesystem|\fIURL1\fR|\fIURL2\fR| ... |\fIURLn\fR" 4
 Allows to fetch and execute one or more arbitrary files. Note that the URLs must be fetchable by wget (http, ftp or file://), the files are executed in /tmp of the running live system, and that the files needs their dependencies, if any, already installed, e.g. if a python script should be executed the system needs python installed. Some hooks for some common use-cases are available at /usr/share/doc/live-config/examples/hooks/ and <\fIhttp://live.debian.net/other/hooks\fR>.
 .br
-If the file is placed on the live media, it can be fetched with file:///live/image/\fIFILE\fR, or with file:///\fIFILE\fR if it is in the root filesystem of the live system itself.
+If the file is placed on the live medium, it can be fetched with file:///live/image/\fIFILE\fR, or with file:///\fIFILE\fR if it is in the root filesystem of the live system itself.
+.br
+All hooks in /lib/live/hooks/ in the root filesystem of the live system can be automatically be enabled with the keyword 'filesystem'.
+.br
+All hooks in /live/hooks/ of the live medium can be automatically be enabled with the keyword 'medium'.
 
 .SS Boot Parameters (shortcuts)
 For some common use cases where it would require to combine several individual parameters, \fBlive\-config\fR provides shortcuts. This allows both to have full granularity over all the options, as well keep things simple.
@@ -118,8 +122,8 @@ This variable equals the '\fBlive\-config.sysv-rc\fR=\fISERVICE1\fR,\fISERVICE2\
 This variable equals the '\fBlive\-config.xorg\-driver\fR=\fIXORG_DRIVER\fR' parameter.
 .IP "\fBLIVE_XORG_RESOLUTION\fR=\fIXORG_RESOLUTION\fR" 4
 This variable equals the '\fBlive\-config.xorg\-resolution\fR=\fIXORG_RESOLUTION\fR' parameter.
-.IP "\fBLIVE_HOOKS\fR=\fIURL1\fR|\fIURL2\fR| ... |\fIURLn\fR" 4
-This variable equals the '\fBlive\-config.hooks\fR=\fIURL1\fR|\fIURL2\fR| ... |\fIURLn\fR' parameter.
+.IP "\fBLIVE_HOOKS\fR=filesystem|medium|\fIURL1\fR|\fIURL2\fR| ... |\fIURLn\fR" 4
+This variable equals the '\fBlive\-config.hooks\fR=filesystem|medium|\fIURL1\fR|\fIURL2\fR| ... |\fIURLn\fR' parameter.
 
 .SH CUSTOMIZATION
 \fBlive\-config\fR can be easily customized for downstream projects or local usage.

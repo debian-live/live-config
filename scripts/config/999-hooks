@@ -22,7 +22,27 @@ Hooks ()
 
 Process_hooks ()
 {
-	for _HOOK in $(echo ${LIVE_HOOKS} | sed -e 's/|/ /g')
+	case "${LIVE_HOOKS}" in
+		media)
+			if ls /live/image/live/hooks/* 2>&1
+			then
+				_HOOKS="$(ls /live/image/live/hooks/*)"
+			fi
+			;;
+
+		rootfs)
+			if ls /lib/live/hooks/* 2>&1
+			then
+				_HOOKS="$(ls /lib/live/hooks/*)"
+			fi
+			;;
+
+		*)
+			_HOOKS="$(echo ${LIVE_HOOKS} | sed -e 's/|/ /g')"
+			;;
+	esac
+
+	for _HOOK in ${_HOOKS}
 	do
 		_TMPFILE="$(mktemp -t live-config.XXXXXXXX)"
 
