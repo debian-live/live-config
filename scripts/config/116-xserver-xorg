@@ -24,12 +24,6 @@ Xserver_xorg ()
 
 Configure_xserver_xorg ()
 {
-	if [ -n "${LIVE_XORG_DRIVER}" ]
-	then
-		echo "xserver-xorg xserver-xorg/autodetect_video_card" >> /tmp/debconf.live
-		echo "xserver-xorg xserver-xorg/config/device/driver ${LIVE_XORG_DRIVER}" >> /tmp/debconf.live
-	fi
-
 	if [ -n "${LIVE_KEYBOARD_MODEL}" ]
 	then
 		echo "xserver-xorg xserver-xorg/config/inputdevice/keyboard/model select ${LIVE_KEYBOARD_MODEL}" >> /tmp/debconf.live
@@ -49,6 +43,22 @@ xserver-xorg/config/inputdevice/keyboard/variant
 	if [ -n "${LIVE_KEYBOARD_OPTIONS}" ]
 	then
 		echo "xserver-xorg xserver-xorg/config/inputdevice/keyboard/options string ${LIVE_KEYBOARD_OPTIONS}" >> /tmp/debconf.live
+	fi
+
+	case "${LIVE_X_SESSION_MANAGER}" in
+		none)
+			rm -f /etc/X11/default-display-manager
+			;;
+
+		*)
+			update-alternatives --quiet --set x-session-manager "${LIVE_X_SESSION_MANAGER}"
+			;;
+	esac
+
+	if [ -n "${LIVE_XORG_DRIVER}" ]
+	then
+		echo "xserver-xorg xserver-xorg/autodetect_video_card" >> /tmp/debconf.live
+		echo "xserver-xorg xserver-xorg/config/device/driver ${LIVE_XORG_DRIVER}" >> /tmp/debconf.live
 	fi
 
 	if [ -n "${LIVE_XORG_RESOLUTION}" ]
