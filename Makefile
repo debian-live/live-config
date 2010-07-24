@@ -4,7 +4,7 @@ SHELL := sh -e
 
 LANGUAGES = de fr
 
-SCRIPTS = bin/* scripts/config.sh scripts/config/*
+SCRIPTS = bin/* scripts/*.sh scripts/config/*
 
 all: test build
 
