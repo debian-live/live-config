@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config 2.0~a15\n"
-"POT-Creation-Date: 2010-07-23 15:45+0300\n"
+"POT-Creation-Date: 2010-07-26 22:47+0300\n"
 "PO-Revision-Date: 2010-05-24 09:59+0300\n"
 "Last-Translator: Thierry Lépicier <thierry.lepicier@free.fr>\n"
 "Language-Team: none\n"
@@ -24,8 +24,8 @@ msgstr "LIVE-CONFIG"
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "2010-07-23"
-msgstr "23.07.2010"
+msgid "2010-07-26"
+msgstr "26.07.2010"
 
 #. type: TH
 #: en/live-config.7:9
@@ -276,7 +276,7 @@ msgstr ""
 #: en/live-config.7:47
 #, no-wrap
 msgid "B<live-config.keyboard-model>=I<KEYBOARD_MODEL> | B<keyboard-model>=I<KEYBOARD_MODEL>"
-msgstr "B<live-config.keyboard-model>=I<MODÈLE_DE_CLAVIER> | B<keyboard-model>=I<MODÈLE_DE_CLAVIER>"
+msgstr "B<live-config.keyboard-model>=I<MODELE_DE_CLAVIER> | B<keyboard-model>=I<MODELE_DE_CLAVIER>"
 
 #. type: Plain text
 #: en/live-config.7:49
@@ -367,7 +367,7 @@ msgstr ""
 #: en/live-config.7:61
 #, no-wrap
 msgid "B<live-config.xorg-resolution>=I<XORG_RESOLUTION> | B<xorg-resolution>=I<XORG_RESOLUTION>"
-msgstr "B<live-config.xorg-resolution>=I<RÉSOLUTION_PAR_XORG> | B<xorg-resolution>=I<RÉSOLUTION_PAR_XORG>"
+msgstr "B<live-config.xorg-resolution>=I<RESOLUTION_PAR_XORG> | B<xorg-resolution>=I<RESOLUTION_PAR_XORG>"
 
 #. type: Plain text
 #: en/live-config.7:63
@@ -411,8 +411,8 @@ msgid ""
 "of the live system itself."
 msgstr ""
 "Si le fichier est placé dans le média live, il peut être utilisé avec "
-"file:///live/image/I<FILE>, ou bien avec file:///I<FILE> s'il n'est pas "
-"placé dans la racine du système de fichier du live système."
+"file:///live/image/I<FILE>, ou bien avec file:///I<FILE> s'il est placé à la "
+"racine du système de fichier du live système."
 
 #. type: Plain text
 #: en/live-config.7:69
@@ -420,6 +420,8 @@ msgid ""
 "All hooks in /lib/live/hooks/ in the root filesystem of the live system can "
 "be automatically be enabled with the keyword 'filesystem'."
 msgstr ""
+"Tous les hooks, placés dans /lib/live/hooks/ à la racine du système de "
+"fichier, peuvent être automatiquement activés avec le mot clé 'filesystem'."
 
 #. type: Plain text
 #: en/live-config.7:71
@@ -427,6 +429,8 @@ msgid ""
 "All hooks in /live/hooks/ of the live medium can be automatically be enabled "
 "with the keyword 'medium'."
 msgstr ""
+"Tous les hooks dans /live/hooks/ du média live peuvent être automatiquement "
+"activés avec le mot clé 'medium'."
 
 #. type: Plain text
 #: en/live-config.7:73
@@ -434,6 +438,9 @@ msgid ""
 "If several mechanisms are combined, then filesystem hooks are executed "
 "first, then medium hooks, and last the network hooks."
 msgstr ""
+"Si plusieurs mécanismes sont combinés, alors les hooks du système de fichier "
+"sont exécutés prioritairement, suivis des hooks du media, et enfin des hooks "
+"du réseau."
 
 #. type: SS
 #: en/live-config.7:74
@@ -512,12 +519,14 @@ msgstr ""
 #: en/live-config.7:86
 #, no-wrap
 msgid "Boot Parameters (special options)"
-msgstr ""
+msgstr "Paramètres d'amorçage (options particulières)"
 
 #. type: Plain text
 #: en/live-config.7:88
 msgid "For special use cases there are some special boot paramters."
 msgstr ""
+"Pour certains cas d'utilisation, il existe des paramètres de démarrage "
+"spécifiques."
 
 #. type: IP
 #: en/live-config.7:89
@@ -528,7 +537,7 @@ msgstr "B<live-config.debug> | B<debug>"
 #. type: Plain text
 #: en/live-config.7:91
 msgid "Enables debug output in live-config."
-msgstr ""
+msgstr "Active les messages de débug dans live-config."
 
 #. type: SS
 #: en/live-config.7:92
@@ -545,6 +554,12 @@ msgid ""
 "If configuration files are used, the 'boot=live' parameter is still required "
 "to activate B<live-config>."
 msgstr ""
+"B<live-config> peut être configuré (mais pas activé) par certains fichiers "
+"de configuration. Tout, sauf les touches de raccourcis qui peuvent être "
+"configurées avec un paramètre d'amorçage, peut être alternativement "
+"configuré via un ou plusieurs fichiers. Si des fichiers de configuration "
+"sont utilisés, le paramètre 'boot=live' est toujours requis pour activer "
+"B<live-config>."
 
 #. type: Plain text
 #: en/live-config.7:96
@@ -653,7 +668,7 @@ msgstr ""
 #: en/live-config.7:109
 #, no-wrap
 msgid "B<LIVE_LOCALES>=I<LOCALE1>,I<LOCALE2> ... I<LOCALEn>"
-msgstr "B<LIVE_LOCALES>=I<LOCALISATION>,I<LOCALISATION> ... I<LOCALISATION>"
+msgstr "B<LIVE_LOCALES>=I<LOCALISATION1>,I<LOCALISATION2> ... I<LOCALISATIONn>"
 
 #. type: Plain text
 #: en/live-config.7:111
@@ -662,7 +677,7 @@ msgid ""
 "I<LOCALEn>' parameter."
 msgstr ""
 "Cette variable correspond au paramètre 'B<live-config."
-"locales>=I<LOCALISATION>,I<LOCALISATION> ... I<LOCALISATION>'."
+"locales>=I<LOCALISATION1>,I<LOCALISATION2> ... I<LOCALISATIONn>'."
 
 #. type: IP
 #: en/live-config.7:111
@@ -692,7 +707,7 @@ msgstr "Cette variable correspond au paramètre 'B<live-config.utc>=B<yes>|no'."
 #: en/live-config.7:115
 #, no-wrap
 msgid "B<LIVE_KEYBOARD_MODEL>=I<KEYBOARD_MODEL>"
-msgstr "B<LIVE_KEYBOARD_MODEL>=I<MODÈLE_DE_CLAVIER>"
+msgstr "B<LIVE_KEYBOARD_MODEL>=I<MODELE_DE_CLAVIER>"
 
 #. type: Plain text
 #: en/live-config.7:117
@@ -701,13 +716,13 @@ msgid ""
 "parameter."
 msgstr ""
 "Cette variable correspond au paramètre 'B<live-config.keyboard-"
-"model>=I<MODÈLE_DE_CLAVIER>'."
+"model>=I<MODELE_DE_CLAVIER>'."
 
 #. type: IP
 #: en/live-config.7:117
 #, no-wrap
 msgid "B<LIVE_KEYBOARD_LAYOUTS>=I<KEYBOARD_LAYOUT1>,I<KEYBOARD_LAYOUT2> ... I<KEYBOARD_LAYOUTn>"
-msgstr "B<LIVE_KEYBOARD_LAYOUTS>=I<CONFIGURATION_DU_CLAVIER1>,I<CONFIGURATION_DU_CLAVIER2> ... I<CONFIGURATION_DU_CLAVIERn>"
+msgstr "B<LIVE_KEYBOARD_LAYOUTS>=I<CONFIGURATION1_DU_CLAVIER>,I<CONFIGURATION2_DU_CLAVIER> ... I<CONFIGURATIONn_DU_CLAVIER>"
 
 #. type: Plain text
 #: en/live-config.7:119
@@ -717,8 +732,8 @@ msgid ""
 "parameter."
 msgstr ""
 "Cette variable correspond au paramètre 'B<live-config.keyboard-"
-"layouts>=I<CONFIGURATION_DU_CLAVIER1>,I<CONFIGURATION_DU_CLAVIER2> ... "
-"I<CONFIGURATION_DU_CLAVIERn>'."
+"layouts>=I<CONFIGURATION1_DU_CLAVIER>,I<CONFIGURATION2_DU_CLAVIER> ... "
+"I<CONFIGURATIONn_DU_CLAVIER>'."
 
 #. type: IP
 #: en/live-config.7:119
@@ -784,7 +799,7 @@ msgstr ""
 #: en/live-config.7:127
 #, no-wrap
 msgid "B<LIVE_XORG_RESOLUTION>=I<XORG_RESOLUTION>"
-msgstr "B<LIVE_XORG_RESOLUTION>=I<RÉSOLUTION_PAR_XORG>"
+msgstr "B<LIVE_XORG_RESOLUTION>=I<RESOLUTION_PAR_XORG>"
 
 #. type: Plain text
 #: en/live-config.7:129
@@ -793,7 +808,7 @@ msgid ""
 "parameter."
 msgstr ""
 "Cette variable correspond au paramètre 'B<live-config.xorg-"
-"resolution>=I<RÉSOLUTION_PAR_XORG>'."
+"resolution>=I<RESOLUTION_PAR_XORG>'."
 
 #. type: IP
 #: en/live-config.7:129
@@ -814,7 +829,7 @@ msgstr ""
 #: en/live-config.7:132
 #, no-wrap
 msgid "CUSTOMIZATION"
-msgstr ""
+msgstr "CUSTOMIZATION"
 
 #. type: Plain text
 #: en/live-config.7:134
@@ -822,6 +837,8 @@ msgid ""
 "B<live-config> can be easily customized for downstream projects or local "
 "usage."
 msgstr ""
+"B<live-config> peut être facilement customisé pour des projets dérivés, ou "
+"pour un usage local."
 
 #. type: SS
 #: en/live-config.7:135
@@ -836,6 +853,9 @@ msgid ""
 "need to do anything else, the scripts will be called automatically during "
 "boot."
 msgstr ""
+"Les projets dérivés peuvent utiliser leurs propres scripts dans /lib/live/"
+"config et n'ont besoin de rien d'autre, les scripts seront appelés lors du "
+"démarrage."
 
 #. type: Plain text
 #: en/live-config.7:139
@@ -852,7 +872,7 @@ msgstr ""
 #: en/live-config.7:140
 #, no-wrap
 msgid "Removing existing config scripts"
-msgstr "Enlevant des scripts de configuration existant"
+msgstr "Enlever des scripts de configuration existant"
 
 #. type: Plain text
 #: en/live-config.7:142
@@ -898,7 +918,7 @@ msgstr "B<hostname>"
 #. type: Plain text
 #: en/live-config.7:150
 msgid "configures /etc/hostname and /etc/hosts."
-msgstr ""
+msgstr "configure /etc/hostname et /etc/hosts."
 
 #. type: IP
 #: en/live-config.7:150
@@ -931,7 +951,7 @@ msgstr "B<locales>"
 #. type: Plain text
 #: en/live-config.7:156
 msgid "configures locales."
-msgstr "cnofigure les locales."
+msgstr "configure les locales."
 
 #. type: IP
 #: en/live-config.7:156
@@ -1257,14 +1277,14 @@ msgid ""
 "allows to run arbitrary commands from a script placed on the live media or "
 "an http/ftp server."
 msgstr ""
-"permet de lancer des commandes particulières depuis un script placés sur le "
+"permet de lancer des commandes particulières depuis un script placé sur le "
 "média live, ou sur un serveur http/ftp."
 
 #. type: SH
 #: en/live-config.7:217
 #, no-wrap
 msgid "FILES"
-msgstr ""
+msgstr "FICHIERS"
 
 #. type: IP
 #: en/live-config.7:218
@@ -1312,7 +1332,7 @@ msgstr "B</var/lib/live/config/>"
 #: en/live-config.7:226
 #, no-wrap
 msgid "SEE ALSO"
-msgstr ""
+msgstr "VOIR AUSSI"
 
 #. type: Plain text
 #: en/live-config.7:228
@@ -1328,7 +1348,7 @@ msgstr "I<live-helper>(7)"
 #: en/live-config.7:231
 #, no-wrap
 msgid "HOMEPAGE"
-msgstr ""
+msgstr "PAGE D'ACCEUIL"
 
 #. type: Plain text
 #: en/live-config.7:233

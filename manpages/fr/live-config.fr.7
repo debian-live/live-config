@@ -11,7 +11,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 23.07.2010 2.0~a15 "Projet Debian Live"
+.TH LIVE\-CONFIG 7 26.07.2010 2.0~a15 "Projet Debian Live"
 
 .SH NOM
 \fBlive\-config\fP \- Scripts de configuration du système
@@ -74,7 +74,7 @@ défaut il s'agit de 'UTC'.
 .IP "\fBlive\-config.utc\fP=\fByes\fP|no | \fButc\fP=\fByes\fP|no" 4
 Permet de modifier si le système assume, ou non, que l'horloge hardware soit
 réglée sur UTC. Par défaut 'oui'.
-.IP "\fBlive\-config.keyboard\-model\fP=\fIMODÈLE_DE_CLAVIER\fP | \fBkeyboard\-model\fP=\fIMODÈLE_DE_CLAVIER\fP" 4
+.IP "\fBlive\-config.keyboard\-model\fP=\fIMODELE_DE_CLAVIER\fP | \fBkeyboard\-model\fP=\fIMODELE_DE_CLAVIER\fP" 4
 Permet de changer le modèle de clavier. Aucune valeur par défaut n'est
 indiquée.
 .IP "\fBlive\-config.keyboard\-layouts\fP=\fICONFIGURATION_DU_CLAVIER1\fP,\fICONFIGURATION_DU_CLAVIER2\fP ... \fICONFIGURATION_DU_CLAVIERn\fP | \fBkeyboard\-layouts\fP=\fICONFIGURATION_DU_CLAVIER1\fP,\fICONFIGURATION_DU_CLAVIER2\fP ... \fICONFIGURATION_DU_CLAVIERn\fP" 4
@@ -95,7 +95,7 @@ Permet de spécifier le x\-session\-manager via update\-alternatives.
 .IP "\fBlive\-config.xorg\-driver\fP=\fIDRIVER_PAR_XORG\fP | \fBxorg\-driver\fP=\fIDRIVER_PAR_XORG\fP" 4
 Permet de spécifier le driver utilisé par xorg plutôt que d'utiliser
 l'auto\-détection.
-.IP "\fBlive\-config.xorg\-resolution\fP=\fIRÉSOLUTION_PAR_XORG\fP | \fBxorg\-resolution\fP=\fIRÉSOLUTION_PAR_XORG\fP" 4
+.IP "\fBlive\-config.xorg\-resolution\fP=\fIRESOLUTION_PAR_XORG\fP | \fBxorg\-resolution\fP=\fIRESOLUTION_PAR_XORG\fP" 4
 Permet de spécifier la résolution utilisée par xorg, plutôt que d'utiliser
 l'auto\-détection.
 .IP "\fBlive\-config.hooks\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP | \fBhooks\fP=\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
@@ -110,17 +110,18 @@ proposés dans /usr/share/doc/live\-config/examples/hooks/ et sur
 <\fIhttp://live.debian.net/other/hooks\fP>.
 .br
 Si le fichier est placé dans le média live, il peut être utilisé avec
-file:///live/image/\fIFILE\fP, ou bien avec file:///\fIFILE\fP s'il n'est pas
-placé dans la racine du système de fichier du live système.
+file:///live/image/\fIFILE\fP, ou bien avec file:///\fIFILE\fP s'il est placé à la
+racine du système de fichier du live système.
 .br
-All hooks in /lib/live/hooks/ in the root filesystem of the live system can
-be automatically be enabled with the keyword 'filesystem'.
+Tous les hooks, placés dans /lib/live/hooks/ à la racine du système de
+fichier, peuvent être automatiquement activés avec le mot clé 'filesystem'.
 .br
-All hooks in /live/hooks/ of the live medium can be automatically be enabled
-with the keyword 'medium'.
+Tous les hooks dans /live/hooks/ du média live peuvent être automatiquement
+activés avec le mot clé 'medium'.
 .br
-If several mechanisms are combined, then filesystem hooks are executed
-first, then medium hooks, and last the network hooks.
+Si plusieurs mécanismes sont combinés, alors les hooks du système de fichier
+sont exécutés prioritairement, suivis des hooks du media, et enfin des hooks
+du réseau.
 
 .SS "Paramètres d'amorçage (raccourcis)"
 Dans le cas où il est nécessaire de combiner plusieurs paramètres
@@ -139,18 +140,20 @@ graphique.
 Désactive l'auto\-login avec les gestionnaires graphiques, sans affecter
 l'auto\-login en console (tty).
 
-.SS "Boot Parameters (special options)"
-For special use cases there are some special boot paramters.
+.SS "Paramètres d'amorçage (options particulières)"
+Pour certains cas d'utilisation, il existe des paramètres de démarrage
+spécifiques.
 
 .IP "\fBlive\-config.debug\fP | \fBdebug\fP" 4
-Enables debug output in live\-config.
+Active les messages de débug dans live\-config.
 
 .SS "Fichiers de configuration"
-\fBlive\-config\fP can be configured (but not activated) through configuration
-files. Everything but the shortcuts that can be configured with a boot
-parameter can be alternatively also be configured through one or more
-files. If configuration files are used, the 'boot=live' parameter is still
-required to activate \fBlive\-config\fP.
+\fBlive\-config\fP peut être configuré (mais pas activé) par certains fichiers
+de configuration. Tout, sauf les touches de raccourcis qui peuvent être
+configurées avec un paramètre d'amorçage, peut être alternativement
+configuré via un ou plusieurs fichiers. Si des fichiers de configuration
+sont utilisés, le paramètre 'boot=live' est toujours requis pour activer
+\fBlive\-config\fP.
 .PP
 Les fichiers de configuration peuvent être placés soit dans la racine du
 système de fichiers (/etc/live/config.conf, /etc/live/config.conf.d/), soit
@@ -179,22 +182,22 @@ Cette variable correspond au paramètre
 .IP \fBLIVE_USER_FULLNAME\fP=\(dq\fINOM_COMPLET_D_UTILISATEUR\(dq\fP 4
 Cette variable correspond au paramètre
 \&'\fBlive\-config.user\-fullname\fP="\fINOM_COMPLET_D_UTILISATEUR"\fP'.
-.IP "\fBLIVE_LOCALES\fP=\fILOCALISATION\fP,\fILOCALISATION\fP ... \fILOCALISATION\fP" 4
+.IP "\fBLIVE_LOCALES\fP=\fILOCALISATION1\fP,\fILOCALISATION2\fP ... \fILOCALISATIONn\fP" 4
 Cette variable correspond au paramètre
-\&'\fBlive\-config.locales\fP=\fILOCALISATION\fP,\fILOCALISATION\fP
-\&... \fILOCALISATION\fP'.
+\&'\fBlive\-config.locales\fP=\fILOCALISATION1\fP,\fILOCALISATION2\fP
+\&... \fILOCALISATIONn\fP'.
 .IP \fBLIVE_TIMEZONE\fP=\fITIMEZONE\fP 4
 Cette variable correspond au paramètre
 \&'\fBlive\-config.timezone\fP=\fITIMEZONE\fP'.
 .IP \fBLIVE_UTC\fP=\fByes\fP|no 4
 Cette variable correspond au paramètre '\fBlive\-config.utc\fP=\fByes\fP|no'.
-.IP \fBLIVE_KEYBOARD_MODEL\fP=\fIMODÈLE_DE_CLAVIER\fP 4
+.IP \fBLIVE_KEYBOARD_MODEL\fP=\fIMODELE_DE_CLAVIER\fP 4
 Cette variable correspond au paramètre
-\&'\fBlive\-config.keyboard\-model\fP=\fIMODÈLE_DE_CLAVIER\fP'.
-.IP "\fBLIVE_KEYBOARD_LAYOUTS\fP=\fICONFIGURATION_DU_CLAVIER1\fP,\fICONFIGURATION_DU_CLAVIER2\fP ... \fICONFIGURATION_DU_CLAVIERn\fP" 4
+\&'\fBlive\-config.keyboard\-model\fP=\fIMODELE_DE_CLAVIER\fP'.
+.IP "\fBLIVE_KEYBOARD_LAYOUTS\fP=\fICONFIGURATION1_DU_CLAVIER\fP,\fICONFIGURATION2_DU_CLAVIER\fP ... \fICONFIGURATIONn_DU_CLAVIER\fP" 4
 Cette variable correspond au paramètre
-\&'\fBlive\-config.keyboard\-layouts\fP=\fICONFIGURATION_DU_CLAVIER1\fP,\fICONFIGURATION_DU_CLAVIER2\fP
-\&... \fICONFIGURATION_DU_CLAVIERn\fP'.
+\&'\fBlive\-config.keyboard\-layouts\fP=\fICONFIGURATION1_DU_CLAVIER\fP,\fICONFIGURATION2_DU_CLAVIER\fP
+\&... \fICONFIGURATIONn_DU_CLAVIER\fP'.
 .IP \fBLIVE_KEYBOARD_VARIANT\fP=\fITYPE_DE_CLAVIER\fP 4
 Cette variable correspond au paramètre
 \&'\fBlive\-config.keyboard\-variant\fP=\fITYPE_DE_CLAVIER\fP'.
@@ -207,27 +210,27 @@ Cette variable correspond au paramètre
 .IP \fBLIVE_XORG_DRIVER\fP=\fIDRIVER_PAR_XORG\fP 4
 Cette variable correspond au paramètre
 \&'\fBlive\-config.xorg\-driver\fP=\fIDRIVER_PAR_XORG\fP.
-.IP \fBLIVE_XORG_RESOLUTION\fP=\fIRÉSOLUTION_PAR_XORG\fP 4
+.IP \fBLIVE_XORG_RESOLUTION\fP=\fIRESOLUTION_PAR_XORG\fP 4
 Cette variable correspond au paramètre
-\&'\fBlive\-config.xorg\-resolution\fP=\fIRÉSOLUTION_PAR_XORG\fP'.
+\&'\fBlive\-config.xorg\-resolution\fP=\fIRESOLUTION_PAR_XORG\fP'.
 .IP "\fBLIVE_HOOKS\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
 Cette variable correspond au paramètre
 \&'\fBlive\-config.hooks\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP'.
 
 .SH CUSTOMIZATION
-\fBlive\-config\fP can be easily customized for downstream projects or local
-usage.
+\fBlive\-config\fP peut être facilement customisé pour des projets dérivés, ou
+pour un usage local.
 
 .SS "Ajout de nouveaux scripts de configuration"
-Downstream projects can put their scripts into /lib/live/config and don't
-need to do anything else, the scripts will be called automatically during
-boot.
+Les projets dérivés peuvent utiliser leurs propres scripts dans
+/lib/live/config et n'ont besoin de rien d'autre, les scripts seront appelés
+lors du démarrage.
 .PP
 Il est préférable que les scripts soient mis dans leur propre paquet
 Debian. Un simple paquet contenant un script d'exemple est proposé dans
 /usr/share/doc/live\-config/examples.
 
-.SS "Enlevant des scripts de configuration existant"
+.SS "Enlever des scripts de configuration existant"
 It's not really possible to remove scripts itself in a sane way yet without
 requiring to ship a locally modified \fBlive\-config\fP package. However, the
 same can be acchieved by disabling the respective scripts through the
@@ -244,13 +247,13 @@ exemple de configuration est proposé dans
 \fBlive\-config\fP currently features the following scripts in /lib/live/config.
 
 .IP \fBhostname\fP 4
-configures /etc/hostname and /etc/hosts.
+configure /etc/hostname et /etc/hosts.
 .IP \fBuser\-setup\fP 4
 ajoute un compte live d'utilisateur.
 .IP \fBsudo\fP 4
 offre les privilèges sudo à l'utilisateur live.
 .IP \fBlocales\fP 4
-cnofigure les locales.
+configure les locales.
 .IP \fBtzdata\fP 4
 configure /etc/timezone.
 .IP \fBgdm\fP 4
@@ -312,10 +315,10 @@ configure xserver\-xorg.
 .IP "\fBureadahead\fP (seulement ubuntu)" 4
 désactive ureadahead.
 .IP \fBhooks\fP 4
-permet de lancer des commandes particulières depuis un script placés sur le
+permet de lancer des commandes particulières depuis un script placé sur le
 média live, ou sur un serveur http/ftp.
 
-.SH FILES
+.SH FICHIERS
 .IP \fB/etc/live/config.conf\fP 4
 .IP \fB/etc/live/config.conf.d/\fP 4
 .IP \fBlive/config.conf\fP 4
@@ -324,12 +327,12 @@ média live, ou sur un serveur http/ftp.
 .IP \fB/lib/live/config/\fP 4
 .IP \fB/var/lib/live/config/\fP 4
 
-.SH "SEE ALSO"
+.SH "VOIR AUSSI"
 \fIlive\-boot\fP(7)
 .PP
 \fIlive\-helper\fP(7)
 
-.SH HOMEPAGE
+.SH "PAGE D'ACCEUIL"
 Plus d'informations sur live\-config et le Debian Live project peuvent être
 trouvées sur la page <\fIhttp://live.debian.net/\fP> et dans le manuel
 sur <\fIhttp://live.debian.net/manual/\fP>.
