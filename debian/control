@@ -37,7 +37,7 @@ Description: Debian Live - System Configuration Scripts (systemd backend)
 
 Package: live-config-sysvinit
 Architecture: all
-Depends: ${misc:Depends}, sysvinit (>= 2.86)
+Depends: ${misc:Depends}, sysvinit (>= 2.86) | runit-run
 Conflicts: live-config-backend
 Replaces: live-config-backend
 Provides: live-config-backend
