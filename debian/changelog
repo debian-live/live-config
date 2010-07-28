@@ -1,3 +1,25 @@
+live-config (2.0~a16-1) unstable; urgency=high
+
+  * Adding workaround for bug in install calls wrt/ permissions of
+    intermediate directories.
+  * Simplyfing tzdata script.
+  * Adding manpage symlinks in transitional package.
+  * Adding option to set x-session-manager in preparation for multi-
+    desktop images.
+  * Correcting install location for scripts in example package.
+  * Simplyfing scripts definition in makefile.
+  * Adding updated French manpage translation from Thierry Lépicier
+    <thierry.lepicier@free.fr>.
+  * Don't fail in Makefile when there's no checkbashism (Closes:
+    #590407).
+  * Adding alternative depends to runit-run on live-config-sysvinit,
+    thanks to Daniel Kahn Gillmor <dkg@fifthhorseman.net>.
+  * Updating package to standards version 3.9.1.
+  * Adding Brazilian Portuguese manpage translation from Tassia Camoes
+    Araujo <tassia@gmail.com>.
+
+ -- Daniel Baumann <daniel@debian.org>  Wed, 28 Jul 2010 05:47:03 +0200
+
 live-config (2.0~a15-1) unstable; urgency=low
 
   * Correcting typo in update-live-config script.
