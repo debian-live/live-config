@@ -104,6 +104,10 @@ Cmdline ()
 				;;
 
 			# 116-xserver-xorg
+			live-config.xorg-xsession-manager=*|x-session-manager=*)
+				LIVE_X_SESSION_MANAGER="${_PARAMETER#*x-session-manager=}"
+				;;
+
 			live-config.xorg-driver=*|xorg-driver=*)
 				LIVE_XORG_DRIVER="${_PARAMETER#*xorg-driver=}"
 				;;

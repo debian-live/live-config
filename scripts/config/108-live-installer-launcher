@@ -25,6 +25,7 @@ Live_installer_launcher ()
 Configure_live_installer_launcher ()
 {
 	install -D -o ${LIVE_USERNAME} -g ${LIVE_USERNAME} /usr/share/applications/live-installer-launcher.desktop /home/${LIVE_USERNAME}/Desktop/live-installer-launcher.desktop
+	chown ${LIVE_USERNAME}:${LIVE_USERNAME} /home/${LIVE_USERNAME}/Desktop -R
 
 	# Creating state file
 	touch /var/lib/live/config/live-installer-launcher

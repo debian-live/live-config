@@ -28,22 +28,17 @@ Configure_tzdata ()
 	then
 		_AREA="$(echo ${LIVE_TIMEZONE} | cut -f1 -d '/')"
 		_ZONE="$(echo ${LIVE_TIMEZONE} | cut -f2 -d '/')"
+	else
+		_AREA="Etc"
+		_ZONE="UTC"
+	fi
 
 debconf-communicate -fnoninteractive live-config > /dev/null << EOF
 set tzdata/Areas ${_AREA}
 set tzdata/Zones/${_AREA} ${_ZONE}
 EOF
 
-		cp -f /usr/share/zoneinfo/${_AREA}/${_ZONE} /etc/localtime
-	else
-
-debconf-communicate -fnoninteractive live-config > /dev/null << EOF
-set tzdata/Areas Etc
-set tzdata/Zones/Etc UTC
-EOF
-
-		cp -f /usr/share/zoneinfo/UTC /etc/localtime
-	fi
+	cp -f /usr/share/zoneinfo/${_AREA}/${_ZONE} /etc/localtime
 
 	if [ -n "${LIVE_UTC}" ]
 	then
