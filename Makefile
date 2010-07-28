@@ -2,7 +2,7 @@
 
 SHELL := sh -e
 
-LANGUAGES = de fr
+LANGUAGES = de fr pt_BR
 
 SCRIPTS = bin/* scripts/*.sh scripts/config/*
 
