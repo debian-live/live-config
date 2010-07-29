@@ -22,6 +22,18 @@ Description: Debian Live - System Configuration Scripts
  In addition to live-config, a backend for an init system is required, such as
  live-config-sysvinit.
 
+Package: live-config-runit
+Architecture: all
+Depends: ${misc:Depends}, runit-run
+Conflicts: live-config-backend
+Replaces: live-config-backend
+Provides: live-config-backend
+Description: Debian Live - System Configuration Scripts (runit backend)
+ live-config contains the scripts that configure a Debian Live system during
+ the boot process (late userspace).
+ .
+ This package contains the runit backend (experimental!).
+
 Package: live-config-systemd
 Architecture: all
 Depends: ${misc:Depends}
@@ -37,7 +49,7 @@ Description: Debian Live - System Configuration Scripts (systemd backend)
 
 Package: live-config-sysvinit
 Architecture: all
-Depends: ${misc:Depends}, sysvinit (>= 2.86) | runit-run
+Depends: ${misc:Depends}, sysvinit (>= 2.86)
 Conflicts: live-config-backend
 Replaces: live-config-backend
 Provides: live-config-backend
