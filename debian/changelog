@@ -1,6 +1,6 @@
 live-config (2.0~a17-1) unstable; urgency=low
 
-  * Splitting out runit backend to own package.
+  * Split out runit backend to own package.
 
  -- Daniel Baumann <daniel@debian.org>  Thu, 29 Jul 2010 17:01:05 +0200
 
