@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config 2.0~a17\n"
-"POT-Creation-Date: 2010-07-29 16:55+0300\n"
+"POT-Creation-Date: 2010-08-01 18:05+0300\n"
 "PO-Revision-Date: 2010-05-24 09:59+0300\n"
 "Last-Translator: Daniel Baumann <daniel@debian.org>\n"
 "Language-Team: none\n"
@@ -24,8 +24,8 @@ msgstr "LIVE-CONFIG"
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "2010-07-29"
-msgstr "29.07.2010"
+msgid "2010-08-01"
+msgstr "01.08.2010"
 
 #. type: TH
 #: en/live-config.7:9
@@ -95,7 +95,7 @@ msgstr "Boot Parameter (Skripte)"
 #: en/live-config.7:22
 msgid ""
 "B<live-config> is only activated if 'boot=live' is used as a boot parameter. "
-"Additionally, B<live-config> needs to be told which scripts to run trough "
+"Additionally, B<live-config> needs to be told which scripts to run through "
 "the 'live-config' parameter or which scripts to not run through the 'live-"
 "noconfig' parameter. If both 'live-config' and 'live-noconfig' are used, or, "
 "if either one is specified multiple times, always the later one takes "

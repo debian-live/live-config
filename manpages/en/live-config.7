@@ -6,7 +6,7 @@
 .\" under certain conditions; see COPYING for details.
 .\"
 .\"
-.TH LIVE\-CONFIG 7 2010\-07\-29 2.0~a17 "Debian Live Project"
+.TH LIVE\-CONFIG 7 2010\-08\-01 2.0~a17 "Debian Live Project"
 
 .SH NAME
 \fBlive\-config\fR \- System Configuration Scripts
@@ -18,7 +18,7 @@
 \fBlive\-config\fR can be configured through boot parameters or configuration files. If both mechanisms are used for a certain option, the boot parameters take precedence over the configuration files. When using persistency, \fBlive\-config\fR scripts are only run once.
 
 .SS Boot Parameters (scripts)
-\fBlive\-config\fR is only activated if 'boot=live' is used as a boot parameter. Additionally, \fBlive\-config\fR needs to be told which scripts to run trough the 'live\-config' parameter or which scripts to not run through the 'live\-noconfig' parameter. If both 'live\-config' and 'live\-noconfig' are used, or, if either one is specified multiple times, always the later one takes precedence over the previous one(s).
+\fBlive\-config\fR is only activated if 'boot=live' is used as a boot parameter. Additionally, \fBlive\-config\fR needs to be told which scripts to run through the 'live\-config' parameter or which scripts to not run through the 'live\-noconfig' parameter. If both 'live\-config' and 'live\-noconfig' are used, or, if either one is specified multiple times, always the later one takes precedence over the previous one(s).
 
 .IP "\fBlive\-config\fR" 4
 All scripts are run. This is what Debian Live images use by default.
