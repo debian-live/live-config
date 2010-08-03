@@ -27,6 +27,8 @@ except for the following things:
 
 3. Todo items
 
+  * makeing plugins infrastructure self-contained
+  * making plugins post- and pre- login processing
   * verify modifications with a d-i sample installation.
   * allow some scripts (most prominently locales) to be run even in persistent mode.
   * use verbose/quiet/interactive modes for scripts.
