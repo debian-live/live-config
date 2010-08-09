@@ -2,17 +2,7 @@ TODO
 ====
 
 
-1. Status
-
-live-config works quite well already, however, it's software in development and
-we continue to release pre-releases until:
-
-  * documentation is more complete.
-  * boot parameters don't change anymore and we agreed on a common layout of
-    everything.
-
-
-2. Regressions
+1. Regressions
 
 Everything that worked with live-initramfs works with live-boot/live-config,
 except for the following things:
@@ -25,7 +15,7 @@ except for the following things:
     at the manpage of live-config.
 
 
-3. Todo items
+2. Todo items
 
   * makeing plugins infrastructure self-contained
   * making plugins post- and pre- login processing
