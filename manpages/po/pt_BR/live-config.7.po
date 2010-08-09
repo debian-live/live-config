@@ -4,8 +4,8 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: live-config 2.0~a17\n"
-"POT-Creation-Date: 2010-07-29 16:55+0300\n"
+"Project-Id-Version: live-config 2.0.0\n"
+"POT-Creation-Date: 2010-08-10 00:00+0300\n"
 "PO-Revision-Date: 2010-05-24 09:59+0300\n"
 "Last-Translator: Tassia Camoes Araujo <tassia@gmail.com>\n"
 "Language-Team: none\n"
@@ -23,15 +23,14 @@ msgstr "LIVE-CONFIG"
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "2010-07-29"
-msgstr "29-07-2010"
+msgid "2010-08-10"
+msgstr "10-08-2010"
 
 #. type: TH
 #: en/live-config.7:9
-#, fuzzy, no-wrap
-#| msgid "2.0~a16"
-msgid "2.0~a17"
-msgstr "2.0~a16"
+#, no-wrap
+msgid "2.0.0"
+msgstr ""
 
 #. type: TH
 #: en/live-config.7:9
@@ -95,7 +94,7 @@ msgstr "Parâmetros de Inicialização (scripts)"
 #: en/live-config.7:22
 msgid ""
 "B<live-config> is only activated if 'boot=live' is used as a boot parameter. "
-"Additionally, B<live-config> needs to be told which scripts to run trough "
+"Additionally, B<live-config> needs to be told which scripts to run through "
 "the 'live-config' parameter or which scripts to not run through the 'live-"
 "noconfig' parameter. If both 'live-config' and 'live-noconfig' are used, or, "
 "if either one is specified multiple times, always the later one takes "
