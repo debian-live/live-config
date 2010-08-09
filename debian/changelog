@@ -1,3 +1,15 @@
+live-config (2.0.0-1) unstable; urgency=low
+
+  * Improving grammar in the last changelog entry.
+  * Correcting spelling typo in manpage, thanks to Tassia Camoes Araujo
+    <tassia@gmail.com>.
+  * Updating TODO file.
+  * Updating French manpage translation, thanks to Thierry Lépicier
+    <thierry.lepicier@free.fr>.
+  * Updating TODO file.
+
+ -- Daniel Baumann <daniel@debian.org>  Tue, 10 Aug 2010 00:03:20 +0200
+
 live-config (2.0~a17-1) unstable; urgency=low
 
   * Split out runit backend to own package.
