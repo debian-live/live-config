@@ -1,0 +1,34 @@
+#!/bin/sh
+
+## live-config(7) - System Configuration Scripts
+## Copyright (C) 2006-2010 Daniel Baumann <daniel@debian.org>
+##
+## live-config comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
+## This is free software, and you are welcome to redistribute it
+## under certain conditions; see COPYING for details.
+
+
+Live_installer_launcher ()
+{
+	# Checking if package is installed or already configured
+	if [ ! -e /var/lib/dpkg/info/live-installer-launcher.list ] || \
+	   [ -e /var/lib/live/config/live-installer-launcher ]
+	then
+		return
+	fi
+
+	echo -n " live-installer-launcher"
+
+	Configure_live_installer_launcher
+}
+
+Configure_live_installer_launcher ()
+{
+	install -D -o ${LIVE_USERNAME} -g ${LIVE_USERNAME} /usr/share/applications/live-installer-launcher.desktop /home/${LIVE_USERNAME}/Desktop/live-installer-launcher.desktop
+	chown ${LIVE_USERNAME}:${LIVE_USERNAME} /home/${LIVE_USERNAME}/Desktop -R
+
+	# Creating state file
+	touch /var/lib/live/config/live-installer-launcher
+}
+
+Live_installer_launcher

@@ -4,7 +4,7 @@ SHELL := sh -e
 
 LANGUAGES = de fr pt_BR
 
-SCRIPTS = bin/* scripts/*.sh scripts/*/*
+SCRIPTS = bin/* scripts/*.sh scripts/config/*
 
 all: test build
 
@@ -69,18 +69,11 @@ uninstall:
 	# Uninstalling scripts
 	rm -rf $(DESTDIR)/lib/live/config.sh $(DESTDIR)/lib/live/config
 	rmdir --ignore-fail-on-non-empty $(DESTDIR)/lib/live || true
-	rmdir --ignore-fail-on-non-empty $(DESTDIR)/lib || true
-
 	rmdir --ignore-fail-on-non-empty $(DESTDIR)/var/lib/live/config || true
 	rmdir --ignore-fail-on-non-empty $(DESTDIR)/var/lib/live || true
-	rmdir --ignore-fail-on-non-empty $(DESTDIR)/var/lib || true
-	rmdir --ignore-fail-on-non-empty $(DESTDIR)/var || true
 
 	# Uninstalling docs
 	rm -rf $(DESTDIR)/usr/share/doc/live-config
-	rmdir --ignore-fail-on-non-empty $(DESTDIR)/usr/share/doc
-	rmdir --ignore-fail-on-non-empty $(DESTDIR)/usr/share
-	rmdir --ignore-fail-on-non-empty $(DESTDIR)/usr
 
 	# Uninstalling manpages
 	for MANPAGE in manpages/en/*; \
@@ -98,22 +91,8 @@ uninstall:
 		done; \
 	done
 
-	for SECTION in $(ls manpages/en/* | awk -F. '{ print $2 }'); \
-	do \
-		rmdir --ignore-fail-on-non-empty $(DESTDIR)/usr/share/man/man$${SECTION} || true; \
-		rmdir --ignore-fail-on-non-empty $(DESTDIR)/usr/share/man/*/man$${SECTION} || true; \
-	done
-
-	rmdir --ignore-fail-on-non-empty $(DESTDIR)/usr/share/man || true
-	rmdir --ignore-fail-on-non-empty $(DESTDIR)/usr/share || true
-	rmdir --ignore-fail-on-non-empty $(DESTDIR)/usr || true
-
-	rmdir --ignore-fail-on-non-empty $(DESTDIR) || true
-
 clean:
-	@echo "Nothing to clean."
 
-distclean: clean
-	@echo "Nothing to distclean."
+distclean:
 
 reinstall: uninstall install
