@@ -11,7 +11,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 01.08.2010 2.0~a17 "Projet Debian Live"
+.TH LIVE\-CONFIG 7 09.08.2010 2.0~a17 "Projet Debian Live"
 
 .SH NOM
 \fBlive\-config\fP \- Scripts de configuration du système
@@ -77,7 +77,7 @@ réglée sur UTC. Par défaut 'oui'.
 .IP "\fBlive\-config.keyboard\-model\fP=\fIMODELE_DE_CLAVIER\fP | \fBkeyboard\-model\fP=\fIMODELE_DE_CLAVIER\fP" 4
 Permet de changer le modèle de clavier. Aucune valeur par défaut n'est
 indiquée.
-.IP "\fBlive\-config.keyboard\-layouts\fP=\fICONFIGURATION_DU_CLAVIER1\fP,\fICONFIGURATION_DU_CLAVIER2\fP ... \fICONFIGURATION_DU_CLAVIERn\fP | \fBkeyboard\-layouts\fP=\fICONFIGURATION_DU_CLAVIER1\fP,\fICONFIGURATION_DU_CLAVIER2\fP ... \fICONFIGURATION_DU_CLAVIERn\fP" 4
+.IP "\fBlive\-config.keyboard\-layouts\fP=\fICONFIGURATION1_DU_CLAVIER\fP,\fICONFIGURATION2_DU_CLAVIER\fP ... \fICONFIGURATIONn_DU_CLAVIER\fP | \fBkeyboard\-layouts\fP=\fICONFIGURATION1_DU_CLAVIER\fP,\fICONFIGURATION2_DU_CLAVIER\fP ... \fICONFIGURATIONn_DU_CLAVIER\fP" 4
 Permet de changer la configuration du clavier. Si plus d'une configuration
 est spécifiée, les utilitaires de l'environnement de bureau permettront de
 passer de l'une à l'autre sous X11. Aucune valeur par défaut n'est
@@ -217,7 +217,7 @@ Cette variable correspond au paramètre
 Cette variable correspond au paramètre
 \&'\fBlive\-config.hooks\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP'.
 
-.SH CUSTOMIZATION
+.SH CUSTOMISATION
 \fBlive\-config\fP peut être facilement customisé pour des projets dérivés, ou
 pour un usage local.
 
@@ -231,12 +231,13 @@ Debian. Un simple paquet contenant un script d'exemple est proposé dans
 /usr/share/doc/live\-config/examples.
 
 .SS "Enlever des scripts de configuration existant"
-It's not really possible to remove scripts itself in a sane way yet without
-requiring to ship a locally modified \fBlive\-config\fP package. However, the
-same can be acchieved by disabling the respective scripts through the
-live\-noconfig mechanism, see above. To avoid to always need specifing
-disabled scripts through the boot parameter, a configuration file should be
-used, see above.
+Il n'est pas encore vraiment possible d'enlever sans problème les scripts
+sans avoir besoin de charger un paquet \fBlive\-config\fP modifié
+localement. Cependant, on peut réaliser une chose similaire en désactivant
+les scripts respectifs via le mécanisme live\-noconfig, comme indiqué
+ci\-dessus. Afin d'éviter d'avoir à spécifier les scripts désactivés en
+passant par le paramètre de lancement, vous devriez utiliser un fichier de
+configuration, voir ci\-dessus.
 .PP
 Les fichiers de configuration pour le système live devront de préférence
 être inclus dans leur propre paquet debian. Un simple paquet contenant un
