@@ -37,7 +37,6 @@ Configure_xserver_xorg ()
 	if [ -n "${LIVE_KEYBOARD_VARIANT}" ]
 	then
 		echo "xserver-xorg xserver-xorg/config/inputdevice/keyboard/variant select ${LIVE_KEYBOARD_VARIANT}" >> /tmp/debconf.live
-xserver-xorg/config/inputdevice/keyboard/variant
 	fi
 
 	if [ -n "${LIVE_KEYBOARD_OPTIONS}" ]
