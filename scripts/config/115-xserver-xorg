@@ -45,15 +45,18 @@ xserver-xorg/config/inputdevice/keyboard/variant
 		echo "xserver-xorg xserver-xorg/config/inputdevice/keyboard/options string ${LIVE_KEYBOARD_OPTIONS}" >> /tmp/debconf.live
 	fi
 
-	case "${LIVE_X_SESSION_MANAGER}" in
-		none)
-			rm -f /etc/X11/default-display-manager
-			;;
+	if [ -n "${LIVE_X_SESSION_MANAGER}" ]
+	then
+		case "${LIVE_X_SESSION_MANAGER}" in
+			none)
+				rm -f /etc/X11/default-display-manager
+				;;
 
-		*)
-			update-alternatives --quiet --set x-session-manager "${LIVE_X_SESSION_MANAGER}"
-			;;
-	esac
+			*)
+				update-alternatives --quiet --set x-session-manager "${LIVE_X_SESSION_MANAGER}"
+				;;
+		esac
+	fi
 
 	if [ -n "${LIVE_XORG_DRIVER}" ]
 	then
