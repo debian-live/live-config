@@ -75,12 +75,10 @@ Configure_xserver_xorg ()
 		debconf-set-selections < /tmp/debconf.live
 		rm -f /tmp/debconf.live
 
-		dexconf
-
-#		dpkg-reconfigure -f non-interactive -p critical \
-#			xserver-xorg 2>&1 \
-#			| grep -v "overwriting possibly-customised configuration" \
-#			| grep -v "file; backup in /etc/X11/xorg.conf"
+		dpkg-reconfigure -f non-interactive -p critical \
+			xserver-xorg 2>&1 \
+			| grep -v "overwriting possibly-customised configuration" \
+			| grep -v "file; backup in /etc/X11/xorg.conf" || true
 
 		# Creating state file
 		touch /var/lib/live/config/xserver-xorg
