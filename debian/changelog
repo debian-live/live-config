@@ -1,3 +1,17 @@
+live-config (3.0~a2-1) experimental; urgency=low
+
+  [ Daniel Baumann ]
+  * Only run x-session-manager parts when x-session-manager is set.
+
+  [ intrigeri ]
+  * Removing spurious copy/pasted line in xserver-xorg script.
+
+  [ Daniel Baumann ]
+  * Using dpkg-reconfigure instead of dexconf in xserver-xorg script
+    (Closes: #592510).
+
+ -- Daniel Baumann <daniel@debian.org>  Sat, 14 Aug 2010 19:25:00 +0200
+
 live-config (3.0~a1-1) experimental; urgency=low
 
   * Switching to source format 3.0 (quilt).
