@@ -37,7 +37,6 @@ Configure_xserver_xorg ()
 	if [ -n "${LIVE_KEYBOARD_VARIANT}" ]
 	then
 		echo "xserver-xorg xserver-xorg/config/inputdevice/keyboard/variant select ${LIVE_KEYBOARD_VARIANT}" >> /tmp/debconf.live
-xserver-xorg/config/inputdevice/keyboard/variant
 	fi
 
 	if [ -n "${LIVE_KEYBOARD_OPTIONS}" ]
@@ -45,15 +44,18 @@ xserver-xorg/config/inputdevice/keyboard/variant
 		echo "xserver-xorg xserver-xorg/config/inputdevice/keyboard/options string ${LIVE_KEYBOARD_OPTIONS}" >> /tmp/debconf.live
 	fi
 
-	case "${LIVE_X_SESSION_MANAGER}" in
-		none)
-			rm -f /etc/X11/default-display-manager
-			;;
+	if [ -n "${LIVE_X_SESSION_MANAGER}" ]
+	then
+		case "${LIVE_X_SESSION_MANAGER}" in
+			none)
+				rm -f /etc/X11/default-display-manager
+				;;
 
-		*)
-			update-alternatives --quiet --set x-session-manager "${LIVE_X_SESSION_MANAGER}"
-			;;
-	esac
+			*)
+				update-alternatives --quiet --set x-session-manager "${LIVE_X_SESSION_MANAGER}"
+				;;
+		esac
+	fi
 
 	if [ -n "${LIVE_XORG_DRIVER}" ]
 	then
@@ -73,12 +75,10 @@ xserver-xorg/config/inputdevice/keyboard/variant
 		debconf-set-selections < /tmp/debconf.live
 		rm -f /tmp/debconf.live
 
-		dexconf
-
-#		dpkg-reconfigure -f non-interactive -p critical \
-#			xserver-xorg 2>&1 \
-#			| grep -v "overwriting possibly-customised configuration" \
-#			| grep -v "file; backup in /etc/X11/xorg.conf"
+		dpkg-reconfigure -f non-interactive -p critical \
+			xserver-xorg 2>&1 \
+			| grep -v "overwriting possibly-customised configuration" \
+			| grep -v "file; backup in /etc/X11/xorg.conf" || true
 
 		# Creating state file
 		touch /var/lib/live/config/xserver-xorg
