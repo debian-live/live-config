@@ -1,3 +1,9 @@
+live-config (2.0.2-1) unstable; urgency=low
+
+  * Downgrading runit-run depends to suggests as asked by release team.
+
+ -- Daniel Baumann <daniel@debian.org>  Sat, 21 Aug 2010 23:41:45 +0200
+
 live-config (2.0.1-1) unstable; urgency=low
 
   [ Daniel Baumann ]
