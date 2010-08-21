@@ -1,3 +1,9 @@
+live-config (3.0~a3-1) experimental; urgency=low
+
+  * Downgrading runit-run depends to suggests as asked by release team.
+
+ -- Daniel Baumann <daniel@debian.org>  Sat, 21 Aug 2010 23:36:08 +0200
+
 live-config (3.0~a2-1) experimental; urgency=low
 
   [ Daniel Baumann ]
