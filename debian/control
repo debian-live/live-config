@@ -24,10 +24,11 @@ Description: Debian Live - System Configuration Scripts
 
 Package: live-config-runit
 Architecture: all
-Depends: ${misc:Depends}, runit-run
+Depends: ${misc:Depends}
 Conflicts: live-config-backend
 Replaces: live-config-backend
 Provides: live-config-backend
+Suggests: runit-run
 Description: Debian Live - System Configuration Scripts (runit backend)
  live-config contains the scripts that configure a Debian Live system during
  the boot process (late userspace).
