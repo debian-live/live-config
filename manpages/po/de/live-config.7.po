@@ -1163,13 +1163,13 @@ msgstr "schaltet ein paar ungewollte KDE Services ab (squeeze und neuer)."
 #. type: IP
 #: en/live-config.7:192
 #, no-wrap
-msgid "B<live-installer-launcher>"
-msgstr "B<live-installer-launcher>"
+msgid "B<debian-installer-launcher>"
+msgstr "B<debian-installer-launcher>"
 
 #. type: Plain text
 #: en/live-config.7:194
-msgid "adds live-installer-launcher on users desktop."
-msgstr "fügt live-installer-launcher auf dem Benutzer Desktop hinzu."
+msgid "adds debian-installer-launcher on users desktop."
+msgstr "fügt debian-installer-launcher auf dem Benutzer Desktop hinzu."
 
 #. type: IP
 #: en/live-config.7:194

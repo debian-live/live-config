@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config 3.0~a4\n"
-"POT-Creation-Date: 2010-09-02 21:25+0300\n"
+"POT-Creation-Date: 2010-09-02 22:30+0300\n"
 "PO-Revision-Date: 2010-05-24 09:59+0300\n"
 "Last-Translator: Thierry Lépicier <thierry.lepicier@free.fr>\n"
 "Language-Team: none\n"
@@ -1164,14 +1164,15 @@ msgstr "désactive des services de KDE non souhaités (squeeze et plus récent).
 #. type: IP
 #: en/live-config.7:192
 #, no-wrap
-msgid "B<live-installer-launcher>"
-msgstr "B<live-installer-launcher>"
+msgid "B<debian-installer-launcher>"
+msgstr "B<debian-installer-launcher>"
 
 #. type: Plain text
 #: en/live-config.7:194
-msgid "adds live-installer-launcher on users desktop."
+msgid "adds debian-installer-launcher on users desktop."
 msgstr ""
-"ajoute l'installeur (live-installer-launcher) sur le bureau des utilisateurs."
+"ajoute l'installeur (debian-installer-launcher) sur le bureau des "
+"utilisateurs."
 
 #. type: IP
 #: en/live-config.7:194
