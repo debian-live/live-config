@@ -7,13 +7,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config VERSION\n"
-"POT-Creation-Date: 2010-08-21 23:30+0300\n"
+"POT-Creation-Date: 2010-09-02 11:12+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING"
+"Content-Transfer-Encoding: 8bit\n"
 
 #. type: TH
 #: en/live-config.7:9
@@ -24,7 +25,7 @@ msgstr ""
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "2010-08-21"
+msgid "2010-09-02"
 msgstr ""
 
 #. type: TH
@@ -1186,7 +1187,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/live-config.7:228
-msgid "I<live-helper>(7)"
+msgid "I<live-build>(7)"
 msgstr ""
 
 #. type: SH
