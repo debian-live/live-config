@@ -1163,14 +1163,14 @@ msgstr "desabilita o assistente de configura do kde (lenny)."
 #. type: IP
 #: en/live-config.7:194
 #, no-wrap
-msgid "B<live-installer-launcher>"
-msgstr "B<live-installer-launcher>"
+msgid "B<debian-installer-launcher>"
+msgstr "B<debian-installer-launcher>"
 
 #. type: Plain text
 #: en/live-config.7:196
-msgid "adds live-installer-launcher on users desktop."
+msgid "adds debian-installer-launcher on users desktop."
 msgstr ""
-"adiciona o instalador (live-installer-launcher) na área de trabalho dos "
+"adiciona o instalador (debian-installer-launcher) na área de trabalho dos "
 "usuários."
 
 #. type: IP

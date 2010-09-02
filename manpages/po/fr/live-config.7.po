@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config 2.0.3\n"
-"POT-Creation-Date: 2010-09-02 21:26+0300\n"
+"POT-Creation-Date: 2010-09-02 22:26+0300\n"
 "PO-Revision-Date: 2010-05-24 09:59+0300\n"
 "Last-Translator: Thierry Lépicier <thierry.lepicier@free.fr>\n"
 "Language-Team: none\n"
@@ -1175,14 +1175,15 @@ msgstr "désactive le lancement du paramétrage de configuration de kde (lenny).
 #. type: IP
 #: en/live-config.7:194
 #, no-wrap
-msgid "B<live-installer-launcher>"
-msgstr "B<live-installer-launcher>"
+msgid "B<debian-installer-launcher>"
+msgstr "B<debian-installer-launcher>"
 
 #. type: Plain text
 #: en/live-config.7:196
-msgid "adds live-installer-launcher on users desktop."
+msgid "adds debian-installer-launcher on users desktop."
 msgstr ""
-"ajoute l'installeur (live-installer-launcher) sur le bureau des utilisateurs."
+"ajoute l'installeur (debian-installer-launcher) sur le bureau des "
+"utilisateurs."
 
 #. type: IP
 #: en/live-config.7:196
