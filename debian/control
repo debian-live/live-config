@@ -13,7 +13,7 @@ Vcs-Git: git://live.debian.net/git/live-config.git
 Package: live-config
 Architecture: all
 Depends: ${misc:Depends}, live-config-sysvinit | live-config-backend
-Recommends: user-setup, sudo
+Recommends: live-tools, user-setup, sudo
 Suggests: wget
 Description: Debian Live - System Configuration Scripts
  live-config contains the scripts that configure a Debian Live system during
