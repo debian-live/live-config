@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config 3.0~a3\n"
-"POT-Creation-Date: 2010-09-02 11:12+0300\n"
+"POT-Creation-Date: 2010-09-02 11:13+0300\n"
 "PO-Revision-Date: 2010-05-24 09:59+0300\n"
 "Last-Translator: Daniel Baumann <daniel@debian.org>\n"
 "Language-Team: none\n"
@@ -1338,14 +1338,19 @@ msgstr "I<live-boot>(7)"
 msgid "I<live-build>(7)"
 msgstr "I<live-build>(7)"
 
+#. type: Plain text
+#: en/live-config.7:230
+msgid "I<live-tools>(7)"
+msgstr "I<live-tools>(7)"
+
 #. type: SH
-#: en/live-config.7:229
+#: en/live-config.7:231
 #, no-wrap
 msgid "HOMEPAGE"
 msgstr "HOMEPAGE"
 
 #. type: Plain text
-#: en/live-config.7:231
+#: en/live-config.7:233
 msgid ""
 "More information about live-config and the Debian Live project can be found "
 "on the homepage at E<lt>I<http://live.debian.net/>E<gt> and in the manual at "
@@ -1356,13 +1361,13 @@ msgstr ""
 "unter E<lt>I<http://live.debian.net/manual/>E<gt> gefunden werden."
 
 #. type: SH
-#: en/live-config.7:232
+#: en/live-config.7:234
 #, no-wrap
 msgid "BUGS"
 msgstr "FEHLER"
 
 #. type: Plain text
-#: en/live-config.7:234
+#: en/live-config.7:236
 msgid ""
 "Bugs can be reported by submitting a bugreport for the live-config package "
 "in the Debian Bug Tracking System at E<lt>I<http://bugs.debian.org/>E<gt> or "
@@ -1376,13 +1381,13 @@ msgstr ""
 "werden."
 
 #. type: SH
-#: en/live-config.7:235
+#: en/live-config.7:237
 #, no-wrap
 msgid "AUTHOR"
 msgstr "AUTOR"
 
 #. type: Plain text
-#: en/live-config.7:236
+#: en/live-config.7:238
 msgid ""
 "live-config was written by Daniel Baumann E<lt>I<daniel@debian.org>E<gt> for "
 "the Debian project."
