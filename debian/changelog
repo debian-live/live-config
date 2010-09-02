@@ -1,3 +1,12 @@
+live-config (3.0~a4-1) experimental; urgency=low
+
+  * Updating live-build reference in live-config manpage.
+  * Adding reference to live-tools in live-config manpage.
+  * Renumbering config scripts.
+  * Adding live-tools to recommends.
+
+ -- Daniel Baumann <daniel@debian.org>  Thu, 02 Sep 2010 18:32:30 +0200
+
 live-config (3.0~a3-1) experimental; urgency=low
 
   * Downgrading runit-run depends to suggests as asked by release team.
