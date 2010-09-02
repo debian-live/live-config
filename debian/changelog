@@ -1,3 +1,11 @@
+live-config (2.0.3-1) unstable; urgency=low
+
+  * Updating live-build reference in live-config manpage.
+  * Renumbering config scripts.
+  * Rewriting TODO file.
+
+ -- Daniel Baumann <daniel@debian.org>  Thu, 02 Sep 2010 18:35:50 +0200
+
 live-config (2.0.2-1) unstable; urgency=low
 
   * Downgrading runit-run depends to suggests as asked by release team.
