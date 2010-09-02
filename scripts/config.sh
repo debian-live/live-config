@@ -221,9 +221,9 @@ Main ()
 		. /etc/live/config.conf
 	fi
 
-	if ls /etc/live/config.conf.d/* > /dev/null 2>&1
+	if ls /etc/live/config.d/* > /dev/null 2>&1
 	then
-		for _FILE in /etc/live/config.conf.d/*
+		for _FILE in /etc/live/config.d/*
 		do
 			. ${_FILE}
 		done
@@ -235,9 +235,9 @@ Main ()
 		. /live/image/live/config.conf
 	fi
 
-	if ls /live/image/live/config.conf.d/* > /dev/null 2>&1
+	if ls /live/image/live/config.d/* > /dev/null 2>&1
 	then
-		for FILE in /live/image/live/config.conf.d/*
+		for FILE in /live/image/live/config.d/*
 		do
 			. ${_FILE}
 		done
