@@ -1,9 +1,9 @@
 #!/bin/sh
 
-# live-config contains the scripts that configure a Debian Live system during
-# the boot process (late userspace).
-#
-# This is the runit-run script for live-config.
+## live-config contains the scripts that configure a Debian Live system during
+## the boot process (late userspace).
+##
+## This is the runit-run script for live-config.
 
 
 ### BEGIN INIT INFO
