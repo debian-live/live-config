@@ -75,7 +75,7 @@ Configure_xserver_xorg ()
 		debconf-set-selections < /tmp/debconf.live
 		rm -f /tmp/debconf.live
 
-		dpkg-reconfigure -f non-interactive -p critical \
+		dpkg-reconfigure -f noninteractive -p critical \
 			xserver-xorg 2>&1 \
 			| grep -v "overwriting possibly-customised configuration" \
 			| grep -v "file; backup in /etc/X11/xorg.conf" || true
