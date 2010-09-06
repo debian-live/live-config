@@ -1,3 +1,15 @@
+live-config (2.0.5-1) unstable; urgency=low
+
+  * Disabling kaboom in user context.
+  * Using double-hashes as meta-comment sign.
+  * Updating standards version of example package to 3.9.1.
+  * Updating uinstall targets in makefile.
+  * Correcting wrong spelling of debconf frontend in xserver-xorg
+    script.
+  * Updating /etc/hosts handling in hostname config script for squeeze.
+
+ -- Daniel Baumann <daniel@debian.org>  Mon, 06 Sep 2010 15:04:05 +0200
+
 live-config (2.0.4-1) unstable; urgency=low
 
   * Using config.d instead of config.conf.d as directory name for custom
