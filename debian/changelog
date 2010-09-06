@@ -1,3 +1,16 @@
+live-config (3.0~a6-1) experimental; urgency=low
+
+  * Disabling kaboom in user context.
+  * Using double-hashes as meta-comment sign.
+  * Updating standards version of example package to 3.9.1.
+  * Switching example package to source format 3.0 (quilt).
+  * Updating uinstall targets in makefile.
+  * Correcting wrong spelling of debconf frontend in xserver-xorg
+    script.
+  * Updating /etc/hosts handling in hostname config script for squeeze.
+
+ -- Daniel Baumann <daniel@debian.org>  Mon, 06 Sep 2010 15:07:48 +0200
+
 live-config (3.0~a5-1) experimental; urgency=low
 
   * Using config.d instead of config.conf.d as directory name for custom
