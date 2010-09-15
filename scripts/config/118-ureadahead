@@ -12,7 +12,7 @@ Ureadahead ()
 {
 	# Checking if package is installed or already configured
 	if [ ! -e /var/lib/dpkg/info/ureadahead.list ] || \
-	   [ -e /var/lib/live/ureadahead ]
+	   [ -e /var/lib/live/config/ureadahead ]
 	then
 		return
 	fi
