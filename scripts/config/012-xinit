@@ -26,15 +26,11 @@ Xinit ()
 Configure_xinit ()
 {
 	# Checking if if package is already configured differently
-	if [ -e /etc/profile.d/zz-xinit.sh ] || grep -qs "startx" /etc/skel/.bash_profile
+	if [ -e /etc/profile.d/zz-xinit.sh ]
 	then
 		return
 	fi
 
-	if [ -e /etc/profile.d ]
-	then
-
-# squeeze
 cat > /etc/profile.d/zz-xinit.sh << EOF
 if [ -z "\${DISPLAY}" ] && [ \$(tty) = /dev/tty1 ]
 then
@@ -44,21 +40,6 @@ then
 	done
 fi
 EOF
-
-	else
-
-# lenny
-cat >> /etc/skel/.bash_profile << EOF
-if [ -z "\${DISPLAY}" ] && [ \$(tty) = /dev/tty1 ]
-then
-	while true
-	do
-		startx
-	done
-fi
-EOF
-
-	fi
 
 	# Creating state file
 	touch /var/lib/live/config/xinit
