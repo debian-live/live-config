@@ -26,7 +26,7 @@ Xinit ()
 Configure_xinit ()
 {
 	# Checking if if package is already configured differently
-	if [ -e /etc/profile.d/xinit.sh ] || grep -qs "startx" /etc/skel/.bash_profile
+	if [ -e /etc/profile.d/zz-xinit.sh ] || grep -qs "startx" /etc/skel/.bash_profile
 	then
 		return
 	fi
@@ -35,7 +35,7 @@ Configure_xinit ()
 	then
 
 # squeeze
-cat > /etc/profile.d/xinit.sh << EOF
+cat > /etc/profile.d/zz-xinit.sh << EOF
 if [ -z "\${DISPLAY}" ] && [ \$(tty) = /dev/tty1 ]
 then
 	while true
