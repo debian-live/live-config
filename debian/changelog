@@ -1,3 +1,16 @@
+live-config (3.0~a7-1) experimental; urgency=low
+
+  * Applying patch from Jonathan Riddell <jriddell@ubuntu.com> to
+    disable some new akonadi services in kde-services script.
+  * Adding xinit config script.
+  * Adding xinit script in manpages.
+  * Renumbering config scripts for xinit.
+  * Renaming xinit.sh to zz-xinit.sh in /etc/profile.d to ensure it is
+    run last.
+  * Removing legacy support for lenny in xinit script.
+
+ -- Daniel Baumann <daniel@debian.org>  Wed, 15 Sep 2010 12:15:01 +0200
+
 live-config (3.0~a6-1) experimental; urgency=low
 
   * Disabling kaboom in user context.
