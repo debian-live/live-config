@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config VERSION\n"
-"POT-Creation-Date: 2010-09-15 12:14+0300\n"
+"POT-Creation-Date: 2010-09-16 12:24+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,7 +25,7 @@ msgstr ""
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "2010-09-15"
+msgid "2010-09-16"
 msgstr ""
 
 #. type: TH
@@ -99,7 +99,7 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:23
 #, no-wrap
-msgid "B<live-config>"
+msgid "B<live-config> | B<config>"
 msgstr ""
 
 #. type: Plain text
@@ -110,7 +110,7 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:25
 #, no-wrap
-msgid "B<live-config>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn>"
+msgid "B<live-config>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn> | B<config>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn>"
 msgstr ""
 
 #. type: Plain text
@@ -125,7 +125,7 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:27
 #, no-wrap
-msgid "B<live-noconfig>"
+msgid "B<live-noconfig> | B<noconfig>"
 msgstr ""
 
 #. type: Plain text
@@ -138,7 +138,7 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:29
 #, no-wrap
-msgid "B<live-noconfig>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn>"
+msgid "B<live-noconfig>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn> | B<noconfig>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn>"
 msgstr ""
 
 #. type: Plain text

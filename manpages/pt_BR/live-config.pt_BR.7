@@ -11,7 +11,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 15\-09\-2010 3.0~a7 "Projeto Debian Live"
+.TH LIVE\-CONFIG 7 16\-09\-2010 3.0~a7 "Projeto Debian Live"
 
 .SH NOME
 \fBlive\-config\fP \- Scripts para Configuração do Sistema
@@ -35,18 +35,18 @@ não executar, através do parâmetro 'live\-noconfig'. Se ambos 'live\-config' 
 \&'live\-noconfig' forem usados, ou um deles for especificado múltiplas vezes,
 o último sempre assume precedência sobre o(s) anterior(es).
 
-.IP \fBlive\-config\fP 4
+.IP "\fBlive\-config\fP | \fBconfig\fP" 4
 Todos os scripts são executados. Isto é o que as imagens do Debian Live usam
 por padrão.
-.IP "\fBlive\-config\fP=\fISCRIPT1\fP,\fISCRIPT2\fP, ... \fISCRIPTn\fP" 4
+.IP "\fBlive\-config\fP=\fISCRIPT1\fP,\fISCRIPT2\fP, ... \fISCRIPTn\fP | \fBconfig\fP=\fISCRIPT1\fP,\fISCRIPT2\fP, ... \fISCRIPTn\fP" 4
 Apenas os scripts especificados são executados. Note que a ordem dos scripts
 é relevante, por exemplo, 'live\-config=sudo,user\-setup' não funcionaria pois
 o usuário precisa ser criado antes de ser configurado para sudo. A ordem dos
 scripts pelos nomes dos arquivos está definida em /lib/live/config.
-.IP \fBlive\-noconfig\fP 4
+.IP "\fBlive\-noconfig\fP | \fBnoconfig\fP" 4
 Nenhum script é executado. É o mesmo que não usar 'live\-config' nem
 \&'live\-noconfig'.
-.IP "\fBlive\-noconfig\fP=\fISCRIPT1\fP,\fISCRIPT2\fP, ... \fISCRIPTn\fP" 4
+.IP "\fBlive\-noconfig\fP=\fISCRIPT1\fP,\fISCRIPT2\fP, ... \fISCRIPTn\fP | \fBnoconfig\fP=\fISCRIPT1\fP,\fISCRIPT2\fP, ... \fISCRIPTn\fP" 4
 Todos os scripts são executados, exceto os especificados.
 
 .SS "Parâmetros de inicialização (opções)"

@@ -6,7 +6,7 @@
 .\" under certain conditions; see COPYING for details.
 .\"
 .\"
-.TH LIVE\-CONFIG 7 2010\-09\-15 3.0~a7 "Debian Live Project"
+.TH LIVE\-CONFIG 7 2010\-09\-16 3.0~a7 "Debian Live Project"
 
 .SH NAME
 \fBlive\-config\fR \- System Configuration Scripts
@@ -20,13 +20,13 @@
 .SS Boot Parameters (scripts)
 \fBlive\-config\fR is only activated if 'boot=live' is used as a boot parameter. Additionally, \fBlive\-config\fR needs to be told which scripts to run through the 'live\-config' parameter or which scripts to not run through the 'live\-noconfig' parameter. If both 'live\-config' and 'live\-noconfig' are used, or, if either one is specified multiple times, always the later one takes precedence over the previous one(s).
 
-.IP "\fBlive\-config\fR" 4
+.IP "\fBlive\-config\fR | \fBconfig\fR" 4
 All scripts are run. This is what Debian Live images use by default.
-.IP "\fBlive\-config\fR=\fISCRIPT1\fR,\fISCRIPT2\fR, ... \fISCRIPTn\fR" 4
+.IP "\fBlive\-config\fR=\fISCRIPT1\fR,\fISCRIPT2\fR, ... \fISCRIPTn\fR | \fBconfig\fR=\fISCRIPT1\fR,\fISCRIPT2\fR, ... \fISCRIPTn\fR" 4
 Only the specified scripts are run. Note that the order matters, e.g. 'live\-config=sudo,user\-setup' would not work since the user needs to be added before it can be configured for sudo. Look at the filenames of the scripts in /lib/live/config for their ordering number.
-.IP "\fBlive\-noconfig\fR" 4
+.IP "\fBlive\-noconfig\fR | \fBnoconfig\fR" 4
 No script is run. This is the same as not using any of 'live\-config' or 'live\-noconfig'.
-.IP "\fBlive\-noconfig\fR=\fISCRIPT1\fR,\fISCRIPT2\fR, ... \fISCRIPTn\fR" 4
+.IP "\fBlive\-noconfig\fR=\fISCRIPT1\fR,\fISCRIPT2\fR, ... \fISCRIPTn\fR | \fBnoconfig\fR=\fISCRIPT1\fR,\fISCRIPT2\fR, ... \fISCRIPTn\fR" 4
 All scripts are run, except the specified ones.
 
 .SS Boot Parameters (options)
