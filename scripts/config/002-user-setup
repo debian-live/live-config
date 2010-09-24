@@ -41,7 +41,7 @@ user-setup passwd/root-password-crypted string *
 user-setup passwd/user-password-crypted string ${_PASSWORD}
 user-setup passwd/user-fullname string ${LIVE_USER_FULLNAME}
 user-setup passwd/username string ${LIVE_USERNAME}
-user-setup passwd/user-uid string 999
+user-setup passwd/user-uid string 1000
 EOF
 
 	debconf-set-selections < /tmp/debconf.live
