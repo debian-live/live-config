@@ -12,7 +12,7 @@ Console_common ()
 {
 	# Checking if package is installed or already configured
 	if [ ! -e /var/lib/dpkg/info/console-common.list ] || \
-	   [ -e /var/lib/live/config/console-common.list ]
+	   [ -e /var/lib/live/config/console-common ]
 	then
 		return
 	fi
