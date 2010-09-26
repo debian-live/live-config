@@ -1,3 +1,13 @@
+live-config (3.0~a8-1) experimental; urgency=low
+
+  * Correcting typo in persistent file of apport and ureadahead scripts.
+  * Also allowing short names for live-config and live-noconfig
+    parameters.
+  * Correcting accidentally reverted change of live user uid from 999 to
+    1000.
+
+ -- Daniel Baumann <daniel@debian.org>  Sun, 26 Sep 2010 09:11:32 +0200
+
 live-config (3.0~a7-1) experimental; urgency=low
 
   * Applying patch from Jonathan Riddell <jriddell@ubuntu.com> to
