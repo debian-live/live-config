@@ -1,3 +1,17 @@
+live-config (2.0.7-1) unstable; urgency=medium
+
+  [ Daniel Baumann ]
+  * Correcting typo in persistent file of apport and ureadahead scripts.
+  * Also allowing short names for live-config and live-noconfig
+    parameters.
+  * Correcting accidentally reverted change of live user uid from 999 to
+    1000.
+
+  [ intrigeri ]
+  * Correcting typo in console-common script.
+
+ -- Daniel Baumann <daniel@debian.org>  Sun, 26 Sep 2010 09:01:09 +0200
+
 live-config (2.0.6-1) unstable; urgency=low
 
   * Applying patch from Jonathan Riddell <jriddell@ubuntu.com> to
