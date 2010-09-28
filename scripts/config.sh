@@ -37,7 +37,7 @@ Cmdline ()
 				_SCRIPTS="$(ls /lib/live/config/*)"
 				;;
 
-			live-config=*)
+			live-config=*|config=*)
 				# Only run requested scripts
 				LIVE_CONFIGS="${_PARAMETER#*config=}"
 				;;
