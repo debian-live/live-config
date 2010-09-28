@@ -28,14 +28,14 @@ Process_hooks ()
 			filesystem)
 				if ls /lib/live/hooks/* 2>&1
 				then
-					_HOOKS="${_HOOKS} $(ls /lib/live/hooks/*)"
+					_HOOKS="${_HOOKS} $(for _FILE in /lib/live/hooks/*; do echo file://${_FILE}; done)"
 				fi
 				;;
 
 			medium)
 				if ls /live/image/live/hooks/* 2>&1
 				then
-					_HOOKS="${_HOOKS} $(ls /live/image/live/hooks/*)"
+					_HOOKS="${_HOOKS} $(for _FILE in /live/image/live/hooks/*; do echo file://${_FILE}; done)"
 				fi
 				;;
 
