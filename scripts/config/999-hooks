@@ -32,7 +32,7 @@ Process_hooks ()
 				fi
 				;;
 
-			media)
+			medium)
 				if ls /live/image/live/hooks/* 2>&1
 				then
 					_HOOKS="${_HOOKS} $(ls /live/image/live/hooks/*)"
