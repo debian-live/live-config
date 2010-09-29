@@ -237,7 +237,7 @@ Main ()
 
 	if ls /live/image/live/config.d/* > /dev/null 2>&1
 	then
-		for FILE in /live/image/live/config.d/*
+		for _FILE in /live/image/live/config.d/*
 		do
 			. ${_FILE}
 		done
