@@ -24,7 +24,7 @@ Process_hooks ()
 {
 	for _HOOK in $(echo ${LIVE_HOOKS} | sed -e 's/|/ /g')
 	do
-		case "${LIVE_HOOKS}" in
+		case "${_HOOK}" in
 			filesystem)
 				if ls /lib/live/hooks/* 2>&1
 				then
