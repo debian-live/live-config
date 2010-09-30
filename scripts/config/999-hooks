@@ -49,7 +49,7 @@ Process_hooks ()
 	do
 		_TMPFILE="$(mktemp -t live-config.XXXXXXXX)"
 
-		if $(echo "${_HOOK}" | grep file:\/\/)
+		if echo "${_HOOK}" | grep -qs file://
 		then
 			# local file
 			cp $(echo ${_HOOK} | sed 's|file\://||') "${_TMPFILE}"
