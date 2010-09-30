@@ -52,7 +52,7 @@ Process_hooks ()
 		if echo "${_HOOK}" | grep -qs file://
 		then
 			# local file
-			cp $(echo ${_HOOK} | sed 's|file\://||') "${_TMPFILE}"
+			cp $(echo ${_HOOK} | sed 's|file://||') "${_TMPFILE}"
 		else
 			# remote file
 			Start_network
