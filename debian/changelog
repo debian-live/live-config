@@ -1,3 +1,27 @@
+live-config (3.0~a9-1) experimental; urgency=low
+
+  [ Daniel Baumann ]
+  * Removing TODO file, merged into http://live.debian.net/devel/live-
+    config/todo/.
+  * Using medium as keyword instead of media in hook script, as
+    documented in the manpage (Closes: #598375).
+  * Correctly prepending local hooks with file:// prefix (Closes:
+    #598375).
+
+  [ Scott Barker ]
+  * Fixing typo in config.d files parsing from live media (Closes:
+    #598536).
+
+  [ Daniel Baumann ]
+  * Updating to debhelper version 8.
+  * Correcting another typo in hooks config script regarding the loop
+    variable.
+  * Simplyfing and silencing switch between local and remote files in
+    hooks script.
+  * Simplyfing sed call when using local hook scripts.
+
+ -- Daniel Baumann <daniel@debian.org>  Sat, 02 Oct 2010 10:40:58 +0200
+
 live-config (3.0~a8-1) experimental; urgency=low
 
   * Correcting typo in persistent file of apport and ureadahead scripts.
