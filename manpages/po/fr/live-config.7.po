@@ -24,14 +24,14 @@ msgstr "LIVE-CONFIG"
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "2010-09-26"
-msgstr "26.09.2010"
+msgid "2010-10-02"
+msgstr "02.10.2010"
 
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "2.0.7"
-msgstr "2.0.7"
+msgid "2.0.8"
+msgstr "2.0.8"
 
 #. type: TH
 #: en/live-config.7:9
