@@ -1,3 +1,25 @@
+live-config (2.0.8-1) unstable; urgency=medium
+
+  [ Daniel Baumann ]
+  * Adding forgotten config= shortcut in argument parsing.
+  * Using medium as keyword instead of media in hook script, as
+    documented in the manpage (Closes: #598375).
+  * Correctly prepending local hooks with file:// prefix (Closes:
+    #598375).
+
+  [ Scott Barker ]
+  * Fixing typo in config.d files parsing from live media (Closes:
+    #598536).
+
+  [ Daniel Baumann ]
+  * Correcting another typo in hooks config script regarding the loop
+    variable.
+  * Simplyfing and silencing switch between local and remote files in
+    hooks script.
+  * Simplyfing sed call when using local hook scripts.
+
+ -- Daniel Baumann <daniel@debian.org>  Sat, 02 Oct 2010 10:12:13 +0200
+
 live-config (2.0.7-1) unstable; urgency=medium
 
   [ Daniel Baumann ]
