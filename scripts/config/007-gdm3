@@ -24,8 +24,8 @@ Gdm3 ()
 
 Configure_gdm3 ()
 {
-	# Checking if if package is already configured differently
-	if grep -qs AutomaticLoginEnable /etc/gdm3/daemon.conf
+	# Checking if if package is already configured
+	if grep -qs AutomaticLoginEnable=true /etc/gdm3/daemon.conf
 	then
 		return
 	fi
