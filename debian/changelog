@@ -1,3 +1,10 @@
+live-config (3.0~a10-1) experimental; urgency=low
+
+  * Don't compress example files in /usr/share/doc.
+  * Updating gdm3 check to make autologin work again with gdm3 2.30.5-4.
+
+ -- Daniel Baumann <daniel@debian.org>  Thu, 21 Oct 2010 11:16:32 +0200
+
 live-config (3.0~a9-1) experimental; urgency=low
 
   [ Daniel Baumann ]
