@@ -1,3 +1,10 @@
+live-config (2.0.10-1) unstable; urgency=medium
+
+  * Disabling xinit hack when using persistency and another display
+    manager has been configured (Closes: #601235).
+
+ -- Daniel Baumann <daniel.baumann@progress-technologies.net>  Wed, 27 Oct 2010 21:20:45 +0200
+
 live-config (2.0.9-1) unstable; urgency=medium
 
   * Don't compress example files in /usr/share/doc.
