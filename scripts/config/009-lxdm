@@ -11,9 +11,17 @@
 Lxdm ()
 {
 	# Checking if package is installed or already configured
-	if [ ! -e /var/lib/dpkg/info/lxdm.list ] || \
-	   [ -e /var/lib/live/config/lxdm ]
+	if [ ! -e /var/lib/dpkg/info/lxdm.list ]
 	then
+		return
+	fi
+
+	if [ -e /var/lib/live/config/lxdm ]
+	then
+		# Avoid xinit
+		_X11="true"
+		export _X11
+
 		return
 	fi
 

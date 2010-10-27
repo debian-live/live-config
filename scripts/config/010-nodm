@@ -11,9 +11,17 @@
 Nodm ()
 {
 	# Checking if package is installed or already configured
-	if [ ! -e /var/lib/dpkg/info/nodm.list ] || \
-	   [ -e /var/lib/live/config/nodm ]
+	if [ ! -e /var/lib/dpkg/info/nodm.list ]
 	then
+		return
+	fi
+
+	if [ -e /var/lib/live/config/nodm ]
+	then
+		# Avoid xinit
+		_X11="true"
+		export _X11
+
 		return
 	fi
 
