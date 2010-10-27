@@ -11,9 +11,17 @@
 Slim ()
 {
 	# Checking if package is installed or already configured
-	if [ ! -e /var/lib/dpkg/info/slim.list ] || \
-	   [ -e /var/lib/live/config/slim ]
+	if [ ! -e /var/lib/dpkg/info/slim.list ]
 	then
+		return
+	fi
+
+	if [ -e /var/lib/live/config/slim ]
+	then
+		# Avoid xinit
+		_X11="true"
+		export _X11
+
 		return
 	fi
 
