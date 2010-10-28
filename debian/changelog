@@ -1,3 +1,11 @@
+live-config (2.0.11-1) unstable; urgency=medium
+
+  * Removing deep link to bug page in the manual, since we don't have
+    stable references yet.
+  * Correcting email address in previous changelog entry.
+
+ -- Daniel Baumann <daniel@debian.org>  Thu, 28 Oct 2010 10:05:52 +0200
+
 live-config (2.0.10-1) unstable; urgency=medium
 
   * Disabling xinit hack when using persistency and another display
