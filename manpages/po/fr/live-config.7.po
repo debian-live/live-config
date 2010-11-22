@@ -1282,7 +1282,7 @@ msgstr "B<openssh-server>"
 #. type: Plain text
 #: en/live-config.7:216
 msgid "recreates openssh-server host keys."
-msgstr "regénère les clés SSH"
+msgstr "regénère les clés openssh."
 
 #. type: IP
 #: en/live-config.7:216
