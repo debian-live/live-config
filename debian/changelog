@@ -1,3 +1,10 @@
+live-config (3.0~a12-1) experimental; urgency=low
+
+  * Adding openssh-server config script to regenerate ssh keys on boot.
+  * Correcting typo in openssh-server script.
+
+ -- Daniel Baumann <daniel@debian.org>  Mon, 22 Nov 2010 23:03:28 +0100
+
 live-config (3.0~a11-1) experimental; urgency=low
 
   * Disabling xinit hack when using persistency and another display

@@ -4,8 +4,8 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: live-config 3.0~a11\n"
-"POT-Creation-Date: 2010-11-13 07:52+0100\n"
+"Project-Id-Version: live-config 3.0~a12\n"
+"POT-Creation-Date: 2010-11-22 23:03+0100\n"
 "PO-Revision-Date: 2010-05-24 09:59+0300\n"
 "Last-Translator: Thierry Lépicier <thierry.lepicier@free.fr>\n"
 "Language-Team: none\n"
@@ -24,14 +24,14 @@ msgstr "LIVE-CONFIG"
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "2010-11-13"
-msgstr "13.11.2010"
+msgid "2010-11-22"
+msgstr "22.11.2010"
 
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "3.0~a11"
-msgstr "3.0~a11"
+msgid "3.0~a12"
+msgstr "3.0~a12"
 
 #. type: TH
 #: en/live-config.7:9
@@ -1282,7 +1282,7 @@ msgstr "B<openssh-server>"
 #. type: Plain text
 #: en/live-config.7:216
 msgid "recreates openssh-server host keys."
-msgstr ""
+msgstr "regénère les clés SSH"
 
 #. type: IP
 #: en/live-config.7:216
