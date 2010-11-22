@@ -41,7 +41,7 @@ Configure_openssh_server ()
 	if [ "${_SSH}" = "true" ]
 	then
 		# Creating state file
-		touch /var/lib/live/config/gdm
+		touch /var/lib/live/config/openssh-server
 	fi
 }
 
