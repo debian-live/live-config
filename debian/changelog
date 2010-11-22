@@ -1,3 +1,9 @@
+live-config (2.0.12-1) unstable; urgency=medium
+
+  * Adding openssh-server config script to regenerate ssh keys on boot.
+
+ -- Daniel Baumann <daniel@debian.org>  Mon, 22 Nov 2010 23:00:11 +0100
+
 live-config (2.0.11-1) unstable; urgency=medium
 
   * Removing deep link to bug page in the manual, since we don't have
