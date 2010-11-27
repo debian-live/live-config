@@ -29,7 +29,6 @@ Configure_debian_installer_launcher ()
 	if [ -d  /usr/share/kde4/apps/kio_desktop/DesktopLinks ]
 	then
 		install -D -o ${LIVE_USERNAME} -g ${LIVE_USERNAME} /usr/share/applications/debian-installer-launcher.desktop /usr/share/kde4/apps/kio_desktop/DesktopLinks/
-		chown ${LIVE_USERNAME}:${LIVE_USERNAME} /home/${LIVE_USERNAME}/Desktop -R
 	else
 		install -D -o ${LIVE_USERNAME} -g ${LIVE_USERNAME} /usr/share/applications/debian-installer-launcher.desktop /home/${LIVE_USERNAME}/Desktop/debian-installer-launcher.desktop
 		chown ${LIVE_USERNAME}:${LIVE_USERNAME} /home/${LIVE_USERNAME}/Desktop -R
