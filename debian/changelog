@@ -1,3 +1,19 @@
+live-config (2.0.13-1) unstable; urgency=medium
+
+  [ Steven Shiau ]
+  * Adding missing argument in ssh_keygen calls in openssh-server
+    script.
+
+  [ Daniel Baumann ]
+  * Correct debian-installer-launcher script for KDE4, thanks to Nick
+    Niktaris <niktaris@knoppel.org>.
+  * Removing my previously wrongly dublicated chown call in debian-
+    installer-launcher script.
+  * Correcting install call for kde desktop file in debian-installer-
+    launcher script.
+
+ -- Daniel Baumann <daniel@debian.org>  Mon, 29 Nov 2010 23:23:12 +0100
+
 live-config (2.0.12-1) unstable; urgency=medium
 
   * Adding openssh-server config script to regenerate ssh keys on boot.
