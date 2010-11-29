@@ -1,3 +1,23 @@
+live-config (3.0~a13-1) experimental; urgency=low
+
+  [ Daniel Baumann ]
+  * Improving French translation for openssh-server script.
+  * Adding dpkg source options file.
+
+  [ Steven Shiau ]
+  * Adding missing argument in ssh_keygen calls in openssh-server
+    script.
+
+  [ Daniel Baumann ]
+  * Correct debian-installer-launcher script for KDE4, thanks to Nick
+    Niktaris <niktaris@knoppel.org>.
+  * Removing my previously wrongly dublicated chown call in debian-
+    installer-launcher script.
+  * Correcting install call for kde desktop file in debian-installer-
+    launcher script.
+
+ -- Daniel Baumann <daniel@debian.org>  Mon, 29 Nov 2010 23:25:49 +0100
+
 live-config (3.0~a12-1) experimental; urgency=low
 
   * Adding openssh-server config script to regenerate ssh keys on boot.
