@@ -26,7 +26,8 @@ Configure_debian_installer_launcher ()
 {
 	# KDE4 needs the desktop file somewhere else,
 	# otherwise no Home and Trash icons on the desktop.
-	if [ -d  /usr/share/kde4/apps/kio_desktop/DesktopLinks ]
+	if [ -d  /usr/share/kde4/apps/kio_desktop/DesktopLinks ] && \
+	   [ -e /var/lib/dpkg/info/xdg-user-dirs.list ]
 	then
 		install -D -o ${LIVE_USERNAME} -g ${LIVE_USERNAME} /usr/share/applications/debian-installer-launcher.desktop /usr/share/kde4/apps/kio_desktop/DesktopLinks/debian-installer-launcher.desktop
 	else
