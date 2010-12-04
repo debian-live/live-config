@@ -200,6 +200,12 @@ Start_network ()
 		/etc/init.d/ifupdown start > /dev/null 2>&1
 		/etc/init.d/networking start > /dev/null 2>&1
 
+		# Now force adapter up if specified with ethdevice= on cmdline
+		if [ ! -z "${ETHDEVICE}" ]
+		then
+			ifup --force "${ETHDEVICE}"
+		fi
+
 		_NETWORK="true"
 		export _NETWORK
 	fi
