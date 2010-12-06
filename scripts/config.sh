@@ -27,9 +27,11 @@ LIVE_HOSTNAME="debian"
 LIVE_USERNAME="user"
 LIVE_USER_FULLNAME="Debian Live user"
 
+_CMDLINE="$(cat /proc/cmdline)"
+
 Cmdline ()
 {
-	for _PARAMETER in $(cat /proc/cmdline)
+	for _PARAMETER in ${_CMDLINE}
 	do
 		case "${_PARAMETER}" in
 			live-config|config)
@@ -51,74 +53,6 @@ Cmdline ()
 				# Don't run requested scripts
 				_SCRIPTS="$(ls /lib/live/config/*)"
 				LIVE_NOCONFIGS="${_PARAMETER#*noconfig=}"
-				;;
-
-			# 001-hostname
-			live-config.hostname=*|hostname=*)
-				LIVE_HOSTNAME="${_PARAMETER#*hostname=}"
-				;;
-
-			# 002-user-setup
-			live-config.username=*|username=*)
-				LIVE_USERNAME="${_PARAMETER#*username=}"
-				;;
-
-			live-config.user-fullname=*|user-fullname=*)
-				LIVE_USER_FULLNAME="${_PARAMETER#*user-fullname=}"
-				;;
-
-			# 004-locales
-			live-config.locales=*|locales=*)
-				LIVE_LOCALES="${_PARAMETER#*locales=}"
-				;;
-
-			# 005-tzdata
-			live-config.timezone=*|timezone=*)
-				LIVE_TIMEZONE="${_PARAMETER#*timezone=}"
-				;;
-
-			live-config.utc=*|utc=*)
-				LIVE_UTC="${_PARAMETER#*utc=}"
-				;;
-
-			# 012-console-setup, 013-keyboard-configuration
-			live-config.keyboard-model=*|keyboard-model=*)
-				LIVE_KEYBOARD_MODEL="${_PARAMETER#*keyboard-model=}"
-				;;
-
-			live-config.keyboard-layouts=*|keyboard-layouts=*)
-				LIVE_KEYBOARD_LAYOUTS="${_PARAMETER#*keyboard-layouts=}"
-				;;
-
-			live-config.keyboard-variant=*|keyboard-variant=*)
-				LIVE_KEYBOARD_VARIANT="${_PARAMETER#*keyboard-variant=}"
-				;;
-
-			live-config.keyboard-options=*|keyboard-options=*)
-				LIVE_KEYBOARD_OPTIONS="${_PARAMETER#*keyboard-options=}"
-				;;
-
-			# 014-sysv-rc
-			live-config.sysv-rc=*|sysv-rc=*)
-				LIVE_SYSV_RC="${_PARAMETER#*sysv-rc=}"
-				;;
-
-			# 116-xserver-xorg
-			live-config.xorg-xsession-manager=*|x-session-manager=*)
-				LIVE_X_SESSION_MANAGER="${_PARAMETER#*x-session-manager=}"
-				;;
-
-			live-config.xorg-driver=*|xorg-driver=*)
-				LIVE_XORG_DRIVER="${_PARAMETER#*xorg-driver=}"
-				;;
-
-			live-config.xorg-resolution=*|xorg-resolution=*)
-				LIVE_XORG_RESOLUTION="${_PARAMETER#*xorg-resolution=}"
-				;;
-
-			# 999-hooks
-			live-config.hooks=*|hooks=*)
-				LIVE_HOOKS="${_PARAMETER#*hooks=}"
 				;;
 
 			# Shortcuts

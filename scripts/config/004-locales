@@ -19,6 +19,15 @@ Locales ()
 
 	echo -n " locales"
 
+	for _PARAMETER in ${_CMDLINE}
+	do
+		case "${_PARAMETER}" in
+			live-config.locales=*|locales=*)
+				LIVE_LOCALES="${_PARAMETER#*locales=}"
+				;;
+		esac
+	done
+
 	Configure_locales
 }
 

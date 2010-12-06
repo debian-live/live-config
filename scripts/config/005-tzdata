@@ -19,6 +19,19 @@ Tzdata ()
 
 	echo -n " tzdata"
 
+	for _PARAMETER in ${_CMDLINE}
+	do
+		case "${_PARAMETER}" in
+			live-config.timezone=*|timezone=*)
+				LIVE_TIMEZONE="${_PARAMETER#*timezone=}"
+				;;
+
+			live-config.utc=*|utc=*)
+				LIVE_UTC="${_PARAMETER#*utc=}"
+				;;
+		esac
+	done
+
 	Configure_tzdata
 }
 

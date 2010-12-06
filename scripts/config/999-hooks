@@ -17,6 +17,15 @@ Hooks ()
 
 	echo -n " hooks"
 
+	for _PARAMETER in ${_CMDLINE}
+	do
+		case "${_PARAMETER}" in
+			live-config.hooks=*|hooks=*)
+				LIVE_HOOKS="${_PARAMETER#*hooks=}"
+				;;
+		esac
+	done
+
 	Process_hooks
 }
 

@@ -19,13 +19,9 @@ Foobar ()
 
 	echo -n " foobar"
 
-	Configure_foobar
-}
-
-Configure_foobar ()
-{
 	# Boot parameters can be acted up either this way...
-	if ! grep -qs "live-helper.foobar" /proc/cmdline
+	if ! grep -qs "live-config.foobar" /proc/cmdline && \
+	   ! grep -qs "foobar" /proc/cmdline
 	then
 		return
 	fi
@@ -34,12 +30,17 @@ Configure_foobar ()
 	for _PARAMETER in $(cat /proc/cmdline)
 	do
 		case "${_PARAMETER}" in
-			live-config.foobar=*)
-				LIVE_FOOBAR="${_PARAMETER#live-config.foobar=}"
+			live-config.foobar=*|foobar=*)
+				LIVE_FOOBAR="${_PARAMETER#*foobar=}"
 				;;
 		esac
 	done
 
+	Configure_foobar
+}
+
+Configure_foobar ()
+{
 	# Configuring foobar
 	sleep 1
 

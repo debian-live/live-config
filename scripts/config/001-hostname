@@ -19,6 +19,16 @@ Hostname ()
 
 	echo -n " hostname"
 
+	# Reading kernel command line
+	for _PARAMETER in ${_CMDLINE}
+	do
+		case "${_PARAMETER}" in
+			live-config.hostname=*|hostname=*)
+				LIVE_HOSTNAME="${_PARAMETER#*hostname=}"
+				;;
+		esac
+	done
+
 	Configure_hostname
 }
 

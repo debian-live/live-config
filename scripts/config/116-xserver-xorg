@@ -19,6 +19,23 @@ Xserver_xorg ()
 
 	echo -n " xserver-xorg"
 
+	for _PARAMETER in ${_CMDLINE}
+	do
+		case "${_PARAMETER}" in
+			live-config.xorg-xsession-manager=*|x-session-manager=*)
+				LIVE_X_SESSION_MANAGER="${_PARAMETER#*x-session-manager=}"
+				;;
+
+			live-config.xorg-driver=*|xorg-driver=*)
+				LIVE_XORG_DRIVER="${_PARAMETER#*xorg-driver=}"
+				;;
+
+			live-config.xorg-resolution=*|xorg-resolution=*)
+				LIVE_XORG_RESOLUTION="${_PARAMETER#*xorg-resolution=}"
+				;;
+		esac
+	done
+
 	Configure_xserver_xorg
 }
 

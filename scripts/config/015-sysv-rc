@@ -19,6 +19,15 @@ Sysv_rc ()
 
 	echo -n " sysv-rc"
 
+	for _PARAMETER in ${_CMDLINE}
+	do
+		case "${_PARAMETER}" in
+			live-config.sysv-rc=*|sysv-rc=*)
+				LIVE_SYSV_RC="${_PARAMETER#*sysv-rc=}"
+				;;
+		esac
+	done
+
 	Configure_sysv_rc
 }
 

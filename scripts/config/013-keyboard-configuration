@@ -19,6 +19,27 @@ Keyboard_configuration ()
 
 	echo -n " keyboard-configuration"
 
+	for _PARAMETER in ${_CMDLINE}
+	do
+		case "${_PARAMETER}" in
+			live-config.keyboard-model=*|keyboard-model=*)
+				LIVE_KEYBOARD_MODEL="${_PARAMETER#*keyboard-model=}"
+				;;
+
+			live-config.keyboard-layouts=*|keyboard-layouts=*)
+				LIVE_KEYBOARD_LAYOUTS="${_PARAMETER#*keyboard-layouts=}"
+				;;
+
+			live-config.keyboard-variant=*|keyboard-variant=*)
+				LIVE_KEYBOARD_VARIANT="${_PARAMETER#*keyboard-variant=}"
+				;;
+
+			live-config.keyboard-options=*|keyboard-options=*)
+				LIVE_KEYBOARD_OPTIONS="${_PARAMETER#*keyboard-options=}"
+				;;
+		esac
+	done
+
 	Configure_keyboard_configuration
 }
 
