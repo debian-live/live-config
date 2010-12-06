@@ -27,7 +27,7 @@ Foobar ()
 	fi
 
 	# ...or if you want to specify certain options:
-	for _PARAMETER in $(cat /proc/cmdline)
+	for _PARAMETER in ${_CMDLINE}
 	do
 		case "${_PARAMETER}" in
 			live-config.foobar=*|foobar=*)
