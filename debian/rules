@@ -4,7 +4,7 @@
 	dh ${@}
 
 override_dh_auto_install:
-	$(MAKE) DESTDIR=$(CURDIR)/debian/live-config install
+	dh_auto_install
 
 	# Removing useless files
 	rm -f debian/live-config/usr/share/doc/live-config/COPYING
