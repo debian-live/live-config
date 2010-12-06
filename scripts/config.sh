@@ -27,8 +27,6 @@ LIVE_HOSTNAME="debian"
 LIVE_USERNAME="user"
 LIVE_USER_FULLNAME="Debian Live user"
 
-_CMDLINE="$(cat /proc/cmdline)"
-
 Cmdline ()
 {
 	for _PARAMETER in ${_CMDLINE}
@@ -147,7 +145,9 @@ Start_network ()
 
 Main ()
 {
-	if ! grep -qs "boot=live" /proc/cmdline
+	_CMDLINE="$(cat /proc/cmdline)"
+
+	if ! echo ${_CMDLINE} | grep -qs "boot=live"
 	then
 		exit 0
 	fi
