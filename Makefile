@@ -6,7 +6,7 @@ LANGUAGES = de fr pt_BR
 
 SCRIPTS = bin/* scripts/*.sh scripts/*/*
 
-all: test build
+all: build
 
 test:
 	@echo -n "Checking for syntax errors"
