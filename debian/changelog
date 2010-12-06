@@ -1,3 +1,11 @@
+live-config (3.0~a14-1) experimental; urgency=low
+
+  [ Nick Niktaris ]
+  * Also depend on xdg-user-dirs in KDE4 specifics of debian-installer-
+    launcher script.
+
+ -- Daniel Baumann <daniel@debian.org>  Mon, 06 Dec 2010 11:34:34 +0100
+
 live-config (3.0~a13-1) experimental; urgency=low
 
   [ Daniel Baumann ]
