@@ -30,7 +30,7 @@ Configure_sudo ()
 		return
 	fi
 
-	echo "${LIVE_USERNAME}  ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers.d/live
+	echo "${LIVE_USERNAME} ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers.d/live
 
 	sudo -u "${LIVE_USERNAME}" sh -c "echo 'SU_TO_ROOT_SU=sudo' >> /home/${LIVE_USERNAME}/.su-to-rootrc"
 
