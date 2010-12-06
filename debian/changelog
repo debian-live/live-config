@@ -1,3 +1,11 @@
+live-config (2.0.14-1) unstable; urgency=medium
+
+  [ Nick Niktaris ]
+  * Also depend on xdg-user-dirs in KDE4 specifics of debian-installer-
+    launcher script.
+
+ -- Daniel Baumann <daniel@debian.org>  Mon, 06 Dec 2010 11:30:53 +0100
+
 live-config (2.0.13-1) unstable; urgency=medium
 
   [ Steven Shiau ]
