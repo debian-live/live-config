@@ -20,8 +20,8 @@ Foobar ()
 	echo -n " foobar"
 
 	# Boot parameters can be acted up either this way...
-	if ! grep -qs "live-config.foobar" /proc/cmdline && \
-	   ! grep -qs "foobar" /proc/cmdline
+	if ! echo ${_CMDLINE} | grep -qs "live-config.foobar" && \
+	   ! echo ${_CMDLINE} | grep -qs "foobar"
 	then
 		return
 	fi
