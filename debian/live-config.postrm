@@ -5,6 +5,9 @@ set -e
 case "${1}" in
 	purge)
 		rm -f /etc/sudoers.d/live
+
+		rm -rf /var/lib/live/config
+		rmdir --ignore-fail-on-non-empty /var/lib/live
 		;;
 
 	remove|upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)
