@@ -5,6 +5,7 @@ set -e
 case "${1}" in
 	purge)
 		rm -f /etc/sudoers.d/live
+		rm -f /etc/profile.d/zz-live.sh
 
 		rm -rf /var/lib/live/config
 		rmdir --ignore-fail-on-non-empty /var/lib/live
