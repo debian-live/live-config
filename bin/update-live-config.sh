@@ -37,3 +37,30 @@ case "${_DISTRIBUTION}" in
 		rm -f "${_DIRECTORY}"/*-gdm3
 		;;
 esac
+
+echo "Setting distribution specific defaults..."
+
+case "${_DISTRIBUTION}" in
+	debian)
+		LIVE_HOSTNAME="debian"
+		LIVE_USERNAME="user"
+		LIVE_USER_FULLNAME="Debian Live user"
+		;;
+
+	progress)
+		LIVE_HOSTNAME="progress"
+		LIVE_USERNAME="user"
+		LIVE_USER_FULLNAME="Progress Linux user"
+		;;
+
+	ubuntu)
+		LIVE_HOSTNAME="ubuntu"
+		LIVE_USERNAME="user"
+		LIVE_USER_FULLNAME="Ubuntu Live user"
+		;;
+esac
+
+sed -i  -e "s|^LIVE_HOSTNAME=.*$|LIVE_HOSTNAME=\"${LIVE_HOSTNAME}\"|" \
+	-e "s|^LIVE_USERNAME=.*$|LIVE_USERNAME=\"${LIVE_USERNAME}\"|" \
+	-e "s|^LIVE_USER_FULLNAME=.*$|LIVE_USER_FULLNAME=\"${LIVE_USER_FULLNAME}\"|" \
+"$(dirname ${_DIRECTORY})/config.sh"
