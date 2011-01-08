@@ -31,6 +31,7 @@ Configure_sudo ()
 	fi
 
 	echo "${LIVE_USERNAME} ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers.d/live
+	chmod 0440 /etc/sudoers.d/live
 
 	sudo -u "${LIVE_USERNAME}" sh -c "echo 'SU_TO_ROOT_SU=sudo' >> /home/${LIVE_USERNAME}/.su-to-rootrc"
 
