@@ -530,7 +530,7 @@ msgstr ""
 #. type: Plain text
 #: en/live-config.7:105
 msgid ""
-"This variable equals the 'B<live-config.hostname>=I<HOSTAME>' parameter."
+"This variable equals the 'B<live-config.hostname>=I<HOSTNAME>' parameter."
 msgstr ""
 
 #. type: IP

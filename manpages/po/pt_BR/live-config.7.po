@@ -615,10 +615,10 @@ msgstr "B<LIVE_HOSTNAME>=I<HOSTNAME>"
 #. type: Plain text
 #: en/live-config.7:105
 msgid ""
-"This variable equals the 'B<live-config.hostname>=I<HOSTAME>' parameter."
+"This variable equals the 'B<live-config.hostname>=I<HOSTNAME>' parameter."
 msgstr ""
 "Esta variável é equivalente ao parâmetro 'B<live-config."
-"hostname>=I<HOSTAME>'."
+"hostname>=I<HOSTNAME>'."
 
 #. type: IP
 #: en/live-config.7:105
