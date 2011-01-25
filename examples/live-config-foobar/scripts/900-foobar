@@ -1,7 +1,7 @@
 #!/bin/sh
 
 ## live-config-foobar(7) - Additional Configuration Scripts for Debian Live
-## Copyright (C) 2010 John Doe <john@example.org>
+## Copyright (C) 2011 John Doe <john@example.org>
 ##
 ## live-config-foobar comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
 ## This is free software, and you are welcome to redistribute it
