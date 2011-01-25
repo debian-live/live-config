@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config VERSION\n"
-"POT-Creation-Date: 2011-01-11 14:43+0100\n"
+"POT-Creation-Date: 2011-01-25 07:08+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,7 +25,7 @@ msgstr ""
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "2011-01-11"
+msgid "2011-01-25"
 msgstr ""
 
 #. type: TH
@@ -548,7 +548,7 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:107
 #, no-wrap
-msgid "B<LIVE_USER_FULLNAME>=\"I<USER FULLNAME\">"
+msgid "B<LIVE_USER_FULLNAME>=\"I<USER FULLNAME>\""
 msgstr ""
 
 #. type: Plain text
@@ -745,7 +745,7 @@ msgstr ""
 msgid ""
 "It's not really possible to remove scripts itself in a sane way yet without "
 "requiring to ship a locally modified B<live-config> package. However, the "
-"same can be acchieved by disabling the respective scripts through the live-"
+"same can be achieved by disabling the respective scripts through the live-"
 "noconfig mechanism, see above. To avoid to always need specifing disabled "
 "scripts through the boot parameter, a configuration file should be used, see "
 "above."
@@ -900,7 +900,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/live-config.7:172
-msgid "configure autologin with xinit."
+msgid "configures autologin with xinit."
 msgstr ""
 
 #. type: IP
@@ -1011,7 +1011,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/live-config.7:192
-msgid "disables kde migration wizard (squeeze and newer)."
+msgid "disables KDE migration wizard (squeeze and newer)."
 msgstr ""
 
 #. type: IP

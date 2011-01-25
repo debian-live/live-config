@@ -6,7 +6,7 @@
 .\" under certain conditions; see COPYING for details.
 .\"
 .\"
-.TH LIVE\-CONFIG 7 2011\-01\-11 3.0~a14 "Debian Live Project"
+.TH LIVE\-CONFIG 7 2011\-01\-25 3.0~a14 "Debian Live Project"
 
 .SH NAME
 \fBlive\-config\fR \- System Configuration Scripts
@@ -104,7 +104,7 @@ This variable equals the '\fBlive\-noconfig\fR=\fISCRIPT1\fR,\fISCRIPT2\fR, ... 
 This variable equals the '\fBlive\-config.hostname\fR=\fIHOSTNAME\fR' parameter.
 .IP "\fBLIVE_USERNAME\fR=\fIUSERNAME\fR" 4
 This variable equals the '\fBlive\-config.username\fR=\fIUSERNAME\fR' parameter.
-.IP "\fBLIVE_USER_FULLNAME\fR=""\fIUSER FULLNAME""\fR" 4
+.IP "\fBLIVE_USER_FULLNAME\fR=""\fIUSER FULLNAME\fR""" 4
 This variable equals the '\fBlive\-config.user\-fullname\fR="\fIUSER FULLNAME\fR"' parameter.
 .IP "\fBLIVE_LOCALES\fR=\fILOCALE1\fR,\fILOCALE2\fR ... \fILOCALEn\fR" 4
 This variable equals the '\fBlive\-config.locales\fR=\fILOCALE1\fR,\fILOCALE2\fR ... \fILOCALEn\fR' parameter.
@@ -138,7 +138,7 @@ Downstream projects can put their scripts into /lib/live/config and don't need t
 The scripts are best put into an own debian package. A sample package containing an example script can be found in /usr/share/doc/live\-config/examples.
 
 .SS Removing existing config scripts
-It's not really possible to remove scripts itself in a sane way yet without requiring to ship a locally modified \fBlive\-config\fR package. However, the same can be acchieved by disabling the respective scripts through the live\-noconfig mechanism, see above. To avoid to always need specifing disabled scripts through the boot parameter, a configuration file should be used, see above.
+It's not really possible to remove scripts itself in a sane way yet without requiring to ship a locally modified \fBlive\-config\fR package. However, the same can be achieved by disabling the respective scripts through the live\-noconfig mechanism, see above. To avoid to always need specifing disabled scripts through the boot parameter, a configuration file should be used, see above.
 .PP
 The configuration files for the live system itself are best put into an own debian package. A sample package containing an example configuration can be found in /usr/share/doc/live\-config/examples.
 
@@ -168,7 +168,7 @@ configures autologin in nodm.
 .IP "\fBslim\fR" 4
 configures autologin in slim.
 .IP "\fBxinit\fR" 4
-configure autologin with xinit.
+configures autologin with xinit.
 .IP "\fBkeyboard\-configuration\fR" 4
 configures the keyboard.
 .IP "\fBsysvinit\fR" 4
@@ -188,7 +188,7 @@ disables the screensaver locking the screen.
 .IP "\fBinitramfs\-tools\fR" 4
 makes update\-initramfs to also update the live media when using persistency.
 .IP "\fBkaboom\fR" 4
-disables kde migration wizard (squeeze and newer).
+disables KDE migration wizard (squeeze and newer).
 .IP "\fBkde\-services\fR" 4
 disables some unwanted KDE services (squeeze and newer).
 .IP "\fBdebian\-installer\-launcher\fR" 4

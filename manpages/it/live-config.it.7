@@ -1,0 +1,340 @@
+.\" live-config(7) - System Configuration Scripts
+.\" Copyright (C) 2006-2011 Daniel Baumann <daniel@debian.org>
+.\"
+.\" live-config comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
+.\" This is free software, and you are welcome to redistribute it
+.\" under certain conditions; see COPYING for details.
+.\"
+.\"
+.\"*******************************************************************
+.\"
+.\" This file was generated with po4a. Translate the source file.
+.\"
+.\"*******************************************************************
+.TH LIVE\-CONFIG 7 2011\-01\-25 3.0~a14 "Progetto Debian Live"
+
+.SH NOME
+\fBlive\-config\fP \- Script di configurazione del sistema
+
+.SH DESCRIZIONE
+\fBlive\-config\fP contiene gli script che configurano un sistema Debian Live
+durante il processo di avvio (spazio utente inoltrato).
+
+.SH CONFIGURAZIONE
+\fBlive\-config\fP può essere configurato tramite parametri di avvio o file di
+configurazione; se per una certa opzione vengono utilizzati entrambi i
+meccanismi, i parametri di avvio hanno la precedenza su questi
+ultimi. Quando si utilizza la persistenza, gli script di \fBlive\-config\fP
+vengono eseguiti solo una volta.
+
+.SS "Parametri di avvio (script)"
+\fBlive\-config\fP viene attivato solo se "boot=live" è utilizzato come
+parametro di avvio. Inoltre va detto a \fBlive\-config\fP quali script eseguire
+tramite il parametro "live\-config" o quali non eseguire tramite il parametro
+"live\-noconfig". Se vengono usati entrambi i parametri, o se uno dei due è
+specificato più volte, avrà la precedenza sempre l'ultimo.
+
+.IP "\fBlive\-config\fP | \fBconfig\fP" 4
+Vengono eseguiti tutti gli script; questo è ciò che le immagini di Debian
+Live utilizzano in modo predefinito.
+.IP "\fBlive\-config\fP=\fISCRIPT1\fP,\fISCRIPT2\fP, ... \fISCRIPTn\fP | \fBconfig\fP=\fISCRIPT1\fP,\fISCRIPT2\fP, ... \fISCRIPTn\fP" 4
+Vengono eseguiti solo gli script specificati. Si noti che l'ordine è
+importante, ad esempio "live\-config=sudo,user\-setup" non avrebbe funzionato
+in quanto prima di poter configurare l'utente per sudo è necessario
+aggiungerlo. Si guardi i nomi degli script in /lib/live/config per il loro
+ordinamento numerico.
+.IP "\fBlive\-noconfig\fP | \fBnoconfig\fP" 4
+Non viene eseguito alcuno script, equivale a non utilizzare nessun parametro
+di "live\-config" o "live\-noconfig".
+.IP "\fBlive\-noconfig\fP=\fISCRIPT1\fP,\fISCRIPT2\fP, ... \fISCRIPTn\fP | \fBnoconfig\fP=\fISCRIPT1\fP,\fISCRIPT2\fP, ... \fISCRIPTn\fP" 4
+Vengono eseguiti tutti gli script, tranne quelli specificati.
+
+.SS "Parametri di avvio (opzioni)"
+Alcuni script particolari possono modificare il loro comportamento su di un
+parametro di avvio.
+
+.IP "\fBlive\-config.hostname\fP=\fIHOSTNAME\fP | \fBhostname\fP=\fIHOSTNAME\fP" 4
+Permette di impostare l'hostname del sistema, il predefinito è "debian".
+.IP "\fBlive\-config.username\fP=\fINOMEUTENTE\fP | \fBusername\fP=\fINOMEUTENTE\fP" 4
+Permette di impostare il nome utente che viene creato per il login
+automatico, il predefinito è "user".
+.IP "\fBlive\-config.user\-fullname\fP=\(dq\fINOME COMPLETO UTENTE\fP\(dq | \fBuser\-fullname\fP=\(dq\fINOME COMPLETO UTENTE\fP\(dq" 4
+Permette di impostare il nome utente completo che viene creato per il login
+automatico, il predefinito è "Debian Live user".
+.IP "\fBlive\-config.locales\fP=\fILOCALE1\fP,\fILOCALE2\fP ... \fILOCALEn\fP | \fBlocales\fP=\fILOCALE1\fP,\fILOCALE2\fP ... \fILOCALEn\fP" 4
+Permette di impostare la localizzazione del sistema, ad esempio
+"it_IT.UTF\-8", il predefinito è "en_US.UTF\-8". Se la localizzazione
+selezionata non è già disponibile viene generata al volo automaticamente.
+.IP "\fBlive\-config.timezone\fP=\fIFUSO ORARIO\fP | \fBtimezone\fP=\fIFUSO ORARIO\fP" 4
+Permette di impostare il fuso orario del sistema, ad esempio "Europe/Rome",
+il predefinito è "UTC".
+.IP "\fBlive\-config.utc\fP=\fByes\fP|no | \fButc\fP=\fByes\fP|no" 4
+Permette di scegliere se il sistema supponga che l'orologio hardware sia
+impostato o meno su UTC, il valore predefinito è "yes".
+.IP "\fBlive\-config.keyboard\-model\fP=\fIMODELLO_TASTIERA\fP | \fBkeyboard\-model\fP=\fIMODELLO_TASTIERA\fP" 4
+Permette di scegliere il modello della tastiera, non è impostato alcun
+valore predefinito.
+.IP "\fBlive\-config.keyboard\-layouts\fP=\fILAYOUT1_TASTIERA\fP,\fILAYOUT2_TASTIERA\fP ... \fILAYOUTn_TASTIERA\fP | \fBkeyboard\-layouts\fP=\fILAYOUT1_TASTIERA\fP,\fILAYOUT2_TASTIERA\fP ... \fILAYOUTn_TASTIERA\fP" 4
+Permette di modificare i layout della tastiera. Se ne viene specificato più
+di uno, gli strumenti dell'ambiente desktop consentiranno di cambiarlo sotto
+X11. Non è impostato alcun valore predefinito.
+.IP "\fBlive\-config.keyboard\-variant\fP=\fIVARIANTE_TASTIERA\fP | \fBkeyboard\-variant\fP=\fIVARIANTE_TASTIERA\fP" 4
+Permette di impostare un layout alternativo per la tastiera, non è impostato
+alcun valore predefinito.
+.IP "\fBlive\-config.keyboard\-options\fP=\fIOPZIONI_TASTIERA\fP | \fBkeyboard\-options\fP=\fIOPZIONI_TASTIERA\fP" 4
+Permette di modificare le opzioni della tastiera, non è impostato alcun
+valore predefinito.
+.IP "\fBlive\-config.sysv\-rc\fP=\fISERVICE1\fP,\fISERVICE2\fP ... \fISERVICEn\fP | \fBsysv\-rc\fP=\fISERVICE1\fP,\fISERVICE2\fP ... \fISERVICEn\fP" 4
+Permette di disabilitare i servizi di sysv tramite update\-rc.d.
+.IP "\fBlive\-config.x\-session\-manager=\fP\fIX_SESSION_MANAGER\fP | \fBx\-session\-manager\fP=\fIX_SESSION_MANAGER\fP" 4
+Permette di impostare x\-session\-manager tramite update\-alternatives.
+.IP "\fBlive\-config.xorg\-driver\fP=\fIDRIVER_PER_XORG\fP | \fBxorg\-driver\fP=\fIDRIVER_PER_XORG\fP" 4
+Permette di impostare il driver per xorg invece di riconoscerlo
+automaticamente.
+.IP "\fBlive\-config.xorg\-resolution\fP=\fIRISOLUZIONE_PER_XORG\fP | \fBxorg\-resolution\fP=\fIRISOLUZIONE_PER_XORG\fP" 4
+Permette di impostare la risoluzione per xorg invece di riconoscerla
+automaticamente.
+.IP "\fBlive\-config.hooks\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP | \fBhooks\fP=medium|filesystem|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
+Permette di prelevare ed eseguire uno o più file arbitrari. Si noti che gli
+URL devono essere scaricabili da wget (http, ftp o file://), i file vengono
+eseguiti nella directory /tmp del sistema in esecuzione, e che tali file
+necessitano delle loro dipendenze già installate; ad esempio se bisogna
+eseguire uno script python il sistema ha bisogno di python installato. Sono
+disponibili alcuni hook per i casi d'uso più comuni in
+/usr/share/doc/live\-config/examples/hooks/ e all'indirizzo
+<\fIhttp://live.debian.net/other/hooks\fP>.
+.br
+Se il file è posizionato nel supporto live può essere prelevato con
+file:///live/image/\fIFILE\fP o con file:///\fIFILE\fP se è nella radice del
+filesystem del sistema live stesso.
+.br
+Tutti gli hook nella directory /lib/live/hooks/ del sistema live possono
+essere abilitati automaticamente con la parola chiave "filesystem".
+.br
+Tutti gli hook nella directory /live/hooks/ del sistema live possono essere
+abilitati automaticamente con la parola chiave "medium".
+.br
+Se vengono congiunti svariati meccanismi, gli hook del filesystem saranno
+eseguiti per primi, seguiti dai medium, e infine gli hook network.
+
+.SS "Parametri di avvio (scorciatoie)"
+Per alcuni casi di uso comune in cui sarebbe necessario combinare diversi
+parametri particolari, \fBlive\-config\fP fornisce delle scorciatoie. Questo
+permette sia di avere una completa granularità su tutte le opzioni, sia di
+mantenere semplici le cose.
+
+.IP "\fBlive\-config.noroot\fP | \fBnoroot\fP" 4
+Disabilita sudo e policykit, l'utente non può ottenere i privilegi di root
+nel sistema.
+.IP "\fBlive\-config.noautologin\fP | \fBnoautologin\fP" 4
+Disabilita sia il login automatico in console sia quello grafico.
+.IP "\fBlive\-config.nottyautologin\fP | \fBnottyautologin\fP" 4
+Disabilita il login automatico in console senza coinvolgere quello grafico.
+.IP "\fBlive\-config.nox11autologin\fP | \fBnox11autologin\fP" 4
+Disabilita il login automatico con qualsiasi gestore grafico senza
+coinvolgere quello in tty.
+
+.SS "Parametri di avvio (opzioni speciali)"
+Per casi particolari ci sono alcuni parametri speciali.
+
+.IP "\fBlive\-config.debug\fP | \fBdebug\fP" 4
+Abilita l'output di debug in live\-config.
+
+.SS "File di configurazione"
+\fBlive\-config\fP può essere configurato (ma non attivato) attraverso file di
+configurazione. Tranne le scorciatoie che sono configurabili con un
+parametro di avvio, tutto può essere configurato in alternativa tramite uno
+o più file. Se vengono usati questi file, è ancora richiesto il parametro
+"boot=live" per attivare \fBlive\-config\fP.
+.PP
+I file di configurazione sono collocabili sia nello stesso filesystem di
+root (/etc/live/config.conf, /etc/live/config.d/), sia nel supporto live
+(live/config.conf, live/config.d/). Se per una certa opzione si usano
+entrambe le destinazioni, avrà la precedenza quello del supporto live.
+.PP
+Anche se i file di configurazione messi nelle directory conf.d non
+richiedono un nome o suffisso particolari, per coerenza è suggerito di usare
+"vendor.conf"o "project.conf" come schema di denominazione (laddove "vendor"
+o "project"è sostituito con un nome reale, risultando in un nome di file
+come "debian\-eeepc.conf").
+
+.IP "\fBLIVE_CONFIGS\fP=\fISCRIPT1\fP,\fISCRIPT2\fP, ... \fISCRIPTn\fP" 4
+Questa variabile equivale al parametro
+"\fBlive\-config\fP=\fISCRIPT1\fP,\fISCRIPT2\fP, ... \fISCRIPTn\fP".
+.IP "\fBLIVE_NOCONFIGS\fP=\fISCRIPT1\fP,\fISCRIPT2\fP, ... \fISCRIPTn\fP" 4
+Questa variabile equivale al parametro
+"\fBlive\-noconfig\fP=\fISCRIPT1\fP,\fISCRIPT2\fP, ... \fISCRIPTn\fP".
+.IP \fBLIVE_HOSTNAME\fP=\fIHOSTNAME\fP 4
+Questa variabile equivale al parametro
+"\fBlive\-config.hostname\fP=\fIHOSTNAME\fP".
+.IP \fBLIVE_USERNAME\fP=\fINOMEUTENTE\fP 4
+Questa variabile equivale al parametro
+"\fBlive\-config.username\fP=\fINOMEUTENTE\fP".
+.IP "\fBLIVE_USER_FULLNAME\fP=\(dq\fINOME COMPLETO UTENTE\fP\(dq" 4
+Questa variabile equivale al parametro "\fBlive\-config.user\-fullname\fP="\fINOME
+COMPLETO UTENTE\fP".
+.IP "\fBLIVE_LOCALES\fP=\fILOCALE1\fP,\fILOCALE2\fP ... \fILOCALEn\fP" 4
+Questa variabile equivale al parametro
+"\fBlive\-config.locales\fP=\fILOCALE1\fP,\fILOCALE2\fP ... \fILOCALEn\fP".
+.IP "\fBLIVE_TIMEZONE\fP=\fIFUSO ORARIO\fP" 4
+Questa variabile equivale al parametro "\fBlive\-config.timezone\fP=\fIFUSO
+ORARIO\fP".
+.IP \fBLIVE_UTC\fP=\fByes\fP|no 4
+Questa variabile equivale al parametro "\fBlive\-config.utc\fP=\fByes\fP|no".
+.IP \fBLIVE_KEYBOARD_MODEL\fP=\fIMODELLO_TASTIERA\fP 4
+Questa variabile equivale al parametro
+"\fBlive\-config.keyboard\-model\fP=\fIMODELLO_TASTIERA\fP".
+.IP "\fBLIVE_KEYBOARD_LAYOUTS\fP=\fILAYOUT1_TASTIERA\fP,\fILAYOUT2_TASTIERA\fP ... \fILAYOUTn_TASTIERA\fP" 4
+Questa variabile equivale al parametro
+"\fBlive\-config.keyboard\-layouts\fP=\fILAYOUT1_TASTIERA\fP,\fILAYOUT2_TASTIERA\fP
+\&... \fILAYOUTn_TASTIERA\fP".
+.IP \fBLIVE_KEYBOARD_VARIANT\fP=\fIVARIANTE_TASTIERA\fP 4
+Questa variabile equivale al parametro
+"\fBlive\-config.keyboard\-variant\fP=\fIVARIANTE_TASTIERA\fP".
+.IP \fBLIVE_KEYBOARD_OPTIONS\fP=\fIOPZIONI_TASTIERA\fP 4
+Questa variabile equivale al parametro
+"\fBlive\-config.keyboard\-options\fP=\fIOPZIONI_TASTIERA\fP".
+.IP "\fBLIVE_SYSV_RC\fP=\fISERVICE1\fP,\fISERVICE2\fP ... \fISERVICEn\fP" 4
+Questa variabile equivale al parametro
+"\fBlive\-config.sysv\-rc\fP=\fISERVICE1\fP,\fISERVICE2\fP ... \fISERVICEn\fP".
+.IP \fBLIVE_XORG_DRIVER\fP=\fIDRIVER_PER_XORG\fP 4
+Questa variabile equivale al parametro
+"\fBlive\-config.xorg\-driver\fP=\fIDRIVER_PER_XORG\fP".
+.IP \fBLIVE_XORG_RESOLUTION\fP=\fIRISOLUZIONE_PER_XORG\fP 4
+Questa variabile equivale al parametro
+"\fBlive\-config.xorg\-resolution\fP=\fIRISOLUZIONE_PER_XORG\fP".
+.IP "\fBLIVE_HOOKS\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
+Questa variabile equivale al parametro
+"\fBlive\-config.hooks\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP".
+
+.SH PERSONALIZZAZIONE
+\fBlive\-config\fP può essere facilmente personalizzato per progetti downstream
+o utilizzo locale.
+
+.SS "Aggiungere nuovi script config"
+I progetti downstream possono inserire i loro script nella directory
+/lib/live/config senza la necessità di fare altro, gli script saranno
+richiamati automaticamente durante il boot.
+.PP
+È consigliato mettere tali script in un pacchetto debian dedicato. Si può
+trovare un esempio in /usr/share/doc/live\-config/examples.
+
+.SS "Rimuovere script config esistenti"
+Non è ancora realmente possibile rimuovere gli script in un modo sensato che
+non richieda di fornire un pacchetto di \fBlive\-config\fP modificato
+localmente. Tuttavia la stessa cosa si può ottenere disabilitando i
+rispettivi script tramite il meccanismo di live\-noconfig, come spiegato
+sopra. Per evitare di dover specificare ogni volta con parametri di boot gli
+script da disabilitare, si usi un file di configurazione come mostrato in
+precedenza.
+.PP
+È consigliato mettere i file di configurazione per il sistema live in un
+pacchetto debian dedicato. Si può trovare un esempio in
+/usr/share/doc/live\-config/examples.
+
+.SH SCRIPT
+\fBlive\-config\fP attualmente offre i seguenti script in /lib/live/config.
+
+.IP \fBhostname\fP 4
+configura i file /etc/hostname e /etc/hosts.
+.IP \fBuser\-setup\fP 4
+aggiunge un account per l'utente live.
+.IP \fBsudo\fP 4
+concede i privilegi per sudo all'utente live.
+.IP \fBlocales\fP 4
+configura la localizzazione.
+.IP \fBtzdata\fP 4
+configura il file /etc/timezone.
+.IP \fBgdm\fP 4
+configura il login automatico per gdm.
+.IP \fBgdm3\fP 4
+configura il login automatico per gdm3 (squeeze e successive).
+.IP \fBkdm\fP 4
+configura il login automatico per kdm.
+.IP \fBlxdm\fP 4
+configura il login automatico per lxdm.
+.IP \fBnodm\fP 4
+configura il login automatico per nodm.
+.IP \fBslim\fP 4
+configura il login automatico per slim.
+.IP \fBxinit\fP 4
+configura il login automatico con xinit.
+.IP \fBkeyboard\-configuration\fP 4
+configura la tastiera.
+.IP \fBsysvinit\fP 4
+configura sysvinit.
+.IP \fBsysv\-rc\fP 4
+configura sysv\-rc disabilitando i servizi elencati.
+.IP \fBlogin\fP 4
+disabilita lastlog.
+.IP "\fBapport\fP (solo ubuntu)" 4
+disabilita apport.
+.IP \fBgnome\-panel\-data\fP 4
+disabilita il pulsante di blocco dello schermo.
+.IP \fBgnome\-power\-manager\fP 4
+disabilita l'ibernazione.
+.IP \fBgnome\-screensaver\fP 4
+disabilita lo screensaver che blocca lo schermo.
+.IP \fBinitramfs\-tools\fP 4
+fa sì che update\-initramfs aggiorni anche il supporto live quando si
+utilizza la persistenza.
+.IP \fBkaboom\fP 4
+disabilita la procedura guidata di migrazione di KDE (squeeze e successive).
+.IP \fBkde\-services\fP 4
+disabilita i servizi di KDE non voluti (squeeze e successive).
+.IP \fBdebian\-installer\-launcher\fP 4
+aggiunge debian\-installer\-launcher sul desktop dell'utente.
+.IP \fBmodule\-init\-tools\fP 4
+carica automaticamente alcuni moduli su certe architetture.
+.IP \fBpolicykit\fP 4
+concede i privilegi per l'utente tramite policykit.
+.IP \fBsslcert\fP 4
+rigenera certificati ssl snake\-oil.
+.IP \fBupdate\-notifier\fP 4
+disabilita update\-notifier.
+.IP \fBanacron\fP 4
+disabilita anacron.
+.IP \fButil\-linux\fP 4
+disabilita hwclock.
+.IP \fBlogin\fP 4
+disabilita lastlog.
+.IP \fBxserver\-xorg\fP 4
+configura xserver\-xorg.
+.IP "\fBureadahead\fP (solo ubuntu)" 4
+disabilita ureadahead.
+.IP \fBopenssh\-server\fP 4
+ricrea le chiavi openssh\-server.
+.IP \fBhooks\fP 4
+permette di eseguire comandi arbitrari da uno script situato sul supporto
+live o su un server http/ftp.
+
+.SH FILE
+.IP \fB/etc/live/config.conf\fP 4
+.IP \fB/etc/live/config.d/\fP 4
+.IP \fBlive/config.conf\fP 4
+.IP \fBlive/config.d/\fP 4
+.IP \fB/lib/live/config.sh\fP 4
+.IP \fB/lib/live/config/\fP 4
+.IP \fB/var/lib/live/config/\fP 4
+
+.SH "SI VEDA ANCHE"
+\fIlive\-boot\fP(7)
+.PP
+\fIlive\-build\fP(7)
+.PP
+\fIlive\-tools\fP(7)
+
+.SH HOMEPAGE
+Si possono trovare ulteriori informazioni su live\-config e il progetto
+Debian Live alla pagina <\fIhttp://live.debian.net/\fP> e nel manuale
+all'indirizzo <\fIhttp://live.debian.net/manual/\fP>.
+
+.SH BUG
+I bug possono essere segnalati presentando un bugreport per il pacchetto
+live\-config nel Debian Bug Tracking System all'indirizzo
+<\fIhttp://bugs.debian.org/\fP> o inviando un'email alla mailing list
+di Debian Live <\fIdebian\-live@lists.debian.org\fP>.
+
+.SH AUTORE
+live\-config è stato scritto da Daniel Baumann <\fIdaniel@debian.org\fP>
+per il progetto Debian.

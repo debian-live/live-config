@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config 3.0~a14\n"
-"POT-Creation-Date: 2011-01-11 14:43+0100\n"
+"POT-Creation-Date: 2011-01-25 07:08+0100\n"
 "PO-Revision-Date: 2010-05-24 09:59+0300\n"
 "Last-Translator: Daniel Baumann <daniel@debian.org>\n"
 "Language-Team: none\n"
@@ -24,7 +24,7 @@ msgstr "LIVE-CONFIG"
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "2011-01-11"
+msgid "2011-01-25"
 msgstr ""
 
 #. type: TH
@@ -651,7 +651,7 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:107
 #, no-wrap
-msgid "B<LIVE_USER_FULLNAME>=\"I<USER FULLNAME\">"
+msgid "B<LIVE_USER_FULLNAME>=\"I<USER FULLNAME>\""
 msgstr "B<LIVE_USER_FULLNAME>=\"I<VOLLER BENUTZERNAME\">"
 
 #. type: Plain text
@@ -878,7 +878,7 @@ msgstr "Entfernen von neuen Konfigurationsskripten"
 msgid ""
 "It's not really possible to remove scripts itself in a sane way yet without "
 "requiring to ship a locally modified B<live-config> package. However, the "
-"same can be acchieved by disabling the respective scripts through the live-"
+"same can be achieved by disabling the respective scripts through the live-"
 "noconfig mechanism, see above. To avoid to always need specifing disabled "
 "scripts through the boot parameter, a configuration file should be used, see "
 "above."
@@ -1043,7 +1043,7 @@ msgstr "B<xinit>"
 
 #. type: Plain text
 #: en/live-config.7:172
-msgid "configure autologin with xinit."
+msgid "configures autologin with xinit."
 msgstr "konfiguriert Autologin mit xinit."
 
 #. type: IP
@@ -1157,7 +1157,7 @@ msgstr "B<kaboom>"
 
 #. type: Plain text
 #: en/live-config.7:192
-msgid "disables kde migration wizard (squeeze and newer)."
+msgid "disables KDE migration wizard (squeeze and newer)."
 msgstr "schaltet den KDE Migration Wizard ab (squeeze und neuer)."
 
 #. type: IP
