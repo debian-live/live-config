@@ -1,3 +1,49 @@
+live-config (3.0~a15-1) experimental; urgency=low
+
+  [ Richard Nelson ]
+  * To use network based hooks with live-config.hooks=, also call
+    ethdevice= with the device you want to use for network access and we
+    will force it up.
+
+  [ Daniel Baumann ]
+  * Removing header in copyright file.
+  * Don't hard-depend on test target in Makefile.
+  * Using dh auto magic in override, rather than manual make call.
+  * Passing destdir manually to dh_auto_install in rules.
+  * Making plugins self-contained.
+  * Adding dpkg-source option file for example package.
+  * Updating example package to debhelper version 8.
+  * Making example package a native package in order to not confuse
+    users about generating an upstream tarball first.
+  * Using /etc/sudoers.d/live instead of /etc/sudoers in sudo config
+    script.
+  * Using new cmdline variable in example script, rather than accessing
+    /proc/cmdline.
+  * Avoid twice accessing /proc/cmdline in main script.
+  * Adding postrm script that cleans up live-config modifications if
+    persistent pre-configuration at build time was used and the system
+    is intended to be installed with live-installer.
+  * Avoid double-whitespace in /etc/sudoers.d/live.
+  * Removing /var/lib/live when purging live-config.
+  * Using cmdline variable rather than parsing /proc/cmdline in when
+    handing boot parameters in example script.
+  * Renaming zz-xinit.sh to zz-live.sh in xinit script for consistency.
+  * Updating postrm to remove xinit script in /etc/profile.d on purge.
+  * Adding support for progress.
+  * Setting distribution specific defaults in config.sh with update-
+    live-config.sh at build-time.
+  * Tightening grep call for live user in /etc/passwd to not fail with
+    false-positives.
+  * Correcting permission of /etc/sudoers.d/live.
+  * Renaming update-live-config to live-config-update for consistency.
+  * Silencing grep call for /etc/sudoers.d/live.
+  * Updating year in copyright.
+  * Updating year in manpage, examples and script files.
+  * Correcting hostname typo in manpages.
+  * Adding Italian manpage translation from skizzhg <skizzhg@gmx.com>.
+
+ -- Daniel Baumann <daniel@debian.org>  Tue, 25 Jan 2011 08:55:27 +0100
+
 live-config (3.0~a14-1) experimental; urgency=low
 
   [ Nick Niktaris ]
