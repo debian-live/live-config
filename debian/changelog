@@ -1,3 +1,16 @@
+live-config (2.0.15-1) unstable; urgency=low
+
+  * Removing systemd support for 2.0 branch (Closes: #608326).
+  * Tightening grep call for live user in /etc/passwd to not fail with
+    false-positives.
+  * Removing headers in copyright file.
+  * Updating year in copyright.
+  * Updating year in manpage, examples and script files.
+  * Correcting hostname typo in manpages.
+  * Adding Italian manpage translation from skizzhg <skizzhg@gmx.com>.
+
+ -- Daniel Baumann <daniel@debian.org>  Tue, 25 Jan 2011 08:16:12 +0100
+
 live-config (2.0.14-1) unstable; urgency=medium
 
   [ Nick Niktaris ]
