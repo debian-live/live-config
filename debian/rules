@@ -20,6 +20,10 @@ override_dh_auto_install:
 	mv debian/live-config/lib/live/config/*-sysvinit debian/live-config-sysvinit/lib/live/config
 	mv debian/live-config/lib/live/config/*-sysv-rc debian/live-config-sysvinit/lib/live/config
 
+	# live-config-upstart
+	mkdir -p debian/live-config-upstart/lib/live/config
+	mv debian/live-config/lib/live/config/*-upstart debian/live-config-upstart/lib/live/config
+
 override_dh_installinit:
 	dh_installinit -p live-config-runit --no-restart-on-upgrade --no-start --update-rcd-params='start 00 S .' --name live-config
 	dh_installinit -p live-config-sysvinit --no-restart-on-upgrade --no-start --update-rcd-params='start 00 S .' --name live-config

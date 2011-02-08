@@ -63,13 +63,13 @@ Cmdline ()
 			live-config.noautologin|noautologin)
 				# Disables both console and graphical autologin.
 				_SCRIPTS="${_SCRIPTS:-$(ls /lib/live/config/*)}"
-				LIVE_NOCONFIGS="${LIVE_NOCONFIGS},sysvinit,gdm,gdm3,kdm,lxdm,nodm,slim,xinit"
+				LIVE_NOCONFIGS="${LIVE_NOCONFIGS},sysvinit,gdm,gdm3,kdm,lxdm,nodm,slim,upstart,xinit"
 				;;
 
 			live-config.nottyautologin|nottyautologin)
 				# Disables console autologin.
 				_SCRIPTS="${_SCRIPTS:-$(ls /lib/live/config/*)}"
-				LIVE_NOCONFIGS="${LIVE_NOCONFIGS},sysvinit"
+				LIVE_NOCONFIGS="${LIVE_NOCONFIGS},sysvinit,upstart"
 				;;
 
 			live-config.nox11autologin|nox11autologin)
