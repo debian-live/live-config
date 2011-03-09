@@ -26,14 +26,14 @@ Configure_openssh_server ()
 {
 	if [ ! -e /etc/ssh/ssh_host_rsa_key ]
 	then
-		ssh-keygen -q -f /etc/ssh/ssh_host_rsa_key -N -t rsa
+		ssh-keygen -q -f /etc/ssh/ssh_host_rsa_key -N "" -t rsa
 
 		_SSH="true"
 	fi
 
 	if [ ! -e /etc/ssh/ssh_host_dsa_key ]
 	then
-		ssh-keygen -q -f /etc/ssh/ssh_host_dsa_key -N -t dsa
+		ssh-keygen -q -f /etc/ssh/ssh_host_dsa_key -N "" -t dsa
 
 		_SSH="true"
 	fi
