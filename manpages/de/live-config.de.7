@@ -1,5 +1,5 @@
 .\" live-config(7) - System Configuration Scripts
-.\" Copyright (C) 2006-2011 Daniel Baumann <daniel@debian.org>
+.\" Copyright (C) 2006-2010 Daniel Baumann <daniel@debian.org>
 .\"
 .\" live-config comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
 .\" This is free software, and you are welcome to redistribute it
@@ -11,7 +11,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 25.01.2011 2.0.15 "Debian Live Projekt"
+.TH LIVE\-CONFIG 7 10.08.2010 3.0~a1 "Debian Live Projekt"
 
 .SH NAME
 \fBlive\-config\fP \- System Konfiguration Skripte
@@ -35,19 +35,19 @@ oder mit dem Parameter 'live\-noconfig', welche Skripte nicht ausgeführt
 werden sollen. Werden beide beide Parameter oder mehrmals benützt, so geht
 der in der Reihenfolge lezte allen vorhergehenden vor.
 
-.IP "\fBlive\-config\fP | \fBconfig\fP" 4
+.IP \fBlive\-config\fP 4
 Alle Skripte werden ausgeführt. Auf Debian Live Images ist dies das
 Standardverhalten.
-.IP "\fBlive\-config\fP=\fISKRIPT1\fP,\fISKRIPT2\fP, ... \fISKRIPTn\fP | \fBconfig\fP=\fISKRIPT1\fP,\fISKRIPT2\fP, ... \fISKRIPTn\fP" 4
+.IP "\fBlive\-config\fP=\fISKRIPT1\fP,\fISKRIPT2\fP, ... \fISKRIPTn\fP" 4
 Nur angegebene Skripte werden ausgeführt. Die Reihenfolge ist wesentlich,
 d.h. 'live\-config=sudo,user\-setup' würde nicht funktionieren da der Benutzer
 zuerst angelegt werden muss bevor für ihn sudo konfiguriert werden
 kann. Siehe Dateinamen der Skripte in /lib/live/config für ihre
 Ordnungsnummer.
-.IP "\fBlive\-noconfig\fP | \fBnoconfig\fP" 4
+.IP \fBlive\-noconfig\fP 4
 Kein Skript wird ausgeführt. Dies ist das Gleiche, wie wenn weder
 \&'live\-config' noch 'live\-noconfig' verwendet wird.
-.IP "\fBlive\-noconfig\fP=\fISKRIPT1\fP,\fISKRIPT2\fP, ... \fISKRIPTn\fP | \fBnoconfig\fP=\fISKRIPT1\fP,\fISKRIPT2\fP, ... \fISKRIPTn\fP" 4
+.IP "\fBlive\-noconfig\fP=\fISKRIPT1\fP,\fISKRIPT2\fP, ... \fISKRIPTn\fP" 4
 Alle Skripte werden ausgeführt, ausser die hier spezifizierten Ausnahmen.
 
 .SS "Boot Parameter (Optionen)"
@@ -153,10 +153,10 @@ ist der 'boot=live' Parameter trotzdem noch notwendig um \fBlive\-config\fP zu
 aktivieren.
 .PP
 Die Konfigurationsdateien können entweder im Root Dateisystem selbst
-plaziert werden (/etc/live/config.conf, /etc/live/config.d/) oder auf dem
-Live Medium (live/config.conf, live/config.d/). Wenn beide Orte für eine
-bestimmte Option verwendet werden, geht die Konfigurationsdatei auf dem Live
-Medium dem der im Root Dateisystem enthaltenen vor.
+plaziert werden (/etc/live/config.conf, /etc/live/config.conf.d/) oder auf
+dem Live Medium (live/config.conf, live/config.conf.d/). Wenn beide Orte für
+eine bestimmte Option verwendet werden, geht die Konfigurationsdatei auf dem
+Live Medium dem der im Root Dateisystem enthaltenen vor.
 .PP
 Obwohl die Konfigurationsdateien welche in die conf.d Verzeichnisse abgelegt
 werden können keinen bestimmten Namen oder Endung brauchen, ist es aus
@@ -177,7 +177,7 @@ Parameter.
 .IP \fBLIVE_USERNAME\fP=\fIBENUTZERNAME\fP 4
 Diese Variable enspricht dem '\fBlive\-config.username\fP=\fIBENUTZERNAME\fP'
 Parameter.
-.IP "\fBLIVE_USER_FULLNAME\fP=\(dq\fIVOLLER BENUTZERNAME\fP\(dq" 4
+.IP "\fBLIVE_USER_FULLNAME\fP=\(dq\fIVOLLER BENUTZERNAME\(dq\fP" 4
 Diese Variable enspricht dem '\fBlive\-config.user\-fullname\fP="\fIVOLLER
 BENUTZERNAME\fP"' Parameter.
 .IP "\fBLIVE_LOCALES\fP=\fIGEBIETSSCHEMA1\fP,\fIGEBIETSSCHEMA2\fP ... \fIGEBIETSSCHEMAn\fP" 4
@@ -267,9 +267,7 @@ konfiguriert Autologin in lxdm.
 konfiguriert Autologin in nodm.
 .IP \fBslim\fP 4
 konfiguriert Autologin in slim.
-.IP \fBxinit\fP 4
-konfiguriert Autologin mit xinit.
-.IP "\fBconsole\-common\fP, \fBconsole\-setup\fP (lenny), \fBkeyboard\-configuration\fP (squeeze und neuer)" 4
+.IP \fBkeyboard\-configuration\fP 4
 konfiguriert die Tastatur.
 .IP \fBsysvinit\fP 4
 konfiguriert sysvinit.
@@ -293,10 +291,8 @@ benutzt wird.
 schaltet den KDE Migration Wizard ab (squeeze und neuer).
 .IP \fBkde\-services\fP 4
 schaltet ein paar ungewollte KDE Services ab (squeeze und neuer).
-.IP \fBkpersonalizer\fP 4
-schaltet den KDE Configuration Wizard ab (lenny).
-.IP \fBdebian\-installer\-launcher\fP 4
-fügt debian\-installer\-launcher auf dem Benutzer Desktop hinzu.
+.IP \fBlive\-installer\-launcher\fP 4
+fügt live\-installer\-launcher auf dem Benutzer Desktop hinzu.
 .IP \fBmodule\-init\-tools\fP 4
 lädt automatisch gewisse Module auf bestimmten Architekturen.
 .IP \fBpolicykit\fP 4
@@ -315,17 +311,15 @@ schaltet lastlog ab.
 konfiguriert xserver\-xorg.
 .IP "\fBureadahead\fP (nur Ubuntu)" 4
 schaltet ureadahead ab.
-.IP \fBopenssh\-server\fP 4
-erstellt OpenSSH\-Server Host Schlüssel.
 .IP \fBhooks\fP 4
 erlaubt beliebige Kommands von einem Skript auf dem Live Medium oder von
 einem HTTP/FTP Server auszuführen.
 
 .SH DATEIEN
 .IP \fB/etc/live/config.conf\fP 4
-.IP \fB/etc/live/config.d/\fP 4
+.IP \fB/etc/live/config.conf.d/\fP 4
 .IP \fBlive/config.conf\fP 4
-.IP \fBlive/config.d/\fP 4
+.IP \fBlive/config.conf.d/\fP 4
 .IP \fB/lib/live/config.sh\fP 4
 .IP \fB/lib/live/config/\fP 4
 .IP \fB/var/lib/live/config/\fP 4
@@ -333,7 +327,7 @@ einem HTTP/FTP Server auszuführen.
 .SH "SIEHE AUCH"
 \fIlive\-boot\fP(7)
 .PP
-\fIlive\-build\fP(7)
+\fIlive\-helper\fP(7)
 
 .SH HOMEPAGE
 Weitere Informationen über live\-config und das Debian Live Projekt können

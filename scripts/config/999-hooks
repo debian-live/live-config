@@ -1,7 +1,7 @@
 #!/bin/sh
 
 ## live-config(7) - System Configuration Scripts
-## Copyright (C) 2006-2011 Daniel Baumann <daniel@debian.org>
+## Copyright (C) 2006-2010 Daniel Baumann <daniel@debian.org>
 ##
 ## live-config comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
 ## This is free software, and you are welcome to redistribute it
@@ -24,18 +24,18 @@ Process_hooks ()
 {
 	for _HOOK in $(echo ${LIVE_HOOKS} | sed -e 's/|/ /g')
 	do
-		case "${_HOOK}" in
+		case "${LIVE_HOOKS}" in
 			filesystem)
 				if ls /lib/live/hooks/* 2>&1
 				then
-					_HOOKS="${_HOOKS} $(for _FILE in /lib/live/hooks/*; do echo file://${_FILE}; done)"
+					_HOOKS="${_HOOKS} $(ls /lib/live/hooks/*)"
 				fi
 				;;
 
-			medium)
+			media)
 				if ls /live/image/live/hooks/* 2>&1
 				then
-					_HOOKS="${_HOOKS} $(for _FILE in /live/image/live/hooks/*; do echo file://${_FILE}; done)"
+					_HOOKS="${_HOOKS} $(ls /live/image/live/hooks/*)"
 				fi
 				;;
 
@@ -49,10 +49,10 @@ Process_hooks ()
 	do
 		_TMPFILE="$(mktemp -t live-config.XXXXXXXX)"
 
-		if echo "${_HOOK}" | grep -qs file://
+		if $(echo "${_HOOK}" | grep file:\/\/)
 		then
 			# local file
-			cp $(echo ${_HOOK} | sed 's|file://||') "${_TMPFILE}"
+			cp $(echo ${_HOOK} | sed 's|file\://||') "${_TMPFILE}"
 		else
 			# remote file
 			Start_network

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 ## live-config(7) - System Configuration Scripts
-## Copyright (C) 2006-2011 Daniel Baumann <daniel@debian.org>
+## Copyright (C) 2006-2010 Daniel Baumann <daniel@debian.org>
 ##
 ## live-config comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
 ## This is free software, and you are welcome to redistribute it
@@ -11,17 +11,9 @@
 Gdm ()
 {
 	# Checking if package is installed or already configured
-	if [ ! -e /var/lib/dpkg/info/gdm.list ]
+	if [ ! -e /var/lib/dpkg/info/gdm.list ] || \
+	   [ -e /var/lib/live/config/gdm ]
 	then
-		return
-	fi
-
-	if [ -e /var/lib/live/config/gdm ]
-	then
-		# Avoid xinit
-		_X11="true"
-		export _X11
-
 		return
 	fi
 
@@ -45,10 +37,6 @@ TimedLogin=${LIVE_USERNAME}\n\
 TimedLoginDelay=10"
 
 	sed -i -e "s|\[daemon\]|\[daemon\]\n${_GDM_OPTIONS}|" /etc/gdm/gdm.conf
-
-	# Avoid xinit
-	_X11="true"
-	export _X11
 
 	# Creating state file
 	touch /var/lib/live/config/gdm

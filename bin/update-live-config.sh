@@ -30,25 +30,8 @@ case "${_DISTRIBUTION}" in
 		# Removing ubuntu scripts
 		rm -f "${_DIRECTORY}"/*-apport
 		rm -f "${_DIRECTORY}"/*-ureadahead
-
-		case "${_RELEASE}" in
-		lenny)
-			# Removing squeeze and newer scripts
-			rm -f "${_DIRECTORY}"/*-gdm3
-			rm -f "${_DIRECTORY}"/*-kaboom
-			rm -f "${_DIRECTORY}"/*-kde-services
-			rm -f "${_DIRECTORY}"/*-keyboard-configuration
-			;;
-
-		*)
-			# Removing lenny legacy scripts
-			rm -f "${_DIRECTORY}"/*-console-common
-			rm -f "${_DIRECTORY}"/*-console-setup
-			#rm -f "${_DIRECTORY}"/*-gdm
-			rm -f "${_DIRECTORY}"/*-kpersonalizer
-			;;
-		esac
 		;;
+
 	ubuntu)
 		# Removing debian scripts
 		rm -f "${_DIRECTORY}"/*-gdm3

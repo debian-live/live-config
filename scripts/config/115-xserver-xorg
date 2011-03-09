@@ -1,7 +1,7 @@
 #!/bin/sh
 
 ## live-config(7) - System Configuration Scripts
-## Copyright (C) 2006-2011 Daniel Baumann <daniel@debian.org>
+## Copyright (C) 2006-2010 Daniel Baumann <daniel@debian.org>
 ##
 ## live-config comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
 ## This is free software, and you are welcome to redistribute it
@@ -37,6 +37,7 @@ Configure_xserver_xorg ()
 	if [ -n "${LIVE_KEYBOARD_VARIANT}" ]
 	then
 		echo "xserver-xorg xserver-xorg/config/inputdevice/keyboard/variant select ${LIVE_KEYBOARD_VARIANT}" >> /tmp/debconf.live
+xserver-xorg/config/inputdevice/keyboard/variant
 	fi
 
 	if [ -n "${LIVE_KEYBOARD_OPTIONS}" ]
@@ -44,18 +45,15 @@ Configure_xserver_xorg ()
 		echo "xserver-xorg xserver-xorg/config/inputdevice/keyboard/options string ${LIVE_KEYBOARD_OPTIONS}" >> /tmp/debconf.live
 	fi
 
-	if [ -n "${LIVE_X_SESSION_MANAGER}" ]
-	then
-		case "${LIVE_X_SESSION_MANAGER}" in
-			none)
-				rm -f /etc/X11/default-display-manager
-				;;
+	case "${LIVE_X_SESSION_MANAGER}" in
+		none)
+			rm -f /etc/X11/default-display-manager
+			;;
 
-			*)
-				update-alternatives --quiet --set x-session-manager "${LIVE_X_SESSION_MANAGER}"
-				;;
-		esac
-	fi
+		*)
+			update-alternatives --quiet --set x-session-manager "${LIVE_X_SESSION_MANAGER}"
+			;;
+	esac
 
 	if [ -n "${LIVE_XORG_DRIVER}" ]
 	then
@@ -75,10 +73,12 @@ Configure_xserver_xorg ()
 		debconf-set-selections < /tmp/debconf.live
 		rm -f /tmp/debconf.live
 
-		dpkg-reconfigure -f noninteractive -p critical \
-			xserver-xorg 2>&1 \
-			| grep -v "overwriting possibly-customised configuration" \
-			| grep -v "file; backup in /etc/X11/xorg.conf" || true
+		dexconf
+
+#		dpkg-reconfigure -f non-interactive -p critical \
+#			xserver-xorg 2>&1 \
+#			| grep -v "overwriting possibly-customised configuration" \
+#			| grep -v "file; backup in /etc/X11/xorg.conf"
 
 		# Creating state file
 		touch /var/lib/live/config/xserver-xorg

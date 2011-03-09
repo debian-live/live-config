@@ -1,7 +1,7 @@
 #!/bin/sh
 
 ## live-config(7) - System Configuration Scripts
-## Copyright (C) 2006-2011 Daniel Baumann <daniel@debian.org>
+## Copyright (C) 2006-2010 Daniel Baumann <daniel@debian.org>
 ##
 ## This program is free software: you can redistribute it and/or modify
 ## it under the terms of the GNU General Public License as published by
@@ -32,25 +32,25 @@ Cmdline ()
 	for _PARAMETER in $(cat /proc/cmdline)
 	do
 		case "${_PARAMETER}" in
-			live-config|config)
+			live-config)
 				# Run all scripts
 				_SCRIPTS="$(ls /lib/live/config/*)"
 				;;
 
-			live-config=*|config=*)
+			live-config=*)
 				# Only run requested scripts
-				LIVE_CONFIGS="${_PARAMETER#*config=}"
+				LIVE_CONFIGS="${_PARAMETER#live-config=}"
 				;;
 
-			live-noconfig|noconfig)
+			live-noconfig)
 				# Don't run any script
 				_SCRIPTS=""
 				;;
 
-			live-noconfig=*|noconfig=*)
+			live-noconfig=*)
 				# Don't run requested scripts
 				_SCRIPTS="$(ls /lib/live/config/*)"
-				LIVE_NOCONFIGS="${_PARAMETER#*noconfig=}"
+				LIVE_NOCONFIGS="${_PARAMETER#live-noconfig=}"
 				;;
 
 			# 001-hostname
@@ -131,7 +131,7 @@ Cmdline ()
 			live-config.noautologin|noautologin)
 				# Disables both console and graphical autologin.
 				_SCRIPTS="${_SCRIPTS:-$(ls /lib/live/config/*)}"
-				LIVE_NOCONFIGS="${LIVE_NOCONFIGS},sysvinit,gdm,gdm3,kdm,lxdm,nodm,slim,xinit"
+				LIVE_NOCONFIGS="${LIVE_NOCONFIGS},sysvinit,gdm,gdm3,kdm,lxdm,nodm,slim"
 				;;
 
 			live-config.nottyautologin|nottyautologin)
@@ -144,7 +144,7 @@ Cmdline ()
 				# Disables graphical autologin, no matter what
 				# mechanism
 				_SCRIPTS="${_SCRIPTS:-$(ls /lib/live/config/*)}"
-				LIVE_NOCONFIGS="${LIVE_NOCONFIGS},gdm,gdm3,kdm,lxdm,nodm,slim,xinit"
+				LIVE_NOCONFIGS="${LIVE_NOCONFIGS},gdm,gdm3,kdm,lxdm,nodm,slim"
 				;;
 
 			# Special options
@@ -221,9 +221,9 @@ Main ()
 		. /etc/live/config.conf
 	fi
 
-	if ls /etc/live/config.d/* > /dev/null 2>&1
+	if ls /etc/live/config.conf.d/* > /dev/null 2>&1
 	then
-		for _FILE in /etc/live/config.d/*
+		for _FILE in /etc/live/config.conf.d/*
 		do
 			. ${_FILE}
 		done
@@ -235,9 +235,9 @@ Main ()
 		. /live/image/live/config.conf
 	fi
 
-	if ls /live/image/live/config.d/* > /dev/null 2>&1
+	if ls /live/image/live/config.conf.d/* > /dev/null 2>&1
 	then
-		for _FILE in /live/image/live/config.d/*
+		for FILE in /live/image/live/config.conf.d/*
 		do
 			. ${_FILE}
 		done
