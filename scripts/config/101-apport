@@ -12,7 +12,7 @@ Apport ()
 {
 	# Checking if package is installed or already configured
 	if [ ! -e /var/lib/dpkg/info/apport.list ] || \
-	   [ -e /var/lib/live/apport ]
+	   [ -e /var/lib/live/config/apport ]
 	then
 		return
 	fi

@@ -32,25 +32,25 @@ Cmdline ()
 	for _PARAMETER in $(cat /proc/cmdline)
 	do
 		case "${_PARAMETER}" in
-			live-config)
+			live-config|config)
 				# Run all scripts
 				_SCRIPTS="$(ls /lib/live/config/*)"
 				;;
 
-			live-config=*)
+			live-config=*|config=*)
 				# Only run requested scripts
-				LIVE_CONFIGS="${_PARAMETER#live-config=}"
+				LIVE_CONFIGS="${_PARAMETER#*config=}"
 				;;
 
-			live-noconfig)
+			live-noconfig|noconfig)
 				# Don't run any script
 				_SCRIPTS=""
 				;;
 
-			live-noconfig=*)
+			live-noconfig=*|noconfig=*)
 				# Don't run requested scripts
 				_SCRIPTS="$(ls /lib/live/config/*)"
-				LIVE_NOCONFIGS="${_PARAMETER#live-noconfig=}"
+				LIVE_NOCONFIGS="${_PARAMETER#*noconfig=}"
 				;;
 
 			# 001-hostname
