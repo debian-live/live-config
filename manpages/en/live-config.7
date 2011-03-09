@@ -6,7 +6,7 @@
 .\" under certain conditions; see COPYING for details.
 .\"
 .\"
-.TH LIVE\-CONFIG 7 2010\-09\-02 3.0~a4 "Debian Live Project"
+.TH LIVE\-CONFIG 7 2010\-09\-02 3.0~a5 "Debian Live Project"
 
 .SH NAME
 \fBlive\-config\fR \- System Configuration Scripts
@@ -92,7 +92,7 @@ Enables debug output in live\-config.
 .SS Configuration Files
 \fBlive\-config\fR can be configured (but not activated) through configuration files. Everything but the shortcuts that can be configured with a boot parameter can be alternatively also be configured through one or more files. If configuration files are used, the 'boot=live' parameter is still required to activate \fBlive\-config\fR.
 .PP
-Configuration files can be placed either in the root filesystem itself (/etc/live/config.conf, /etc/live/config.conf.d/), or on the live media (live/config.conf, live/config.conf.d/). If both places are used for a certain option, the ones from the live media take precedence over the ones from the root filesystem.
+Configuration files can be placed either in the root filesystem itself (/etc/live/config.conf, /etc/live/config.d/), or on the live media (live/config.conf, live/config.d/). If both places are used for a certain option, the ones from the live media take precedence over the ones from the root filesystem.
 .PP
 Although the configuration files placed in the conf.d directories do not require a particular name or suffix, it's suggest for consistency to either use 'vendor.conf' or 'project.conf' as a naming scheme (whereas 'vendor' or 'project' is replaced with the actual name, resulting in a filename like 'debian\-eeepc.conf').
 
@@ -189,8 +189,8 @@ makes update\-initramfs to also update the live media when using persistency.
 disables kde migration wizard (squeeze and newer).
 .IP "\fBkde\-services\fR" 4
 disables some unwanted KDE services (squeeze and newer).
-.IP "\fBlive\-installer\-launcher\fR" 4
-adds live\-installer\-launcher on users desktop.
+.IP "\fBdebian\-installer\-launcher\fR" 4
+adds debian\-installer\-launcher on users desktop.
 .IP "\fBmodule\-init\-tools\fR" 4
 automatically load some modules on some architectures.
 .IP "\fBpolicykit\fR" 4
@@ -214,9 +214,9 @@ allows to run arbitrary commands from a script placed on the live media or an ht
 
 .SH FILES
 .IP "\fB/etc/live/config.conf\fR" 4
-.IP "\fB/etc/live/config.conf.d/\fR" 4
+.IP "\fB/etc/live/config.d/\fR" 4
 .IP "\fBlive/config.conf\fR" 4
-.IP "\fBlive/config.conf.d/\fR" 4
+.IP "\fBlive/config.d/\fR" 4
 .IP "\fB/lib/live/config.sh\fR" 4
 .IP "\fB/lib/live/config/\fR" 4
 .IP "\fB/var/lib/live/config/\fR" 4

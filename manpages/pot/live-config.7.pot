@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config VERSION\n"
-"POT-Creation-Date: 2010-09-02 18:33+0300\n"
+"POT-Creation-Date: 2010-09-02 22:39+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,7 +31,7 @@ msgstr ""
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "3.0~a4"
+msgid "3.0~a5"
 msgstr ""
 
 #. type: TH
@@ -479,10 +479,10 @@ msgstr ""
 #: en/live-config.7:96
 msgid ""
 "Configuration files can be placed either in the root filesystem itself (/etc/"
-"live/config.conf, /etc/live/config.conf.d/), or on the live media (live/"
-"config.conf, live/config.conf.d/). If both places are used for a certain "
-"option, the ones from the live media take precedence over the ones from the "
-"root filesystem."
+"live/config.conf, /etc/live/config.d/), or on the live media (live/config."
+"conf, live/config.d/). If both places are used for a certain option, the "
+"ones from the live media take precedence over the ones from the root "
+"filesystem."
 msgstr ""
 
 #. type: Plain text
@@ -1017,12 +1017,12 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:192
 #, no-wrap
-msgid "B<live-installer-launcher>"
+msgid "B<debian-installer-launcher>"
 msgstr ""
 
 #. type: Plain text
 #: en/live-config.7:194
-msgid "adds live-installer-launcher on users desktop."
+msgid "adds debian-installer-launcher on users desktop."
 msgstr ""
 
 #. type: IP
@@ -1141,7 +1141,7 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:217
 #, no-wrap
-msgid "B</etc/live/config.conf.d/>"
+msgid "B</etc/live/config.d/>"
 msgstr ""
 
 #. type: IP
@@ -1153,7 +1153,7 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:219
 #, no-wrap
-msgid "B<live/config.conf.d/>"
+msgid "B<live/config.d/>"
 msgstr ""
 
 #. type: IP

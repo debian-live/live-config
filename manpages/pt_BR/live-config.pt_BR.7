@@ -11,7 +11,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 02\-09\-2010 3.0~a4 "Projeto Debian Live"
+.TH LIVE\-CONFIG 7 02\-09\-2010 3.0~a5 "Projeto Debian Live"
 
 .SH NOME
 \fBlive\-config\fP \- Scripts para Configuração do Sistema
@@ -145,10 +145,10 @@ com exceção dos atalhos. Quando arquivos de configuração são usados, o
 parâmetro 'boot=live' ainda é necessário para a ativação do \fBlive\-config\fP.
 .PP
 Arquivos de configuração podem estar localizados no próprio sistema de
-arquivos raiz (/etc/live/config.conf, /etc/live/config.conf.d/) ou na mídia
-live (live/config.conf, live/config.conf.d/). Se ambas as localizações são
-usadas para determinada opção, as da mídia live assumem precedência sobre as
-do sistema de arquivo raiz.
+arquivos raiz (/etc/live/config.conf, /etc/live/config.d/) ou na mídia live
+(live/config.conf, live/config.d/). Se ambas as localizações são usadas para
+determinada opção, as da mídia live assumem precedência sobre as do sistema
+de arquivo raiz.
 .PP
 Apesar de os arquivos de configuração localizados nos diretórios conf.d não
 necessitarem de um nome ou sufixo particular, por uma questão de
@@ -280,8 +280,8 @@ persistência for usada.
 desabilita o assitente de migração do kde.
 .IP \fBkde\-services\fP 4
 desabilita alguns serviços do KDE não desejados (squeeze e mais recentes).
-.IP \fBlive\-installer\-launcher\fP 4
-adiciona o instalador (live\-installer\-launcher) na área de trabalho dos
+.IP \fBdebian\-installer\-launcher\fP 4
+adiciona o instalador (debian\-installer\-launcher) na área de trabalho dos
 usuários.
 .IP \fBmodule\-init\-tools\fP 4
 carrega alguns módulos automaticamente em algumas arquiteturas.
@@ -307,9 +307,9 @@ mídia live ou um servidor http/ftp.
 
 .SH ARQUIVOS
 .IP \fB/etc/live/config.conf\fP 4
-.IP \fB/etc/live/config.conf.d/\fP 4
+.IP \fB/etc/live/config.d/\fP 4
 .IP \fBlive/config.conf\fP 4
-.IP \fBlive/config.conf.d/\fP 4
+.IP \fBlive/config.d/\fP 4
 .IP \fB/lib/live/config.sh\fP 4
 .IP \fB/lib/live/config/\fP 4
 .IP \fB/var/lib/live/config/\fP 4
