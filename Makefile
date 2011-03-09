@@ -47,7 +47,7 @@ install:
 
 	# Installing docs
 	mkdir -p $(DESTDIR)/usr/share/doc/live-config
-	cp -r COPYING docs/* examples $(DESTDIR)/usr/share/doc/live-config
+	cp -r COPYING examples $(DESTDIR)/usr/share/doc/live-config
 
 	# Installing manpages
 	for MANPAGE in manpages/en/*; \
