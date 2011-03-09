@@ -24,8 +24,7 @@ Kaboom ()
 
 Configure_kaboom ()
 {
-	mkdir -p /home/${LIVE_USERNAME}/.local
-	touch /home/${LIVE_USERNAME}/.local/kaboom
+	sudo -u "${LIVE_USERNAME}" sh -c "mkdir -p /home/${LIVE_USERNAME}/.local && touch /home/${LIVE_USERNAME}/.local/kaboom"
 
 	# Creating state file
 	touch /var/lib/live/config/kaboom
