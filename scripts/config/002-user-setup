@@ -1,7 +1,7 @@
 #!/bin/sh
 
 ## live-config(7) - System Configuration Scripts
-## Copyright (C) 2006-2010 Daniel Baumann <daniel@debian.org>
+## Copyright (C) 2006-2011 Daniel Baumann <daniel@debian.org>
 ##
 ## live-config comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
 ## This is free software, and you are welcome to redistribute it
@@ -19,13 +19,28 @@ User_setup ()
 
 	echo -n " user-setup"
 
+	# Reading kernel command line
+	for _PARAMETER in ${_CMDLINE}
+	do
+		case "${_PARAMETER}" in
+			live-config.username=*|username=*)
+				LIVE_USERNAME="${_PARAMETER#*username=}"
+				;;
+
+			live-config.user-fullname=*|user-fullname=*)
+				LIVE_USER_FULLNAME="${_PARAMETER#*user-fullname=}"
+				;;
+		esac
+	done
+
+
 	Configure_user_setup
 }
 
 Configure_user_setup ()
 {
 	# Checking if if package is already configured differently
-	if grep -q "^${LIVE_USERNAME}" /etc/passwd
+	if grep -q "^${LIVE_USERNAME}:" /etc/passwd
 	then
 		return
 	fi

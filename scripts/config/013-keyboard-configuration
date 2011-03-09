@@ -1,7 +1,7 @@
 #!/bin/sh
 
 ## live-config(7) - System Configuration Scripts
-## Copyright (C) 2006-2010 Daniel Baumann <daniel@debian.org>
+## Copyright (C) 2006-2011 Daniel Baumann <daniel@debian.org>
 ##
 ## live-config comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
 ## This is free software, and you are welcome to redistribute it
@@ -18,6 +18,27 @@ Keyboard_configuration ()
 	fi
 
 	echo -n " keyboard-configuration"
+
+	for _PARAMETER in ${_CMDLINE}
+	do
+		case "${_PARAMETER}" in
+			live-config.keyboard-model=*|keyboard-model=*)
+				LIVE_KEYBOARD_MODEL="${_PARAMETER#*keyboard-model=}"
+				;;
+
+			live-config.keyboard-layouts=*|keyboard-layouts=*)
+				LIVE_KEYBOARD_LAYOUTS="${_PARAMETER#*keyboard-layouts=}"
+				;;
+
+			live-config.keyboard-variant=*|keyboard-variant=*)
+				LIVE_KEYBOARD_VARIANT="${_PARAMETER#*keyboard-variant=}"
+				;;
+
+			live-config.keyboard-options=*|keyboard-options=*)
+				LIVE_KEYBOARD_OPTIONS="${_PARAMETER#*keyboard-options=}"
+				;;
+		esac
+	done
 
 	Configure_keyboard_configuration
 }

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 ## live-config(7) - System Configuration Scripts
-## Copyright (C) 2006-2010 Daniel Baumann <daniel@debian.org>
+## Copyright (C) 2006-2011 Daniel Baumann <daniel@debian.org>
 ##
 ## live-config comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
 ## This is free software, and you are welcome to redistribute it
@@ -25,12 +25,13 @@ Sudo ()
 Configure_sudo ()
 {
 	# Checking if if package is already configured differently
-	if grep -q "^${LIVE_USERNAME}" /etc/sudoers
+	if grep -qs "^${LIVE_USERNAME}" /etc/sudoers.d/live
 	then
 		return
 	fi
 
-	echo "${LIVE_USERNAME}  ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+	echo "${LIVE_USERNAME} ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers.d/live
+	chmod 0440 /etc/sudoers.d/live
 
 	sudo -u "${LIVE_USERNAME}" sh -c "echo 'SU_TO_ROOT_SU=sudo' >> /home/${LIVE_USERNAME}/.su-to-rootrc"
 
