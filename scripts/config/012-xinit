@@ -8,42 +8,41 @@
 ## under certain conditions; see COPYING for details.
 
 
-Gdm ()
+Xinit ()
 {
 	# Checking if package is installed or already configured
-	if [ ! -e /var/lib/dpkg/info/gdm.list ] || \
-	   [ -e /var/lib/live/config/gdm ]
+	if [ ! -e /var/lib/dpkg/info/xinit.list ] || \
+	   [ -e /var/lib/live/config/xinit ] || \
+	   [ "${_X11}" = "true" ]
 	then
 		return
 	fi
 
-	echo -n " gdm"
+	echo -n " xinit"
 
-	Configure_gdm
+	Configure_xinit
 }
 
-Configure_gdm ()
+Configure_xinit ()
 {
 	# Checking if if package is already configured differently
-	if grep -qs AutomaticLoginEnable /etc/gdm/gdm.conf
+	if [ -e /etc/profile.d/zz-xinit.sh ]
 	then
 		return
 	fi
 
-	_GDM_OPTIONS="AutomaticLoginEnable=true\n\
-AutomaticLogin=${LIVE_USERNAME}\n\
-TimedLoginEnable=true\n\
-TimedLogin=${LIVE_USERNAME}\n\
-TimedLoginDelay=10"
-
-	sed -i -e "s|\[daemon\]|\[daemon\]\n${_GDM_OPTIONS}|" /etc/gdm/gdm.conf
-
-	# Avoid xinit
-	_X11="true"
-	export _X11
+cat > /etc/profile.d/zz-xinit.sh << EOF
+if [ -z "\${DISPLAY}" ] && [ \$(tty) = /dev/tty1 ]
+then
+	while true
+	do
+		startx
+	done
+fi
+EOF
 
 	# Creating state file
-	touch /var/lib/live/config/gdm
+	touch /var/lib/live/config/xinit
 }
 
-Gdm
+Xinit

@@ -38,6 +38,10 @@ TimedLoginDelay=10"
 
 	sed -i -e "s|\[daemon\]|\[daemon\]\n${_GDM3_OPTIONS}|" /etc/gdm3/daemon.conf
 
+	# Avoid xinit
+	_X11="true"
+	export _X11
+
 	# Creating state file
 	touch /var/lib/live/config/gdm3
 }

@@ -42,6 +42,10 @@ Configure_kdm ()
 			/etc/kde4/kdm/kdmrc
 	fi
 
+	# Avoid xinit
+	_X11="true"
+	export _X11
+
 	# Creating state file
 	touch /var/lib/live/config/kdm
 }

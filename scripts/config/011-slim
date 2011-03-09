@@ -35,6 +35,10 @@ Configure_slim ()
 		  -e "s|^#?default_user.*\$|default_user ${LIVE_USERNAME}|" \
 	/etc/slim.conf
 
+	# Avoid xinit
+	_X11="true"
+	export _X11
+
 	# Creating state file
 	touch /var/lib/live/config/slim
 }

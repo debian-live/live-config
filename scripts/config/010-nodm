@@ -37,6 +37,10 @@ EOF
 	debconf-set-selections < /tmp/debconf.live
 	rm -f /tmp/debconf.live
 
+	# Avoid xinit
+	_X11="true"
+	export _X11
+
 	# Creating state file
 	touch /var/lib/live/config/nodm
 }
