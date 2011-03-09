@@ -1,0 +1,366 @@
+live-config (3.0~a10-1) experimental; urgency=low
+
+  * Don't compress example files in /usr/share/doc.
+  * Updating gdm3 check to make autologin work again with gdm3 2.30.5-4.
+
+ -- Daniel Baumann <daniel@debian.org>  Thu, 21 Oct 2010 11:16:32 +0200
+
+live-config (3.0~a9-1) experimental; urgency=low
+
+  [ Daniel Baumann ]
+  * Removing TODO file, merged into http://live.debian.net/devel/live-
+    config/todo/.
+  * Using medium as keyword instead of media in hook script, as
+    documented in the manpage (Closes: #598375).
+  * Correctly prepending local hooks with file:// prefix (Closes:
+    #598375).
+
+  [ Scott Barker ]
+  * Fixing typo in config.d files parsing from live media (Closes:
+    #598536).
+
+  [ Daniel Baumann ]
+  * Updating to debhelper version 8.
+  * Correcting another typo in hooks config script regarding the loop
+    variable.
+  * Simplyfing and silencing switch between local and remote files in
+    hooks script.
+  * Simplyfing sed call when using local hook scripts.
+
+ -- Daniel Baumann <daniel@debian.org>  Sat, 02 Oct 2010 10:40:58 +0200
+
+live-config (3.0~a8-1) experimental; urgency=low
+
+  * Correcting typo in persistent file of apport and ureadahead scripts.
+  * Also allowing short names for live-config and live-noconfig
+    parameters.
+  * Correcting accidentally reverted change of live user uid from 999 to
+    1000.
+
+ -- Daniel Baumann <daniel@debian.org>  Sun, 26 Sep 2010 09:11:32 +0200
+
+live-config (3.0~a7-1) experimental; urgency=low
+
+  * Applying patch from Jonathan Riddell <jriddell@ubuntu.com> to
+    disable some new akonadi services in kde-services script.
+  * Adding xinit config script.
+  * Adding xinit script in manpages.
+  * Renumbering config scripts for xinit.
+  * Renaming xinit.sh to zz-xinit.sh in /etc/profile.d to ensure it is
+    run last.
+  * Removing legacy support for lenny in xinit script.
+
+ -- Daniel Baumann <daniel@debian.org>  Wed, 15 Sep 2010 12:15:01 +0200
+
+live-config (3.0~a6-1) experimental; urgency=low
+
+  * Disabling kaboom in user context.
+  * Using double-hashes as meta-comment sign.
+  * Updating standards version of example package to 3.9.1.
+  * Switching example package to source format 3.0 (quilt).
+  * Updating uinstall targets in makefile.
+  * Correcting wrong spelling of debconf frontend in xserver-xorg
+    script.
+  * Updating /etc/hosts handling in hostname config script for squeeze.
+
+ -- Daniel Baumann <daniel@debian.org>  Mon, 06 Sep 2010 15:07:48 +0200
+
+live-config (3.0~a5-1) experimental; urgency=low
+
+  * Using config.d instead of config.conf.d as directory name for custom
+    configuration files.
+  * Updating live-installer-launcher script for debian-installer-
+    launcher rename.
+
+ -- Daniel Baumann <daniel@debian.org>  Thu, 02 Sep 2010 22:39:22 +0200
+
+live-config (3.0~a4-1) experimental; urgency=low
+
+  * Updating live-build reference in live-config manpage.
+  * Adding reference to live-tools in live-config manpage.
+  * Renumbering config scripts.
+  * Adding live-tools to recommends.
+
+ -- Daniel Baumann <daniel@debian.org>  Thu, 02 Sep 2010 18:32:30 +0200
+
+live-config (3.0~a3-1) experimental; urgency=low
+
+  * Downgrading runit-run depends to suggests as asked by release team.
+
+ -- Daniel Baumann <daniel@debian.org>  Sat, 21 Aug 2010 23:36:08 +0200
+
+live-config (3.0~a2-1) experimental; urgency=low
+
+  [ Daniel Baumann ]
+  * Only run x-session-manager parts when x-session-manager is set.
+
+  [ intrigeri ]
+  * Removing spurious copy/pasted line in xserver-xorg script.
+
+  [ Daniel Baumann ]
+  * Using dpkg-reconfigure instead of dexconf in xserver-xorg script
+    (Closes: #592510).
+
+ -- Daniel Baumann <daniel@debian.org>  Sat, 14 Aug 2010 19:25:00 +0200
+
+live-config (3.0~a1-1) experimental; urgency=low
+
+  * Switching to source format 3.0 (quilt).
+  * Removing live-initramfs symlinks.
+  * Removing lenny support.
+  * Renumbering config scripts.
+
+ -- Daniel Baumann <daniel@debian.org>  Tue, 10 Aug 2010 01:00:23 +0200
+
+live-config (2.0.0-1) unstable; urgency=low
+
+  * Improving grammar in the last changelog entry.
+  * Correcting spelling typo in manpage, thanks to Tassia Camoes Araujo
+    <tassia@gmail.com>.
+  * Updating TODO file.
+  * Updating French manpage translation, thanks to Thierry Lépicier
+    <thierry.lepicier@free.fr>.
+  * Updating TODO file.
+
+ -- Daniel Baumann <daniel@debian.org>  Tue, 10 Aug 2010 00:03:20 +0200
+
+live-config (2.0~a17-1) unstable; urgency=low
+
+  * Split out runit backend to own package.
+
+ -- Daniel Baumann <daniel@debian.org>  Thu, 29 Jul 2010 17:01:05 +0200
+
+live-config (2.0~a16-1) unstable; urgency=high
+
+  * Adding workaround for bug in install calls wrt/ permissions of
+    intermediate directories.
+  * Simplyfing tzdata script.
+  * Adding manpage symlinks in transitional package.
+  * Adding option to set x-session-manager in preparation for multi-
+    desktop images.
+  * Correcting install location for scripts in example package.
+  * Simplyfing scripts definition in makefile.
+  * Adding updated French manpage translation from Thierry Lépicier
+    <thierry.lepicier@free.fr>.
+  * Don't fail in Makefile when there's no checkbashism (Closes:
+    #590407).
+  * Adding alternative depends to runit-run on live-config-sysvinit,
+    thanks to Daniel Kahn Gillmor <dkg@fifthhorseman.net>.
+  * Updating package to standards version 3.9.1.
+  * Adding Brazilian Portuguese manpage translation from Tassia Camoes
+    Araujo <tassia@gmail.com>.
+
+ -- Daniel Baumann <daniel@debian.org>  Wed, 28 Jul 2010 05:47:03 +0200
+
+live-config (2.0~a15-1) unstable; urgency=low
+
+  * Correcting typo in update-live-config script.
+  * Also including bin directory in test target of makefile.
+  * Updating TODO file.
+  * Adding ureadahead script (ubuntu only).
+  * Removing debian specific scripts when being used on ubuntu.
+  * Updating TODO file.
+  * Improving and updating French manpage translation.
+  * Improving backend dependencies.
+  * Adding example hooks.
+  * Correcting manpage syntax regarding multiple locales.
+  * Adding filesystem and media options to hook script to automatically
+    execute hooks in default locations.
+  * Allowing to combine different hook methods at the same time.
+  * Preconfiguring kxkb to show kde keyboard selector when using
+    multiple layouts.
+  * Ensuring that kde configuration is owned by the live user.
+  * Updating kxkbrc default values.
+
+ -- Daniel Baumann <daniel@debian.org>  Sat, 17 Jul 2010 00:40:49 +0200
+
+live-config (2.0~a14-1) unstable; urgency=low
+
+  * Prefixing local variables in update-live-config script.
+  * Adding check for lsb_release in update-live-config script.
+  * Updating example package to standards 3.9.0.
+  * Adding README for example debian package.
+  * Adding note about live-config in copyright file of live-config-
+    foobar example package.
+  * Regenerating manpages po files.
+  * Enabling short options (foo instead of live-config.foo).
+  * Updating manpages to reflect that the gdm script was reenabled for
+    squeeze and newer.
+  * Updating manpages to reflect that short options are enabled now.
+  * Using two hashes for license headers.
+  * Prefixing some forgotten internal variables.
+  * Adding live-config.noautologin parameter to disable both console and
+    graphical autologin.
+  * Updating manpages to reflect addition of live-config.noautologin
+    parameter.
+
+ -- Daniel Baumann <daniel@debian.org>  Fri, 16 Jul 2010 01:44:26 +0200
+
+live-config (2.0~a13-1) unstable; urgency=low
+
+  * Because lxde still uses gdm instead of gdm3 on squeeze, also
+    including gdm config scripts when building on squeeze and newer.
+  * Improving test targets in Makefile a bit.
+  * Improving clean target in manpages Makefile a bit.
+
+ -- Daniel Baumann <daniel@debian.org>  Thu, 15 Jul 2010 19:25:37 +0200
+
+live-config (2.0~a12-1) unstable; urgency=low
+
+  * Factoring out common function to start network.
+  * Updating replacement update-initramfs cope with files being in /boot
+    rather than root.
+  * Updating package to standards version 3.9.0.
+
+ -- Daniel Baumann <daniel@debian.org>  Wed, 07 Jul 2010 20:20:02 +0200
+
+live-config (2.0~a11-1) unstable; urgency=low
+
+  * Correcting spelling mistake in changelog.
+  * Degrading systemd depends to suggests for the time that systemd
+    resides in experimental only.
+  * Adding initial French manpage translation from Thierry Lépicier
+    <thierry.lepicier@free.fr>.
+
+ -- Daniel Baumann <daniel@debian.org>  Sun, 20 Jun 2010 19:18:11 +0200
+
+live-config (2.0~a10-1) unstable; urgency=low
+
+  * Adding commentary description in systemd service file.
+  * Adding commentary description in sysvinit script file.
+  * Also moving sysv-rc script to sysvinit backend package.
+  * Renaming live-config.keyboard-layout parameter to live-
+    config.keyboard-layouts for consistency.
+  * Correcting typo in sysv-rc script.
+  * Updating TODO file.
+  * Export network status in hook script.
+  * Sorting dh_installinit calls in rules file.
+  * Adding debug boot option.
+  * Automatically determine on which distribution the package is built
+    through lsb_release and removing unnecessary config scripts from the
+    resulting package.
+  * Moving build-depends on lsb-release to build-depends-indep.
+  * Adding depends to systemd now that it passed the NEW queue.
+
+ -- Daniel Baumann <daniel@debian.org>  Thu, 17 Jun 2010 21:47:33 +0200
+
+live-config (2.0~a9-1) unstable; urgency=low
+
+  * Adding slim config script.
+  * Adding sysv-rc script, thanks to Michal Suchanek
+    <hramrach@centrum.cz> for the idea.
+  * Correcting nodm script.
+  * Adding initial upstart backend.
+
+ -- Daniel Baumann <daniel@debian.org>  Fri, 11 Jun 2010 18:36:11 +0200
+
+live-config (2.0~a8-1) unstable; urgency=low
+
+  * Renaming noxautologin parameter to nox11autologin for consistency.
+  * Renaming foobar example configuration file to foobar.conf for
+    consistency.
+  * Removing some confusing code from example script.
+  * Using example script with proper order number.
+  * Adding reference to http://live.debian.net/other/hooks/ in manpage.
+  * Improving live-config.hooks description in manpage.
+  * Updating manpage to reflect that there can be more than one keyboard
+    layout specified at the time.
+  * Adding comment about enabling kxkb in kde-services config script.
+  * Moving sysvinit config script to live-config-sysvinit package.
+  * Adding initial systemd backend.
+  * Documenting 'regressions' in TOOD file.
+
+ -- Daniel Baumann <daniel@debian.org>  Thu, 10 Jun 2010 12:40:26 +0200
+
+live-config (2.0~a7-1) unstable; urgency=low
+
+  * Updating TODO file.
+  * Adding xserver-xorg script.
+
+ -- Daniel Baumann <daniel@debian.org>  Tue, 08 Jun 2010 20:22:20 +0200
+
+live-config (2.0~a6-1) unstable; urgency=low
+
+  * Moving customization example in an own directory within the example
+    directory.
+  * Adding sample configuration file to customization examples package.
+  * Adding note about customization in manpage.
+  * Updating TODO file.
+  * Updating update-version script.
+  * Updating TODO file.
+  * Adding keyboard configuration scripts.
+  * Correcting dash escaping in manpage.
+  * Renaming hook script to hooks for consistency.
+  * Renaming noxlogin parameter to noxautologin for consistency.
+  * Adding sysvinit script for terminal autologin.
+  * Adding anacron script.
+  * Adding util-linux script.
+  * Adding login script.
+
+ -- Daniel Baumann <daniel@debian.org>  Tue, 08 Jun 2010 06:02:06 +0200
+
+live-config (2.0~a5-1) unstable; urgency=low
+
+  * Adding boot parameter handling in example script.
+  * Adding copyright notices in end-user files.
+  * Further generalizing example script and packaging for users own
+    customized scripts.
+
+ -- Daniel Baumann <daniel@debian.org>  Sat, 05 Jun 2010 14:08:58 +0200
+
+live-config (2.0~a4-1) unstable; urgency=low
+
+  * Adding shortcut parameter to disable automatic graphical login, no
+    matter which display manager would be used.
+  * Adding quotes in manpage for live-config.user-fullname.
+  * Documenting usable variables in configuration files in the manpage.
+  * Updating manpage to reflect that multiple hooks are supported at the
+    same time.
+  * Correcting typo in configuration files section of manpage.
+  * Running checkbashisms with -f and -x in Makefile.
+  * Correcting outdated check on /etc/init.d/live-config-sysvinit in
+    hook config script.
+  * Adding checks to ensure that scripts are not re-run with
+    persistency.
+
+ -- Daniel Baumann <daniel@debian.org>  Wed, 02 Jun 2010 22:19:18 +0200
+
+live-config (2.0~a3-1) unstable; urgency=low
+
+  * Removing fixme note about configuration filename.
+  * Adding note about a logfile to todo.
+  * Adding reference to locales script in manpages.
+  * Adding live-noconfig option to exclude specific scripts from being
+    run (Closes: #583533).
+  * Reordering parameters to match ordering of scripts.
+  * Allow to use live-noconfig for excluding scripts without the need of
+    specifying live-config too.
+  * Updating German manpage translation.
+  * Using UTF-8 and umlauts in German manpage translation.
+  * Adding shortcut parameter to disable root privileges, no matter what
+    mechanism would be used.
+  * Replacing reference to live-initramfs with live-boot in manpage.
+  * Setting default user fullname to 'Debian Live user'.
+  * Adding wget to suggests.
+  * Adding script options in manpages.
+  * Improving wording in boot parameter (scripts) section of manpage.
+  * Improving German manpages translation.
+
+ -- Daniel Baumann <daniel@debian.org>  Sun, 30 May 2010 09:35:32 +0200
+
+live-config (2.0~a2-1) unstable; urgency=low
+
+  * Additionally supporting configuration directories for configuration
+    files to ease customization.
+  * Correcting install command for manpages in Makefile.
+  * Simplyfing makefile a bit.
+  * Adding locales config script.
+  * Renumbering config scripts.
+
+ -- Daniel Baumann <daniel@debian.org>  Thu, 27 May 2010 22:37:06 +0200
+
+live-config (2.0~a1-1) experimental; urgency=low
+
+  * Initial release.
+
+ -- Daniel Baumann <daniel@debian.org>  Mon, 24 May 2010 09:14:49 +0200
