@@ -11,9 +11,17 @@
 Kdm ()
 {
 	# Checking if package is installed or already configured
-	if [ ! -e /var/lib/dpkg/info/kdm.list ] || \
-	   [ -e /var/lib/live/config/kdm ]
+	if [ ! -e /var/lib/dpkg/info/kdm.list ]
 	then
+		return
+	fi
+
+	if [ -e /var/lib/live/config/kdm ]
+	then
+		# Avoid xinit
+		_X11="true"
+		export _X11
+
 		return
 	fi
 

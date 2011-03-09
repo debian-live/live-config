@@ -11,9 +11,17 @@
 Gdm3 ()
 {
 	# Checking if package is installed or already configured
-	if [ ! -e /var/lib/dpkg/info/gdm3.list ] || \
-	   [ -e /var/lib/live/config/gdm3 ]
+	if [ ! -e /var/lib/dpkg/info/gdm3.list ]
 	then
+		return
+	fi
+
+	if [ -e /var/lib/live/config/gdm3 ]
+	then
+		# Avoid xinit
+		_X11="true"
+		export _X11
+
 		return
 	fi
 

@@ -11,9 +11,17 @@
 Gdm ()
 {
 	# Checking if package is installed or already configured
-	if [ ! -e /var/lib/dpkg/info/gdm.list ] || \
-	   [ -e /var/lib/live/config/gdm ]
+	if [ ! -e /var/lib/dpkg/info/gdm.list ]
 	then
+		return
+	fi
+
+	if [ -e /var/lib/live/config/gdm ]
+	then
+		# Avoid xinit
+		_X11="true"
+		export _X11
+
 		return
 	fi
 
