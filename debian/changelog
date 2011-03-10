@@ -213,6 +213,168 @@ live-config (3.0~a1-1) experimental; urgency=low
 
  -- Daniel Baumann <daniel@debian.org>  Tue, 10 Aug 2010 01:00:23 +0200
 
+live-config (2.0.15-1) unstable; urgency=low
+
+  * Removing systemd support for 2.0 branch (Closes: #608326).
+  * Tightening grep call for live user in /etc/passwd to not fail with
+    false-positives.
+  * Removing headers in copyright file.
+  * Updating year in copyright.
+  * Updating year in manpage, examples and script files.
+  * Correcting hostname typo in manpages.
+  * Adding Italian manpage translation from skizzhg <skizzhg@gmx.com>.
+
+ -- Daniel Baumann <daniel@debian.org>  Tue, 25 Jan 2011 08:16:12 +0100
+
+live-config (2.0.14-1) unstable; urgency=medium
+
+  [ Nick Niktaris ]
+  * Also depend on xdg-user-dirs in KDE4 specifics of debian-installer-
+    launcher script.
+
+ -- Daniel Baumann <daniel@debian.org>  Mon, 06 Dec 2010 11:30:53 +0100
+
+live-config (2.0.13-1) unstable; urgency=medium
+
+  [ Steven Shiau ]
+  * Adding missing argument in ssh_keygen calls in openssh-server
+    script.
+
+  [ Daniel Baumann ]
+  * Correct debian-installer-launcher script for KDE4, thanks to Nick
+    Niktaris <niktaris@knoppel.org>.
+  * Removing my previously wrongly dublicated chown call in debian-
+    installer-launcher script.
+  * Correcting install call for kde desktop file in debian-installer-
+    launcher script.
+
+ -- Daniel Baumann <daniel@debian.org>  Mon, 29 Nov 2010 23:23:12 +0100
+
+live-config (2.0.12-1) unstable; urgency=medium
+
+  * Adding openssh-server config script to regenerate ssh keys on boot.
+
+ -- Daniel Baumann <daniel@debian.org>  Mon, 22 Nov 2010 23:00:11 +0100
+
+live-config (2.0.11-1) unstable; urgency=medium
+
+  * Removing deep link to bug page in the manual, since we don't have
+    stable references yet.
+  * Correcting email address in previous changelog entry.
+
+ -- Daniel Baumann <daniel@debian.org>  Thu, 28 Oct 2010 10:05:52 +0200
+
+live-config (2.0.10-1) unstable; urgency=medium
+
+  * Disabling xinit hack when using persistency and another display
+    manager has been configured (Closes: #601235).
+
+ -- Daniel Baumann <daniel@debian.org>  Wed, 27 Oct 2010 21:20:45 +0200
+
+live-config (2.0.9-1) unstable; urgency=medium
+
+  * Don't compress example files in /usr/share/doc.
+  * Updating gdm3 check to make autologin work again with gdm3 2.30.5-4.
+
+ -- Daniel Baumann <daniel@debian.org>  Thu, 21 Oct 2010 11:12:37 +0200
+
+live-config (2.0.8-1) unstable; urgency=medium
+
+  [ Daniel Baumann ]
+  * Adding forgotten config= shortcut in argument parsing.
+  * Using medium as keyword instead of media in hook script, as
+    documented in the manpage (Closes: #598375).
+  * Correctly prepending local hooks with file:// prefix (Closes:
+    #598375).
+
+  [ Scott Barker ]
+  * Fixing typo in config.d files parsing from live media (Closes:
+    #598536).
+
+  [ Daniel Baumann ]
+  * Correcting another typo in hooks config script regarding the loop
+    variable.
+  * Simplyfing and silencing switch between local and remote files in
+    hooks script.
+  * Simplyfing sed call when using local hook scripts.
+
+ -- Daniel Baumann <daniel@debian.org>  Sat, 02 Oct 2010 10:12:13 +0200
+
+live-config (2.0.7-1) unstable; urgency=medium
+
+  [ Daniel Baumann ]
+  * Correcting typo in persistent file of apport and ureadahead scripts.
+  * Also allowing short names for live-config and live-noconfig
+    parameters.
+  * Correcting accidentally reverted change of live user uid from 999 to
+    1000.
+
+  [ intrigeri ]
+  * Correcting typo in console-common script.
+
+ -- Daniel Baumann <daniel@debian.org>  Sun, 26 Sep 2010 09:01:09 +0200
+
+live-config (2.0.6-1) unstable; urgency=low
+
+  * Applying patch from Jonathan Riddell <jriddell@ubuntu.com> to
+    disable some new akonadi services in kde-services script.
+  * Adding xinit config script.
+  * Adding xinit script in manpages.
+  * Renumbering config scripts for xinit.
+  * Renaming xinit.sh to zz-xinit.sh in /etc/profile.d to ensure it is
+    run last.
+
+ -- Daniel Baumann <daniel@debian.org>  Wed, 15 Sep 2010 12:07:37 +0200
+
+live-config (2.0.5-1) unstable; urgency=low
+
+  * Disabling kaboom in user context.
+  * Using double-hashes as meta-comment sign.
+  * Updating standards version of example package to 3.9.1.
+  * Updating uinstall targets in makefile.
+  * Correcting wrong spelling of debconf frontend in xserver-xorg
+    script.
+  * Updating /etc/hosts handling in hostname config script for squeeze.
+
+ -- Daniel Baumann <daniel@debian.org>  Mon, 06 Sep 2010 15:04:05 +0200
+
+live-config (2.0.4-1) unstable; urgency=low
+
+  * Using config.d instead of config.conf.d as directory name for custom
+    configuration files.
+  * Updating live-installer-launcher script for debian-installer-
+    launcher rename.
+
+ -- Daniel Baumann <daniel@debian.org>  Thu, 02 Sep 2010 22:33:04 +0200
+
+live-config (2.0.3-1) unstable; urgency=low
+
+  * Updating live-build reference in live-config manpage.
+  * Renumbering config scripts.
+  * Rewriting TODO file.
+
+ -- Daniel Baumann <daniel@debian.org>  Thu, 02 Sep 2010 18:35:50 +0200
+
+live-config (2.0.2-1) unstable; urgency=low
+
+  * Downgrading runit-run depends to suggests as asked by release team.
+
+ -- Daniel Baumann <daniel@debian.org>  Sat, 21 Aug 2010 23:41:45 +0200
+
+live-config (2.0.1-1) unstable; urgency=low
+
+  [ Daniel Baumann ]
+  * Only run x-session-manager parts when x-session-manager is set.
+
+  [ intrigeri ]
+  * Removing spurious copy/pasted line in xserver-xorg script.
+
+  [ Daniel Baumann ]
+  * Using dpkg-reconfigure instead of dexconf in xserver-xorg script
+    (Closes: #592510).
+
+ -- Daniel Baumann <daniel@debian.org>  Sat, 14 Aug 2010 20:06:21 +0200
+
 live-config (2.0.0-1) unstable; urgency=low
 
   * Improving grammar in the last changelog entry.
