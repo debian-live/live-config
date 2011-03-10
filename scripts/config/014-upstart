@@ -1,0 +1,56 @@
+#!/bin/sh
+
+## live-config(7) - System Configuration Scripts
+## Copyright (C) 2006-2011 Daniel Baumann <daniel@debian.org>
+## Copyright (C) 2011 Marco Amadori <marco.amadori@gmail.com>
+##
+## live-config comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
+## This is free software, and you are welcome to redistribute it
+## under certain conditions; see COPYING for details.
+
+
+Upstart ()
+{
+	# Checking if package is installed or already configured
+	if [ ! -e /var/lib/dpkg/info/upstart.list ] || \
+	   [ -e /var/lib/live/config/upstart ]
+	then
+		return
+	fi
+
+	echo -n " upstart"
+
+	Configure_upstart
+}
+
+Configure_upstart ()
+{
+	for ttyfile in /etc/init/tty*
+	do
+		ttynum=$(basename "${ttyfile}" .conf)
+
+		# mingetty has autologin support
+		if grep -qs '^exec.*mingetty' || [ -e /sbin/mingetty ]
+		then
+			sed -i -e 's|^\(exec.*getty\) *\(--autologin *[^ ]* *\)*.*$|exec /sbin/mingetty --autologin '"${LIVE_USERNAME} ${ttynum}|g" "${ttyfile}"
+		else
+			# substitute getty with a direct login
+			sed -i -e 's|^exec.*getty.*$|exec /bin/login -f '"${LIVE_USERNAME} </dev/${ttynum} >/dev/${ttynum} 2>\&1|" "${ttyfile}"
+		fi
+	done
+
+	init q
+
+	for ttyfile in /etc/init/tty*
+	do
+		ttynum=$(basename "${ttyfile}" .conf)
+		echo "reload ${ttynum}"
+		stop $ttynum
+		start $ttynum
+	done
+
+	# Creating state file
+	touch /var/lib/live/config/upstart
+}
+
+Upstart
