@@ -76,8 +76,14 @@ Configure_xserver_xorg ()
 
 	if [ -n "${LIVE_XORG_DRIVER}" ]
 	then
-		echo "xserver-xorg xserver-xorg/autodetect_video_card" >> /tmp/debconf.live
-		echo "xserver-xorg xserver-xorg/config/device/driver ${LIVE_XORG_DRIVER}" >> /tmp/debconf.live
+
+cat > /etc/X11/xorg.conf.d/99-live_driver.conf << EOF
+Section "Device"
+	Identifier	"Default screen"
+	Driver		"${LIVE_XORG_DRIVER}"
+EndSection
+EOF
+
 	fi
 
 	if [ -n "${LIVE_XORG_RESOLUTION}" ]
