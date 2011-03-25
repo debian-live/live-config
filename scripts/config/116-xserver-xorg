@@ -88,7 +88,7 @@ EOF
 
 	if [ -n "${LIVE_XORG_RESOLUTION}" ]
 	then
-		echo "xrandr -s ${LIVE_XORG_RESOLUTION} || /bin/true" >> /root/etc/X11/Xsession.d/21xvidemode
+		echo "xrandr -s ${LIVE_XORG_RESOLUTION} || /bin/true" >> /etc/X11/Xsession.d/21xvidemode
 	else
 		rm -f /etc/X11/Xsession.d/21xvidemode
 	fi
