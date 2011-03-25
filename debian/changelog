@@ -1,3 +1,14 @@
+live-config (3.0~a18-1) unstable; urgency=low
+
+  * Renumbering upstart script.
+  * Fixing various things in upstart script.
+  * Updating xserver-xorg script for setting the driver selection
+    (Closes: #618316).
+  * Correcting wrong path for resolution handling in xserver-xorg script
+    (Closes: #618394).
+
+ -- Daniel Baumann <daniel@debian.org>  Fri, 25 Mar 2011 12:40:52 +0100
+
 live-config (3.0~a17-1) unstable; urgency=low
 
   * Adding old 2.x changelog entries in debian changelog.
