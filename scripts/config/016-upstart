@@ -24,28 +24,29 @@ Upstart ()
 
 Configure_upstart ()
 {
-	for ttyfile in /etc/init/tty*
+	for _FILE in /etc/init/tty*
 	do
-		ttynum=$(basename "${ttyfile}" .conf)
+		_TTY="$(basename ${_FILE} .conf)"
 
 		# mingetty has autologin support
-		if grep -qs '^exec.*mingetty' || [ -e /sbin/mingetty ]
+		if [ -e /sbin/mingetty ] || grep -qs '^exec.*mingetty' "${_FILE}"
 		then
-			sed -i -e 's|^\(exec.*getty\) *\(--autologin *[^ ]* *\)*.*$|exec /sbin/mingetty --autologin '"${LIVE_USERNAME} ${ttynum}|g" "${ttyfile}"
+			sed -i -e 's|^\(exec.*getty\) *\(--autologin *[^ ]* *\)*.*$|exec /sbin/mingetty --autologin '"${LIVE_USERNAME} ${_TTY}|g" "${_FILE}"
 		else
 			# substitute getty with a direct login
-			sed -i -e 's|^exec.*getty.*$|exec /bin/login -f '"${LIVE_USERNAME} </dev/${ttynum} >/dev/${ttynum} 2>\&1|" "${ttyfile}"
+			sed -i -e 's|^exec.*getty.*$|exec /bin/login -f '"${LIVE_USERNAME} </dev/${_TTY} >/dev/${_TTY} 2>\&1|" "${_FILE}"
 		fi
 	done
 
 	init q
 
-	for ttyfile in /etc/init/tty*
+	for _FILE in /etc/init/tty*
 	do
-		ttynum=$(basename "${ttyfile}" .conf)
-		echo "reload ${ttynum}"
-		stop $ttynum
-		start $ttynum
+		_TTY="$(basename ${_FILE} .conf)"
+
+		# reloading
+		stop ${_TTY}
+		start ${_TTY}
 	done
 
 	# Creating state file
