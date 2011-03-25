@@ -26,8 +26,15 @@ _RELEASE="$(lsb_release -cs | tr [A-Z] [a-z])"
 echo "Removing unused scripts..."
 
 case "${_DISTRIBUTION}" in
-	debian|progress)
+	debian)
 		# Removing ubuntu scripts
+		rm -f "${_DIRECTORY}"/*-apport
+		rm -f "${_DIRECTORY}"/*-ureadahead
+		;;
+
+	progress)
+		# Removing ubuntu scripts
+		rm -f "${_DIRECTORY}"/*-upstart
 		rm -f "${_DIRECTORY}"/*-apport
 		rm -f "${_DIRECTORY}"/*-ureadahead
 		;;
