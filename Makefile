@@ -2,7 +2,7 @@
 
 SHELL := sh -e
 
-LANGUAGES = de fr pt_BR
+LANGUAGES = en $(shell cd manpages/po && ls)
 
 SCRIPTS = bin/* scripts/*.sh scripts/*/*
 
