@@ -6,7 +6,7 @@
 override_dh_auto_install:
 	dh_auto_install -- DESTDIR=debian/live-config
 
-	# removing unused files
+	# Removing unused files
 	rm -f debian/live-config/usr/share/doc/live-config/COPYING
 	bin/live-config-update debian/live-config/lib/live/config
 
