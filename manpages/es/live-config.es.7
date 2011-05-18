@@ -11,28 +11,27 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 2011\-03\-25 3.0~a18 "Proyecto Debian Live"
+.TH LIVE\-CONFIG 7 18.05.2011 3.0~a19 "Proyecto Debian Live"
 
 .SH NOMBRE
 \fBlive\-config\fP \- Scripts de configuración del sistema
 
 .SH DESCRIPCIÓN
 \fBlive\-config\fP contiene los scripts que configuran un sistema Debian en vivo
-durante el proceso de arranque (late userspace)
+durante el proceso de arranque (late userspace).
 
 .SH CONFIGURACIÓN
 \fBlive\-config\fP se puede configurar mediante parámetros durante el proceso de
-arranque o mediante archivos de configuración. Si se usan ambos métodos para
+arranque o mediante ficheros de configuración. Si se usan ambos métodos para
 una misma opción, los parámetros de arranque tienen preferencia sobre los
-archivos de configuración. Cuando se usa en modo guardar cambios
-(«persistency» N. del T.), los scripts \fBlive\-config\fP sólo se ejecutan una
-vez.
+ficheros de configuración. Cuando se usa en modo persistente, los scripts
+\fBlive\-config\fP sólo se ejecutan una vez.
 
 .SS "Parámetros de arranque (scripts)"
 \fBlive\-config\fP sólo se activa si se usa como parámetro de arranque
-«boot=live». Adicionalmente, hay que especificar a \fBlive\-config\fP que
-scripts tiene que ejecutar durante el parámetro «live\-config» o qué scripts
-no tiene que ejecutar durante la opción «live\-noconfig». Si se usan las dos
+«boot=live». Adicionalmente, se debe especificar a \fBlive\-config\fP qué
+scripts tiene que ejecutar mediante el parámetro «live\-config» o qué scripts
+no tiene que ejecutar mediante la opción «live\-noconfig». Si se usan las dos
 opciones «live\-config» y «live\-noconfig» a la vez, o si alguna de las dos se
 especifica varias veces, la última tiene prioridad sobre las anteriores.
 
@@ -40,45 +39,45 @@ especifica varias veces, la última tiene prioridad sobre las anteriores.
 Se ejecutan todos los scripts. Esto es lo que las imágenes Debian en vivo
 usan por omisión.
 .IP \fBlive\-config\fP=\fISCRIPT1\fP,\fISCRIPT2\fP,·...·\fISCRIPTn\fP·|·\fBconfig\fP=\fISCRIPT1\fP,\fISCRIPT2\fP,·...·\fISCRIPTn\fP 4
-Sólo se ejecutan los scripts especificados. Tenga en cuenta que el orden
-importa. p.ej. «live\-config=sudo,user\-setup» no funcionaría ya que el
-usuario debe añadirse antes de configurarse como «sudo». Mire los nombres de
-los archivos en /lib/live/config para ver su orden.
+Sólo se ejecutan los scripts especificados. Se debe tener en cuenta que el
+orden es importante. p.ej. «live\-config=sudo,user\-setup» no funcionaría ya
+que el usuario debe añadirse antes de configurarse como «sudo». Puede
+revisarse los nombres de los scripts en /lib/live/config para ver su orden.
 .IP "\fBlive\-noconfig\fP | \fBnoconfig\fP" 4
 No se ejecuta ningún script. Es lo mismo que no usar ninguno de
-«live\-config» o usar «live\-noconfig»
+«live\-config» o «live\-noconfig».
 .IP \fBlive\-noconfig\fP=\fISCRIPT1\fP,\fISCRIPT2\fP,·...·\fISCRIPTn\fP·|·\fBnoconfig\fP=\fISCRIPT1\fP,\fISCRIPT2\fP,·...·\fISCRIPTn\fP 4
 Se ejecutan todos los scripts, a excepción de los especificados.
 
 .SS "Parámetros de arranque (opciones)"
-Algunos scripts determidados pueden cambiar su comportamiento según los
-parámetros de arranque.
+Algunos scripts pueden cambiar su comportamiento según un parámetro de
+arranque.
 
 .IP "\fBlive\-config.hostname\fP=\fIHOSTNAME\fP | \fBhostname\fP=\fIHOSTNAME\fP" 4
-Permite establecer el nombre de usuario del sistema. Por omisión es
-«debian».
+Permite establecer el hostname del sistema. Por omisión es «debian».
 .IP "\fBlive\-config.username\fP=\fIUSERNAME\fP | \fBusername\fP=\fIUSERNAME\fP" 4
 Permite establecer el nombre del usuario que se crea para iniciar sesión de
 forma automática. Por omisión es «user».
 .IP "\fBlive\-config.user\-fullname\fP=\(dq\fIUSER FULLNAME\fP\(dq | \fBuser\-fullname\fP=\(dq\fIUSER·FULLNAME\fP\(dq" 4
-Permite establecer el nombre completo de los usuarios que se crean para
-iniciar sesión de forma automática. Por omisión es «Debian Live user».
+Permite establecer el nombre completo del usuario que se crea para iniciar
+sesión de forma automática. Por omisión es «Debian Live user».
 .IP "\fBlive\-config.locales\fP=\fILOCALE1\fP,\fILOCALE2\fP·...·\fILOCALEn\fP | \fBlocales\fP=\fILOCALE1\fP,\fILOCALE2\fP·...·\fILOCALEn\fP" 4
-Permite establecer las localizaciones del sistema, p.ej. «de_CH.UTF\-8». Por
-omisión es «en_US.UTF\-8». En caso de que las localizaciones no estén
-disponibles en el sistema, éstas se generan sobre la marcha.
+Permite establecer las variantes locales del sistema,
+p.ej. «es_ES.UTF\-8». Por omisión es «en_US.UTF\-8». En caso de que las
+variantes locales no estén disponibles en el sistema, se generarán sobre la
+marcha.
 .IP "\fBlive\-config.timezone\fP=\fITIMEZONE\fP | \fBtimezone\fP=\fITIMEZONE\fP" 4
-Permite establecer la zona horaria del sistema, p.ej. «Europa/Zurich». Por
+Permite establecer la zona horaria del sistema, p.ej. «Europa/Madrid». Por
 omisión es «UTC».
 .IP "\fBlive\-config.utc\fP=\fByes\fP|no | \fButc\fP=\fByes\fP|no" 4
-Permite realizar cambios si el sistema considera que el reloj de la máquina
-está ajustado al UTC o no. Por omisión es «Sí».
+Permite cambiar si el sistema debe asumir que el reloj de la máquina está
+ajustado a la hora UTC o no. Por omisión es «Si».
 .IP "\fBlive\-config.keyboard\-model\fP=\fIKEYBOARD_MODEL\fP | \fBkeyboard\-model\fP=\fIKEYBOARD_MODEL\fP" 4
 Permite cambiar el modelo de teclado. No hay ningún valor por omisión.
 .IP "\fBlive\-config.keyboard\-layouts\fP=\fIKEYBOARD_LAYOUT1\fP,\fIKEYBOARD_LAYOUT2\fP ... \fIKEYBOARD_LAYOUTn\fP | \fBkeyboard\-layouts\fP=\fIKEYBOARD_LAYOUT1\fP,\fIKEYBOARD_LAYOUT2\fP ... \fIKEYBOARD_LAYOUTn\fP" 4
-Permite cambiar la disposición del teclado. Si usted especifica más de una,
-las herramientas del entorno de escritorio le permitirán cambiarlas bajo
-X11. No hay ningún valor por omisión.
+Permite cambiar la disposición del teclado. Si se especifica más de una, las
+herramientas de escritorio permitirán cambiarlas bajo X11. No hay ningún
+valor por omisión.
 .IP "\fBlive\-config.keyboard\-variant\fP=\fIKEYBOARD_VARIANT\fP | \fBkeyboard\-variant\fP=\fIKEYBOARD_VARIANT\fP" 4
 Permite cambiar la variante del teclado. No hay ningún valor por omisión.
 .IP "\fBlive\-config.keyboard\-options\fP=\fIKEYBOARD_OPTIONS\fP | \fBkeyboard\-options\fP=\fIKEYBOARD_OPTIONS\fP" 4
@@ -95,13 +94,13 @@ automática.
 Permite seleccionar la resolución de xorg en lugar de detectarla de forma
 automática.
 .IP "\fBlive\-config.hooks\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP | \fBhooks\fP=medium|filesystem|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
-Permite buscar y ejecutar uno o más archivos de forma arbitraria. Tenga en
-cuenta que las URLs deben ser descargadas usando wget (http, ftp o
-archivo://), los archivos se ejecutan en /tmp del sistema en ejecución en
-vivo y que los archivos necesitan, si tienen dependencias, tenerlas
+Permite buscar y ejecutar uno o más archivos de forma arbitraria. Tener en
+cuenta que las URLs deben ser descargadas usando wget (http, ftp o file://),
+los ficheros se ejecutan en el directorio /tmp del sistema en ejecución en
+vivo y que los ficheros necesitan, si tienen dependencias, tenerlas
 resueltas. p.ej. Si se debe ejecutar un script en python, el sistema
-necesita tener python instalado. Hay algunos ganchos («hooks» N. del T.)
-para varios casos de uso común disponibles en
+necesita tener python instalado. Hay algunos scripts gancho («hooks» N. del
+T.) para varios casos de uso común disponibles en
 /usr/share/doc/live\-config/examples/hooks/ y en
 <\fIhttp://live.debian.net/other/hooks\fP>.
 .br
@@ -109,20 +108,20 @@ Si el archivo está en el medio en vivo, se puede obtener con
 file:///live/image/\fIFILE\fP, o con file:///\fIFILE\fP si se encuentra en el
 directorio raíz del sistema en vivo.
 .br
-Todos los ganchos de /lib/live/hooks/ del directorio raíz del sistema en
-vivo pueden activarse con la palabra clave «filesystem».
+Todos los scripts gancho de /lib/live/hooks/ del directorio raíz del sistema
+en vivo pueden activarse con la palabra clave «filesystem».
 .br
-Todos los ganchos de /live/hooks/ del medio en vivo pueden activarse con la
-palabra clave «medium».
+Todos los scripts gancho de /live/hooks/ del medio en vivo pueden activarse
+con la palabra clave «medium».
 .br
-Si se combinan varios mecanismos, los ganchos del sistema de archivos se
-ejecutan primero, después los del medio, y en último lugar los de la red.
+Si se combinan varios mecanismos, los scripts gancho del sistema de archivos
+se ejecutan primero, después los del medio, y en último lugar los de red.
 
 .SS "Parámetros de arranque (atajos)"
-Para algunos casos de uso común en los que es necesario combinar
-variosparámetros individuales, \fBlive\-config\fP proporciona atajos. Esto
-permite tener control total sobre todas las opciones así como poder hacer
-las cosas de forma sencilla.
+Para algunos casos de uso común en los que es necesario combinar varios
+parámetros individuales, \fBlive\-config\fP proporciona atajos. Esto permite
+tener control total sobre todas las opciones así como poder hacer las cosas
+de forma sencilla.
 
 .IP "\fBlive\-config.noroot\fP | \fBnoroot\fP" 4
 Desactiva sudo y PolicyKit, el usuario no puede obtener privilegios de
@@ -141,26 +140,27 @@ sin afectar el inicio de sesión automático en un terminal tty.
 Para casos de uso especial hay algunos parámetros de arranque especiales.
 
 .IP "\fBlive\-config.debug\fP | \fBdebug\fP" 4
-Permite la creación de informes de errores en live\-config.
+Activa la información sobre errores («debug output» N.del T.) en
+live\-config.
 
-.SS "Archivos de configuración"
-\fBlive\-config\fP se puede configurar (pero no activar) mediante archivos de
+.SS "Ficheros de configuración"
+\fBlive\-config\fP se puede configurar (pero no activar) mediante ficheros de
 configuración. Todo, excepto los atajos que se pueden configurar con un
 parámetro de arranque, puede ser, alternativamente, configurado a través de
-uno o más archivos. Si se usan los archivos de configuración, el parámetro
-«boot = live» es necesario para activar \fBlive\-config\fP.
+uno o más ficheros. Aunque se utilicen los ficheros de configuración, el
+parámetro «boot =live» es necesario para activar \fBlive\-config\fP.
 .PP
-Los archivos de configuración se pueden colocar en el sistema de archivo
+Los ficheros de configuración se pueden colocar en el sistema de ficheros
 raíz (/etc/live/config.conf, /etc/live/config.d/), o en el medio en vivo
 (live/config.conf, live/config.d/). Si ambos directorios se utilizan para
 una determinada opción, la del medio en vivo tienen prioridad sobre la del
-sistema de archivos raíz.
+sistema de ficheros raíz.
 .PP
-Aunque los archivos de configuración situados en los directorios conf.d no
+Aunque los ficheros de configuración situados en los directorios conf.d no
 requieren un nombre o sufijo en concreto, se sugiere por unificación usar
 como nomenclatura «vendor.conf» o «project.conf» (Siempre que «vendor» o
 «project» se sustituya por el nombre real, lo que resultará en un nombre de
-archivo como «debian\-eeepc.conf»).
+fichero como «debian\-eeepc.conf»).
 
 .IP "\fBLIVE_CONFIGS\fP=\fISCRIPT1\fP,\fISCRIPT2\fP, ... \fISCRIPTn\fP" 4
 Esta variable es igual al parámetro
@@ -209,11 +209,11 @@ Esta variable es igual al parámetro
 \&'\fBlive\-config.hooks\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP'
 
 .SH PERSONALIZACIÓN
-\fBlive\-config\fP puede ser fácilmente personalizado para proyectos análogos o
+\fBlive\-config\fP puede ser fácilmente personalizado para proyectos derivados o
 de uso local.
 
 .SS "Añadiendo nuevos scripts de configuración"
-Los proyectos análogos pueden incluir sus scripts en /lib/live/config y sin
+Los proyectos derivados pueden incluir sus scripts en /lib/live/config y sin
 necesidad de hacer otra cosa, las secuencias de comandos se ejecutarán
 automáticamente durante el proceso de arranque.
 .PP
@@ -223,16 +223,16 @@ un script de ejemplo.
 
 .SS "Eliminación de los scripts de configuración existentes."
 No es realmente posible eliminar los scripts en sí de una manera sensata sin
-incluir un paquete \fBlive\-config\fP modificado localmente. Sin embargo, el
-mismo propósito puede lograrse mediante la desactivación de los scripts
-correspondientes a través del mecanismo live\-noconfig, véase más
-arriba. Para evitar que siempre haga falta especificar qué scripts se
-desactivan a través del parámetro de arranque, debería usarse un archivo de
+incluir un paquete \fBlive\-config\fP modificado localmente. Sin embargo, se
+puede obtener el mismo resultado si se desactivan los scripts
+correspondientes a través del mecanismo live\-noconfig, como se ha indicado
+anteriormente. Para evitar que siempre haga falta especificar qué scripts se
+desactivan a través del parámetro de arranque, debería usarse un fichero de
 configuración, véase más arriba.
 .PP
-Lo ideal sería incluir los archivos de configuración para el sistema en vivo
-dentro de un paquete debian. Puede encontrar un paquete de muestra con un
-ejemplo de configuración  en /usr/share/doc/live\-config/examples.
+Lo ideal sería incluir los ficheros de configuración para el sistema en vivo
+dentro de un paquete debian. Se puede encontrar un paquete de muestra con un
+ejemplo de configuración en /usr/share/doc/live\-config/examples.
 
 .SH SCRIPTS
 \fBlive\-config\fP incluye los siguientes scripts en /lib/live/config.
@@ -244,7 +244,7 @@ Añade una cuenta de usuario en vivo.
 .IP \fBsudo\fP 4
 garantiza privilegios de sudo al usuario del sistema en vivo.
 .IP \fBlocales\fP 4
-configura las localizaciones.
+configura las variantes locales.
 .IP \fBtzdata\fP 4
 configura /etc/timezone.
 .IP \fBgdm\fP 4
@@ -266,9 +266,9 @@ configura el teclado.
 .IP \fBsysvinit\fP 4
 configura sysvinit.
 .IP \fBsysv\-rc\fP 4
-configura sysv\-rc deshabilitando los sevicios listados.
+configura sysv\-rc desactivando los sevicios listados.
 .IP \fBlogin\fP 4
-Inhabilita lastlog.
+Desactiva lastlog.
 .IP "\fBapport\fP (ubuntu solamente)" 4
 Desactiva apport.
 .IP \fBgnome\-panel\-data\fP 4
@@ -278,8 +278,8 @@ Desactiva la hibernación.
 .IP \fBgnome\-screensaver\fP 4
 Impide que el salvapantallas bloquee la pantalla.
 .IP \fBinitramfs\-tools\fP 4
-Posibilita que update\-initramfs actualize también los medios en vivo cuando
-se usan en modo guardar cambios. («persistency» N. del T.)
+Posibilita que update\-initramfs actualice también los medios en vivo cuando
+se usan en modo persistente.
 .IP \fBkaboom\fP 4
 Desactiva el asistente de migración de KDE (Squeeze y superior).
 .IP \fBkde\-services\fP 4
@@ -299,18 +299,18 @@ Desactiva anacron.
 .IP \fButil\-linux\fP 4
 Desactiva util\-linux' hwclock.
 .IP \fBlogin\fP 4
-Inhabilita lastlog.
+Desactiva lastlog.
 .IP \fBxserver\-xorg\fP 4
 configura xserver\-xorg.
 .IP "\fBureadahead\fP (ubuntu solamente)" 4
 Desactiva ureadahead.
 .IP \fBopenssh\-server\fP 4
-Recrea las claves del anfitrión openssh\-server.
+Recrea las claves  openssh\-server.
 .IP \fBhooks\fP 4
-permite ejecutar de forma arbitraria los comandos de un script desde el
-medio en vivo o desde un servidor http/ftp.
+permite ejecutar de forma arbitraria los comandos desde un script ubicado en
+el medio en vivo o en un servidor http/ftp.
 
-.SH ARCHIVOS
+.SH FICHEROS
 .IP \fB/etc/live/config.conf\fP 4
 .IP \fB/etc/live/config.d/\fP 4
 .IP \fBlive/config.conf\fP 4
@@ -331,12 +331,11 @@ Se puede encontrar más información acerca de live\-config y el proyecto
 Debian Live en la página principal de <\fIhttp://live.debian.net/\fP> y
 en el manual en <\fIhttp://live.debian.net/manual/\fP>.
 
-.SH FALLOS
+.SH ERRORES
 Se puede notificar los fallos enviando un informe de errores («bugreport»
 N. del T.) sobre el paquete live\-config en el Debian Bug Tracking System en
-<\fIhttp://bugs.debian.org/\fP> oescribiendo un mensaje a la lista de
+<\fIhttp://bugs.debian.org/\fP> o escribiendo un mensaje a la lista de
 correo de Debian Live en <\fIdebian\-live@lists.debian.org\fP>.
 
 .SH AUTOR
-live\-config fue escrito por Daniel Baumann <\fIdaniel@debian.org\fP>
-parael proyecto Debian.
+live\-config fue escrito por Daniel Baumann <\fIdaniel@debian.org\fP>.

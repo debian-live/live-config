@@ -4,8 +4,8 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: live-config 3.0~a17\n"
-"POT-Creation-Date: 2011-03-25 12:38+0100\n"
+"Project-Id-Version: live-config 3.0~a19\n"
+"POT-Creation-Date: 2011-05-18 19:13+0300\n"
 "PO-Revision-Date: 2010-05-24 09:59+0300\n"
 "Last-Translator: Thierry Lépicier <thierry.lepicier@free.fr>\n"
 "Language-Team: none\n"
@@ -24,14 +24,14 @@ msgstr "LIVE-CONFIG"
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "2011-03-25"
-msgstr "25.03.2011"
+msgid "2011-05-18"
+msgstr "18.05.2011"
 
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "3.0~a18"
-msgstr "3.0~a18"
+msgid "3.0~a19"
+msgstr "3.0~a19"
 
 #. type: TH
 #: en/live-config.7:9
@@ -1413,8 +1413,6 @@ msgstr "AUTEUR"
 #. type: Plain text
 #: en/live-config.7:242
 msgid ""
-"live-config was written by Daniel Baumann E<lt>I<daniel@debian.org>E<gt> for "
-"the Debian project."
+"live-config was written by Daniel Baumann E<lt>I<daniel@debian.org>E<gt>."
 msgstr ""
-"live-config a été conçu par Daniel Baumann E<lt>I<daniel@debian.org>E<gt> "
-"pour le projet Debian."
+"live-config a été conçu par Daniel Baumann E<lt>I<daniel@debian.org>E<gt>."
