@@ -1,3 +1,18 @@
+live-config (3.0~a19-1) unstable; urgency=low
+
+  * Updating script selection for progress.
+  * Updating to standards version 3.9.2.
+  * Adding updated Spanish manpage translation from Carlos Zuferri chals
+    <chals@altorricon.com> and José Luis Zabalza <jlz.3008@gmail.com>.
+  * Correcting top-level makefile to automatically get all the supported
+    languages, rather than defining a static list.
+  * Making copyright file distribution neutral.
+  * Starting comments in rules with upper-case for consistency.
+  * Making manpages distribution neutral.
+  * Making copyright file of example package distribution neutral.
+
+ -- Daniel Baumann <daniel@debian.org>  Wed, 18 May 2011 19:14:52 +0200
+
 live-config (3.0~a18-1) unstable; urgency=low
 
   * Renumbering upstart script.
