@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config 3.0~a17\n"
-"POT-Creation-Date: 2011-05-08 16:44+0300\n"
+"POT-Creation-Date: 2011-05-18 19:07+0300\n"
 "PO-Revision-Date: 2011-05-07 19:51+0100\n"
 "Last-Translator: José Luis Zabalza <jlz.3008@gmail.com> and Carlos Zuferri "
 "\"chals\" <chals@altorricon.com>\n"
@@ -25,8 +25,8 @@ msgstr "LIVE-CONFIG"
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "2011-05-08"
-msgstr "08.05.2011"
+msgid "2011-05-18"
+msgstr "18.05.2011"
 
 #. type: TH
 #: en/live-config.7:9
@@ -1402,8 +1402,6 @@ msgstr "AUTOR"
 #. type: Plain text
 #: en/live-config.7:242
 msgid ""
-"live-config was written by Daniel Baumann E<lt>I<daniel@debian.org>E<gt> for "
-"the Debian project."
+"live-config was written by Daniel Baumann E<lt>I<daniel@debian.org>E<gt>."
 msgstr ""
-"live-config fue escrito por Daniel Baumann E<lt>I<daniel@debian.org>E<gt> "
-"para el proyecto Debian."
+"live-config fue escrito por Daniel Baumann E<lt>I<daniel@debian.org>E<gt>."

@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config VERSION\n"
-"POT-Creation-Date: 2011-05-08 16:44+0300\n"
+"POT-Creation-Date: 2011-05-18 19:07+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,7 +25,7 @@ msgstr ""
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "2011-05-08"
+msgid "2011-05-18"
 msgstr ""
 
 #. type: TH
@@ -1255,6 +1255,5 @@ msgstr ""
 #. type: Plain text
 #: en/live-config.7:242
 msgid ""
-"live-config was written by Daniel Baumann E<lt>I<daniel@debian.org>E<gt> for "
-"the Debian project."
+"live-config was written by Daniel Baumann E<lt>I<daniel@debian.org>E<gt>."
 msgstr ""
