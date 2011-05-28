@@ -24,7 +24,10 @@
 
 case "${1}" in
 	start)
-		/lib/live/config.sh
+		if [ -e /lib/live/config.sh ]
+		then
+			/lib/live/config.sh
+		fi
 		;;
 
 	force-reload|restart|stop)
