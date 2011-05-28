@@ -1,3 +1,11 @@
+live-config (3.0~a20-1) unstable; urgency=low
+
+  * Updating initscripts to not fail when package is removed (Closes:
+    #628131).
+  * Updating examples README.
+
+ -- Daniel Baumann <daniel@debian.org>  Sat, 28 May 2011 08:12:45 +0200
+
 live-config (3.0~a19-1) unstable; urgency=low
 
   * Updating script selection for progress.
