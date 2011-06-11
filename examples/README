@@ -1,8 +1,8 @@
 live-config-foobar Example
 --------------------------
 
-Best practise for downstream projects is to ship their custom live-config
-scripts in an own debian package.
+Best practise for downstream projects and derivatives is to ship their custom
+live-config scripts in an own debian package.
 
 The following live-config-foobar example package should be used as a starting
 point. The following things should minimally be changed:
