@@ -1,3 +1,12 @@
+live-config (3.0~a21-1) unstable; urgency=low
+
+  * Removing accidentally twice included English files when installing
+    manpages.
+  * Update wording in live-config-foobar example readme file.
+  * Using project email in upstart job.
+
+ -- Daniel Baumann <daniel@debian.org>  Sat, 11 Jun 2011 11:18:42 +0200
+
 live-config (3.0~a20-1) unstable; urgency=low
 
   * Updating initscripts to not fail when package is removed (Closes:
