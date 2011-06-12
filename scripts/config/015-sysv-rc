@@ -38,7 +38,7 @@ Configure_sysv_rc ()
 		for SERVICE in $(echo ${LIVE_SYSV_RC} | sed -e 's|,| |g')
 		do
 			update-rc.d -f ${SERVICE} remove | \
-			grep -v "update-rc.d: using dependency based boot sequencing"
+			grep -v "update-rc.d: using dependency based boot sequencing" || true
 		done
 	fi
 
