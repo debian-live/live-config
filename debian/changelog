@@ -1,3 +1,10 @@
+live-config (3.0~a22-1) unstable; urgency=low
+
+  [ Rui Miguel P. Bernardo ]
+  * Fix non 0 exit status of grep -v ini sysv-rc (Closes: #630329).
+
+ -- Daniel Baumann <daniel@debian.org>  Mon, 13 Jun 2011 09:17:11 +0200
+
 live-config (3.0~a21-1) unstable; urgency=low
 
   * Removing accidentally twice included English files when installing
