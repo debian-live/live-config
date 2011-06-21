@@ -15,7 +15,7 @@ then
 	echo "E: lsb_release - command not found"
 	echo "I: lsb_release can be optained from:"
 	echo "I:   http://www.linux-foundation.org/en/LSB"
-	echo "I: On Debian systems, lsb_release can be installed with:"
+	echo "I: On Debian based systems, lsb_release can be installed with:"
 	echo "I:   apt-get install lsb-release"
 	exit 1
 fi
