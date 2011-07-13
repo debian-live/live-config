@@ -32,7 +32,7 @@ test:
 		echo "W: checkbashisms - command not found"; \
 		echo "I: checkbashisms can be optained from: "; \
 		echo "I:   http://git.debian.org/?p=devscripts/devscripts.git"; \
-		echo "I: On Debian systems, checkbashisms can be installed with:"; \
+		echo "I: On Debian based systems, checkbashisms can be installed with:"; \
 		echo "I:   apt-get install devscripts"; \
 	fi
 
@@ -78,9 +78,9 @@ uninstall:
 
 	# Uninstalling docs
 	rm -rf $(DESTDIR)/usr/share/doc/live-config
-	rmdir --ignore-fail-on-non-empty $(DESTDIR)/usr/share/doc
-	rmdir --ignore-fail-on-non-empty $(DESTDIR)/usr/share
-	rmdir --ignore-fail-on-non-empty $(DESTDIR)/usr
+	rmdir --ignore-fail-on-non-empty $(DESTDIR)/usr/share/doc || true
+	rmdir --ignore-fail-on-non-empty $(DESTDIR)/usr/share || true
+	rmdir --ignore-fail-on-non-empty $(DESTDIR)/usr || true
 
 	# Uninstalling manpages
 	for MANPAGE in manpages/en/*; \
