@@ -1,3 +1,11 @@
+live-config (3.0~a23-1) unstable; urgency=low
+
+  * Making references to debian more distribution neutral.
+  * Splitting out documentation so that it can be accesses separately
+    from the initsystem code.
+
+ -- Daniel Baumann <daniel@debian.org>  Wed, 13 Jul 2011 10:36:29 +0200
+
 live-config (3.0~a22-1) unstable; urgency=low
 
   [ Rui Miguel P. Bernardo ]
