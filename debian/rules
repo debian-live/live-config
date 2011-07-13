@@ -4,11 +4,7 @@
 	dh ${@}
 
 override_dh_auto_install:
-	dh_auto_install -- DESTDIR=debian/live-config
-
-	# Removing unused files
-	rm -f debian/live-config/usr/share/doc/live-config/COPYING
-	bin/live-config-update debian/live-config/lib/live/config
+	dh_auto_install -- DESTDIR=debian/tmp
 
 	# live-config-systemd
 	install -D -m 0644 debian/live-config-systemd.service debian/live-config-systemd/etc/systemd/system/live-config.service
@@ -17,17 +13,24 @@ override_dh_auto_install:
 
 	# live-config-sysvinit
 	mkdir -p debian/live-config-sysvinit/lib/live/config
-	mv debian/live-config/lib/live/config/*-sysvinit debian/live-config-sysvinit/lib/live/config
-	mv debian/live-config/lib/live/config/*-sysv-rc debian/live-config-sysvinit/lib/live/config
+	mv debian/tmp/lib/live/config/*-sysvinit debian/live-config-sysvinit/lib/live/config
+	mv debian/tmp/lib/live/config/*-sysv-rc debian/live-config-sysvinit/lib/live/config
 
 	# live-config-upstart
 	mkdir -p debian/live-config-upstart/lib/live/config
-	mv debian/live-config/lib/live/config/*-upstart debian/live-config-upstart/lib/live/config
+	mv debian/tmp/lib/live/config/*-upstart debian/live-config-upstart/lib/live/config
+
+	# Removing unused files
+	rm -f debian/tmp/usr/share/doc/live-config/COPYING
+	bin/live-config-update debian/tmp/lib/live/config
 
 override_dh_installinit:
 	dh_installinit -p live-config-runit --no-restart-on-upgrade --no-start --update-rcd-params='start 00 S .' --name live-config
 	dh_installinit -p live-config-sysvinit --no-restart-on-upgrade --no-start --update-rcd-params='start 00 S .' --name live-config
 	dh_installinit -p live-config-upstart --no-restart-on-upgrade --no-start --name live-config
+
+override_dh_install:
+	dh_install --fail-missing
 
 override_dh_compress:
 	dh_compress -Xusr/share/doc/live-config/examples

@@ -13,7 +13,7 @@ Vcs-Git: git://live.debian.net/git/live-config.git
 Package: live-config
 Architecture: all
 Depends: ${misc:Depends}, live-config-sysvinit | live-config-backend
-Recommends: live-tools, user-setup, sudo
+Recommends: live-config-doc, live-tools, user-setup, sudo
 Suggests: wget
 Description: Debian Live - System Configuration Scripts
  live-config contains the scripts that configure a Debian Live system during
@@ -21,6 +21,17 @@ Description: Debian Live - System Configuration Scripts
  .
  In addition to live-config, a backend for an init system is required, such as
  live-config-sysvinit.
+
+Package: live-config-doc
+Architecture: all
+Depends: ${misc:Depends}
+Conflicts: live-config (<< 3.0~a22~)
+Replaces: live-config
+Description: Debian Live - System Configuration Scripts (documentation)
+ live-config contains the scripts that configure a Debian Live system during
+ the boot process (late userspace).
+ .
+ This package contains the documentation.
 
 Package: live-config-runit
 Architecture: all
