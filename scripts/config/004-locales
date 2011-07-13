@@ -99,7 +99,11 @@ Configure_locales ()
 	fi
 
 	printf 'LANG="%s"\n' "${LANG}" > /etc/default/locale
-	sed -i -e "s|# ${LANG} ${_CODEPAGE}|${LANG} ${_CODEPAGE}|" /etc/locale.gen
+
+	if [ -e /etc/locale.gen ]
+	then
+		sed -i -e "s|# ${LANG} ${_CODEPAGE}|${LANG} ${_CODEPAGE}|" /etc/locale.gen
+	fi
 
 	locale-gen --keep-existing > /dev/null 2>&1
 
