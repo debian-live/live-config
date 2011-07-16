@@ -23,6 +23,7 @@ Description: Debian Live - System Configuration Scripts
  live-config-sysvinit.
 
 Package: live-config-doc
+Section: doc
 Architecture: all
 Depends: ${misc:Depends}
 Conflicts: live-config (<< 3.0~a22~)
