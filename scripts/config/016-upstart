@@ -44,9 +44,11 @@ Configure_upstart ()
 	do
 		_TTY="$(basename ${_FILE} .conf)"
 
-		# reloading
-		stop ${_TTY}
-		start ${_TTY}
+		# Try reloading
+		if stop ${_TTY}
+		then
+			start ${_TTY}
+		fi
 	done
 
 	# Creating state file
