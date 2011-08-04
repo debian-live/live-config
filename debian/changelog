@@ -1,3 +1,28 @@
+live-config (3.0~a24-1) unstable; urgency=low
+
+  [ Reinhard Tartler ]
+  * Starting live-config upstart-job on filesystem event.
+
+  [ Daniel Baumann ]
+  * Only updating /etc/locale.gen in locales script if existing, thanks
+    to Reinhard Tartler <siretart@tauware.de>.
+
+  [ Reinhard Tartler ]
+  * Reloading tty jobs gracefully in upstart config script.
+
+  [ Daniel Baumann ]
+  * Updating section for live-config-doc.
+  * Upgrading systemd from suggests to depends on systemd backend,
+    thanks to Michael Dorrington <michael.dorrington@gmail.com>.
+
+  [ Ben Armstrong ]
+  * Cross-referencing lb_config --bootappend-live.
+
+  [ Daniel Baumann ]
+  * Correcting bootappend-live reference in live-config manpage.
+
+ -- Daniel Baumann <daniel@debian.org>  Thu, 04 Aug 2011 21:23:53 +0200
+
 live-config (3.0~a23-1) unstable; urgency=low
 
   * Making references to debian more distribution neutral.
