@@ -32,11 +32,20 @@ Lxdm ()
 
 Configure_lxdm ()
 {
+	# Debian
 	if [ -e /etc/lxdm/lxdm.conf ]
 	then
 		sed -i -r -e "s|^#.*autologin=.*\$|autologin=${LIVE_USERNAME}|" \
 			  -e "s|^#.*session.*\$|session|" \
 		/etc/lxdm/lxdm.conf
+	fi
+
+	# Ubuntu
+	if [ -e /etc/lxdm/default.conf ]
+	then
+		sed -i -r -e "s|^#.*autologin=.*\$|autologin=${LIVE_USERNAME}|" \
+			  -e "s|^#.*session.*\$|session=/usr/bin/startlubuntu|" \
+		/etc/lxdm/default.conf
 	fi
 
 	# Avoid xinit
