@@ -38,15 +38,15 @@ Configure_kdm ()
 	fi
 
 	# autologin
-	sed -i -r -e "s|^#?AutoLoginEnable=.*\$|AutoLoginEnable=true|" \
-		  -e "s|^#?AutoLoginAgain=.*\$|AutoLoginAgain=true|" \
-		  -e "s|^#?AutoLoginUser=.*\$|AutoLoginUser=${LIVE_USERNAME}|" \
+	sed -i -r -e "s|^#.*AutoLoginEnable=.*\$|AutoLoginEnable=true|" \
+		  -e "s|^#.*AutoLoginAgain=.*\$|AutoLoginAgain=true|" \
+		  -e "s|^#.*AutoLoginUser=.*\$|AutoLoginUser=${LIVE_USERNAME}|" \
 	/etc/kde4/kdm/kdmrc
 
 	# language
 	if [ -n "${_LANGUAGE}" ]
 	then
-		sed -i -r -e "s|^#?Language=.*\$|Language=${_LANGUAGE}|" \
+		sed -i -r -e "s|^#.*Language=.*\$|Language=${_LANGUAGE}|" \
 			/etc/kde4/kdm/kdmrc
 	fi
 

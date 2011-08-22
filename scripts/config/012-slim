@@ -39,8 +39,8 @@ Configure_slim ()
 	fi
 
 	# autologin
-	sed -i -r -e "s|^#?auto_login.*\$|auto_login yes|" \
-		  -e "s|^#?default_user.*\$|default_user ${LIVE_USERNAME}|" \
+	sed -i -r -e "s|^#.*auto_login.*\$|auto_login yes|" \
+		  -e "s|^#.*default_user.*\$|default_user ${LIVE_USERNAME}|" \
 	/etc/slim.conf
 
 	# Avoid xinit

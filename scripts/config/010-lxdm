@@ -34,8 +34,8 @@ Configure_lxdm ()
 {
 	if [ -e /etc/lxdm/lxdm.conf ]
 	then
-		sed -i -r -e "s|^#?autologin=.*\$|autologin=${LIVE_USERNAME}|" \
-			  -e "s|^#?session.*\$|session|" \
+		sed -i -r -e "s|^#.*autologin=.*\$|autologin=${LIVE_USERNAME}|" \
+			  -e "s|^#.*session.*\$|session|" \
 		/etc/lxdm/lxdm.conf
 	fi
 
