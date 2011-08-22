@@ -97,6 +97,8 @@ Enables debug output in live\-config.
 Configuration files can be placed either in the root filesystem itself (/etc/live/config.conf, /etc/live/config.d/), or on the live media (live/config.conf, live/config.d/). If both places are used for a certain option, the ones from the live media take precedence over the ones from the root filesystem.
 .PP
 Although the configuration files placed in the conf.d directories do not require a particular name or suffix, it's suggest for consistency to either use 'vendor.conf' or 'project.conf' as a naming scheme (whereas 'vendor' or 'project' is replaced with the actual name, resulting in a filename like 'debian\-eeepc.conf').
+.PP
+The actual content of the configuration files consists of one or more of the following variables.
 
 .IP "\fBLIVE_CONFIGS\fR=\fISCRIPT1\fR,\fISCRIPT2\fR, ... \fISCRIPTn\fR" 4
 This variable equals the '\fBlive\-config\fR=\fISCRIPT1\fR,\fISCRIPT2\fR, ... \fISCRIPTn\fR' parameter.
