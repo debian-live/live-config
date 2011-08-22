@@ -1,3 +1,9 @@
+live-config (3.0~a25-1) unstable; urgency=low
+
+  * Adding support for automatic login with lightdm.
+
+ -- Daniel Baumann <daniel@debian.org>  Mon, 22 Aug 2011 15:47:16 +0200
+
 live-config (3.0~a24-1) unstable; urgency=low
 
   [ Reinhard Tartler ]
