@@ -8,15 +8,15 @@
 ## under certain conditions; see COPYING for details.
 
 
-Slim ()
+Lightdm ()
 {
 	# Checking if package is installed or already configured
-	if [ ! -e /var/lib/dpkg/info/slim.list ]
+	if [ ! -e /var/lib/dpkg/info/lightdm.list ]
 	then
 		return
 	fi
 
-	if [ -e /var/lib/live/config/slim ]
+	if [ -e /var/lib/live/config/lightdm ]
 	then
 		# Avoid xinit
 		_X11="true"
@@ -25,30 +25,26 @@ Slim ()
 		return
 	fi
 
-	echo -n " slim"
+	echo -n " lightdm"
 
-	Configure_slim
+	Configure_lightdm
 }
 
-Configure_slim ()
+Configure_lightdm ()
 {
-	# Checking if if package is already configured differently
-	if grep -qs "^auto_login" /etc/slim.conf
+	if [ -e /etc/lightdm/lightdm.conf ]
 	then
-		return
+		sed -i -r -e "s|^#.*autologin-user=.*\$|autologin-user=${LIVE_USERNAME}|" \
+			  -e "s|^#.*autologin-user-timeout=.*\$|autologin-user-timeout=0|" \
+		/etc/lightdm/lightdm.conf
 	fi
-
-	# autologin
-	sed -i -r -e "s|^#?auto_login.*\$|auto_login yes|" \
-		  -e "s|^#?default_user.*\$|default_user ${LIVE_USERNAME}|" \
-	/etc/slim.conf
 
 	# Avoid xinit
 	_X11="true"
 	export _X11
 
 	# Creating state file
-	touch /var/lib/live/config/slim
+	touch /var/lib/live/config/lightdm
 }
 
-Slim
+Lightdm
