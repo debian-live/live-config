@@ -35,7 +35,7 @@ Configure_lightdm ()
 	if [ -e /etc/lightdm/lightdm.conf ]
 	then
 		sed -i -r -e "s|^#.*autologin-user=.*\$|autologin-user=${LIVE_USERNAME}|" \
-			  -e "s|^#.*autologin-user-timeout=.*\$|autologin-user-timeout=0|" \
+			  -e "s|^#.*autologin-user-timeout=.*\$|autologin-user-timeout=5|" \
 		/etc/lightdm/lightdm.conf
 	fi
 
