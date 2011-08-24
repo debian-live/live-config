@@ -1,3 +1,14 @@
+live-config (3.0~a26-1) unstable; urgency=low
+
+  * Clarify in live-config manpage that the content of the configuration
+    files is supposed to consist of variables, thanks to Ed Dixon
+    <eddixonnm@gmail.com> for bringing it up.
+  * Improving spelling in live-config manpage.
+  * Lowering display-manager timeouts for a users automatic re-login
+    from 10s to 5s.
+
+ -- Daniel Baumann <daniel@debian.org>  Wed, 24 Aug 2011 19:28:43 +0200
+
 live-config (3.0~a25-1) unstable; urgency=low
 
   * Adding support for automatic login with lightdm.
