@@ -42,7 +42,7 @@ Configure_gdm3 ()
 AutomaticLogin=${LIVE_USERNAME}\n\
 TimedLoginEnable=true\n\
 TimedLogin=${LIVE_USERNAME}\n\
-TimedLoginDelay=10"
+TimedLoginDelay=5"
 
 	sed -i -e "s|\[daemon\]|\[daemon\]\n${_GDM3_OPTIONS}|" /etc/gdm3/daemon.conf
 
