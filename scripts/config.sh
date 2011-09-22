@@ -133,7 +133,7 @@ Start_network ()
 		/etc/init.d/networking start > /dev/null 2>&1
 
 		# Now force adapter up if specified with ethdevice= on cmdline
-		if [ ! -z "${ETHDEVICE}" ]
+		if [ -n "${ETHDEVICE}" ]
 		then
 			ifup --force "${ETHDEVICE}"
 		fi
@@ -186,10 +186,11 @@ Main ()
 	# Reading kernel command line
 	Cmdline
 
-	if [ "${LIVE_DEBUG}" = "true" ]
-	then
-		set -x
-	fi
+	case "${LIVE_DEBUG}" in
+		true)
+			set -x
+			;;
+	esac
 
 	# Configuring system
 	for _SCRIPT in ${_SCRIPTS}
