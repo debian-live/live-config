@@ -1,3 +1,18 @@
+live-config (3.0~a27-1) unstable; urgency=low
+
+  [ Daniel Baumann ]
+  * Silencing rmdir calls in makefile.
+  * Coding style improvement for if statments in config.sh.
+
+  [ Stanislav Bogatyrev ]
+  * Check file existence during _SCRIPTS list construction and make sure
+    the resulting list has only unique items (Closes: #642396).
+
+  [ Daniel Baumann ]
+  * Using sort -u instead of sort and uniq when sorting scripts.
+
+ -- Daniel Baumann <daniel@debian.org>  Fri, 23 Sep 2011 20:40:09 +0200
+
 live-config (3.0~a26-1) unstable; urgency=low
 
   * Clarify in live-config manpage that the content of the configuration
