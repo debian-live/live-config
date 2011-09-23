@@ -68,19 +68,19 @@ install:
 uninstall:
 	# Uninstalling scripts
 	rm -rf $(DESTDIR)/lib/live/config.sh $(DESTDIR)/lib/live/config
-	rmdir --ignore-fail-on-non-empty $(DESTDIR)/lib/live || true
-	rmdir --ignore-fail-on-non-empty $(DESTDIR)/lib || true
+	rmdir --ignore-fail-on-non-empty $(DESTDIR)/lib/live > /dev/null 2>&1 || true
+	rmdir --ignore-fail-on-non-empty $(DESTDIR)/lib > /dev/null 2>&1 || true
 
-	rmdir --ignore-fail-on-non-empty $(DESTDIR)/var/lib/live/config || true
-	rmdir --ignore-fail-on-non-empty $(DESTDIR)/var/lib/live || true
-	rmdir --ignore-fail-on-non-empty $(DESTDIR)/var/lib || true
-	rmdir --ignore-fail-on-non-empty $(DESTDIR)/var || true
+	rmdir --ignore-fail-on-non-empty $(DESTDIR)/var/lib/live/config > /dev/null 2>&1 || true
+	rmdir --ignore-fail-on-non-empty $(DESTDIR)/var/lib/live > /dev/null 2>&1 || true
+	rmdir --ignore-fail-on-non-empty $(DESTDIR)/var/lib > /dev/null 2>&1 || true
+	rmdir --ignore-fail-on-non-empty $(DESTDIR)/var > /dev/null 2>&1 || true
 
 	# Uninstalling docs
 	rm -rf $(DESTDIR)/usr/share/doc/live-config
-	rmdir --ignore-fail-on-non-empty $(DESTDIR)/usr/share/doc || true
-	rmdir --ignore-fail-on-non-empty $(DESTDIR)/usr/share || true
-	rmdir --ignore-fail-on-non-empty $(DESTDIR)/usr || true
+	rmdir --ignore-fail-on-non-empty $(DESTDIR)/usr/share/doc > /dev/null 2>&1 || true
+	rmdir --ignore-fail-on-non-empty $(DESTDIR)/usr/share > /dev/null 2>&1 || true
+	rmdir --ignore-fail-on-non-empty $(DESTDIR)/usr > /dev/null 2>&1 || true
 
 	# Uninstalling manpages
 	for MANPAGE in manpages/en/*; \
@@ -100,15 +100,15 @@ uninstall:
 
 	for SECTION in $(ls manpages/en/* | awk -F. '{ print $2 }'); \
 	do \
-		rmdir --ignore-fail-on-non-empty $(DESTDIR)/usr/share/man/man$${SECTION} || true; \
-		rmdir --ignore-fail-on-non-empty $(DESTDIR)/usr/share/man/*/man$${SECTION} || true; \
+		rmdir --ignore-fail-on-non-empty $(DESTDIR)/usr/share/man/man$${SECTION} > /dev/null 2>&1 || true; \
+		rmdir --ignore-fail-on-non-empty $(DESTDIR)/usr/share/man/*/man$${SECTION} > /dev/null 2>&1 || true; \
 	done
 
-	rmdir --ignore-fail-on-non-empty $(DESTDIR)/usr/share/man || true
-	rmdir --ignore-fail-on-non-empty $(DESTDIR)/usr/share || true
-	rmdir --ignore-fail-on-non-empty $(DESTDIR)/usr || true
+	rmdir --ignore-fail-on-non-empty $(DESTDIR)/usr/share/man > /dev/null 2>&1 || true
+	rmdir --ignore-fail-on-non-empty $(DESTDIR)/usr/share > /dev/null 2>&1 || true
+	rmdir --ignore-fail-on-non-empty $(DESTDIR)/usr > /dev/null 2>&1 || true
 
-	rmdir --ignore-fail-on-non-empty $(DESTDIR) || true
+	rmdir --ignore-fail-on-non-empty $(DESTDIR) > /dev/null 2>&1 || true
 
 clean:
 	@echo "Nothing to clean."

@@ -91,7 +91,7 @@ Cmdline ()
 	then
 		for _CONFIG in $(echo ${LIVE_CONFIGS} | sed -e 's|,| |g')
 		do
-			_SCRIPTS="${_SCRIPTS} $(ls /lib/live/config/???-${_CONFIG})"
+			_SCRIPTS="${_SCRIPTS} $(ls /lib/live/config/???-${_CONFIG} 2> /dev/null || true)"
 		done
 	fi
 
@@ -100,7 +100,7 @@ Cmdline ()
 	then
 		for _NOCONFIG in $(echo ${LIVE_NOCONFIGS} | sed -e 's|,| |g')
 		do
-			_SCRIPTS="$(echo ${_SCRIPTS} | sed -e "s|$(ls /lib/live/config/???-${_NOCONFIG})||")"
+			_SCRIPTS="$(echo ${_SCRIPTS} | sed -e "s|$(ls /lib/live/config/???-${_NOCONFIG} 2> /dev/null || echo none)||")"
 		done
 	fi
 }
@@ -133,7 +133,7 @@ Start_network ()
 		/etc/init.d/networking start > /dev/null 2>&1
 
 		# Now force adapter up if specified with ethdevice= on cmdline
-		if [ ! -z "${ETHDEVICE}" ]
+		if [ -n "${ETHDEVICE}" ]
 		then
 			ifup --force "${ETHDEVICE}"
 		fi
@@ -186,10 +186,13 @@ Main ()
 	# Reading kernel command line
 	Cmdline
 
-	if [ "${LIVE_DEBUG}" = "true" ]
-	then
-		set -x
-	fi
+	case "${LIVE_DEBUG}" in
+		true)
+			set -x
+			;;
+	esac
+
+	_SCRIPTS="$(echo ${_SCRIPTS} | sed -e 's| |\n|g' | sort -u)"
 
 	# Configuring system
 	for _SCRIPT in ${_SCRIPTS}
