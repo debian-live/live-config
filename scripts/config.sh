@@ -192,7 +192,7 @@ Main ()
 			;;
 	esac
 
-	_SCRIPTS="$(echo ${_SCRIPTS} | sed -e 's| |\n|g' | sort | uniq)"
+	_SCRIPTS="$(echo ${_SCRIPTS} | sed -e 's| |\n|g' | sort -u)"
 
 	# Configuring system
 	for _SCRIPT in ${_SCRIPTS}
