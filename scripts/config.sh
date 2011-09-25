@@ -27,6 +27,10 @@ LIVE_HOSTNAME="debian"
 LIVE_USERNAME="user"
 LIVE_USER_FULLNAME="Debian Live user"
 
+DEBIAN_FRONTEND="noninteractive"
+DEBIAN_PRIORITY="critical"
+DEBCONF_NOWARNINGS="yes"
+
 Cmdline ()
 {
 	for _PARAMETER in ${_CMDLINE}
