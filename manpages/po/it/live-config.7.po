@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config 3.0~a27\n"
-"POT-Creation-Date: 2011-09-23 20:40+0300\n"
+"POT-Creation-Date: 2011-09-26 14:16+0300\n"
 "PO-Revision-Date: 2011-01-20 22:31+0100\n"
 "Last-Translator: skizzhg <skizzhg@gmx.com>\n"
 "Language-Team: Italian <tp@lists.linux.it>\n"
@@ -23,8 +23,8 @@ msgstr "LIVE-CONFIG"
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "2011-09-23"
-msgstr "23.09.2011"
+msgid "2011-09-26"
+msgstr "26.09.2011"
 
 #. type: TH
 #: en/live-config.7:9
@@ -1361,35 +1361,41 @@ msgstr "B</lib/live/config/>"
 msgid "B</var/lib/live/config/>"
 msgstr "B</var/lib/live/config/>"
 
+#. type: IP
+#: en/live-config.7:233
+#, no-wrap
+msgid "B</var/log/live-config.log>"
+msgstr "B</var/log/live-config.log>"
+
 #. type: SH
-#: en/live-config.7:234
+#: en/live-config.7:235
 #, no-wrap
 msgid "SEE ALSO"
 msgstr "SI VEDA ANCHE"
 
 #. type: Plain text
-#: en/live-config.7:236
+#: en/live-config.7:237
 msgid "I<live-boot>(7)"
 msgstr "I<live-boot>(7)"
 
 #. type: Plain text
-#: en/live-config.7:238
+#: en/live-config.7:239
 msgid "I<live-build>(7)"
 msgstr "I<live-build>(7)"
 
 #. type: Plain text
-#: en/live-config.7:240
+#: en/live-config.7:241
 msgid "I<live-tools>(7)"
 msgstr "I<live-tools>(7)"
 
 #. type: SH
-#: en/live-config.7:241
+#: en/live-config.7:242
 #, no-wrap
 msgid "HOMEPAGE"
 msgstr "HOMEPAGE"
 
 #. type: Plain text
-#: en/live-config.7:243
+#: en/live-config.7:244
 msgid ""
 "More information about live-config and the Debian Live project can be found "
 "on the homepage at E<lt>I<http://live.debian.net/>E<gt> and in the manual at "
@@ -1400,13 +1406,13 @@ msgstr ""
 "all'indirizzo E<lt>I<http://live.debian.net/manual/>E<gt>."
 
 #. type: SH
-#: en/live-config.7:244
+#: en/live-config.7:245
 #, no-wrap
 msgid "BUGS"
 msgstr "BUG"
 
 #. type: Plain text
-#: en/live-config.7:246
+#: en/live-config.7:247
 msgid ""
 "Bugs can be reported by submitting a bugreport for the live-config package "
 "in the Debian Bug Tracking System at E<lt>I<http://bugs.debian.org/>E<gt> or "
@@ -1419,13 +1425,13 @@ msgstr ""
 "E<lt>I<debian-live@lists.debian.org>E<gt>."
 
 #. type: SH
-#: en/live-config.7:247
+#: en/live-config.7:248
 #, no-wrap
 msgid "AUTHOR"
 msgstr "AUTORE"
 
 #. type: Plain text
-#: en/live-config.7:248
+#: en/live-config.7:249
 msgid ""
 "live-config was written by Daniel Baumann E<lt>I<daniel@debian.org>E<gt>."
 msgstr ""

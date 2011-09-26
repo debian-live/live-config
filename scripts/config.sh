@@ -201,7 +201,7 @@ Main ()
 	# Configuring system
 	for _SCRIPT in ${_SCRIPTS}
 	do
-		. ${_SCRIPT}
+		. ${_SCRIPT} 2>&1 | tee -a /var/log/live-config.log
 	done
 
 	echo "."
