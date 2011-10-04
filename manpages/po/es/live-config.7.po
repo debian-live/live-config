@@ -7,9 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: live-config 3.0~a27\n"
 "POT-Creation-Date: 2011-09-26 14:16+0300\n"
-"PO-Revision-Date: 2011-05-07 19:51+0100\n"
-"Last-Translator: José Luis Zabalza <jlz.3008@gmail.com> and Carlos Zuferri "
-"\"chals\" <chals@altorricon.com>\n"
+"PO-Revision-Date: 2011-10-04 15:28+0100\n"
+"Last-Translator: José Luis Zabalza and Carlos Zuferri «chals» <jlz.3008@gmail.com> <chals@altorricon.com>\n"
 "Language-Team: none\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
@@ -59,12 +58,8 @@ msgstr "DESCRIPCIÓN"
 
 #. type: Plain text
 #: en/live-config.7:16
-msgid ""
-"B<live-config> contains the scripts that configure a Debian Live system "
-"during the boot process (late userspace)."
-msgstr ""
-"B<live-config> contiene los scripts que configuran un sistema Debian en vivo "
-"durante el proceso de arranque (late userspace)."
+msgid "B<live-config> contains the scripts that configure a Debian Live system during the boot process (late userspace)."
+msgstr "B<live-config> contiene los scripts que configuran un sistema Debian en vivo durante el proceso de arranque (late userspace)."
 
 #. type: SH
 #: en/live-config.7:17
@@ -74,24 +69,13 @@ msgstr "CONFIGURACIÓN"
 
 #. type: Plain text
 #: en/live-config.7:19
-msgid ""
-"B<live-config> can be configured through boot parameters or configuration "
-"files. If both mechanisms are used for a certain option, the boot parameters "
-"take precedence over the configuration files. When using persistency, B<live-"
-"config> scripts are only run once."
-msgstr ""
-"B<live-config> se puede configurar mediante parámetros durante el proceso de "
-"arranque o mediante ficheros de configuración. Si se usan ambos métodos para "
-"una misma opción, los parámetros de arranque tienen preferencia sobre los "
-"ficheros de configuración. Cuando se usa en modo persistente, los scripts "
-"B<live-config> sólo se ejecutan una vez."
+msgid "B<live-config> can be configured through boot parameters or configuration files. If both mechanisms are used for a certain option, the boot parameters take precedence over the configuration files. When using persistency, B<live-config> scripts are only run once."
+msgstr "B<live-config> se puede configurar mediante parámetros durante el proceso de arranque o mediante ficheros de configuración. Si se usan ambos métodos para una misma opción, los parámetros de arranque tienen preferencia sobre los ficheros de configuración. Cuando se usa en modo persistente, los scripts B<live-config> sólo se ejecutan una vez."
 
 #. type: Plain text
 #: en/live-config.7:21
-msgid ""
-"To configure the live-config parameters used by default in a live image, see "
-"the --bootappend-live option in the I<lb_config>(1) manual page."
-msgstr ""
+msgid "To configure the live-config parameters used by default in a live image, see the --bootappend-live option in the I<lb_config>(1) manual page."
+msgstr "Para configurar los parámetros usados por defecto en una imagen en vivo, ver la opción --bootappend-live en la página del manual I<lb_config>(1)"
 
 #. type: SS
 #: en/live-config.7:22
@@ -101,20 +85,8 @@ msgstr "Parámetros de arranque (scripts)"
 
 #. type: Plain text
 #: en/live-config.7:24
-msgid ""
-"B<live-config> is only activated if 'boot=live' is used as a boot parameter. "
-"Additionally, B<live-config> needs to be told which scripts to run through "
-"the 'live-config' parameter or which scripts to not run through the 'live-"
-"noconfig' parameter. If both 'live-config' and 'live-noconfig' are used, or, "
-"if either one is specified multiple times, always the later one takes "
-"precedence over the previous one(s)."
-msgstr ""
-"B<live-config> sólo se activa si se usa como parámetro de arranque "
-"«boot=live». Adicionalmente, se debe especificar a B<live-config> qué "
-"scripts tiene que ejecutar mediante el parámetro «live-config» o qué scripts "
-"no tiene que ejecutar mediante la opción «live-noconfig». Si se usan las dos "
-"opciones «live-config» y «live-noconfig» a la vez, o si alguna de las dos se "
-"especifica varias veces, la última tiene prioridad sobre las anteriores."
+msgid "B<live-config> is only activated if 'boot=live' is used as a boot parameter. Additionally, B<live-config> needs to be told which scripts to run through the 'live-config' parameter or which scripts to not run through the 'live-noconfig' parameter. If both 'live-config' and 'live-noconfig' are used, or, if either one is specified multiple times, always the later one takes precedence over the previous one(s)."
+msgstr "B<live-config> sólo se activa si se usa como parámetro de arranque «boot=live». Adicionalmente, se debe especificar a B<live-config> qué scripts tiene que ejecutar mediante el parámetro «live-config» o qué scripts no tiene que ejecutar mediante la opción «live-noconfig». Si se usan las dos opciones «live-config» y «live-noconfig» a la vez, o si alguna de las dos se especifica varias veces, la última tiene prioridad sobre las anteriores."
 
 #. type: IP
 #: en/live-config.7:25
@@ -125,9 +97,7 @@ msgstr "B<live-config> | B<config>"
 #. type: Plain text
 #: en/live-config.7:27
 msgid "All scripts are run. This is what Debian Live images use by default."
-msgstr ""
-"Se ejecutan todos los scripts. Esto es lo que las imágenes Debian en vivo "
-"usan por omisión."
+msgstr "Se ejecutan todos los scripts. Esto es lo que las imágenes Debian en vivo usan por omisión."
 
 #. type: IP
 #: en/live-config.7:27
@@ -137,16 +107,8 @@ msgstr "B<live-config>=I<SCRIPT1>,I<SCRIPT2>,·...·I<SCRIPTn>·|·B<config>=I<S
 
 #. type: Plain text
 #: en/live-config.7:29
-msgid ""
-"Only the specified scripts are run. Note that the order matters, e.g. 'live-"
-"config=sudo,user-setup' would not work since the user needs to be added "
-"before it can be configured for sudo. Look at the filenames of the scripts "
-"in /lib/live/config for their ordering number."
-msgstr ""
-"Sólo se ejecutan los scripts especificados. Se debe tener en cuenta que el "
-"orden es importante. p.ej. «live-config=sudo,user-setup» no funcionaría ya "
-"que el usuario debe añadirse antes de configurarse como «sudo». Puede "
-"revisarse los nombres de los scripts en /lib/live/config para ver su orden."
+msgid "Only the specified scripts are run. Note that the order matters, e.g. 'live-config=sudo,user-setup' would not work since the user needs to be added before it can be configured for sudo. Look at the filenames of the scripts in /lib/live/config for their ordering number."
+msgstr "Sólo se ejecutan los scripts especificados. Se debe tener en cuenta que el orden es importante. p.ej. «live-config=sudo,user-setup» no funcionaría ya que el usuario debe añadirse antes de configurarse como «sudo». Puede revisarse los nombres de los scripts en /lib/live/config para ver su orden."
 
 #. type: IP
 #: en/live-config.7:29
@@ -156,12 +118,8 @@ msgstr "B<live-noconfig> | B<noconfig>"
 
 #. type: Plain text
 #: en/live-config.7:31
-msgid ""
-"No script is run. This is the same as not using any of 'live-config' or "
-"'live-noconfig'."
-msgstr ""
-"No se ejecuta ningún script. Es lo mismo que no usar ninguno de «live-"
-"config» o «live-noconfig»."
+msgid "No script is run. This is the same as not using any of 'live-config' or 'live-noconfig'."
+msgstr "No se ejecuta ningún script. Es lo mismo que no usar ninguno de «live-config» o «live-noconfig»."
 
 #. type: IP
 #: en/live-config.7:31
@@ -182,11 +140,8 @@ msgstr "Parámetros de arranque (opciones)"
 
 #. type: Plain text
 #: en/live-config.7:36
-msgid ""
-"Some individual scripts can change their behaviour upon a boot parameter."
-msgstr ""
-"Algunos scripts pueden cambiar su comportamiento según un parámetro de "
-"arranque."
+msgid "Some individual scripts can change their behaviour upon a boot parameter."
+msgstr "Algunos scripts pueden cambiar su comportamiento según un parámetro de arranque."
 
 #. type: IP
 #: en/live-config.7:37
@@ -207,12 +162,8 @@ msgstr "B<live-config.username>=I<USERNAME> | B<username>=I<USERNAME>"
 
 #. type: Plain text
 #: en/live-config.7:41
-msgid ""
-"Allows to set the username that gets created for autologin. The default is "
-"'user'."
-msgstr ""
-"Permite establecer el nombre del usuario que se crea para iniciar sesión de "
-"forma automática. Por omisión es «user»."
+msgid "Allows to set the username that gets created for autologin. The default is 'user'."
+msgstr "Permite establecer el nombre del usuario que se crea para iniciar sesión de forma automática. Por omisión es «user»."
 
 #. type: IP
 #: en/live-config.7:41
@@ -222,12 +173,8 @@ msgstr "B<live-config.user-fullname>=\"I<USER FULLNAME>\" | B<user-fullname>=\"I
 
 #. type: Plain text
 #: en/live-config.7:43
-msgid ""
-"Allows to set the fullname of the users that gets created for autologin. The "
-"default is 'Debian Live user'."
-msgstr ""
-"Permite establecer el nombre completo del usuario que se crea para iniciar "
-"sesión de forma automática. Por omisión es «Debian Live user»."
+msgid "Allows to set the fullname of the users that gets created for autologin. The default is 'Debian Live user'."
+msgstr "Permite establecer el nombre completo del usuario que se crea para iniciar sesión de forma automática. Por omisión es «Debian Live user»."
 
 #. type: IP
 #: en/live-config.7:43
@@ -237,14 +184,8 @@ msgstr "B<live-config.locales>=I<LOCALE1>,I<LOCALE2>·...·I<LOCALEn> | B<locale
 
 #. type: Plain text
 #: en/live-config.7:45
-msgid ""
-"Allows to set the locale of the system, e.g. 'de_CH.UTF-8'. The default is "
-"'en_US.UTF-8'. In case the selected locale is not already available on the "
-"system, it is automatically generated on the fly."
-msgstr ""
-"Permite establecer las variantes locales del sistema, p.ej. «es_ES.UTF-8». "
-"Por omisión es «en_US.UTF-8». En caso de que las variantes locales no estén "
-"disponibles en el sistema, se generarán sobre la marcha."
+msgid "Allows to set the locale of the system, e.g. 'de_CH.UTF-8'. The default is 'en_US.UTF-8'. In case the selected locale is not already available on the system, it is automatically generated on the fly."
+msgstr "Permite establecer las variantes locales del sistema, p.ej. «es_ES.UTF-8». Por omisión es «en_US.UTF-8». En caso de que las variantes locales no estén disponibles en el sistema, se generarán sobre la marcha."
 
 #. type: IP
 #: en/live-config.7:45
@@ -254,12 +195,8 @@ msgstr "B<live-config.timezone>=I<TIMEZONE> | B<timezone>=I<TIMEZONE>"
 
 #. type: Plain text
 #: en/live-config.7:47
-msgid ""
-"Allows to set the timezone of the system, e.g. 'Europe/Zurich'. The default "
-"is 'UTC'."
-msgstr ""
-"Permite establecer la zona horaria del sistema, p.ej. «Europa/Madrid». Por "
-"omisión es «UTC»."
+msgid "Allows to set the timezone of the system, e.g. 'Europe/Zurich'. The default is 'UTC'."
+msgstr "Permite establecer la zona horaria del sistema, p.ej. «Europa/Madrid». Por omisión es «UTC»."
 
 #. type: IP
 #: en/live-config.7:47
@@ -269,12 +206,8 @@ msgstr "B<live-config.utc>=B<yes>|no | B<utc>=B<yes>|no"
 
 #. type: Plain text
 #: en/live-config.7:49
-msgid ""
-"Allows to change if the system is assuming that the hardware clock is set to "
-"UTC or not. The default is 'yes'."
-msgstr ""
-"Permite cambiar si el sistema debe asumir que el reloj de la máquina está "
-"ajustado a la hora UTC o no. Por omisión es «Si»."
+msgid "Allows to change if the system is assuming that the hardware clock is set to UTC or not. The default is 'yes'."
+msgstr "Permite cambiar si el sistema debe asumir que el reloj de la máquina está ajustado a la hora UTC o no. Por omisión es «Si»."
 
 #. type: IP
 #: en/live-config.7:49
@@ -295,14 +228,8 @@ msgstr "B<live-config.keyboard-layouts>=I<KEYBOARD_LAYOUT1>,I<KEYBOARD_LAYOUT2> 
 
 #. type: Plain text
 #: en/live-config.7:53
-msgid ""
-"Allows to change the keyboard layouts. If more than one is specified, the "
-"tools of the desktop environment will allow to switch it under X11. There is "
-"no default value set."
-msgstr ""
-"Permite cambiar la disposición del teclado. Si se especifica más de una, las "
-"herramientas de escritorio permitirán cambiarlas bajo X11. No hay ningún "
-"valor por omisión."
+msgid "Allows to change the keyboard layouts. If more than one is specified, the tools of the desktop environment will allow to switch it under X11. There is no default value set."
+msgstr "Permite cambiar la disposición del teclado. Si se especifica más de una, las herramientas de escritorio permitirán cambiarlas bajo X11. No hay ningún valor por omisión."
 
 #. type: IP
 #: en/live-config.7:53
@@ -313,8 +240,7 @@ msgstr "B<live-config.keyboard-variant>=I<KEYBOARD_VARIANT> | B<keyboard-variant
 #. type: Plain text
 #: en/live-config.7:55
 msgid "Allows to change the keyboard variant. There is no default value set."
-msgstr ""
-"Permite cambiar la variante del teclado. No hay ningún valor por omisión."
+msgstr "Permite cambiar la variante del teclado. No hay ningún valor por omisión."
 
 #. type: IP
 #: en/live-config.7:55
@@ -347,9 +273,7 @@ msgstr "B<live-config.x-session-manager=>I<X_SESSION_MANAGER> | B<x-session-mana
 #. type: Plain text
 #: en/live-config.7:61
 msgid "Allows to set the x-session-manager through update-alternatives."
-msgstr ""
-"Permite seleccionar el gestor de sesión gráfica «x-session-manager» mediante "
-"«update-alternatives»."
+msgstr "Permite seleccionar el gestor de sesión gráfica «x-session-manager» mediante «update-alternatives»."
 
 #. type: IP
 #: en/live-config.7:61
@@ -360,9 +284,7 @@ msgstr "B<live-config.xorg-driver>=I<XORG_DRIVER> | B<xorg-driver>=I<XORG_DRIVER
 #. type: Plain text
 #: en/live-config.7:63
 msgid "Allows to set xorg driver instead of autodetecting it."
-msgstr ""
-"Permite seleccionar el controlador xorg en lugar de detectarlo de forma "
-"automática."
+msgstr "Permite seleccionar el controlador xorg en lugar de detectarlo de forma automática."
 
 #. type: IP
 #: en/live-config.7:63
@@ -373,9 +295,7 @@ msgstr "B<live-config.xorg-resolution>=I<XORG_RESOLUTION>·|·B<xorg-resolution>
 #. type: Plain text
 #: en/live-config.7:65
 msgid "Allows to set xorg resolution instead of autodetecting it."
-msgstr ""
-"Permite seleccionar la resolución de xorg en lugar de detectarla de forma "
-"automática."
+msgstr "Permite seleccionar la resolución de xorg en lugar de detectarla de forma automática."
 
 #. type: IP
 #: en/live-config.7:65
@@ -385,61 +305,28 @@ msgstr "B<live-config.hooks>=filesystem|medium|I<URL1>|I<URL2>| ... |I<URLn> | B
 
 #. type: Plain text
 #: en/live-config.7:67
-msgid ""
-"Allows to fetch and execute one or more arbitrary files. Note that the URLs "
-"must be fetchable by wget (http, ftp or file://), the files are executed in /"
-"tmp of the running live system, and that the files needs their dependencies, "
-"if any, already installed, e.g. if a python script should be executed the "
-"system needs python installed. Some hooks for some common use-cases are "
-"available at /usr/share/doc/live-config/examples/hooks/ and E<lt>I<http://"
-"live.debian.net/other/hooks>E<gt>."
-msgstr ""
-"Permite buscar y ejecutar uno o más archivos de forma arbitraria. Tener en "
-"cuenta que las URLs deben ser descargadas usando wget (http, ftp o file://), "
-"los ficheros se ejecutan en el directorio /tmp del sistema en ejecución en "
-"vivo y que los ficheros necesitan, si tienen dependencias, tenerlas "
-"resueltas. p.ej. Si se debe ejecutar un script en python, el sistema "
-"necesita tener python instalado. Hay algunos scripts gancho («hooks» N. del "
-"T.) para varios casos de uso común disponibles en /usr/share/doc/live-config/"
-"examples/hooks/ y en E<lt>I<http://live.debian.net/other/hooks>E<gt>."
+msgid "Allows to fetch and execute one or more arbitrary files. Note that the URLs must be fetchable by wget (http, ftp or file://), the files are executed in /tmp of the running live system, and that the files needs their dependencies, if any, already installed, e.g. if a python script should be executed the system needs python installed. Some hooks for some common use-cases are available at /usr/share/doc/live-config/examples/hooks/ and E<lt>I<http://live.debian.net/other/hooks>E<gt>."
+msgstr "Permite buscar y ejecutar uno o más archivos de forma arbitraria. Tener en cuenta que las URLs deben ser descargadas usando wget (http, ftp o file://), los ficheros se ejecutan en el directorio /tmp del sistema en ejecución en vivo y que los ficheros necesitan, si tienen dependencias, tenerlas resueltas. p.ej. Si se debe ejecutar un script en python, el sistema necesita tener python instalado. Hay algunos scripts gancho («hooks» N. del T.) para varios casos de uso común disponibles en /usr/share/doc/live-config/examples/hooks/ y en E<lt>I<http://live.debian.net/other/hooks>E<gt>."
 
 #. type: Plain text
 #: en/live-config.7:69
-msgid ""
-"If the file is placed on the live medium, it can be fetched with file:///"
-"live/image/I<FILE>, or with file:///I<FILE> if it is in the root filesystem "
-"of the live system itself."
-msgstr ""
-"Si el archivo está en el medio en vivo, se puede obtener con file:///live/"
-"image/I<FILE>, o con file:///I<FILE> si se encuentra en el directorio raíz "
-"del sistema en vivo."
+msgid "If the file is placed on the live medium, it can be fetched with file:///live/image/I<FILE>, or with file:///I<FILE> if it is in the root filesystem of the live system itself."
+msgstr "Si el archivo está en el medio en vivo, se puede obtener con file:///live/image/I<FILE>, o con file:///I<FILE> si se encuentra en el directorio raíz del sistema en vivo."
 
 #. type: Plain text
 #: en/live-config.7:71
-msgid ""
-"All hooks in /lib/live/hooks/ in the root filesystem of the live system can "
-"be automatically be enabled with the keyword 'filesystem'."
-msgstr ""
-"Todos los scripts gancho de /lib/live/hooks/ del directorio raíz del sistema "
-"en vivo pueden activarse con la palabra clave «filesystem»."
+msgid "All hooks in /lib/live/hooks/ in the root filesystem of the live system can be automatically be enabled with the keyword 'filesystem'."
+msgstr "Todos los scripts gancho de /lib/live/hooks/ del directorio raíz del sistema en vivo pueden activarse con la palabra clave «filesystem»."
 
 #. type: Plain text
 #: en/live-config.7:73
-msgid ""
-"All hooks in /live/hooks/ of the live medium can be automatically be enabled "
-"with the keyword 'medium'."
-msgstr ""
-"Todos los scripts gancho de /live/hooks/ del medio en vivo pueden activarse "
-"con la palabra clave «medium»."
+msgid "All hooks in /live/hooks/ of the live medium can be automatically be enabled with the keyword 'medium'."
+msgstr "Todos los scripts gancho de /live/hooks/ del medio en vivo pueden activarse con la palabra clave «medium»."
 
 #. type: Plain text
 #: en/live-config.7:75
-msgid ""
-"If several mechanisms are combined, then filesystem hooks are executed "
-"first, then medium hooks, and last the network hooks."
-msgstr ""
-"Si se combinan varios mecanismos, los scripts gancho del sistema de archivos "
-"se ejecutan primero, después los del medio, y en último lugar los de red."
+msgid "If several mechanisms are combined, then filesystem hooks are executed first, then medium hooks, and last the network hooks."
+msgstr "Si se combinan varios mecanismos, los scripts gancho del sistema de archivos se ejecutan primero, después los del medio, y en último lugar los de red."
 
 #. type: SS
 #: en/live-config.7:76
@@ -449,15 +336,8 @@ msgstr "Parámetros de arranque (atajos)"
 
 #. type: Plain text
 #: en/live-config.7:78
-msgid ""
-"For some common use cases where it would require to combine several "
-"individual parameters, B<live-config> provides shortcuts. This allows both "
-"to have full granularity over all the options, as well keep things simple."
-msgstr ""
-"Para algunos casos de uso común en los que es necesario combinar varios "
-"parámetros individuales, B<live-config> proporciona atajos. Esto permite "
-"tener control total sobre todas las opciones así como poder hacer las cosas "
-"de forma sencilla."
+msgid "For some common use cases where it would require to combine several individual parameters, B<live-config> provides shortcuts. This allows both to have full granularity over all the options, as well keep things simple."
+msgstr "Para algunos casos de uso común en los que es necesario combinar varios parámetros individuales, B<live-config> proporciona atajos. Esto permite tener control total sobre todas las opciones así como poder hacer las cosas de forma sencilla."
 
 #. type: IP
 #: en/live-config.7:79
@@ -467,12 +347,8 @@ msgstr "B<live-config.noroot> | B<noroot>"
 
 #. type: Plain text
 #: en/live-config.7:81
-msgid ""
-"Disables the sudo and policykit, the user cannot gain root privileges on the "
-"system."
-msgstr ""
-"Desactiva sudo y PolicyKit, el usuario no puede obtener privilegios de "
-"superusuario («root» N. del T.) en el sistema."
+msgid "Disables the sudo and policykit, the user cannot gain root privileges on the system."
+msgstr "Desactiva sudo y PolicyKit, el usuario no puede obtener privilegios de superusuario («root» N. del T.) en el sistema."
 
 #. type: IP
 #: en/live-config.7:81
@@ -483,9 +359,7 @@ msgstr "B<live-config.noautologin> | B<noautologin>"
 #. type: Plain text
 #: en/live-config.7:83
 msgid "Disables both the automatic console login and the graphical autologin."
-msgstr ""
-"Desactiva el inicio de sesión automático en la consola y el inicio de sesión "
-"automático en la interfaz gráfica."
+msgstr "Desactiva el inicio de sesión automático en la consola y el inicio de sesión automático en la interfaz gráfica."
 
 #. type: IP
 #: en/live-config.7:83
@@ -495,12 +369,8 @@ msgstr "B<live-config.nottyautologin> | B<nottyautologin>"
 
 #. type: Plain text
 #: en/live-config.7:85
-msgid ""
-"Disables the automatic login on the console, not affecting the graphical "
-"autologin."
-msgstr ""
-"Desactiva el inicio de sesión automático en la consola, sin afectar al "
-"inicio de sesión automático gráfico."
+msgid "Disables the automatic login on the console, not affecting the graphical autologin."
+msgstr "Desactiva el inicio de sesión automático en la consola, sin afectar al inicio de sesión automático gráfico."
 
 #. type: IP
 #: en/live-config.7:85
@@ -510,12 +380,8 @@ msgstr "B<live-config.nox11autologin> | B<nox11autologin>"
 
 #. type: Plain text
 #: en/live-config.7:87
-msgid ""
-"Disables the automatic login with any display manager, not affecting tty "
-"autologin."
-msgstr ""
-"Desactiva el inicio de sesión automático con cualquier gestor de ventanas, "
-"sin afectar el inicio de sesión automático en un terminal tty."
+msgid "Disables the automatic login with any display manager, not affecting tty autologin."
+msgstr "Desactiva el inicio de sesión automático con cualquier gestor de ventanas, sin afectar el inicio de sesión automático en un terminal tty."
 
 #. type: SS
 #: en/live-config.7:88
@@ -526,8 +392,7 @@ msgstr "Parámetros de arranque (opciones especiales)"
 #. type: Plain text
 #: en/live-config.7:90
 msgid "For special use cases there are some special boot paramters."
-msgstr ""
-"Para casos de uso especial hay algunos parámetros de arranque especiales."
+msgstr "Para casos de uso especial hay algunos parámetros de arranque especiales."
 
 #. type: IP
 #: en/live-config.7:91
@@ -538,9 +403,7 @@ msgstr "B<live-config.debug> | B<debug>"
 #. type: Plain text
 #: en/live-config.7:93
 msgid "Enables debug output in live-config."
-msgstr ""
-"Activa la información sobre errores («debug output» N.del T.) en live-"
-"config. "
+msgstr "Activa la información sobre errores («debug output» N.del T.) en live-config. "
 
 #. type: SS
 #: en/live-config.7:94
@@ -550,55 +413,23 @@ msgstr "Ficheros de configuración"
 
 #. type: Plain text
 #: en/live-config.7:96
-msgid ""
-"B<live-config> can be configured (but not activated) through configuration "
-"files. Everything but the shortcuts that can be configured with a boot "
-"parameter can be alternatively also be configured through one or more files. "
-"If configuration files are used, the 'boot=live' parameter is still required "
-"to activate B<live-config>."
-msgstr ""
-"B<live-config> se puede configurar (pero no activar) mediante ficheros de "
-"configuración. Todo, excepto los atajos que se pueden configurar con un "
-"parámetro de arranque, puede ser, alternativamente, configurado a través de "
-"uno o más ficheros. Aunque se utilicen los ficheros de configuración, el "
-"parámetro «boot =live» es necesario para activar B<live-config>."
+msgid "B<live-config> can be configured (but not activated) through configuration files. Everything but the shortcuts that can be configured with a boot parameter can be alternatively also be configured through one or more files. If configuration files are used, the 'boot=live' parameter is still required to activate B<live-config>."
+msgstr "B<live-config> se puede configurar (pero no activar) mediante ficheros de configuración. Todo, excepto los atajos que se pueden configurar con un parámetro de arranque, puede ser, alternativamente, configurado a través de uno o más ficheros. Aunque se utilicen los ficheros de configuración, el parámetro «boot =live» es necesario para activar B<live-config>."
 
 #. type: Plain text
 #: en/live-config.7:98
-msgid ""
-"Configuration files can be placed either in the root filesystem itself (/etc/"
-"live/config.conf, /etc/live/config.d/), or on the live media (live/config."
-"conf, live/config.d/). If both places are used for a certain option, the "
-"ones from the live media take precedence over the ones from the root "
-"filesystem."
-msgstr ""
-"Los ficheros de configuración se pueden colocar en el sistema de ficheros "
-"raíz (/etc/live/config.conf, /etc/live/config.d/), o en el medio en vivo "
-"(live/config.conf, live/config.d/). Si ambos directorios se utilizan para "
-"una determinada opción, la del medio en vivo tienen prioridad sobre la del "
-"sistema de ficheros raíz."
+msgid "Configuration files can be placed either in the root filesystem itself (/etc/live/config.conf, /etc/live/config.d/), or on the live media (live/config.conf, live/config.d/). If both places are used for a certain option, the ones from the live media take precedence over the ones from the root filesystem."
+msgstr "Los ficheros de configuración se pueden colocar en el sistema de ficheros raíz (/etc/live/config.conf, /etc/live/config.d/), o en el medio en vivo (live/config.conf, live/config.d/). Si ambos directorios se utilizan para una determinada opción, la del medio en vivo tienen prioridad sobre la del sistema de ficheros raíz."
 
 #. type: Plain text
 #: en/live-config.7:100
-msgid ""
-"Although the configuration files placed in the conf.d directories do not "
-"require a particular name or suffix, it is suggested for consistency reasons "
-"to either use 'vendor.conf' or 'project.conf' as a naming scheme (whereas "
-"'vendor' or 'project' is replaced with the actual name, resulting in a "
-"filename like 'debian-eeepc.conf')."
-msgstr ""
-"Aunque los ficheros de configuración situados en los directorios conf.d no "
-"requieren un nombre o sufijo en concreto, se sugiere por unificación usar "
-"como nomenclatura «vendor.conf» o «project.conf» (Siempre que «vendor» o "
-"«project» se sustituya por el nombre real, lo que resultará en un nombre de "
-"fichero como «debian-eeepc.conf»)."
+msgid "Although the configuration files placed in the conf.d directories do not require a particular name or suffix, it is suggested for consistency reasons to either use 'vendor.conf' or 'project.conf' as a naming scheme (whereas 'vendor' or 'project' is replaced with the actual name, resulting in a filename like 'debian-eeepc.conf')."
+msgstr "Aunque los ficheros de configuración situados en los directorios conf.d no requieren un nombre o sufijo en concreto, se sugiere por unificación usar como nomenclatura «vendor.conf» o «project.conf» (Siempre que «vendor» o «project» se sustituya por el nombre real, lo que resultará en un nombre de fichero como «debian-eeepc.conf»)."
 
 #. type: Plain text
 #: en/live-config.7:102
-msgid ""
-"The actual content of the configuration files consists of one or more of the "
-"following variables."
-msgstr ""
+msgid "The actual content of the configuration files consists of one or more of the following variables."
+msgstr "El contenido de los ficheros de configuración consiste en una o más de las siguientes variables."
 
 #. type: IP
 #: en/live-config.7:103
@@ -608,12 +439,8 @@ msgstr "B<LIVE_CONFIGS>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn>"
 
 #. type: Plain text
 #: en/live-config.7:105
-msgid ""
-"This variable equals the 'B<live-config>=I<SCRIPT1>,I<SCRIPT2>, ... "
-"I<SCRIPTn>' parameter."
-msgstr ""
-"Esta variable es igual al parámetro 'B<live-config>=I<SCRIPT1>,I<SCRIPT2>,"
-"·...·I<SCRIPTn>'"
+msgid "This variable equals the 'B<live-config>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn>' parameter."
+msgstr "Esta variable es igual al parámetro 'B<live-config>=I<SCRIPT1>,I<SCRIPT2>,·...·I<SCRIPTn>'"
 
 #. type: IP
 #: en/live-config.7:105
@@ -623,12 +450,8 @@ msgstr "B<LIVE_NOCONFIGS>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn>"
 
 #. type: Plain text
 #: en/live-config.7:107
-msgid ""
-"This variable equals the 'B<live-noconfig>=I<SCRIPT1>,I<SCRIPT2>, ... "
-"I<SCRIPTn>' parameter."
-msgstr ""
-"Esta variable es igual al parámetro 'B<live-noconfig>=I<SCRIPT1>,"
-"I<SCRIPT2>, ... I<SCRIPTn>'"
+msgid "This variable equals the 'B<live-noconfig>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn>' parameter."
+msgstr "Esta variable es igual al parámetro 'B<live-noconfig>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn>'"
 
 #. type: IP
 #: en/live-config.7:107
@@ -638,10 +461,8 @@ msgstr "B<LIVE_HOSTNAME>=I<HOSTNAME>"
 
 #. type: Plain text
 #: en/live-config.7:109
-msgid ""
-"This variable equals the 'B<live-config.hostname>=I<HOSTNAME>' parameter."
-msgstr ""
-"Esta variable es igual al parámetro 'B<live-config.hostname>=I<HOSTNAME>'"
+msgid "This variable equals the 'B<live-config.hostname>=I<HOSTNAME>' parameter."
+msgstr "Esta variable es igual al parámetro 'B<live-config.hostname>=I<HOSTNAME>'"
 
 #. type: IP
 #: en/live-config.7:109
@@ -651,10 +472,8 @@ msgstr "B<LIVE_USERNAME>=I<USERNAME>"
 
 #. type: Plain text
 #: en/live-config.7:111
-msgid ""
-"This variable equals the 'B<live-config.username>=I<USERNAME>' parameter."
-msgstr ""
-"Esta variable es igual al parámetro 'B<live-config.username>=I<USERNAME>'"
+msgid "This variable equals the 'B<live-config.username>=I<USERNAME>' parameter."
+msgstr "Esta variable es igual al parámetro 'B<live-config.username>=I<USERNAME>'"
 
 #. type: IP
 #: en/live-config.7:111
@@ -664,12 +483,8 @@ msgstr "B<LIVE_USER_FULLNAME>=\"I<USER FULLNAME>\""
 
 #. type: Plain text
 #: en/live-config.7:113
-msgid ""
-"This variable equals the 'B<live-config.user-fullname>=\"I<USER FULLNAME>\"' "
-"parameter."
-msgstr ""
-"Esta variable es igual al parámetro 'B<live-config.user-fullname>=\"I<USER "
-"FULLNAME>\"'"
+msgid "This variable equals the 'B<live-config.user-fullname>=\"I<USER FULLNAME>\"' parameter."
+msgstr "Esta variable es igual al parámetro 'B<live-config.user-fullname>=\"I<USER FULLNAME>\"'"
 
 #. type: IP
 #: en/live-config.7:113
@@ -679,12 +494,8 @@ msgstr "B<LIVE_LOCALES>=I<LOCALE1>,I<LOCALE2> ... I<LOCALEn>"
 
 #. type: Plain text
 #: en/live-config.7:115
-msgid ""
-"This variable equals the 'B<live-config.locales>=I<LOCALE1>,I<LOCALE2> ... "
-"I<LOCALEn>' parameter."
-msgstr ""
-"Esta variable es igual al parámetro 'B<live-config.locales>=I<LOCALE1>,"
-"I<LOCALE2> ... I<LOCALEn>'"
+msgid "This variable equals the 'B<live-config.locales>=I<LOCALE1>,I<LOCALE2> ... I<LOCALEn>' parameter."
+msgstr "Esta variable es igual al parámetro 'B<live-config.locales>=I<LOCALE1>,I<LOCALE2> ... I<LOCALEn>'"
 
 #. type: IP
 #: en/live-config.7:115
@@ -694,10 +505,8 @@ msgstr "B<LIVE_TIMEZONE>=I<TIMEZONE>"
 
 #. type: Plain text
 #: en/live-config.7:117
-msgid ""
-"This variable equals the 'B<live-config.timezone>=I<TIMEZONE>' parameter."
-msgstr ""
-"Esta variable es igual al parámetro 'B<live-config.timezone>=I<TIMEZONE>'"
+msgid "This variable equals the 'B<live-config.timezone>=I<TIMEZONE>' parameter."
+msgstr "Esta variable es igual al parámetro 'B<live-config.timezone>=I<TIMEZONE>'"
 
 #. type: IP
 #: en/live-config.7:117
@@ -718,12 +527,8 @@ msgstr "B<LIVE_KEYBOARD_MODEL>=I<KEYBOARD_MODEL>"
 
 #. type: Plain text
 #: en/live-config.7:121
-msgid ""
-"This variable equals the 'B<live-config.keyboard-model>=I<KEYBOARD_MODEL>' "
-"parameter."
-msgstr ""
-"Esta variable es igual al parámetro 'B<live-config.keyboard-"
-"model>=I<KEYBOARD_MODEL>'"
+msgid "This variable equals the 'B<live-config.keyboard-model>=I<KEYBOARD_MODEL>' parameter."
+msgstr "Esta variable es igual al parámetro 'B<live-config.keyboard-model>=I<KEYBOARD_MODEL>'"
 
 #. type: IP
 #: en/live-config.7:121
@@ -733,13 +538,8 @@ msgstr "B<LIVE_KEYBOARD_LAYOUTS>=I<KEYBOARD_LAYOUT1>,I<KEYBOARD_LAYOUT2> ... I<K
 
 #. type: Plain text
 #: en/live-config.7:123
-msgid ""
-"This variable equals the 'B<live-config.keyboard-"
-"layouts>=I<KEYBOARD_LAYOUT1>,I<KEYBOARD_LAYOUT2> ... I<KEYBOARD_LAYOUTn>' "
-"parameter."
-msgstr ""
-"Esta variable es igual al parámetro 'B<live-config.keyboard-"
-"layouts>=I<KEYBOARD_LAYOUT1>,I<KEYBOARD_LAYOUT2> ... I<KEYBOARD_LAYOUTn>'"
+msgid "This variable equals the 'B<live-config.keyboard-layouts>=I<KEYBOARD_LAYOUT1>,I<KEYBOARD_LAYOUT2> ... I<KEYBOARD_LAYOUTn>' parameter."
+msgstr "Esta variable es igual al parámetro 'B<live-config.keyboard-layouts>=I<KEYBOARD_LAYOUT1>,I<KEYBOARD_LAYOUT2> ... I<KEYBOARD_LAYOUTn>'"
 
 #. type: IP
 #: en/live-config.7:123
@@ -749,12 +549,8 @@ msgstr "B<LIVE_KEYBOARD_VARIANT>=I<KEYBOARD_VARIANT>"
 
 #. type: Plain text
 #: en/live-config.7:125
-msgid ""
-"This variable equals the 'B<live-config.keyboard-"
-"variant>=I<KEYBOARD_VARIANT>' parameter."
-msgstr ""
-"Esta variable es igual al parámetro 'B<live-config.keyboard-"
-"variant>=I<KEYBOARD_VARIANT>'"
+msgid "This variable equals the 'B<live-config.keyboard-variant>=I<KEYBOARD_VARIANT>' parameter."
+msgstr "Esta variable es igual al parámetro 'B<live-config.keyboard-variant>=I<KEYBOARD_VARIANT>'"
 
 #. type: IP
 #: en/live-config.7:125
@@ -764,12 +560,8 @@ msgstr "B<LIVE_KEYBOARD_OPTIONS>=I<KEYBOARD_OPTIONS>"
 
 #. type: Plain text
 #: en/live-config.7:127
-msgid ""
-"This variable equals the 'B<live-config.keyboard-"
-"options>=I<KEYBOARD_OPTIONS>' parameter."
-msgstr ""
-"Esta variable es igual al parámetro'B<live-config.keyboard-"
-"options>=I<KEYBOARD_OPTIONS>'"
+msgid "This variable equals the 'B<live-config.keyboard-options>=I<KEYBOARD_OPTIONS>' parameter."
+msgstr "Esta variable es igual al parámetro'B<live-config.keyboard-options>=I<KEYBOARD_OPTIONS>'"
 
 #. type: IP
 #: en/live-config.7:127
@@ -779,12 +571,8 @@ msgstr "B<LIVE_SYSV_RC>=I<SERVICE1>,I<SERVICE2> ... I<SERVICEn>"
 
 #. type: Plain text
 #: en/live-config.7:129
-msgid ""
-"This variable equals the 'B<live-config.sysv-rc>=I<SERVICE1>,I<SERVICE2> ... "
-"I<SERVICEn>' parameter."
-msgstr ""
-"Esta variable es igual al parámetro 'B<live-config.sysv-rc>=I<SERVICE1>,"
-"I<SERVICE2> ... I<SERVICEn>'"
+msgid "This variable equals the 'B<live-config.sysv-rc>=I<SERVICE1>,I<SERVICE2> ... I<SERVICEn>' parameter."
+msgstr "Esta variable es igual al parámetro 'B<live-config.sysv-rc>=I<SERVICE1>,I<SERVICE2> ... I<SERVICEn>'"
 
 #. type: IP
 #: en/live-config.7:129
@@ -794,12 +582,8 @@ msgstr "B<LIVE_XORG_DRIVER>=I<XORG_DRIVER>"
 
 #. type: Plain text
 #: en/live-config.7:131
-msgid ""
-"This variable equals the 'B<live-config.xorg-driver>=I<XORG_DRIVER>' "
-"parameter."
-msgstr ""
-"Esta variable es igual al parámetro 'B<live-config.xorg-"
-"driver>=I<XORG_DRIVER>'"
+msgid "This variable equals the 'B<live-config.xorg-driver>=I<XORG_DRIVER>' parameter."
+msgstr "Esta variable es igual al parámetro 'B<live-config.xorg-driver>=I<XORG_DRIVER>'"
 
 #. type: IP
 #: en/live-config.7:131
@@ -809,12 +593,8 @@ msgstr "B<LIVE_XORG_RESOLUTION>=I<XORG_RESOLUTION>"
 
 #. type: Plain text
 #: en/live-config.7:133
-msgid ""
-"This variable equals the 'B<live-config.xorg-resolution>=I<XORG_RESOLUTION>' "
-"parameter."
-msgstr ""
-"Esta variable es igual al parámetro 'B<live-config.xorg-"
-"resolution>=I<XORG_RESOLUTION>'"
+msgid "This variable equals the 'B<live-config.xorg-resolution>=I<XORG_RESOLUTION>' parameter."
+msgstr "Esta variable es igual al parámetro 'B<live-config.xorg-resolution>=I<XORG_RESOLUTION>'"
 
 #. type: IP
 #: en/live-config.7:133
@@ -824,12 +604,8 @@ msgstr "B<LIVE_HOOKS>=filesystem|medium|I<URL1>|I<URL2>| ... |I<URLn>"
 
 #. type: Plain text
 #: en/live-config.7:135
-msgid ""
-"This variable equals the 'B<live-config.hooks>=filesystem|medium|I<URL1>|"
-"I<URL2>| ... |I<URLn>' parameter."
-msgstr ""
-"Esta variable es igual al parámetro 'B<live-config.hooks>=filesystem|medium|"
-"I<URL1>|I<URL2>| ... |I<URLn>'"
+msgid "This variable equals the 'B<live-config.hooks>=filesystem|medium|I<URL1>|I<URL2>| ... |I<URLn>' parameter."
+msgstr "Esta variable es igual al parámetro 'B<live-config.hooks>=filesystem|medium|I<URL1>|I<URL2>| ... |I<URLn>'"
 
 #. type: SH
 #: en/live-config.7:136
@@ -839,12 +615,8 @@ msgstr "PERSONALIZACIÓN"
 
 #. type: Plain text
 #: en/live-config.7:138
-msgid ""
-"B<live-config> can be easily customized for downstream projects or local "
-"usage."
-msgstr ""
-"B<live-config> puede ser fácilmente personalizado para proyectos derivados o "
-"de uso local."
+msgid "B<live-config> can be easily customized for downstream projects or local usage."
+msgstr "B<live-config> puede ser fácilmente personalizado para proyectos derivados o de uso local."
 
 #. type: SS
 #: en/live-config.7:139
@@ -854,25 +626,13 @@ msgstr "Añadiendo nuevos scripts de configuración"
 
 #. type: Plain text
 #: en/live-config.7:141
-msgid ""
-"Downstream projects can put their scripts into /lib/live/config and do not "
-"need to do anything else, the scripts will be called automatically during "
-"boot."
-msgstr ""
-"Los proyectos derivados pueden incluir sus scripts en /lib/live/config y sin "
-"necesidad de hacer otra cosa, las secuencias de comandos se ejecutarán "
-"automáticamente durante el proceso de arranque."
+msgid "Downstream projects can put their scripts into /lib/live/config and do not need to do anything else, the scripts will be called automatically during boot."
+msgstr "Los proyectos derivados pueden incluir sus scripts en /lib/live/config y sin necesidad de hacer otra cosa, las secuencias de comandos se ejecutarán automáticamente durante el proceso de arranque."
 
 #. type: Plain text
 #: en/live-config.7:143
-msgid ""
-"The scripts are best put into an own debian package. A sample package "
-"containing an example script can be found in /usr/share/doc/live-config/"
-"examples."
-msgstr ""
-"Lo ideal sería incluir los scripts en su propio paquete debian. En /usr/"
-"share/doc/live-config/examples se encuentra un paquete de muestra con un "
-"script de ejemplo."
+msgid "The scripts are best put into an own debian package. A sample package containing an example script can be found in /usr/share/doc/live-config/examples."
+msgstr "Lo ideal sería incluir los scripts en su propio paquete debian. En /usr/share/doc/live-config/examples se encuentra un paquete de muestra con un script de ejemplo."
 
 #. type: SS
 #: en/live-config.7:144
@@ -882,32 +642,13 @@ msgstr "Eliminación de los scripts de configuración existentes."
 
 #. type: Plain text
 #: en/live-config.7:146
-msgid ""
-"It is not really possible to remove scripts itself in a sane way yet without "
-"requiring to ship a locally modified B<live-config> package. However, the "
-"same can be achieved by disabling the respective scripts through the live-"
-"noconfig mechanism, see above. To avoid to always need specifing disabled "
-"scripts through the boot parameter, a configuration file should be used, see "
-"above."
-msgstr ""
-"No es realmente posible eliminar los scripts en sí de una manera sensata sin "
-"incluir un paquete B<live-config> modificado localmente. Sin embargo, se "
-"puede obtener el mismo resultado si se desactivan los scripts "
-"correspondientes a través del mecanismo live-noconfig, como se ha indicado "
-"anteriormente. Para evitar que siempre haga falta especificar qué scripts se "
-"desactivan a través del parámetro de arranque, debería usarse un fichero de "
-"configuración, véase más arriba."
+msgid "It is not really possible to remove scripts itself in a sane way yet without requiring to ship a locally modified B<live-config> package. However, the same can be achieved by disabling the respective scripts through the live-noconfig mechanism, see above. To avoid to always need specifing disabled scripts through the boot parameter, a configuration file should be used, see above."
+msgstr "No es realmente posible eliminar los scripts en sí de una manera sensata sin incluir un paquete B<live-config> modificado localmente. Sin embargo, se puede obtener el mismo resultado si se desactivan los scripts correspondientes a través del mecanismo live-noconfig, como se ha indicado anteriormente. Para evitar que siempre haga falta especificar qué scripts se desactivan a través del parámetro de arranque, debería usarse un fichero de configuración, véase más arriba."
 
 #. type: Plain text
 #: en/live-config.7:148
-msgid ""
-"The configuration files for the live system itself are best put into an own "
-"debian package. A sample package containing an example configuration can be "
-"found in /usr/share/doc/live-config/examples."
-msgstr ""
-"Lo ideal sería incluir los ficheros de configuración para el sistema en vivo "
-"dentro de un paquete debian. Se puede encontrar un paquete de muestra con un "
-"ejemplo de configuración en /usr/share/doc/live-config/examples."
+msgid "The configuration files for the live system itself are best put into an own debian package. A sample package containing an example configuration can be found in /usr/share/doc/live-config/examples."
+msgstr "Lo ideal sería incluir los ficheros de configuración para el sistema en vivo dentro de un paquete debian. Se puede encontrar un paquete de muestra con un ejemplo de configuración en /usr/share/doc/live-config/examples."
 
 #. type: SH
 #: en/live-config.7:149
@@ -917,8 +658,7 @@ msgstr "SCRIPTS"
 
 #. type: Plain text
 #: en/live-config.7:151
-msgid ""
-"B<live-config> currently features the following scripts in /lib/live/config."
+msgid "B<live-config> currently features the following scripts in /lib/live/config."
 msgstr "B<live-config> incluye los siguientes scripts en /lib/live/config."
 
 #. type: IP
@@ -1013,7 +753,7 @@ msgstr "configura el inicio de sesión automático en kdm."
 #: en/live-config.7:168
 #, no-wrap
 msgid "B<lightdm>"
-msgstr ""
+msgstr "B<lightdm>"
 
 #. type: Plain text
 #: en/live-config.7:170
@@ -1098,13 +838,15 @@ msgid "configures sysv-rc by disabling listed services."
 msgstr "configura sysv-rc desactivando los sevicios listados."
 
 #. type: IP
-#: en/live-config.7:184 en/live-config.7:214
+#: en/live-config.7:184
+#: en/live-config.7:214
 #, no-wrap
 msgid "B<login>"
 msgstr "B<login>"
 
 #. type: Plain text
-#: en/live-config.7:186 en/live-config.7:216
+#: en/live-config.7:186
+#: en/live-config.7:216
 msgid "disables lastlog."
 msgstr "Desactiva lastlog."
 
@@ -1160,11 +902,8 @@ msgstr "B<initramfs-tools>"
 
 #. type: Plain text
 #: en/live-config.7:196
-msgid ""
-"makes update-initramfs to also update the live media when using persistency."
-msgstr ""
-"Posibilita que update-initramfs actualice también los medios en vivo cuando "
-"se usan en modo persistente."
+msgid "makes update-initramfs to also update the live media when using persistency."
+msgstr "Posibilita que update-initramfs actualice también los medios en vivo cuando se usan en modo persistente."
 
 #. type: IP
 #: en/live-config.7:196
@@ -1306,12 +1045,8 @@ msgstr "B<hooks>"
 
 #. type: Plain text
 #: en/live-config.7:224
-msgid ""
-"allows to run arbitrary commands from a script placed on the live media or "
-"an http/ftp server."
-msgstr ""
-"permite ejecutar de forma arbitraria los comandos desde un script ubicado en "
-"el medio en vivo o en un servidor http/ftp."
+msgid "allows to run arbitrary commands from a script placed on the live media or an http/ftp server."
+msgstr "permite ejecutar de forma arbitraria los comandos desde un script ubicado en el medio en vivo o en un servidor http/ftp."
 
 #. type: SH
 #: en/live-config.7:225
@@ -1396,14 +1131,8 @@ msgstr "PÁGINA PRINCIPAL"
 
 #. type: Plain text
 #: en/live-config.7:244
-msgid ""
-"More information about live-config and the Debian Live project can be found "
-"on the homepage at E<lt>I<http://live.debian.net/>E<gt> and in the manual at "
-"E<lt>I<http://live.debian.net/manual/>E<gt>."
-msgstr ""
-"Se puede encontrar más información acerca de live-config y el proyecto "
-"Debian Live en la página principal de E<lt>I<http://live.debian.net/>E<gt> y "
-"en el manual en E<lt>I<http://live.debian.net/manual/>E<gt>."
+msgid "More information about live-config and the Debian Live project can be found on the homepage at E<lt>I<http://live.debian.net/>E<gt> and in the manual at E<lt>I<http://live.debian.net/manual/>E<gt>."
+msgstr "Se puede encontrar más información acerca de live-config y el proyecto Debian Live en la página principal de E<lt>I<http://live.debian.net/>E<gt> y en el manual en E<lt>I<http://live.debian.net/manual/>E<gt>."
 
 #. type: SH
 #: en/live-config.7:245
@@ -1413,16 +1142,8 @@ msgstr "ERRORES"
 
 #. type: Plain text
 #: en/live-config.7:247
-msgid ""
-"Bugs can be reported by submitting a bugreport for the live-config package "
-"in the Debian Bug Tracking System at E<lt>I<http://bugs.debian.org/>E<gt> or "
-"by writing a mail to the Debian Live mailing list at E<lt>I<debian-"
-"live@lists.debian.org>E<gt>."
-msgstr ""
-"Se puede notificar los fallos enviando un informe de errores («bugreport» N. "
-"del T.) sobre el paquete live-config en el Debian Bug Tracking System en "
-"E<lt>I<http://bugs.debian.org/>E<gt> o escribiendo un mensaje a la lista de "
-"correo de Debian Live en E<lt>I<debian-live@lists.debian.org>E<gt>."
+msgid "Bugs can be reported by submitting a bugreport for the live-config package in the Debian Bug Tracking System at E<lt>I<http://bugs.debian.org/>E<gt> or by writing a mail to the Debian Live mailing list at E<lt>I<debian-live@lists.debian.org>E<gt>."
+msgstr "Se puede notificar los fallos enviando un informe de errores («bugreport» N. del T.) sobre el paquete live-config en el Debian Bug Tracking System en E<lt>I<http://bugs.debian.org/>E<gt> o escribiendo un mensaje a la lista de correo de Debian Live en E<lt>I<debian-live@lists.debian.org>E<gt>."
 
 #. type: SH
 #: en/live-config.7:248
@@ -1432,7 +1153,6 @@ msgstr "AUTOR"
 
 #. type: Plain text
 #: en/live-config.7:249
-msgid ""
-"live-config was written by Daniel Baumann E<lt>I<daniel@debian.org>E<gt>."
-msgstr ""
-"live-config fue escrito por Daniel Baumann E<lt>I<daniel@debian.org>E<gt>."
+msgid "live-config was written by Daniel Baumann E<lt>I<daniel@debian.org>E<gt>."
+msgstr "live-config fue escrito por Daniel Baumann E<lt>I<daniel@debian.org>E<gt>."
+
