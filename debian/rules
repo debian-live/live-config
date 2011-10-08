@@ -34,3 +34,6 @@ override_dh_install:
 
 override_dh_compress:
 	dh_compress -Xusr/share/doc/live-config/examples
+
+override_dh_builddeb:
+	dh_builddeb -- -Zgzip -z9
