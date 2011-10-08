@@ -5,11 +5,11 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: live-config 3.0~a27\n"
-"POT-Creation-Date: 2011-09-23 20:40+0300\n"
-"PO-Revision-Date: 2011-05-07 19:51+0100\n"
-"Last-Translator: José Luis Zabalza <jlz.3008@gmail.com> and Carlos Zuferri "
-"\"chals\" <chals@altorricon.com>\n"
+"Project-Id-Version: live-config 3.0~a28\n"
+"POT-Creation-Date: 2011-10-08 11:04+0300\n"
+"PO-Revision-Date: 2011-10-04 15:28+0100\n"
+"Last-Translator: José Luis Zabalza and Carlos Zuferri «chals» "
+"<jlz.3008@gmail.com> <chals@altorricon.com>\n"
 "Language-Team: none\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
@@ -25,14 +25,14 @@ msgstr "LIVE-CONFIG"
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "2011-09-23"
-msgstr "23.09.2011"
+msgid "2011-10-08"
+msgstr "08.10.2011"
 
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "3.0~a27"
-msgstr "3.0~a27"
+msgid "3.0~a28"
+msgstr "3.0~a28"
 
 #. type: TH
 #: en/live-config.7:9
@@ -92,6 +92,8 @@ msgid ""
 "To configure the live-config parameters used by default in a live image, see "
 "the --bootappend-live option in the I<lb_config>(1) manual page."
 msgstr ""
+"Para configurar los parámetros usados por defecto en una imagen en vivo, ver "
+"la opción --bootappend-live en la página del manual I<lb_config>(1)"
 
 #. type: SS
 #: en/live-config.7:22
@@ -599,6 +601,8 @@ msgid ""
 "The actual content of the configuration files consists of one or more of the "
 "following variables."
 msgstr ""
+"El contenido de los ficheros de configuración consiste en una o más de las "
+"siguientes variables."
 
 #. type: IP
 #: en/live-config.7:103
@@ -1013,7 +1017,7 @@ msgstr "configura el inicio de sesión automático en kdm."
 #: en/live-config.7:168
 #, no-wrap
 msgid "B<lightdm>"
-msgstr ""
+msgstr "B<lightdm>"
 
 #. type: Plain text
 #: en/live-config.7:170
@@ -1361,35 +1365,41 @@ msgstr "B</lib/live/config/>"
 msgid "B</var/lib/live/config/>"
 msgstr "B</var/lib/live/config/>"
 
+#. type: IP
+#: en/live-config.7:233
+#, no-wrap
+msgid "B</var/log/live-config.log>"
+msgstr "B</var/log/live-config.log>"
+
 #. type: SH
-#: en/live-config.7:234
+#: en/live-config.7:235
 #, no-wrap
 msgid "SEE ALSO"
 msgstr "VER ADEMÁS"
 
 #. type: Plain text
-#: en/live-config.7:236
+#: en/live-config.7:237
 msgid "I<live-boot>(7)"
 msgstr "I<live-boot>(7)"
 
 #. type: Plain text
-#: en/live-config.7:238
+#: en/live-config.7:239
 msgid "I<live-build>(7)"
 msgstr "I<live-build>(7)"
 
 #. type: Plain text
-#: en/live-config.7:240
+#: en/live-config.7:241
 msgid "I<live-tools>(7)"
 msgstr "I<live-tools>(7)"
 
 #. type: SH
-#: en/live-config.7:241
+#: en/live-config.7:242
 #, no-wrap
 msgid "HOMEPAGE"
 msgstr "PÁGINA PRINCIPAL"
 
 #. type: Plain text
-#: en/live-config.7:243
+#: en/live-config.7:244
 msgid ""
 "More information about live-config and the Debian Live project can be found "
 "on the homepage at E<lt>I<http://live.debian.net/>E<gt> and in the manual at "
@@ -1400,13 +1410,13 @@ msgstr ""
 "en el manual en E<lt>I<http://live.debian.net/manual/>E<gt>."
 
 #. type: SH
-#: en/live-config.7:244
+#: en/live-config.7:245
 #, no-wrap
 msgid "BUGS"
 msgstr "ERRORES"
 
 #. type: Plain text
-#: en/live-config.7:246
+#: en/live-config.7:247
 msgid ""
 "Bugs can be reported by submitting a bugreport for the live-config package "
 "in the Debian Bug Tracking System at E<lt>I<http://bugs.debian.org/>E<gt> or "
@@ -1419,13 +1429,13 @@ msgstr ""
 "correo de Debian Live en E<lt>I<debian-live@lists.debian.org>E<gt>."
 
 #. type: SH
-#: en/live-config.7:247
+#: en/live-config.7:248
 #, no-wrap
 msgid "AUTHOR"
 msgstr "AUTOR"
 
 #. type: Plain text
-#: en/live-config.7:248
+#: en/live-config.7:249
 msgid ""
 "live-config was written by Daniel Baumann E<lt>I<daniel@debian.org>E<gt>."
 msgstr ""
