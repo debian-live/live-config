@@ -6,7 +6,7 @@
 .\" under certain conditions; see COPYING for details.
 .\"
 .\"
-.TH LIVE\-CONFIG 7 2011\-10\-08 3.0~a28 "Debian Live Project"
+.TH LIVE\-CONFIG 7 2011\-10\-12 3.0~a28 "Debian Live Project"
 
 .SH NAME
 \fBlive\-config\fR \- System Configuration Scripts
@@ -61,7 +61,7 @@ Allows to set the x\-session\-manager through update\-alternatives.
 .IP "\fBlive\-config.xorg\-driver\fR=\fIXORG_DRIVER\fR | \fBxorg\-driver\fR=\fIXORG_DRIVER\fR" 4
 Allows to set xorg driver instead of autodetecting it.
 .IP "\fBlive\-config.xorg\-resolution\fR=\fIXORG_RESOLUTION\fR | \fBxorg\-resolution\fR=\fIXORG_RESOLUTION\fR" 4
-Allows to set xorg resolution instead of autodetecting it.
+Allows to set xorg resolution instead of autodetecting it, e.g. 1024x768.
 .IP "\fBlive\-config.hooks\fR=filesystem|medium|\fIURL1\fR|\fIURL2\fR| ... |\fIURLn\fR | \fBhooks\fR=medium|filesystem|\fIURL1\fR|\fIURL2\fR| ... |\fIURLn\fR" 4
 Allows to fetch and execute one or more arbitrary files. Note that the URLs must be fetchable by wget (http, ftp or file://), the files are executed in /tmp of the running live system, and that the files needs their dependencies, if any, already installed, e.g. if a python script should be executed the system needs python installed. Some hooks for some common use-cases are available at /usr/share/doc/live-config/examples/hooks/ and <\fIhttp://live.debian.net/other/hooks\fR>.
 .br

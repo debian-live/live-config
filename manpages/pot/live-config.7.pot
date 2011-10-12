@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config VERSION\n"
-"POT-Creation-Date: 2011-10-08 11:04+0300\n"
+"POT-Creation-Date: 2011-10-12 20:48+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,7 +25,7 @@ msgstr ""
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "2011-10-08"
+msgid "2011-10-12"
 msgstr ""
 
 #. type: TH
@@ -330,7 +330,8 @@ msgstr ""
 
 #. type: Plain text
 #: en/live-config.7:65
-msgid "Allows to set xorg resolution instead of autodetecting it."
+msgid ""
+"Allows to set xorg resolution instead of autodetecting it, e.g. 1024x768."
 msgstr ""
 
 #. type: IP

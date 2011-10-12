@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config 3.0~a28\n"
-"POT-Creation-Date: 2011-10-08 11:04+0300\n"
+"POT-Creation-Date: 2011-10-12 20:48+0300\n"
 "PO-Revision-Date: 2010-05-24 09:59+0300\n"
 "Last-Translator: Thierry Lépicier <thierry.lepicier@free.fr>\n"
 "Language-Team: none\n"
@@ -24,8 +24,8 @@ msgstr "LIVE-CONFIG"
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "2011-10-08"
-msgstr "08.10.2011"
+msgid "2011-10-12"
+msgstr "12.10.2011"
 
 #. type: TH
 #: en/live-config.7:9
@@ -378,7 +378,10 @@ msgstr "B<live-config.xorg-resolution>=I<RESOLUTION_PAR_XORG> | B<xorg-resolutio
 
 #. type: Plain text
 #: en/live-config.7:65
-msgid "Allows to set xorg resolution instead of autodetecting it."
+#, fuzzy
+#| msgid "Allows to set xorg resolution instead of autodetecting it."
+msgid ""
+"Allows to set xorg resolution instead of autodetecting it, e.g. 1024x768."
 msgstr ""
 "Permet de spécifier la résolution utilisée par xorg, plutôt que d'utiliser "
 "l'auto-détection."
