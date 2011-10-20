@@ -5,6 +5,7 @@ set -e
 case "${1}" in
 	purge)
 		rm -f /etc/sudoers.d/live
+		rm -f /etc/profile.d/locales-all.sh
 		rm -f /etc/profile.d/zz-live.sh
 		rm -f /etc/X11/xorg.conf.d/99-live_*.conf
 
