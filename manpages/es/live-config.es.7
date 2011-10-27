@@ -11,7 +11,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 08.10.2011 3.0~a28 "Proyecto Debian Live"
+.TH LIVE\-CONFIG 7 27.10.2011 3.0~a29 "Proyecto Debian Live"
 
 .SH NOMBRE
 \fBlive\-config\fP \- Scripts de configuración del sistema
@@ -94,8 +94,7 @@ Permite seleccionar el gestor de sesión gráfica «x\-session\-manager» median
 Permite seleccionar el controlador xorg en lugar de detectarlo de forma
 automática.
 .IP \fBlive\-config.xorg\-resolution\fP=\fIXORG_RESOLUTION\fP·|·\fBxorg\-resolution\fP=\fIXORG_RESOLUTION\fP 4
-Permite seleccionar la resolución de xorg en lugar de detectarla de forma
-automática.
+Allows to set xorg resolution instead of autodetecting it, e.g. 1024x768.
 .IP "\fBlive\-config.hooks\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP | \fBhooks\fP=medium|filesystem|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
 Permite buscar y ejecutar uno o más archivos de forma arbitraria. Tener en
 cuenta que las URLs deben ser descargadas usando wget (http, ftp o file://),
@@ -251,6 +250,8 @@ Añade una cuenta de usuario en vivo.
 garantiza privilegios de sudo al usuario del sistema en vivo.
 .IP \fBlocales\fP 4
 configura las variantes locales.
+.IP \fBlocales\-all\fP 4
+configura las variantes locales\-all.
 .IP \fBtzdata\fP 4
 configura /etc/timezone.
 .IP \fBgdm\fP 4

@@ -11,7 +11,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 10\-08\-2011 3.0~a28 "Projeto Debian Live"
+.TH LIVE\-CONFIG 7 27\-08\-2011 3.0~a29 "Projeto Debian Live"
 
 .SH NOME
 \fBlive\-config\fP \- Scripts para Configuração do Sistema
@@ -92,7 +92,7 @@ update\-alternatives.
 .IP "\fBlive\-config.xorg\-driver\fP=\fIDRIVER_DO_XORG\fP | \fBxorg\-driver\fP=\fIDRIVER_DO_XORG\fP" 4
 Permite definir o driver do xorg ao invés de auto\-detectá\-lo.
 .IP "\fBlive\-config.xorg\-resolution\fP=\fIRESOLUÇÃO_DO_XORG\fP | \fBxorg\-resolution\fP=\fIRESOLUÇÃO_DO_XORG\fP" 4
-Permite definir a resolução do xorg ao invés de auto\-detectá\-la.
+Allows to set xorg resolution instead of autodetecting it, e.g. 1024x768.
 .IP "\fBlive\-config.hooks\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP | \fBhooks\fP=medium|filesystem|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
 Permite obter e executar um ou mais arquivos arbitrários. Note que as URLs
 precisam ser acessíveis por wget (http, ftp ou file://), que os arquivos são
@@ -249,6 +249,8 @@ adiciona uma conta de usuário live.
 concede privilégios sudo ao usuário live.
 .IP \fBlocales\fP 4
 configura locales.
+.IP \fBlocales\-all\fP 4
+configura locales\-all.
 .IP \fBtzdata\fP 4
 configura /etc/timezone.
 .IP \fBgdm\fP 4

@@ -33,7 +33,6 @@ User_setup ()
 		esac
 	done
 
-
 	Configure_user_setup
 }
 

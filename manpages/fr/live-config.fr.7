@@ -11,7 +11,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 08.10.2011 3.0~a28 "Projet Debian Live"
+.TH LIVE\-CONFIG 7 27.10.2011 3.0~a29 "Projet Debian Live"
 
 .SH NOM
 \fBlive\-config\fP \- Scripts de configuration du système
@@ -99,8 +99,7 @@ Permet de spécifier le x\-session\-manager via update\-alternatives.
 Permet de spécifier le driver utilisé par xorg plutôt que d'utiliser
 l'auto\-détection.
 .IP "\fBlive\-config.xorg\-resolution\fP=\fIRESOLUTION_PAR_XORG\fP | \fBxorg\-resolution\fP=\fIRESOLUTION_PAR_XORG\fP" 4
-Permet de spécifier la résolution utilisée par xorg, plutôt que d'utiliser
-l'auto\-détection.
+Allows to set xorg resolution instead of autodetecting it, e.g. 1024x768.
 .IP "\fBlive\-config.hooks\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP | \fBhooks\fP=\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
 Permet de soumettre et d'exécuter un ou plusieurs fichiers/scripts
 spécifiques. Notez que les URLs doivent pouvoir être utilisées par wget
@@ -261,6 +260,8 @@ ajoute un compte live d'utilisateur.
 offre les privilèges sudo à l'utilisateur live.
 .IP \fBlocales\fP 4
 configure les locales.
+.IP \fBlocales\-all\fP 4
+configure les locales\-all.
 .IP \fBtzdata\fP 4
 configure /etc/timezone.
 .IP \fBgdm\fP 4
