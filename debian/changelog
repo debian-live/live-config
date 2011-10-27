@@ -1,3 +1,18 @@
+live-config (3.0~a29-1) unstable; urgency=low
+
+  * Using compression level 9 also for binary packages.
+  * Adding example in live-config manpage for a suitable resolution when
+    using xorg-resolution parameter.
+  * Using compression level 9 also for binary packages in live-config
+    example package.
+  * Adding configuration script for locales-all.
+  * Renumbering scripts.
+  * Removing superfluous empty line in user-setup script.
+  * Adding forgotten parsing of cmdline in sudo script to respect
+    username boot parameter (Closes: #646824).
+
+ -- Daniel Baumann <daniel@debian.org>  Thu, 27 Oct 2011 21:42:35 +0200
+
 live-config (3.0~a28-1) unstable; urgency=low
 
   [ Daniel Baumann ]
