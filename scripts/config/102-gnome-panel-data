@@ -19,6 +19,16 @@ Gnome_panel_data ()
 
 	echo -n " gnome-panel-data"
 
+	# Reading kernel command line
+	for _PARAMETER in ${_CMDLINE}
+	do
+		case "${_PARAMETER}" in
+			live-config.username=*|username=*)
+				LIVE_USERNAME="${_PARAMETER#*username=}"
+				;;
+		esac
+	done
+
 	Configure_gnome_panel_data
 }
 

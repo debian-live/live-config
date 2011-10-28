@@ -19,6 +19,7 @@ Sysv_rc ()
 
 	echo -n " sysv-rc"
 
+	# Reading kernel command line
 	for _PARAMETER in ${_CMDLINE}
 	do
 		case "${_PARAMETER}" in
@@ -35,9 +36,9 @@ Configure_sysv_rc ()
 {
 	if [ -n "${LIVE_SYSV_RC}" ]
 	then
-		for SERVICE in $(echo ${LIVE_SYSV_RC} | sed -e 's|,| |g')
+		for _SERVICE in $(echo ${LIVE_SYSV_RC} | sed -e 's|,| |g')
 		do
-			update-rc.d -f ${SERVICE} remove | \
+			update-rc.d -f ${_SERVICE} remove | \
 			grep -v "update-rc.d: using dependency based boot sequencing" || true
 		done
 	fi

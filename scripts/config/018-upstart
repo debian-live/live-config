@@ -19,6 +19,16 @@ Upstart ()
 
 	echo -n " upstart"
 
+	# Reading kernel command line
+	for _PARAMETER in ${_CMDLINE}
+	do
+		case "${_PARAMETER}" in
+			live-config.username=*|username=*)
+				LIVE_USERNAME="${_PARAMETER#*username=}"
+				;;
+		esac
+	done
+
 	Configure_upstart
 }
 
@@ -28,9 +38,9 @@ Configure_upstart ()
 	do
 		_TTY="$(basename ${_FILE} .conf)"
 
-		# mingetty has autologin support
 		if [ -e /sbin/mingetty ] || grep -qs '^exec.*mingetty' "${_FILE}"
 		then
+			# mingetty has autologin support
 			sed -i -e 's|^\(exec.*getty\) *\(--autologin *[^ ]* *\)*.*$|exec /sbin/mingetty --autologin '"${LIVE_USERNAME} ${_TTY}|g" "${_FILE}"
 		else
 			# substitute getty with a direct login

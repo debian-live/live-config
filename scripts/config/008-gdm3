@@ -27,6 +27,16 @@ Gdm3 ()
 
 	echo -n " gdm3"
 
+	# Reading kernel command line
+	for _PARAMETER in ${_CMDLINE}
+	do
+		case "${_PARAMETER}" in
+			live-config.username=*|username=*)
+				LIVE_USERNAME="${_PARAMETER#*username=}"
+				;;
+		esac
+	done
+
 	Configure_gdm3
 }
 

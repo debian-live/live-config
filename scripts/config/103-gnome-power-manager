@@ -19,6 +19,16 @@ Gnome_power_manager ()
 
 	echo -n " gnome-screensaver"
 
+	# Reading kernel command line
+	for _PARAMETER in ${_CMDLINE}
+	do
+		case "${_PARAMETER}" in
+			live-config.username=*|username=*)
+				LIVE_USERNAME="${_PARAMETER#*username=}"
+				;;
+		esac
+	done
+
 	Configure_gnome_power_manager
 }
 
