@@ -19,6 +19,7 @@ Keyboard_configuration ()
 
 	echo -n " keyboard-configuration"
 
+	# Reading kernel command line
 	for _PARAMETER in ${_CMDLINE}
 	do
 		case "${_PARAMETER}" in

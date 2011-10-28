@@ -27,6 +27,16 @@ Slim ()
 
 	echo -n " slim"
 
+	# Reading kernel command line
+	for _PARAMETER in ${_CMDLINE}
+	do
+		case "${_PARAMETER}" in
+			live-config.username=*|username=*)
+				LIVE_USERNAME="${_PARAMETER#*username=}"
+				;;
+		esac
+	done
+
 	Configure_slim
 }
 
