@@ -1,3 +1,16 @@
+live-config (3.0~a30-1) unstable; urgency=low
+
+  * Adding required parsing for the respective boot parameters in all
+    config scripts so that every script is self-contained (Closes:
+    #646824).
+  * Adding forgotten underline prefix to show that the service variable
+    in sysv-rc script is a local variable.
+  * Moving comment about mingetty to the actual executed code for
+    consistency.
+  * Sorting parameter handling alphabetically in each script.
+
+ -- Daniel Baumann <daniel@debian.org>  Fri, 28 Oct 2011 12:29:13 +0200
+
 live-config (3.0~a29-1) unstable; urgency=low
 
   * Using compression level 9 also for binary packages.
