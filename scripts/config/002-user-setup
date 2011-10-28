@@ -23,12 +23,12 @@ User_setup ()
 	for _PARAMETER in ${_CMDLINE}
 	do
 		case "${_PARAMETER}" in
-			live-config.username=*|username=*)
-				LIVE_USERNAME="${_PARAMETER#*username=}"
-				;;
-
 			live-config.user-fullname=*|user-fullname=*)
 				LIVE_USER_FULLNAME="${_PARAMETER#*user-fullname=}"
+				;;
+
+			live-config.username=*|username=*)
+				LIVE_USERNAME="${_PARAMETER#*username=}"
 				;;
 		esac
 	done
