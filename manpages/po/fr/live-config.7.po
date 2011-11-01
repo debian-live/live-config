@@ -1,19 +1,20 @@
 # French translations for live-config package
 # 2010 Thierry Lépicier <thierry.lepicier@free.fr>
 # This file is distributed under the same license as the live-config package.
+# Carlos Zuferri «chals» <chals@altorricon.com>, 2011.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config 3.0~a30\n"
 "POT-Creation-Date: 2011-11-01 17:01+0100\n"
-"PO-Revision-Date: 2010-05-24 09:59+0300\n"
-"Last-Translator: Thierry Lépicier <thierry.lepicier@free.fr>\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2011-11-01 17:36+0100\n"
+"Last-Translator: Carlos Zuferri «chals» <chals@altorricon.com>\n"
+"Language-Team:  <debian-live@lists.debian.org>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. type: TH
 #: en/live-config.7:9
@@ -92,6 +93,9 @@ msgid ""
 "To configure the live-config parameters used by default in a live image, see "
 "the --bootappend-live option in the I<lb_config>(1) manual page."
 msgstr ""
+"Pour configurer les paramètres de live-config utilisés par défaut dans une "
+"image live, consultez l'option --bootappend-live dans la page de manuel "
+"I<lb_config>(1)"
 
 #. type: SS
 #: en/live-config.7:22
@@ -379,13 +383,11 @@ msgstr "B<live-config.xorg-resolution>=I<RESOLUTION_PAR_XORG> | B<xorg-resolutio
 
 #. type: Plain text
 #: en/live-config.7:65
-#, fuzzy
-#| msgid "Allows to set xorg resolution instead of autodetecting it."
 msgid ""
 "Allows to set xorg resolution instead of autodetecting it, e.g. 1024x768."
 msgstr ""
 "Permet de spécifier la résolution utilisée par xorg, plutôt que d'utiliser "
-"l'auto-détection."
+"l'auto-détection, par example 1024x768."
 
 #. type: IP
 #: en/live-config.7:65
@@ -608,6 +610,8 @@ msgid ""
 "The actual content of the configuration files consists of one or more of the "
 "following variables."
 msgstr ""
+"Le contenu réel des fichiers de configuration se compose d'une ou plusieurs "
+"des variables suivantes."
 
 #. type: IP
 #: en/live-config.7:103
@@ -933,6 +937,7 @@ msgstr "SCRIPTS"
 msgid ""
 "B<live-config> currently features the following scripts in /lib/live/config."
 msgstr ""
+"B<live-config> actuellement a les scripts suivants dans /lib/live/config."
 
 #. type: IP
 #: en/live-config.7:152
@@ -1037,7 +1042,7 @@ msgstr "configure l'auto-login dans kdm."
 #: en/live-config.7:170
 #, no-wrap
 msgid "B<lightdm>"
-msgstr ""
+msgstr "B<lightdm>"
 
 #. type: Plain text
 #: en/live-config.7:172
@@ -1092,7 +1097,7 @@ msgstr "configure l'auto-login avec xinit."
 #: en/live-config.7:180
 #, no-wrap
 msgid "B<keyboard-configuration>"
-msgstr ""
+msgstr "B<keyboard-configuration>"
 
 #. type: Plain text
 #: en/live-config.7:182
