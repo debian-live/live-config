@@ -6,7 +6,7 @@
 .\" under certain conditions; see COPYING for details.
 .\"
 .\"
-.TH LIVE\-CONFIG 7 2011\-11\-01 3.0~a30 "Debian Live Project"
+.TH LIVE\-CONFIG 7 2011\-11\-29 3.0~a30 "Debian Live Project"
 
 .SH NAME
 \fBlive\-config\fR \- System Configuration Scripts
@@ -38,6 +38,8 @@ Some individual scripts can change their behaviour upon a boot parameter.
 Allows to set the hostname of the system. The default is 'debian'.
 .IP "\fBlive\-config.username\fR=\fIUSERNAME\fR | \fBusername\fR=\fIUSERNAME\fR" 4
 Allows to set the username that gets created for autologin. The default is 'user'.
+.IP "\fBlive\-config.user\-default\-groups\fR=\fIGROUP1\fR,\fIGROUP2\fR ... \fIGROUPn\fR | \fBuser\-default\-groups\fR=\fIGROUP1\fR,\fIGROUP2\fR ... \fIGROUPn\fR" 4
+Allows to set the default groups of the users that gets created for autologin is member of. The default is 'audio cdrom dip floppy video plugdev netdev powerdev scanner bluetooth'.
 .IP "\fBlive\-config.user\-fullname\fR=""\fIUSER FULLNAME\fR"" | \fBuser\-fullname\fR=""\fIUSER FULLNAME\fR""" 4
 Allows to set the fullname of the users that gets created for autologin. The default is 'Debian Live user'.
 .IP "\fBlive\-config.locales\fR=\fILOCALE1\fR,\fILOCALE2\fR ... \fILOCALEn\fR | \fBlocales\fR=\fILOCALE1\fR,\fILOCALE2\fR ... \fILOCALEn\fR" 4
@@ -108,6 +110,8 @@ This variable equals the '\fBlive\-noconfig\fR=\fISCRIPT1\fR,\fISCRIPT2\fR, ... 
 This variable equals the '\fBlive\-config.hostname\fR=\fIHOSTNAME\fR' parameter.
 .IP "\fBLIVE_USERNAME\fR=\fIUSERNAME\fR" 4
 This variable equals the '\fBlive\-config.username\fR=\fIUSERNAME\fR' parameter.
+.IP "\fBLIVE_USER_DEFAULT_GROUPS\fR=\fIGROUP1\fR,\fIGROUP2\fR ... \fIGROUPn\fR" 4
+This variable equals the '\fBlive\-config.user\-default\-groups\fR="\fIGROUP1\fR,\fIGROUP2\fR ... \fIGROUPn\fR"' parameter.
 .IP "\fBLIVE_USER_FULLNAME\fR=""\fIUSER FULLNAME\fR""" 4
 This variable equals the '\fBlive\-config.user\-fullname\fR="\fIUSER FULLNAME\fR"' parameter.
 .IP "\fBLIVE_LOCALES\fR=\fILOCALE1\fR,\fILOCALE2\fR ... \fILOCALEn\fR" 4

@@ -26,6 +26,7 @@ set -e
 LIVE_HOSTNAME="debian"
 LIVE_USERNAME="user"
 LIVE_USER_FULLNAME="Debian Live user"
+LIVE_USER_DEFAULT_GROUPS="audio cdrom dip floppy video plugdev netdev powerdev scanner bluetooth debian-tor"
 
 DEBIAN_FRONTEND="noninteractive"
 DEBIAN_PRIORITY="critical"

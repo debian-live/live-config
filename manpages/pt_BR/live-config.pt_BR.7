@@ -11,7 +11,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 2011\-11\-01 3.0~a30 "Projeto Debian Live"
+.TH LIVE\-CONFIG 7 29\-11\-2011 3.0~a30 "Projeto Debian Live"
 
 .SH NOME
 \fBlive\-config\fP \- Scripts para Configuração do Sistema
@@ -61,6 +61,10 @@ Permite configurar o hostname do sistema. O padrão é 'debian'.
 .IP "\fBlive\-config.username\fP=\fINOME_DO_USUARIO\fP | \fBusername\fP=\fINOME_DO_USUARIO\fP" 4
 Permite configurar o nome do usuário que será criado para autologin. O
 padrão 'user'.
+.IP "\fBlive\-config.user\-default\-groups\fP=\fIGROUP1\fP,\fIGROUP2\fP ... \fIGROUPn\fP | \fBuser\-default\-groups\fP=\fIGROUP1\fP,\fIGROUP2\fP ... \fIGROUPn\fP" 4
+Allows to set the default groups of the users that gets created for
+autologin is member of. The default is 'audio cdrom dip floppy video plugdev
+netdev powerdev scanner bluetooth'.
 .IP "\fBlive\-config.user\-fullname\fP=\(dq\fINOME_COMPLETO_DO_USUÁRIO\fP\(dq | \fBuser\-fullname\fP=\(dq\fINOME_COMPLETO_DO_USUÁRIO\fP\(dq" 4
 Permite configurar o nome completo do usuário que será criado para
 autologin. O padrão é 'Debian Live user'.
@@ -174,6 +178,10 @@ Esta variável é equivalente ao parâmetro
 .IP \fBLIVE_USERNAME\fP=\fIUSERNAME\fP 4
 Esta variável é equivalente ao parâmetro
 \&'\fBlive\-config.username\fP=\fIUSERNAME\fP'.
+.IP "\fBLIVE_USER_DEFAULT_GROUPS\fP=\fIGROUP1\fP,\fIGROUP2\fP ... \fIGROUPn\fP" 4
+This variable equals the
+\&'\fBlive\-config.user\-default\-groups\fP="\fIGROUP1\fP,\fIGROUP2\fP ... \fIGROUPn\fP"'
+parameter.
 .IP \fBLIVE_USER_FULLNAME\fP=\(dq\fINOME_COMPLETO_DO_USUÁRIO\(dq\fP 4
 Esta variável é equivalente ao parâmetro
 \&'\fBlive\-config.user\-fullname\fP="\fINOME_COMPLETO_DO_USUÁRIO\fP"'.
