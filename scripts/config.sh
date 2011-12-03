@@ -63,6 +63,8 @@ Cmdline ()
 				# Disable root access, no matter what mechanism
 				_SCRIPTS="${_SCRIPTS:-$(ls /lib/live/config/*)}"
 				LIVE_NOCONFIGS="${LIVE_NOCONFIGS},sudo,policykit"
+
+				_NO_ROOT="true"
 				;;
 
 			live-config.noautologin|noautologin)
