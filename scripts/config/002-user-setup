@@ -23,6 +23,10 @@ User_setup ()
 	for _PARAMETER in ${_CMDLINE}
 	do
 		case "${_PARAMETER}" in
+			live-config.user-default-groups=*|user-default-groups=*)
+				LIVE_USER_DEFAULT_GROUPS="${_PARAMETER#*user-default-groups=}"
+				;;
+
 			live-config.user-fullname=*|user-fullname=*)
 				LIVE_USER_FULLNAME="${_PARAMETER#*user-fullname=}"
 				;;
@@ -44,6 +48,12 @@ Configure_user_setup ()
 		return
 	fi
 
+	# Make sure user is not in sudo group if sudo is disabled
+	if [ "${_NO_ROOT}" = "true" ]
+	then
+		LIVE_USER_DEFAULT_GROUPS="$(echo ${LIVE_USER_DEFAULT_GROUPS} | sed -e 's|sudo||')"
+	fi
+
 	# Default password is: live
 	# passwords can be generated with 'echo "live" | mkpasswd -s',
 	# a blank password is 'U6aMy0wojraho'.
@@ -53,6 +63,7 @@ cat > /tmp/debconf.live << EOF
 user-setup passwd/make-user boolean true
 user-setup passwd/root-password-crypted string *
 user-setup passwd/user-password-crypted string ${_PASSWORD}
+user-setup passwd/user-default-groups string ${LIVE_USER_DEFAULT_GROUPS}
 user-setup passwd/user-fullname string ${LIVE_USER_FULLNAME}
 user-setup passwd/username string ${LIVE_USERNAME}
 user-setup passwd/user-uid string 1000

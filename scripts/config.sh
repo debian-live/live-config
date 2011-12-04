@@ -26,6 +26,7 @@ set -e
 LIVE_HOSTNAME="debian"
 LIVE_USERNAME="user"
 LIVE_USER_FULLNAME="Debian Live user"
+LIVE_USER_DEFAULT_GROUPS="audio cdrom dip floppy video plugdev netdev powerdev scanner bluetooth debian-tor"
 
 DEBIAN_FRONTEND="noninteractive"
 DEBIAN_PRIORITY="critical"
@@ -62,6 +63,8 @@ Cmdline ()
 				# Disable root access, no matter what mechanism
 				_SCRIPTS="${_SCRIPTS:-$(ls /lib/live/config/*)}"
 				LIVE_NOCONFIGS="${LIVE_NOCONFIGS},sudo,policykit"
+
+				_NO_ROOT="true"
 				;;
 
 			live-config.noautologin|noautologin)

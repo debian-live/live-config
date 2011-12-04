@@ -52,12 +52,32 @@ case "${_DISTRIBUTION}" in
 		LIVE_HOSTNAME="debian"
 		LIVE_USERNAME="user"
 		LIVE_USER_FULLNAME="Debian Live user"
+
+		case "${_RELEASE}" in
+			squeeze)
+				LIVE_USER_DEFAULT_GROUPS="audio cdrom dip floppy video plugdev netdev powerdev scanner bluetooth debian-tor"
+				;;
+
+			*)
+				LIVE_USER_DEFAULT_GROUPS="audio cdrom dip floppy video plugdev netdev powerdev scanner bluetooth"
+				;;
+		esac
 		;;
 
 	progress)
 		LIVE_HOSTNAME="progress"
 		LIVE_USERNAME="user"
 		LIVE_USER_FULLNAME="Progress Linux user"
+
+		case "${_RELEASE}" in
+			artax)
+				LIVE_USER_DEFAULT_GROUPS="audio cdrom dip floppy video plugdev netdev powerdev scanner bluetooth debian-tor sudo"
+				;;
+
+			*)
+				LIVE_USER_DEFAULT_GROUPS="audio cdrom dip floppy video plugdev netdev powerdev scanner bluetooth sudo"
+				;;
+		esac
 		;;
 
 	ubuntu)

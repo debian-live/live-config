@@ -11,7 +11,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 28.10.2011 3.0~a30 "Projet Debian Live"
+.TH LIVE\-CONFIG 7 2011\-12\-04 3.0~a31 "Projet Debian Live"
 
 .SH NOM
 \fBlive\-config\fP \- Scripts de configuration du système
@@ -27,8 +27,9 @@ certaines options, les paramètres d'amorçage sont prioritaires sur les
 fichiers de configuration. Lorsque l'on utilise la persistance, les scripts
 \fBlive\-config\fP ne sont lancés qu'une seule fois.
 .PP
-To configure the live\-config parameters used by default in a live image, see
-the \-\-bootappend\-live option in the \fIlb_config\fP(1) manual page.
+Pour configurer les paramètres de live\-config utilisés par défaut dans une
+image live, consultez l'option \-\-bootappend\-live dans la page de manuel
+\fIlb_config\fP(1)
 
 .SS "Parametères d'amorçage (scripts)"
 \fBlive\-config\fP est uniquement activé si 'boot=live' est utilisé en tant que
@@ -63,6 +64,10 @@ est 'debian'.
 .IP "\fBlive\-config.username\fP=\fINOM_D_UTILISATEUR\fP | \fBusername\fP=\fINOM_D_UTILISATEUR\fP" 4
 Permet de spécifier le login du user créé pour l'auto\-login. Par défaut ce
 nom est 'user'.
+.IP "\fBlive\-config.user\-default\-groups\fP=\fIGROUP1\fP,\fIGROUP2\fP ... \fIGROUPn\fP | \fBuser\-default\-groups\fP=\fIGROUP1\fP,\fIGROUP2\fP ... \fIGROUPn\fP" 4
+Allows to set the default groups of the users that gets created for
+autologin is member of. The default is 'audio cdrom dip floppy video plugdev
+netdev powerdev scanner bluetooth'.
 .IP "\fBlive\-config.user\-fullname\fP=\(dq\fINOM_COMPLET_D_UTILISATEUR\fP\(dq | \fBuser\-fullname\fP=\(dq\fINOM_COMPLET_D_UTILISATEUR\fP\(dq" 4
 Permet de spécifier le nom complet des utilisateurs créés pour
 l'auto\-login. Par défaut il s'agit de 'Debian Live user'.
@@ -99,7 +104,8 @@ Permet de spécifier le x\-session\-manager via update\-alternatives.
 Permet de spécifier le driver utilisé par xorg plutôt que d'utiliser
 l'auto\-détection.
 .IP "\fBlive\-config.xorg\-resolution\fP=\fIRESOLUTION_PAR_XORG\fP | \fBxorg\-resolution\fP=\fIRESOLUTION_PAR_XORG\fP" 4
-Allows to set xorg resolution instead of autodetecting it, e.g. 1024x768.
+Permet de spécifier la résolution utilisée par xorg, plutôt que d'utiliser
+l'auto\-détection, par example 1024x768.
 .IP "\fBlive\-config.hooks\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP | \fBhooks\fP=\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
 Permet de soumettre et d'exécuter un ou plusieurs fichiers/scripts
 spécifiques. Notez que les URLs doivent pouvoir être utilisées par wget
@@ -169,8 +175,8 @@ cohérence, d'utiliser 'vendeur.conf' ou 'projet.conf' en tant que modèle de
 nommage ('vendeur' ou 'projet' étant remplacés par le nom réel issu du nom
 de fichier comme 'debian\-eeepc.conf').
 .PP
-The actual content of the configuration files consists of one or more of the
-following variables.
+Le contenu réel des fichiers de configuration se compose d'une ou plusieurs
+des variables suivantes.
 
 .IP "\fBLIVE_CONFIGS\fP=\fISCRIPT1\fP,\fISCRIPT2\fP, ... \fISCRIPTn\fP" 4
 Cette variable correspond au paramètre
@@ -184,6 +190,10 @@ Cette variable correspond au paramètre
 .IP \fBLIVE_USERNAME\fP=\fINOM_D_UTILISATEUR\fP 4
 Cette variable correspond au paramètre
 \&'\fBlive\-config.username\fP=\fINOM_D_UTILISATEUR\fP'.
+.IP "\fBLIVE_USER_DEFAULT_GROUPS\fP=\fIGROUP1\fP,\fIGROUP2\fP ... \fIGROUPn\fP" 4
+This variable equals the
+\&'\fBlive\-config.user\-default\-groups\fP="\fIGROUP1\fP,\fIGROUP2\fP ... \fIGROUPn\fP"'
+parameter.
 .IP \fBLIVE_USER_FULLNAME\fP=\(dq\fINOM_COMPLET_D_UTILISATEUR\(dq\fP 4
 Cette variable correspond au paramètre
 \&'\fBlive\-config.user\-fullname\fP="\fINOM_COMPLET_D_UTILISATEUR"\fP'.
@@ -250,7 +260,7 @@ exemple de configuration est proposé dans
 /usr/share/doc/live\-config/examples.
 
 .SH SCRIPTS
-\fBlive\-config\fP currently features the following scripts in /lib/live/config.
+\fBlive\-config\fP actuellement a les scripts suivants dans /lib/live/config.
 
 .IP \fBhostname\fP 4
 configure /etc/hostname et /etc/hosts.
