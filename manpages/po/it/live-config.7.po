@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config 3.0~a30\n"
-"POT-Creation-Date: 2011-11-29 21:33+0100\n"
+"POT-Creation-Date: 2011-12-04 10:17+0100\n"
 "PO-Revision-Date: 2011-01-20 22:31+0100\n"
 "Last-Translator: skizzhg <skizzhg@gmx.com>\n"
 "Language-Team: Italian <tp@lists.linux.it>\n"
@@ -22,15 +22,13 @@ msgstr "LIVE-CONFIG"
 
 #. type: TH
 #: en/live-config.7:9
-#, no-wrap
-msgid "2011-11-29"
-msgstr "29.11.2011"
+msgid "2011-12-04"
+msgstr "04.12.2011"
 
 #. type: TH
 #: en/live-config.7:9
-#, no-wrap
-msgid "3.0~a30"
-msgstr "3.0~a30"
+msgid "3.0~a31"
+msgstr "3.0~a31"
 
 #. type: TH
 #: en/live-config.7:9
@@ -387,7 +385,7 @@ msgid "B<live-config.xorg-resolution>=I<XORG_RESOLUTION> | B<xorg-resolution>=I<
 msgstr "B<live-config.xorg-resolution>=I<RISOLUZIONE_PER_XORG> | B<xorg-resolution>=I<RISOLUZIONE_PER_XORG>"
 
 #. type: Plain text
-#: en/live-config.7:65
+#: en/live-config.7:67
 #, fuzzy
 #| msgid "Allows to set xorg resolution instead of autodetecting it."
 msgid ""

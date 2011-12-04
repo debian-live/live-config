@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config 3.0~a30\n"
-"POT-Creation-Date: 2011-11-29 21:33+0100\n"
+"POT-Creation-Date: 2011-12-04 10:17+0100\n"
 "PO-Revision-Date: 2011-11-01 17:36+0100\n"
 "Last-Translator: Carlos Zuferri «chals» <chals@altorricon.com>\n"
 "Language-Team:  <debian-live@lists.debian.org>\n"
@@ -24,15 +24,13 @@ msgstr "LIVE-CONFIG"
 
 #. type: TH
 #: en/live-config.7:9
-#, no-wrap
-msgid "2011-11-29"
-msgstr "29.11.2011"
+msgid "2011-12-04"
+msgstr "04.12.2011"
 
 #. type: TH
 #: en/live-config.7:9
-#, no-wrap
-msgid "3.0~a30"
-msgstr "3.0~a30"
+msgid "3.0~a31"
+msgstr "3.0~a31"
 
 #. type: TH
 #: en/live-config.7:9

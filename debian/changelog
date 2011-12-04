@@ -1,3 +1,16 @@
+live-config (3.0~a31-1) unstable; urgency=low
+
+  [ chals ]
+  * Fixing fuzzy in es po.
+  * Updating French translation.
+
+  [ Daniel Baumann ]
+  * Sorting overrides in rules alphabetically.
+  * Making user default groups configurable.
+  * Make sure user is not in sudo group if sudo is disabled.
+
+ -- Daniel Baumann <daniel@debian.org>  Sun, 04 Dec 2011 10:19:19 +0100
+
 live-config (3.0~a30-1) unstable; urgency=low
 
   * Adding required parsing for the respective boot parameters in all
