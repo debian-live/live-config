@@ -11,7 +11,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 2011\-12\-04 3.0~a31 "Proyecto Debian Live"
+.TH LIVE\-CONFIG 7 2011\-12\-06 3.0~a31 "Proyecto Debian Live"
 
 .SH NOMBRE
 \fBlive\-config\fP \- Scripts de configuración del sistema
@@ -62,9 +62,10 @@ Permite establecer el hostname del sistema. Por omisión es «debian».
 Permite establecer el nombre del usuario que se crea para iniciar sesión de
 forma automática. Por omisión es «user».
 .IP "\fBlive\-config.user\-default\-groups\fP=\fIGROUP1\fP,\fIGROUP2\fP ... \fIGROUPn\fP | \fBuser\-default\-groups\fP=\fIGROUP1\fP,\fIGROUP2\fP ... \fIGROUPn\fP" 4
-Allows to set the default groups of the users that gets created for
-autologin is member of. The default is 'audio cdrom dip floppy video plugdev
-netdev powerdev scanner bluetooth'.
+Permite establecer los grupos por defecto a los que pertenecen los usuarios
+que se crean para iniciar sesión automáticamente. Los grupos predeterminados
+son 'audio cdrom dip floppy video plugdev netdev powerdev scanner
+bluetooth'.
 .IP "\fBlive\-config.user\-fullname\fP=\(dq\fIUSER FULLNAME\fP\(dq | \fBuser\-fullname\fP=\(dq\fIUSER·FULLNAME\fP\(dq" 4
 Permite establecer el nombre completo del usuario que se crea para iniciar
 sesión de forma automática. Por omisión es «Debian Live user».
@@ -183,9 +184,8 @@ Esta variable es igual al parámetro '\fBlive\-config.hostname\fP=\fIHOSTNAME\fP
 .IP \fBLIVE_USERNAME\fP=\fIUSERNAME\fP 4
 Esta variable es igual al parámetro '\fBlive\-config.username\fP=\fIUSERNAME\fP'
 .IP "\fBLIVE_USER_DEFAULT_GROUPS\fP=\fIGROUP1\fP,\fIGROUP2\fP ... \fIGROUPn\fP" 4
-This variable equals the
+Ésta variable es equivalente al parámetro
 \&'\fBlive\-config.user\-default\-groups\fP="\fIGROUP1\fP,\fIGROUP2\fP ... \fIGROUPn\fP"'
-parameter.
 .IP "\fBLIVE_USER_FULLNAME\fP=\(dq\fIUSER FULLNAME\fP\(dq" 4
 Esta variable es igual al parámetro '\fBlive\-config.user\-fullname\fP="\fIUSER
 FULLNAME\fP"'
