@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: live-config 3.0~a30\n"
 "POT-Creation-Date: 2011-12-06 17:51+0100\n"
-"PO-Revision-Date: 2011-11-01 17:36+0100\n"
+"PO-Revision-Date: 2011-12-06 18:02+0100\n"
 "Last-Translator: Carlos Zuferri «chals» <chals@altorricon.com>\n"
 "Language-Team:  <debian-live@lists.debian.org>\n"
 "Language: fr\n"
@@ -225,7 +225,7 @@ msgstr ""
 #: en/live-config.7:41
 #, no-wrap
 msgid "B<live-config.user-default-groups>=I<GROUP1>,I<GROUP2> ... I<GROUPn> | B<user-default-groups>=I<GROUP1>,I<GROUP2> ... I<GROUPn>"
-msgstr ""
+msgstr "B<live-config.user-default-groups>=I<GROUP1>,I<GROUP2> ... I<GROUPn> | B<user-default-groups>=I<GROUP1>,I<GROUP2> ... I<GROUPn>"
 
 #. type: Plain text
 #: en/live-config.7:43
@@ -234,6 +234,9 @@ msgid ""
 "autologin is member of. The default is 'audio cdrom dip floppy video plugdev "
 "netdev powerdev scanner bluetooth'."
 msgstr ""
+"Permet de spécifier les groupes par défaut des utilisateurs qui sont créés "
+"pour l'auto-login. Le défaut est 'audio cdrom dip floppy video plugdev "
+"netdev powerdev scanner bluetooth'."
 
 #. type: IP
 #: en/live-config.7:43
@@ -689,7 +692,7 @@ msgstr ""
 #: en/live-config.7:113
 #, no-wrap
 msgid "B<LIVE_USER_DEFAULT_GROUPS>=I<GROUP1>,I<GROUP2> ... I<GROUPn>"
-msgstr ""
+msgstr "B<LIVE_USER_DEFAULT_GROUPS>=I<GROUP1>,I<GROUP2> ... I<GROUPn>"
 
 #. type: Plain text
 #: en/live-config.7:115
@@ -697,6 +700,8 @@ msgid ""
 "This variable equals the 'B<live-config.user-default-groups>=\"I<GROUP1>,"
 "I<GROUP2> ... I<GROUPn>\"' parameter."
 msgstr ""
+"Cette variable correspond au paramètre 'B<live-config.user-default-groups>="
+"\"I<GROUP1>,I<GROUP2> ... I<GROUPn>\"'"
 
 #. type: IP
 #: en/live-config.7:115
