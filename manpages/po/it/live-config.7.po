@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config 3.0~a30\n"
-"POT-Creation-Date: 2011-12-06 17:51+0100\n"
-"PO-Revision-Date: 2011-01-20 22:31+0100\n"
+"POT-Creation-Date: 2011-12-04 10:17+0100\n"
+"PO-Revision-Date: 2011-12-06 08:01+0100\n"
 "Last-Translator: skizzhg <skizzhg@gmx.com>\n"
 "Language-Team: Italian <tp@lists.linux.it>\n"
 "Language: it\n"
@@ -22,14 +22,11 @@ msgstr "LIVE-CONFIG"
 
 #. type: TH
 #: en/live-config.7:9
-#, fuzzy, no-wrap
-#| msgid "2011-12-04"
-msgid "2011-12-06"
-msgstr "04.12.2011"
+msgid "2011-12-04"
+msgstr "04-12-2011"
 
 #. type: TH
 #: en/live-config.7:9
-#, no-wrap
 msgid "3.0~a31"
 msgstr "3.0~a31"
 
@@ -90,7 +87,9 @@ msgstr ""
 msgid ""
 "To configure the live-config parameters used by default in a live image, see "
 "the --bootappend-live option in the I<lb_config>(1) manual page."
-msgstr ""
+msgstr "Per configurare i parametri di live-config utilizzati in modo predefinito"
+"in un'immagine live, si veda l'opzione --bootappend-live nella pagina di manuale"
+"di I<lb_config>(1)."
 
 #. type: SS
 #: en/live-config.7:22
@@ -142,10 +141,10 @@ msgid ""
 "in /lib/live/config for their ordering number."
 msgstr ""
 "Vengono eseguiti solo gli script specificati. Si noti che l'ordine è "
-"importante, ad esempio \"live-config=sudo,user-setup\" non avrebbe "
-"funzionato in quanto prima di poter configurare l'utente per sudo è "
-"necessario aggiungerlo. Si guardi i nomi degli script in /lib/live/config "
-"per il loro ordinamento numerico."
+"importante, ad esempio \"live-config=sudo,user-setup\" non funzionerebbe "
+"in quanto prima di poter configurare l'utente per sudo è necessario "
+"aggiungerlo. Si vedano i nomi degli script in /lib/live/config per il "
+"loro ordinamento numerico."
 
 #. type: IP
 #: en/live-config.7:29
@@ -184,8 +183,8 @@ msgstr "Parametri di avvio (opzioni)"
 msgid ""
 "Some individual scripts can change their behaviour upon a boot parameter."
 msgstr ""
-"Alcuni script particolari possono modificare il loro comportamento su di un "
-"parametro di avvio."
+"Alcuni singoli script possono modificare il loro comportamento in base "
+"a un parametro di avvio."
 
 #. type: IP
 #: en/live-config.7:37
@@ -227,6 +226,9 @@ msgid ""
 "autologin is member of. The default is 'audio cdrom dip floppy video plugdev "
 "netdev powerdev scanner bluetooth'."
 msgstr ""
+"Permette di impostare i gruppi dei quali fanno parte gli utenti creati per "
+"il login automatico. Il valore predefinito è \"audio cdrom dip floppy video "
+"plugdev netdev powerdev scanner bluetooth\"."
 
 #. type: IP
 #: en/live-config.7:43
@@ -389,13 +391,11 @@ msgstr "B<live-config.xorg-resolution>=I<RISOLUZIONE_PER_XORG> | B<xorg-resoluti
 
 #. type: Plain text
 #: en/live-config.7:67
-#, fuzzy
-#| msgid "Allows to set xorg resolution instead of autodetecting it."
 msgid ""
 "Allows to set xorg resolution instead of autodetecting it, e.g. 1024x768."
 msgstr ""
 "Permette di impostare la risoluzione per xorg invece di riconoscerla "
-"automaticamente."
+"automaticamente, ad esempio 1024x768."
 
 #. type: IP
 #: en/live-config.7:67
@@ -430,7 +430,7 @@ msgid ""
 "live/image/I<FILE>, or with file:///I<FILE> if it is in the root filesystem "
 "of the live system itself."
 msgstr ""
-"Se il file è posizionato nel supporto live può essere prelevato con file:///"
+"Se il file è posizionato sul supporto live può essere prelevato con file:///"
 "live/image/I<FILE> o con file:///I<FILE> se è nella radice del filesystem "
 "del sistema live stesso."
 
@@ -612,6 +612,8 @@ msgid ""
 "The actual content of the configuration files consists of one or more of the "
 "following variables."
 msgstr ""
+"Il contenuto effettivo dei file di configurazione è costituito da una o più "
+"delle seguenti variabili."
 
 #. type: IP
 #: en/live-config.7:105
@@ -675,7 +677,7 @@ msgstr ""
 #: en/live-config.7:113
 #, no-wrap
 msgid "B<LIVE_USER_DEFAULT_GROUPS>=I<GROUP1>,I<GROUP2> ... I<GROUPn>"
-msgstr ""
+msgstr "B<LIVE_USER_DEFAULT_GROUPS>=I<GRUPPO1>,I<GRUPPO2> ... I<GRUPPOn>"
 
 #. type: Plain text
 #: en/live-config.7:115
@@ -683,6 +685,8 @@ msgid ""
 "This variable equals the 'B<live-config.user-default-groups>=\"I<GROUP1>,"
 "I<GROUP2> ... I<GROUPn>\"' parameter."
 msgstr ""
+"Questa variabile equivale al parametro \"B<live-config.user-default-groups>"
+"=\"I<GRUPPO1>,I<GRUPPO2> ... I<GRUPPOn>\"\"."
 
 #. type: IP
 #: en/live-config.7:115
@@ -1003,10 +1007,8 @@ msgstr "B<locales-all>"
 
 #. type: Plain text
 #: en/live-config.7:166
-#, fuzzy
-#| msgid "configures locales."
 msgid "configures locales-all."
-msgstr "configura la localizzazione."
+msgstr "configura locales-all."
 
 #. type: IP
 #: en/live-config.7:166
@@ -1056,7 +1058,7 @@ msgstr "configura il login automatico per kdm."
 #: en/live-config.7:174
 #, no-wrap
 msgid "B<lightdm>"
-msgstr ""
+msgstr "B<lightdm>"
 
 #. type: Plain text
 #: en/live-config.7:176
@@ -1340,7 +1342,7 @@ msgstr "B<openssh-server>"
 #. type: Plain text
 #: en/live-config.7:228
 msgid "recreates openssh-server host keys."
-msgstr "ricrea le chiavi openssh-server."
+msgstr "ricrea le chiavi di openssh-server."
 
 #. type: IP
 #: en/live-config.7:228
@@ -1415,7 +1417,7 @@ msgstr "B</var/log/live-config.log>"
 #: en/live-config.7:241
 #, no-wrap
 msgid "SEE ALSO"
-msgstr "SI VEDA ANCHE"
+msgstr "VEDERE ANCHE"
 
 #. type: Plain text
 #: en/live-config.7:243
