@@ -48,6 +48,12 @@ Configure_user_setup ()
 		return
 	fi
 
+	# Adjust formating of groups
+	if [ -n "${LIVE_USER_DEFAULT_GROUPS}" ]
+	then
+		LIVE_USER_DEFAULT_GROUPS="$(echo ${LIVE_USER_DEFAULT_GROUPS} | sed -e 's|,| |g')"
+	fi
+
 	# Make sure user is not in sudo group if sudo is disabled
 	if [ "${_NO_ROOT}" = "true" ]
 	then
