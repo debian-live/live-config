@@ -1,5 +1,5 @@
 .\" live-config(7) - System Configuration Scripts
-.\" Copyright (C) 2006-2011 Daniel Baumann <daniel@debian.org>
+.\" Copyright (C) 2006-2012 Daniel Baumann <daniel@debian.org>
 .\"
 .\" live-config comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
 .\" This is free software, and you are welcome to redistribute it
@@ -11,7 +11,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 2011\-12\-04 3.0~a31 "Progetto Debian Live"
+.TH LIVE\-CONFIG 7 2012\-02\-06 3.0~a32 "Progetto Debian Live"
 
 .SH NOME
 \fBlive\-config\fP \- Script di configurazione del sistema
@@ -27,8 +27,9 @@ meccanismi, i parametri di avvio hanno la precedenza su questi
 ultimi. Quando si utilizza la persistenza, gli script di \fBlive\-config\fP
 vengono eseguiti solo una volta.
 .PP
-To configure the live\-config parameters used by default in a live image, see
-the \-\-bootappend\-live option in the \fIlb_config\fP(1) manual page.
+Per configurare i parametri di live\-config utilizzati in modo predefinitoin
+un'immagine live, si veda l'opzione \-\-bootappend\-live nella pagina di
+manualedi \fIlb_config\fP(1).
 
 .SS "Parametri di avvio (script)"
 \fBlive\-config\fP viene attivato solo se "boot=live" è utilizzato come
@@ -42,9 +43,9 @@ Vengono eseguiti tutti gli script; questo è ciò che le immagini di Debian
 Live utilizzano in modo predefinito.
 .IP "\fBlive\-config\fP=\fISCRIPT1\fP,\fISCRIPT2\fP, ... \fISCRIPTn\fP | \fBconfig\fP=\fISCRIPT1\fP,\fISCRIPT2\fP, ... \fISCRIPTn\fP" 4
 Vengono eseguiti solo gli script specificati. Si noti che l'ordine è
-importante, ad esempio "live\-config=sudo,user\-setup" non avrebbe funzionato
-in quanto prima di poter configurare l'utente per sudo è necessario
-aggiungerlo. Si guardi i nomi degli script in /lib/live/config per il loro
+importante, ad esempio "live\-config=sudo,user\-setup" non funzionerebbe in
+quanto prima di poter configurare l'utente per sudo è necessario
+aggiungerlo. Si vedano i nomi degli script in /lib/live/config per il loro
 ordinamento numerico.
 .IP "\fBlive\-noconfig\fP | \fBnoconfig\fP" 4
 Non viene eseguito alcuno script, equivale a non utilizzare nessun parametro
@@ -53,7 +54,7 @@ di "live\-config" o "live\-noconfig".
 Vengono eseguiti tutti gli script, tranne quelli specificati.
 
 .SS "Parametri di avvio (opzioni)"
-Alcuni script particolari possono modificare il loro comportamento su di un
+Alcuni singoli script possono modificare il loro comportamento in base a un
 parametro di avvio.
 
 .IP "\fBlive\-config.hostname\fP=\fIHOSTNAME\fP | \fBhostname\fP=\fIHOSTNAME\fP" 4
@@ -62,9 +63,9 @@ Permette di impostare l'hostname del sistema, il predefinito è "debian".
 Permette di impostare il nome utente che viene creato per il login
 automatico, il predefinito è "user".
 .IP "\fBlive\-config.user\-default\-groups\fP=\fIGROUP1\fP,\fIGROUP2\fP ... \fIGROUPn\fP | \fBuser\-default\-groups\fP=\fIGROUP1\fP,\fIGROUP2\fP ... \fIGROUPn\fP" 4
-Allows to set the default groups of the users that gets created for
-autologin is member of. The default is 'audio cdrom dip floppy video plugdev
-netdev powerdev scanner bluetooth'.
+Permette di impostare i gruppi dei quali fanno parte gli utenti creati per
+il login automatico. Il valore predefinito è "audio cdrom dip floppy video
+plugdev netdev powerdev scanner bluetooth".
 .IP "\fBlive\-config.user\-fullname\fP=\(dq\fINOME COMPLETO UTENTE\fP\(dq | \fBuser\-fullname\fP=\(dq\fINOME COMPLETO UTENTE\fP\(dq" 4
 Permette di impostare il nome utente completo che viene creato per il login
 automatico, il predefinito è "Debian Live user".
@@ -99,7 +100,8 @@ Permette di impostare x\-session\-manager tramite update\-alternatives.
 Permette di impostare il driver per xorg invece di riconoscerlo
 automaticamente.
 .IP "\fBlive\-config.xorg\-resolution\fP=\fIRISOLUZIONE_PER_XORG\fP | \fBxorg\-resolution\fP=\fIRISOLUZIONE_PER_XORG\fP" 4
-Allows to set xorg resolution instead of autodetecting it, e.g. 1024x768.
+Permette di impostare la risoluzione per xorg invece di riconoscerla
+automaticamente, ad esempio 1024x768.
 .IP "\fBlive\-config.hooks\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP | \fBhooks\fP=medium|filesystem|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
 Permette di prelevare ed eseguire uno o più file arbitrari. Si noti che gli
 URL devono essere scaricabili da wget (http, ftp o file://), i file vengono
@@ -110,7 +112,7 @@ disponibili alcuni hook per i casi d'uso più comuni in
 /usr/share/doc/live\-config/examples/hooks/ e all'indirizzo
 <\fIhttp://live.debian.net/other/hooks\fP>.
 .br
-Se il file è posizionato nel supporto live può essere prelevato con
+Se il file è posizionato sul supporto live può essere prelevato con
 file:///live/image/\fIFILE\fP o con file:///\fIFILE\fP se è nella radice del
 filesystem del sistema live stesso.
 .br
@@ -164,8 +166,8 @@ richiedono un nome o suffisso particolari, per coerenza è suggerito di usare
 o "project"è sostituito con un nome reale, risultando in un nome di file
 come "debian\-eeepc.conf").
 .PP
-The actual content of the configuration files consists of one or more of the
-following variables.
+Il contenuto effettivo dei file di configurazione è costituito da una o più
+delle seguenti variabili.
 
 .IP "\fBLIVE_CONFIGS\fP=\fISCRIPT1\fP,\fISCRIPT2\fP, ... \fISCRIPTn\fP" 4
 Questa variabile equivale al parametro
@@ -179,10 +181,9 @@ Questa variabile equivale al parametro
 .IP \fBLIVE_USERNAME\fP=\fINOMEUTENTE\fP 4
 Questa variabile equivale al parametro
 "\fBlive\-config.username\fP=\fINOMEUTENTE\fP".
-.IP "\fBLIVE_USER_DEFAULT_GROUPS\fP=\fIGROUP1\fP,\fIGROUP2\fP ... \fIGROUPn\fP" 4
-This variable equals the
-\&'\fBlive\-config.user\-default\-groups\fP="\fIGROUP1\fP,\fIGROUP2\fP ... \fIGROUPn\fP"'
-parameter.
+.IP "\fBLIVE_USER_DEFAULT_GROUPS\fP=\fIGRUPPO1\fP,\fIGRUPPO2\fP ... \fIGRUPPOn\fP" 4
+Questa variabile equivale al parametro
+"\fBlive\-config.user\-default\-groups\fP="\fIGRUPPO1\fP,\fIGRUPPO2\fP ... \fIGRUPPOn\fP"".
 .IP "\fBLIVE_USER_FULLNAME\fP=\(dq\fINOME COMPLETO UTENTE\fP\(dq" 4
 Questa variabile equivale al parametro "\fBlive\-config.user\-fullname\fP="\fINOME
 COMPLETO UTENTE\fP".
@@ -257,7 +258,7 @@ concede i privilegi per sudo all'utente live.
 .IP \fBlocales\fP 4
 configura la localizzazione.
 .IP \fBlocales\-all\fP 4
-configures locales\-all.
+configura locales\-all.
 .IP \fBtzdata\fP 4
 configura il file /etc/timezone.
 .IP \fBgdm\fP 4
@@ -320,7 +321,7 @@ configura xserver\-xorg.
 .IP "\fBureadahead\fP (solo ubuntu)" 4
 disabilita ureadahead.
 .IP \fBopenssh\-server\fP 4
-ricrea le chiavi openssh\-server.
+ricrea le chiavi di openssh\-server.
 .IP \fBhooks\fP 4
 permette di eseguire comandi arbitrari da uno script situato sul supporto
 live o su un server http/ftp.
@@ -335,7 +336,7 @@ live o su un server http/ftp.
 .IP \fB/var/lib/live/config/\fP 4
 .IP \fB/var/log/live\-config.log\fP 4
 
-.SH "SI VEDA ANCHE"
+.SH "VEDERE ANCHE"
 \fIlive\-boot\fP(7)
 .PP
 \fIlive\-build\fP(7)

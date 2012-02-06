@@ -1,7 +1,7 @@
 #!/bin/sh
 
 ## live-config(7) - System Configuration Scripts
-## Copyright (C) 2006-2011 Daniel Baumann <daniel@debian.org>
+## Copyright (C) 2006-2012 Daniel Baumann <daniel@debian.org>
 ##
 ## live-config comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
 ## This is free software, and you are welcome to redistribute it
@@ -48,6 +48,12 @@ Configure_user_setup ()
 		return
 	fi
 
+	# Adjust formating of groups
+	if [ -n "${LIVE_USER_DEFAULT_GROUPS}" ]
+	then
+		LIVE_USER_DEFAULT_GROUPS="$(echo ${LIVE_USER_DEFAULT_GROUPS} | sed -e 's|,| |g')"
+	fi
+
 	# Make sure user is not in sudo group if sudo is disabled
 	if [ "${_NO_ROOT}" = "true" ]
 	then
@@ -59,7 +65,7 @@ Configure_user_setup ()
 	# a blank password is 'U6aMy0wojraho'.
 	_PASSWORD="8Ab05sVQ4LLps"
 
-cat > /tmp/debconf.live << EOF
+cat > /debconf.live << EOF
 user-setup passwd/make-user boolean true
 user-setup passwd/root-password-crypted string *
 user-setup passwd/user-password-crypted string ${_PASSWORD}
@@ -69,8 +75,8 @@ user-setup passwd/username string ${LIVE_USERNAME}
 user-setup passwd/user-uid string 1000
 EOF
 
-	debconf-set-selections < /tmp/debconf.live
-	rm -f /tmp/debconf.live
+	debconf-set-selections < /debconf.live
+	rm -f /debconf.live
 
 	# FIXME
 	set +e
