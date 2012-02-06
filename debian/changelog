@@ -1,3 +1,23 @@
+live-config (3.0~a32-1) unstable; urgency=low
+
+  [ chals ]
+  * Updating Spanish translationof man page.
+  * Updating French translation of man page.
+
+  [ Daniel Baumann ]
+  * Adding updated Italian manpage translation from skizzhg
+    <skizzhg@gmx.com>.
+  * Updating to debhelper version 9.
+  * Flipping accidentally wrong squeeze with wheezy defaults for default
+    user groups.
+  * Adjust formating of groups in user-setup script.
+  * Switching to use /debconf.live as a temporary debconf location for
+    user-setup script, rather than /tmp/debconf.live, as /tmp is not
+    already there in wheezy and newer when live-config is executed.
+  * Updating year to 2012 in copyright notices.
+
+ -- Daniel Baumann <daniel@debian.org>  Mon, 06 Feb 2012 23:30:30 +0100
+
 live-config (3.0~a31-1) unstable; urgency=low
 
   [ chals ]

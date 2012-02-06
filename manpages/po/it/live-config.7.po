@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config 3.0~a30\n"
-"POT-Creation-Date: 2011-12-04 10:17+0100\n"
+"POT-Creation-Date: 2012-02-06 23:30+0100\n"
 "PO-Revision-Date: 2011-12-06 08:01+0100\n"
 "Last-Translator: skizzhg <skizzhg@gmx.com>\n"
 "Language-Team: Italian <tp@lists.linux.it>\n"
@@ -22,12 +22,16 @@ msgstr "LIVE-CONFIG"
 
 #. type: TH
 #: en/live-config.7:9
-msgid "2011-12-04"
+#, fuzzy, no-wrap
+#| msgid "2011-12-04"
+msgid "2012-02-06"
 msgstr "04-12-2011"
 
 #. type: TH
 #: en/live-config.7:9
-msgid "3.0~a31"
+#, fuzzy, no-wrap
+#| msgid "3.0~a31"
+msgid "3.0~a32"
 msgstr "3.0~a31"
 
 #. type: TH
@@ -87,9 +91,10 @@ msgstr ""
 msgid ""
 "To configure the live-config parameters used by default in a live image, see "
 "the --bootappend-live option in the I<lb_config>(1) manual page."
-msgstr "Per configurare i parametri di live-config utilizzati in modo predefinito"
-"in un'immagine live, si veda l'opzione --bootappend-live nella pagina di manuale"
-"di I<lb_config>(1)."
+msgstr ""
+"Per configurare i parametri di live-config utilizzati in modo predefinitoin "
+"un'immagine live, si veda l'opzione --bootappend-live nella pagina di "
+"manualedi I<lb_config>(1)."
 
 #. type: SS
 #: en/live-config.7:22
@@ -141,10 +146,10 @@ msgid ""
 "in /lib/live/config for their ordering number."
 msgstr ""
 "Vengono eseguiti solo gli script specificati. Si noti che l'ordine è "
-"importante, ad esempio \"live-config=sudo,user-setup\" non funzionerebbe "
-"in quanto prima di poter configurare l'utente per sudo è necessario "
-"aggiungerlo. Si vedano i nomi degli script in /lib/live/config per il "
-"loro ordinamento numerico."
+"importante, ad esempio \"live-config=sudo,user-setup\" non funzionerebbe in "
+"quanto prima di poter configurare l'utente per sudo è necessario "
+"aggiungerlo. Si vedano i nomi degli script in /lib/live/config per il loro "
+"ordinamento numerico."
 
 #. type: IP
 #: en/live-config.7:29
@@ -183,8 +188,8 @@ msgstr "Parametri di avvio (opzioni)"
 msgid ""
 "Some individual scripts can change their behaviour upon a boot parameter."
 msgstr ""
-"Alcuni singoli script possono modificare il loro comportamento in base "
-"a un parametro di avvio."
+"Alcuni singoli script possono modificare il loro comportamento in base a un "
+"parametro di avvio."
 
 #. type: IP
 #: en/live-config.7:37
@@ -685,8 +690,8 @@ msgid ""
 "This variable equals the 'B<live-config.user-default-groups>=\"I<GROUP1>,"
 "I<GROUP2> ... I<GROUPn>\"' parameter."
 msgstr ""
-"Questa variabile equivale al parametro \"B<live-config.user-default-groups>"
-"=\"I<GRUPPO1>,I<GRUPPO2> ... I<GRUPPOn>\"\"."
+"Questa variabile equivale al parametro \"B<live-config.user-default-groups>="
+"\"I<GRUPPO1>,I<GRUPPO2> ... I<GRUPPOn>\"\"."
 
 #. type: IP
 #: en/live-config.7:115
