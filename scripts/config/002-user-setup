@@ -65,7 +65,7 @@ Configure_user_setup ()
 	# a blank password is 'U6aMy0wojraho'.
 	_PASSWORD="8Ab05sVQ4LLps"
 
-cat > /tmp/debconf.live << EOF
+cat > /debconf.live << EOF
 user-setup passwd/make-user boolean true
 user-setup passwd/root-password-crypted string *
 user-setup passwd/user-password-crypted string ${_PASSWORD}
@@ -75,8 +75,8 @@ user-setup passwd/username string ${LIVE_USERNAME}
 user-setup passwd/user-uid string 1000
 EOF
 
-	debconf-set-selections < /tmp/debconf.live
-	rm -f /tmp/debconf.live
+	debconf-set-selections < /debconf.live
+	rm -f /debconf.live
 
 	# FIXME
 	set +e
