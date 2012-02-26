@@ -1,5 +1,6 @@
 live-config-foobar (1-1) unstable; urgency=low
 
-  * Initial release.
+  * Initial release based on the live-config-foobar example package
+    included in live-config.
 
- -- John Doe <john@example.org>  Tue, 11 Jan 2011 14:44:37 +0100
+ -- John Doe <john@example.org>  Sun, 26 Feb 2012 21:15:40 +0100

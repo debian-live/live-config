@@ -1,8 +1,17 @@
-This package is based on the live-config-foobar example package included in
-live-config which can be optained from http://live.debian.net/.
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: live-config-foobar
+Upstream-Contact: John Doe <john@example.org>
+Source: http://www.example.org/foobar/
+Disclaimer:
+ This package is based on the live-config-foobar example package
+ included in live-config which can be optained from
+ http://live.debian.net/devel/live-config/.
 
 Files: *
-Copyright: (C) 2011 John Doe <john@example.org>
+Copyright: 2006-2012 Daniel Baumann <daniel@debian.org>
+           2012 John Doe <john@example.org>
+License: GPL-3+
+
 License: GPL-3+
  This program is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by

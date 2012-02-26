@@ -2,8 +2,8 @@ Source: live-config-foobar
 Section: misc
 Priority: optional
 Maintainer: John Doe <john@example.org>
-Build-Depends: debhelper (>= 8)
-Standards-Version: 3.9.2
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.3
 Homepage: http://www.example.org/foobar/
 Vcs-Browser: http://git.example.org/?p=live-config-foobar.git
 Vcs-Git: git://git.example.org/git/live-config-foobar.git
