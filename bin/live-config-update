@@ -60,6 +60,7 @@ case "${_DISTRIBUTION}" in
 		LIVE_HOSTNAME="ubuntu"
 		LIVE_USERNAME="user"
 		LIVE_USER_FULLNAME="Ubuntu Live user"
+		LIVE_USER_DEFAULT_GROUPS="adm cdrom dip lpadmin plugdev sambashare"
 		;;
 esac
 
