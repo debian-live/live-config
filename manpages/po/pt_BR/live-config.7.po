@@ -383,11 +383,11 @@ msgstr "B<live-config.xorg-resolution>=I<RESOLUÇÃO_DO_XORG> | B<xorg-resolutio
 
 #. type: Plain text
 #: en/live-config.7:67
-#, fuzzy
-#| msgid "Allows to set xorg resolution instead of autodetecting it."
 msgid ""
 "Allows to set xorg resolution instead of autodetecting it, e.g. 1024x768."
-msgstr "Permite definir a resolução do xorg ao invés de auto-detectá-la."
+msgstr ""
+"Permite definir a resolução do xorg ao invés de auto-detectá-la, por "
+"exemplo, 1024x768."
 
 #. type: IP
 #: en/live-config.7:67
