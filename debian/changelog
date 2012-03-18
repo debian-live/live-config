@@ -1,3 +1,22 @@
+live-config (3.0~a33-1) unstable; urgency=low
+
+  * Making sure live-config gets started before mountkernfs in order to
+    prevent a race condition with /tmp (Closes: #653673).
+  * Also creating ecdsa host keys in openssh-server script on wheezy.
+  * Redirecting startx output in xinit script to /dev/null when booting
+    with quiet.
+  * Simplifing live-config-update script.
+  * Adding default user groups in live-config-update for ubuntu.
+  * Updating copyright file machine-readable format version 1.0.
+  * Updating to standards version 3.9.3.
+  * Updating packaging files for included live-config-foobar example
+    package.
+  * Adding copyright header to remaining files.
+  * Adding source lintian-overrides.
+  * Updating Brazilian Portuguese manpage translation.
+
+ -- Daniel Baumann <daniel@debian.org>  Sun, 18 Mar 2012 14:25:20 +0100
+
 live-config (3.0~a32-1) unstable; urgency=low
 
   [ chals ]
