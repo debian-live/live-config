@@ -1,5 +1,13 @@
 # Makefile
 
+## live-config(7) - System Configuration Scripts
+## Copyright (C) 2006-2012 Daniel Baumann <daniel@debian.org>
+##
+## live-config comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
+## This is free software, and you are welcome to redistribute it
+## under certain conditions; see COPYING for details.
+
+
 SHELL := sh -e
 
 LANGUAGES = $(shell cd po && ls)

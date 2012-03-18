@@ -38,6 +38,14 @@ Configure_openssh_server ()
 		_SSH="true"
 	fi
 
+	if [ -e /run ] && [ ! -e /etc/ssh/ssh_host_ecdsa_key ]
+	then
+		# FIXME: use some better >= wheezy detection than existence of /run
+		ssh-keygen -q -f /etc/ssh/ssh_host_ecdsa_key -N "" -t ecdsa
+
+		_SSH="true"
+	fi
+
 	if [ "${_SSH}" = "true" ]
 	then
 		# Creating state file
