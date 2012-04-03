@@ -152,6 +152,11 @@ Start_network ()
 
 Main ()
 {
+	if [ ! -e /proc/version ]
+	then
+		mount -n -t proc -onodev,noexec,nosuid -odefaults proc /proc
+	fi
+
 	_CMDLINE="$(cat /proc/cmdline)"
 
 	if ! echo ${_CMDLINE} | grep -qs "boot=live"
