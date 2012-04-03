@@ -1,3 +1,9 @@
+live-config (3.0~a35-1) unstable; urgency=low
+
+  * Disabling tmpfs on /tmp in sysvinit script (Closes: #658996).
+
+ -- Daniel Baumann <daniel@debian.org>  Tue, 03 Apr 2012 09:09:30 +0200
+
 live-config (3.0~a34-1) unstable; urgency=low
 
   * Removing runit backend, focusing in supporting the main init systems
