@@ -34,6 +34,10 @@ Sysvinit ()
 
 Configure_sysvinit ()
 {
+	# Disable tmpfs on /tmp
+	sed -i -e 's|^ *RAMTMP=.*|RAMTMP=no|' /etc/default/rcS
+
+	# Configure autologin
 	sed -i -e "s|^\([^:]*:[^:]*:[^:]*\):.*getty.*\<\(tty[0-9]*\).*$|\1:/bin/login -f ${LIVE_USERNAME} </dev/\2 >/dev/\2 2>\&1|" /etc/inittab
 
 	init q
