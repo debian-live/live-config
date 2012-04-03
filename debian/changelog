@@ -1,3 +1,11 @@
+live-config (3.0~a34-1) unstable; urgency=low
+
+  * Removing runit backend, focusing in supporting the main init systems
+    only (systemd, sysvinit, upstart), for the time being at least.
+  * Mounting /proc if necessary (Closes: #666866).
+
+ -- Daniel Baumann <daniel@debian.org>  Tue, 03 Apr 2012 08:50:38 +0200
+
 live-config (3.0~a33-1) unstable; urgency=low
 
   * Making sure live-config gets started before mountkernfs in order to
