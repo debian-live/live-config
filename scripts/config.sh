@@ -211,6 +211,8 @@ Main ()
 
 	for _SCRIPT in ${_SCRIPTS}
 	do
+		[ "${_LIVE_DEBUG}" = "true" ] && echo "[$(date +'%F %T')] live-config: ${_SCRIPT}" >> /var/log/live/config.log
+
 		. ${_SCRIPT} 2>&1 | tee -a /var/log/live/config.log
 	done
 
