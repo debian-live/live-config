@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config 3.0~a36-1\n"
-"POT-Creation-Date: 2012-04-06 10:30+0300\n"
+"POT-Creation-Date: 2012-04-06 10:40+0300\n"
 "PO-Revision-Date: 2011-12-06 18:02+0100\n"
 "Last-Translator: Carlos Zuferri «chals» <chals@altorricon.com>\n"
 "Language-Team: none\n"
@@ -1426,8 +1426,8 @@ msgstr "B</var/lib/live/config/>"
 #. type: IP
 #: en/live-config.7:239
 #, no-wrap
-msgid "B</var/log/live-config.log>"
-msgstr "B</var/log/live-config.log>"
+msgid "B</var/log/live/config.log>"
+msgstr "B</var/log/live/config.log>"
 
 #. type: SH
 #: en/live-config.7:241

@@ -204,12 +204,14 @@ Main ()
 			;;
 	esac
 
-	_SCRIPTS="$(echo ${_SCRIPTS} | sed -e 's| |\n|g' | sort -u)"
+	mkdir -p /var/log/live
 
 	# Configuring system
+	_SCRIPTS="$(echo ${_SCRIPTS} | sed -e 's| |\n|g' | sort -u)"
+
 	for _SCRIPT in ${_SCRIPTS}
 	do
-		. ${_SCRIPT} 2>&1 | tee -a /var/log/live-config.log
+		. ${_SCRIPT} 2>&1 | tee -a /var/log/live/config.log
 	done
 
 	echo "."
