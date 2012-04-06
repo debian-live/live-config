@@ -1,14 +1,14 @@
 # Italian translations for live-config package
-# 2011 skizzhg <skizzhg@gmx.com>
+# 2011-2012 skizzhg <skizzhg@gmx.com>
 # This file is distributed under the same license as the live-config package.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: live-config 3.0~a35-1\n"
-"POT-Creation-Date: 2012-04-03 09:08+0300\n"
+"Project-Id-Version: live-config 3.0~a36-1\n"
+"POT-Creation-Date: 2012-04-06 10:06+0300\n"
 "PO-Revision-Date: 2011-12-06 08:01+0100\n"
 "Last-Translator: skizzhg <skizzhg@gmx.com>\n"
-"Language-Team: Italian <tp@lists.linux.it>\n"
+"Language-Team: none\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,14 +23,14 @@ msgstr "LIVE-CONFIG"
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "2012-04-03"
-msgstr "03-04-2012"
+msgid "2012-04-06"
+msgstr "06-04-2012"
 
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "3.0~a35-1"
-msgstr "3.0~a35-1"
+msgid "3.0~a36-1"
+msgstr "3.0~a36-1"
 
 #. type: TH
 #: en/live-config.7:9

@@ -1,3 +1,11 @@
+live-config (3.0~a36-1) experimental; urgency=low
+
+  * Adding live-boot initscript.
+  * Replacing type with which in order to check for archdetect in boot
+    initscript, using type is a possible bashism.
+
+ -- Daniel Baumann <daniel@debian.org>  Fri, 06 Apr 2012 10:12:57 +0200
+
 live-config (3.0~a35-1) unstable; urgency=low
 
   * Disabling tmpfs on /tmp in sysvinit script (Closes: #658996).
