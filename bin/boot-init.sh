@@ -114,7 +114,7 @@ fi
 # as a quasi-boot-floppy. Technically this uses a bit of ubiquity
 # (archdetect), but since this is mostly only relevant for
 # installations, who cares ...
-if type archdetect >/dev/null 2>&1
+if [ -x "$(which archdetect 2>/dev/null)" ]
 then
 	subarch="$(archdetect)"
 
