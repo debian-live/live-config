@@ -57,14 +57,30 @@ Vengono eseguiti tutti gli script, tranne quelli specificati.
 Alcuni singoli script possono modificare il loro comportamento in base a un
 parametro di avvio.
 
-.IP "\fBlive\-config.debconf\-preseed\fP=\fIFILE\fP | \fBdebconf\-preseed\fP=\fIFILE\fP" 4
-Allows to set a preseed file that gets applied to the debconf database.
+.IP "\fBlive\-config.debconf\-preseed\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP | \fBdebconf\-preseed\fP=medium|filesystem|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
+Allows to fetch and apply one or more debconf preseed files to be applied to
+the debconf database. Note that the URLs must be fetchable by wget (http,
+ftp or file://).
+.br
+Se il file è posizionato sul supporto live può essere prelevato con
+file:///live/image/\fIFILE\fP o con file:///\fIFILE\fP se è nella radice del
+filesystem del sistema live stesso.
+.br
+All preseed files in /lib/live/preseed/ in the root filesystem of the live
+system can be automatically be enabled with the keyword 'filesystem'.
+.br
+All preseed files in /live/preseed/ of the live medium can be automatically
+be enabled with the keyword 'medium'.
+.br
+If several mechanisms are combined, then filesystem preseed files are
+applied first, then medium preseed files, and last the network preseed
+files.
 .IP "\fBlive\-config.hostname\fP=\fIHOSTNAME\fP | \fBhostname\fP=\fIHOSTNAME\fP" 4
 Permette di impostare l'hostname del sistema, il predefinito è "debian".
 .IP "\fBlive\-config.username\fP=\fINOMEUTENTE\fP | \fBusername\fP=\fINOMEUTENTE\fP" 4
 Permette di impostare il nome utente che viene creato per il login
 automatico, il predefinito è "user".
-.IP "\fBlive\-config.user\-default\-groups\fP=\fIGROUP1\fP,\fIGROUP2\fP ... \fIGROUPn\fP | \fBuser\-default\-groups\fP=\fIGROUP1\fP,\fIGROUP2\fP ... \fIGROUPn\fP" 4
+.IP "\fBlive\-config.user\-default\-groups\fP=\fIGROUPO1\fP,\fIGROUPO2\fP ... \fIGROUPOn\fP | \fBuser\-default\-groups\fP=\fIGROUPO1\fP,\fIGROUPO2\fP ... \fIGROUPOn\fP" 4
 Permette di impostare i gruppi dei quali fanno parte gli utenti creati per
 il login automatico. Il valore predefinito è "audio cdrom dip floppy video
 plugdev netdev powerdev scanner bluetooth".
@@ -177,8 +193,10 @@ Questa variabile equivale al parametro
 .IP "\fBLIVE_NOCONFIGS\fP=\fISCRIPT1\fP,\fISCRIPT2\fP, ... \fISCRIPTn\fP" 4
 Questa variabile equivale al parametro
 "\fBlive\-noconfig\fP=\fISCRIPT1\fP,\fISCRIPT2\fP, ... \fISCRIPTn\fP".
-.IP \fBLIVE_DEBCONF_PRESEED\fP=\fIFILE\fP 4
-This variable equals the '\fBlive\-config.debconf\-preseed\fP=\fIFILE\fP' parameter.
+.IP "\fBLIVE_DEBCONF_PRESEED\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
+Questa variabile equivale al parametro
+\&'\fBlive\-config.debconf\-preseed\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP|
+\&... |\fIURLn\fP'.
 .IP \fBLIVE_HOSTNAME\fP=\fIHOSTNAME\fP 4
 Questa variabile equivale al parametro
 "\fBlive\-config.hostname\fP=\fIHOSTNAME\fP".
@@ -254,7 +272,8 @@ pacchetto debian dedicato. Si può trovare un esempio in
 \fBlive\-config\fP attualmente offre i seguenti script in /lib/live/config.
 
 .IP \fBdebconf\fP 4
-applies a preseed file to the debconf database.
+allows to apply arbitrary preseed files placed on the live media or an
+http/ftp server.
 .IP \fBhostname\fP 4
 configura i file /etc/hostname e /etc/hosts.
 .IP \fBuser\-setup\fP 4
@@ -341,6 +360,11 @@ live o su un server http/ftp.
 .IP \fB/lib/live/config/\fP 4
 .IP \fB/var/lib/live/config/\fP 4
 .IP \fB/var/log/live/config.log\fP 4
+.PP
+.IP \fB/live/hooks/*\fP 4
+.IP \fBlive/hooks/*\fP 4
+.IP \fB/live/preseed/*\fP 4
+.IP "\fBlive/preseed/* \fP" 4
 
 .SH "VEDERE ANCHE"
 \fIlive\-boot\fP(7)

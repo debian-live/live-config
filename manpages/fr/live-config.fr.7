@@ -58,8 +58,24 @@ Tous les scripts sont lancés, à l'exception de ceux spécifiés.
 Quelques scripts particuliers peuvent changer leur comportement sur un
 paramètre d'amorçage.
 
-.IP "\fBlive\-config.debconf\-preseed\fP=\fIFILE\fP | \fBdebconf\-preseed\fP=\fIFILE\fP" 4
-Allows to set a preseed file that gets applied to the debconf database.
+.IP "\fBlive\-config.debconf\-preseed\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP | \fBdebconf\-preseed\fP=medium|filesystem|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
+Allows to fetch and apply one or more debconf preseed files to be applied to
+the debconf database. Note that the URLs must be fetchable by wget (http,
+ftp or file://).
+.br
+Si le fichier est placé dans le média live, il peut être utilisé avec
+file:///live/image/\fIFILE\fP, ou bien avec file:///\fIFILE\fP s'il est placé à la
+racine du système de fichier du live système.
+.br
+All preseed files in /lib/live/preseed/ in the root filesystem of the live
+system can be automatically be enabled with the keyword 'filesystem'.
+.br
+All preseed files in /live/preseed/ of the live medium can be automatically
+be enabled with the keyword 'medium'.
+.br
+If several mechanisms are combined, then filesystem preseed files are
+applied first, then medium preseed files, and last the network preseed
+files.
 .IP "\fBlive\-config.hostname\fP=\fINOM_D_HÔTE\fP | \fBhostname\fP=\fINOM_D_HÔTE\fP" 4
 Permet de spécifier un nom d'hôte (hostname) au système. Par défaut ce nom
 est 'debian'.
@@ -186,8 +202,10 @@ Cette variable correspond au paramètre
 .IP "\fBLIVE_NOCONFIGS\fP=\fISCRIPT1\fP,\fISCRIPT2\fP, ... \fISCRIPTn\fP" 4
 Cette variable correspond au paramètre
 \&'\fBlive\-noconfig\fP=\fISCRIPT1\fP,\fISCRIPT2\fP, ... \fISCRIPTn\fP'.
-.IP \fBLIVE_DEBCONF_PRESEED\fP=\fIFILE\fP 4
-This variable equals the '\fBlive\-config.debconf\-preseed\fP=\fIFILE\fP' parameter.
+.IP "\fBLIVE_DEBCONF_PRESEED\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
+Cette variable correspond au paramètre
+\&'\fBlive\-config.debconf\-preseed\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP|
+\&... |\fIURLn\fP'.
 .IP \fBLIVE_HOSTNAME\fP=\fINOM_D_HÔTE\fP 4
 Cette variable correspond au paramètre
 \&'\fBlive\-config.hostname\fP=\fINOM_D_HÔTE\fP'.
@@ -266,7 +284,8 @@ exemple de configuration est proposé dans
 \fBlive\-config\fP actuellement a les scripts suivants dans /lib/live/config.
 
 .IP \fBdebconf\fP 4
-applies a preseed file to the debconf database.
+allows to apply arbitrary preseed files placed on the live media or an
+http/ftp server.
 .IP \fBhostname\fP 4
 configure /etc/hostname et /etc/hosts.
 .IP \fBuser\-setup\fP 4
@@ -354,6 +373,11 @@ média live, ou sur un serveur http/ftp.
 .IP \fB/lib/live/config/\fP 4
 .IP \fB/var/lib/live/config/\fP 4
 .IP \fB/var/log/live/config.log\fP 4
+.PP
+.IP \fB/live/hooks/*\fP 4
+.IP \fBlive/hooks/*\fP 4
+.IP \fB/live/preseed/*\fP 4
+.IP "\fBlive/preseed/* \fP" 4
 
 .SH "VOIR AUSSI"
 \fIlive\-boot\fP(7)
