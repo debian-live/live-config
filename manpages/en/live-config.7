@@ -34,6 +34,8 @@ All scripts are run, except the specified ones.
 .SS Boot Parameters (options)
 Some individual scripts can change their behaviour upon a boot parameter.
 
+.IP "\fBlive\-config.debconf\-preseed\fR=\fIFILE\fR | \fBdebconf\-preseed\fR=\fIFILE\fR" 4
+Allows to set a preseed file that gets applied to the debconf database.
 .IP "\fBlive\-config.hostname\fR=\fIHOSTNAME\fR | \fBhostname\fR=\fIHOSTNAME\fR" 4
 Allows to set the hostname of the system. The default is 'debian'.
 .IP "\fBlive\-config.username\fR=\fIUSERNAME\fR | \fBusername\fR=\fIUSERNAME\fR" 4
@@ -106,6 +108,8 @@ The actual content of the configuration files consists of one or more of the fol
 This variable equals the '\fBlive\-config\fR=\fISCRIPT1\fR,\fISCRIPT2\fR, ... \fISCRIPTn\fR' parameter.
 .IP "\fBLIVE_NOCONFIGS\fR=\fISCRIPT1\fR,\fISCRIPT2\fR, ... \fISCRIPTn\fR" 4
 This variable equals the '\fBlive\-noconfig\fR=\fISCRIPT1\fR,\fISCRIPT2\fR, ... \fISCRIPTn\fR' parameter.
+.IP "\fBLIVE_DEBCONF_PRESEED\fR=\fIFILE\fR" 4
+This variable equals the '\fBlive\-config.debconf\-preseed\fR=\fIFILE\fR' parameter.
 .IP "\fBLIVE_HOSTNAME\fR=\fIHOSTNAME\fR" 4
 This variable equals the '\fBlive\-config.hostname\fR=\fIHOSTNAME\fR' parameter.
 .IP "\fBLIVE_USERNAME\fR=\fIUSERNAME\fR" 4
@@ -153,6 +157,8 @@ The configuration files for the live system itself are best put into an own debi
 .SH SCRIPTS
 \fBlive\-config\fR currently features the following scripts in /lib/live/config.
 
+.IP "\fBdebconf\fR" 4
+applies a preseed file to the debconf database.
 .IP "\fBhostname\fR" 4
 configures /etc/hostname and /etc/hosts.
 .IP "\fBuser\-setup\fR" 4

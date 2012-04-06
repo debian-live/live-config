@@ -57,6 +57,8 @@ Vengono eseguiti tutti gli script, tranne quelli specificati.
 Alcuni singoli script possono modificare il loro comportamento in base a un
 parametro di avvio.
 
+.IP "\fBlive\-config.debconf\-preseed\fP=\fIFILE\fP | \fBdebconf\-preseed\fP=\fIFILE\fP" 4
+Allows to set a preseed file that gets applied to the debconf database.
 .IP "\fBlive\-config.hostname\fP=\fIHOSTNAME\fP | \fBhostname\fP=\fIHOSTNAME\fP" 4
 Permette di impostare l'hostname del sistema, il predefinito è "debian".
 .IP "\fBlive\-config.username\fP=\fINOMEUTENTE\fP | \fBusername\fP=\fINOMEUTENTE\fP" 4
@@ -175,6 +177,8 @@ Questa variabile equivale al parametro
 .IP "\fBLIVE_NOCONFIGS\fP=\fISCRIPT1\fP,\fISCRIPT2\fP, ... \fISCRIPTn\fP" 4
 Questa variabile equivale al parametro
 "\fBlive\-noconfig\fP=\fISCRIPT1\fP,\fISCRIPT2\fP, ... \fISCRIPTn\fP".
+.IP \fBLIVE_DEBCONF_PRESEED\fP=\fIFILE\fP 4
+This variable equals the '\fBlive\-config.debconf\-preseed\fP=\fIFILE\fP' parameter.
 .IP \fBLIVE_HOSTNAME\fP=\fIHOSTNAME\fP 4
 Questa variabile equivale al parametro
 "\fBlive\-config.hostname\fP=\fIHOSTNAME\fP".
@@ -249,6 +253,8 @@ pacchetto debian dedicato. Si può trovare un esempio in
 .SH SCRIPT
 \fBlive\-config\fP attualmente offre i seguenti script in /lib/live/config.
 
+.IP \fBdebconf\fP 4
+applies a preseed file to the debconf database.
 .IP \fBhostname\fP 4
 configura i file /etc/hostname e /etc/hosts.
 .IP \fBuser\-setup\fP 4

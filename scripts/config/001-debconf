@@ -1,0 +1,51 @@
+#!/bin/sh
+
+## live-config(7) - System Configuration Scripts
+## Copyright (C) 2006-2012 Daniel Baumann <daniel@debian.org>
+##
+## live-config comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
+## This is free software, and you are welcome to redistribute it
+## under certain conditions; see COPYING for details.
+
+
+Debconf ()
+{
+	# Checking if package is installed or already configured
+	if [ ! -e /var/lib/dpkg/info/debconf.list ] || \
+	   [ -e /var/lib/live/config/debconf ]
+	then
+		return
+	fi
+
+	echo -n " debconf"
+
+	# Reading kernel command line
+	for _PARAMETER in ${_CMDLINE}
+	do
+		case "${_PARAMETER}" in
+			live-config.debconf-preseed=*|debconf-preseed=*)
+				LIVE_DEBCONF_PRESEED="${_PARAMETER#*debconf-preseed=}"
+				;;
+		esac
+	done
+
+	Configure_debconf
+}
+
+Configure_debconf ()
+{
+	if [ -z "${LIVE_DEBCONF_PRESEED}" ]
+	then
+		return
+	fi
+
+	cp "${LIVE_DEBCONF_PRESEED}" /debconf.live
+
+	debconf-set-selections < /debconf.live
+	rm -f /debconf.live
+
+	# Creating state file
+	touch /var/lib/live/config/debconf
+}
+
+Debconf

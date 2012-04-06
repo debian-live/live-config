@@ -56,6 +56,8 @@ Todos os scripts são executados, exceto os especificados.
 Alguns scripts podem alterar seu comportamento através de um parâmetro de
 inicialização.
 
+.IP "\fBlive\-config.debconf\-preseed\fP=\fIFILE\fP | \fBdebconf\-preseed\fP=\fIFILE\fP" 4
+Allows to set a preseed file that gets applied to the debconf database.
 .IP "\fBlive\-config.hostname\fP=\fIHOSTNAME\fP | \fBhostname\fP=\fIHOSTNAME\fP" 4
 Permite configurar o hostname do sistema. O padrão é 'debian'.
 .IP "\fBlive\-config.username\fP=\fINOME_DO_USUARIO\fP | \fBusername\fP=\fINOME_DO_USUARIO\fP" 4
@@ -173,6 +175,8 @@ Esta variável é equivalente ao parâmetro
 .IP "\fBLIVE_NOCONFIGS\fP=\fISCRIPT1\fP,\fISCRIPT2\fP, ... \fISCRIPTn\fP" 4
 Esta variável é equivalente ao parâmetro
 \&'\fBlive\-noconfig\fP=\fISCRIPT1\fP,\fISCRIPT2\fP, ... \fISCRIPTn\fP'.
+.IP \fBLIVE_DEBCONF_PRESEED\fP=\fIFILE\fP 4
+This variable equals the '\fBlive\-config.debconf\-preseed\fP=\fIFILE\fP' parameter.
 .IP \fBLIVE_HOSTNAME\fP=\fIHOSTNAME\fP 4
 Esta variável é equivalente ao parâmetro
 \&'\fBlive\-config.hostname\fP=\fIHOSTNAME\fP'.
@@ -250,6 +254,8 @@ contendo uma configuração de exemplo pode ser encontrado em
 .SH SCRIPTS
 \fBlive\-config\fP atualmente provê os seguintes scripts em /lib/live/config.
 
+.IP \fBdebconf\fP 4
+applies a preseed file to the debconf database.
 .IP \fBhostname\fP 4
 configura o /etc/hostname e /etc/hosts.
 .IP \fBuser\-setup\fP 4

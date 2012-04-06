@@ -57,6 +57,9 @@ Alle Skripte werden ausgeführt, ausser die hier spezifizierten Ausnahmen.
 Manche einzelne Skripte können durch Boot Parameter in ihrem Verhalten
 beinflusst werden.
 
+.IP "\fBlive\-config.debconf\-preseed\fP=\fIDATEI\fP | \fBdebconf\-preseed\fP=\fIDATEI\fP" 4
+Ermöglicht eine Preseed Datei einzugeben welche auf die Debconf Datenbank
+angewendet wird.
 .IP "\fBlive\-config.hostname\fP=\fIRECHNERNAME\fP | \fBhostname\fP=\fIRECHNERNAME\fP" 4
 Ermöglicht den Rechnernamen des Systems zu wählen. Der Standardname ist
 \&'debian'.
@@ -182,6 +185,9 @@ Diese Variable enspricht dem '\fBlive\-config\fP=\fISKRIPT1\fP,\fISKRIPT2\fP,
 .IP "\fBLIVE_NOCONFIGS\fP=\fISKRIPT1\fP,\fISKRIPT2\fP, ... \fISKRIPTn\fP" 4
 Diese Variable enspricht dem '\fBlive\-noconfig\fP=\fISKRIPT1\fP,\fISKRIPT2\fP,
 \&... \fISKRIPTn\fP' Parameter.
+.IP \fBLIVE_DEBCONF_PRESEED\fP=\fIDATEI\fP 4
+Diese Variable enspricht dem '\fBlive\-config.debconf\-preseed\fP=\fIDATEI\fP'
+Parameter.
 .IP \fBLIVE_HOSTNAME\fP=\fIRECHNERNAME\fP 4
 Diese Variable enspricht dem '\fBlive\-config.hostname\fP=\fIRECHNERNAME\fP'
 Parameter.
@@ -259,6 +265,8 @@ einem eigenen Debian Paket untergebracht. Ein Beispielpaket und
 .SH SKRIPTE
 \fBlive\-config\fP enthält derzeit folgende Skripte in /lib/live/config.
 
+.IP \fBdebconf\fP 4
+applies a preseed file to the debconf database.
 .IP \fBhostname\fP 4
 konfiguriert /etc/hostname und /etc/hosts.
 .IP \fBuser\-setup\fP 4
