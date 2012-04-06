@@ -53,6 +53,8 @@ install:
 	cp -r scripts/config.sh scripts/config $(DESTDIR)/lib/live
 	mkdir -p $(DESTDIR)/var/lib/live/config
 
+	cp bin/boot-init.sh $(DESTDIR)/lib/live
+
 	# Installing docs
 	mkdir -p $(DESTDIR)/usr/share/doc/live-config
 	cp -r COPYING examples $(DESTDIR)/usr/share/doc/live-config
@@ -75,6 +77,8 @@ install:
 
 uninstall:
 	# Uninstalling scripts
+	rm -f $(DESTDIR)/lib/live/boot-init.sh
+
 	rm -rf $(DESTDIR)/lib/live/config.sh $(DESTDIR)/lib/live/config
 	rmdir --ignore-fail-on-non-empty $(DESTDIR)/lib/live > /dev/null 2>&1 || true
 	rmdir --ignore-fail-on-non-empty $(DESTDIR)/lib > /dev/null 2>&1 || true
