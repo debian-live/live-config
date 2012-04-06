@@ -156,9 +156,9 @@ o più file. Se vengono usati questi file, è ancora richiesto il parametro
 "boot=live" per attivare \fBlive\-config\fP.
 .PP
 I file di configurazione sono collocabili sia nello stesso filesystem di
-root (/etc/live/config.conf, /etc/live/config.d/), sia nel supporto live
-(live/config.conf, live/config.d/). Se per una certa opzione si usano
-entrambe le destinazioni, avrà la precedenza quello del supporto live.
+root (/etc/live/config.conf, /etc/live/config.d/*.conf), sia nel supporto
+live (live/config.conf, live/config.d/*.conf). Se per una certa opzione si
+usano entrambe le destinazioni, avrà la precedenza quello del supporto live.
 .PP
 Anche se i file di configurazione messi nelle directory conf.d non
 richiedono un nome o suffisso particolari, per coerenza è suggerito di usare
@@ -328,9 +328,9 @@ live o su un server http/ftp.
 
 .SH FILE
 .IP \fB/etc/live/config.conf\fP 4
-.IP \fB/etc/live/config.d/\fP 4
+.IP \fB/etc/live/config.d/*.conf\fP 4
 .IP \fBlive/config.conf\fP 4
-.IP \fBlive/config.d/\fP 4
+.IP \fBlive/config.d/*.conf\fP 4
 .IP \fB/lib/live/config.sh\fP 4
 .IP \fB/lib/live/config/\fP 4
 .IP \fB/var/lib/live/config/\fP 4

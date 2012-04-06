@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config 3.0~a36-1\n"
-"POT-Creation-Date: 2012-04-06 10:06+0300\n"
+"POT-Creation-Date: 2012-04-06 10:30+0300\n"
 "PO-Revision-Date: 2011-12-06 08:01+0100\n"
 "Last-Translator: skizzhg <skizzhg@gmx.com>\n"
 "Language-Team: none\n"
@@ -584,15 +584,15 @@ msgstr ""
 #: en/live-config.7:100
 msgid ""
 "Configuration files can be placed either in the root filesystem itself (/etc/"
-"live/config.conf, /etc/live/config.d/), or on the live media (live/config."
-"conf, live/config.d/). If both places are used for a certain option, the "
-"ones from the live media take precedence over the ones from the root "
-"filesystem."
+"live/config.conf, /etc/live/config.d/*.conf), or on the live media (live/"
+"config.conf, live/config.d/*.conf). If both places are used for a certain "
+"option, the ones from the live media take precedence over the ones from the "
+"root filesystem."
 msgstr ""
 "I file di configurazione sono collocabili sia nello stesso filesystem di "
-"root (/etc/live/config.conf, /etc/live/config.d/), sia nel supporto live "
-"(live/config.conf, live/config.d/). Se per una certa opzione si usano "
-"entrambe le destinazioni, avrà la precedenza quello del supporto live."
+"root (/etc/live/config.conf, /etc/live/config.d/*.conf), sia nel supporto "
+"live (live/config.conf, live/config.d/*.conf). Se per una certa opzione si "
+"usano entrambe le destinazioni, avrà la precedenza quello del supporto live."
 
 #. type: Plain text
 #: en/live-config.7:102
@@ -1377,8 +1377,8 @@ msgstr "B</etc/live/config.conf>"
 #. type: IP
 #: en/live-config.7:233
 #, no-wrap
-msgid "B</etc/live/config.d/>"
-msgstr "B</etc/live/config.d/>"
+msgid "B</etc/live/config.d/*.conf>"
+msgstr "B</etc/live/config.d/*.conf>"
 
 #. type: IP
 #: en/live-config.7:234
@@ -1389,8 +1389,8 @@ msgstr "B<live/config.conf>"
 #. type: IP
 #: en/live-config.7:235
 #, no-wrap
-msgid "B<live/config.d/>"
-msgstr "B<live/config.d/>"
+msgid "B<live/config.d/*.conf>"
+msgstr "B<live/config.d/*.conf>"
 
 #. type: IP
 #: en/live-config.7:236

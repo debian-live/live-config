@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config 3.0~a36-1\n"
-"POT-Creation-Date: 2012-04-06 10:06+0300\n"
+"POT-Creation-Date: 2012-04-06 10:30+0300\n"
 "PO-Revision-Date: 2010-05-24 09:59+0300\n"
 "Last-Translator: Daniel Baumann <daniel@debian.org>\n"
 "Language-Team: none\n"
@@ -590,16 +590,16 @@ msgstr ""
 #: en/live-config.7:100
 msgid ""
 "Configuration files can be placed either in the root filesystem itself (/etc/"
-"live/config.conf, /etc/live/config.d/), or on the live media (live/config."
-"conf, live/config.d/). If both places are used for a certain option, the "
-"ones from the live media take precedence over the ones from the root "
-"filesystem."
+"live/config.conf, /etc/live/config.d/*.conf), or on the live media (live/"
+"config.conf, live/config.d/*.conf). If both places are used for a certain "
+"option, the ones from the live media take precedence over the ones from the "
+"root filesystem."
 msgstr ""
 "Die Konfigurationsdateien können entweder im Root Dateisystem selbst "
-"plaziert werden (/etc/live/config.conf, /etc/live/config.d/) oder auf dem "
-"Live Medium (live/config.conf, live/config.d/). Wenn beide Orte für eine "
-"bestimmte Option verwendet werden, geht die Konfigurationsdatei auf dem Live "
-"Medium dem der im Root Dateisystem enthaltenen vor."
+"plaziert werden (/etc/live/config.conf, /etc/live/config.d/*.conf) oder auf "
+"dem Live Medium (live/config.conf, live/config.d/*.conf). Wenn beide Orte "
+"für eine bestimmte Option verwendet werden, geht die Konfigurationsdatei auf "
+"dem Live Medium dem der im Root Dateisystem enthaltenen vor."
 
 #. type: Plain text
 #: en/live-config.7:102
@@ -1384,8 +1384,8 @@ msgstr "B</etc/live/config.conf>"
 #. type: IP
 #: en/live-config.7:233
 #, no-wrap
-msgid "B</etc/live/config.d/>"
-msgstr "B</etc/live/config.d/>"
+msgid "B</etc/live/config.d/*.conf>"
+msgstr "B</etc/live/config.d/*.conf>"
 
 #. type: IP
 #: en/live-config.7:234
@@ -1396,8 +1396,8 @@ msgstr "B<live/config.conf>"
 #. type: IP
 #: en/live-config.7:235
 #, no-wrap
-msgid "B<live/config.d/>"
-msgstr "B<live/config.d/>"
+msgid "B<live/config.d/*.conf>"
+msgstr "B<live/config.d/*.conf>"
 
 #. type: IP
 #: en/live-config.7:236
