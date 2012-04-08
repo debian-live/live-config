@@ -145,7 +145,7 @@ do
 	esac
 done
 
-mount -o remount,ro /live/cow
+mount -o remount,ro /live/overlay
 
 if [ -z ${QUICKREBOOT} ]
 then
