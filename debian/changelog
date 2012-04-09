@@ -1,3 +1,30 @@
+live-config (3.0~a37-1) experimental; urgency=low
+
+  [ Daniel Baumann ]
+  * Only looking at config.d files if they have the .conf suffix to
+    allow putting other files into these places that do not necessarily
+    need to be used by live-config (e.g. documentation).
+  * Using /var/log/live/config.log instead of /var/log/live-config.log
+    for consistency with the other live packages.
+  * Adding timestamp and script name to logfile when running with debug
+    enabled.
+  * Adding script for applying preseed files to the debconf database.
+  * Renumbering scripts.
+  * Exiting early in hooks script if no hooks were specified.
+  * Extending debconf script to take more than one preseed file and
+    support all three location types (filesyste, media, network).
+  * Renaming /live/cow to /live/overlay in anticipation of overlayfs.
+  * Using 'persistence' (noun) rather than 'persistent'
+    (adjective/adverb) everywhere.
+  * Making extraction of the manpage section in manpages/Makefile work
+    with multiple dots in the filename.
+
+  [ chals ]
+  * Updating Spanish translation of man page.
+  * Updating French translation of man page.
+
+ -- Daniel Baumann <daniel@debian.org>  Mon, 09 Apr 2012 19:02:26 +0200
+
 live-config (3.0~a36-1) experimental; urgency=low
 
   * Adding live-boot initscript.
