@@ -173,9 +173,9 @@ Main ()
 		. /etc/live/config.conf
 	fi
 
-	if ls /etc/live/config.d/* > /dev/null 2>&1
+	if ls /etc/live/config.d/*.conf > /dev/null 2>&1
 	then
-		for _FILE in /etc/live/config.d/*
+		for _FILE in /etc/live/config.d/*.conf
 		do
 			. ${_FILE}
 		done
@@ -187,9 +187,9 @@ Main ()
 		. /live/image/live/config.conf
 	fi
 
-	if ls /live/image/live/config.d/* > /dev/null 2>&1
+	if ls /live/image/live/config.d/*.conf > /dev/null 2>&1
 	then
-		for _FILE in /live/image/live/config.d/*
+		for _FILE in /live/image/live/config.d/*.conf
 		do
 			. ${_FILE}
 		done
@@ -204,12 +204,16 @@ Main ()
 			;;
 	esac
 
-	_SCRIPTS="$(echo ${_SCRIPTS} | sed -e 's| |\n|g' | sort -u)"
+	mkdir -p /var/log/live
 
 	# Configuring system
+	_SCRIPTS="$(echo ${_SCRIPTS} | sed -e 's| |\n|g' | sort -u)"
+
 	for _SCRIPT in ${_SCRIPTS}
 	do
-		. ${_SCRIPT} 2>&1 | tee -a /var/log/live-config.log
+		[ "${_LIVE_DEBUG}" = "true" ] && echo "[$(date +'%F %T')] live-config: ${_SCRIPT}" >> /var/log/live/config.log
+
+		. ${_SCRIPT} 2>&1 | tee -a /var/log/live/config.log
 	done
 
 	echo "."

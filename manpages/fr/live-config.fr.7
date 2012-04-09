@@ -11,7 +11,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 06.04.2012 3.0~a36\-1 "Projet Debian Live"
+.TH LIVE\-CONFIG 7 09.04.2012 3.0~a37\-1 "Projet Debian Live"
 
 .SH NOM
 \fBlive\-config\fP \- Scripts de configuration du système
@@ -44,10 +44,10 @@ préséance sur ceux qui précèdent.
 Tous les scripts sont lancés. C'est la configuration par défaut des images
 Debian Live.
 .IP "\fBlive\-config\fP=\fISCRIPT1\fP,\fISCRIPT2\fP, ... \fISCRIPTn\fP | \fBconfig\fP=\fISCRIPT1\fP,\fISCRIPT2\fP, ... \fISCRIPTn\fP" 4
-Seuls les scripts spécifiés sont lancés. Notez que leur ordre importe,
-\-ainsi 'live\-config=sudo,user\-setup' ne peut pas fonctionner tant que
-l'utilisateur configuré pour utiliser sudo n'a pas été créé. Regardez les
-noms des scripts dans /lib/live/config pour les ordonner numériquement.
+Seuls les scripts spécifiés sont lancés. Notez que leur ordre importe, ainsi
+\&'live\-config=sudo,user\-setup' ne peut pas fonctionner tant que l'utilisateur
+configuré pour utiliser sudo n'a pas été créé. Regardez les noms des scripts
+dans /lib/live/config pour les ordonner numériquement.
 .IP "\fBlive\-noconfig\fP | \fBnoconfig\fP" 4
 Aucun script n'est lancé. Celà revient au même que de n'utiliser ni
 \&'live\-config' ni 'live\-noconfig'.
@@ -58,6 +58,26 @@ Tous les scripts sont lancés, à l'exception de ceux spécifiés.
 Quelques scripts particuliers peuvent changer leur comportement sur un
 paramètre d'amorçage.
 
+.IP "\fBlive\-config.debconf\-preseed\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP | \fBdebconf\-preseed\fP=medium|filesystem|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
+Permet de chercher et d'appliquer un ou plusieurs fichiers de
+préconfiguration debconf à la base de données debconf. Notez que les URLs
+doivent pouvoir être utilisées par wget (http, ftp or file://).
+.br
+Si le fichier est placé dans le média live, il peut être utilisé avec
+file:///live/image/\fIFILE\fP, ou bien avec file:///\fIFILE\fP s'il est placé à la
+racine du système de fichiers du système live.
+.br
+Tous les fichiers de préconfiguration dans /lib/live/preseed/ dans le
+système de fichiers racine du système live peuvent être automatiquement
+activés avec le mot clé 'filesystem'.
+.br
+Tous les fichiers de préconfiguration dans /live/preseed/ du média live
+peuvent être automatiquement activés avec le mot clé 'medium'
+.br
+Si plusieurs mécanismes sont combinés, les fichiers de préconfiguration du
+système de fichiers sont appliqués en premier, alors les fichiers de
+préconfiguration du média et enfin les fichiers de préconfiguration du
+réseau.
 .IP "\fBlive\-config.hostname\fP=\fINOM_D_HÔTE\fP | \fBhostname\fP=\fINOM_D_HÔTE\fP" 4
 Permet de spécifier un nom d'hôte (hostname) au système. Par défaut ce nom
 est 'debian'.
@@ -107,7 +127,7 @@ l'auto\-détection.
 Permet de spécifier la résolution utilisée par xorg, plutôt que d'utiliser
 l'auto\-détection, par example 1024x768.
 .IP "\fBlive\-config.hooks\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP | \fBhooks\fP=\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
-Permet de soumettre et d'exécuter un ou plusieurs fichiers/scripts
+Permet de chercher et d'exécuter un ou plusieurs fichiers/scripts
 spécifiques. Notez que les URLs doivent pouvoir être utilisées par wget
 (http, ftp or file://), que les fichiers sont exécutés dans /tmp sur le
 système live, et que les dépendances éventuelles des fichiers doivent être
@@ -119,17 +139,17 @@ proposés dans /usr/share/doc/live\-config/examples/hooks/ et sur
 .br
 Si le fichier est placé dans le média live, il peut être utilisé avec
 file:///live/image/\fIFILE\fP, ou bien avec file:///\fIFILE\fP s'il est placé à la
-racine du système de fichier du live système.
+racine du système de fichiers du système live.
 .br
 Tous les hooks, placés dans /lib/live/hooks/ à la racine du système de
-fichier, peuvent être automatiquement activés avec le mot clé 'filesystem'.
+fichiers, peuvent être automatiquement activés avec le mot clé 'filesystem'.
 .br
 Tous les hooks dans /live/hooks/ du média live peuvent être automatiquement
 activés avec le mot clé 'medium'.
 .br
-Si plusieurs mécanismes sont combinés, alors les hooks du système de fichier
-sont exécutés prioritairement, suivis des hooks du media, et enfin des hooks
-du réseau.
+Si plusieurs mécanismes sont combinés, alors les hooks du système de
+fichiers sont exécutés prioritairement, suivis des hooks du media, et enfin
+des hooks du réseau.
 
 .SS "Paramètres d'amorçage (raccourcis)"
 Dans le cas où il est nécessaire de combiner plusieurs paramètres
@@ -137,8 +157,8 @@ individuels, \fBlive\-config\fP fournit des raccourcis. Il permet de mixer
 facilement plusieurs options.
 
 .IP "\fBlive\-config.noroot\fP | \fBnoroot\fP" 4
-Désactive les règles du sudo; dans ce cas l'utilisateur ne peut pas
-bénéficier des privilèges administrateur (root) sur le système.
+Désactive sudo et policykit, dans ce cas l'utilisateur ne peut pas obtenir
+les privilèges du administrateur (root) sur le système.
 .IP "\fBlive\-config.nottyautologin\fP | \fBnoautologin\fP" 4
 Désactive l'auto\-login sur la console et l'auto\-login graphique.
 .IP "\fBlive\-config.nottyautologin\fP | \fBnottyautologin\fP" 4
@@ -164,10 +184,10 @@ sont utilisés, le paramètre 'boot=live' est toujours requis pour activer
 \fBlive\-config\fP.
 .PP
 Les fichiers de configuration peuvent être placés soit dans la racine du
-système de fichiers (/etc/live/config.conf, /etc/live/config.d/), soit sur
-le média live (live/config.conf, live/config.d/). Si ces deux endroits sont
-utilisés pour une même option, ceux placés dans le média live ont la
-préséance sur ceux placés dans la racine du système.
+système de fichiers (/etc/live/config.conf, /etc/live/config.d/*.conf), soit
+sur le média live (live/config.conf, live/config.d/*.conf). Si ces deux
+endroits sont utilisés pour une même option, ceux placés dans le média live
+ont la préséance sur ceux placés dans la racine du système.
 .PP
 Bien que les fichiers de configuration placés dans les répertoires conf.d ne
 requièrent pas de nom ou suffixe particulier, il est suggéré, par souci de
@@ -184,6 +204,10 @@ Cette variable correspond au paramètre
 .IP "\fBLIVE_NOCONFIGS\fP=\fISCRIPT1\fP,\fISCRIPT2\fP, ... \fISCRIPTn\fP" 4
 Cette variable correspond au paramètre
 \&'\fBlive\-noconfig\fP=\fISCRIPT1\fP,\fISCRIPT2\fP, ... \fISCRIPTn\fP'.
+.IP "\fBLIVE_DEBCONF_PRESEED\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
+Cette variable correspond au paramètre
+\&'\fBlive\-config.debconf\-preseed\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP|
+\&... |\fIURLn\fP'.
 .IP \fBLIVE_HOSTNAME\fP=\fINOM_D_HÔTE\fP 4
 Cette variable correspond au paramètre
 \&'\fBlive\-config.hostname\fP=\fINOM_D_HÔTE\fP'.
@@ -232,8 +256,8 @@ Cette variable correspond au paramètre
 \&'\fBlive\-config.hooks\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP'.
 
 .SH CUSTOMISATION
-\fBlive\-config\fP peut être facilement customisé pour des projets dérivés, ou
-pour un usage local.
+\fBlive\-config\fP peut être facilement personnalisé pour des projets dérivés,
+ou pour un usage local.
 
 .SS "Ajout de nouveaux scripts de configuration"
 Les projets dérivés peuvent utiliser leurs propres scripts dans
@@ -244,7 +268,7 @@ Il est préférable que les scripts soient mis dans leur propre paquet
 Debian. Un simple paquet contenant un script d'exemple est proposé dans
 /usr/share/doc/live\-config/examples.
 
-.SS "Enlever des scripts de configuration existant"
+.SS "Enlever des scripts de configuration existants"
 Il n'est pas encore vraiment possible d'enlever sans problème les scripts
 sans avoir besoin de charger un paquet \fBlive\-config\fP modifié
 localement. Cependant, on peut réaliser une chose similaire en désactivant
@@ -261,10 +285,13 @@ exemple de configuration est proposé dans
 .SH SCRIPTS
 \fBlive\-config\fP actuellement a les scripts suivants dans /lib/live/config.
 
+.IP \fBdebconf\fP 4
+permet d'appliquer fichiers de préconfiguration arbitraires placés sur les
+médias live ou un serveur http/ftp.
 .IP \fBhostname\fP 4
 configure /etc/hostname et /etc/hosts.
 .IP \fBuser\-setup\fP 4
-ajoute un compte live d'utilisateur.
+ajoute un compte d'utilisateur live.
 .IP \fBsudo\fP 4
 offre les privilèges sudo à l'utilisateur live.
 .IP \fBlocales\fP 4
@@ -326,7 +353,7 @@ désactive update\-notifier.
 .IP \fBanacron\fP 4
 désactive anacron.
 .IP \fButil\-linux\fP 4
-désactive util\-linux' heure hardware.
+désactive util\-linux' hwclock.
 .IP \fBlogin\fP 4
 désactive lastlog.
 .IP \fBxserver\-xorg\fP 4
@@ -334,20 +361,25 @@ configure xserver\-xorg.
 .IP "\fBureadahead\fP (seulement ubuntu)" 4
 désactive ureadahead.
 .IP \fBopenssh\-server\fP 4
-regénère les clés openssh.
+regénère les clés de l'hôte openssh\-server.
 .IP \fBhooks\fP 4
-permet de lancer des commandes particulières depuis un script placé sur le
-média live, ou sur un serveur http/ftp.
+permet de lancer des commandes arbitraires d'un script placé sur le média
+live, ou sur un serveur http/ftp.
 
 .SH FICHIERS
 .IP \fB/etc/live/config.conf\fP 4
-.IP \fB/etc/live/config.d/\fP 4
+.IP \fB/etc/live/config.d/*.conf\fP 4
 .IP \fBlive/config.conf\fP 4
-.IP \fBlive/config.d/\fP 4
+.IP \fBlive/config.d/*.conf\fP 4
 .IP \fB/lib/live/config.sh\fP 4
 .IP \fB/lib/live/config/\fP 4
 .IP \fB/var/lib/live/config/\fP 4
-.IP \fB/var/log/live\-config.log\fP 4
+.IP \fB/var/log/live/config.log\fP 4
+.PP
+.IP \fB/live/hooks/*\fP 4
+.IP \fBlive/hooks/*\fP 4
+.IP \fB/live/preseed/*\fP 4
+.IP "\fBlive/preseed/* \fP" 4
 
 .SH "VOIR AUSSI"
 \fIlive\-boot\fP(7)
@@ -356,8 +388,8 @@ média live, ou sur un serveur http/ftp.
 .PP
 \fIlive\-tools\fP(7)
 
-.SH "PAGE D'ACCEUIL"
-Plus d'informations sur live\-config et le Debian Live project peuvent être
+.SH "PAGE D'ACCUEIL"
+Plus d'informations sur live\-config et le project Debian Live peuvent être
 trouvées sur la page <\fIhttp://live.debian.net/\fP> et dans le manuel
 sur <\fIhttp://live.debian.net/manual/\fP>.
 

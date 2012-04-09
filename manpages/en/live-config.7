@@ -6,7 +6,7 @@
 .\" under certain conditions; see COPYING for details.
 .\"
 .\"
-.TH LIVE\-CONFIG 7 2012\-04\-06 3.0~a36-1 "Debian Live Project"
+.TH LIVE\-CONFIG 7 2012\-04\-09 3.0~a37-1 "Debian Live Project"
 
 .SH NAME
 \fBlive\-config\fR \- System Configuration Scripts
@@ -34,6 +34,16 @@ All scripts are run, except the specified ones.
 .SS Boot Parameters (options)
 Some individual scripts can change their behaviour upon a boot parameter.
 
+.IP "\fBlive\-config.debconf\-preseed\fR=filesystem|medium|\fIURL1\fR|\fIURL2\fR| ... |\fIURLn\fR | \fBdebconf\-preseed\fR=medium|filesystem|\fIURL1\fR|\fIURL2\fR| ... |\fIURLn\fR" 4
+Allows to fetch and apply one or more debconf preseed files to be applied to the debconf database. Note that the URLs must be fetchable by wget (http, ftp or file://).
+.br
+If the file is placed on the live medium, it can be fetched with file:///live/image/\fIFILE\fR, or with file:///\fIFILE\fR if it is in the root filesystem of the live system itself.
+.br
+All preseed files in /lib/live/preseed/ in the root filesystem of the live system can be automatically be enabled with the keyword 'filesystem'.
+.br
+All preseed files in /live/preseed/ of the live medium can be automatically be enabled with the keyword 'medium'.
+.br
+If several mechanisms are combined, then filesystem preseed files are applied first, then medium preseed files, and last the network preseed files.
 .IP "\fBlive\-config.hostname\fR=\fIHOSTNAME\fR | \fBhostname\fR=\fIHOSTNAME\fR" 4
 Allows to set the hostname of the system. The default is 'debian'.
 .IP "\fBlive\-config.username\fR=\fIUSERNAME\fR | \fBusername\fR=\fIUSERNAME\fR" 4
@@ -96,7 +106,7 @@ Enables debug output in live\-config.
 .SS Configuration Files
 \fBlive\-config\fR can be configured (but not activated) through configuration files. Everything but the shortcuts that can be configured with a boot parameter can be alternatively also be configured through one or more files. If configuration files are used, the 'boot=live' parameter is still required to activate \fBlive\-config\fR.
 .PP
-Configuration files can be placed either in the root filesystem itself (/etc/live/config.conf, /etc/live/config.d/), or on the live media (live/config.conf, live/config.d/). If both places are used for a certain option, the ones from the live media take precedence over the ones from the root filesystem.
+Configuration files can be placed either in the root filesystem itself (/etc/live/config.conf, /etc/live/config.d/*.conf), or on the live media (live/config.conf, live/config.d/*.conf). If both places are used for a certain option, the ones from the live media take precedence over the ones from the root filesystem.
 .PP
 Although the configuration files placed in the conf.d directories do not require a particular name or suffix, it is suggested for consistency reasons to either use 'vendor.conf' or 'project.conf' as a naming scheme (whereas 'vendor' or 'project' is replaced with the actual name, resulting in a filename like 'debian\-eeepc.conf').
 .PP
@@ -106,6 +116,8 @@ The actual content of the configuration files consists of one or more of the fol
 This variable equals the '\fBlive\-config\fR=\fISCRIPT1\fR,\fISCRIPT2\fR, ... \fISCRIPTn\fR' parameter.
 .IP "\fBLIVE_NOCONFIGS\fR=\fISCRIPT1\fR,\fISCRIPT2\fR, ... \fISCRIPTn\fR" 4
 This variable equals the '\fBlive\-noconfig\fR=\fISCRIPT1\fR,\fISCRIPT2\fR, ... \fISCRIPTn\fR' parameter.
+.IP "\fBLIVE_DEBCONF_PRESEED\fR=filesystem|medium|\fIURL1\fR|\fIURL2\fR| ... |\fIURLn\fR" 4
+This variable equals the '\fBlive\-config.debconf\-preseed\fR=filesystem|medium|\fIURL1\fR|\fIURL2\fR| ... |\fIURLn\fR' parameter.
 .IP "\fBLIVE_HOSTNAME\fR=\fIHOSTNAME\fR" 4
 This variable equals the '\fBlive\-config.hostname\fR=\fIHOSTNAME\fR' parameter.
 .IP "\fBLIVE_USERNAME\fR=\fIUSERNAME\fR" 4
@@ -153,6 +165,8 @@ The configuration files for the live system itself are best put into an own debi
 .SH SCRIPTS
 \fBlive\-config\fR currently features the following scripts in /lib/live/config.
 
+.IP "\fBdebconf\fR" 4
+allows to apply arbitrary preseed files placed on the live media or an http/ftp server.
 .IP "\fBhostname\fR" 4
 configures /etc/hostname and /etc/hosts.
 .IP "\fBuser\-setup\fR" 4
@@ -230,13 +244,18 @@ allows to run arbitrary commands from a script placed on the live media or an ht
 
 .SH FILES
 .IP "\fB/etc/live/config.conf\fR" 4
-.IP "\fB/etc/live/config.d/\fR" 4
+.IP "\fB/etc/live/config.d/*.conf\fR" 4
 .IP "\fBlive/config.conf\fR" 4
-.IP "\fBlive/config.d/\fR" 4
+.IP "\fBlive/config.d/*.conf\fR" 4
 .IP "\fB/lib/live/config.sh\fR" 4
 .IP "\fB/lib/live/config/\fR" 4
 .IP "\fB/var/lib/live/config/\fR" 4
-.IP "\fB/var/log/live-config.log\fR" 4
+.IP "\fB/var/log/live/config.log\fR" 4
+.PP
+.IP "\fB/live/hooks/*\fR" 4
+.IP "\fBlive/hooks/*\fR" 4
+.IP "\fB/live/preseed/*\fR" 4
+.IP "\fBlive/preseed/* \fR" 4
 
 .SH SEE ALSO
 \fIlive\-boot\fR(7)

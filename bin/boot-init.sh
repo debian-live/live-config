@@ -84,7 +84,7 @@ device_is_USB_flash_drive()
 
 log_begin_msg "live-boot: resyncing snapshots and caching reboot files..."
 
-if ! grep -qs nopersistent /proc/cmdline && grep -qs persistent /proc/cmdline
+if ! grep -qs nopersistence /proc/cmdline && grep -qs persistence /proc/cmdline
 then
 	# ROOTSNAP and HOMESNAP are defined in ${SNAPSHOT_CONF} file
 	if [ ! -z "${ROOTSNAP}" ]
@@ -145,7 +145,7 @@ do
 	esac
 done
 
-mount -o remount,ro /live/cow
+mount -o remount,ro /live/overlay
 
 if [ -z ${QUICKREBOOT} ]
 then

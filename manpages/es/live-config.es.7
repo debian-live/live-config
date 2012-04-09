@@ -11,7 +11,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 06.04.2012 3.0~a36\-1 "Proyecto Debian Live"
+.TH LIVE\-CONFIG 7 09.04.2012 3.0~a37\-1 "Proyecto Debian Live"
 
 .SH NOMBRE
 \fBlive\-config\fP \- Scripts de configuración del sistema
@@ -56,6 +56,25 @@ Se ejecutan todos los scripts, a excepción de los especificados.
 Algunos scripts pueden cambiar su comportamiento según un parámetro de
 arranque.
 
+.IP "\fBlive\-config.debconf\-preseed\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP | \fBdebconf\-preseed\fP=medium|filesystem|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
+Permite buscar y aplicar uno o más ficheros de preconfiguración debconf a la
+base de datos de debconf. Tener en cuenta que las URLs deben poder ser
+descargadas por wget (http, ftp o file://).
+.br
+Si el archivo está en el medio en vivo, se puede obtener con
+file:///live/image/\fIFILE\fP, o con file:///\fIFILE\fP si se encuentra en el
+directorio raíz del sistema en vivo.
+.br
+Todos los ficheros de preconfiguración en /lib/live/preseed/ en el sistema
+de ficheros raíz del sistema en vivo pueden activarse automáticamente con la
+palabra clave «filesystem».
+.br
+Todos los ficheros en /live/preseed/ del medio en vivo pueden activarse
+automáticamente con la palabra clave «medium».
+.br
+Si se combinan varios mecanismos, los ficheros de preconfiguración del
+sistema de ficheros se aplican primero, después los ficheros de
+preconfiguración del medio, y en último lugar los de red.
 .IP "\fBlive\-config.hostname\fP=\fIHOSTNAME\fP | \fBhostname\fP=\fIHOSTNAME\fP" 4
 Permite establecer el hostname del sistema. Por omisión es «debian».
 .IP "\fBlive\-config.username\fP=\fIUSERNAME\fP | \fBusername\fP=\fIUSERNAME\fP" 4
@@ -106,10 +125,9 @@ Permite buscar y ejecutar uno o más archivos de forma arbitraria. Tener en
 cuenta que las URLs deben ser descargadas usando wget (http, ftp o file://),
 los ficheros se ejecutan en el directorio /tmp del sistema en ejecución en
 vivo y que los ficheros necesitan, si tienen dependencias, tenerlas
-resueltas. p.ej. Si se debe ejecutar un script en python, el sistema
-necesita tener python instalado. Hay algunos scripts gancho («hooks» N. del
-T.) para varios casos de uso común disponibles en
-/usr/share/doc/live\-config/examples/hooks/ y en
+resueltas. p.ej. Si se debe ejecutar un script python, el sistema necesita
+tener python instalado. Hay algunos scripts gancho para varios casos de uso
+común disponibles en /usr/share/doc/live\-config/examples/hooks/ y en
 <\fIhttp://live.debian.net/other/hooks\fP>.
 .br
 Si el archivo está en el medio en vivo, se puede obtener con
@@ -132,8 +150,8 @@ tener control total sobre todas las opciones así como poder hacer las cosas
 de forma sencilla.
 
 .IP "\fBlive\-config.noroot\fP | \fBnoroot\fP" 4
-Desactiva sudo y PolicyKit, el usuario no puede obtener privilegios de
-superusuario («root» N. del T.) en el sistema.
+Desactiva sudo y policyKit, el usuario no puede obtener privilegios de
+superusuario en el sistema.
 .IP "\fBlive\-config.noautologin\fP | \fBnoautologin\fP" 4
 Desactiva el inicio de sesión automático en la consola y el inicio de sesión
 automático en la interfaz gráfica.
@@ -148,8 +166,7 @@ sin afectar el inicio de sesión automático en un terminal tty.
 Para casos de uso especial hay algunos parámetros de arranque especiales.
 
 .IP "\fBlive\-config.debug\fP | \fBdebug\fP" 4
-Activa la información sobre errores («debug output» N.del T.) en
-live\-config.
+Activa la información sobre errores en live\-config.
 
 .SS "Ficheros de configuración"
 \fBlive\-config\fP se puede configurar (pero no activar) mediante ficheros de
@@ -159,10 +176,10 @@ uno o más ficheros. Aunque se utilicen los ficheros de configuración, el
 parámetro «boot =live» es necesario para activar \fBlive\-config\fP.
 .PP
 Los ficheros de configuración se pueden colocar en el sistema de ficheros
-raíz (/etc/live/config.conf, /etc/live/config.d/), o en el medio en vivo
-(live/config.conf, live/config.d/). Si ambos directorios se utilizan para
-una determinada opción, la del medio en vivo tienen prioridad sobre la del
-sistema de ficheros raíz.
+raíz (/etc/live/config.conf, /etc/live/config.d/*.conf), o en el medio en
+vivo (live/config.conf, live/config.d/*.conf). Si ambos directorios se
+utilizan para una determinada opción, la del medio en vivo tienen prioridad
+sobre la del sistema de ficheros raíz.
 .PP
 Aunque los ficheros de configuración situados en los directorios conf.d no
 requieren un nombre o sufijo en concreto, se sugiere por unificación usar
@@ -179,6 +196,10 @@ Esta variable es igual al parámetro
 .IP "\fBLIVE_NOCONFIGS\fP=\fISCRIPT1\fP,\fISCRIPT2\fP, ... \fISCRIPTn\fP" 4
 Esta variable es igual al parámetro '\fBlive\-noconfig\fP=\fISCRIPT1\fP,\fISCRIPT2\fP,
 \&... \fISCRIPTn\fP'
+.IP "\fBLIVE_DEBCONF_PRESEED\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
+Esta variable es igual al parámetro
+\&'\fBlive\-config.debconf\-preseed\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP|
+\&... |\fIURLn\fP'.
 .IP \fBLIVE_HOSTNAME\fP=\fIHOSTNAME\fP 4
 Esta variable es igual al parámetro '\fBlive\-config.hostname\fP=\fIHOSTNAME\fP'
 .IP \fBLIVE_USERNAME\fP=\fIUSERNAME\fP 4
@@ -251,6 +272,9 @@ ejemplo de configuración en /usr/share/doc/live\-config/examples.
 .SH SCRIPTS
 \fBlive\-config\fP incluye los siguientes scripts en /lib/live/config.
 
+.IP \fBdebconf\fP 4
+permite aplicar de forma arbitraria ficheros de preconfiguración situados en
+el medios en vivo o en un servidor http/ftp.
 .IP \fBhostname\fP 4
 configura /etc/hostname y /etc/hosts.
 .IP \fBuser\-setup\fP 4
@@ -323,20 +347,25 @@ configura xserver\-xorg.
 .IP "\fBureadahead\fP (ubuntu solamente)" 4
 Desactiva ureadahead.
 .IP \fBopenssh\-server\fP 4
-Recrea las claves  openssh\-server.
+Recrea las claves del host openssh\-server.
 .IP \fBhooks\fP 4
 permite ejecutar de forma arbitraria los comandos desde un script ubicado en
 el medio en vivo o en un servidor http/ftp.
 
 .SH FICHEROS
 .IP \fB/etc/live/config.conf\fP 4
-.IP \fB/etc/live/config.d/\fP 4
+.IP \fB/etc/live/config.d/*.conf\fP 4
 .IP \fBlive/config.conf\fP 4
-.IP \fBlive/config.d/\fP 4
+.IP \fBlive/config.d/*.conf\fP 4
 .IP \fB/lib/live/config.sh\fP 4
 .IP \fB/lib/live/config/\fP 4
 .IP \fB/var/lib/live/config/\fP 4
-.IP \fB/var/log/live\-config.log\fP 4
+.IP \fB/var/log/live/config.log\fP 4
+.PP
+.IP \fB/live/hooks/*\fP 4
+.IP \fBlive/hooks/*\fP 4
+.IP \fB/live/preseed/*\fP 4
+.IP "\fBlive/preseed/* \fP" 4
 
 .SH "VER ADEMÁS"
 \fIlive\-boot\fP(7)
@@ -347,14 +376,15 @@ el medio en vivo o en un servidor http/ftp.
 
 .SH "PÁGINA PRINCIPAL"
 Se puede encontrar más información acerca de live\-config y el proyecto
-Debian Live en la página principal de <\fIhttp://live.debian.net/\fP> y
+Debian Live en su página principal en <\fIhttp://live.debian.net/\fP> y
 en el manual en <\fIhttp://live.debian.net/manual/\fP>.
 
 .SH ERRORES
-Se puede notificar los fallos enviando un informe de errores («bugreport»
-N. del T.) sobre el paquete live\-config en el Debian Bug Tracking System en
+Se puede notificar los fallos enviando un informe de errores sobre el
+paquete live\-config en el Debian Bug Tracking System en
 <\fIhttp://bugs.debian.org/\fP> o escribiendo un mensaje a la lista de
-correo de Debian Live en <\fIdebian\-live@lists.debian.org\fP>.
+correo de Debian Live a la dirección
+<\fIdebian\-live@lists.debian.org\fP>.
 
 .SH AUTOR
 live\-config fue escrito por Daniel Baumann <\fIdaniel@debian.org\fP>.

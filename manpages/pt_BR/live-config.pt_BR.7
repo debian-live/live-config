@@ -11,7 +11,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 06\-04\-2012 3.0~a36\-1 "Projeto Debian Live"
+.TH LIVE\-CONFIG 7 09\-04\-2012 3.0~a37\-1 "Projeto Debian Live"
 
 .SH NOME
 \fBlive\-config\fP \- Scripts para Configuração do Sistema
@@ -56,12 +56,30 @@ Todos os scripts são executados, exceto os especificados.
 Alguns scripts podem alterar seu comportamento através de um parâmetro de
 inicialização.
 
+.IP "\fBlive\-config.debconf\-preseed\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP | \fBdebconf\-preseed\fP=medium|filesystem|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
+Allows to fetch and apply one or more debconf preseed files to be applied to
+the debconf database. Note that the URLs must be fetchable by wget (http,
+ftp or file://).
+.br
+Se o arquivo estiver na mídia live, ele pode ser obtido através de
+file:///live/image/\fIFILE\fP ou file:///\fIFILE\fP se estiver no sistema raiz do
+próprio sistema live.
+.br
+All preseed files in /lib/live/preseed/ in the root filesystem of the live
+system can be automatically be enabled with the keyword 'filesystem'.
+.br
+All preseed files in /live/preseed/ of the live medium can be automatically
+be enabled with the keyword 'medium'.
+.br
+If several mechanisms are combined, then filesystem preseed files are
+applied first, then medium preseed files, and last the network preseed
+files.
 .IP "\fBlive\-config.hostname\fP=\fIHOSTNAME\fP | \fBhostname\fP=\fIHOSTNAME\fP" 4
 Permite configurar o hostname do sistema. O padrão é 'debian'.
 .IP "\fBlive\-config.username\fP=\fINOME_DO_USUARIO\fP | \fBusername\fP=\fINOME_DO_USUARIO\fP" 4
 Permite configurar o nome do usuário que será criado para autologin. O
 padrão 'user'.
-.IP "\fBlive\-config.user\-default\-groups\fP=\fIGROUP1\fP,\fIGROUP2\fP ... \fIGROUPn\fP | \fBuser\-default\-groups\fP=\fIGROUP1\fP,\fIGROUP2\fP ... \fIGROUPn\fP" 4
+.IP "\fBlive\-config.user\-default\-groups\fP=\fIGROUPO1\fP,\fIGROUPO2\fP ... \fIGROUPOn\fP | \fBuser\-default\-groups\fP=\fIGROUPO1\fP,\fIGROUPO2\fP ... \fIGROUPOn\fP" 4
 Allows to set the default groups of the users that gets created for
 autologin is member of. The default is 'audio cdrom dip floppy video plugdev
 netdev powerdev scanner bluetooth'.
@@ -153,10 +171,10 @@ com exceção dos atalhos. Quando arquivos de configuração são usados, o
 parâmetro 'boot=live' ainda é necessário para a ativação do \fBlive\-config\fP.
 .PP
 Arquivos de configuração podem estar localizados no próprio sistema de
-arquivos raiz (/etc/live/config.conf, /etc/live/config.d/) ou na mídia live
-(live/config.conf, live/config.d/). Se ambas as localizações são usadas para
-determinada opção, as da mídia live assumem precedência sobre as do sistema
-de arquivo raiz.
+arquivos raiz (/etc/live/config.conf, /etc/live/config.d/*.conf) ou na mídia
+live (live/config.conf, live/config.d/*.conf). Se ambas as localizações são
+usadas para determinada opção, as da mídia live assumem precedência sobre as
+do sistema de arquivo raiz.
 .PP
 Apesar de os arquivos de configuração localizados nos diretórios conf.d não
 necessitarem de um nome ou sufixo particular, por uma questão de
@@ -173,16 +191,19 @@ Esta variável é equivalente ao parâmetro
 .IP "\fBLIVE_NOCONFIGS\fP=\fISCRIPT1\fP,\fISCRIPT2\fP, ... \fISCRIPTn\fP" 4
 Esta variável é equivalente ao parâmetro
 \&'\fBlive\-noconfig\fP=\fISCRIPT1\fP,\fISCRIPT2\fP, ... \fISCRIPTn\fP'.
+.IP "\fBLIVE_DEBCONF_PRESEED\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
+Esta variável é equivalente ao parâmetro
+\&'\fBlive\-config.debconf\-preseed\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP|
+\&... |\fIURLn\fP'.
 .IP \fBLIVE_HOSTNAME\fP=\fIHOSTNAME\fP 4
 Esta variável é equivalente ao parâmetro
 \&'\fBlive\-config.hostname\fP=\fIHOSTNAME\fP'.
 .IP \fBLIVE_USERNAME\fP=\fIUSERNAME\fP 4
 Esta variável é equivalente ao parâmetro
 \&'\fBlive\-config.username\fP=\fIUSERNAME\fP'.
-.IP "\fBLIVE_USER_DEFAULT_GROUPS\fP=\fIGROUP1\fP,\fIGROUP2\fP ... \fIGROUPn\fP" 4
-This variable equals the
-\&'\fBlive\-config.user\-default\-groups\fP="\fIGROUP1\fP,\fIGROUP2\fP ... \fIGROUPn\fP"'
-parameter.
+.IP "\fBLIVE_USER_DEFAULT_GROUPS\fP=\fIGROUPO1\fP,\fIGROUPO2\fP ... \fIGROUPOn\fP" 4
+Esta variável é equivalente ao parâmetro
+\&'\fBlive\-config.user\-default\-groups\fP="\fIGROUPO1\fP,\fIGROUPO2\fP ... \fIGROUPOn\fP"'.
 .IP \fBLIVE_USER_FULLNAME\fP=\(dq\fINOME_COMPLETO_DO_USUÁRIO\(dq\fP 4
 Esta variável é equivalente ao parâmetro
 \&'\fBlive\-config.user\-fullname\fP="\fINOME_COMPLETO_DO_USUÁRIO\fP"'.
@@ -250,6 +271,9 @@ contendo uma configuração de exemplo pode ser encontrado em
 .SH SCRIPTS
 \fBlive\-config\fP atualmente provê os seguintes scripts em /lib/live/config.
 
+.IP \fBdebconf\fP 4
+allows to apply arbitrary preseed files placed on the live media or an
+http/ftp server.
 .IP \fBhostname\fP 4
 configura o /etc/hostname e /etc/hosts.
 .IP \fBuser\-setup\fP 4
@@ -330,13 +354,18 @@ mídia live ou um servidor http/ftp.
 
 .SH ARQUIVOS
 .IP \fB/etc/live/config.conf\fP 4
-.IP \fB/etc/live/config.d/\fP 4
+.IP \fB/etc/live/config.d/*.conf\fP 4
 .IP \fBlive/config.conf\fP 4
-.IP \fBlive/config.d/\fP 4
+.IP \fBlive/config.d/*.conf\fP 4
 .IP \fB/lib/live/config.sh\fP 4
 .IP \fB/lib/live/config/\fP 4
 .IP \fB/var/lib/live/config/\fP 4
-.IP \fB/var/log/live\-config.log\fP 4
+.IP \fB/var/log/live/config.log\fP 4
+.PP
+.IP \fB/live/hooks/*\fP 4
+.IP \fBlive/hooks/*\fP 4
+.IP \fB/live/preseed/*\fP 4
+.IP "\fBlive/preseed/* \fP" 4
 
 .SH "VER TAMBÉM"
 \fIlive\-boot\fP(7)

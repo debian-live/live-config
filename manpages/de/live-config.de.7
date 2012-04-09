@@ -11,7 +11,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 06.04.2012 3.0~a36\-1 "Debian Live Projekt"
+.TH LIVE\-CONFIG 7 09.04.2012 3.0~a37\-1 "Debian Live Projekt"
 
 .SH NAME
 \fBlive\-config\fP \- System Konfiguration Skripte
@@ -27,8 +27,9 @@ benutzt, so gehen die Boot Parameter den Konfigurationsdateien vor. Wird
 Persistenz benutzt, so werden die \fBlive\-config\fP Skripte nur einmal
 ausgeführt.
 .PP
-To configure the live\-config parameters used by default in a live image, see
-the \-\-bootappend\-live option in the \fIlb_config\fP(1) manual page.
+Um die Boot Parameter von live\-config welche standardmässig in einem Live
+System benutzt werden zu konfigurieren, siehe \-\-bootappend\-live Option in
+der \fIlb_config\fP(1) Manpage.
 
 .SS "Boot Parameter (Skripte)"
 \fBlive\-config\fP ist nur aktiviert, wenn 'boot=live' als Boot Parameter
@@ -57,6 +58,24 @@ Alle Skripte werden ausgeführt, ausser die hier spezifizierten Ausnahmen.
 Manche einzelne Skripte können durch Boot Parameter in ihrem Verhalten
 beinflusst werden.
 
+.IP "\fBlive\-config.debconf\-preseed\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP | \fBdebconf\-preseed\fP=medium|filesystem|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
+Ermöglicht eine oder mehrere Debconf Preseed Dateien auf die Debconf
+Datenbank anzuwenden. Die URLs müssen durch wget (http, ftp oder file://)
+aufösbar sein.
+.br
+Falls die Datei sich auf dem Live Medium befindet, kann sie mittels
+file:///live/image/\fIFILE\fP benutzt werden, falls sie sich im Root
+Dateisystem des Live Systems selbst befindet, mittels file:///\fIFILE\fP.
+.br
+Alle Preseed Dateien in /lib/live/preseed/ im Root Dateisystem des Live
+Systems können mit der Option 'filesystem' automatisch aktiviert werden.
+.br
+Alle Preseed Dateien in /live/preseed/ auf dem Live Medium können mit der
+Option 'medium' automatisch aktiviert werden.
+.br
+Werden verschiedene Mechanismen kombiniert, so werden die Dateisystem
+Preseed Dateien zuerst ausgeführt, dann die des Mediums und zuletzt die sich
+im Netzwerk befindende.
 .IP "\fBlive\-config.hostname\fP=\fIRECHNERNAME\fP | \fBhostname\fP=\fIRECHNERNAME\fP" 4
 Ermöglicht den Rechnernamen des Systems zu wählen. Der Standardname ist
 \&'debian'.
@@ -161,10 +180,10 @@ ist der 'boot=live' Parameter trotzdem noch notwendig um \fBlive\-config\fP zu
 aktivieren.
 .PP
 Die Konfigurationsdateien können entweder im Root Dateisystem selbst
-plaziert werden (/etc/live/config.conf, /etc/live/config.d/) oder auf dem
-Live Medium (live/config.conf, live/config.d/). Wenn beide Orte für eine
-bestimmte Option verwendet werden, geht die Konfigurationsdatei auf dem Live
-Medium dem der im Root Dateisystem enthaltenen vor.
+plaziert werden (/etc/live/config.conf, /etc/live/config.d/*.conf) oder auf
+dem Live Medium (live/config.conf, live/config.d/*.conf). Wenn beide Orte
+für eine bestimmte Option verwendet werden, geht die Konfigurationsdatei auf
+dem Live Medium dem der im Root Dateisystem enthaltenen vor.
 .PP
 Obwohl die Konfigurationsdateien welche in die conf.d Verzeichnisse abgelegt
 werden können keinen bestimmten Namen oder Endung brauchen, ist es aus
@@ -182,6 +201,10 @@ Diese Variable enspricht dem '\fBlive\-config\fP=\fISKRIPT1\fP,\fISKRIPT2\fP,
 .IP "\fBLIVE_NOCONFIGS\fP=\fISKRIPT1\fP,\fISKRIPT2\fP, ... \fISKRIPTn\fP" 4
 Diese Variable enspricht dem '\fBlive\-noconfig\fP=\fISKRIPT1\fP,\fISKRIPT2\fP,
 \&... \fISKRIPTn\fP' Parameter.
+.IP "\fBLIVE_DEBCONF_PRESEED\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
+Diese Variable enspricht dem
+\&'\fBlive\-config.debconf\-preseed\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP|
+\&... |\fIURLn\fP' Parameter.
 .IP \fBLIVE_HOSTNAME\fP=\fIRECHNERNAME\fP 4
 Diese Variable enspricht dem '\fBlive\-config.hostname\fP=\fIRECHNERNAME\fP'
 Parameter.
@@ -259,6 +282,9 @@ einem eigenen Debian Paket untergebracht. Ein Beispielpaket und
 .SH SKRIPTE
 \fBlive\-config\fP enthält derzeit folgende Skripte in /lib/live/config.
 
+.IP \fBdebconf\fP 4
+erlaubt beliebige Preseed Dateien auf dem Live Medium oder von einem
+HTTP/FTP Server anzuwenden.
 .IP \fBhostname\fP 4
 konfiguriert /etc/hostname und /etc/hosts.
 .IP \fBuser\-setup\fP 4
@@ -339,13 +365,18 @@ einem HTTP/FTP Server auszuführen.
 
 .SH DATEIEN
 .IP \fB/etc/live/config.conf\fP 4
-.IP \fB/etc/live/config.d/\fP 4
+.IP \fB/etc/live/config.d/*.conf\fP 4
 .IP \fBlive/config.conf\fP 4
-.IP \fBlive/config.d/\fP 4
+.IP \fBlive/config.d/*.conf\fP 4
 .IP \fB/lib/live/config.sh\fP 4
 .IP \fB/lib/live/config/\fP 4
 .IP \fB/var/lib/live/config/\fP 4
-.IP \fB/var/log/live\-config.log\fP 4
+.IP \fB/var/log/live/config.log\fP 4
+.PP
+.IP \fB/live/hooks/*\fP 4
+.IP \fBlive/hooks/*\fP 4
+.IP \fB/live/preseed/*\fP 4
+.IP "\fBlive/preseed/* \fP" 4
 
 .SH "SIEHE AUCH"
 \fIlive\-boot\fP(7)
