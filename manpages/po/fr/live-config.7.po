@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config 3.0~a36-1\n"
-"POT-Creation-Date: 2012-04-06 11:37+0300\n"
-"PO-Revision-Date: 2011-12-06 18:02+0100\n"
+"POT-Creation-Date: 2012-04-07 15:17+0300\n"
+"PO-Revision-Date: 2012-04-07 16:54+0200\n"
 "Last-Translator: Carlos Zuferri «chals» <chals@altorricon.com>\n"
 "Language-Team: none\n"
 "Language: fr\n"
@@ -147,10 +147,10 @@ msgid ""
 "before it can be configured for sudo. Look at the filenames of the scripts "
 "in /lib/live/config for their ordering number."
 msgstr ""
-"Seuls les scripts spécifiés sont lancés. Notez que leur ordre importe, -"
-"ainsi 'live-config=sudo,user-setup' ne peut pas fonctionner tant que "
-"l'utilisateur configuré pour utiliser sudo n'a pas été créé. Regardez les "
-"noms des scripts dans /lib/live/config pour les ordonner numériquement."
+"Seuls les scripts spécifiés sont lancés. Notez que leur ordre importe, ainsi "
+"'live-config=sudo,user-setup' ne peut pas fonctionner tant que l'utilisateur "
+"configuré pour utiliser sudo n'a pas été créé. Regardez les noms des scripts "
+"dans /lib/live/config pour les ordonner numériquement."
 
 #. type: IP
 #: en/live-config.7:29
@@ -205,6 +205,9 @@ msgid ""
 "the debconf database. Note that the URLs must be fetchable by wget (http, "
 "ftp or file://)."
 msgstr ""
+"Permet de chercher et d'appliquer un ou plusieurs fichiers de "
+"préconfiguration debconf à la base de données debconf. Notez que les URLs "
+"doivent pouvoir être utilisées par wget (http, ftp or file://)."
 
 #. type: Plain text
 #: en/live-config.7:41 en/live-config.7:81
@@ -215,7 +218,7 @@ msgid ""
 msgstr ""
 "Si le fichier est placé dans le média live, il peut être utilisé avec "
 "file:///live/image/I<FILE>, ou bien avec file:///I<FILE> s'il est placé à la "
-"racine du système de fichier du live système."
+"racine du système de fichiers du système live."
 
 #. type: Plain text
 #: en/live-config.7:43
@@ -223,6 +226,9 @@ msgid ""
 "All preseed files in /lib/live/preseed/ in the root filesystem of the live "
 "system can be automatically be enabled with the keyword 'filesystem'."
 msgstr ""
+"Tous les fichiers de préconfiguration dans /lib/live/preseed/ dans le "
+"système de fichiers racine du système live peuvent être automatiquement "
+"activés avec le mot clé 'filesystem'."
 
 #. type: Plain text
 #: en/live-config.7:45
@@ -230,6 +236,8 @@ msgid ""
 "All preseed files in /live/preseed/ of the live medium can be automatically "
 "be enabled with the keyword 'medium'."
 msgstr ""
+"Tous les fichiers de préconfiguration dans /live/preseed/ du média live "
+"peuvent être automatiquement activés avec le mot clé 'medium'"
 
 #. type: Plain text
 #: en/live-config.7:47
@@ -237,6 +245,10 @@ msgid ""
 "If several mechanisms are combined, then filesystem preseed files are "
 "applied first, then medium preseed files, and last the network preseed files."
 msgstr ""
+"Si plusieurs mécanismes sont combinés, les fichiers de préconfiguration du "
+"système de fichiers sont appliqués en premier, alors les fichiers de "
+"préconfiguration du média et enfin les fichiers de préconfiguration du "
+"réseau."
 
 #. type: IP
 #: en/live-config.7:47
@@ -468,7 +480,7 @@ msgid ""
 "available at /usr/share/doc/live-config/examples/hooks/ and E<lt>I<http://"
 "live.debian.net/other/hooks>E<gt>."
 msgstr ""
-"Permet de soumettre et d'exécuter un ou plusieurs fichiers/scripts "
+"Permet de chercher et d'exécuter un ou plusieurs fichiers/scripts "
 "spécifiques. Notez que les URLs doivent pouvoir être utilisées par wget "
 "(http, ftp or file://), que les fichiers sont exécutés dans /tmp sur le "
 "système live, et que les dépendances éventuelles des fichiers doivent être "
@@ -485,7 +497,7 @@ msgid ""
 "be automatically be enabled with the keyword 'filesystem'."
 msgstr ""
 "Tous les hooks, placés dans /lib/live/hooks/ à la racine du système de "
-"fichier, peuvent être automatiquement activés avec le mot clé 'filesystem'."
+"fichiers, peuvent être automatiquement activés avec le mot clé 'filesystem'."
 
 #. type: Plain text
 #: en/live-config.7:85
@@ -502,9 +514,9 @@ msgid ""
 "If several mechanisms are combined, then filesystem hooks are executed "
 "first, then medium hooks, and last the network hooks."
 msgstr ""
-"Si plusieurs mécanismes sont combinés, alors les hooks du système de fichier "
-"sont exécutés prioritairement, suivis des hooks du media, et enfin des hooks "
-"du réseau."
+"Si plusieurs mécanismes sont combinés, alors les hooks du système de "
+"fichiers sont exécutés prioritairement, suivis des hooks du media, et enfin "
+"des hooks du réseau."
 
 #. type: SS
 #: en/live-config.7:88
@@ -535,8 +547,8 @@ msgid ""
 "Disables the sudo and policykit, the user cannot gain root privileges on the "
 "system."
 msgstr ""
-"Désactive les règles du sudo; dans ce cas l'utilisateur ne peut pas "
-"bénéficier des privilèges administrateur (root) sur le système."
+"Désactive sudo et policykit, dans ce cas l'utilisateur ne peut pas obtenir "
+"les privilèges du administrateur (root) sur le système."
 
 #. type: IP
 #: en/live-config.7:93
@@ -940,8 +952,8 @@ msgid ""
 "B<live-config> can be easily customized for downstream projects or local "
 "usage."
 msgstr ""
-"B<live-config> peut être facilement customisé pour des projets dérivés, ou "
-"pour un usage local."
+"B<live-config> peut être facilement personnalisé pour des projets dérivés, "
+"ou pour un usage local."
 
 #. type: SS
 #: en/live-config.7:155
@@ -975,7 +987,7 @@ msgstr ""
 #: en/live-config.7:160
 #, no-wrap
 msgid "Removing existing config scripts"
-msgstr "Enlever des scripts de configuration existant"
+msgstr "Enlever des scripts de configuration existants"
 
 #. type: Plain text
 #: en/live-config.7:162
@@ -1032,6 +1044,8 @@ msgid ""
 "allows to apply arbitrary preseed files placed on the live media or an http/"
 "ftp server."
 msgstr ""
+"permet d'appliquer fichiers de préconfiguration arbitraires placés sur les "
+"médias live ou un serveur http/ftp."
 
 #. type: IP
 #: en/live-config.7:170
@@ -1053,7 +1067,7 @@ msgstr "B<user-setup>"
 #. type: Plain text
 #: en/live-config.7:174
 msgid "adds an live user account."
-msgstr "ajoute un compte live d'utilisateur."
+msgstr "ajoute un compte d'utilisateur live."
 
 #. type: IP
 #: en/live-config.7:174
@@ -1388,7 +1402,7 @@ msgstr "B<util-linux>"
 #. type: Plain text
 #: en/live-config.7:234
 msgid "disables util-linux' hwclock."
-msgstr "désactive util-linux' heure hardware."
+msgstr "désactive util-linux' hwclock."
 
 #. type: IP
 #: en/live-config.7:236
@@ -1421,7 +1435,7 @@ msgstr "B<openssh-server>"
 #. type: Plain text
 #: en/live-config.7:242
 msgid "recreates openssh-server host keys."
-msgstr "regénère les clés openssh."
+msgstr "regénère les clés de l'hôte openssh-server."
 
 #. type: IP
 #: en/live-config.7:242
@@ -1435,8 +1449,8 @@ msgid ""
 "allows to run arbitrary commands from a script placed on the live media or "
 "an http/ftp server."
 msgstr ""
-"permet de lancer des commandes particulières depuis un script placé sur le "
-"média live, ou sur un serveur http/ftp."
+"permet de lancer des commandes arbitraires d'un script placé sur le média "
+"live, ou sur un serveur http/ftp."
 
 #. type: SH
 #: en/live-config.7:245
@@ -1541,7 +1555,7 @@ msgstr "I<live-tools>(7)"
 #: en/live-config.7:267
 #, no-wrap
 msgid "HOMEPAGE"
-msgstr "PAGE D'ACCEUIL"
+msgstr "PAGE D'ACCUEIL"
 
 #. type: Plain text
 #: en/live-config.7:269
@@ -1550,7 +1564,7 @@ msgid ""
 "on the homepage at E<lt>I<http://live.debian.net/>E<gt> and in the manual at "
 "E<lt>I<http://live.debian.net/manual/>E<gt>."
 msgstr ""
-"Plus d'informations sur live-config et le Debian Live project peuvent être "
+"Plus d'informations sur live-config et le project Debian Live peuvent être "
 "trouvées sur la page E<lt>I<http://live.debian.net/>E<gt> et dans le manuel "
 "sur E<lt>I<http://live.debian.net/manual/>E<gt>."
 
