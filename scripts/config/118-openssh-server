@@ -24,27 +24,16 @@ Openssh_server ()
 
 Configure_openssh_server ()
 {
-	if [ ! -e /etc/ssh/ssh_host_rsa_key ]
-	then
-		ssh-keygen -q -f /etc/ssh/ssh_host_rsa_key -N "" -t rsa
+	for _PROTOCOL in dsa rsa ecdsa
+	do
+		if [ ! -e /etc/ssh/ssh_host_${_PROTOCOL}_key ] &&
+		   grep -qs ssh_host_${_PROTOCOL}_key /etc/ssh/sshd_config
+		then
+			ssh-keygen -q -f /etc/ssh/ssh_host_${_PROTOCOL}_key -N "" -t ${_PROTOCOL}
 
-		_SSH="true"
-	fi
-
-	if [ ! -e /etc/ssh/ssh_host_dsa_key ]
-	then
-		ssh-keygen -q -f /etc/ssh/ssh_host_dsa_key -N "" -t dsa
-
-		_SSH="true"
-	fi
-
-	if [ -e /run ] && [ ! -e /etc/ssh/ssh_host_ecdsa_key ]
-	then
-		# FIXME: use some better >= wheezy detection than existence of /run
-		ssh-keygen -q -f /etc/ssh/ssh_host_ecdsa_key -N "" -t ecdsa
-
-		_SSH="true"
-	fi
+			_SSH="true"
+		fi
+	done
 
 	if [ "${_SSH}" = "true" ]
 	then
