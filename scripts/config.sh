@@ -167,33 +167,15 @@ Main ()
 	echo -n "live-config:"
 	trap 'Trap' EXIT HUP INT QUIT TERM
 
-	# Reading configuration file from filesystem
-	if [ -e /etc/live/config.conf ]
-	then
-		. /etc/live/config.conf
-	fi
-
-	if ls /etc/live/config.d/*.conf > /dev/null 2>&1
-	then
-		for _FILE in /etc/live/config.d/*.conf
-		do
-			. ${_FILE}
-		done
-	fi
-
-	# Reading configuration file from live-media
-	if [ -e /live/image/live/config.conf ]
-	then
-		. /live/image/live/config.conf
-	fi
-
-	if ls /live/image/live/config.d/*.conf > /dev/null 2>&1
-	then
-		for _FILE in /live/image/live/config.d/*.conf
-		do
-			. ${_FILE}
-		done
-	fi
+	# Reading configuration file from filesystem and live-media
+	for _FILE in /etc/live/config.conf /etc/live/config.d/*.conf \
+		     /live/image/live/config.conf /live/image/live/config.d/*.conf
+	do
+		if [ -e "${_FILE}" ]
+		then
+			. "${_FILE}"
+		fi
+	done
 
 	# Reading kernel command line
 	Cmdline

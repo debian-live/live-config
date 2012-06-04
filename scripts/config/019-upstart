@@ -34,7 +34,7 @@ Upstart ()
 
 Configure_upstart ()
 {
-	for _FILE in /etc/init/tty*
+	for _FILE in /etc/init/tty[0-9]*.conf
 	do
 		_TTY="$(basename ${_FILE} .conf)"
 
@@ -50,7 +50,7 @@ Configure_upstart ()
 
 	init q
 
-	for _FILE in /etc/init/tty*
+	for _FILE in /etc/init/tty[0-9]*.conf
 	do
 		_TTY="$(basename ${_FILE} .conf)"
 
