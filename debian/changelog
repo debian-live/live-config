@@ -1,3 +1,17 @@
+live-config (3.0~a38-1) experimental; urgency=low
+
+  [ chals ]
+  * Revising grammar in French translation.
+
+  [ Daniel Baumann ]
+  * Simplyfing reading of configuration files.
+  * Improving on-demand creation of ssh host keys in openssh-server
+    script.
+  * Avoid breaking serial consoles when using upstart, thanks to Trent
+    W. Buck <trentbuck@gmail.com> (Closes: #675308).
+
+ -- Daniel Baumann <daniel@debian.org>  Mon, 04 Jun 2012 12:46:41 +0200
+
 live-config (3.0~a37-1) experimental; urgency=low
 
   [ Daniel Baumann ]
