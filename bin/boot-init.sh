@@ -76,59 +76,8 @@ device_is_USB_flash_drive()
 	return 1
 }
 
-# check for netboot
-if [ ! -z "${NETBOOT}" ] || grep -qs netboot /proc/cmdline || grep -qsi root=/dev/nfs /proc/cmdline  || grep -qsi root=/dev/cifs /proc/cmdline
-then
-	return 0
-fi
-
-# check for toram
-if grep -qs toram /proc/cmdline
-then
-	return 0
-fi
-
-# Don't prompt to eject the SD card on Babbage board, where we reuse it
-# as a quasi-boot-floppy. Technically this uses a bit of ubiquity
-# (archdetect), but since this is mostly only relevant for
-# installations, who cares ...
-if [ -x "$(which archdetect 2>/dev/null)" ]
-then
-	subarch="$(archdetect)"
-
-	case $subarch in
-		arm*/imx51)
-			return 0
-			;;
-	esac
-fi
-
-log_begin_msg "live-boot: caching reboot files..."
-
-prompt=1
-if [ "${NOPROMPT}" = "Yes" ]
-then
-	prompt=
-fi
-
-for path in $(which halt) $(which reboot) /etc/rc?.d /etc/default $(which stty) /bin/plymouth
-do
-	cache_path "${path}"
-done
-
-for x in $(cat /proc/cmdline)
-do
-	case ${x} in
-		quickreboot)
-			QUICKREBOOT="Yes"
-			;;
-	esac
-done
-
-mount -o remount,ro /live/overlay
-
-if [ -z ${QUICKREBOOT} ]
-then
+Eject ()
+{
 	# Exit if the system was booted from an ISO image rather than a physical CD
 	grep -qs find_iso= /proc/cmdline && return 0
 	# TODO: i18n
@@ -175,4 +124,55 @@ then
 
 		read x < /dev/console
 	fi
+}
+
+# check for netboot
+if [ ! -z "${NETBOOT}" ] || grep -qs netboot /proc/cmdline || grep -qsi root=/dev/nfs /proc/cmdline  || grep -qsi root=/dev/cifs /proc/cmdline
+then
+	return 0
+fi
+
+# check for toram
+if grep -qs toram /proc/cmdline
+then
+	return 0
+fi
+
+# Don't prompt to eject the SD card on Babbage board, where we reuse it
+# as a quasi-boot-floppy. Technically this uses a bit of ubiquity
+# (archdetect), but since this is mostly only relevant for
+# installations, who cares ...
+if [ -x "$(which archdetect 2>/dev/null)" ]
+then
+	subarch="$(archdetect)"
+
+	case $subarch in
+		arm*/imx51)
+			return 0
+			;;
+	esac
+fi
+
+log_begin_msg "live-boot: caching reboot files..."
+
+prompt=1
+if [ "${NOPROMPT}" = "Yes" ]
+then
+	prompt=
+fi
+
+for path in $(which halt) $(which reboot) /etc/rc?.d /etc/default $(which stty) /bin/plymouth
+do
+	cache_path "${path}"
+done
+
+mount -o remount,ro /live/overlay
+
+# Check if we need to eject the drive
+if grep -qs "cdrom-detect/eject=false" /proc/cmdline ||
+   grep -qs "noeject" /proc/cmdline
+then
+	return
+else
+	Eject
 fi
