@@ -1,12 +1,12 @@
-# Spanish translation of live-config manpage
-# 2011-2012 Carlos Zuferri "chals" <chals@altorricon.com>
-# 2011-2012 José Luis Zabalza <jlz.3008@gmail.com>
+# Spanish translations for live-config package
+# Copyright (C) 2011-2012 Carlos Zuferri "chals" <chals@altorricon.com>
+# Copyright (C) 2011-2012 José Luis Zabalza <jlz.3008@gmail.com>
 # This file is distributed under the same license as the live-config package.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: live-config 3.0~a38-1\n"
-"POT-Creation-Date: 2012-06-04 12:43+0300\n"
+"Project-Id-Version: live-config 3.0~a39-1\n"
+"POT-Creation-Date: 2012-06-06 19:12+0300\n"
 "PO-Revision-Date: 2012-04-07 17:19+0200\n"
 "Last-Translator: Carlos Zuferri «chals» <chals@altorricon.com>\n"
 "Language-Team: none\n"
@@ -25,14 +25,14 @@ msgstr "LIVE-CONFIG"
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "2012-06-04"
-msgstr "04.06.2012"
+msgid "2012-06-06"
+msgstr "06.06.2012"
 
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "3.0~a38-1"
-msgstr "3.0~a38-1"
+msgid "3.0~a39-1"
+msgstr "3.0~a39-1"
 
 #. type: TH
 #: en/live-config.7:9

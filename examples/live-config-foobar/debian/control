@@ -10,7 +10,7 @@ Vcs-Git: git://git.example.org/git/live-config-foobar.git
 
 Package: live-config-foobar
 Architecture: all
-Depends: ${misc:Depends}, live-config
+Depends: ${misc:Depends}, live-config (>= 3), live-config (<< 4)
 Description: Additional Configuration Scripts for Debian Live (foobar)
  live-config contains the scripts needed to perform late-userspace actions
  on Debian Live systems.

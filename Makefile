@@ -12,7 +12,7 @@ SHELL := sh -e
 
 LANGUAGES = $(shell cd manpages/po && ls)
 
-SCRIPTS = bin/* scripts/*.sh scripts/*/*
+SCRIPTS = backends/*/*.init bin/* scripts/*.sh scripts/*/*
 
 all: build
 
@@ -48,6 +48,19 @@ build:
 	@echo "Nothing to build."
 
 install:
+	# Installing backends
+	mkdir -p $(DESTDIR)/etc/init.d
+	cp backends/sysvinit/live-config.init $(DESTDIR)/etc/init.d/live-config
+	cp backends/sysvinit/live.init $(DESTDIR)/etc/init.d/live
+
+	mkdir -p $(DESTDIR)/etc/init
+	cp backends/upstart/live-config.upstart $(DESTDIR)/etc/init/live-config.conf
+
+	mkdir -p $(DESTDIR)/etc/systemd/system
+	cp backends/systemd/live-config.systemd $(DESTDIR)/etc/systemd/system/live-config.service
+	mkdir -p $(DESTDIR)/etc/systemd/system/runlevel1.target.wants
+	ln -s ../live-config.service $(DESTDIR)/etc/systemd/system/runlevel1.target.wants/live-config.service
+
 	# Installing scripts
 	mkdir -p $(DESTDIR)/lib/live
 	cp -r scripts/config.sh scripts/config $(DESTDIR)/lib/live
@@ -76,6 +89,22 @@ install:
 	done
 
 uninstall:
+	# Uininstalling backends
+	rm -f $(DESTDIR)/etc/init.d/live
+	rm -f $(DESTDIR)/etc/init.d/live-config
+	rmdir --ignore-fail-on-non-empty $(DESTDIR)/etc/init.d > /dev/null 2>&1 || true
+	rmdir --ignore-fail-on-non-empty $(DESTDIR)/etc > /dev/null 2>&1 || true
+
+	rm -f $(DESTDIR)/etc/init/live-config.conf
+	rmdir --ignore-fail-on-non-empty $(DESTDIR)/etc/init > /dev/null 2>&1 || true
+	rmdir --ignore-fail-on-non-empty $(DESTDIR)/etc > /dev/null 2>&1 || true
+
+	rm -f $(DESTDIR)/etc/systemd/system/live-config.service
+	rm -f $(DESTDIR)/etc/systemd/system/runlevel1.target.wants/live-config.service
+	rmdir --ignore-fail-on-non-empty $(DESTDIR)/etc/systemd/system/runlevel1.target.wants > /dev/null 2>&1 || true
+	rmdir --ignore-fail-on-non-empty $(DESTDIR)/etc/systemd/system  > /dev/null 2>&1 || true
+	rmdir --ignore-fail-on-non-empty $(DESTDIR)/etc/systemd > /dev/null 2>&1 || true
+
 	# Uninstalling scripts
 	rm -f $(DESTDIR)/lib/live/boot-init.sh
 
