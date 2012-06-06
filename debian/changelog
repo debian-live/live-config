@@ -1,3 +1,17 @@
+live-config (3.0~a39-1) experimental; urgency=low
+
+  * Automatically translate date formats in po files.
+  * Unifying po file headers.
+  * Updating included example packaging for a live-config script.
+  * Passing arguments over to /lib/live scripts even if currently
+    arguments are unused.
+  * Re-arranging initsystem backends in source tree.
+  * Removing snapshot handling from shutdown initscript.
+  * Respecting noeject and cdrom-detect/eject=false as boot parameters
+    for preventing ejection of the live media.
+
+ -- Daniel Baumann <daniel@debian.org>  Wed, 06 Jun 2012 19:13:19 +0200
+
 live-config (3.0~a38-1) experimental; urgency=low
 
   [ chals ]
