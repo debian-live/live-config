@@ -3,12 +3,6 @@
 # Exit if system was not booted by live-boot
 grep -qs boot=live /proc/cmdline || exit 0
 
-DO_SNAPSHOT=/sbin/live-snapshot
-SNAPSHOT_CONF="/etc/live/boot.d/snapshot.conf"
-
-# Read snapshot configuration variables
-[ -r ${SNAPSHOT_CONF} ] && . ${SNAPSHOT_CONF}
-
 # Define LSB log_* functions.
 # Depend on lsb-base (>= 3.0-6) to ensure that this file is present.
 . /lib/lsb/init-functions
@@ -82,22 +76,6 @@ device_is_USB_flash_drive()
 	return 1
 }
 
-log_begin_msg "live-boot: resyncing snapshots and caching reboot files..."
-
-if ! grep -qs nopersistence /proc/cmdline && grep -qs persistence /proc/cmdline
-then
-	# ROOTSNAP and HOMESNAP are defined in ${SNAPSHOT_CONF} file
-	if [ ! -z "${ROOTSNAP}" ]
-	then
-		${DO_SNAPSHOT} --resync-string="${ROOTSNAP}"
-	fi
-
-	if [ ! -z "${HOMESNAP}" ]
-	then
-		${DO_SNAPSHOT} --resync-string="${HOMESNAP}"
-	fi
-fi
-
 # check for netboot
 if [ ! -z "${NETBOOT}" ] || grep -qs netboot /proc/cmdline || grep -qsi root=/dev/nfs /proc/cmdline  || grep -qsi root=/dev/cifs /proc/cmdline
 then
@@ -124,6 +102,8 @@ then
 			;;
 	esac
 fi
+
+log_begin_msg "live-boot: caching reboot files..."
 
 prompt=1
 if [ "${NOPROMPT}" = "Yes" ]
