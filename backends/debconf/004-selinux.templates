@@ -1,0 +1,11 @@
+Template: live-debconfig/title
+Type: title
+Description: live-debconfig: System Configuration
+
+Template: live-debconfig/selinux/enable
+Type: boolean
+Default: false
+Description: live-debconfig: Enable SELinux?
+ Should Security-Enhanced Linux (SELinux) be enabled?
+ .
+ This defaults to false.

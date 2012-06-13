@@ -1,0 +1,140 @@
+#!/bin/sh
+
+set -e
+
+. /usr/share/debconf/confmodule
+
+Defaults ()
+{
+	_LXC_ENABLE="${_LXC_ENABLE:-false}"
+	_LXC_CONSOLES="${_LXC_CONSOLES:-6}"
+}
+
+#db_get live-debconfig/sysvinit/lxc-enable
+#_LXC_ENABLE="${RET}" # boolean
+
+Defaults
+
+db_set live-debconfig/sysvinit/lxc-enable "${_LXC_ENABLE}"
+db_fset live-debconfig/sysvinit/lxc-enable seen false
+
+db_set live-debconfig/sysvinit/lxc-consoles "${_LXC_CONSOLES}"
+db_fset live-debconfig/sysvinit/lxc-consoles seen false
+
+db_settitle live-debconfig/title
+db_input high live-debconfig/sysvinit/lxc-enable || true
+db_go
+
+db_get live-debconfig/sysvinit/lxc-enable
+_LXC_ENABLE="${RET}" # boolean
+
+case "${_LXC_ENABLE}" in
+	true)
+		db_settitle live-debconfig/title
+		db_input high live-debconfig/sysvinit/lxc-consoles || true
+		db_go
+
+		db_get live-debconfig/sysvinit/lxc-consoles
+		_LXC_CONSOLES="${RET}" # string (w/o empty)
+
+		Defaults
+		;;
+
+	false)
+
+		;;
+esac
+
+db_stop
+
+case "${_LXC_ENABLE}" in
+	true)
+		# Updating file /etc/inittab..."
+
+		# Disable sulogin
+		#   ~~:S:wait:/sbin/sulogin
+		sed -i -e 's|\(^[^#].*S:wait:.*$\)|#\1|' /etc/inittab
+
+		# Disable ctrlaltdel
+		#   ca:12345:ctrlaltdel:/sbin/shutdown -t1 -a -r now
+		sed -i -e 's|\(^[^#].*:ctrlaltdel:.*$\)|#\1|' /etc/inittab
+
+		# Disable power
+		#   pf::powerwait:/etc/init.d/powerfail start
+		#   pn::powerfailnow:/etc/init.d/powerfail now
+		#   po::powerokwait:/etc/init.d/powerfail stop
+		sed -i -e 's|\(^[^#].*:power.*:.*$\)|#\1|' /etc/inittab
+
+		# Disable normal getty
+		#  1:2345:respawn:/sbin/getty 38400 tty1
+		#  2:23:respawn:/sbin/getty 38400 tty2
+		#  3:23:respawn:/sbin/getty 38400 tty3
+		#  ...
+		# Keep container getty
+		#  1:2345:respawn:/sbin/getty 38400 console
+		#  c1:23:respawn:/sbin/getty 38400 tty1
+		#  c2:23:respawn:/sbin/getty 38400 tty2
+		#  ...
+		sed -i -e 's|\(^[^#,^c].*:respawn:/sbin/getty.*[^console,linux]$\)|#\1|' /etc/inittab
+
+		# Enable container getty
+		#  1:2345:respawn:/sbin/getty 38400 console
+		#  c1:23:respawn:/sbin/getty 38400 tty1
+		#  c2:23:respawn:/sbin/getty 38400 tty2
+
+		# Assemble new entries
+		_CONSOLES="\n#-- live-debconfig begin\n1:2345:respawn:/sbin/getty 38400 console"
+
+		for _CONSOLE in $(seq 1 ${_LXC_CONSOLES})
+		do
+			_CONSOLES="${_CONSOLES}\nc${_CONSOLE}:12345:respawn:/sbin/getty 38400 tty${_CONSOLE} linux"
+		done
+
+		_CONSOLES="${_CONSOLES}\n#-- live-debconfig end"
+
+		# Remove old entries
+		sed -e '/#-- live-debconfig begin/,/#-- live-debconfig end/d' /etc/inittab > /etc/inittab.tmp
+		mv -f /etc/inittab.tmp /etc/inittab
+
+		# Add new entries
+		_CONSOLE="$(grep '#[0-9].*:respawn:/sbin/getty' /etc/inittab | tail -1)"
+
+		sed -e "s|\(${_CONSOLE}\)|\1${_CONSOLES}|" /etc/inittab > /etc/inittab.tmp
+		mv -f /etc/inittab.tmp /etc/inittab
+
+		# squeeze and newer only has /dev/tty and /dev/tty0 by default,
+		# therefore creating missing device nodes for tty1-4.
+		for _CONSOLE in $(seq 1 ${_LXC_CONSOLES})
+		do
+			if [ ! -e "/dev/tty${_CONSOLE}" ]
+			then
+				mknod "/dev/tty${_CONSOLE}" c 4 "${_CONSOLE}"
+			fi
+		done
+
+		# Remove pointless services in a container
+		for _SERVICE in checkroot.sh hwclockfirst.sh hwclock.sh module-init-tools umountfs umountroot
+		do
+			if [ -e "/etc/init.d/${_SERVICE}" ]
+			then
+				update-rc.d -f ${_SERVICE} disable | \
+				grep -v "update-rc.d: using dependency based boot sequencing" || true
+			fi
+		done
+		;;
+
+	false)
+		# Revert /etc/inittab
+		cp -p /usr/share/sysvinit/inittab /etc/inittab
+
+		# Renable services
+		for _SERVICE in checkroot.sh hwclockfirst.sh hwclock.sh module-init-tools umountfs umountroot
+		do
+			if [ -e "/etc/init.d/${_SERVICE}" ]
+			then
+				update-rc.d -f ${_SERVICE} defaults | \
+				grep -v "update-rc.d: using dependency based boot sequencing" || true
+			fi
+		done
+		;;
+esac

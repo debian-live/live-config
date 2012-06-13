@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# Recreating openssh-server host keys
+for _PROTOCOL in dsa rsa ecdsa
+do
+	if [ ! -e /etc/ssh/ssh_host_${_PROTOCOL}_key ] && \
+	   grep -qs "ssh_host_${_PROTOCOL}_key" /etc/ssh/sshd_config
+	then
+		if [ -x /usr/bin/ssh-keygen ]
+		then
+			echo -n "P: Creating files /etc/ssh/ssh_host_${_PROTOCOL}_key /etc/ssh/ssh_host_${_PROTOCOL}_key.pub..."
+
+			ssh-keygen -q -f /etc/ssh/ssh_host_${_PROTOCOL}_key -N "" -t ${_PROTOCOL}
+		fi
+	fi
+done

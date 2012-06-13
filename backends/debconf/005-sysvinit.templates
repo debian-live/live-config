@@ -1,0 +1,19 @@
+Template: live-debconfig/title
+Type: title
+Description: live-debconfig: System Configuration
+
+Template: live-debconfig/sysvinit/lxc-enable
+Type: boolean
+Default: false
+Description: live-debconfig: Enable LXC?
+ Should Linux Container (LXC) support  be enabled?
+ .
+ This defaults to false.
+
+Template: live-debconfig/sysvinit/lxc-consoles
+Type: string
+Default: 6
+Description: live-debconfig: How many consoles for LXC?
+ How many concurrent consoles should the current container provide?
+ .
+ This defaults to 6 and will result in six getty processes per container.

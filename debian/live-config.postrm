@@ -10,6 +10,7 @@ case "${1}" in
 		rm -f /etc/X11/xorg.conf.d/99-live_*.conf
 
 		rm -rf /var/lib/live/config
+		rm -rf /var/lib/live/debconfig
 		rmdir --ignore-fail-on-non-empty /var/lib/live > /dev/null 2>&1 || true
 		;;
 
