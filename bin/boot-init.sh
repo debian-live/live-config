@@ -1,11 +1,28 @@
 #!/bin/sh
 
-# Exit if system was not booted by live-boot
-grep -qs boot=live /proc/cmdline || exit 0
+## live-config(7) - System Configuration Scripts
+## Copyright (C) 2006-2012 Daniel Baumann <daniel@debian.org>
+##
+## live-config comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
+## This is free software, and you are welcome to redistribute it
+## under certain conditions; see COPYING for details.
 
-# Define LSB log_* functions.
-# Depend on lsb-base (>= 3.0-6) to ensure that this file is present.
-. /lib/lsb/init-functions
+
+set -e
+
+# Exit if system is not a live system
+if grep -qs "boot=live" /proc/cmdline || \
+# Exit if system is netboot
+   grep -qs "netboot" /proc/cmdline || \
+   grep -qs "root=/dev/nfs" /proc/cmdline || \
+   grep -qs "root=/dev/cifs" /proc/cmdline || \
+# Exit if system is toram
+   grep -qs "toram" /proc/cmdline
+then
+	exit 0
+fi
+
+
 
 # Try to cache everything we're likely to need after ejecting.  This
 # is fragile and simple-minded, but our options are limited.
@@ -126,18 +143,6 @@ Eject ()
 	fi
 }
 
-# check for netboot
-if [ ! -z "${NETBOOT}" ] || grep -qs netboot /proc/cmdline || grep -qsi root=/dev/nfs /proc/cmdline  || grep -qsi root=/dev/cifs /proc/cmdline
-then
-	return 0
-fi
-
-# check for toram
-if grep -qs toram /proc/cmdline
-then
-	return 0
-fi
-
 # Don't prompt to eject the SD card on Babbage board, where we reuse it
 # as a quasi-boot-floppy. Technically this uses a bit of ubiquity
 # (archdetect), but since this is mostly only relevant for
@@ -153,7 +158,7 @@ then
 	esac
 fi
 
-log_begin_msg "live-boot: caching reboot files..."
+echo "live-boot: caching reboot files..."
 
 prompt=1
 if [ "${NOPROMPT}" = "Yes" ]
@@ -166,10 +171,10 @@ do
 	cache_path "${path}"
 done
 
-mount -o remount,ro /live/overlay
+mount -o remount,ro /live/overlay > /dev/null 2>&1
 
 # Check if we need to eject the drive
-if grep -qs "cdrom-detect/eject=false" /proc/cmdline ||
+if grep -qs "cdrom-detect/eject=false" /proc/cmdline || \
    grep -qs "noeject" /proc/cmdline
 then
 	return
