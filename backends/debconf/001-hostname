@@ -1,0 +1,46 @@
+#!/bin/sh
+
+set -e
+
+. /usr/share/debconf/confmodule
+
+Defaults ()
+{
+	if [ -z "${_HOSTNAME}" ]
+	then
+		if [ -n "$(cat /etc/hostname 2> /dev/null)" ]
+		then
+			_HOSTNAME="$(cat /etc/hostname)"
+		elif [ -x /usr/bin/lsb_release ]
+		then
+			_HOSTNAME="$(lsb_release -is | tr [A-Z] [a-z])"
+		elif [ -e /etc/progress_version ]
+		then
+			_HOSTNAME="progress"
+		else
+			_HOSTNAME="debian"
+		fi
+	fi
+}
+
+db_get live-debconfig/hostname/hostname
+_HOSTNAME="${RET}" # string (w/o empty)
+
+Defaults
+
+db_set live-debconfig/hostname/hostname "${_HOSTNAME}"
+db_fset live-debconfig/hostname/hostname seen false
+
+db_settitle live-debconfig/title
+db_input high live-debconfig/hostname/hostname || true
+db_go
+
+db_get live-debconfig/hostname/hostname
+_HOSTNAME="${RET}" # string (w/o empty)
+
+Defaults
+
+db_stop
+
+# Set the hostname
+echo "${_HOSTNAME}" > /etc/hostname

@@ -7,7 +7,7 @@
 
 
 ### BEGIN INIT INFO
-# Provides:		live-boot
+# Provides:		live
 # Required-Start:	$syslog bootmisc
 # Required-Stop:
 # Should-Start:		$local_fs

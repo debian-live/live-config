@@ -49,6 +49,9 @@ build:
 
 install:
 	# Installing backends
+	mkdir -p $(DESTDIR)/lib/live
+	cp -a backends/debconf $(DESTDIR)/lib/live/debconfig
+
 	mkdir -p $(DESTDIR)/etc/init.d
 	cp backends/sysvinit/live-config.init $(DESTDIR)/etc/init.d/live-config
 	cp backends/sysvinit/live.init $(DESTDIR)/etc/init.d/live
@@ -67,6 +70,9 @@ install:
 	mkdir -p $(DESTDIR)/var/lib/live/config
 
 	cp bin/boot-init.sh $(DESTDIR)/lib/live
+
+	mkdir -p $(DESTDIR)/sbin
+	cp bin/live-debconfig $(DESTDIR)/sbin
 
 	# Installing docs
 	mkdir -p $(DESTDIR)/usr/share/doc/live-config

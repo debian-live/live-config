@@ -1,0 +1,61 @@
+#!/bin/sh
+
+set -e
+
+# Setup local debconf
+if [ ! -e /var/lib/live/debconfig ]
+then
+	mkdir -p /var/lib/live/debconfig
+	chmod 0700 /var/lib/live/debconfig
+fi
+
+if [ ! -e /var/lib/live/debconfig/systemrc ]
+then
+
+cat > /var/lib/live/debconfig/systemrc << EOF
+Config: configdb
+Templates: templatedb
+
+Name: config
+Driver: File
+Mode: 644
+Reject-Type: password
+Filename: /var/lib/live/debconfig/config.dat
+
+Name: passwords
+Driver: File
+Mode: 600
+Backup: false
+Required: false
+Accept-Type: password
+Filename: /var/lib/live/debconfig/passwords.dat
+
+Name: configdb
+Driver: Stack
+Stack: config, passwords
+
+Name: templatedb
+Driver: File
+Mode: 644
+Filename: /var/lib/live/debconfig/templates.dat
+EOF
+
+fi
+
+DEBCONF_SYSTEMRC="/var/lib/live/debconfig/systemrc"
+export DEBCONF_SYSTEMRC
+
+if [ "${1}" = "--noscripts" ]
+then
+	exit
+fi
+
+# Run debconf scripts
+for _SCRIPT in /lib/live/debconfig/*
+do
+	if [ -x "${_SCRIPT}" ]
+	then
+		# FIXME: make scripts a multiselect
+		"${_SCRIPT}"
+	fi
+done
