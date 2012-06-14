@@ -1,3 +1,10 @@
+live-config (3.0~a40-1) unstable; urgency=low
+
+  * Integrating debconf backend into live-config.
+  * Simplyfing eject initscript.
+
+ -- Daniel Baumann <daniel@debian.org>  Thu, 14 Jun 2012 07:59:31 +0200
+
 live-config (3.0~a39-1) experimental; urgency=low
 
   * Automatically translate date formats in po files.
