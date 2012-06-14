@@ -43,7 +43,6 @@ EOF
 fi
 
 DEBCONF_SYSTEMRC="/var/lib/live/debconfig/systemrc"
-export DEBCONF_SYSTEMRC
 
 if [ "${1}" = "--noscripts" ]
 then
