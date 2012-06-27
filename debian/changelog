@@ -1,3 +1,14 @@
+live-config (3.0~a41-1) unstable; urgency=low
+
+  * Removing processing message in openssh-server debconfig script.
+  * Switching to four-digit script numbers to allow more flexibility for
+    custom scripts in-between the stock ones.
+  * Removing exporting for private debconfs systemrc, live-debconfig
+    doesn't get called via a wrapper like it used to be in lxc.
+  * Switching to xz compression in source and binary packages.
+
+ -- Daniel Baumann <daniel@debian.org>  Wed, 27 Jun 2012 14:23:40 +0200
+
 live-config (3.0~a40-1) unstable; urgency=low
 
   * Integrating debconf backend into live-config.
