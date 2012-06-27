@@ -98,7 +98,7 @@ Cmdline ()
 	then
 		for _CONFIG in $(echo ${LIVE_CONFIGS} | sed -e 's|,| |g')
 		do
-			_SCRIPTS="${_SCRIPTS} $(ls /lib/live/config/???-${_CONFIG} 2> /dev/null || true)"
+			_SCRIPTS="${_SCRIPTS} $(ls /lib/live/config/????-${_CONFIG} 2> /dev/null || true)"
 		done
 	fi
 
@@ -107,7 +107,7 @@ Cmdline ()
 	then
 		for _NOCONFIG in $(echo ${LIVE_NOCONFIGS} | sed -e 's|,| |g')
 		do
-			_SCRIPTS="$(echo ${_SCRIPTS} | sed -e "s|$(ls /lib/live/config/???-${_NOCONFIG} 2> /dev/null || echo none)||")"
+			_SCRIPTS="$(echo ${_SCRIPTS} | sed -e "s|$(ls /lib/live/config/????-${_NOCONFIG} 2> /dev/null || echo none)||")"
 		done
 	fi
 }

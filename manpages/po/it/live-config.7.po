@@ -4,8 +4,8 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: live-config 3.0~a40-1\n"
-"POT-Creation-Date: 2012-06-14 07:57+0300\n"
+"Project-Id-Version: live-config 3.0~a41-1\n"
+"POT-Creation-Date: 2012-06-27 14:24+0300\n"
 "PO-Revision-Date: 2011-12-06 08:01+0100\n"
 "Last-Translator: skizzhg <skizzhg@gmx.com>\n"
 "Language-Team: none\n"
@@ -23,14 +23,14 @@ msgstr "LIVE-CONFIG"
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "2012-06-14"
-msgstr "14.06.2012"
+msgid "2012-06-27"
+msgstr "27.06.2012"
 
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "3.0~a40-1"
-msgstr "3.0~a40-1"
+msgid "3.0~a41-1"
+msgstr "3.0~a41-1"
 
 #. type: TH
 #: en/live-config.7:9
