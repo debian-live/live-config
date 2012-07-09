@@ -11,7 +11,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 27\-06\-2012 3.0~a41\-1 "Projeto Debian Live"
+.TH LIVE\-CONFIG 7 09\-07\-2012 3.0~a42\-1 "Projeto Debian Live"
 
 .SH NOME
 \fBlive\-config\fP \- Scripts para Configuração do Sistema
@@ -27,8 +27,8 @@ determinada opção, os parâmetros de inicialização assumem precedência sobr
 os arquivos de configuração. Quando usado com persistência, os scripts
 \fBlive\-config\fP são executados apenas uma vez.
 .PP
-To configure the live\-config parameters used by default in a live image, see
-the \-\-bootappend\-live option in the \fIlb_config\fP(1) manual page.
+Para configurar os parâmetros do live\-config utilizados por padrão numa
+imagem live, veja a opção \-\-bootappend\-live no manual do \fIlb_config\fP(1).
 
 .SS "Parâmetros de Inicialização (scripts)"
 \fBlive\-config\fP é ativado apenas quando 'boot=live' é usado como parâmetro de
@@ -57,32 +57,34 @@ Alguns scripts podem alterar seu comportamento através de um parâmetro de
 inicialização.
 
 .IP "\fBlive\-config.debconf\-preseed\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP | \fBdebconf\-preseed\fP=medium|filesystem|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
-Allows to fetch and apply one or more debconf preseed files to be applied to
-the debconf database. Note that the URLs must be fetchable by wget (http,
-ftp or file://).
+Possibilita buscar e aplicar um ou mais preseeds debconf para serem
+inseridos na base de dados debconf.Note que as URLs devem ser alcançáveis
+via wget (http,ftp ou file://).
 .br
 Se o arquivo estiver na mídia live, ele pode ser obtido através de
 file:///live/image/\fIFILE\fP ou file:///\fIFILE\fP se estiver no sistema raiz do
 próprio sistema live.
 .br
-All preseed files in /lib/live/preseed/ in the root filesystem of the live
-system can be automatically be enabled with the keyword 'filesystem'.
+Todos os arquivos de preseeds em /lib/live/preseed/ no sistema de arquivos
+raiz do sistema live podem ser automaticamente ativados com a palavra\-chave
+\&'filesystem'.
 .br
-All preseed files in /live/preseed/ of the live medium can be automatically
-be enabled with the keyword 'medium'.
+Todos os arquivos de preseeds em /live/preseed/ da mídia live podem ser
+automaticamente ativados com a palavra\-chave 'medium'.
 .br
-If several mechanisms are combined, then filesystem preseed files are
-applied first, then medium preseed files, and last the network preseed
-files.
+Se diversos mecanismos são combinados, os arquivos de preseed referentes ao
+sistema de arquivos (filesystem) são aplicados primeiramente, seguidos pelos
+preseeds de mídia (medium) e por último os arquivos de preseed referentes à
+rede (network).
 .IP "\fBlive\-config.hostname\fP=\fIHOSTNAME\fP | \fBhostname\fP=\fIHOSTNAME\fP" 4
 Permite configurar o hostname do sistema. O padrão é 'debian'.
 .IP "\fBlive\-config.username\fP=\fINOME_DO_USUARIO\fP | \fBusername\fP=\fINOME_DO_USUARIO\fP" 4
 Permite configurar o nome do usuário que será criado para autologin. O
 padrão 'user'.
 .IP "\fBlive\-config.user\-default\-groups\fP=\fIGROUPO1\fP,\fIGROUPO2\fP ... \fIGROUPOn\fP | \fBuser\-default\-groups\fP=\fIGROUPO1\fP,\fIGROUPO2\fP ... \fIGROUPOn\fP" 4
-Allows to set the default groups of the users that gets created for
-autologin is member of. The default is 'audio cdrom dip floppy video plugdev
-netdev powerdev scanner bluetooth'.
+Possibilita configurar os grupos padrões de usuários criados para login
+automático. O padrão é 'audio cdrom dip floppy video plugdev netdev powerdev
+scanner bluetooth'.
 .IP "\fBlive\-config.user\-fullname\fP=\(dq\fINOME_COMPLETO_DO_USUÁRIO\fP\(dq | \fBuser\-fullname\fP=\(dq\fINOME_COMPLETO_DO_USUÁRIO\fP\(dq" 4
 Permite configurar o nome completo do usuário que será criado para
 autologin. O padrão é 'Debian Live user'.
@@ -182,8 +184,8 @@ consistência é recomendado usar 'distribuidor.conf' ou 'projeto.conf' como
 esquema de nomes (onde 'distribuidor' ou 'projeto' deve ser susbstituído
 pelo nome real, resultando num nome de arquivo como 'debian\-eeepc.conf').
 .PP
-The actual content of the configuration files consists of one or more of the
-following variables.
+O conteúdo atual dos arquivos de configuração consiste em uma ou mais das
+seguintes variáveis.
 
 .IP "\fBLIVE_CONFIGS\fP=\fISCRIPT1\fP,\fISCRIPT2\fP, ... \fISCRIPTn\fP" 4
 Esta variável é equivalente ao parâmetro
@@ -272,8 +274,8 @@ contendo uma configuração de exemplo pode ser encontrado em
 \fBlive\-config\fP atualmente provê os seguintes scripts em /lib/live/config.
 
 .IP \fBdebconf\fP 4
-allows to apply arbitrary preseed files placed on the live media or an
-http/ftp server.
+possibilita aplicar arquivos de preseed arbitrários dentro da mídia live or
+num servidor http/ftp.
 .IP \fBhostname\fP 4
 configura o /etc/hostname e /etc/hosts.
 .IP \fBuser\-setup\fP 4
