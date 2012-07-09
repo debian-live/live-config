@@ -11,6 +11,10 @@ Defaults ()
 		if [ -n "$(cat /etc/hostname 2> /dev/null)" ]
 		then
 			_HOSTNAME="$(cat /etc/hostname)"
+		elif [ -e /etc/os-release ]
+		then
+			. /etc/os-release
+			_HOSTNAME="${ID:-debian}"
 		elif [ -x /usr/bin/lsb_release ]
 		then
 			_HOSTNAME="$(lsb_release -is | tr [A-Z] [a-z])"
