@@ -1,3 +1,10 @@
+live-config (3.0~a42-1) unstable; urgency=low
+
+  * Adding updated Brazilian Portuguese debconf translations from Tiago
+    Bortoletto Vaz <tiago@debian.org> (Closes: #680849).
+
+ -- Daniel Baumann <daniel@debian.org>  Mon, 09 Jul 2012 17:59:04 +0200
+
 live-config (3.0~a41-1) unstable; urgency=low
 
   * Removing processing message in openssh-server debconfig script.
