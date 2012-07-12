@@ -1,3 +1,12 @@
+live-config (3.0~a43-1) unstable; urgency=low
+
+  * Adding /etc/os-release support to hostname debconf script.
+  * Correcting inverted logic when checking for a live system in boot-
+    init.sh.
+  * Removing debconf backend, splitting out into seperate package.
+
+ -- Daniel Baumann <daniel@debian.org>  Thu, 12 Jul 2012 20:07:19 +0200
+
 live-config (3.0~a42-1) unstable; urgency=low
 
   * Adding updated Brazilian Portuguese debconf translations from Tiago
