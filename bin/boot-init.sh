@@ -11,7 +11,7 @@
 set -e
 
 # Exit if system is not a live system
-if grep -qs "boot=live" /proc/cmdline || \
+if ! grep -qs "boot=live" /proc/cmdline || \
 # Exit if system is netboot
    grep -qs "netboot" /proc/cmdline || \
    grep -qs "root=/dev/nfs" /proc/cmdline || \
