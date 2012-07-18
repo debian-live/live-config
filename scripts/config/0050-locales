@@ -53,7 +53,7 @@ Configure_locales ()
 		_SET_LOCALE="true"
 	fi
 
-	_LANGUAGE="$(echo $locale | cut -d. -f1)"
+	_LANGUAGE="$(echo ${_LOCALE} | cut -d. -f1)"
 	export _LANGUAGE
 
 	if [ -z "${_SET_LOCALE}" ]
