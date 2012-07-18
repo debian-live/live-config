@@ -99,7 +99,7 @@ Configure_locales ()
 		LANG="${_LANGUAGE}.${_CODEPAGE}"
 	fi
 
-	printf 'LANG="%s"\n' "${LANG}" > /etc/default/locale
+	echo "LANG=${LANG}" > /etc/default/locale
 
 	if [ -e /etc/locale.gen ]
 	then
