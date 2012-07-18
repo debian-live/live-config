@@ -69,7 +69,7 @@ Configure_keyboard_configuration ()
 
 	if [ -n "${LIVE_KEYBOARD_OPTIONS}" ]
 	then
-		echo "keyboard-configuration keyboard-configuration/variantcode string ${LIVE_KEYBOARD_OPTIONS}" >> /tmp/debconf.live
+		echo "keyboard-configuration keyboard-configuration/optionscode string ${LIVE_KEYBOARD_OPTIONS}" >> /tmp/debconf.live
 
 		sed -i -e "s|^XKBOPTIONS=.*$|XKBOPTIONS=\"${LIVE_KEYBOARD_OPTIONS}\"|" /etc/default/keyboard
 	fi
