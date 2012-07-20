@@ -35,8 +35,8 @@ Keyboard_configuration ()
 				LIVE_KEYBOARD_OPTIONS="${_PARAMETER#*keyboard-options=}"
 				;;
 
-			live-config.keyboard-variant=*|keyboard-variant=*)
-				LIVE_KEYBOARD_VARIANT="${_PARAMETER#*keyboard-variant=}"
+			live-config.keyboard-variants=*|keyboard-variants=*)
+				LIVE_KEYBOARD_VARIANTS="${_PARAMETER#*keyboard-variants=}"
 				;;
 		esac
 	done
@@ -67,11 +67,11 @@ Configure_keyboard_configuration ()
 		sed -i -e "s|^XKBOPTIONS=.*$|XKBOPTIONS=\"${LIVE_KEYBOARD_OPTIONS}\"|" /etc/default/keyboard
 	fi
 
-	if [ -n "${LIVE_KEYBOARD_VARIANT}" ]
+	if [ -n "${LIVE_KEYBOARD_VARIANTS}" ]
 	then
-		echo "keyboard-configuration keyboard-configuration/variantcode select ${LIVE_KEYBOARD_VARIANT}" >> /tmp/debconf.live
+		echo "keyboard-configuration keyboard-configuration/variantcode select ${LIVE_KEYBOARD_VARIANTS}" >> /tmp/debconf.live
 
-		sed -i -e "s|^XKBVARIANT=.*$|XKBVARIANT=\"${LIVE_KEYBOARD_VARIANT}\"|" /etc/default/keyboard
+		sed -i -e "s|^XKBVARIANT=.*$|XKBVARIANT=\"${LIVE_KEYBOARD_VARIANTS}\"|" /etc/default/keyboard
 	fi
 
 	if [ -e /tmp/debconf.live ]

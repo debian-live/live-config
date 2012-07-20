@@ -11,7 +11,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 12.07.2012 3.0~a43\-1 "Progetto Debian Live"
+.TH LIVE\-CONFIG 7 20.07.2012 3.0~a43\-1 "Progetto Debian Live"
 
 .SH NOME
 \fBlive\-config\fP \- Script di configurazione del sistema
@@ -104,9 +104,10 @@ valore predefinito.
 Permette di modificare i layout della tastiera. Se ne viene specificato più
 di uno, gli strumenti dell'ambiente desktop consentiranno di cambiarlo sotto
 X11. Non è impostato alcun valore predefinito.
-.IP "\fBlive\-config.keyboard\-variant\fP=\fIVARIANTE_TASTIERA\fP | \fBkeyboard\-variant\fP=\fIVARIANTE_TASTIERA\fP" 4
-Permette di impostare un layout alternativo per la tastiera, non è impostato
-alcun valore predefinito.
+.IP "\fBlive\-config.keyboard\-variants\fP=\fIKEYBOARD_VARIANT1\fP,\fIKEYBOARD_VARIANT2\fP ... \fIKEYBOARD_VARIANTn\fP | \fBkeyboard\-variants\fP=\fIKEYBOARD_VARIANT1\fP,\fIKEYBOARD_VARIANT2\fP ... \fIKEYBOARD_VARIANTn\fP" 4
+Allows to change the keyboard variants. If more than one is specified, the
+tools of the desktop environment will allow to switch it under X11. There is
+no default value set.
 .IP "\fBlive\-config.keyboard\-options\fP=\fIOPZIONI_TASTIERA\fP | \fBkeyboard\-options\fP=\fIOPZIONI_TASTIERA\fP" 4
 Permette di modificare le opzioni della tastiera, non è impostato alcun
 valore predefinito.
@@ -224,9 +225,10 @@ Questa variabile equivale al parametro
 Questa variabile equivale al parametro
 "\fBlive\-config.keyboard\-layouts\fP=\fILAYOUT1_TASTIERA\fP,\fILAYOUT2_TASTIERA\fP
 \&... \fILAYOUTn_TASTIERA\fP".
-.IP \fBLIVE_KEYBOARD_VARIANT\fP=\fIVARIANTE_TASTIERA\fP 4
-Questa variabile equivale al parametro
-"\fBlive\-config.keyboard\-variant\fP=\fIVARIANTE_TASTIERA\fP".
+.IP "\fBLIVE_KEYBOARD_VARIANTS\fP=\fIKEYBOARD_VARIANT1\fP,\fIKEYBOARD_VARIANT2\fP ... \fIKEYBOARD_VARIANTn\fP" 4
+This variable equals the
+\&'\fBlive\-config.keyboard\-variants\fP=\fIKEYBOARD_VARIANT1\fP,\fIKEYBOARD_VARIANT2\fP
+\&... \fIKEYBOARD_VARIANTn\fP' parameter.
 .IP \fBLIVE_KEYBOARD_OPTIONS\fP=\fIOPZIONI_TASTIERA\fP 4
 Questa variabile equivale al parametro
 "\fBlive\-config.keyboard\-options\fP=\fIOPZIONI_TASTIERA\fP".

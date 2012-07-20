@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config VERSION\n"
-"POT-Creation-Date: 2012-07-12 20:07+0300\n"
+"POT-Creation-Date: 2012-07-20 02:06+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,7 +25,7 @@ msgstr ""
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "2012-07-12"
+msgid "2012-07-20"
 msgstr ""
 
 #. type: TH
@@ -327,12 +327,15 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:65
 #, no-wrap
-msgid "B<live-config.keyboard-variant>=I<KEYBOARD_VARIANT> | B<keyboard-variant>=I<KEYBOARD_VARIANT>"
+msgid "B<live-config.keyboard-variants>=I<KEYBOARD_VARIANT1>,I<KEYBOARD_VARIANT2> ... I<KEYBOARD_VARIANTn> | B<keyboard-variants>=I<KEYBOARD_VARIANT1>,I<KEYBOARD_VARIANT2> ... I<KEYBOARD_VARIANTn>"
 msgstr ""
 
 #. type: Plain text
 #: en/live-config.7:67
-msgid "Allows to change the keyboard variant. There is no default value set."
+msgid ""
+"Allows to change the keyboard variants. If more than one is specified, the "
+"tools of the desktop environment will allow to switch it under X11. There is "
+"no default value set."
 msgstr ""
 
 #. type: IP
@@ -714,14 +717,15 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:139
 #, no-wrap
-msgid "B<LIVE_KEYBOARD_VARIANT>=I<KEYBOARD_VARIANT>"
+msgid "B<LIVE_KEYBOARD_VARIANTS>=I<KEYBOARD_VARIANT1>,I<KEYBOARD_VARIANT2> ... I<KEYBOARD_VARIANTn>"
 msgstr ""
 
 #. type: Plain text
 #: en/live-config.7:141
 msgid ""
 "This variable equals the 'B<live-config.keyboard-"
-"variant>=I<KEYBOARD_VARIANT>' parameter."
+"variants>=I<KEYBOARD_VARIANT1>,I<KEYBOARD_VARIANT2> ... "
+"I<KEYBOARD_VARIANTn>' parameter."
 msgstr ""
 
 #. type: IP

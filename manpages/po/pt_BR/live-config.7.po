@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config 3.0~a43-1\n"
-"POT-Creation-Date: 2012-07-12 20:07+0300\n"
+"POT-Creation-Date: 2012-07-20 02:06+0300\n"
 "PO-Revision-Date: 2012-07-08 11:30-0600\n"
 "Last-Translator: Tiago Bortoletto Vaz <tiago@debian.org>\n"
 "Language-Team: none\n"
@@ -24,8 +24,8 @@ msgstr "LIVE-CONFIG"
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "2012-07-12"
-msgstr "12-07-2012"
+msgid "2012-07-20"
+msgstr "20-07-2012"
 
 #. type: TH
 #: en/live-config.7:9
@@ -383,14 +383,24 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:65
 #, no-wrap
-msgid "B<live-config.keyboard-variant>=I<KEYBOARD_VARIANT> | B<keyboard-variant>=I<KEYBOARD_VARIANT>"
-msgstr "B<live-config.keyboard-variant>=I<VARIANTE_DE_TECLADO> | B<keyboard-variant>=I<VARIANTE_DE_TECLADO>"
+msgid "B<live-config.keyboard-variants>=I<KEYBOARD_VARIANT1>,I<KEYBOARD_VARIANT2> ... I<KEYBOARD_VARIANTn> | B<keyboard-variants>=I<KEYBOARD_VARIANT1>,I<KEYBOARD_VARIANT2> ... I<KEYBOARD_VARIANTn>"
+msgstr "B<live-config.keyboard-variants>=I<KEYBOARD_VARIANT1>,I<KEYBOARD_VARIANT2> ... I<KEYBOARD_VARIANTn> | B<keyboard-variants>=I<KEYBOARD_VARIANT1>,I<KEYBOARD_VARIANT2> ... I<KEYBOARD_VARIANTn>"
 
 #. type: Plain text
 #: en/live-config.7:67
-msgid "Allows to change the keyboard variant. There is no default value set."
+#, fuzzy
+#| msgid ""
+#| "Allows to change the keyboard layouts. If more than one is specified, the "
+#| "tools of the desktop environment will allow to switch it under X11. There "
+#| "is no default value set."
+msgid ""
+"Allows to change the keyboard variants. If more than one is specified, the "
+"tools of the desktop environment will allow to switch it under X11. There is "
+"no default value set."
 msgstr ""
-"Permite configurar a variente de teclado. Não há valor padrão definido."
+"Permite configurar layouts de teclado. Se mais de um layout for "
+"especificado, as ferramentas do ambiente desktop possibilitarão a troca "
+"entre eles no X11. Não há valor padrão definido."
 
 #. type: IP
 #: en/live-config.7:67
@@ -841,17 +851,24 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:139
 #, no-wrap
-msgid "B<LIVE_KEYBOARD_VARIANT>=I<KEYBOARD_VARIANT>"
-msgstr "B<LIVE_KEYBOARD_VARIANT>=I<VARIANTE_DE_TECLADO>"
+msgid "B<LIVE_KEYBOARD_VARIANTS>=I<KEYBOARD_VARIANT1>,I<KEYBOARD_VARIANT2> ... I<KEYBOARD_VARIANTn>"
+msgstr "B<LIVE_KEYBOARD_VARIANTS>=I<KEYBOARD_VARIANT1>,I<KEYBOARD_VARIANT2> ... I<KEYBOARD_VARIANTn>"
 
 #. type: Plain text
 #: en/live-config.7:141
+#, fuzzy
+#| msgid ""
+#| "This variable equals the 'B<live-config.keyboard-"
+#| "layouts>=I<KEYBOARD_LAYOUT1>,I<KEYBOARD_LAYOUT2> ... I<KEYBOARD_LAYOUTn>' "
+#| "parameter."
 msgid ""
 "This variable equals the 'B<live-config.keyboard-"
-"variant>=I<KEYBOARD_VARIANT>' parameter."
+"variants>=I<KEYBOARD_VARIANT1>,I<KEYBOARD_VARIANT2> ... "
+"I<KEYBOARD_VARIANTn>' parameter."
 msgstr ""
 "Esta variável é equivalente ao parâmetro 'B<live-config.keyboard-"
-"variant>=I<VARIANTE_DE_TECLADO>'."
+"layouts>=I<LAYOUT1_DE_TECLADO>,I<LAYOUT2_DE_TECLADO> ... "
+"I<LAYOUTn_DE_TECLADO>'."
 
 #. type: IP
 #: en/live-config.7:141
