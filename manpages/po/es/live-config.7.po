@@ -388,11 +388,6 @@ msgstr "B<live-config.keyboard-variants>=I<KEYBOARD_VARIANT1>,I<KEYBOARD_VARIANT
 
 #. type: Plain text
 #: en/live-config.7:67
-#, fuzzy
-#| msgid ""
-#| "Allows to change the keyboard layouts. If more than one is specified, the "
-#| "tools of the desktop environment will allow to switch it under X11. There "
-#| "is no default value set."
 msgid ""
 "Allows to change the keyboard variants. If more than one is specified, the "
 "tools of the desktop environment will allow to switch it under X11. There is "
