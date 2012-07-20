@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: live-config 3.0~a43-1\n"
 "POT-Creation-Date: 2012-07-20 02:06+0300\n"
-"PO-Revision-Date: 2012-04-18 15:46+0200\n"
+"PO-Revision-Date: 2012-07-20 13:55+0200\n"
 "Last-Translator: Carlos Zuferri «chals» <chals@altorricon.com>\n"
 "Language-Team: none\n"
 "Language: fr\n"
@@ -396,11 +396,6 @@ msgstr "B<live-config.keyboard-variants>=I<KEYBOARD_VARIANT1>,I<KEYBOARD_VARIANT
 
 #. type: Plain text
 #: en/live-config.7:67
-#, fuzzy
-#| msgid ""
-#| "Allows to change the keyboard layouts. If more than one is specified, the "
-#| "tools of the desktop environment will allow to switch it under X11. There "
-#| "is no default value set."
 msgid ""
 "Allows to change the keyboard variants. If more than one is specified, the "
 "tools of the desktop environment will allow to switch it under X11. There is "
@@ -867,18 +862,13 @@ msgstr "B<LIVE_KEYBOARD_VARIANTS>=I<KEYBOARD_VARIANT1>,I<KEYBOARD_VARIANT2> ... 
 
 #. type: Plain text
 #: en/live-config.7:141
-#, fuzzy
-#| msgid ""
-#| "This variable equals the 'B<live-config.keyboard-"
-#| "layouts>=I<KEYBOARD_LAYOUT1>,I<KEYBOARD_LAYOUT2> ... I<KEYBOARD_LAYOUTn>' "
-#| "parameter."
 msgid ""
 "This variable equals the 'B<live-config.keyboard-"
 "variants>=I<KEYBOARD_VARIANT1>,I<KEYBOARD_VARIANT2> ... "
 "I<KEYBOARD_VARIANTn>' parameter."
 msgstr ""
 "Cette variable correspond au paramètre 'B<live-config.keyboard-"
-"layouts>=I<CONFIGURATION1_DU_CLAVIER>,I<CONFIGURATION2_DU_CLAVIER> ... "
+"variants>=I<CONFIGURATION1_DU_CLAVIER>,I<CONFIGURATION2_DU_CLAVIER> ... "
 "I<CONFIGURATIONn_DU_CLAVIER>'."
 
 #. type: IP
