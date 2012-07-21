@@ -38,7 +38,7 @@ Configure_locales ()
 	then
 		# multiple locales specified
 		_LOCALE="$(echo ${LIVE_LOCALES} | sed -e 's|,.*||')"
-		_LOCALES="$(echo ${LIVE_LOCALES} | sed -e 's|.*,||' -e 's|,| |g')"
+		_LOCALES="$(echo ${LIVE_LOCALES} | sed -e "s|^${_LOCALE},||" -e 's|,| |g')"
 	else
 		# one or no locale specified
 		_LOCALE="${LIVE_LOCALES:-en_US.UTF-8}"
