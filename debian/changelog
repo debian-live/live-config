@@ -1,3 +1,32 @@
+live-config (3.0~b1-1) unstable; urgency=low
+
+  [ Daniel Baumann ]
+  * Correcting wrong preseed fieldname in keyboard-configuration for
+    optionscode.
+  * Sorting keyboard-configuration handling alphabetically.
+  * Correcting wrong variable to make language assignments in locales
+    script actually work.
+  * Simplifying writing /etc/default/locale in locales script.
+  * Decrufting locales script to handle multiple locales.
+
+  [ Ben Armstrong ]
+  * Fixing two script name message typos.
+
+  [ Daniel Baumann ]
+  * Renaming live-config.keyboard-variant option to live-
+    config.keyboard-variants to indicate that multiple values can be
+    specified at the same time, thanks to Ben Armstrong
+    <synrg@debian.org>.
+
+  [ chals ]
+  * Fixing one 'fuzzy' in the Spanish translation of the man page.
+  * Fixing one 'fuzzy' in the French translation of the man page.
+
+  [ Daniel Baumann ]
+  * Correcting multi-locales assembling in locales script.
+
+ -- Daniel Baumann <daniel@debian.org>  Tue, 24 Jul 2012 21:45:08 +0200
+
 live-config (3.0~a43-1) unstable; urgency=low
 
   * Adding /etc/os-release support to hostname debconf script.
