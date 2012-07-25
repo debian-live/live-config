@@ -11,7 +11,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 12.07.2012 3.0~a43\-1 "Debian Live Projekt"
+.TH LIVE\-CONFIG 7 24.07.2012 3.0~b1\-1 "Debian Live Projekt"
 
 .SH NAME
 \fBlive\-config\fP \- System Konfiguration Skripte
@@ -107,9 +107,10 @@ gesetzt.
 Ermöglicht die Tastatur Layouts zu bestimmen. Wenn mehr als ein Layout
 angegeben wird, ermöglichen die Tools der Desktopumgebung das Wechseln unter
 X11. Es ist kein Standardwert gesetzt.
-.IP "\fBlive\-config.keyboard\-variant\fP=\fITASTATUR_VARIANT\fP | \fBkeyboard\-variant\fP=\fITASTATUR_VARIANT\fP" 4
-Ermöglicht die Tastatur Variante zu bestimmen. Es ist kein Standardwert
-gesetzt.
+.IP "\fBlive\-config.keyboard\-variants\fP=\fITASTATUR_VARIANTE1\fP,\fITASTATUR_VARIANTE2\fP ... \fITASTATUR_VARIANTEn\fP | \fBkeyboard\-variants\fP=\fITASTATUR_VARIANTE1\fP,\fITASTATUR_VARIANTE2\fP ... \fITASTATUR_VARIANTEn\fP" 4
+Ermöglicht die Tastatur Variante zu bestimmen. Wenn mehr als eine Variante
+angegeben wird, ermöglichen die Tools der Desktopumgebung das Wechseln unter
+X11. Es ist kein Standardwert gesetzt.
 .IP "\fBlive\-config.keyboard\-options\fP=\fITASTATUR_OPTIONEN\fP | \fBkeyboard\-options\fP=\fITASTATUR_OPTIONEN\fP" 4
 Ermöglicht die Tastatur Optionen zu bestimmen. Es ist kein Standardwert
 gesetzt.
@@ -233,9 +234,10 @@ Diese Variable enspricht dem
 Diese Variable enspricht dem
 \&'\fBlive\-config.keyboard\-layouts\fP=\fITASTATUR_LAYOUT1\fP,\fITASTATUR_LAYOUT2\fP
 \&... \fITASTATUR_LAYOUTn\fP' Parameter.
-.IP \fBLIVE_KEYBOARD_VARIANT\fP=\fITASTATUR_VARIANTE\fP 4
+.IP "\fBLIVE_KEYBOARD_VARIANTS\fP=\fITASTATUR_VARIANTE1\fP,\fITASTATUR_VARIANTE2\fP ... \fITASTATUR_VARIANTEn\fP" 4
 Diese Variable enspricht dem
-\&'\fBlive\-config.keyboard\-variant\fP=\fITASTATUR_VARIANTE\fP' Parameter.
+\&'\fBlive\-config.keyboard\-variants\fP=\fITASTATUR_VARIANTE1\fP,\fITASTATUR_VARIANTE2\fP
+\&... \fITASTATUR_VARIANTEn\fP' Parameter.
 .IP \fBLIVE_KEYBOARD_OPTIONS\fP=\fITASTATUR_OPTIONEN\fP 4
 Diese Variable enspricht dem
 \&'\fBlive\-config.keyboard\-options\fP=\fITASTATUR_OPTIONEN\fP' Parameter.

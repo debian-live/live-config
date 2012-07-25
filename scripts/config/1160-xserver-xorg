@@ -34,8 +34,8 @@ Xserver_xorg ()
 				LIVE_KEYBOARD_OPTIONS="${_PARAMETER#*keyboard-options=}"
 				;;
 
-			live-config.keyboard-variant=*|keyboard-variant=*)
-				LIVE_KEYBOARD_VARIANT="${_PARAMETER#*keyboard-variant=}"
+			live-config.keyboard-variants=*|keyboard-variants=*)
+				LIVE_KEYBOARD_VARIANTS="${_PARAMETER#*keyboard-variants=}"
 				;;
 
 			live-config.xorg-xsession-manager=*|x-session-manager=*)
@@ -67,9 +67,9 @@ Configure_xserver_xorg ()
 		echo "xserver-xorg xserver-xorg/config/inputdevice/keyboard/layout select ${LIVE_KEYBOARD_LAYOUTS}" >> /tmp/debconf.live
 	fi
 
-	if [ -n "${LIVE_KEYBOARD_VARIANT}" ]
+	if [ -n "${LIVE_KEYBOARD_VARIANTS}" ]
 	then
-		echo "xserver-xorg xserver-xorg/config/inputdevice/keyboard/variant select ${LIVE_KEYBOARD_VARIANT}" >> /tmp/debconf.live
+		echo "xserver-xorg xserver-xorg/config/inputdevice/keyboard/variant select ${LIVE_KEYBOARD_VARIANTS}" >> /tmp/debconf.live
 	fi
 
 	if [ -n "${LIVE_KEYBOARD_OPTIONS}" ]

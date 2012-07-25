@@ -11,7 +11,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 12.07.2012 3.0~a43\-1 "Projet Debian Live"
+.TH LIVE\-CONFIG 7 24.07.2012 3.0~b1\-1 "Projet Debian Live"
 
 .SH NOM
 \fBlive\-config\fP \- Scripts de configuration du système
@@ -110,8 +110,10 @@ Permet de changer la configuration du clavier. Si plus d'une configuration
 est spécifiée, les utilitaires de l'environnement de bureau permettront de
 passer de l'une à l'autre sous X11. Aucune valeur par défaut n'est
 spécifiée.
-.IP "\fBlive\-config.keyboard\-variant\fP=\fITYPE_DE_CLAVIER\fP | \fBkeyboard\-variant\fP=\fITYPE_DE_CLAVIER\fP" 4
-Permet de changer le type de clavier. Aucune valeur par défaut n'est
+.IP "\fBlive\-config.keyboard\-variants\fP=\fIKEYBOARD_VARIANT1\fP,\fIKEYBOARD_VARIANT2\fP ... \fIKEYBOARD_VARIANTn\fP | \fBkeyboard\-variants\fP=\fIKEYBOARD_VARIANT1\fP,\fIKEYBOARD_VARIANT2\fP ... \fIKEYBOARD_VARIANTn\fP" 4
+Permet de changer la configuration du clavier. Si plus d'une configuration
+est spécifiée, les utilitaires de l'environnement de bureau permettront de
+passer de l'une à l'autre sous X11. Aucune valeur par défaut n'est
 spécifiée.
 .IP "\fBlive\-config.keyboard\-options\fP=\fIOPTIONS_DU_CLAVIER\fP | \fBkeyboard\-options\fP=\fIOPTIONS_DU_CLAVIER\fP" 4
 Permet de changer les options du clavier. Aucune valeur par défaut n'est
@@ -236,9 +238,10 @@ Cette variable correspond au paramètre
 Cette variable correspond au paramètre
 \&'\fBlive\-config.keyboard\-layouts\fP=\fICONFIGURATION1_DU_CLAVIER\fP,\fICONFIGURATION2_DU_CLAVIER\fP
 \&... \fICONFIGURATIONn_DU_CLAVIER\fP'.
-.IP \fBLIVE_KEYBOARD_VARIANT\fP=\fITYPE_DE_CLAVIER\fP 4
+.IP "\fBLIVE_KEYBOARD_VARIANTS\fP=\fIKEYBOARD_VARIANT1\fP,\fIKEYBOARD_VARIANT2\fP ... \fIKEYBOARD_VARIANTn\fP" 4
 Cette variable correspond au paramètre
-\&'\fBlive\-config.keyboard\-variant\fP=\fITYPE_DE_CLAVIER\fP'.
+\&'\fBlive\-config.keyboard\-variants\fP=\fICONFIGURATION1_DU_CLAVIER\fP,\fICONFIGURATION2_DU_CLAVIER\fP
+\&... \fICONFIGURATIONn_DU_CLAVIER\fP'.
 .IP \fBLIVE_KEYBOARD_OPTIONS\fP=\fIOPTIONS_DU_CLAVIER\fP 4
 Cette variable correspond au paramètre
 \&'\fBlive\-config.keyboard\-options\fP=\fIOPTIONS_DU_CLAVIER\fP'.

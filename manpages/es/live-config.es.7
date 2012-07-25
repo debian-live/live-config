@@ -11,7 +11,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 12.07.2012 3.0~a43\-1 "Proyecto Debian Live"
+.TH LIVE\-CONFIG 7 24.07.2012 3.0~b1\-1 "Proyecto Debian Live"
 
 .SH NOMBRE
 \fBlive\-config\fP \- Scripts de configuración del sistema
@@ -105,8 +105,10 @@ Permite cambiar el modelo de teclado. No hay ningún valor por omisión.
 Permite cambiar la disposición del teclado. Si se especifica más de una, las
 herramientas de escritorio permitirán cambiarlas bajo X11. No hay ningún
 valor por omisión.
-.IP "\fBlive\-config.keyboard\-variant\fP=\fIKEYBOARD_VARIANT\fP | \fBkeyboard\-variant\fP=\fIKEYBOARD_VARIANT\fP" 4
-Permite cambiar la variante del teclado. No hay ningún valor por omisión.
+.IP "\fBlive\-config.keyboard\-variants\fP=\fIKEYBOARD_VARIANT1\fP,\fIKEYBOARD_VARIANT2\fP ... \fIKEYBOARD_VARIANTn\fP | \fBkeyboard\-variants\fP=\fIKEYBOARD_VARIANT1\fP,\fIKEYBOARD_VARIANT2\fP ... \fIKEYBOARD_VARIANTn\fP" 4
+Permite cambiar la disposición del teclado. Si se especifica más de una, las
+herramientas de escritorio permitirán cambiarlas bajo X11. No hay ningún
+valor por omisión.
 .IP "\fBlive\-config.keyboard\-options\fP=\fIKEYBOARD_OPTIONS\fP | \fBkeyboard\-options\fP=\fIKEYBOARD_OPTIONS\fP" 4
 Permite cambiar las opciones del teclado. No hay un valor por omisión.
 .IP "\fBlive\-config.sysv\-rc\fP=\fISERVICE1\fP,\fISERVICE2\fP ... \fISERVICEn\fP | \fBsysv\-rc\fP=\fISERVICE1\fP,\fISERVICE2\fP ... \fISERVICEn\fP" 4
@@ -224,9 +226,10 @@ Esta variable es igual al parámetro
 Esta variable es igual al parámetro
 \&'\fBlive\-config.keyboard\-layouts\fP=\fIKEYBOARD_LAYOUT1\fP,\fIKEYBOARD_LAYOUT2\fP
 \&... \fIKEYBOARD_LAYOUTn\fP'
-.IP \fBLIVE_KEYBOARD_VARIANT\fP=\fIKEYBOARD_VARIANT\fP 4
+.IP "\fBLIVE_KEYBOARD_VARIANTS\fP=\fIKEYBOARD_VARIANT1\fP,\fIKEYBOARD_VARIANT2\fP ... \fIKEYBOARD_VARIANTn\fP" 4
 Esta variable es igual al parámetro
-\&'\fBlive\-config.keyboard\-variant\fP=\fIKEYBOARD_VARIANT\fP'
+\&'\fBlive\-config.keyboard\-variants\fP=\fIKEYBOARD_VARIANT1\fP,\fIKEYBOARD_VARIANT2\fP
+\&... \fIKEYBOARD_VARIANTn\fP'
 .IP \fBLIVE_KEYBOARD_OPTIONS\fP=\fIKEYBOARD_OPTIONS\fP 4
 Esta variable es igual al
 parámetro'\fBlive\-config.keyboard\-options\fP=\fIKEYBOARD_OPTIONS\fP'

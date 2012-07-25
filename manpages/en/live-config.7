@@ -6,7 +6,7 @@
 .\" under certain conditions; see COPYING for details.
 .\"
 .\"
-.TH LIVE\-CONFIG 7 2012\-07\-12 3.0~a43-1 "Debian Live Project"
+.TH LIVE\-CONFIG 7 2012\-07\-24 3.0~b1-1 "Debian Live Project"
 
 .SH NAME
 \fBlive\-config\fR \- System Configuration Scripts
@@ -62,8 +62,8 @@ Allows to change if the system is assuming that the hardware clock is set to UTC
 Allows to change the keyboard model. There is no default value set.
 .IP "\fBlive\-config.keyboard\-layouts\fR=\fIKEYBOARD_LAYOUT1\fR,\fIKEYBOARD_LAYOUT2\fR ... \fIKEYBOARD_LAYOUTn\fR | \fBkeyboard\-layouts\fR=\fIKEYBOARD_LAYOUT1\fR,\fIKEYBOARD_LAYOUT2\fR ... \fIKEYBOARD_LAYOUTn\fR" 4
 Allows to change the keyboard layouts. If more than one is specified, the tools of the desktop environment will allow to switch it under X11. There is no default value set.
-.IP "\fBlive\-config.keyboard\-variant\fR=\fIKEYBOARD_VARIANT\fR | \fBkeyboard\-variant\fR=\fIKEYBOARD_VARIANT\fR" 4
-Allows to change the keyboard variant. There is no default value set.
+.IP "\fBlive\-config.keyboard\-variants\fR=\fIKEYBOARD_VARIANT1\fR,\fIKEYBOARD_VARIANT2\fR ... \fIKEYBOARD_VARIANTn\fR | \fBkeyboard\-variants\fR=\fIKEYBOARD_VARIANT1\fR,\fIKEYBOARD_VARIANT2\fR ... \fIKEYBOARD_VARIANTn\fR" 4
+Allows to change the keyboard variants. If more than one is specified, the tools of the desktop environment will allow to switch it under X11. There is no default value set.
 .IP "\fBlive\-config.keyboard\-options\fR=\fIKEYBOARD_OPTIONS\fR | \fBkeyboard\-options\fR=\fIKEYBOARD_OPTIONS\fR" 4
 Allows to change the keyboard options. There are no default value set.
 .IP "\fBlive\-config.sysv-rc\fR=\fISERVICE1\fR,\fISERVICE2\fR ... \fISERVICEn\fR | \fBsysv-rc\fR=\fISERVICE1\fR,\fISERVICE2\fR ... \fISERVICEn\fR" 4
@@ -136,8 +136,8 @@ This variable equals the '\fBlive\-config.utc\fR=\fByes\fR|no' parameter.
 This variable equals the '\fBlive\-config.keyboard\-model\fR=\fIKEYBOARD_MODEL\fR' parameter.
 .IP "\fBLIVE_KEYBOARD_LAYOUTS\fR=\fIKEYBOARD_LAYOUT1\fR,\fIKEYBOARD_LAYOUT2\fR ... \fIKEYBOARD_LAYOUTn\fR" 4
 This variable equals the '\fBlive\-config.keyboard\-layouts\fR=\fIKEYBOARD_LAYOUT1\fR,\fIKEYBOARD_LAYOUT2\fR ... \fIKEYBOARD_LAYOUTn\fR' parameter.
-.IP "\fBLIVE_KEYBOARD_VARIANT\fR=\fIKEYBOARD_VARIANT\fR" 4
-This variable equals the '\fBlive\-config.keyboard\-variant\fR=\fIKEYBOARD_VARIANT\fR' parameter.
+.IP "\fBLIVE_KEYBOARD_VARIANTS\fR=\fIKEYBOARD_VARIANT1\fR,\fIKEYBOARD_VARIANT2\fR ... \fIKEYBOARD_VARIANTn\fR" 4
+This variable equals the '\fBlive\-config.keyboard\-variants\fR=\fIKEYBOARD_VARIANT1\fR,\fIKEYBOARD_VARIANT2\fR ... \fIKEYBOARD_VARIANTn\fR' parameter.
 .IP "\fBLIVE_KEYBOARD_OPTIONS\fR=\fIKEYBOARD_OPTIONS\fR" 4
 This variable equals the '\fBlive\-config.keyboard\-options\fR=\fIKEYBOARD_OPTIONS\fR' parameter.
 .IP "\fBLIVE_SYSV_RC\fR=\fISERVICE1\fR,\fISERVICE2\fR ... \fISERVICEn\fR" 4

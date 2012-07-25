@@ -17,7 +17,7 @@ Gnome_power_manager ()
 		return
 	fi
 
-	echo -n " gnome-screensaver"
+	echo -n " gnome-power-manager"
 
 	# Reading kernel command line
 	for _PARAMETER in ${_CMDLINE}

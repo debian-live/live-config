@@ -17,7 +17,7 @@ Gnome_screensaver ()
 		return
 	fi
 
-	echo -n " gnome-screesnaver"
+	echo -n " gnome-screensaver"
 
 	# Reading kernel command line
 	for _PARAMETER in ${_CMDLINE}
