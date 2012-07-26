@@ -95,8 +95,6 @@ device_is_USB_flash_drive()
 
 Eject ()
 {
-	# Exit if the system was booted from an ISO image rather than a physical CD
-	grep -qs find_iso= /proc/cmdline && return 0
 	# TODO: i18n
 	BOOT_DEVICE="$(get_boot_device)"
 
@@ -175,7 +173,8 @@ mount -o remount,ro /live/overlay > /dev/null 2>&1
 
 # Check if we need to eject the drive
 if grep -qs "cdrom-detect/eject=false" /proc/cmdline || \
-   grep -qs "noeject" /proc/cmdline
+   grep -qs "noeject" /proc/cmdline || \
+   grep -qs "find_iso" /proc/cmdline
 then
 	return
 else
