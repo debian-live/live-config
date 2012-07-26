@@ -22,6 +22,7 @@ msgstr "LIVE-CONFIG"
 
 #. type: TH
 #: en/live-config.7:9
+#, no-wrap
 msgid "2012-07-26"
 msgstr "26.07.2012"
 
