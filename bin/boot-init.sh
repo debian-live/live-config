@@ -141,21 +141,6 @@ Eject ()
 	fi
 }
 
-# Don't prompt to eject the SD card on Babbage board, where we reuse it
-# as a quasi-boot-floppy. Technically this uses a bit of ubiquity
-# (archdetect), but since this is mostly only relevant for
-# installations, who cares ...
-if [ -x "$(which archdetect 2>/dev/null)" ]
-then
-	subarch="$(archdetect)"
-
-	case $subarch in
-		arm*/imx51)
-			return 0
-			;;
-	esac
-fi
-
 echo "live-boot: caching reboot files..."
 
 prompt=1
