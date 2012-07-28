@@ -14,7 +14,8 @@ Package: live-config
 Architecture: all
 Depends: ${misc:Depends}, live-config-sysvinit | live-config-backend
 Recommends:
- live-config-doc, live-tools, keyboard-configureation, user-setup, sudo
+ live-config-doc, live-tools, keyboard-configureation, locales | locales-all,
+ user-setup, sudo
 Suggests: wget
 Description: Debian Live - System Configuration Scripts
  live-config contains the scripts that configure a Debian Live system during
