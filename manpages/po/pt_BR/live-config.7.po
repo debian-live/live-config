@@ -7,13 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: live-config 3.0~b1-1\n"
 "POT-Creation-Date: 2012-07-28 16:24+0300\n"
-"PO-Revision-Date: 2012-07-26 11:30-0600\n"
+"PO-Revision-Date: 2012-07-28 11:38-0400\n"
 "Last-Translator: Tiago Bortoletto Vaz <tiago@debian.org>\n"
-"Language-Team: none\n"
+"Language-Team: Brazilian Portuguese <>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. type: TH
 #: en/live-config.7:9
@@ -367,7 +368,7 @@ msgstr "Permite configurar o modelo do teclado. Não há valor padrão definido.
 #: en/live-config.7:63
 #, no-wrap
 msgid "B<live-config.keyboard-layouts>=I<KEYBOARD_LAYOUT1>,I<KEYBOARD_LAYOUT2> ... I<KEYBOARD_LAYOUTn> | B<keyboard-layouts>=I<KEYBOARD_LAYOUT1>,I<KEYBOARD_LAYOUT2> ... I<KEYBOARD_LAYOUTn>"
-msgstr "B<live-config.keyboard-layouts>=I<LAYOUT1_DO_TECLADO>,I<LAYOUT2_DO_TECLADO> ... I<LAYOUTn_DO_TECLADO> | B<keyboard-layouts>=I<LAYOUT1_DO_TECLADO>,I<LAYOUT2_DO_TECLADO> ... I<LAYOUTn_DO_TECLADO>"
+msgstr "B<live-config.keyboard-layouts>=I<LEIAUTE1_DO_TECLADO>,I<LEIAUTE2_DO_TECLADO> ... I<LEIAUTEn_DO_TECLADO> | B<keyboard-layouts>=I<LEIAUTE1_DO_TECLADO>,I<LEIAUTE2_DO_TECLADO> ... I<LEIAUTEn_DO_TECLADO>"
 
 #. type: Plain text
 #: en/live-config.7:65
@@ -376,7 +377,7 @@ msgid ""
 "tools of the desktop environment will allow to switch it under X11. There is "
 "no default value set."
 msgstr ""
-"Permite configurar layouts de teclado. Se mais de um layout for "
+"Permite configurar leiautes de teclado. Se mais de um leiaute for "
 "especificado, as ferramentas do ambiente desktop possibilitarão a troca "
 "entre eles no X11. Não há valor padrão definido."
 
@@ -384,15 +385,10 @@ msgstr ""
 #: en/live-config.7:65
 #, no-wrap
 msgid "B<live-config.keyboard-variants>=I<KEYBOARD_VARIANT1>,I<KEYBOARD_VARIANT2> ... I<KEYBOARD_VARIANTn> | B<keyboard-variants>=I<KEYBOARD_VARIANT1>,I<KEYBOARD_VARIANT2> ... I<KEYBOARD_VARIANTn>"
-msgstr "B<live-config.keyboard-variants>=I<KEYBOARD_VARIANT1>,I<KEYBOARD_VARIANT2> ... I<KEYBOARD_VARIANTn> | B<keyboard-variants>=I<KEYBOARD_VARIANT1>,I<KEYBOARD_VARIANT2> ... I<KEYBOARD_VARIANTn>"
+msgstr "B<live-config.keyboard-variants>=I<VARIANTE1_DO_TECLADO>,I<VARIANTE2_DO_TECLADO> ... I<VARIANTEn_DO_TECLADO> | B<keyboard-variants>=I<VARIANTE1_DO_TECLADO>,I<VARIANTE2_DO_TECLADO> ... I<VARIANTEn_DO_TECLADO>"
 
 #. type: Plain text
 #: en/live-config.7:67
-#, fuzzy
-#| msgid ""
-#| "Allows to change the keyboard variants. If more than one is specified, "
-#| "the tools of the desktop environment will allow to switch it under X11. "
-#| "There is no default value set."
 msgid ""
 "Allows to change the keyboard variants. If more than one is specified, the "
 "same number of values as keyboard-layouts values should be specified as they "
@@ -401,8 +397,10 @@ msgid ""
 "layout and variant pair under X11. There is no default value set."
 msgstr ""
 "Permite configurar as variantes de teclado. Se mais de uma for especificada, "
-"as ferramentas do ambiente desktop possibilitarão a troca entre eles no X11. "
-"Não há valor padrão definido."
+"um mesmo número de valores para leiautes deve ser definido, uma vez que "
+"estes serão combinados um a um na ordem especificada. Valores em branco são "
+"permitidos. As ferramentas do ambiente de trabalho possibilitarão a troca "
+"entre cada par leiaute/variante no X11. Não há valor padrão definido."
 
 #. type: IP
 #: en/live-config.7:67
@@ -424,7 +422,7 @@ msgstr "B<live-config.sysv-rc>=I<SERVIÇO1>,I<SERVIÇO2> ... I<SERVIÇOn> | B<sy
 #. type: Plain text
 #: en/live-config.7:71
 msgid "Allows to disable sysv services through update-rc.d."
-msgstr "Permite desabilitar serviços sysv através do update-rc.d."
+msgstr "Permite desabilitar serviços sysv via update-rc.d."
 
 #. type: IP
 #: en/live-config.7:71
@@ -447,7 +445,7 @@ msgstr "B<live-config.xorg-driver>=I<DRIVER_DO_XORG> | B<xorg-driver>=I<DRIVER_D
 #. type: Plain text
 #: en/live-config.7:75
 msgid "Allows to set xorg driver instead of autodetecting it."
-msgstr "Permite definir o driver do xorg ao invés de auto-detectá-lo."
+msgstr "Permite definir o driver do xorg em vez de detectá-lo automaticamente."
 
 #. type: IP
 #: en/live-config.7:75
@@ -460,8 +458,8 @@ msgstr "B<live-config.xorg-resolution>=I<RESOLUÇÃO_DO_XORG> | B<xorg-resolutio
 msgid ""
 "Allows to set xorg resolution instead of autodetecting it, e.g. 1024x768."
 msgstr ""
-"Permite definir a resolução do xorg ao invés de auto-detectá-la, por "
-"exemplo, 1024x768."
+"Permite definir a resolução do xorg em vez de detectá-la automaticamente, "
+"por exemplo, 1024x768."
 
 #. type: IP
 #: en/live-config.7:77
@@ -484,8 +482,8 @@ msgstr ""
 "precisam ser acessíveis por wget (http, ftp ou file://), que os arquivos são "
 "executados no diretório /tmp do sistema de arquivos em execução, e que os "
 "arquivos precisam que suas dependências, se houverem, estejam instaladas. "
-"Por exemplo, se um script python deve ser executado, python deve estar "
-"instalado no sistema. Alguns hooks para alguns casos de uso comuns estão "
+"Por exemplo, se um script python necessita ser executado, python deve estar "
+"instalado no sistema. Alguns hooks para casos de uso comuns estão "
 "disponíveis em /usr/share/doc/live-config/examples/hooks/ e E<lt>I<http://"
 "live.debian.net/other/hooks>E<gt>."
 
@@ -837,7 +835,7 @@ msgstr ""
 #: en/live-config.7:137
 #, no-wrap
 msgid "B<LIVE_KEYBOARD_LAYOUTS>=I<KEYBOARD_LAYOUT1>,I<KEYBOARD_LAYOUT2> ... I<KEYBOARD_LAYOUTn>"
-msgstr "B<LIVE_KEYBOARD_LAYOUTS>=I<LAYOUT1_DE_TECLADO>,I<LAYOUT2_DE_TECLADO> ... I<LAYOUTn_DE_TECLADO>"
+msgstr "B<LIVE_KEYBOARD_LAYOUTS>=I<LEIAUTE1_DE_TECLADO>,I<LEIAUTE2_DE_TECLADO> ... I<LEIAUTEn_DE_TECLADO>"
 
 #. type: Plain text
 #: en/live-config.7:139
@@ -847,14 +845,14 @@ msgid ""
 "parameter."
 msgstr ""
 "Esta variável é equivalente ao parâmetro 'B<live-config.keyboard-"
-"layouts>=I<LAYOUT1_DE_TECLADO>,I<LAYOUT2_DE_TECLADO> ... "
-"I<LAYOUTn_DE_TECLADO>'."
+"variants>=I<LEIAUTE1_DE_TECLADO>,I<LEIAUTE2_DE_TECLADO> ... "
+"I<LEIAUTEn_DE_TECLADO>'."
 
 #. type: IP
 #: en/live-config.7:139
 #, no-wrap
 msgid "B<LIVE_KEYBOARD_VARIANTS>=I<KEYBOARD_VARIANT1>,I<KEYBOARD_VARIANT2> ... I<KEYBOARD_VARIANTn>"
-msgstr "B<LIVE_KEYBOARD_VARIANTS>=I<KEYBOARD_VARIANT1>,I<KEYBOARD_VARIANT2> ... I<KEYBOARD_VARIANTn>"
+msgstr "B<LIVE_KEYBOARD_VARIANTS>=I<VARIANTE1_DE_TECLADO>,I<VARIANTE2_DE_TECLADO> ... I<VARIANTEn_DE_TECLADO>"
 
 #. type: Plain text
 #: en/live-config.7:141
@@ -1288,7 +1286,7 @@ msgstr "B<gnome-screensaver>"
 #. type: Plain text
 #: en/live-config.7:214
 msgid "disables the screensaver locking the screen."
-msgstr "desabilita o bloqueio de tela do screensaver."
+msgstr "desabilita o bloqueio de tela pelo screensaver."
 
 #. type: IP
 #: en/live-config.7:214
@@ -1357,7 +1355,7 @@ msgstr "B<sslcert>"
 #. type: Plain text
 #: en/live-config.7:226
 msgid "regenerating ssl snake-oil certificates."
-msgstr "gera novos certificados ssl."
+msgstr "gera novos certificados ssl snake-oil."
 
 #. type: IP
 #: en/live-config.7:226
@@ -1390,7 +1388,7 @@ msgstr "B<util-linux>"
 #. type: Plain text
 #: en/live-config.7:232
 msgid "disables util-linux' hwclock."
-msgstr "desabilita o relógio de hardware do util-linux."
+msgstr "desabilita o hwclock do util-linux"
 
 #. type: IP
 #: en/live-config.7:234
@@ -1423,7 +1421,7 @@ msgstr "B<openssh-server>"
 #. type: Plain text
 #: en/live-config.7:240
 msgid "recreates openssh-server host keys."
-msgstr "recriar chaves do servidor openssh"
+msgstr "recria chaves do servidor openssh"
 
 #. type: IP
 #: en/live-config.7:240
@@ -1570,7 +1568,7 @@ msgid ""
 "by writing a mail to the Debian Live mailing list at E<lt>I<debian-"
 "live@lists.debian.org>E<gt>."
 msgstr ""
-"Bugs podem ser relatados através da submissão de um reporte de bug para o "
+"Bugs podem ser reportados através da submissão de um relatório de bug para o "
 "pacote live-config através do Debian Bug Tracking System em E<lt>I<http://"
 "bugs.debian.org/>E<gt> ou enviando um email para a lista de discussão Debian "
 "Live em E<lt>I<debian-live@lists.debian.org>E<gt>."
