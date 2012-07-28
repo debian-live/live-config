@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config VERSION\n"
-"POT-Creation-Date: 2012-07-26 17:16+0300\n"
+"POT-Creation-Date: 2012-07-28 16:24+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,7 +25,7 @@ msgstr ""
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "2012-07-26"
+msgid "2012-07-28"
 msgstr ""
 
 #. type: TH
@@ -334,8 +334,10 @@ msgstr ""
 #: en/live-config.7:67
 msgid ""
 "Allows to change the keyboard variants. If more than one is specified, the "
-"tools of the desktop environment will allow to switch it under X11. There is "
-"no default value set."
+"same number of values as keyboard-layouts values should be specified as they "
+"will be matched one-to-one in the order specified. Blank values are allowed. "
+"The tools of the desktop environment will allow to switch between each "
+"layout and variant pair under X11. There is no default value set."
 msgstr ""
 
 #. type: IP
@@ -346,7 +348,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/live-config.7:69
-msgid "Allows to change the keyboard options. There are no default value set."
+msgid "Allows to change the keyboard options. There is no default value set."
 msgstr ""
 
 #. type: IP

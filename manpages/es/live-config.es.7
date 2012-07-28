@@ -11,7 +11,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 26.07.2012 3.0~b1\-1 "Proyecto Debian Live"
+.TH LIVE\-CONFIG 7 28.07.2012 3.0~b1\-1 "Proyecto Debian Live"
 
 .SH NOMBRE
 \fBlive\-config\fP \- Scripts de configuración del sistema
@@ -106,9 +106,11 @@ Permite cambiar la disposición del teclado. Si se especifica más de una, las
 herramientas de escritorio permitirán cambiarlas bajo X11. No hay ningún
 valor por omisión.
 .IP "\fBlive\-config.keyboard\-variants\fP=\fIKEYBOARD_VARIANT1\fP,\fIKEYBOARD_VARIANT2\fP ... \fIKEYBOARD_VARIANTn\fP | \fBkeyboard\-variants\fP=\fIKEYBOARD_VARIANT1\fP,\fIKEYBOARD_VARIANT2\fP ... \fIKEYBOARD_VARIANTn\fP" 4
-Permite cambiar la disposición del teclado. Si se especifica más de una, las
-herramientas de escritorio permitirán cambiarlas bajo X11. No hay ningún
-valor por omisión.
+Allows to change the keyboard variants. If more than one is specified, the
+same number of values as keyboard\-layouts values should be specified as they
+will be matched one\-to\-one in the order specified. Blank values are
+allowed. The tools of the desktop environment will allow to switch between
+each layout and variant pair under X11. There is no default value set.
 .IP "\fBlive\-config.keyboard\-options\fP=\fIKEYBOARD_OPTIONS\fP | \fBkeyboard\-options\fP=\fIKEYBOARD_OPTIONS\fP" 4
 Permite cambiar las opciones del teclado. No hay un valor por omisión.
 .IP "\fBlive\-config.sysv\-rc\fP=\fISERVICE1\fP,\fISERVICE2\fP ... \fISERVICEn\fP | \fBsysv\-rc\fP=\fISERVICE1\fP,\fISERVICE2\fP ... \fISERVICEn\fP" 4

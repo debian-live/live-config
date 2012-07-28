@@ -11,7 +11,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 26.07.2012 3.0~b1\-1 "Debian Live Projekt"
+.TH LIVE\-CONFIG 7 28.07.2012 3.0~b1\-1 "Debian Live Projekt"
 
 .SH NAME
 \fBlive\-config\fP \- System Konfiguration Skripte
@@ -109,8 +109,11 @@ angegeben wird, ermöglichen die Tools der Desktopumgebung das Wechseln unter
 X11. Es ist kein Standardwert gesetzt.
 .IP "\fBlive\-config.keyboard\-variants\fP=\fITASTATUR_VARIANTE1\fP,\fITASTATUR_VARIANTE2\fP ... \fITASTATUR_VARIANTEn\fP | \fBkeyboard\-variants\fP=\fITASTATUR_VARIANTE1\fP,\fITASTATUR_VARIANTE2\fP ... \fITASTATUR_VARIANTEn\fP" 4
 Ermöglicht die Tastatur Variante zu bestimmen. Wenn mehr als eine Variante
-angegeben wird, ermöglichen die Tools der Desktopumgebung das Wechseln unter
-X11. Es ist kein Standardwert gesetzt.
+angegeben wird, sollte die gleiche Anzahl an Werten wie Tastatur Layouts
+angegeben werden weil diese jeweils eins zu eins zugeordnet werden. Leere
+Werte sind ebenfalls zulässig. Die Tools der Desktopumgebung ermöglichen das
+Wechseln zwischen jedem Layout und Varianten Paar unter X11. Es ist kein
+Standardwert gesetzt.
 .IP "\fBlive\-config.keyboard\-options\fP=\fITASTATUR_OPTIONEN\fP | \fBkeyboard\-options\fP=\fITASTATUR_OPTIONEN\fP" 4
 Ermöglicht die Tastatur Optionen zu bestimmen. Es ist kein Standardwert
 gesetzt.

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config 3.0~b1-1\n"
-"POT-Creation-Date: 2012-07-26 17:16+0300\n"
+"POT-Creation-Date: 2012-07-28 16:24+0300\n"
 "PO-Revision-Date: 2011-12-06 08:01+0100\n"
 "Last-Translator: skizzhg <skizzhg@gmx.com>\n"
 "Language-Team: none\n"
@@ -23,8 +23,8 @@ msgstr "LIVE-CONFIG"
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "2012-07-26"
-msgstr "26.07.2012"
+msgid "2012-07-28"
+msgstr "28.07.2012"
 
 #. type: TH
 #: en/live-config.7:9
@@ -386,8 +386,10 @@ msgstr "B<live-config.keyboard-variants>=I<KEYBOARD_VARIANT1>,I<KEYBOARD_VARIANT
 #| "is no default value set."
 msgid ""
 "Allows to change the keyboard variants. If more than one is specified, the "
-"tools of the desktop environment will allow to switch it under X11. There is "
-"no default value set."
+"same number of values as keyboard-layouts values should be specified as they "
+"will be matched one-to-one in the order specified. Blank values are allowed. "
+"The tools of the desktop environment will allow to switch between each "
+"layout and variant pair under X11. There is no default value set."
 msgstr ""
 "Permette di modificare i layout della tastiera. Se ne viene specificato più "
 "di uno, gli strumenti dell'ambiente desktop consentiranno di cambiarlo sotto "
@@ -401,7 +403,7 @@ msgstr "B<live-config.keyboard-options>=I<OPZIONI_TASTIERA> | B<keyboard-options
 
 #. type: Plain text
 #: en/live-config.7:69
-msgid "Allows to change the keyboard options. There are no default value set."
+msgid "Allows to change the keyboard options. There is no default value set."
 msgstr ""
 "Permette di modificare le opzioni della tastiera, non è impostato alcun "
 "valore predefinito."

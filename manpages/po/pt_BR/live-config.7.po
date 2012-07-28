@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config 3.0~b1-1\n"
-"POT-Creation-Date: 2012-07-26 17:16+0300\n"
+"POT-Creation-Date: 2012-07-28 16:24+0300\n"
 "PO-Revision-Date: 2012-07-26 11:30-0600\n"
 "Last-Translator: Tiago Bortoletto Vaz <tiago@debian.org>\n"
 "Language-Team: none\n"
@@ -24,8 +24,8 @@ msgstr "LIVE-CONFIG"
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "2012-07-26"
-msgstr "26-07-2012"
+msgid "2012-07-28"
+msgstr "28-07-2012"
 
 #. type: TH
 #: en/live-config.7:9
@@ -388,10 +388,17 @@ msgstr "B<live-config.keyboard-variants>=I<KEYBOARD_VARIANT1>,I<KEYBOARD_VARIANT
 
 #. type: Plain text
 #: en/live-config.7:67
+#, fuzzy
+#| msgid ""
+#| "Allows to change the keyboard variants. If more than one is specified, "
+#| "the tools of the desktop environment will allow to switch it under X11. "
+#| "There is no default value set."
 msgid ""
 "Allows to change the keyboard variants. If more than one is specified, the "
-"tools of the desktop environment will allow to switch it under X11. There is "
-"no default value set."
+"same number of values as keyboard-layouts values should be specified as they "
+"will be matched one-to-one in the order specified. Blank values are allowed. "
+"The tools of the desktop environment will allow to switch between each "
+"layout and variant pair under X11. There is no default value set."
 msgstr ""
 "Permite configurar as variantes de teclado. Se mais de uma for especificada, "
 "as ferramentas do ambiente desktop possibilitarão a troca entre eles no X11. "
@@ -405,7 +412,7 @@ msgstr "B<live-config.keyboard-options>=I<OPÇÕES_DE_TECLADO> | B<keyboard-opti
 
 #. type: Plain text
 #: en/live-config.7:69
-msgid "Allows to change the keyboard options. There are no default value set."
+msgid "Allows to change the keyboard options. There is no default value set."
 msgstr "Permite configurar as opções de teclado. Não há valor padrão definido."
 
 #. type: IP
