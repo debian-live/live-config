@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: live-config 3.0~b1-1\n"
 "POT-Creation-Date: 2012-07-28 16:24+0300\n"
-"PO-Revision-Date: 2012-04-07 17:19+0200\n"
-"Last-Translator: Carlos Zuferri «chals» <chals@altorricon.com>\n"
+"PO-Revision-Date: 2012-07-28 22:11+0100\n"
+"Last-Translator: Carlos Zuferri <chals@altorricon.com>\n"
 "Language-Team: none\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
@@ -388,11 +388,6 @@ msgstr "B<live-config.keyboard-variants>=I<KEYBOARD_VARIANT1>,I<KEYBOARD_VARIANT
 
 #. type: Plain text
 #: en/live-config.7:67
-#, fuzzy
-#| msgid ""
-#| "Allows to change the keyboard variants. If more than one is specified, "
-#| "the tools of the desktop environment will allow to switch it under X11. "
-#| "There is no default value set."
 msgid ""
 "Allows to change the keyboard variants. If more than one is specified, the "
 "same number of values as keyboard-layouts values should be specified as they "
@@ -400,9 +395,11 @@ msgid ""
 "The tools of the desktop environment will allow to switch between each "
 "layout and variant pair under X11. There is no default value set."
 msgstr ""
-"Permite cambiar la disposición del teclado. Si se especifica más de una, las "
-"herramientas de escritorio permitirán cambiarlas bajo X11. No hay ningún "
-"valor por omisión."
+"Permite cambiar las variantes de teclado. Si se especifica más de una, se "
+"deben especificar el mismo número de variantes como de distribuciones de "
+"teclado, ya que se corresponderan una a una en el orden especificado. Se "
+"pueden dejar valores en blanco. Las herramientas de escritorio permitirán "
+"cambiarlas bajo X11. No hay ningún valor por omisión."
 
 #. type: IP
 #: en/live-config.7:67
