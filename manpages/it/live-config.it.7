@@ -1,7 +1,7 @@
 .\" live-config(7) - System Configuration Scripts
 .\" Copyright (C) 2006-2012 Daniel Baumann <daniel@debian.org>
 .\"
-.\" live-config comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
+.\" This program comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
 .\" This is free software, and you are welcome to redistribute it
 .\" under certain conditions; see COPYING for details.
 .\"
@@ -11,7 +11,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 24.07.2012 3.0~b1\-1 "Progetto Debian Live"
+.TH LIVE\-CONFIG 7 29.07.2012 3.0~b2\-1 "Progetto Debian Live"
 
 .SH NOME
 \fBlive\-config\fP \- Script di configurazione del sistema
@@ -106,8 +106,10 @@ di uno, gli strumenti dell'ambiente desktop consentiranno di cambiarlo sotto
 X11. Non è impostato alcun valore predefinito.
 .IP "\fBlive\-config.keyboard\-variants\fP=\fIKEYBOARD_VARIANT1\fP,\fIKEYBOARD_VARIANT2\fP ... \fIKEYBOARD_VARIANTn\fP | \fBkeyboard\-variants\fP=\fIKEYBOARD_VARIANT1\fP,\fIKEYBOARD_VARIANT2\fP ... \fIKEYBOARD_VARIANTn\fP" 4
 Allows to change the keyboard variants. If more than one is specified, the
-tools of the desktop environment will allow to switch it under X11. There is
-no default value set.
+same number of values as keyboard\-layouts values should be specified as they
+will be matched one\-to\-one in the order specified. Blank values are
+allowed. The tools of the desktop environment will allow to switch between
+each layout and variant pair under X11. There is no default value set.
 .IP "\fBlive\-config.keyboard\-options\fP=\fIOPZIONI_TASTIERA\fP | \fBkeyboard\-options\fP=\fIOPZIONI_TASTIERA\fP" 4
 Permette di modificare le opzioni della tastiera, non è impostato alcun
 valore predefinito.
@@ -320,9 +322,6 @@ disabilita il pulsante di blocco dello schermo.
 disabilita l'ibernazione.
 .IP \fBgnome\-screensaver\fP 4
 disabilita lo screensaver che blocca lo schermo.
-.IP \fBinitramfs\-tools\fP 4
-fa sì che update\-initramfs aggiorni anche il supporto live quando si
-utilizza la persistenza.
 .IP \fBkaboom\fP 4
 disabilita la procedura guidata di migrazione di KDE (squeeze e successive).
 .IP \fBkde\-services\fP 4

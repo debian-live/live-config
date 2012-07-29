@@ -3,7 +3,7 @@
 ## live-config(7) - System Configuration Scripts
 ## Copyright (C) 2006-2012 Daniel Baumann <daniel@debian.org>
 ##
-## live-config comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
+## This program comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
 ## This is free software, and you are welcome to redistribute it
 ## under certain conditions; see COPYING for details.
 
@@ -95,8 +95,6 @@ device_is_USB_flash_drive()
 
 Eject ()
 {
-	# Exit if the system was booted from an ISO image rather than a physical CD
-	grep -qs find_iso= /proc/cmdline && return 0
 	# TODO: i18n
 	BOOT_DEVICE="$(get_boot_device)"
 
@@ -143,21 +141,6 @@ Eject ()
 	fi
 }
 
-# Don't prompt to eject the SD card on Babbage board, where we reuse it
-# as a quasi-boot-floppy. Technically this uses a bit of ubiquity
-# (archdetect), but since this is mostly only relevant for
-# installations, who cares ...
-if [ -x "$(which archdetect 2>/dev/null)" ]
-then
-	subarch="$(archdetect)"
-
-	case $subarch in
-		arm*/imx51)
-			return 0
-			;;
-	esac
-fi
-
 echo "live-boot: caching reboot files..."
 
 prompt=1
@@ -175,7 +158,8 @@ mount -o remount,ro /live/overlay > /dev/null 2>&1
 
 # Check if we need to eject the drive
 if grep -qs "cdrom-detect/eject=false" /proc/cmdline || \
-   grep -qs "noeject" /proc/cmdline
+   grep -qs "noeject" /proc/cmdline || \
+   grep -qs "find_iso" /proc/cmdline
 then
 	return
 else

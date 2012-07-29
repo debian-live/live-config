@@ -1,7 +1,7 @@
 .\" live-config(7) - System Configuration Scripts
 .\" Copyright (C) 2006-2012 Daniel Baumann <daniel@debian.org>
 .\"
-.\" live-config comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
+.\" This program comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
 .\" This is free software, and you are welcome to redistribute it
 .\" under certain conditions; see COPYING for details.
 .\"
@@ -11,7 +11,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 24.07.2012 3.0~b1\-1 "Projet Debian Live"
+.TH LIVE\-CONFIG 7 29.07.2012 3.0~b2\-1 "Projet Debian Live"
 
 .SH NOM
 \fBlive\-config\fP \- Scripts de configuration du système
@@ -111,10 +111,11 @@ est spécifiée, les utilitaires de l'environnement de bureau permettront de
 passer de l'une à l'autre sous X11. Aucune valeur par défaut n'est
 spécifiée.
 .IP "\fBlive\-config.keyboard\-variants\fP=\fIKEYBOARD_VARIANT1\fP,\fIKEYBOARD_VARIANT2\fP ... \fIKEYBOARD_VARIANTn\fP | \fBkeyboard\-variants\fP=\fIKEYBOARD_VARIANT1\fP,\fIKEYBOARD_VARIANT2\fP ... \fIKEYBOARD_VARIANTn\fP" 4
-Permet de changer la configuration du clavier. Si plus d'une configuration
-est spécifiée, les utilitaires de l'environnement de bureau permettront de
-passer de l'une à l'autre sous X11. Aucune valeur par défaut n'est
-spécifiée.
+Permet de changer la variante du clavier. Si plus d'une est spécifiée, le
+même nombre de valeurs doivent être spécifiées car elles se correspondront
+une à une dans l'ordre spécifié. On peut utiliser valeurs vides. Les outils
+de l'environnement de bureau permettront de passer de l'une à l'autre sous
+X11. Aucune valeur par défaut n'est spécifiée.
 .IP "\fBlive\-config.keyboard\-options\fP=\fIOPTIONS_DU_CLAVIER\fP | \fBkeyboard\-options\fP=\fIOPTIONS_DU_CLAVIER\fP" 4
 Permet de changer les options du clavier. Aucune valeur par défaut n'est
 spécifiée.
@@ -335,9 +336,6 @@ désactive le bouton de verrouillage de l'écran.
 désactive l'hibernation.
 .IP \fBgnome\-screensaver\fP 4
 désactive le verrouillage de session par l'économiseur d'écran.
-.IP \fBinitramfs\-tools\fP 4
-permet à update\-initramfs de mettre à jour le média live lorsqu'on utlise la
-persistance.
 .IP \fBkaboom\fP 4
 désactive l'assistant de migration de KDE (squeeze et plus récent).
 .IP \fBkde\-services\fP 4
