@@ -1,3 +1,35 @@
+live-config (3.0~b2-1) unstable; urgency=low
+
+  [ Daniel Baumann ]
+  * Simplyfing find_iso eject check in boot initscript.
+  * Removing special hack for some arm boards in boot initscript.
+  * Moving initramfs-tools scripts content to live-tools.
+  * Harmonizing GPL boilerplate texts.
+  * Renumbering scripts to reflect initramfs-tools script removal.
+
+  [ chals ]
+  * Dealing with two easy-to-fix fuzzy strings in pt_BR on a best effort
+    basis.
+
+  [ Ben Armstrong ]
+  * Clarifying that keyboard variants and layouts are matched.
+  * Clarifying further that matching is one-to-one in order and blank
+    values allowed.
+
+  [ Daniel Baumann ]
+  * Updating keyboard variant description in manpages a bit further.
+  * Adding updated Brazilian Portuguese manpage translations from Tiago
+    Bortoletto Vaz <tiago@debian.org>.
+
+  [ chals ]
+  * Completing the French and Spanish translations of the man page.
+
+  [ Daniel Baumann ]
+  * Adding recommends to keyboard-configuration.
+  * Adding recommends to locales and locales-all.
+
+ -- Daniel Baumann <daniel@debian.org>  Sun, 29 Jul 2012 02:16:23 +0200
+
 live-config (3.0~b1-1) unstable; urgency=low
 
   [ Daniel Baumann ]
