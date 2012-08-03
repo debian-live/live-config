@@ -7,7 +7,7 @@ case "${1}" in
 		rm -f /etc/sudoers.d/live
 		rm -f /etc/profile.d/locales-all.sh
 		rm -f /etc/profile.d/zz-live.sh
-		rm -f /etc/X11/xorg.conf.d/99-live_*.conf
+		rm -f /etc/X11/xorg.conf.d/99-live.conf
 
 		rm -rf /var/lib/live/config
 		rm -rf /var/lib/live/debconfig
