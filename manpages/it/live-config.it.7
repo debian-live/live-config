@@ -11,7 +11,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 29.07.2012 3.0~b2\-1 "Progetto Debian Live"
+.TH LIVE\-CONFIG 7 03.08.2012 3.0.0\-1 "Progetto Debian Live"
 
 .SH NOME
 \fBlive\-config\fP \- Script di configurazione del sistema
@@ -24,12 +24,12 @@ durante il processo di avvio (spazio utente inoltrato).
 \fBlive\-config\fP può essere configurato tramite parametri di avvio o file di
 configurazione; se per una certa opzione vengono utilizzati entrambi i
 meccanismi, i parametri di avvio hanno la precedenza su questi
-ultimi. Quando si utilizza la persistenza, gli script di \fBlive\-config\fP
+ultimi. Quando si utilizza la persistenza gli script di \fBlive\-config\fP
 vengono eseguiti solo una volta.
 .PP
-Per configurare i parametri di live\-config utilizzati in modo predefinitoin
-un'immagine live, si veda l'opzione \-\-bootappend\-live nella pagina di
-manualedi \fIlb_config\fP(1).
+Per configurare i parametri di live\-config utilizzati in modo predefinito in
+un'immagine live, vedere l'opzione \-\-bootappend\-live nella pagina di manuale
+di \fIlb_config\fP(1).
 
 .SS "Parametri di avvio (script)"
 \fBlive\-config\fP viene attivato solo se "boot=live" è utilizzato come
@@ -40,54 +40,55 @@ specificato più volte, avrà la precedenza sempre l'ultimo.
 
 .IP "\fBlive\-config\fP | \fBconfig\fP" 4
 Vengono eseguiti tutti gli script; questo è ciò che le immagini di Debian
-Live utilizzano in modo predefinito.
+Live fanno in modo predefinito.
 .IP "\fBlive\-config\fP=\fISCRIPT1\fP,\fISCRIPT2\fP, ... \fISCRIPTn\fP | \fBconfig\fP=\fISCRIPT1\fP,\fISCRIPT2\fP, ... \fISCRIPTn\fP" 4
 Vengono eseguiti solo gli script specificati. Si noti che l'ordine è
 importante, ad esempio "live\-config=sudo,user\-setup" non funzionerebbe in
 quanto prima di poter configurare l'utente per sudo è necessario
-aggiungerlo. Si vedano i nomi degli script in /lib/live/config per il loro
-ordinamento numerico.
+aggiungerlo. Per l'ordinamento numerico vedere i nomi degli script in
+/lib/live/config.
 .IP "\fBlive\-noconfig\fP | \fBnoconfig\fP" 4
 Non viene eseguito alcuno script, equivale a non utilizzare nessun parametro
 di "live\-config" o "live\-noconfig".
 .IP "\fBlive\-noconfig\fP=\fISCRIPT1\fP,\fISCRIPT2\fP, ... \fISCRIPTn\fP | \fBnoconfig\fP=\fISCRIPT1\fP,\fISCRIPT2\fP, ... \fISCRIPTn\fP" 4
-Vengono eseguiti tutti gli script, tranne quelli specificati.
+Vengono eseguiti tutti gli script tranne quelli specificati.
 
 .SS "Parametri di avvio (opzioni)"
 Alcuni singoli script possono modificare il loro comportamento in base a un
 parametro di avvio.
 
 .IP "\fBlive\-config.debconf\-preseed\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP | \fBdebconf\-preseed\fP=medium|filesystem|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
-Allows to fetch and apply one or more debconf preseed files to be applied to
-the debconf database. Note that the URLs must be fetchable by wget (http,
-ftp or file://).
+Permette di prelevare e applicare uno o più file debconf di
+preconfigurazione da applicare al database debconf. Si noti che gli URL
+devono essere scaricabili da wget (http, ftp o file://).
 .br
-Se il file è posizionato sul supporto live può essere prelevato con
-file:///live/image/\fIFILE\fP o con file:///\fIFILE\fP se è nella radice del
+Se il file è posizionato sul supporto live, questo  può essere prelevato con
+file:///live/image/\fIFILE\fP, o con file:///\fIFILE\fP se è nella radice del
 filesystem del sistema live stesso.
 .br
-All preseed files in /lib/live/preseed/ in the root filesystem of the live
-system can be automatically be enabled with the keyword 'filesystem'.
+Tutti i file di preconfigurazione in /lib/live/preseed/ nella radice del
+sistema live possono essere abilitati automaticamente con la parola chiave
+"filesystem".
 .br
-All preseed files in /live/preseed/ of the live medium can be automatically
-be enabled with the keyword 'medium'.
+Tutti i file di preconfigurazione in /live/preseed/ sul supporto live
+possono essere abilitati automaticamente con la parola chiave "medium".
 .br
-If several mechanisms are combined, then filesystem preseed files are
-applied first, then medium preseed files, and last the network preseed
-files.
+Se vengono congiunti diversi meccanismi i file di preconfigurazione di tipo
+filesystem vengono applicati per primi, seguiti dalla tipologia medium e
+quindi da quelli network.
 .IP "\fBlive\-config.hostname\fP=\fIHOSTNAME\fP | \fBhostname\fP=\fIHOSTNAME\fP" 4
 Permette di impostare l'hostname del sistema, il predefinito è "debian".
 .IP "\fBlive\-config.username\fP=\fINOMEUTENTE\fP | \fBusername\fP=\fINOMEUTENTE\fP" 4
 Permette di impostare il nome utente che viene creato per il login
 automatico, il predefinito è "user".
-.IP "\fBlive\-config.user\-default\-groups\fP=\fIGROUPO1\fP,\fIGROUPO2\fP ... \fIGROUPOn\fP | \fBuser\-default\-groups\fP=\fIGROUPO1\fP,\fIGROUPO2\fP ... \fIGROUPOn\fP" 4
+.IP "\fBlive\-config.user\-default\-groups\fP=\fIGRUPPO\fP,\fIGRUPPO2\fP ... \fIGRUPPOn\fP | \fBuser\-default\-groups\fP=\fIGRUPPO1\fP,\fIGRUPPO2\fP ... \fIGRUPPOn\fP" 4
 Permette di impostare i gruppi dei quali fanno parte gli utenti creati per
 il login automatico. Il valore predefinito è "audio cdrom dip floppy video
 plugdev netdev powerdev scanner bluetooth".
 .IP "\fBlive\-config.user\-fullname\fP=\(dq\fINOME COMPLETO UTENTE\fP\(dq | \fBuser\-fullname\fP=\(dq\fINOME COMPLETO UTENTE\fP\(dq" 4
 Permette di impostare il nome utente completo che viene creato per il login
 automatico, il predefinito è "Debian Live user".
-.IP "\fBlive\-config.locales\fP=\fILOCALE1\fP,\fILOCALE2\fP ... \fILOCALEn\fP | \fBlocales\fP=\fILOCALE1\fP,\fILOCALE2\fP ... \fILOCALEn\fP" 4
+.IP "\fBlive\-config.locales\fP=\fILOCALIZZAZIONE1\fP,\fILOCALIZZAZIONE2\fP ... \fILOCALIZZAZIONEn\fP | \fBlocales\fP=\fILOCALIZZAZIONE1\fP,\fILOCALIZZAZIONE2\fP ... \fILOCALIZZAZIONEn\fP" 4
 Permette di impostare la localizzazione del sistema, ad esempio
 "it_IT.UTF\-8", il predefinito è "en_US.UTF\-8". Se la localizzazione
 selezionata non è già disponibile viene generata al volo automaticamente.
@@ -95,32 +96,33 @@ selezionata non è già disponibile viene generata al volo automaticamente.
 Permette di impostare il fuso orario del sistema, ad esempio "Europe/Rome",
 il predefinito è "UTC".
 .IP "\fBlive\-config.utc\fP=\fByes\fP|no | \fButc\fP=\fByes\fP|no" 4
-Permette di scegliere se il sistema supponga che l'orologio hardware sia
-impostato o meno su UTC, il valore predefinito è "yes".
+Permette di scegliere se il sistema debba supporre che l'orologio hardware
+sia impostato o meno su UTC, il valore predefinito è "yes".
 .IP "\fBlive\-config.keyboard\-model\fP=\fIMODELLO_TASTIERA\fP | \fBkeyboard\-model\fP=\fIMODELLO_TASTIERA\fP" 4
 Permette di scegliere il modello della tastiera, non è impostato alcun
 valore predefinito.
-.IP "\fBlive\-config.keyboard\-layouts\fP=\fILAYOUT1_TASTIERA\fP,\fILAYOUT2_TASTIERA\fP ... \fILAYOUTn_TASTIERA\fP | \fBkeyboard\-layouts\fP=\fILAYOUT1_TASTIERA\fP,\fILAYOUT2_TASTIERA\fP ... \fILAYOUTn_TASTIERA\fP" 4
+.IP "\fBlive\-config.keyboard\-layouts\fP=\fILAYOUT_TASTIERA1\fP,\fILAYOUT_TASTIERA2\fP ... \fILAYOUT_TASTIERAn\fP | \fBkeyboard\-layouts\fP=\fILAYOUT_TASTIERA1\fP,\fILAYOUT_TASTIERA2\fP ... \fILAYOUT_TASTIERAn\fP" 4
 Permette di modificare i layout della tastiera. Se ne viene specificato più
-di uno, gli strumenti dell'ambiente desktop consentiranno di cambiarlo sotto
+di uno gli strumenti dell'ambiente desktop consentiranno di cambiarlo in
 X11. Non è impostato alcun valore predefinito.
-.IP "\fBlive\-config.keyboard\-variants\fP=\fIKEYBOARD_VARIANT1\fP,\fIKEYBOARD_VARIANT2\fP ... \fIKEYBOARD_VARIANTn\fP | \fBkeyboard\-variants\fP=\fIKEYBOARD_VARIANT1\fP,\fIKEYBOARD_VARIANT2\fP ... \fIKEYBOARD_VARIANTn\fP" 4
-Allows to change the keyboard variants. If more than one is specified, the
-same number of values as keyboard\-layouts values should be specified as they
-will be matched one\-to\-one in the order specified. Blank values are
-allowed. The tools of the desktop environment will allow to switch between
-each layout and variant pair under X11. There is no default value set.
+.IP "\fBlive\-config.keyboard\-variants\fP=\fISCHEMA_TASTIERA1\fP,\fISCHEMA_TASTIERA2\fP ... \fISCHEMA_TASTIERAn\fP | \fBkeyboard\-variants\fP=\fISCHEMA_TASTIERA1\fP,\fISCHEMA_TASTIERA2\fP ... \fISCHEMA_TASTIERAn\fP" 4
+Permette di modificare gli schemi della tastiera (es. qwerty, qWERTZ,
+AZERTY, ecc.). Se ne viene specificato più di uno è necessario indicare lo
+stesso numero di valori dei layout della tastiera che verranno abbinati ad
+uno schema nell'ordine definito. Sono ammessi valori vuoti. Gli strumenti
+dell'ambiente desktop consentiranno di passare da uno all'altro in X11. Non
+è impostato alcun valore predefinito.
 .IP "\fBlive\-config.keyboard\-options\fP=\fIOPZIONI_TASTIERA\fP | \fBkeyboard\-options\fP=\fIOPZIONI_TASTIERA\fP" 4
 Permette di modificare le opzioni della tastiera, non è impostato alcun
 valore predefinito.
-.IP "\fBlive\-config.sysv\-rc\fP=\fISERVICE1\fP,\fISERVICE2\fP ... \fISERVICEn\fP | \fBsysv\-rc\fP=\fISERVICE1\fP,\fISERVICE2\fP ... \fISERVICEn\fP" 4
+.IP "\fBlive\-config.sysv\-rc\fP=\fISERVIZIO1\fP,\fISERVIZIO2\fP ... \fISERVIZIOn\fP | \fBsysv\-rc\fP=\fISERVIZIO1\fP,\fISERVIZIO2\fP ... \fISERVIZIOn\fP" 4
 Permette di disabilitare i servizi di sysv tramite update\-rc.d.
 .IP "\fBlive\-config.x\-session\-manager=\fP\fIX_SESSION_MANAGER\fP | \fBx\-session\-manager\fP=\fIX_SESSION_MANAGER\fP" 4
 Permette di impostare x\-session\-manager tramite update\-alternatives.
-.IP "\fBlive\-config.xorg\-driver\fP=\fIDRIVER_PER_XORG\fP | \fBxorg\-driver\fP=\fIDRIVER_PER_XORG\fP" 4
+.IP "\fBlive\-config.xorg\-driver\fP=\fIDRIVER_XORG\fP | \fBxorg\-driver\fP=\fIDRIVER_XORG\fP" 4
 Permette di impostare il driver per xorg invece di riconoscerlo
 automaticamente.
-.IP "\fBlive\-config.xorg\-resolution\fP=\fIRISOLUZIONE_PER_XORG\fP | \fBxorg\-resolution\fP=\fIRISOLUZIONE_PER_XORG\fP" 4
+.IP "\fBlive\-config.xorg\-resolution\fP=\fIRISOLUZIONE_XORG\fP | \fBxorg\-resolution\fP=\fIRISOLUZIONE_XORG\fP" 4
 Permette di impostare la risoluzione per xorg invece di riconoscerla
 automaticamente, ad esempio 1024x768.
 .IP "\fBlive\-config.hooks\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP | \fBhooks\fP=medium|filesystem|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
@@ -133,8 +135,8 @@ disponibili alcuni hook per i casi d'uso più comuni in
 /usr/share/doc/live\-config/examples/hooks/ e all'indirizzo
 <\fIhttp://live.debian.net/other/hooks\fP>.
 .br
-Se il file è posizionato sul supporto live può essere prelevato con
-file:///live/image/\fIFILE\fP o con file:///\fIFILE\fP se è nella radice del
+Se il file è posizionato sul supporto live, questo  può essere prelevato con
+file:///live/image/\fIFILE\fP, o con file:///\fIFILE\fP se è nella radice del
 filesystem del sistema live stesso.
 .br
 Tutti gli hook nella directory /lib/live/hooks/ del sistema live possono
@@ -143,8 +145,9 @@ essere abilitati automaticamente con la parola chiave "filesystem".
 Tutti gli hook nella directory /live/hooks/ del sistema live possono essere
 abilitati automaticamente con la parola chiave "medium".
 .br
-Se vengono congiunti svariati meccanismi, gli hook del filesystem saranno
-eseguiti per primi, seguiti dai medium, e infine gli hook network.
+Se vengono congiunti svariati meccanismi, gli hook di tipo filesystem
+vengono applicati per primi, seguiti dalla tipologia medium e quindi da
+quelli network.
 
 .SS "Parametri di avvio (scorciatoie)"
 Per alcuni casi di uso comune in cui sarebbe necessario combinare diversi
@@ -173,16 +176,16 @@ Abilita l'output di debug in live\-config.
 \fBlive\-config\fP può essere configurato (ma non attivato) attraverso file di
 configurazione. Tranne le scorciatoie che sono configurabili con un
 parametro di avvio, tutto può essere configurato in alternativa tramite uno
-o più file. Se vengono usati questi file, è ancora richiesto il parametro
-"boot=live" per attivare \fBlive\-config\fP.
+o più file. Se vengono usati questi file, il parametro "boot=live" è
+comunque richiesto per attivare \fBlive\-config\fP.
 .PP
 I file di configurazione sono collocabili sia nello stesso filesystem di
 root (/etc/live/config.conf, /etc/live/config.d/*.conf), sia nel supporto
 live (live/config.conf, live/config.d/*.conf). Se per una certa opzione si
 usano entrambe le destinazioni, avrà la precedenza quello del supporto live.
 .PP
-Anche se i file di configurazione messi nelle directory conf.d non
-richiedono un nome o suffisso particolari, per coerenza è suggerito di usare
+Sebbene i file di configurazione messi nelle directory conf.d non richiedano
+un nome o un suffisso particolari, per coerenza è suggerito di usare
 "vendor.conf"o "project.conf" come schema di denominazione (laddove "vendor"
 o "project"è sostituito con un nome reale, risultando in un nome di file
 come "debian\-eeepc.conf").
@@ -212,9 +215,10 @@ Questa variabile equivale al parametro
 .IP "\fBLIVE_USER_FULLNAME\fP=\(dq\fINOME COMPLETO UTENTE\fP\(dq" 4
 Questa variabile equivale al parametro "\fBlive\-config.user\-fullname\fP="\fINOME
 COMPLETO UTENTE\fP".
-.IP "\fBLIVE_LOCALES\fP=\fILOCALE1\fP,\fILOCALE2\fP ... \fILOCALEn\fP" 4
+.IP "\fBLIVE_LOCALES\fP=\fILOCALIZZAZIONE1\fP,\fILOCALIZZAZIONE2\fP ... \fILOCALIZZAZIONEn\fP" 4
 Questa variabile equivale al parametro
-"\fBlive\-config.locales\fP=\fILOCALE1\fP,\fILOCALE2\fP ... \fILOCALEn\fP".
+"\fBlive\-config.locales\fP=\fILOCALIZZAZIONE1\fP,\fILOCALIZZAZIONE2\fP
+\&... \fILOCALIZZAZIONEn\fP".
 .IP "\fBLIVE_TIMEZONE\fP=\fIFUSO ORARIO\fP" 4
 Questa variabile equivale al parametro "\fBlive\-config.timezone\fP=\fIFUSO
 ORARIO\fP".
@@ -223,26 +227,26 @@ Questa variabile equivale al parametro "\fBlive\-config.utc\fP=\fByes\fP|no".
 .IP \fBLIVE_KEYBOARD_MODEL\fP=\fIMODELLO_TASTIERA\fP 4
 Questa variabile equivale al parametro
 "\fBlive\-config.keyboard\-model\fP=\fIMODELLO_TASTIERA\fP".
-.IP "\fBLIVE_KEYBOARD_LAYOUTS\fP=\fILAYOUT1_TASTIERA\fP,\fILAYOUT2_TASTIERA\fP ... \fILAYOUTn_TASTIERA\fP" 4
+.IP "\fBLIVE_KEYBOARD_LAYOUTS\fP=\fILAYOUT_TASTIERA1\fP,\fILAYOUT_TASTIERA2\fP ... \fILAYOUT_TASTIERAn\fP" 4
 Questa variabile equivale al parametro
-"\fBlive\-config.keyboard\-layouts\fP=\fILAYOUT1_TASTIERA\fP,\fILAYOUT2_TASTIERA\fP
-\&... \fILAYOUTn_TASTIERA\fP".
-.IP "\fBLIVE_KEYBOARD_VARIANTS\fP=\fIKEYBOARD_VARIANT1\fP,\fIKEYBOARD_VARIANT2\fP ... \fIKEYBOARD_VARIANTn\fP" 4
-This variable equals the
-\&'\fBlive\-config.keyboard\-variants\fP=\fIKEYBOARD_VARIANT1\fP,\fIKEYBOARD_VARIANT2\fP
-\&... \fIKEYBOARD_VARIANTn\fP' parameter.
+"\fBlive\-config.keyboard\-layouts\fP=\fILAYOUT_TASTIERA1\fP,\fILAYOUT_TASTIERA2\fP
+\&... \fILAYOUT_TASTIERAn\fP".
+.IP "\fBLIVE_KEYBOARD_VARIANTS\fP=\fISCHEMA_TASTIERA1\fP,\fISCHEMA_TASTIERA2\fP ... \fISCHEMA_TASTIERAn\fP" 4
+Questa variabile equivale al parametro
+"\fBlive\-config.keyboard\-layouts\fP=\fISCHEMA_TASTIERA1\fP,\fISCHEMA_TASTIERA2\fP
+\&... \fISCHEMA_TASTIERAn\fP".
 .IP \fBLIVE_KEYBOARD_OPTIONS\fP=\fIOPZIONI_TASTIERA\fP 4
 Questa variabile equivale al parametro
 "\fBlive\-config.keyboard\-options\fP=\fIOPZIONI_TASTIERA\fP".
-.IP "\fBLIVE_SYSV_RC\fP=\fISERVICE1\fP,\fISERVICE2\fP ... \fISERVICEn\fP" 4
+.IP "\fBLIVE_SYSV_RC\fP=\fISERVIZIO1\fP,\fISERVIZIO2\fP ... \fISERVIZIOn\fP" 4
 Questa variabile equivale al parametro
-"\fBlive\-config.sysv\-rc\fP=\fISERVICE1\fP,\fISERVICE2\fP ... \fISERVICEn\fP".
-.IP \fBLIVE_XORG_DRIVER\fP=\fIDRIVER_PER_XORG\fP 4
+"\fBlive\-config.sysv\-rc\fP=\fISERVIZIO1\fP,\fISERVIZIO2\fP ... \fISERVIZIOn\fP".
+.IP \fBLIVE_XORG_DRIVER\fP=\fIDRIVER_XORG\fP 4
 Questa variabile equivale al parametro
-"\fBlive\-config.xorg\-driver\fP=\fIDRIVER_PER_XORG\fP".
-.IP \fBLIVE_XORG_RESOLUTION\fP=\fIRISOLUZIONE_PER_XORG\fP 4
+"\fBlive\-config.xorg\-driver\fP=\fIDRIVER_XORG\fP".
+.IP \fBLIVE_XORG_RESOLUTION\fP=\fIRISOLUZIONE_XORG\fP 4
 Questa variabile equivale al parametro
-"\fBlive\-config.xorg\-resolution\fP=\fIRISOLUZIONE_PER_XORG\fP".
+"\fBlive\-config.xorg\-resolution\fP=\fIRISOLUZIONE_XORG\fP".
 .IP "\fBLIVE_HOOKS\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
 Questa variabile equivale al parametro
 "\fBlive\-config.hooks\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP".
@@ -264,8 +268,8 @@ Non è ancora realmente possibile rimuovere gli script in un modo sensato che
 non richieda di fornire un pacchetto di \fBlive\-config\fP modificato
 localmente. Tuttavia la stessa cosa si può ottenere disabilitando i
 rispettivi script tramite il meccanismo di live\-noconfig, come spiegato
-sopra. Per evitare di dover specificare ogni volta con parametri di boot gli
-script da disabilitare, si usi un file di configurazione come mostrato in
+prima. Per evitare di dover specificare ogni volta con parametri di boot gli
+script da disabilitare, usare un file di configurazione come mostrato in
 precedenza.
 .PP
 È consigliato mettere i file di configurazione per il sistema live in un
@@ -276,8 +280,8 @@ pacchetto debian dedicato. Si può trovare un esempio in
 \fBlive\-config\fP attualmente offre i seguenti script in /lib/live/config.
 
 .IP \fBdebconf\fP 4
-allows to apply arbitrary preseed files placed on the live media or an
-http/ftp server.
+permette di applicare file di preconfigurazione arbitrai situati sul
+supporto live o su un server http/ftp.
 .IP \fBhostname\fP 4
 configura i file /etc/hostname e /etc/hosts.
 .IP \fBuser\-setup\fP 4
@@ -329,7 +333,7 @@ disabilita i servizi di KDE non voluti (squeeze e successive).
 .IP \fBdebian\-installer\-launcher\fP 4
 aggiunge debian\-installer\-launcher sul desktop dell'utente.
 .IP \fBmodule\-init\-tools\fP 4
-carica automaticamente alcuni moduli su certe architetture.
+carica automaticamente alcuni moduli per certe architetture.
 .IP \fBpolicykit\fP 4
 concede i privilegi per l'utente tramite policykit.
 .IP \fBsslcert\fP 4
@@ -339,7 +343,7 @@ disabilita update\-notifier.
 .IP \fBanacron\fP 4
 disabilita anacron.
 .IP \fButil\-linux\fP 4
-disabilita hwclock.
+disabilita hwclock (parte di util\-linux).
 .IP \fBlogin\fP 4
 disabilita lastlog.
 .IP \fBxserver\-xorg\fP 4
@@ -376,12 +380,12 @@ live o su un server http/ftp.
 
 .SH HOMEPAGE
 Si possono trovare ulteriori informazioni su live\-config e il progetto
-Debian Live alla pagina <\fIhttp://live.debian.net/\fP> e nel manuale
-all'indirizzo <\fIhttp://live.debian.net/manual/\fP>.
+Debian Live sulla homepage <\fIhttp://live.debian.net/\fP> e nel
+manuale all'indirizzo <\fIhttp://live.debian.net/manual/\fP>.
 
 .SH BUG
 I bug possono essere segnalati presentando un bugreport per il pacchetto
-live\-config nel Debian Bug Tracking System all'indirizzo
+live\-config sul Debian Bug Tracking System all'indirizzo
 <\fIhttp://bugs.debian.org/\fP> o inviando un'email alla mailing list
 di Debian Live <\fIdebian\-live@lists.debian.org\fP>.
 

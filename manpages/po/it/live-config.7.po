@@ -4,9 +4,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: live-config 3.0~b2-1\n"
-"POT-Creation-Date: 2012-07-29 02:08+0300\n"
-"PO-Revision-Date: 2011-12-06 08:01+0100\n"
+"Project-Id-Version: live-config 3.0.0-1\n"
+"POT-Creation-Date: 2012-08-03 18:28+0300\n"
+"PO-Revision-Date: 2012-08-03 17:13+0200\n"
 "Last-Translator: skizzhg <skizzhg@gmx.com>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -23,14 +23,14 @@ msgstr "LIVE-CONFIG"
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "2012-07-29"
-msgstr "29.07.2012"
+msgid "2012-08-03"
+msgstr "03.08.2012"
 
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "3.0~b2-1"
-msgstr "3.0~b2-1"
+msgid "3.0.0-1"
+msgstr "3.0.0-1"
 
 #. type: TH
 #: en/live-config.7:9
@@ -81,7 +81,7 @@ msgstr ""
 "B<live-config> può essere configurato tramite parametri di avvio o file di "
 "configurazione; se per una certa opzione vengono utilizzati entrambi i "
 "meccanismi, i parametri di avvio hanno la precedenza su questi ultimi. "
-"Quando si utilizza la persistenza, gli script di B<live-config> vengono "
+"Quando si utilizza la persistenza gli script di B<live-config> vengono "
 "eseguiti solo una volta."
 
 #. type: Plain text
@@ -90,9 +90,9 @@ msgid ""
 "To configure the live-config parameters used by default in a live image, see "
 "the --bootappend-live option in the I<lb_config>(1) manual page."
 msgstr ""
-"Per configurare i parametri di live-config utilizzati in modo predefinitoin "
-"un'immagine live, si veda l'opzione --bootappend-live nella pagina di "
-"manualedi I<lb_config>(1)."
+"Per configurare i parametri di live-config utilizzati in modo predefinito in "
+"un'immagine live, vedere l'opzione --bootappend-live nella pagina di manuale "
+"di I<lb_config>(1)."
 
 #. type: SS
 #: en/live-config.7:22
@@ -127,7 +127,7 @@ msgstr "B<live-config> | B<config>"
 msgid "All scripts are run. This is what Debian Live images use by default."
 msgstr ""
 "Vengono eseguiti tutti gli script; questo è ciò che le immagini di Debian "
-"Live utilizzano in modo predefinito."
+"Live fanno in modo predefinito."
 
 #. type: IP
 #: en/live-config.7:27
@@ -146,8 +146,8 @@ msgstr ""
 "Vengono eseguiti solo gli script specificati. Si noti che l'ordine è "
 "importante, ad esempio \"live-config=sudo,user-setup\" non funzionerebbe in "
 "quanto prima di poter configurare l'utente per sudo è necessario "
-"aggiungerlo. Si vedano i nomi degli script in /lib/live/config per il loro "
-"ordinamento numerico."
+"aggiungerlo. Per l'ordinamento numerico vedere i nomi degli script in /lib/"
+"live/config."
 
 #. type: IP
 #: en/live-config.7:29
@@ -173,7 +173,7 @@ msgstr "B<live-noconfig>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn> | B<noconfig>=I<S
 #. type: Plain text
 #: en/live-config.7:33
 msgid "All scripts are run, except the specified ones."
-msgstr "Vengono eseguiti tutti gli script, tranne quelli specificati."
+msgstr "Vengono eseguiti tutti gli script tranne quelli specificati."
 
 #. type: SS
 #: en/live-config.7:34
@@ -202,6 +202,9 @@ msgid ""
 "the debconf database. Note that the URLs must be fetchable by wget (http, "
 "ftp or file://)."
 msgstr ""
+"Permette di prelevare e applicare uno o più file debconf di "
+"preconfigurazione da applicare al database debconf. Si noti che gli URL "
+"devono essere scaricabili da wget (http, ftp o file://)."
 
 #. type: Plain text
 #: en/live-config.7:41 en/live-config.7:81
@@ -210,9 +213,9 @@ msgid ""
 "live/image/I<FILE>, or with file:///I<FILE> if it is in the root filesystem "
 "of the live system itself."
 msgstr ""
-"Se il file è posizionato sul supporto live può essere prelevato con file:///"
-"live/image/I<FILE> o con file:///I<FILE> se è nella radice del filesystem "
-"del sistema live stesso."
+"Se il file è posizionato sul supporto live, questo  può essere prelevato con "
+"file:///live/image/I<FILE>, o con file:///I<FILE> se è nella radice del "
+"filesystem del sistema live stesso."
 
 #. type: Plain text
 #: en/live-config.7:43
@@ -220,6 +223,9 @@ msgid ""
 "All preseed files in /lib/live/preseed/ in the root filesystem of the live "
 "system can be automatically be enabled with the keyword 'filesystem'."
 msgstr ""
+"Tutti i file di preconfigurazione in /lib/live/preseed/ nella radice del "
+"sistema live possono essere abilitati automaticamente con la parola chiave "
+"\"filesystem\"."
 
 #. type: Plain text
 #: en/live-config.7:45
@@ -227,6 +233,8 @@ msgid ""
 "All preseed files in /live/preseed/ of the live medium can be automatically "
 "be enabled with the keyword 'medium'."
 msgstr ""
+"Tutti i file di preconfigurazione in /live/preseed/ sul supporto live "
+"possono essere abilitati automaticamente con la parola chiave \"medium\"."
 
 #. type: Plain text
 #: en/live-config.7:47
@@ -234,6 +242,9 @@ msgid ""
 "If several mechanisms are combined, then filesystem preseed files are "
 "applied first, then medium preseed files, and last the network preseed files."
 msgstr ""
+"Se vengono congiunti diversi meccanismi i file di preconfigurazione di tipo "
+"filesystem vengono applicati per primi, seguiti dalla tipologia medium e "
+"quindi da quelli network."
 
 #. type: IP
 #: en/live-config.7:47
@@ -266,7 +277,7 @@ msgstr ""
 #: en/live-config.7:51
 #, no-wrap
 msgid "B<live-config.user-default-groups>=I<GROUP1>,I<GROUP2> ... I<GROUPn> | B<user-default-groups>=I<GROUP1>,I<GROUP2> ... I<GROUPn>"
-msgstr "B<live-config.user-default-groups>=I<GROUPO1>,I<GROUPO2> ... I<GROUPOn> | B<user-default-groups>=I<GROUPO1>,I<GROUPO2> ... I<GROUPOn>"
+msgstr "B<live-config.user-default-groups>=I<GRUPPO>,I<GRUPPO2> ... I<GRUPPOn> | B<user-default-groups>=I<GRUPPO1>,I<GRUPPO2> ... I<GRUPPOn>"
 
 #. type: Plain text
 #: en/live-config.7:53
@@ -298,7 +309,7 @@ msgstr ""
 #: en/live-config.7:55
 #, no-wrap
 msgid "B<live-config.locales>=I<LOCALE1>,I<LOCALE2> ... I<LOCALEn> | B<locales>=I<LOCALE1>,I<LOCALE2> ... I<LOCALEn>"
-msgstr "B<live-config.locales>=I<LOCALE1>,I<LOCALE2> ... I<LOCALEn> | B<locales>=I<LOCALE1>,I<LOCALE2> ... I<LOCALEn>"
+msgstr "B<live-config.locales>=I<LOCALIZZAZIONE1>,I<LOCALIZZAZIONE2> ... I<LOCALIZZAZIONEn> | B<locales>=I<LOCALIZZAZIONE1>,I<LOCALIZZAZIONE2> ... I<LOCALIZZAZIONEn>"
 
 #. type: Plain text
 #: en/live-config.7:57
@@ -338,8 +349,8 @@ msgid ""
 "Allows to change if the system is assuming that the hardware clock is set to "
 "UTC or not. The default is 'yes'."
 msgstr ""
-"Permette di scegliere se il sistema supponga che l'orologio hardware sia "
-"impostato o meno su UTC, il valore predefinito è \"yes\"."
+"Permette di scegliere se il sistema debba supporre che l'orologio hardware "
+"sia impostato o meno su UTC, il valore predefinito è \"yes\"."
 
 #. type: IP
 #: en/live-config.7:61
@@ -358,7 +369,7 @@ msgstr ""
 #: en/live-config.7:63
 #, no-wrap
 msgid "B<live-config.keyboard-layouts>=I<KEYBOARD_LAYOUT1>,I<KEYBOARD_LAYOUT2> ... I<KEYBOARD_LAYOUTn> | B<keyboard-layouts>=I<KEYBOARD_LAYOUT1>,I<KEYBOARD_LAYOUT2> ... I<KEYBOARD_LAYOUTn>"
-msgstr "B<live-config.keyboard-layouts>=I<LAYOUT1_TASTIERA>,I<LAYOUT2_TASTIERA> ... I<LAYOUTn_TASTIERA> | B<keyboard-layouts>=I<LAYOUT1_TASTIERA>,I<LAYOUT2_TASTIERA> ... I<LAYOUTn_TASTIERA>"
+msgstr "B<live-config.keyboard-layouts>=I<LAYOUT_TASTIERA1>,I<LAYOUT_TASTIERA2> ... I<LAYOUT_TASTIERAn> | B<keyboard-layouts>=I<LAYOUT_TASTIERA1>,I<LAYOUT_TASTIERA2> ... I<LAYOUT_TASTIERAn>"
 
 #. type: Plain text
 #: en/live-config.7:65
@@ -368,22 +379,17 @@ msgid ""
 "no default value set."
 msgstr ""
 "Permette di modificare i layout della tastiera. Se ne viene specificato più "
-"di uno, gli strumenti dell'ambiente desktop consentiranno di cambiarlo sotto "
+"di uno gli strumenti dell'ambiente desktop consentiranno di cambiarlo in "
 "X11. Non è impostato alcun valore predefinito."
 
 #. type: IP
 #: en/live-config.7:65
 #, no-wrap
 msgid "B<live-config.keyboard-variants>=I<KEYBOARD_VARIANT1>,I<KEYBOARD_VARIANT2> ... I<KEYBOARD_VARIANTn> | B<keyboard-variants>=I<KEYBOARD_VARIANT1>,I<KEYBOARD_VARIANT2> ... I<KEYBOARD_VARIANTn>"
-msgstr "B<live-config.keyboard-variants>=I<KEYBOARD_VARIANT1>,I<KEYBOARD_VARIANT2> ... I<KEYBOARD_VARIANTn> | B<keyboard-variants>=I<KEYBOARD_VARIANT1>,I<KEYBOARD_VARIANT2> ... I<KEYBOARD_VARIANTn>"
+msgstr "B<live-config.keyboard-variants>=I<SCHEMA_TASTIERA1>,I<SCHEMA_TASTIERA2> ... I<SCHEMA_TASTIERAn> | B<keyboard-variants>=I<SCHEMA_TASTIERA1>,I<SCHEMA_TASTIERA2> ... I<SCHEMA_TASTIERAn>"
 
 #. type: Plain text
 #: en/live-config.7:67
-#, fuzzy
-#| msgid ""
-#| "Allows to change the keyboard layouts. If more than one is specified, the "
-#| "tools of the desktop environment will allow to switch it under X11. There "
-#| "is no default value set."
 msgid ""
 "Allows to change the keyboard variants. If more than one is specified, the "
 "same number of values as keyboard-layouts values should be specified as they "
@@ -391,9 +397,12 @@ msgid ""
 "The tools of the desktop environment will allow to switch between each "
 "layout and variant pair under X11. There is no default value set."
 msgstr ""
-"Permette di modificare i layout della tastiera. Se ne viene specificato più "
-"di uno, gli strumenti dell'ambiente desktop consentiranno di cambiarlo sotto "
-"X11. Non è impostato alcun valore predefinito."
+"Permette di modificare gli schemi della tastiera (es. qwerty, qWERTZ, "
+"AZERTY, ecc.). Se ne viene specificato più di uno è necessario indicare lo "
+"stesso numero di valori dei layout della tastiera che verranno abbinati ad "
+"uno schema nell'ordine definito. Sono ammessi valori vuoti. Gli strumenti "
+"dell'ambiente desktop consentiranno di passare da uno all'altro in X11. Non "
+"è impostato alcun valore predefinito."
 
 #. type: IP
 #: en/live-config.7:67
@@ -412,7 +421,7 @@ msgstr ""
 #: en/live-config.7:69
 #, no-wrap
 msgid "B<live-config.sysv-rc>=I<SERVICE1>,I<SERVICE2> ... I<SERVICEn> | B<sysv-rc>=I<SERVICE1>,I<SERVICE2> ... I<SERVICEn>"
-msgstr "B<live-config.sysv-rc>=I<SERVICE1>,I<SERVICE2> ... I<SERVICEn> | B<sysv-rc>=I<SERVICE1>,I<SERVICE2> ... I<SERVICEn>"
+msgstr "B<live-config.sysv-rc>=I<SERVIZIO1>,I<SERVIZIO2> ... I<SERVIZIOn> | B<sysv-rc>=I<SERVIZIO1>,I<SERVIZIO2> ... I<SERVIZIOn>"
 
 #. type: Plain text
 #: en/live-config.7:71
@@ -434,7 +443,7 @@ msgstr "Permette di impostare x-session-manager tramite update-alternatives."
 #: en/live-config.7:73
 #, no-wrap
 msgid "B<live-config.xorg-driver>=I<XORG_DRIVER> | B<xorg-driver>=I<XORG_DRIVER>"
-msgstr "B<live-config.xorg-driver>=I<DRIVER_PER_XORG> | B<xorg-driver>=I<DRIVER_PER_XORG>"
+msgstr "B<live-config.xorg-driver>=I<DRIVER_XORG> | B<xorg-driver>=I<DRIVER_XORG>"
 
 #. type: Plain text
 #: en/live-config.7:75
@@ -447,7 +456,7 @@ msgstr ""
 #: en/live-config.7:75
 #, no-wrap
 msgid "B<live-config.xorg-resolution>=I<XORG_RESOLUTION> | B<xorg-resolution>=I<XORG_RESOLUTION>"
-msgstr "B<live-config.xorg-resolution>=I<RISOLUZIONE_PER_XORG> | B<xorg-resolution>=I<RISOLUZIONE_PER_XORG>"
+msgstr "B<live-config.xorg-resolution>=I<RISOLUZIONE_XORG> | B<xorg-resolution>=I<RISOLUZIONE_XORG>"
 
 #. type: Plain text
 #: en/live-config.7:77
@@ -507,8 +516,9 @@ msgid ""
 "If several mechanisms are combined, then filesystem hooks are executed "
 "first, then medium hooks, and last the network hooks."
 msgstr ""
-"Se vengono congiunti svariati meccanismi, gli hook del filesystem saranno "
-"eseguiti per primi, seguiti dai medium, e infine gli hook network."
+"Se vengono congiunti svariati meccanismi, gli hook di tipo filesystem "
+"vengono applicati per primi, seguiti dalla tipologia medium e quindi da "
+"quelli network."
 
 #. type: SS
 #: en/live-config.7:88
@@ -623,8 +633,8 @@ msgstr ""
 "B<live-config> può essere configurato (ma non attivato) attraverso file di "
 "configurazione. Tranne le scorciatoie che sono configurabili con un "
 "parametro di avvio, tutto può essere configurato in alternativa tramite uno "
-"o più file. Se vengono usati questi file, è ancora richiesto il parametro "
-"\"boot=live\" per attivare B<live-config>."
+"o più file. Se vengono usati questi file, il parametro \"boot=live\" è "
+"comunque richiesto per attivare B<live-config>."
 
 #. type: Plain text
 #: en/live-config.7:110
@@ -649,8 +659,8 @@ msgid ""
 "'vendor' or 'project' is replaced with the actual name, resulting in a "
 "filename like 'debian-eeepc.conf')."
 msgstr ""
-"Anche se i file di configurazione messi nelle directory conf.d non "
-"richiedono un nome o suffisso particolari, per coerenza è suggerito di usare "
+"Sebbene i file di configurazione messi nelle directory conf.d non richiedano "
+"un nome o un suffisso particolari, per coerenza è suggerito di usare "
 "\"vendor.conf\"o \"project.conf\" come schema di denominazione (laddove "
 "\"vendor\" o \"project\"è sostituito con un nome reale, risultando in un "
 "nome di file come \"debian-eeepc.conf\")."
@@ -771,7 +781,7 @@ msgstr ""
 #: en/live-config.7:129
 #, no-wrap
 msgid "B<LIVE_LOCALES>=I<LOCALE1>,I<LOCALE2> ... I<LOCALEn>"
-msgstr "B<LIVE_LOCALES>=I<LOCALE1>,I<LOCALE2> ... I<LOCALEn>"
+msgstr "B<LIVE_LOCALES>=I<LOCALIZZAZIONE1>,I<LOCALIZZAZIONE2> ... I<LOCALIZZAZIONEn>"
 
 #. type: Plain text
 #: en/live-config.7:131
@@ -779,8 +789,8 @@ msgid ""
 "This variable equals the 'B<live-config.locales>=I<LOCALE1>,I<LOCALE2> ... "
 "I<LOCALEn>' parameter."
 msgstr ""
-"Questa variabile equivale al parametro \"B<live-config.locales>=I<LOCALE1>,"
-"I<LOCALE2> ... I<LOCALEn>\"."
+"Questa variabile equivale al parametro \"B<live-config."
+"locales>=I<LOCALIZZAZIONE1>,I<LOCALIZZAZIONE2> ... I<LOCALIZZAZIONEn>\"."
 
 #. type: IP
 #: en/live-config.7:131
@@ -827,7 +837,7 @@ msgstr ""
 #: en/live-config.7:137
 #, no-wrap
 msgid "B<LIVE_KEYBOARD_LAYOUTS>=I<KEYBOARD_LAYOUT1>,I<KEYBOARD_LAYOUT2> ... I<KEYBOARD_LAYOUTn>"
-msgstr "B<LIVE_KEYBOARD_LAYOUTS>=I<LAYOUT1_TASTIERA>,I<LAYOUT2_TASTIERA> ... I<LAYOUTn_TASTIERA>"
+msgstr "B<LIVE_KEYBOARD_LAYOUTS>=I<LAYOUT_TASTIERA1>,I<LAYOUT_TASTIERA2> ... I<LAYOUT_TASTIERAn>"
 
 #. type: Plain text
 #: en/live-config.7:139
@@ -837,28 +847,23 @@ msgid ""
 "parameter."
 msgstr ""
 "Questa variabile equivale al parametro \"B<live-config.keyboard-"
-"layouts>=I<LAYOUT1_TASTIERA>,I<LAYOUT2_TASTIERA> ... I<LAYOUTn_TASTIERA>\"."
+"layouts>=I<LAYOUT_TASTIERA1>,I<LAYOUT_TASTIERA2> ... I<LAYOUT_TASTIERAn>\"."
 
 #. type: IP
 #: en/live-config.7:139
 #, no-wrap
 msgid "B<LIVE_KEYBOARD_VARIANTS>=I<KEYBOARD_VARIANT1>,I<KEYBOARD_VARIANT2> ... I<KEYBOARD_VARIANTn>"
-msgstr "B<LIVE_KEYBOARD_VARIANTS>=I<KEYBOARD_VARIANT1>,I<KEYBOARD_VARIANT2> ... I<KEYBOARD_VARIANTn>"
+msgstr "B<LIVE_KEYBOARD_VARIANTS>=I<SCHEMA_TASTIERA1>,I<SCHEMA_TASTIERA2> ... I<SCHEMA_TASTIERAn>"
 
 #. type: Plain text
 #: en/live-config.7:141
-#, fuzzy
-#| msgid ""
-#| "This variable equals the 'B<live-config.keyboard-"
-#| "layouts>=I<KEYBOARD_LAYOUT1>,I<KEYBOARD_LAYOUT2> ... I<KEYBOARD_LAYOUTn>' "
-#| "parameter."
 msgid ""
 "This variable equals the 'B<live-config.keyboard-"
 "variants>=I<KEYBOARD_VARIANT1>,I<KEYBOARD_VARIANT2> ... "
 "I<KEYBOARD_VARIANTn>' parameter."
 msgstr ""
 "Questa variabile equivale al parametro \"B<live-config.keyboard-"
-"layouts>=I<LAYOUT1_TASTIERA>,I<LAYOUT2_TASTIERA> ... I<LAYOUTn_TASTIERA>\"."
+"layouts>=I<SCHEMA_TASTIERA1>,I<SCHEMA_TASTIERA2> ... I<SCHEMA_TASTIERAn>\"."
 
 #. type: IP
 #: en/live-config.7:141
@@ -879,7 +884,7 @@ msgstr ""
 #: en/live-config.7:143
 #, no-wrap
 msgid "B<LIVE_SYSV_RC>=I<SERVICE1>,I<SERVICE2> ... I<SERVICEn>"
-msgstr "B<LIVE_SYSV_RC>=I<SERVICE1>,I<SERVICE2> ... I<SERVICEn>"
+msgstr "B<LIVE_SYSV_RC>=I<SERVIZIO1>,I<SERVIZIO2> ... I<SERVIZIOn>"
 
 #. type: Plain text
 #: en/live-config.7:145
@@ -887,14 +892,14 @@ msgid ""
 "This variable equals the 'B<live-config.sysv-rc>=I<SERVICE1>,I<SERVICE2> ... "
 "I<SERVICEn>' parameter."
 msgstr ""
-"Questa variabile equivale al parametro \"B<live-config.sysv-rc>=I<SERVICE1>,"
-"I<SERVICE2> ... I<SERVICEn>\"."
+"Questa variabile equivale al parametro \"B<live-config.sysv-rc>=I<SERVIZIO1>,"
+"I<SERVIZIO2> ... I<SERVIZIOn>\"."
 
 #. type: IP
 #: en/live-config.7:145
 #, no-wrap
 msgid "B<LIVE_XORG_DRIVER>=I<XORG_DRIVER>"
-msgstr "B<LIVE_XORG_DRIVER>=I<DRIVER_PER_XORG>"
+msgstr "B<LIVE_XORG_DRIVER>=I<DRIVER_XORG>"
 
 #. type: Plain text
 #: en/live-config.7:147
@@ -903,13 +908,13 @@ msgid ""
 "parameter."
 msgstr ""
 "Questa variabile equivale al parametro \"B<live-config.xorg-"
-"driver>=I<DRIVER_PER_XORG>\"."
+"driver>=I<DRIVER_XORG>\"."
 
 #. type: IP
 #: en/live-config.7:147
 #, no-wrap
 msgid "B<LIVE_XORG_RESOLUTION>=I<XORG_RESOLUTION>"
-msgstr "B<LIVE_XORG_RESOLUTION>=I<RISOLUZIONE_PER_XORG>"
+msgstr "B<LIVE_XORG_RESOLUTION>=I<RISOLUZIONE_XORG>"
 
 #. type: Plain text
 #: en/live-config.7:149
@@ -918,7 +923,7 @@ msgid ""
 "parameter."
 msgstr ""
 "Questa variabile equivale al parametro \"B<live-config.xorg-"
-"resolution>=I<RISOLUZIONE_PER_XORG>\"."
+"resolution>=I<RISOLUZIONE_XORG>\"."
 
 #. type: IP
 #: en/live-config.7:149
@@ -997,8 +1002,8 @@ msgstr ""
 "non richieda di fornire un pacchetto di B<live-config> modificato "
 "localmente. Tuttavia la stessa cosa si può ottenere disabilitando i "
 "rispettivi script tramite il meccanismo di live-noconfig, come spiegato "
-"sopra. Per evitare di dover specificare ogni volta con parametri di boot gli "
-"script da disabilitare, si usi un file di configurazione come mostrato in "
+"prima. Per evitare di dover specificare ogni volta con parametri di boot gli "
+"script da disabilitare, usare un file di configurazione come mostrato in "
 "precedenza."
 
 #. type: Plain text
@@ -1037,6 +1042,8 @@ msgid ""
 "allows to apply arbitrary preseed files placed on the live media or an http/"
 "ftp server."
 msgstr ""
+"permette di applicare file di preconfigurazione arbitrai situati sul "
+"supporto live o su un server http/ftp."
 
 #. type: IP
 #: en/live-config.7:170
@@ -1323,7 +1330,7 @@ msgstr "B<module-init-tools>"
 #. type: Plain text
 #: en/live-config.7:222
 msgid "automatically load some modules on some architectures."
-msgstr "carica automaticamente alcuni moduli su certe architetture."
+msgstr "carica automaticamente alcuni moduli per certe architetture."
 
 #. type: IP
 #: en/live-config.7:222
@@ -1378,7 +1385,7 @@ msgstr "B<util-linux>"
 #. type: Plain text
 #: en/live-config.7:232
 msgid "disables util-linux' hwclock."
-msgstr "disabilita hwclock."
+msgstr "disabilita hwclock (parte di util-linux)."
 
 #. type: IP
 #: en/live-config.7:234
@@ -1541,8 +1548,8 @@ msgid ""
 "E<lt>I<http://live.debian.net/manual/>E<gt>."
 msgstr ""
 "Si possono trovare ulteriori informazioni su live-config e il progetto "
-"Debian Live alla pagina E<lt>I<http://live.debian.net/>E<gt> e nel manuale "
-"all'indirizzo E<lt>I<http://live.debian.net/manual/>E<gt>."
+"Debian Live sulla homepage E<lt>I<http://live.debian.net/>E<gt> e nel "
+"manuale all'indirizzo E<lt>I<http://live.debian.net/manual/>E<gt>."
 
 #. type: SH
 #: en/live-config.7:268
@@ -1559,7 +1566,7 @@ msgid ""
 "live@lists.debian.org>E<gt>."
 msgstr ""
 "I bug possono essere segnalati presentando un bugreport per il pacchetto "
-"live-config nel Debian Bug Tracking System all'indirizzo E<lt>I<http://bugs."
+"live-config sul Debian Bug Tracking System all'indirizzo E<lt>I<http://bugs."
 "debian.org/>E<gt> o inviando un'email alla mailing list di Debian Live "
 "E<lt>I<debian-live@lists.debian.org>E<gt>."
 
