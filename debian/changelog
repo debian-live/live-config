@@ -1,3 +1,13 @@
+live-config (3.0.0-1) unstable; urgency=low
+
+  * Adding updated Italian manpage translation from skizzhg
+    <skizzhg@gmx.com>.
+  * Shortening filename for xorg.conf.d file.
+  * Ensure that /etc/X11/xorg.conf.d exists before writing the
+    configuration file.
+
+ -- Daniel Baumann <daniel@debian.org>  Fri, 03 Aug 2012 18:29:55 +0200
+
 live-config (3.0~b2-1) unstable; urgency=low
 
   [ Daniel Baumann ]
