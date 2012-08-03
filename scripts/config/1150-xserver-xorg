@@ -93,6 +93,8 @@ Configure_xserver_xorg ()
 	if [ -n "${LIVE_XORG_DRIVER}" ]
 	then
 
+		mkdir -p /etc/X11/xorg.conf.d
+
 cat > /etc/X11/xorg.conf.d/99-live.conf << EOF
 Section "Device"
 	Identifier	"Default screen"
