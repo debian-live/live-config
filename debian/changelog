@@ -1,3 +1,9 @@
+live-config (3.0.1-1) unstable; urgency=low
+
+  * Correcting typo in keyboard-configuration recommends.
+
+ -- Daniel Baumann <daniel@debian.org>  Fri, 10 Aug 2012 22:36:51 +0200
+
 live-config (3.0.0-1) unstable; urgency=low
 
   * Adding updated Italian manpage translation from skizzhg
