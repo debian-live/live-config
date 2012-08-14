@@ -38,7 +38,8 @@ Configure_upstart ()
 	do
 		_TTY="$(basename ${_FILE} .conf)"
 
-		if [ -e /sbin/mingetty ] || grep -qs '^exec.*mingetty' "${_FILE}"
+		if [ -e /sbin/mingetty ] || \
+		   grep -qs '^exec.*mingetty' "${_FILE}"
 		then
 			# mingetty has autologin support
 			sed -i -e 's|^\(exec.*getty\) *\(--autologin *[^ ]* *\)*.*$|exec /sbin/mingetty --autologin '"${LIVE_USERNAME} ${_TTY}|g" "${_FILE}"
