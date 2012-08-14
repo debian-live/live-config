@@ -187,10 +187,10 @@ sont utilisés, le paramètre 'boot=live' est toujours requis pour activer
 \fBlive\-config\fP.
 .PP
 Les fichiers de configuration peuvent être placés soit dans la racine du
-système de fichiers (/etc/live/config.conf, /etc/live/config.d/*.conf), soit
-sur le média live (live/config.conf, live/config.d/*.conf). Si ces deux
-endroits sont utilisés pour une même option, ceux placés dans le média live
-ont la préséance sur ceux placés dans la racine du système.
+système de fichiers (/etc/live/config.conf, /etc/live/config/*), soit sur le
+média live (live/config.conf, live/config/*). Si ces deux endroits sont
+utilisés pour une même option, ceux placés dans le média live ont la
+préséance sur ceux placés dans la racine du système.
 .PP
 Bien que les fichiers de configuration placés dans les répertoires conf.d ne
 requièrent pas de nom ou suffixe particulier, il est suggéré, par souci de
@@ -369,9 +369,9 @@ live, ou sur un serveur http/ftp.
 
 .SH FICHIERS
 .IP \fB/etc/live/config.conf\fP 4
-.IP \fB/etc/live/config.d/*.conf\fP 4
+.IP \fB/etc/live/config/*\fP 4
 .IP \fBlive/config.conf\fP 4
-.IP \fBlive/config.d/*.conf\fP 4
+.IP \fBlive/config/*\fP 4
 .IP \fB/lib/live/config.sh\fP 4
 .IP \fB/lib/live/config/\fP 4
 .IP \fB/var/lib/live/config/\fP 4
