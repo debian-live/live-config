@@ -78,7 +78,7 @@ EOF
 	debconf-set-selections < /debconf.live
 	rm -f /debconf.live
 
-	# FIXME
+	# Workaround for bug in shadow
 	set +e
 	touch /etc/passwd-
 	chmod 0600 /etc/passwd-
