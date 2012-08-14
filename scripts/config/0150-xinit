@@ -32,7 +32,7 @@ Xinit ()
 
 Configure_xinit ()
 {
-	# Checking if if package is already configured differently
+	# Checking if package is already configured differently
 	if [ -e /etc/profile.d/zz-live.sh ]
 	then
 		return

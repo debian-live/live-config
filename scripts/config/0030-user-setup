@@ -42,7 +42,7 @@ User_setup ()
 
 Configure_user_setup ()
 {
-	# Checking if if package is already configured differently
+	# Checking if package is already configured differently
 	if grep -q "^${LIVE_USERNAME}:" /etc/passwd
 	then
 		return

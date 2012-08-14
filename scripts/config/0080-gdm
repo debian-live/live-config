@@ -42,7 +42,7 @@ Gdm ()
 
 Configure_gdm ()
 {
-	# Checking if if package is already configured differently
+	# Checking if package is already configured differently
 	if grep -qs AutomaticLoginEnable /etc/gdm/gdm.conf
 	then
 		return
