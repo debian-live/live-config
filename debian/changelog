@@ -1,3 +1,15 @@
+live-config (3.0.3-1) unstable; urgency=low
+
+  * Correcting some spelling typos in script comments.
+  * Using consistent line breaks in alternative conditionals.
+  * Removing note about only supporting kde in kde-services script,
+    there's no older kde version supported anyway.
+  * Don't show flags in KDE (kxkbrc) too as we already do with GNOME by
+    default for better cultural correctness.
+  * Improving comment about shadow workaround in user-setup script.
+
+ -- Daniel Baumann <daniel@debian.org>  Tue, 14 Aug 2012 12:55:07 +0200
+
 live-config (3.0.2-1) unstable; urgency=low
 
   * Removing live-debconfig leftovers.
