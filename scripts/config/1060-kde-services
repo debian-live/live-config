@@ -11,7 +11,6 @@
 Kde_services ()
 {
 	# Checking if package is installed or already configured
-	# we're only checking for KDE4 here (FIXME).
 	if [ ! -e /usr/share/kde4 ] || \
 	   [ -e /var/lib/live/config/kde-services ]
 	then
