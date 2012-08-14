@@ -42,7 +42,7 @@ Slim ()
 
 Configure_slim ()
 {
-	# Checking if if package is already configured differently
+	# Checking if package is already configured differently
 	if grep -qs "^auto_login" /etc/slim.conf
 	then
 		return

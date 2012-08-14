@@ -11,7 +11,6 @@
 Kde_services ()
 {
 	# Checking if package is installed or already configured
-	# we're only checking for KDE4 here (FIXME).
 	if [ ! -e /usr/share/kde4 ] || \
 	   [ -e /var/lib/live/config/kde-services ]
 	then
@@ -51,7 +50,7 @@ cat > "/home/${LIVE_USERNAME}/.kde/share/config/kxkbrc" << EOF
 DisplayNames=${LIVE_KEYBOARD_LAYOUTS}
 IndicatorOnly=false
 LayoutList=${LIVE_KEYBOARD_LAYOUTS}
-ShowFlag=true
+ShowFlag=false
 SwitchMode=Global
 Use=true
 EOF

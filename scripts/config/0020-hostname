@@ -35,7 +35,8 @@ Hostname ()
 Configure_hostname ()
 {
 	# Change hostname only if it is not set
-	if [ ! -e /etc/hostname ] || grep -qs localhost\.localdomain /etc/hostname
+	if [ ! -e /etc/hostname ] || \
+	   grep -qs localhost\.localdomain /etc/hostname
 	then
 		echo "${LIVE_HOSTNAME}" > /etc/hostname
 	else

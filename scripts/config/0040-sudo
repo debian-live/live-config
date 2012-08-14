@@ -34,7 +34,7 @@ Sudo ()
 
 Configure_sudo ()
 {
-	# Checking if if package is already configured differently
+	# Checking if package is already configured differently
 	if grep -qs "^${LIVE_USERNAME}" /etc/sudoers.d/live
 	then
 		return

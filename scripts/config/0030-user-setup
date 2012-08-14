@@ -42,7 +42,7 @@ User_setup ()
 
 Configure_user_setup ()
 {
-	# Checking if if package is already configured differently
+	# Checking if package is already configured differently
 	if grep -q "^${LIVE_USERNAME}:" /etc/passwd
 	then
 		return
@@ -78,7 +78,7 @@ EOF
 	debconf-set-selections < /debconf.live
 	rm -f /debconf.live
 
-	# FIXME
+	# Workaround for bug in shadow
 	set +e
 	touch /etc/passwd-
 	chmod 0600 /etc/passwd-
