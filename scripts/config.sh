@@ -168,8 +168,8 @@ Main ()
 	trap 'Trap' EXIT HUP INT QUIT TERM
 
 	# Reading configuration file from filesystem and live-media
-	for _FILE in /etc/live/config.conf /etc/live/config.d/*.conf \
-		     /live/image/live/config.conf /live/image/live/config.d/*.conf
+	for _FILE in /etc/live/config.conf /etc/live/config/* \
+		     /live/image/live/config.conf /live/image/live/config/*
 	do
 		if [ -e "${_FILE}" ]
 		then

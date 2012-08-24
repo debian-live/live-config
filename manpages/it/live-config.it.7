@@ -11,7 +11,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 14.08.2012 3.0.3\-1 "Progetto Debian Live"
+.TH LIVE\-CONFIG 7 24.08.2012 3.0.4\-1 "Progetto Debian Live"
 
 .SH NOME
 \fBlive\-config\fP \- Script di configurazione del sistema
@@ -180,9 +180,9 @@ o più file. Se vengono usati questi file, il parametro "boot=live" è
 comunque richiesto per attivare \fBlive\-config\fP.
 .PP
 I file di configurazione sono collocabili sia nello stesso filesystem di
-root (/etc/live/config.conf, /etc/live/config.d/*.conf), sia nel supporto
-live (live/config.conf, live/config.d/*.conf). Se per una certa opzione si
-usano entrambe le destinazioni, avrà la precedenza quello del supporto live.
+root (/etc/live/config.conf, /etc/live/config/*), sia nel supporto live
+(live/config.conf, live/config/*). Se per una certa opzione si usano
+entrambe le destinazioni, avrà la precedenza quello del supporto live.
 .PP
 Sebbene i file di configurazione messi nelle directory conf.d non richiedano
 un nome o un suffisso particolari, per coerenza è suggerito di usare
@@ -358,9 +358,9 @@ live o su un server http/ftp.
 
 .SH FILE
 .IP \fB/etc/live/config.conf\fP 4
-.IP \fB/etc/live/config.d/*.conf\fP 4
+.IP \fB/etc/live/config/*\fP 4
 .IP \fBlive/config.conf\fP 4
-.IP \fBlive/config.d/*.conf\fP 4
+.IP \fBlive/config/*\fP 4
 .IP \fB/lib/live/config.sh\fP 4
 .IP \fB/lib/live/config/\fP 4
 .IP \fB/var/lib/live/config/\fP 4
