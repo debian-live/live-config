@@ -1,3 +1,14 @@
+live-config (3.0.4-1) unstable; urgency=low
+
+  * Using /etc/live/config/* instead of /etc/live/config.d/*.conf and
+    /live/image/live/config/* instead of
+    /live/image/live/config.d/*.conf for consistency reasons.
+  * Removing leftover from live-debconfig in postrm.
+  * Recreating /etc/live/config in postinst.
+  * Removing /etc/live/config if empty on purge in postrm.
+
+ -- Daniel Baumann <daniel@debian.org>  Fri, 24 Aug 2012 11:46:09 +0200
+
 live-config (3.0.3-1) unstable; urgency=low
 
   * Correcting some spelling typos in script comments.
