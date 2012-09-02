@@ -44,6 +44,10 @@ case "${_DISTRIBUTION}" in
 			squeeze)
 				LIVE_USER_DEFAULT_GROUPS="audio cdrom dip floppy video plugdev netdev powerdev scanner bluetooth"
 				;;
+
+			*)
+				NOSCRIPTS="${NOSCRIPTS} gdm"
+				;;
 		esac
 		;;
 
@@ -58,6 +62,10 @@ case "${_DISTRIBUTION}" in
 		case "${_RELEASE}" in
 			artax|artax-backports)
 				LIVE_USER_DEFAULT_GROUPS="audio cdrom dip floppy video plugdev netdev powerdev scanner bluetooth sudo"
+				;;
+
+			*)
+				NOSCRIPTS="${NOSCRIPTS} gdm"
 				;;
 		esac
 		;;
