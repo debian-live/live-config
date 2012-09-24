@@ -44,7 +44,13 @@ case "${_DISTRIBUTION}" in
 			squeeze)
 				LIVE_USER_DEFAULT_GROUPS="audio cdrom dip floppy video plugdev netdev powerdev scanner bluetooth"
 				;;
+
+			*)
+				NOSCRIPTS="${NOSCRIPTS} gdm"
+				;;
 		esac
+
+		PROC_OPTIONS="onodev,noexec,nosuid"
 		;;
 
 	progress)
@@ -59,7 +65,13 @@ case "${_DISTRIBUTION}" in
 			artax|artax-backports)
 				LIVE_USER_DEFAULT_GROUPS="audio cdrom dip floppy video plugdev netdev powerdev scanner bluetooth sudo"
 				;;
+
+			*)
+				NOSCRIPTS="${NOSCRIPTS} gdm"
+				;;
 		esac
+
+		PROC_OPTIONS="onodev,noexec,nosuid,hidepid=2"
 		;;
 
 	ubuntu)
@@ -69,6 +81,8 @@ case "${_DISTRIBUTION}" in
 		LIVE_USERNAME="user"
 		LIVE_USER_FULLNAME="Ubuntu Live user"
 		LIVE_USER_DEFAULT_GROUPS="adm cdrom dip lpadmin plugdev sambashare"
+
+		PROC_OPTIONS="onodev,noexec,nosuid"
 		;;
 esac
 
@@ -87,4 +101,5 @@ echo  "Setting distribution specific defaults..."
 sed -i  -e "s|^LIVE_HOSTNAME=.*$|LIVE_HOSTNAME=\"${LIVE_HOSTNAME}\"|" \
 	-e "s|^LIVE_USERNAME=.*$|LIVE_USERNAME=\"${LIVE_USERNAME}\"|" \
 	-e "s|^LIVE_USER_FULLNAME=.*$|LIVE_USER_FULLNAME=\"${LIVE_USER_FULLNAME}\"|" \
+	-e "s|^PROC_OPTIONS=.*$|PROC_OPTIONS=\"${PROC_OPTIONS}\"|" \
 "$(dirname ${_DIRECTORY})/config.sh"
