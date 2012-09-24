@@ -32,6 +32,8 @@ DEBIAN_FRONTEND="noninteractive"
 DEBIAN_PRIORITY="critical"
 DEBCONF_NOWARNINGS="yes"
 
+PROC_OPTIONS="onodev,noexec,nosuid"
+
 Cmdline ()
 {
 	for _PARAMETER in ${_CMDLINE}
@@ -154,7 +156,7 @@ Main ()
 {
 	if [ ! -e /proc/version ]
 	then
-		mount -n -t proc -onodev,noexec,nosuid -odefaults proc /proc
+		mount -n -t proc -o${PROC_OPTIONS} -odefaults proc /proc
 	fi
 
 	_CMDLINE="$(cat /proc/cmdline)"
