@@ -1,3 +1,11 @@
+live-config (3.0.5-1) unstable; urgency=low
+
+  * Skipping gdm script inclusion on newer debian and progress releases
+    than squeeze.
+  * Mounting /proc initally on progress with hidepid option.
+
+ -- Daniel Baumann <daniel@debian.org>  Mon, 24 Sep 2012 09:58:10 +0200
+
 live-config (3.0.4-1) unstable; urgency=low
 
   * Using /etc/live/config/* instead of /etc/live/config.d/*.conf and
