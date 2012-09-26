@@ -162,6 +162,9 @@ do
 	mount -o remount,ro ${_MOUNT} > /dev/null 2>&1
 done
 
+# Flush filesystem buffers
+sync
+
 # Check if we need to eject the drive
 if grep -qs "cdrom-detect/eject=false" /proc/cmdline || \
    grep -qs "noeject" /proc/cmdline || \
