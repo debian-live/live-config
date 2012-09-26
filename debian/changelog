@@ -1,3 +1,12 @@
+live-config (3.0.6-1) unstable; urgency=low
+
+  * Synchronise gdm and gdm3 scripts.
+  * Remounting any persistence devices read-only on shutdown (Closes:
+    #688784).
+  * Flushing filesystem buffers on shutdown.
+
+ -- Daniel Baumann <daniel@debian.org>  Wed, 26 Sep 2012 14:26:00 +0200
+
 live-config (3.0.5-1) unstable; urgency=low
 
   * Skipping gdm script inclusion on newer debian and progress releases
