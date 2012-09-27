@@ -1,3 +1,12 @@
+live-config (3.0.7-1) unstable; urgency=low
+
+  * Moving remaining stuff from /live to /lib/live to avoid further
+    namespace pollution.
+  * Moving hooks and preseed inclusion to their final place within the
+    filesystems.
+
+ -- Daniel Baumann <daniel@debian.org>  Thu, 27 Sep 2012 12:57:32 +0200
+
 live-config (3.0.6-1) unstable; urgency=low
 
   * Synchronise gdm and gdm3 scripts.
