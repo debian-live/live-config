@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config 3.0.6-1\n"
-"POT-Creation-Date: 2012-09-27 11:41+0300\n"
+"POT-Creation-Date: 2012-09-27 11:46+0300\n"
 "PO-Revision-Date: 2012-08-03 17:13+0200\n"
 "Last-Translator: skizzhg <skizzhg@gmx.com>\n"
 "Language-Team: none\n"
@@ -220,20 +220,20 @@ msgstr ""
 #. type: Plain text
 #: en/live-config.7:43
 msgid ""
-"All preseed files in /lib/live/preseed/ in the root filesystem of the live "
-"system can be automatically be enabled with the keyword 'filesystem'."
+"All preseed files in /lib/live/config-preseed/ in the root filesystem of the "
+"live system can be automatically be enabled with the keyword 'filesystem'."
 msgstr ""
-"Tutti i file di preconfigurazione in /lib/live/preseed/ nella radice del "
-"sistema live possono essere abilitati automaticamente con la parola chiave "
-"\"filesystem\"."
+"Tutti i file di preconfigurazione in /lib/live/config-preseed/ nella radice "
+"del sistema live possono essere abilitati automaticamente con la parola "
+"chiave \"filesystem\"."
 
 #. type: Plain text
 #: en/live-config.7:45
 msgid ""
-"All preseed files in /live/preseed/ of the live medium can be automatically "
-"be enabled with the keyword 'medium'."
+"All preseed files in /live/config-preseed/ of the live medium can be "
+"automatically be enabled with the keyword 'medium'."
 msgstr ""
-"Tutti i file di preconfigurazione in /live/preseed/ sul supporto live "
+"Tutti i file di preconfigurazione in /live/config-preseed/ sul supporto live "
 "possono essere abilitati automaticamente con la parola chiave \"medium\"."
 
 #. type: Plain text
@@ -495,20 +495,20 @@ msgstr ""
 #. type: Plain text
 #: en/live-config.7:83
 msgid ""
-"All hooks in /lib/live/hooks/ in the root filesystem of the live system can "
-"be automatically be enabled with the keyword 'filesystem'."
+"All hooks in /lib/live/config-hooks/ in the root filesystem of the live "
+"system can be automatically be enabled with the keyword 'filesystem'."
 msgstr ""
-"Tutti gli hook nella directory /lib/live/hooks/ del sistema live possono "
-"essere abilitati automaticamente con la parola chiave \"filesystem\"."
+"Tutti gli hook nella directory /lib/live/config-hooks/ del sistema live "
+"possono essere abilitati automaticamente con la parola chiave \"filesystem\"."
 
 #. type: Plain text
 #: en/live-config.7:85
 msgid ""
-"All hooks in /live/hooks/ of the live medium can be automatically be enabled "
-"with the keyword 'medium'."
+"All hooks in /live/config-hooks/ of the live medium can be automatically be "
+"enabled with the keyword 'medium'."
 msgstr ""
-"Tutti gli hook nella directory /live/hooks/ del sistema live possono essere "
-"abilitati automaticamente con la parola chiave \"medium\"."
+"Tutti gli hook nella directory /live/config-hooks/ del sistema live possono "
+"essere abilitati automaticamente con la parola chiave \"medium\"."
 
 #. type: Plain text
 #: en/live-config.7:87
@@ -1491,26 +1491,26 @@ msgstr "B</var/log/live/config.log>"
 #. type: IP
 #: en/live-config.7:253
 #, no-wrap
-msgid "B</live/hooks/*>"
-msgstr "B</live/hooks/*>"
+msgid "B</live/config-hooks/*>"
+msgstr "B</live/config-hooks/*>"
 
 #. type: IP
 #: en/live-config.7:254
 #, no-wrap
-msgid "B<live/hooks/*>"
-msgstr "B<live/hooks/*>"
+msgid "B<live/config-hooks/*>"
+msgstr "B<live/config-hooks/*>"
 
 #. type: IP
 #: en/live-config.7:255
 #, no-wrap
-msgid "B</live/preseed/*>"
-msgstr "B</live/preseed/*>"
+msgid "B</live/config-preseed/*>"
+msgstr "B</live/config-preseed/*>"
 
 #. type: IP
 #: en/live-config.7:256
 #, no-wrap
-msgid "B<live/preseed/* >"
-msgstr "B<live/preseed/* >"
+msgid "B<live/config-preseed/* >"
+msgstr "B<live/config-preseed/* >"
 
 #. type: SH
 #: en/live-config.7:258
