@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config VERSION\n"
-"POT-Creation-Date: 2012-09-26 14:23+0300\n"
+"POT-Creation-Date: 2012-09-27 12:56+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,13 +25,13 @@ msgstr ""
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "2012-09-26"
+msgid "2012-09-27"
 msgstr ""
 
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "3.0.6-1"
+msgid "3.0.7-1"
 msgstr ""
 
 #. type: TH
@@ -182,7 +182,7 @@ msgstr ""
 #. type: Plain text
 #: en/live-config.7:41 en/live-config.7:81
 msgid ""
-"If the file is placed on the live medium, it can be fetched with file:///"
+"If the file is placed on the live medium, it can be fetched with file:///lib/"
 "live/image/I<FILE>, or with file:///I<FILE> if it is in the root filesystem "
 "of the live system itself."
 msgstr ""
@@ -190,15 +190,15 @@ msgstr ""
 #. type: Plain text
 #: en/live-config.7:43
 msgid ""
-"All preseed files in /lib/live/preseed/ in the root filesystem of the live "
-"system can be automatically be enabled with the keyword 'filesystem'."
+"All preseed files in /lib/live/config-preseed/ in the root filesystem of the "
+"live system can be automatically be enabled with the keyword 'filesystem'."
 msgstr ""
 
 #. type: Plain text
 #: en/live-config.7:45
 msgid ""
-"All preseed files in /live/preseed/ of the live medium can be automatically "
-"be enabled with the keyword 'medium'."
+"All preseed files in /live/config-preseed/ of the live medium can be "
+"automatically be enabled with the keyword 'medium'."
 msgstr ""
 
 #. type: Plain text
@@ -417,15 +417,15 @@ msgstr ""
 #. type: Plain text
 #: en/live-config.7:83
 msgid ""
-"All hooks in /lib/live/hooks/ in the root filesystem of the live system can "
-"be automatically be enabled with the keyword 'filesystem'."
+"All hooks in /lib/live/config-hooks/ in the root filesystem of the live "
+"system can be automatically be enabled with the keyword 'filesystem'."
 msgstr ""
 
 #. type: Plain text
 #: en/live-config.7:85
 msgid ""
-"All hooks in /live/hooks/ of the live medium can be automatically be enabled "
-"with the keyword 'medium'."
+"All hooks in /live/config-hooks/ of the live medium can be automatically be "
+"enabled with the keyword 'medium'."
 msgstr ""
 
 #. type: Plain text
@@ -1323,25 +1323,25 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:253
 #, no-wrap
-msgid "B</live/hooks/*>"
+msgid "B</live/config-hooks/*>"
 msgstr ""
 
 #. type: IP
 #: en/live-config.7:254
 #, no-wrap
-msgid "B<live/hooks/*>"
+msgid "B<live/config-hooks/*>"
 msgstr ""
 
 #. type: IP
 #: en/live-config.7:255
 #, no-wrap
-msgid "B</live/preseed/*>"
+msgid "B</live/config-preseed/*>"
 msgstr ""
 
 #. type: IP
 #: en/live-config.7:256
 #, no-wrap
-msgid "B<live/preseed/* >"
+msgid "B<live/config-preseed/* >"
 msgstr ""
 
 #. type: SH
