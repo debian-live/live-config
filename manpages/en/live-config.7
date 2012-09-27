@@ -39,9 +39,9 @@ Allows to fetch and apply one or more debconf preseed files to be applied to the
 .br
 If the file is placed on the live medium, it can be fetched with file:///lib/live/image/\fIFILE\fR, or with file:///\fIFILE\fR if it is in the root filesystem of the live system itself.
 .br
-All preseed files in /lib/live/preseed/ in the root filesystem of the live system can be automatically be enabled with the keyword 'filesystem'.
+All preseed files in /lib/live/config\-preseed/ in the root filesystem of the live system can be automatically be enabled with the keyword 'filesystem'.
 .br
-All preseed files in /live/preseed/ of the live medium can be automatically be enabled with the keyword 'medium'.
+All preseed files in /live/config\-preseed/ of the live medium can be automatically be enabled with the keyword 'medium'.
 .br
 If several mechanisms are combined, then filesystem preseed files are applied first, then medium preseed files, and last the network preseed files.
 .IP "\fBlive\-config.hostname\fR=\fIHOSTNAME\fR | \fBhostname\fR=\fIHOSTNAME\fR" 4
@@ -79,9 +79,9 @@ Allows to fetch and execute one or more arbitrary files. Note that the URLs must
 .br
 If the file is placed on the live medium, it can be fetched with file:///lib/live/image/\fIFILE\fR, or with file:///\fIFILE\fR if it is in the root filesystem of the live system itself.
 .br
-All hooks in /lib/live/hooks/ in the root filesystem of the live system can be automatically be enabled with the keyword 'filesystem'.
+All hooks in /lib/live/config\-hooks/ in the root filesystem of the live system can be automatically be enabled with the keyword 'filesystem'.
 .br
-All hooks in /live/hooks/ of the live medium can be automatically be enabled with the keyword 'medium'.
+All hooks in /live/config\-hooks/ of the live medium can be automatically be enabled with the keyword 'medium'.
 .br
 If several mechanisms are combined, then filesystem hooks are executed first, then medium hooks, and last the network hooks.
 
@@ -250,10 +250,10 @@ allows to run arbitrary commands from a script placed on the live media or an ht
 .IP "\fB/var/lib/live/config/\fR" 4
 .IP "\fB/var/log/live/config.log\fR" 4
 .PP
-.IP "\fB/live/hooks/*\fR" 4
-.IP "\fBlive/hooks/*\fR" 4
-.IP "\fB/live/preseed/*\fR" 4
-.IP "\fBlive/preseed/* \fR" 4
+.IP "\fB/live/config\-hooks/*\fR" 4
+.IP "\fBlive/config\-hooks/*\fR" 4
+.IP "\fB/live/config\-preseed/*\fR" 4
+.IP "\fBlive/config\-preseed/* \fR" 4
 
 .SH SEE ALSO
 \fIlive\-boot\fR(7)
