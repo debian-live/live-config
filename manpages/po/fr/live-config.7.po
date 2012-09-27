@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config 4.0~a1-1\n"
-"POT-Creation-Date: 2012-09-26 15:03+0300\n"
+"POT-Creation-Date: 2012-09-27 13:07+0300\n"
 "PO-Revision-Date: 2012-07-28 22:13+0100\n"
 "Last-Translator: Carlos Zuferri <chals@altorricon.com>\n"
 "Language-Team: none\n"
@@ -25,8 +25,8 @@ msgstr "LIVE-CONFIG"
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "2012-09-26"
-msgstr "26.09.2012"
+msgid "2012-09-27"
+msgstr "27.09.2012"
 
 #. type: TH
 #: en/live-config.7:9
@@ -212,13 +212,13 @@ msgstr ""
 #. type: Plain text
 #: en/live-config.7:41 en/live-config.7:81
 msgid ""
-"If the file is placed on the live medium, it can be fetched with file:///"
+"If the file is placed on the live medium, it can be fetched with file:///lib/"
 "live/image/I<FILE>, or with file:///I<FILE> if it is in the root filesystem "
 "of the live system itself."
 msgstr ""
 "Si le fichier est placé dans le média live, il peut être utilisé avec "
-"file:///live/image/I<FILE>, ou bien avec file:///I<FILE> s'il est placé à la "
-"racine du système de fichiers du système live."
+"file:///lib/live/image/I<FILE>, ou bien avec file:///I<FILE> s'il est placé "
+"à la racine du système de fichiers du système live."
 
 #. type: Plain text
 #: en/live-config.7:43

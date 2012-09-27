@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config 4.0~a1-1\n"
-"POT-Creation-Date: 2012-09-26 15:03+0300\n"
+"POT-Creation-Date: 2012-09-27 13:07+0300\n"
 "PO-Revision-Date: 2012-07-28 11:38-0400\n"
 "Last-Translator: Tiago Bortoletto Vaz <tiago@debian.org>\n"
 "Language-Team: none\n"
@@ -25,8 +25,8 @@ msgstr "LIVE-CONFIG"
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "2012-09-26"
-msgstr "26-09-2012"
+msgid "2012-09-27"
+msgstr "27-09-2012"
 
 #. type: TH
 #: en/live-config.7:9
@@ -210,13 +210,13 @@ msgstr ""
 #. type: Plain text
 #: en/live-config.7:41 en/live-config.7:81
 msgid ""
-"If the file is placed on the live medium, it can be fetched with file:///"
+"If the file is placed on the live medium, it can be fetched with file:///lib/"
 "live/image/I<FILE>, or with file:///I<FILE> if it is in the root filesystem "
 "of the live system itself."
 msgstr ""
 "Se o arquivo estiver na mídia live, ele pode ser obtido através de file:///"
-"live/image/I<FILE> ou file:///I<FILE> se estiver no sistema raiz do próprio "
-"sistema live."
+"lib/live/image/I<FILE> ou file:///I<FILE> se estiver no sistema raiz do "
+"próprio sistema live."
 
 #. type: Plain text
 #: en/live-config.7:43

@@ -50,9 +50,9 @@ Configure_debconf ()
 				;;
 
 			medium)
-				if ls /live/image/live/preseed/* 2>&1
+				if ls /lib/live/image/live/preseed/* 2>&1
 				then
-					_PRESEEDS="${_PRESEEDS} $(for _FILE in /live/image/live/preseed/*; do echo file://${_FILE}; done)"
+					_PRESEEDS="${_PRESEEDS} $(for _FILE in /lib/live/image/live/preseed/*; do echo file://${_FILE}; done)"
 				fi
 				;;
 
