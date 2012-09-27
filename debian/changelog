@@ -1,3 +1,13 @@
+live-config (4.0~a2-1) experimental; urgency=low
+
+  * Moving remaining stuff from /live to /lib/live to avoid further
+    namespace pollution.
+  * Moving hooks and preseed inclusion to their final place within the
+    filesystems.
+  * Adding 3.0.7 changelog entries.
+
+ -- Daniel Baumann <daniel@debian.org>  Thu, 27 Sep 2012 13:13:43 +0200
+
 live-config (4.0~a1-1) experimental; urgency=low
 
   * Dropping specifics for squeeze based distributions in live-config-
