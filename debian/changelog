@@ -15,6 +15,12 @@ live-config (4.0~a1-1) experimental; urgency=low
 
  -- Daniel Baumann <daniel@debian.org>  Wed, 26 Sep 2012 15:05:07 +0200
 
+live-config (3.0.8-1) unstable; urgency=low
+
+  * Updating to standards version 3.9.4.
+
+ -- Daniel Baumann <daniel@debian.org>  Sun, 30 Sep 2012 17:23:39 +0200
+
 live-config (3.0.7-1) unstable; urgency=low
 
   * Moving remaining stuff from /live to /lib/live to avoid further
