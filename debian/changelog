@@ -1,3 +1,9 @@
+live-config (3.0.8-1) unstable; urgency=low
+
+  * Updating to standards version 3.9.4.
+
+ -- Daniel Baumann <daniel@debian.org>  Sun, 30 Sep 2012 17:23:39 +0200
+
 live-config (3.0.7-1) unstable; urgency=low
 
   * Moving remaining stuff from /live to /lib/live to avoid further
