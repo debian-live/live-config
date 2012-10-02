@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config 3.0.8-1\n"
-"POT-Creation-Date: 2012-09-30 17:21+0300\n"
+"POT-Creation-Date: 2012-10-03 14:00+0300\n"
 "PO-Revision-Date: 2012-08-03 17:13+0200\n"
 "Last-Translator: skizzhg <skizzhg@gmx.com>\n"
 "Language-Team: none\n"
@@ -23,8 +23,8 @@ msgstr "LIVE-CONFIG"
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "2012-09-30"
-msgstr "30.09.2012"
+msgid "2012-10-03"
+msgstr "03.10.2012"
 
 #. type: TH
 #: en/live-config.7:9
@@ -210,12 +210,12 @@ msgstr ""
 #: en/live-config.7:41 en/live-config.7:81
 msgid ""
 "If the file is placed on the live medium, it can be fetched with file:///lib/"
-"live/image/I<FILE>, or with file:///I<FILE> if it is in the root filesystem "
-"of the live system itself."
+"live/mount/image/I<FILE>, or with file:///I<FILE> if it is in the root "
+"filesystem of the live system itself."
 msgstr ""
 "Se il file è posizionato sul supporto live, questo  può essere prelevato con "
-"file:///lib/live/image/I<FILE>, o con file:///I<FILE> se è nella radice del "
-"filesystem del sistema live stesso."
+"file:///lib/live/mount/image/I<FILE>, o con file:///I<FILE> se è nella "
+"radice del filesystem del sistema live stesso."
 
 #. type: Plain text
 #: en/live-config.7:43

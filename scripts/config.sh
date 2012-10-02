@@ -171,7 +171,7 @@ Main ()
 
 	# Reading configuration file from filesystem and live-media
 	for _FILE in /etc/live/config.conf /etc/live/config/* \
-		     /lib/live/image/live/config.conf /lib/live/image/live/config/*
+		     /lib/live/mount/image/live/config.conf /lib/live/mount/image/live/config/*
 	do
 		if [ -e "${_FILE}" ]
 		then
