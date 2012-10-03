@@ -65,10 +65,10 @@ cache_path()
 
 get_boot_device()
 {
-	# search in /proc/mounts for the device that is mounted at /lib/live/mount/image
+	# search in /proc/mounts for the device that is mounted at /lib/live/mount/medium
 	while read DEVICE MOUNT REST
 	do
-		if [ "${MOUNT}" = "/lib/live/mount/image" ]
+		if [ "${MOUNT}" = "/lib/live/mount/medium" ]
 		then
 			echo "${DEVICE}"
 			exit 0
@@ -117,7 +117,7 @@ Eject ()
 
 		if [ -x /usr/bin/eject ]
 		then
-			eject -p -m /lib/live/mount/image >/dev/null 2>&1
+			eject -p -m /lib/live/mount/medium >/dev/null 2>&1
 		fi
 
 		if [ "${NOPROMPT}" = "cd" ]
