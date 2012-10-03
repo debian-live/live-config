@@ -211,11 +211,11 @@ msgstr ""
 #: en/live-config.7:41 en/live-config.7:81
 msgid ""
 "If the file is placed on the live medium, it can be fetched with file:///lib/"
-"live/mount/image/I<FILE>, or with file:///I<FILE> if it is in the root "
+"live/mount/medium/I<FILE>, or with file:///I<FILE> if it is in the root "
 "filesystem of the live system itself."
 msgstr ""
 "Si el archivo está en el medio en vivo, se puede obtener con file:///lib/"
-"live/mount/image/I<FILE>, o con file:///I<FILE> si se encuentra en el "
+"live/mount/medium/I<FILE>, o con file:///I<FILE> si se encuentra en el "
 "directorio raíz del sistema en vivo."
 
 #. type: Plain text

@@ -47,9 +47,9 @@ Process_hooks ()
 				;;
 
 			medium)
-				if ls /lib/live/mount/image/live/config-hooks/* 2>&1
+				if ls /lib/live/mount/medium/live/config-hooks/* 2>&1
 				then
-					_HOOKS="${_HOOKS} $(for _FILE in /lib/live/mount/image/live/config-hooks/*; do echo file://${_FILE}; done)"
+					_HOOKS="${_HOOKS} $(for _FILE in /lib/live/mount/medium/live/config-hooks/*; do echo file://${_FILE}; done)"
 				fi
 				;;
 

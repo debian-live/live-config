@@ -210,11 +210,11 @@ msgstr ""
 #: en/live-config.7:41 en/live-config.7:81
 msgid ""
 "If the file is placed on the live medium, it can be fetched with file:///lib/"
-"live/mount/image/I<FILE>, or with file:///I<FILE> if it is in the root "
+"live/mount/medium/I<FILE>, or with file:///I<FILE> if it is in the root "
 "filesystem of the live system itself."
 msgstr ""
 "Se il file è posizionato sul supporto live, questo  può essere prelevato con "
-"file:///lib/live/mount/image/I<FILE>, o con file:///I<FILE> se è nella "
+"file:///lib/live/mount/medium/I<FILE>, o con file:///I<FILE> se è nella "
 "radice del filesystem del sistema live stesso."
 
 #. type: Plain text
