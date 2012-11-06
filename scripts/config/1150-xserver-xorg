@@ -102,6 +102,15 @@ Section "Device"
 EndSection
 EOF
 
+		case "${LIVE_XORG_DRIVER}" in
+			nvidia)
+				# wheezy
+				if [ -e /etc/alternatives/glx ]
+				then
+					update-alternatives --quiet --set glx nvidia
+				fi
+				;;
+		esac
 	fi
 
 	if [ -n "${LIVE_XORG_RESOLUTION}" ]
