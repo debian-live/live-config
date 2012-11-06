@@ -90,6 +90,39 @@ Configure_xserver_xorg ()
 		esac
 	fi
 
+	if [ -z "${LIVE_XORG_DRIVER}" ]
+	then
+		# If no driver was specified and one of the nvidia drivers is installed,
+		# prefer the newest available nvidia driver over nouveau.
+
+		# PCI ID of the first nvidia card found
+		_NVIDIA_DEVICE="$(lspci -mn | awk '{ gsub("\"",""); if ($2 == "0300" && ($3 == "10de" || $3 == "12d2")) { print $3$4 } }' | tr [a-z] [A-Z] | head -1)"
+
+		if [ -n "${_NVIDIA_DEVICE}" ]
+		then
+			for _NVIDIA_IDS in /usr/lib/nvidia/current/nvidia.ids $(ls /usr/lib/nvidia/legacy-*/nvidia.ids | sort -V -r)
+			do
+				if [ -e "${_NVIDIA_IDS}" ]
+				then
+					if grep -qs "${_NVIDIA_DEVICE}" ${_NVIDIA_IDS}
+					then
+						_NVIDIA_VERSION="$(basename $(dirname ${_NVIDIA_IDS}))"
+
+						break
+					fi
+				fi
+			done
+		fi
+
+		if [ -n "${_NVIDIA_VERSION}" ]
+		then
+			LIVE_XORG_DRIVER="nvidia"
+
+			update-alternatives --quiet --set nvidia ${_NVIDIA_VERSION}
+			modprobe --ignore-install nvidia-${_NVIDIA_VERSION}
+		fi
+	fi
+
 	if [ -n "${LIVE_XORG_DRIVER}" ]
 	then
 

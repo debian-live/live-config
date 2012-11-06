@@ -16,7 +16,7 @@ Depends: ${misc:Depends}, live-config-sysvinit | live-config-backend
 Recommends:
  live-config-doc, live-tools, keyboard-configuration, locales | locales-all,
  user-setup, sudo
-Suggests: wget
+Suggests: pciutils, wget
 Description: Live System Configuration Scripts
  live-config contains the scripts that configure a live system during the boot
  process (late userspace).
