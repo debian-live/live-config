@@ -110,6 +110,14 @@ EOF
 					update-alternatives --quiet --set glx nvidia
 				fi
 				;;
+
+			*)
+				# wheezy
+				if [ -e /etc/alternatives/glx ]
+				then
+					update-alternatives --quiet --set glx mesa-diverted
+				fi
+				;;
 		esac
 	fi
 
