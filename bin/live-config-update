@@ -28,7 +28,7 @@ then
 	exit 1
 fi
 
-_DISTRIBUTION="$(lsb_release -is | tr [A-Z] [a-z])"
+_DISTRIBUTION="$(lsb_release -is | tr [A-Z] [a-z] | sed -e 's| |-|g')"
 _RELEASE="$(lsb_release -cs | tr [A-Z] [a-z])"
 
 case "${_DISTRIBUTION}" in
@@ -53,12 +53,12 @@ case "${_DISTRIBUTION}" in
 		PROC_OPTIONS="onodev,noexec,nosuid"
 		;;
 
-	progress)
+	progress-linux)
 		NOSCRIPTS="upstart apport ureadahead"
 
 		LIVE_HOSTNAME="progress"
 		LIVE_USERNAME="user"
-		LIVE_USER_FULLNAME="Progress Linux user"
+		LIVE_USER_FULLNAME="Live user"
 		LIVE_USER_DEFAULT_GROUPS="audio cdrom dip floppy video plugdev netdev powerdev scanner bluetooth debian-tor sudo"
 
 		case "${_RELEASE}" in

@@ -6,7 +6,7 @@
 .\" under certain conditions; see COPYING for details.
 .\"
 .\"
-.TH LIVE\-CONFIG 7 2012\-09\-30 3.0.8-1 "Debian Live Project"
+.TH LIVE\-CONFIG 7 2012\-11\-07 3.0.9-1 "Debian Live Project"
 
 .SH NAME
 \fBlive\-config\fR \- System Configuration Scripts
@@ -37,7 +37,7 @@ Some individual scripts can change their behaviour upon a boot parameter.
 .IP "\fBlive\-config.debconf\-preseed\fR=filesystem|medium|\fIURL1\fR|\fIURL2\fR| ... |\fIURLn\fR | \fBdebconf\-preseed\fR=medium|filesystem|\fIURL1\fR|\fIURL2\fR| ... |\fIURLn\fR" 4
 Allows to fetch and apply one or more debconf preseed files to be applied to the debconf database. Note that the URLs must be fetchable by wget (http, ftp or file://).
 .br
-If the file is placed on the live medium, it can be fetched with file:///lib/live/image/\fIFILE\fR, or with file:///\fIFILE\fR if it is in the root filesystem of the live system itself.
+If the file is placed on the live medium, it can be fetched with file:///lib/live/mount/medium/\fIFILE\fR, or with file:///\fIFILE\fR if it is in the root filesystem of the live system itself.
 .br
 All preseed files in /lib/live/config\-preseed/ in the root filesystem of the live system can be automatically be enabled with the keyword 'filesystem'.
 .br
@@ -77,7 +77,7 @@ Allows to set xorg resolution instead of autodetecting it, e.g. 1024x768.
 .IP "\fBlive\-config.hooks\fR=filesystem|medium|\fIURL1\fR|\fIURL2\fR| ... |\fIURLn\fR | \fBhooks\fR=medium|filesystem|\fIURL1\fR|\fIURL2\fR| ... |\fIURLn\fR" 4
 Allows to fetch and execute one or more arbitrary files. Note that the URLs must be fetchable by wget (http, ftp or file://), the files are executed in /tmp of the running live system, and that the files needs their dependencies, if any, already installed, e.g. if a python script should be executed the system needs python installed. Some hooks for some common use-cases are available at /usr/share/doc/live-config/examples/hooks/ and <\fIhttp://live.debian.net/other/hooks\fR>.
 .br
-If the file is placed on the live medium, it can be fetched with file:///lib/live/image/\fIFILE\fR, or with file:///\fIFILE\fR if it is in the root filesystem of the live system itself.
+If the file is placed on the live medium, it can be fetched with file:///lib/live/mount/medium/\fIFILE\fR, or with file:///\fIFILE\fR if it is in the root filesystem of the live system itself.
 .br
 All hooks in /lib/live/config\-hooks/ in the root filesystem of the live system can be automatically be enabled with the keyword 'filesystem'.
 .br

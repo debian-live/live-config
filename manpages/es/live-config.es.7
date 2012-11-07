@@ -11,7 +11,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 30.09.2012 3.0.8\-1 "Proyecto Debian Live"
+.TH LIVE\-CONFIG 7 07.11.2012 3.0.9\-1 "Proyecto Debian Live"
 
 .SH NOMBRE
 \fBlive\-config\fP \- Scripts de configuración del sistema
@@ -62,8 +62,8 @@ base de datos de debconf. Tener en cuenta que las URLs deben poder ser
 descargadas por wget (http, ftp o file://).
 .br
 Si el archivo está en el medio en vivo, se puede obtener con
-file:///lib/live/image/\fIFILE\fP, o con file:///\fIFILE\fP si se encuentra en el
-directorio raíz del sistema en vivo.
+file:///lib/live/mount/medium/\fIFILE\fP, o con file:///\fIFILE\fP si se encuentra
+en el directorio raíz del sistema en vivo.
 .br
 Todos los ficheros de preconfiguración en /lib/live/config\-preseed/ en el
 sistema de ficheros raíz del sistema en vivo pueden activarse
@@ -135,8 +135,8 @@ común disponibles en /usr/share/doc/live\-config/examples/hooks/ y en
 <\fIhttp://live.debian.net/other/hooks\fP>.
 .br
 Si el archivo está en el medio en vivo, se puede obtener con
-file:///lib/live/image/\fIFILE\fP, o con file:///\fIFILE\fP si se encuentra en el
-directorio raíz del sistema en vivo.
+file:///lib/live/mount/medium/\fIFILE\fP, o con file:///\fIFILE\fP si se encuentra
+en el directorio raíz del sistema en vivo.
 .br
 Todos los scripts gancho de /lib/live/config\-hooks/ del directorio raíz del
 sistema en vivo pueden activarse con la palabra clave «filesystem».

@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config VERSION\n"
-"POT-Creation-Date: 2012-09-30 17:21+0300\n"
+"POT-Creation-Date: 2012-11-07 14:43+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,13 +25,13 @@ msgstr ""
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "2012-09-30"
+msgid "2012-11-07"
 msgstr ""
 
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "3.0.8-1"
+msgid "3.0.9-1"
 msgstr ""
 
 #. type: TH
@@ -183,8 +183,8 @@ msgstr ""
 #: en/live-config.7:41 en/live-config.7:81
 msgid ""
 "If the file is placed on the live medium, it can be fetched with file:///lib/"
-"live/image/I<FILE>, or with file:///I<FILE> if it is in the root filesystem "
-"of the live system itself."
+"live/mount/medium/I<FILE>, or with file:///I<FILE> if it is in the root "
+"filesystem of the live system itself."
 msgstr ""
 
 #. type: Plain text
