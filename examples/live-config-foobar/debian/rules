@@ -4,4 +4,4 @@
 	dh ${@}
 
 override_dh_builddeb:
-	dh_builddeb -- -Zgzip -z9
+	dh_builddeb -- -Zxz -z9
