@@ -1,4 +1,4 @@
-# Brazilian Portuguese translations for live-config package
+# Brazilian Portuguese translations for live-config
 # Copyright (C) 2010-2012 Tassia Camoes Araujo <tassia@gmail.com>
 # Copyright (C) 2012 Tiago Bortoletto Vaz <tiago@debian.org>
 # This file is distributed under the same license as the live-config package.

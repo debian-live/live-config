@@ -1,4 +1,4 @@
-# German translations for live-config package
+# German translations for live-config
 # Copyright (C) 2006-2012 Daniel Baumann <daniel@debian.org>
 # This file is distributed under the same license as the live-config package.
 #
