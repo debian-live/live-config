@@ -1,6 +1,6 @@
 # Spanish translations for live-config
-# 2011-2012 Carlos Zuferri "chals" <chals@altorricon.com>
-# 2011-2012 José Luis Zabalza <jlz.3008@gmail.com>
+# Copyright (C) 2011-2012 Carlos Zuferri "chals" <chals@altorricon.com>
+# Copyright (C) 2011-2012 José Luis Zabalza <jlz.3008@gmail.com>
 # This file is distributed under the same license as the live-config package.
 #
 msgid ""
