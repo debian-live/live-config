@@ -107,6 +107,7 @@ Configure_xserver_xorg ()
 					if grep -qs "${_NVIDIA_DEVICE}" ${_NVIDIA_IDS}
 					then
 						_NVIDIA_VERSION="$(basename $(dirname ${_NVIDIA_IDS}))"
+						_NVIDIA_MODULE="$(echo nvidia-${_NVIDIA_VERSION} | sed -e 's|-current$||')"
 
 						break
 					fi
@@ -119,7 +120,7 @@ Configure_xserver_xorg ()
 			LIVE_XORG_DRIVER="nvidia"
 
 			update-alternatives --quiet --set nvidia /usr/lib/nvidia/${_NVIDIA_VERSION}
-			modprobe --ignore-install nvidia-${_NVIDIA_VERSION}
+			modprobe --ignore-install ${_NVIDIA_MODULE}
 		fi
 	fi
 
