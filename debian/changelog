@@ -43,6 +43,16 @@ live-config (4.0~a1-1) experimental; urgency=low
 
  -- Daniel Baumann <daniel@debian.org>  Wed, 26 Sep 2012 15:05:07 +0200
 
+live-config (3.0.10-1) unstable; urgency=low
+
+  * Correcting update-alternatives when handling nvidia automatically in
+    xserver-xorg script.
+  * Correcting nvidia module name for debian systems in xserver-xorg
+    script.
+  * Harmonizing po file headers.
+
+ -- Daniel Baumann <daniel@debian.org>  Thu, 08 Nov 2012 11:00:49 +0100
+
 live-config (3.0.9-1) unstable; urgency=low
 
   * Updating file paths for /lib/live/mount.
