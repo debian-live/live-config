@@ -43,6 +43,28 @@ live-config (4.0~a1-1) experimental; urgency=low
 
  -- Daniel Baumann <daniel@debian.org>  Wed, 26 Sep 2012 15:05:07 +0200
 
+live-config (3.0.9-1) unstable; urgency=low
+
+  * Updating file paths for /lib/live/mount.
+  * Renaming /lib/live/mount/image to /lib/live/mount/medium.
+  * Updating package descriptions.
+  * Shortening default user fullname on progress.
+  * Updating name of the admin group in policykit script, thanks to
+    Андрій Шинкарчук <andriy.shynkarchuk@nuos.edu.ua>.
+  * Updating embedded live-config-foobar example packaging.
+  * Making sure that when enforcing nvidia driver, the respective
+    alternatives are set in xserver-xorg script.
+  * Making sure that when nvidia driver is installed but a non-nvidia
+    driver was enfored, the respective alternatives are set in xserver-
+    xorg-script.
+  * Switching to xz compression in live-config-foobar example packaging.
+  * If no driver was specified and one of the nvidia drivers is
+    installed, prefer the newest available nvidia driver over nouveau in
+    xserver-xorg script.
+  * Updating lsb_release calls for newer progress-linux.
+
+ -- Daniel Baumann <daniel@debian.org>  Wed, 07 Nov 2012 14:45:22 +0100
+
 live-config (3.0.8-1) unstable; urgency=low
 
   * Updating to standards version 3.9.4.
