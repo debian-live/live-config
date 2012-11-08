@@ -1,3 +1,13 @@
+live-config (3.0.10-1) unstable; urgency=low
+
+  * Correcting update-alternatives when handling nvidia automatically in
+    xserver-xorg script.
+  * Correcting nvidia module name for debian systems in xserver-xorg
+    script.
+  * Harmonizing po file headers.
+
+ -- Daniel Baumann <daniel@debian.org>  Thu, 08 Nov 2012 11:00:49 +0100
+
 live-config (3.0.9-1) unstable; urgency=low
 
   * Updating file paths for /lib/live/mount.
