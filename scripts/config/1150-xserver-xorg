@@ -133,6 +133,19 @@ cat > /etc/X11/xorg.conf.d/99-live.conf << EOF
 Section "Device"
 	Identifier	"Default screen"
 	Driver		"${LIVE_XORG_DRIVER}"
+EOF
+
+case "${LIVE_XORG_DRIVER}" in
+	nvidia)
+
+cat >> /etc/X11/xorg.conf.d/99-live.conf << EOF
+	Option		"NoLogo"	"true"
+EOF
+
+		;;
+esac
+
+cat >> /etc/X11/xorg.conf.d/99-live.conf << EOF
 EndSection
 EOF
 
