@@ -5,8 +5,8 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: live-config 3.0.10-1\n"
-"POT-Creation-Date: 2012-11-08 10:58+0100\n"
+"Project-Id-Version: live-config 3.0.11-1\n"
+"POT-Creation-Date: 2012-11-09 20:29+0100\n"
 "PO-Revision-Date: 2012-07-28 22:13+0100\n"
 "Last-Translator: Carlos Zuferri <chals@altorricon.com>\n"
 "Language-Team: none\n"
@@ -25,14 +25,14 @@ msgstr "LIVE-CONFIG"
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "2012-11-08"
-msgstr "08.11.2012"
+msgid "2012-11-09"
+msgstr "09.11.2012"
 
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "3.0.10-1"
-msgstr "3.0.10-1"
+msgid "3.0.11-1"
+msgstr "3.0.11-1"
 
 #. type: TH
 #: en/live-config.7:9
