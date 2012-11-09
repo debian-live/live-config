@@ -55,6 +55,13 @@ live-config (4.0~a1-1) experimental; urgency=low
 
  -- Daniel Baumann <daniel@debian.org>  Wed, 26 Sep 2012 15:05:07 +0200
 
+live-config (3.0.11-1) unstable; urgency=low
+
+  * Enforcing NoLogo option when using nvidia driver in xserver-xorg
+    script.
+
+ -- Daniel Baumann <daniel@debian.org>  Fri, 09 Nov 2012 20:29:06 +0100
+
 live-config (3.0.10-1) unstable; urgency=low
 
   * Correcting update-alternatives when handling nvidia automatically in
