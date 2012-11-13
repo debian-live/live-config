@@ -1,3 +1,11 @@
+live-config (4.0~a6-1) experimental; urgency=low
+
+  * Allowing to overwrite distribution detection in live-config-update
+    with parameters.
+  * Adding 3.0.12 changelog entries.
+
+ -- Daniel Baumann <daniel@debian.org>  Tue, 13 Nov 2012 14:58:48 +0100
+
 live-config (4.0~a5-1) experimental; urgency=low
 
   * Enforcing NoLogo option when using nvidia driver in xserver-xorg
