@@ -1,3 +1,10 @@
+live-config (3.0.12-1) unstable; urgency=low
+
+  * Allowing to overwrite distribution detection in live-config-update
+    with parameters.
+
+ -- Daniel Baumann <daniel@debian.org>  Tue, 13 Nov 2012 14:53:00 +0100
+
 live-config (3.0.11-1) unstable; urgency=low
 
   * Enforcing NoLogo option when using nvidia driver in xserver-xorg
