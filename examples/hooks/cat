@@ -5,7 +5,7 @@ echo "live-config hook: cat"
 
 _FILENAME=""
 
-while [ "${_FILENAME}" != c ]
+while [ "${_FILENAME}" != q ]
 do
 	echo
 	echo -n "Enter filename [q for quit]: "
