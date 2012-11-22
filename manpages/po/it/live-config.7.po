@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config 3.0.12-1\n"
-"POT-Creation-Date: 2012-11-13 14:40+0100\n"
+"POT-Creation-Date: 2012-11-22 16:02+0100\n"
 "PO-Revision-Date: 2012-08-03 17:13+0200\n"
 "Last-Translator: skizzhg <skizzhg@gmx.com>\n"
 "Language-Team: none\n"
@@ -23,8 +23,8 @@ msgstr "LIVE-CONFIG"
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "2012-11-13"
-msgstr "13.11.2012"
+msgid "2012-11-22"
+msgstr "22.11.2012"
 
 #. type: TH
 #: en/live-config.7:9
