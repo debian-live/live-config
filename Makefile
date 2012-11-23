@@ -70,6 +70,10 @@ install:
 
 	mkdir -p $(DESTDIR)/sbin
 
+	# Installing shared data
+	mkdir -p $(DESTDIR)/usr/share/live/config
+	cp -r VERSION share/* $(DESTDIR)/usr/share/live/config
+
 	# Installing docs
 	mkdir -p $(DESTDIR)/usr/share/doc/live-config
 	cp -r COPYING examples $(DESTDIR)/usr/share/doc/live-config
@@ -118,6 +122,10 @@ uninstall:
 	rmdir --ignore-fail-on-non-empty $(DESTDIR)/var/lib/live > /dev/null 2>&1 || true
 	rmdir --ignore-fail-on-non-empty $(DESTDIR)/var/lib > /dev/null 2>&1 || true
 	rmdir --ignore-fail-on-non-empty $(DESTDIR)/var > /dev/null 2>&1 || true
+
+	# Uninstalling shared data
+	rm -rf $(DESTDIR)/usr/share/live/config
+	rmdir --ignore-fail-on-non-empty $(DESTDIR)/usr/share/live
 
 	# Uninstalling docs
 	rm -rf $(DESTDIR)/usr/share/doc/live-config
