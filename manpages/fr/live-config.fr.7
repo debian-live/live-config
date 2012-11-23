@@ -124,10 +124,11 @@ Permet de désactiver des services du sysv via update\-rc.d.
 .IP "\fBlive\-config.x\-session\-manager=\fP\fIX_SESSION_MANAGER\fP | \fBx\-session\-manager\fP=\fIX_SESSION_MANAGER\fP" 4
 Permet de spécifier le x\-session\-manager via update\-alternatives.
 .IP "\fBlive\-config.xorg\-driver\fP=\fIDRIVER_PAR_XORG\fP | \fBxorg\-driver\fP=\fIDRIVER_PAR_XORG\fP" 4
-Allows to set xorg driver instead of autodetecting it. If a PCI ID is
-specified in /usr/share/live/config/xserver\-xorg/\fIDRIVER\fP.ids within the
-live system, \fIDRIVER\fP is enforced for these devices. If both a boot
-parameter and a override is found, the boot parameter takes precedence.
+Permet de spécifier le pilote utilisé par xorg plutôt que d'utiliser
+l'auto\-détection. Si un ID PCI est spécifié dans
+/usr/share/live/config/xserver\-xorg/\fIDRIVER\fP.ids dans le système live, le
+\fIDRIVER\fP est appliqué pour ces appareils. Si un paramètre d'amorçage et un
+override sont trouvés à la fois, le paramètre de démarrage est prioritaire.
 .IP "\fBlive\-config.xorg\-resolution\fP=\fIRESOLUTION_PAR_XORG\fP | \fBxorg\-resolution\fP=\fIRESOLUTION_PAR_XORG\fP" 4
 Permet de spécifier la résolution utilisée par xorg, plutôt que d'utiliser
 l'auto\-détection, par example 1024x768.

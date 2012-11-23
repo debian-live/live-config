@@ -452,15 +452,17 @@ msgstr "B<live-config.xorg-driver>=I<DRIVER_PAR_XORG> | B<xorg-driver>=I<DRIVER_
 
 #. type: Plain text
 #: en/live-config.7:75
-#, fuzzy
 msgid ""
 "Allows to set xorg driver instead of autodetecting it. If a PCI ID is "
 "specified in /usr/share/live/config/xserver-xorg/I<DRIVER>.ids within the "
 "live system, I<DRIVER> is enforced for these devices. If both a boot "
 "parameter and a override is found, the boot parameter takes precedence."
 msgstr ""
-"Permet de spécifier le driver utilisé par xorg plutôt que d'utiliser l'auto-"
-"détection."
+"Permet de spécifier le pilote utilisé par xorg plutôt que d'utiliser l'auto-"
+"détection. Si un ID PCI est spécifié dans /usr/share/live/config/xserver-"
+"xorg/I<DRIVER>.ids dans le système live, le I<DRIVER> est appliqué pour ces "
+"appareils. Si un paramètre d'amorçage et un override sont trouvés à la fois, "
+"le paramètre de démarrage est prioritaire."
 
 #. type: IP
 #: en/live-config.7:75
