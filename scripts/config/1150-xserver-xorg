@@ -112,31 +112,31 @@ Configure_xserver_xorg ()
 						fi
 					fi
 				done
-			else
+			fi
+
+			if [ -z "${LIVE_XORG_DRIVER}" ] && echo "${_DEVICE}" | grep -qs -E '^(10DE|12D2)'
+			then
 				# xorg-driver automatic override for nvidia
-				if echo "${_DEVICE}" | grep -qs -E '^(10DE|12D2)'
-				then
-					for _NVIDIA_IDS in /usr/lib/nvidia/current/nvidia.ids $(ls /usr/lib/nvidia/legacy-*/nvidia.ids | sort -V -r)
-					do
-						if [ -e "${_NVIDIA_IDS}" ]
-						then
-							if grep -qs "${_DEVICE}" ${_NVIDIA_IDS}
-							then
-								_NVIDIA_VERSION="$(basename $(dirname ${_NVIDIA_IDS}))"
-								_NVIDIA_MODULE="$(echo nvidia-${_NVIDIA_VERSION} | sed -e 's|-current$||')"
-
-								break
-							fi
-						fi
-					done
-
-					if [ -n "${_NVIDIA_VERSION}" ]
+				for _NVIDIA_IDS in /usr/lib/nvidia/current/nvidia.ids $(ls /usr/lib/nvidia/legacy-*/nvidia.ids | sort -V -r)
+				do
+					if [ -e "${_NVIDIA_IDS}" ]
 					then
-						LIVE_XORG_DRIVER="nvidia"
+						if grep -qs "${_DEVICE}" ${_NVIDIA_IDS}
+						then
+							_NVIDIA_VERSION="$(basename $(dirname ${_NVIDIA_IDS}))"
+							_NVIDIA_MODULE="$(echo nvidia-${_NVIDIA_VERSION} | sed -e 's|-current$||')"
 
-						update-alternatives --quiet --set nvidia /usr/lib/nvidia/${_NVIDIA_VERSION}
-						modprobe --ignore-install ${_NVIDIA_MODULE}
+							break
+						fi
 					fi
+				done
+
+				if [ -n "${_NVIDIA_VERSION}" ]
+				then
+					LIVE_XORG_DRIVER="nvidia"
+
+					update-alternatives --quiet --set nvidia /usr/lib/nvidia/${_NVIDIA_VERSION}
+					modprobe --ignore-install ${_NVIDIA_MODULE}
 				fi
 			fi
 		fi
