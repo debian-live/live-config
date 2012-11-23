@@ -24,7 +24,6 @@ msgstr "LIVE-CONFIG"
 #. type: TH
 #: en/live-config.7:9
 #, fuzzy, no-wrap
-#| msgid "2012-11-22"
 msgid "2012-11-25"
 msgstr "25.11.2012"
 
@@ -452,7 +451,12 @@ msgstr "B<live-config.xorg-driver>=I<XORG_TREIBER> | B<xorg-driver>=I<XORG_TREIB
 
 #. type: Plain text
 #: en/live-config.7:75
-msgid "Allows to set xorg driver instead of autodetecting it."
+#, fuzzy
+msgid ""
+"Allows to set xorg driver instead of autodetecting it. If a PCI ID is "
+"specified in /usr/share/live/config/xserver-xorg/I<DRIVER>.ids within the "
+"live system, I<DRIVER> is enforced for these devices. If both a boot "
+"parameter and a override is found, the boot parameter takes precedence."
 msgstr "Ermöglicht den Xorg Treiber manuell statt automatisch zu bestimmen."
 
 #. type: IP

@@ -123,7 +123,10 @@ Ermöglicht Services durch update\-rc.d abzuschalten.
 .IP "\fBlive\-config.x\-session\-manager=\fP\fIX_SESSION_MANAGER\fP | \fBx\-session\-manager\fP=\fIX_SESSION_MANAGER\fP" 4
 Ermöglicht den x\-session\-manager durch update\-alternatives zu konfigurieren.
 .IP "\fBlive\-config.xorg\-driver\fP=\fIXORG_TREIBER\fP | \fBxorg\-driver\fP=\fIXORG_TREIBER\fP" 4
-Ermöglicht den Xorg Treiber manuell statt automatisch zu bestimmen.
+Allows to set xorg driver instead of autodetecting it. If a PCI ID is
+specified in /usr/share/live/config/xserver\-xorg/\fIDRIVER\fP.ids within the
+live system, \fIDRIVER\fP is enforced for these devices. If both a boot
+parameter and a override is found, the boot parameter takes precedence.
 .IP "\fBlive\-config.xorg\-resolution\fP=\fIXORG_AUFLÖSUNG\fP | \fBxorg\-resolution\fP=\fIXORG_AUFLÖSUNG\fP" 4
 Ermöglicht die Xorg Auflösung manuell statt automatisch zu
 bestimmen. z.B. 1024x768.
