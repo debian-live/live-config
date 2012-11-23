@@ -11,7 +11,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 22\-11\-2012 3.0.12\-1 "Projeto Debian Live"
+.TH LIVE\-CONFIG 7 23\-11\-2012 3.0.12\-1 "Projeto Debian Live"
 
 .SH NOME
 \fBlive\-config\fP \- Scripts para Configuração do Sistema
@@ -118,7 +118,10 @@ Permite desabilitar serviços sysv via update\-rc.d.
 Permite definir o gerenciador de sessões do X através do
 update\-alternatives.
 .IP "\fBlive\-config.xorg\-driver\fP=\fIDRIVER_DO_XORG\fP | \fBxorg\-driver\fP=\fIDRIVER_DO_XORG\fP" 4
-Permite definir o driver do xorg em vez de detectá\-lo automaticamente.
+Allows to set xorg driver instead of autodetecting it. If a PCI ID is
+specified in /usr/share/live/config/xserver\-xorg/\fIDRIVER\fP.ids within the
+live system, \fIDRIVER\fP is enforced for these devices. If both a boot
+parameter and a override is found, the boot parameter takes precedence.
 .IP "\fBlive\-config.xorg\-resolution\fP=\fIRESOLUÇÃO_DO_XORG\fP | \fBxorg\-resolution\fP=\fIRESOLUÇÃO_DO_XORG\fP" 4
 Permite definir a resolução do xorg em vez de detectá\-la automaticamente,
 por exemplo, 1024x768.

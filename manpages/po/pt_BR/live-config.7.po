@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config 3.0.12-1\n"
-"POT-Creation-Date: 2012-11-22 16:02+0100\n"
+"POT-Creation-Date: 2012-11-23 12:11+0100\n"
 "PO-Revision-Date: 2012-07-28 11:38-0400\n"
 "Last-Translator: Tiago Bortoletto Vaz <tiago@debian.org>\n"
 "Language-Team: none\n"
@@ -25,8 +25,8 @@ msgstr "LIVE-CONFIG"
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "2012-11-22"
-msgstr "22-11-2012"
+msgid "2012-11-23"
+msgstr "23-11-2012"
 
 #. type: TH
 #: en/live-config.7:9
@@ -444,7 +444,12 @@ msgstr "B<live-config.xorg-driver>=I<DRIVER_DO_XORG> | B<xorg-driver>=I<DRIVER_D
 
 #. type: Plain text
 #: en/live-config.7:75
-msgid "Allows to set xorg driver instead of autodetecting it."
+#, fuzzy
+msgid ""
+"Allows to set xorg driver instead of autodetecting it. If a PCI ID is "
+"specified in /usr/share/live/config/xserver-xorg/I<DRIVER>.ids within the "
+"live system, I<DRIVER> is enforced for these devices. If both a boot "
+"parameter and a override is found, the boot parameter takes precedence."
 msgstr "Permite definir o driver do xorg em vez de detectá-lo automaticamente."
 
 #. type: IP
