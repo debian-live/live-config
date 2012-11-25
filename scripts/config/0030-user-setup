@@ -55,7 +55,7 @@ Configure_user_setup ()
 	fi
 
 	# Make sure user is not in sudo group if sudo is disabled
-	if [ "${_NO_ROOT}" = "true" ]
+	if [ "${_NOROOT}" = "true" ]
 	then
 		LIVE_USER_DEFAULT_GROUPS="$(echo ${LIVE_USER_DEFAULT_GROUPS} | sed -e 's|sudo||')"
 	fi
