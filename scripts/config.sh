@@ -66,7 +66,7 @@ Cmdline ()
 				_SCRIPTS="${_SCRIPTS:-$(ls /lib/live/config/*)}"
 				LIVE_NOCONFIGS="${LIVE_NOCONFIGS},sudo,policykit"
 
-				_NO_ROOT="true"
+				_NOROOT="true"
 				;;
 
 			live-config.noautologin|noautologin)
