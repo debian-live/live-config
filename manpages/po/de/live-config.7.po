@@ -23,7 +23,7 @@ msgstr "LIVE-CONFIG"
 
 #. type: TH
 #: en/live-config.7:9
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "2012-11-25"
 msgstr "25.11.2012"
 
@@ -1263,8 +1263,8 @@ msgstr "schaltet lastlog ab."
 #. type: IP
 #: en/live-config.7:206
 #, no-wrap
-msgid "B<apport> (ubuntu only)"
-msgstr "B<apport> (nur Ubuntu)"
+msgid "B<apport>"
+msgstr ""
 
 #. type: Plain text
 #: en/live-config.7:208

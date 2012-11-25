@@ -1084,7 +1084,7 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:206
 #, no-wrap
-msgid "B<apport> (ubuntu only)"
+msgid "B<apport>"
 msgstr ""
 
 #. type: Plain text
