@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config 3.0.12-1\n"
-"POT-Creation-Date: 2012-11-25 09:20+0100\n"
+"POT-Creation-Date: 2012-11-25 09:22+0100\n"
 "PO-Revision-Date: 2012-11-23 14:27+0100\n"
 "Last-Translator: Carlos Zuferri <chals@altorricon.com>\n"
 "Language-Team: none\n"
@@ -24,6 +24,7 @@ msgstr "LIVE-CONFIG"
 
 #. type: TH
 #: en/live-config.7:9
+#, no-wrap
 msgid "2012-11-25"
 msgstr "25.11.2012"
 
@@ -1007,13 +1008,21 @@ msgstr "Enlever des scripts de configuration existants"
 
 #. type: Plain text
 #: en/live-config.7:162
+#, fuzzy
+#| msgid ""
+#| "It is not really possible to remove scripts itself in a sane way yet "
+#| "without requiring to ship a locally modified B<live-config> package. "
+#| "However, the same can be achieved by disabling the respective scripts "
+#| "through the live-noconfig mechanism, see above. To avoid to always need "
+#| "specifing disabled scripts through the boot parameter, a configuration "
+#| "file should be used, see above."
 msgid ""
 "It is not really possible to remove scripts itself in a sane way yet without "
-"requiring to ship a locally modified B<live-config> package. However, the "
-"same can be achieved by disabling the respective scripts through the live-"
-"noconfig mechanism, see above. To avoid to always need specifing disabled "
-"scripts through the boot parameter, a configuration file should be used, see "
-"above."
+"requiring either to ship a locally modified B<live-config> package or using "
+"dpkg-divert. However, the same can be achieved by disabling the respective "
+"scripts through the live-noconfig mechanism, see above. To avoid to always "
+"need specifing disabled scripts through the boot parameter, a configuration "
+"file should be used, see above."
 msgstr ""
 "Il n'est pas encore vraiment possible d'enlever sans problème les scripts "
 "sans avoir besoin de charger un paquet B<live-config> modifié localement. "
