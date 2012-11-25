@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config 3.0.12-1\n"
-"POT-Creation-Date: 2012-11-23 12:11+0100\n"
+"POT-Creation-Date: 2012-11-25 09:20+0100\n"
 "PO-Revision-Date: 2012-11-23 14:17+0100\n"
 "Last-Translator: Carlos Zuferri <chals@altorricon.com>\n"
 "Language-Team: none\n"
@@ -24,9 +24,8 @@ msgstr "LIVE-CONFIG"
 
 #. type: TH
 #: en/live-config.7:9
-#, no-wrap
-msgid "2012-11-23"
-msgstr "23.11.2012"
+msgid "2012-11-25"
+msgstr "25.11.2012"
 
 #. type: TH
 #: en/live-config.7:9
@@ -1249,8 +1248,8 @@ msgstr "Desactiva lastlog."
 #. type: IP
 #: en/live-config.7:206
 #, no-wrap
-msgid "B<apport> (ubuntu only)"
-msgstr "B<apport> (ubuntu solamente)"
+msgid "B<apport>"
+msgstr ""
 
 #. type: Plain text
 #: en/live-config.7:208
