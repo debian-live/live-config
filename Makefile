@@ -93,7 +93,7 @@ install:
 	done
 
 uninstall:
-	# Uininstalling backends
+	# Uninstalling backends
 	rm -f $(DESTDIR)/etc/init.d/live
 	rm -f $(DESTDIR)/etc/init.d/live-config
 	rmdir --ignore-fail-on-non-empty $(DESTDIR)/etc/init.d > /dev/null 2>&1 || true
