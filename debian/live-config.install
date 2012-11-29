@@ -1,4 +1,4 @@
 sbin
-lib
+lib/live
 usr/share/live
 var
