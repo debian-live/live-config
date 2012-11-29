@@ -56,10 +56,8 @@ install:
 	mkdir -p $(DESTDIR)/etc/init
 	cp backends/upstart/live-config.upstart $(DESTDIR)/etc/init/live-config.conf
 
-	mkdir -p $(DESTDIR)/etc/systemd/system
-	cp backends/systemd/live-config.systemd $(DESTDIR)/etc/systemd/system/live-config.service
-	mkdir -p $(DESTDIR)/etc/systemd/system/runlevel1.target.wants
-	ln -s ../live-config.service $(DESTDIR)/etc/systemd/system/runlevel1.target.wants/live-config.service
+	mkdir -p $(DESTDIR)/lib/systemd/system
+	cp backends/systemd/live-config.systemd $(DESTDIR)/lib/systemd/system/live-config.service
 
 	# Installing scripts
 	mkdir -p $(DESTDIR)/lib/live
@@ -105,11 +103,9 @@ uninstall:
 	rmdir --ignore-fail-on-non-empty $(DESTDIR)/etc/init > /dev/null 2>&1 || true
 	rmdir --ignore-fail-on-non-empty $(DESTDIR)/etc > /dev/null 2>&1 || true
 
-	rm -f $(DESTDIR)/etc/systemd/system/live-config.service
-	rm -f $(DESTDIR)/etc/systemd/system/runlevel1.target.wants/live-config.service
-	rmdir --ignore-fail-on-non-empty $(DESTDIR)/etc/systemd/system/runlevel1.target.wants > /dev/null 2>&1 || true
-	rmdir --ignore-fail-on-non-empty $(DESTDIR)/etc/systemd/system  > /dev/null 2>&1 || true
-	rmdir --ignore-fail-on-non-empty $(DESTDIR)/etc/systemd > /dev/null 2>&1 || true
+	rm -f $(DESTDIR)/lib/systemd/system/live-config.service
+	rmdir --ignore-fail-on-non-empty $(DESTDIR)/lib/systemd/system > /dev/null 2>&1 || true
+	rmdir --ignore-fail-on-non-empty $(DESTDIR)/lib/systemd > /dev/null 2>&1 || true
 
 	# Uninstalling scripts
 	rm -f $(DESTDIR)/lib/live/boot-init.sh
