@@ -4,8 +4,8 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: live-config 4.0~a6-1\n"
-"POT-Creation-Date: 2012-11-25 09:34+0100\n"
+"Project-Id-Version: live-config 4.0~a7-1\n"
+"POT-Creation-Date: 2012-11-30 14:38+0100\n"
 "PO-Revision-Date: 2012-08-03 17:13+0200\n"
 "Last-Translator: skizzhg <skizzhg@gmx.com>\n"
 "Language-Team: none\n"
@@ -23,14 +23,14 @@ msgstr "LIVE-CONFIG"
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "2012-11-25"
-msgstr "25.11.2012"
+msgid "2012-11-30"
+msgstr "30.11.2012"
 
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "4.0~a6-1"
-msgstr "4.0~a6-1"
+msgid "4.0~a7-1"
+msgstr "4.0~a7-1"
 
 #. type: TH
 #: en/live-config.7:9
@@ -454,10 +454,10 @@ msgid ""
 "parameter and a override is found, the boot parameter takes precedence."
 msgstr ""
 "Permette di impostare il driver per xorg invece di riconoscerlo "
-"automaticamente. Se un ID PCI viene specificato in /usr/share/live/"
-"config/xserver-xorg/I<DRIVER>.ids all'interno del sistema live, I<DRIVER> "
-"viene applicato a questi device. Se viene trovato sia un parametro di boot "
-"sia uno imposto, quello di boot ha la precedenza."
+"automaticamente. Se un ID PCI viene specificato in /usr/share/live/config/"
+"xserver-xorg/I<DRIVER>.ids all'interno del sistema live, I<DRIVER> viene "
+"applicato a questi device. Se viene trovato sia un parametro di boot sia uno "
+"imposto, quello di boot ha la precedenza."
 
 #. type: IP
 #: en/live-config.7:75
@@ -1006,11 +1006,11 @@ msgid ""
 msgstr ""
 "Non è ancora realmente possibile rimuovere gli script in un modo sensato che "
 "non richieda di fornire un pacchetto di B<live-config> modificato localmente "
-"o l'uso di dpkg-divert. Tuttavia la stessa cosa si può ottenere disabilitando "
-"i rispettivi script tramite il meccanismo di live-noconfig, come spiegato "
-"prima. Per evitare di dover specificare ogni volta con parametri di boot gli "
-"script da disabilitare, usare un file di configurazione come mostrato in "
-"precedenza."
+"o l'uso di dpkg-divert. Tuttavia la stessa cosa si può ottenere "
+"disabilitando i rispettivi script tramite il meccanismo di live-noconfig, "
+"come spiegato prima. Per evitare di dover specificare ogni volta con "
+"parametri di boot gli script da disabilitare, usare un file di "
+"configurazione come mostrato in precedenza."
 
 #. type: Plain text
 #: en/live-config.7:164

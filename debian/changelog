@@ -1,3 +1,50 @@
+live-config (4.0~a7-1) experimental; urgency=low
+
+  [ Ben Armstrong ]
+  * Fixing typo in examples/hooks/cat: test for q to quit, thanks to
+    Thanatermesis <thanatermesis@gmail.com>.
+
+  [ Daniel Baumann ]
+  * Allowing to overwrite xorg-driver based on pci-ids automatically via
+    pci-id files in /usr/share/live/config/xserver-xorg.
+  * Fixing roff formating typo in manpage.
+  * Updating manpage for xserver-xorg pci-id based overrides.
+  * Updating German manpage translation.
+  * Correcting unconditional precedence of pci-id based overrides over
+    automatic nvidia configuration in xserver-xorg script.
+
+  [ chals ]
+  * Updating Spanish translation of manpage.
+  * Updating French translation of manpage.
+
+  [ Daniel Baumann ]
+  * Allowing xorg.conf overrides in /usr/share/live/config/xserver-xorg
+    files.
+  * Removing note about apport script being ubuntu only in live-config
+    manpages.
+  * For completeness reasons, also mentioning dpkg-divert in live-config
+    manpage about removing scripts.
+  * Using consistent spelling to match parameter name for the noroot
+    variable.
+  * Assigning internal variables for shortcut options to be reused by
+    local scripts.
+
+  [ chals ]
+  * Updating the Spanish translation of man page.
+  * Updating the French translation of man page.
+
+  [ Daniel Baumann ]
+  * Adding updated Italian manpage translations from skizzhg
+    <skizzhg@gmx.com>.
+  * Updating systemd service file to make it actually work.
+  * Updating systemd service file installation location.
+  * Correcting spelling typo in comment on top-level Makefile on
+    uninstalling backends.
+  * Updating packaging for moved systemd service file location.
+  * Adding dpkg-source local options.
+
+ -- Daniel Baumann <daniel@debian.org>  Fri, 30 Nov 2012 14:37:20 +0100
+
 live-config (4.0~a6-1) experimental; urgency=low
 
   * Allowing to overwrite distribution detection in live-config-update
