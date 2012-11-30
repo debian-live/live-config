@@ -11,7 +11,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 13.11.2012 3.0.12\-1 "Debian Live Projekt"
+.TH LIVE\-CONFIG 7 30.11.2012 3.0.13\-1 "Debian Live Projekt"
 
 .SH NAME
 \fBlive\-config\fP \- System Konfiguration Skripte
@@ -123,7 +123,11 @@ Ermöglicht Services durch update\-rc.d abzuschalten.
 .IP "\fBlive\-config.x\-session\-manager=\fP\fIX_SESSION_MANAGER\fP | \fBx\-session\-manager\fP=\fIX_SESSION_MANAGER\fP" 4
 Ermöglicht den x\-session\-manager durch update\-alternatives zu konfigurieren.
 .IP "\fBlive\-config.xorg\-driver\fP=\fIXORG_TREIBER\fP | \fBxorg\-driver\fP=\fIXORG_TREIBER\fP" 4
-Ermöglicht den Xorg Treiber manuell statt automatisch zu bestimmen.
+Ermöglicht den Xorg Treiber manuell statt automatisch zu bestimmen. Wird
+eine PCI ID in /usr/share/live/config/xserver\-xorg/\fITREIBER\fP.ids innerhalb
+des Live Systems angegeben, wird \fITREIBER\fP für diese Geräte verwended. Wird
+sowohl ein Boot Parameter als auch ein Vorgabe mittels PCI ID gemacht, hat
+der Boot Parameter Vorrang.
 .IP "\fBlive\-config.xorg\-resolution\fP=\fIXORG_AUFLÖSUNG\fP | \fBxorg\-resolution\fP=\fIXORG_AUFLÖSUNG\fP" 4
 Ermöglicht die Xorg Auflösung manuell statt automatisch zu
 bestimmen. z.B. 1024x768.
@@ -274,12 +278,12 @@ Beispielpaket und \-skript befindet sich in
 
 .SS "Entfernen von neuen Konfigurationsskripten"
 Es ist derzeit nicht möglich in einer vernünftigen Art und Weise Skripte zu
-entfernen ohne das ein lokal verändertes \fBlive\-config\fP Paket verwendet
-werden muss. Jedoch kann das selbe erreicht werden, indem bestimmte Skripte
-durch den live\-noconfig Mechanismus abgeschaltet werden, siehe oben. Um zu
-verhindern, dass die abzuschaltenden Skripte immer durch einen Boot
-Parameter angegeben werden müssen, kann eine Konfigurationsdatei verwendet
-werden, siehe oben.
+entfernen ohne das ein lokal verändertes \fBlive\-config\fP Paket oder
+dpkg\-divert verwendet werden muss. Jedoch kann das selbe erreicht werden,
+indem bestimmte Skripte durch den live\-noconfig Mechanismus abgeschaltet
+werden, siehe oben. Um zu verhindern, dass die abzuschaltenden Skripte immer
+durch einen Boot Parameter angegeben werden müssen, kann eine
+Konfigurationsdatei verwendet werden, siehe oben.
 .PP
 Die Konfigurationsdateien für das Live System selber werden am Besten in
 einem eigenen Debian Paket untergebracht. Ein Beispielpaket und
@@ -327,7 +331,7 @@ konfiguriert sysvinit.
 konfiguriert sysv\-rc durch abschalten von angegebenen Services.
 .IP \fBlogin\fP 4
 schaltet lastlog ab.
-.IP "\fBapport\fP (nur Ubuntu)" 4
+.IP \fBapport\fP 4
 schaltet apport ab.
 .IP \fBgnome\-panel\-data\fP 4
 entfernt den Sperrknopf für den Bildschirm.

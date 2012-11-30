@@ -11,7 +11,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 13.11.2012 3.0.12\-1 "Progetto Debian Live"
+.TH LIVE\-CONFIG 7 30.11.2012 3.0.13\-1 "Progetto Debian Live"
 
 .SH NOME
 \fBlive\-config\fP \- Script di configurazione del sistema
@@ -121,7 +121,10 @@ Permette di disabilitare i servizi di sysv tramite update\-rc.d.
 Permette di impostare x\-session\-manager tramite update\-alternatives.
 .IP "\fBlive\-config.xorg\-driver\fP=\fIDRIVER_XORG\fP | \fBxorg\-driver\fP=\fIDRIVER_XORG\fP" 4
 Permette di impostare il driver per xorg invece di riconoscerlo
-automaticamente.
+automaticamente. Se un ID PCI viene specificato in
+/usr/share/live/config/xserver\-xorg/\fIDRIVER\fP.ids all'interno del sistema
+live, \fIDRIVER\fP viene applicato a questi device. Se viene trovato sia un
+parametro di boot sia uno imposto, quello di boot ha la precedenza.
 .IP "\fBlive\-config.xorg\-resolution\fP=\fIRISOLUZIONE_XORG\fP | \fBxorg\-resolution\fP=\fIRISOLUZIONE_XORG\fP" 4
 Permette di impostare la risoluzione per xorg invece di riconoscerla
 automaticamente, ad esempio 1024x768.
@@ -265,12 +268,12 @@ trovare un esempio in /usr/share/doc/live\-config/examples.
 
 .SS "Rimuovere script config esistenti"
 Non è ancora realmente possibile rimuovere gli script in un modo sensato che
-non richieda di fornire un pacchetto di \fBlive\-config\fP modificato
-localmente. Tuttavia la stessa cosa si può ottenere disabilitando i
-rispettivi script tramite il meccanismo di live\-noconfig, come spiegato
-prima. Per evitare di dover specificare ogni volta con parametri di boot gli
-script da disabilitare, usare un file di configurazione come mostrato in
-precedenza.
+non richieda di fornire un pacchetto di \fBlive\-config\fP modificato localmente
+o l'uso di dpkg\-divert. Tuttavia la stessa cosa si può ottenere
+disabilitando i rispettivi script tramite il meccanismo di live\-noconfig,
+come spiegato prima. Per evitare di dover specificare ogni volta con
+parametri di boot gli script da disabilitare, usare un file di
+configurazione come mostrato in precedenza.
 .PP
 È consigliato mettere i file di configurazione per il sistema live in un
 pacchetto debian dedicato. Si può trovare un esempio in
@@ -318,7 +321,7 @@ configura sysvinit.
 configura sysv\-rc disabilitando i servizi elencati.
 .IP \fBlogin\fP 4
 disabilita lastlog.
-.IP "\fBapport\fP (solo ubuntu)" 4
+.IP \fBapport\fP 4
 disabilita apport.
 .IP \fBgnome\-panel\-data\fP 4
 disabilita il pulsante di blocco dello schermo.

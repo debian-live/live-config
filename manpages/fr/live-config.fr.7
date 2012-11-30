@@ -11,7 +11,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 13.11.2012 3.0.12\-1 "Projet Debian Live"
+.TH LIVE\-CONFIG 7 30.11.2012 3.0.13\-1 "Projet Debian Live"
 
 .SH NOM
 \fBlive\-config\fP \- Scripts de configuration du système
@@ -124,8 +124,11 @@ Permet de désactiver des services du sysv via update\-rc.d.
 .IP "\fBlive\-config.x\-session\-manager=\fP\fIX_SESSION_MANAGER\fP | \fBx\-session\-manager\fP=\fIX_SESSION_MANAGER\fP" 4
 Permet de spécifier le x\-session\-manager via update\-alternatives.
 .IP "\fBlive\-config.xorg\-driver\fP=\fIDRIVER_PAR_XORG\fP | \fBxorg\-driver\fP=\fIDRIVER_PAR_XORG\fP" 4
-Permet de spécifier le driver utilisé par xorg plutôt que d'utiliser
-l'auto\-détection.
+Permet de spécifier le pilote utilisé par xorg plutôt que d'utiliser
+l'auto\-détection. Si un ID PCI est spécifié dans
+/usr/share/live/config/xserver\-xorg/\fIDRIVER\fP.ids dans le système live, le
+\fIDRIVER\fP est appliqué pour ces appareils. Si un paramètre d'amorçage et un
+override sont trouvés à la fois, le paramètre de démarrage est prioritaire.
 .IP "\fBlive\-config.xorg\-resolution\fP=\fIRESOLUTION_PAR_XORG\fP | \fBxorg\-resolution\fP=\fIRESOLUTION_PAR_XORG\fP" 4
 Permet de spécifier la résolution utilisée par xorg, plutôt que d'utiliser
 l'auto\-détection, par example 1024x768.
@@ -274,12 +277,12 @@ Debian. Un simple paquet contenant un script d'exemple est proposé dans
 /usr/share/doc/live\-config/examples.
 
 .SS "Enlever des scripts de configuration existants"
-Il n'est pas encore vraiment possible d'enlever sans problème les scripts
-sans avoir besoin de charger un paquet \fBlive\-config\fP modifié
-localement. Cependant, on peut réaliser une chose similaire en désactivant
-les scripts respectifs via le mécanisme live\-noconfig, comme indiqué
-ci\-dessus. Afin d'éviter d'avoir à spécifier les scripts désactivés en
-passant par le paramètre de lancement, vous devriez utiliser un fichier de
+Il n'est pas vraiment possible d'enlever sans problème les scripts sans
+avoir besoin d'utiliser un paquet \fBlive\-config\fP modifié localement ou à
+l'aide de dpkg\-divert. Cependant, on peut réaliser une chose similaire en
+désactivant les scripts respectifs via le mécanisme live\-noconfig, comme
+indiqué ci\-dessus. Afin d'éviter d'avoir à spécifier les scripts désactivés
+avec le paramètre d'amorçage, vous devriez utiliser un fichier de
 configuration, voir ci\-dessus.
 .PP
 Les fichiers de configuration pour le système live devront de préférence
@@ -329,7 +332,7 @@ configure sysvinit.
 configure sysv\-rc en désactivant les services listés.
 .IP \fBlogin\fP 4
 désactive lastlog.
-.IP "\fBapport\fP (seulement ubuntu)" 4
+.IP \fBapport\fP 4
 désactive apport.
 .IP \fBgnome\-panel\-data\fP 4
 désactive le bouton de verrouillage de l'écran.
