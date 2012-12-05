@@ -122,8 +122,6 @@ Configure_xserver_xorg ()
 					if grep -qs "${_DEVICE}" /usr/share/fglrx/fglrx.ids
 					then
 						LIVE_XORG_DRIVER="fglrx"
-
-						modprobe fglrx
 					fi
 				fi
 
@@ -147,9 +145,6 @@ Configure_xserver_xorg ()
 					if [ -n "${_NVIDIA_VERSION}" ]
 					then
 						LIVE_XORG_DRIVER="nvidia"
-
-						update-alternatives --quiet --set nvidia /usr/lib/nvidia/${_NVIDIA_VERSION}
-						modprobe --ignore-install ${_NVIDIA_MODULE}
 					fi
 				fi
 			fi
@@ -180,10 +175,15 @@ EOF
 		case "${LIVE_XORG_DRIVER}" in
 			fglrx)
 				update-alternatives --quiet --set glx /usr/lib/fglrx
+
+				modprobe fglrx
 				;;
 
 			nvidia)
 				update-alternatives --quiet --set glx /usr/lib/nvidia
+				update-alternatives --quiet --set nvidia /usr/lib/nvidia/${_NVIDIA_VERSION:-current}
+
+				modprobe --ignore-install ${_NVIDIA_MODULE:-nvidia}
 				;;
 
 			*)
