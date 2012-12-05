@@ -174,7 +174,6 @@ EOF
 
 		case "${LIVE_XORG_DRIVER}" in
 			fglrx)
-				# wheezy
 				if [ -e /etc/alternatives/glx ]
 				then
 					update-alternatives --quiet --set glx /usr/lib/fglrx
@@ -184,7 +183,6 @@ EOF
 				;;
 
 			nvidia)
-				# wheezy
 				if [ -e /etc/alternatives/glx ]
 				then
 					update-alternatives --quiet --set glx /usr/lib/nvidia
@@ -199,7 +197,6 @@ EOF
 				;;
 
 			*)
-				# wheezy
 				if [ -e /etc/alternatives/glx ]
 				then
 					update-alternatives --quiet --set glx /usr/lib/mesa-diverted
