@@ -39,25 +39,25 @@ Cmdline ()
 	for _PARAMETER in ${_CMDLINE}
 	do
 		case "${_PARAMETER}" in
-			live-config|config)
-				# Run all scripts
-				_SCRIPTS="$(ls /lib/live/config/*)"
-				;;
-
 			live-config=*|config=*)
 				# Only run requested scripts
 				LIVE_CONFIGS="${_PARAMETER#*config=}"
 				;;
 
-			live-noconfig|noconfig)
-				# Don't run any script
-				_SCRIPTS=""
+			live-config|config)
+				# Run all scripts
+				_SCRIPTS="$(ls /lib/live/config/*)"
 				;;
 
 			live-noconfig=*|noconfig=*)
 				# Don't run requested scripts
 				_SCRIPTS="$(ls /lib/live/config/*)"
 				LIVE_NOCONFIGS="${_PARAMETER#*noconfig=}"
+				;;
+
+			live-noconfig|noconfig)
+				# Don't run any script
+				_SCRIPTS=""
 				;;
 
 			# Shortcuts
