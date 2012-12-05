@@ -114,29 +114,43 @@ Configure_xserver_xorg ()
 				done
 			fi
 
-			if [ -z "${LIVE_XORG_DRIVER}" ] && echo "${_DEVICE}" | grep -qs -E '^(10DE|12D2)'
+			if [ -z "${LIVE_XORG_DRIVER}" ]
 			then
-				# xorg-driver automatic override for nvidia
-				for _NVIDIA_IDS in /usr/lib/nvidia/current/nvidia.ids $(ls /usr/lib/nvidia/legacy-*/nvidia.ids | sort -V -r)
-				do
-					if [ -e "${_NVIDIA_IDS}" ]
-					then
-						if grep -qs "${_DEVICE}" ${_NVIDIA_IDS}
-						then
-							_NVIDIA_VERSION="$(basename $(dirname ${_NVIDIA_IDS}))"
-							_NVIDIA_MODULE="$(echo nvidia-${_NVIDIA_VERSION} | sed -e 's|-current$||')"
-
-							break
-						fi
-					fi
-				done
-
-				if [ -n "${_NVIDIA_VERSION}" ]
+				if echo "${_DEVICE}" | grep -qs '^1002'
 				then
-					LIVE_XORG_DRIVER="nvidia"
+					# xorg-driver automatic override for fglrx
+					if grep -qs "${_DEVICE}" /usr/share/fglrx/fglrx.ids
+					then
+						LIVE_XORG_DRIVER="fglrx"
 
-					update-alternatives --quiet --set nvidia /usr/lib/nvidia/${_NVIDIA_VERSION}
-					modprobe --ignore-install ${_NVIDIA_MODULE}
+						modprobe fglrx
+					fi
+				fi
+
+				if echo "${_DEVICE}" | grep -qs -E '^(10DE|12D2)'
+				then
+					# xorg-driver automatic override for nvidia
+					for _NVIDIA_IDS in /usr/lib/nvidia/current/nvidia.ids $(ls /usr/lib/nvidia/legacy-*/nvidia.ids | sort -V -r)
+					do
+						if [ -e "${_NVIDIA_IDS}" ]
+						then
+							if grep -qs "${_DEVICE}" ${_NVIDIA_IDS}
+							then
+								_NVIDIA_VERSION="$(basename $(dirname ${_NVIDIA_IDS}))"
+								_NVIDIA_MODULE="$(echo nvidia-${_NVIDIA_VERSION} | sed -e 's|-current$||')"
+
+								break
+							fi
+						fi
+					done
+
+					if [ -n "${_NVIDIA_VERSION}" ]
+					then
+						LIVE_XORG_DRIVER="nvidia"
+
+						update-alternatives --quiet --set nvidia /usr/lib/nvidia/${_NVIDIA_VERSION}
+						modprobe --ignore-install ${_NVIDIA_MODULE}
+					fi
 				fi
 			fi
 		fi
@@ -162,6 +176,14 @@ EOF
 		fi
 
 		case "${LIVE_XORG_DRIVER}" in
+			fglrx)
+				# wheezy
+				if [ -e /etc/alternatives/glx ]
+				then
+					update-alternatives --quiet --set glx /usr/lib/fglrx
+				fi
+				;;
+
 			nvidia)
 				# wheezy
 				if [ -e /etc/alternatives/glx ]
