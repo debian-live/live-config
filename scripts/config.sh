@@ -209,4 +209,4 @@ Main ()
 	echo "."
 }
 
-Main
+Main ${@}
