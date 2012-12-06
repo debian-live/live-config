@@ -137,7 +137,7 @@ Trap ()
 	return ${_RETURN}
 }
 
-Start_network ()
+Setup_network ()
 {
 	if [ -z "${_NETWORK}" ] && [ -e /etc/init.d/live-config ]
 	then
