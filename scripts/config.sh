@@ -175,7 +175,7 @@ Main ()
 	echo -n "live-config:"
 	trap 'Trap' EXIT HUP INT QUIT TERM
 
-	# Reading configuration file from filesystem and live-media
+	# Reading configuration files from filesystem and live-media
 	for _FILE in /etc/live/config.conf /etc/live/config/* \
 		     /lib/live/mount/medium/live/config.conf /lib/live/mount/medium/live/config/*
 	do
