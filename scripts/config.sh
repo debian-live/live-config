@@ -39,25 +39,25 @@ Cmdline ()
 	for _PARAMETER in ${_CMDLINE}
 	do
 		case "${_PARAMETER}" in
-			live-config|config)
-				# Run all scripts
-				_SCRIPTS="$(ls /lib/live/config/*)"
-				;;
-
 			live-config=*|config=*)
 				# Only run requested scripts
 				LIVE_CONFIGS="${_PARAMETER#*config=}"
 				;;
 
-			live-noconfig|noconfig)
-				# Don't run any script
-				_SCRIPTS=""
+			live-config|config)
+				# Run all scripts
+				_SCRIPTS="$(ls /lib/live/config/*)"
 				;;
 
 			live-noconfig=*|noconfig=*)
 				# Don't run requested scripts
 				_SCRIPTS="$(ls /lib/live/config/*)"
 				LIVE_NOCONFIGS="${_PARAMETER#*noconfig=}"
+				;;
+
+			live-noconfig|noconfig)
+				# Don't run any script
+				_SCRIPTS=""
 				;;
 
 			# Shortcuts
@@ -137,7 +137,7 @@ Trap ()
 	return ${_RETURN}
 }
 
-Start_network ()
+Setup_network ()
 {
 	if [ -z "${_NETWORK}" ] && [ -e /etc/init.d/live-config ]
 	then
@@ -175,7 +175,7 @@ Main ()
 	echo -n "live-config:"
 	trap 'Trap' EXIT HUP INT QUIT TERM
 
-	# Reading configuration file from filesystem and live-media
+	# Reading configuration files from filesystem and live-media
 	for _FILE in /etc/live/config.conf /etc/live/config/* \
 		     /lib/live/mount/medium/live/config.conf /lib/live/mount/medium/live/config/*
 	do
@@ -185,7 +185,7 @@ Main ()
 		fi
 	done
 
-	# Reading kernel command line
+	# Processing command line
 	Cmdline
 
 	case "${LIVE_DEBUG}" in
@@ -201,7 +201,7 @@ Main ()
 
 	for _SCRIPT in ${_SCRIPTS}
 	do
-		[ "${_LIVE_DEBUG}" = "true" ] && echo "[$(date +'%F %T')] live-config: ${_SCRIPT}" >> /var/log/live/config.log
+		[ "${LIVE_DEBUG}" = "true" ] && echo "[$(date +'%F %T')] live-config: ${_SCRIPT}" >> /var/log/live/config.log
 
 		. ${_SCRIPT} 2>&1 | tee -a /var/log/live/config.log
 	done
@@ -209,4 +209,4 @@ Main ()
 	echo "."
 }
 
-Main
+Main ${@}
