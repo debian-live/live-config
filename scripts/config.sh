@@ -185,7 +185,7 @@ Main ()
 		fi
 	done
 
-	# Reading kernel command line
+	# Processing command line
 	Cmdline
 
 	case "${LIVE_DEBUG}" in
