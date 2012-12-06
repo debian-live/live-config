@@ -72,7 +72,7 @@ Configure_debconf ()
 			cp $(echo ${_PRESEED} | sed 's|file://||') "${_TMPFILE}"
 		else
 			# remote file
-			Start_network
+			Setup_network
 
 			wget --quiet "${_PRESEED}" -O "${_TMPFILE}"
 		fi
