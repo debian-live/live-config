@@ -1,3 +1,25 @@
+live-config (4.0~a8-1) experimental; urgency=low
+
+  * Adding 3.0.13 changelog entries.
+  * Correcting wrong order of boot parameter parsing.
+  * Adding support for automatic fglrx driver selection in xserver-xorg
+    script.
+  * Updating comments in xserver-xorg script.
+  * Removing pre-wheezy guards in xserver-xorg script.
+  * Defering module loading for fglrx and nvidia to a later point in time
+    within xserver-xorg script to make it also work when being specified
+    through boot parameter.
+  * Passing all arguments to main function within live-config entry point.
+  * Renaming internal network function for consistency.
+  * Updating comment about processing command line.
+  * Correcting spelling typo in comment.
+  * Correcting typo in debug variable check.
+  * Adding local-options for dpkg-source in live-config-foobar example
+    package too.
+  * Adding 3.0.14 changelog entries.
+
+ -- Daniel Baumann <daniel@debian.org>  Thu, 06 Dec 2012 20:07:36 +0100
+
 live-config (4.0~a7-1) experimental; urgency=low
 
   [ Ben Armstrong ]
