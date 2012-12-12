@@ -46,7 +46,7 @@ case "${_DISTRIBUTION}" in
 				;;
 
 			*)
-				NOSCRIPTS="${NOSCRIPTS} gdm"
+				NOSCRIPTS="${NOSCRIPTS} gdm module-init-tools"
 				;;
 		esac
 
@@ -67,7 +67,7 @@ case "${_DISTRIBUTION}" in
 				;;
 
 			*)
-				NOSCRIPTS="${NOSCRIPTS} gdm"
+				NOSCRIPTS="${NOSCRIPTS} gdm module-init-tools"
 				;;
 		esac
 
