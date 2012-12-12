@@ -10,13 +10,7 @@
 
 Hooks ()
 {
-	if [ -z "${LIVE_HOOKS}" ]
-	then
-		return
-	fi
-
-	echo -n " hooks"
-
+	# Reading kernel command line
 	for _PARAMETER in ${_CMDLINE}
 	do
 		case "${_PARAMETER}" in
@@ -25,6 +19,13 @@ Hooks ()
 				;;
 		esac
 	done
+
+	if [ -z "${LIVE_HOOKS}" ]
+	then
+		return
+	fi
+
+	echo -n " hooks"
 
 	Process_hooks
 }
