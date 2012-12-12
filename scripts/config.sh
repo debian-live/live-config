@@ -42,55 +42,49 @@ Cmdline ()
 			live-config=*|config=*)
 				# Only run requested scripts
 				LIVE_CONFIGS="${_PARAMETER#*config=}"
+				LIVE_NOCONFIGSS=""
+				_SCRIPTS=""
 				;;
 
 			live-config|config)
 				# Run all scripts
+				LIVE_CONFIGS=""
+				LIVE_NOCONFIGS=""
 				_SCRIPTS="$(ls /lib/live/config/*)"
 				;;
 
 			live-noconfig=*|noconfig=*)
 				# Don't run requested scripts
-				_SCRIPTS="$(ls /lib/live/config/*)"
+				LIVE_CONFIGS=""
 				LIVE_NOCONFIGS="${_PARAMETER#*noconfig=}"
+				_SCRIPTS="$(ls /lib/live/config/*)"
 				;;
 
 			live-noconfig|noconfig)
 				# Don't run any script
+				LIVE_CONFIGS=""
+				LIVE_NOCONFIGS=""
 				_SCRIPTS=""
 				;;
 
 			# Shortcuts
 			live-config.noroot|noroot)
 				# Disable root access, no matter what mechanism
-				_SCRIPTS="${_SCRIPTS:-$(ls /lib/live/config/*)}"
-				LIVE_NOCONFIGS="${LIVE_NOCONFIGS},sudo,policykit"
-
 				_NOROOT="true"
 				;;
 
 			live-config.noautologin|noautologin)
 				# Disables both console and graphical autologin.
-				_SCRIPTS="${_SCRIPTS:-$(ls /lib/live/config/*)}"
-				LIVE_NOCONFIGS="${LIVE_NOCONFIGS},sysvinit,gdm,gdm3,kdm,lightdm,lxdm,nodm,slim,upstart,xinit"
-
 				_NOAUTOLOGIN="true"
 				;;
 
 			live-config.nottyautologin|nottyautologin)
 				# Disables console autologin.
-				_SCRIPTS="${_SCRIPTS:-$(ls /lib/live/config/*)}"
-				LIVE_NOCONFIGS="${LIVE_NOCONFIGS},sysvinit,upstart"
-
 				_NOTTYAUTOLOGIN="true"
 				;;
 
 			live-config.nox11autologin|nox11autologin)
-				# Disables graphical autologin, no matter what
-				# mechanism
-				_SCRIPTS="${_SCRIPTS:-$(ls /lib/live/config/*)}"
-				LIVE_NOCONFIGS="${LIVE_NOCONFIGS},gdm,gdm3,kdm,lightdm,lxdm,nodm,slim,xinit"
-
+				# Disables graphical autologin, no matter what mechanism
 				_NOX11AUTOLOGIN="true"
 				;;
 
@@ -100,6 +94,35 @@ Cmdline ()
 				;;
 		esac
 	done
+
+	# Exclude shortcuts specific scripts
+	case "${_NO_ROOT}" in
+		true)
+			# Disable root access, no matter what mechanism
+			LIVE_NOCONFIGS="${LIVE_NOCONFIGS},sudo,policykit"
+			;;
+	esac
+
+	case "${_NOAUTOLOGIN}" in
+		true)
+			# Disables both console and graphical autologin.
+			LIVE_NOCONFIGS="${LIVE_NOCONFIGS},sysvinit,gdm,gdm3,kdm,lightdm,lxdm,nodm,slim,upstart,xinit"
+			;;
+	esac
+
+	case "${_NOTTYAUTOLOGIN}" in
+		true)
+			# Disables console autologin.
+			LIVE_NOCONFIGS="${LIVE_NOCONFIGS},sysvinit,upstart"
+			;;
+	esac
+
+	case "${_NOX11AUTOLOGIN}" in
+		true)
+			# Disables graphical autologin, no matter what mechanism
+			LIVE_NOCONFIGS="${LIVE_NOCONFIGS},gdm,gdm3,kdm,lightdm,lxdm,nodm,slim,xinit"
+			;;
+	esac
 
 	# Include requested scripts
 	if [ -n "${LIVE_CONFIGS}" ]
