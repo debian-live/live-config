@@ -10,15 +10,6 @@
 
 Hostname ()
 {
-	# Checking if package is installed or already configured
-	if [ -z "${LIVE_HOSTNAME}" ] || \
-	   [ -e /var/lib/live/config/hostname ]
-	then
-		return
-	fi
-
-	echo -n " hostname"
-
 	# Reading kernel command line
 	for _PARAMETER in ${_CMDLINE}
 	do
@@ -28,6 +19,15 @@ Hostname ()
 				;;
 		esac
 	done
+
+	# Checking if package is installed or already configured
+	if [ -z "${LIVE_HOSTNAME}" ] || \
+	   [ -e /var/lib/live/config/hostname ]
+	then
+		return
+	fi
+
+	echo -n " hostname"
 
 	Configure_hostname
 }
