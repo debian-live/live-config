@@ -90,7 +90,7 @@ Configure_xserver_xorg ()
 		esac
 	fi
 
-	if [ -z "${LIVE_XORG_DRIVER}" ]
+	if [ -z "${LIVE_XORG_DRIVER}" ] && [ -e /usr/bin/lspci ]
 	then
 		# pci-id of the first graphic card
 		_DEVICE="$(lspci -mn | awk '/0300/ { print $3$4 }' | sed -e 's|"||g' | tr [a-z] [A-Z] | head -n1)"
