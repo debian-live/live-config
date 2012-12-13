@@ -11,7 +11,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 06\-12\-2012 3.0.14\-1 "Projeto Debian Live"
+.TH LIVE\-CONFIG 7 13\-12\-2012 3.0.14\-1 "Projeto Debian Live"
 
 .SH NOME
 \fBlive\-config\fP \- Scripts para Configuração do Sistema
@@ -95,9 +95,6 @@ ele é automaticamente gerado.
 .IP "\fBlive\-config.timezone\fP=\fITIMEZONE\fP | \fBtimezone\fP=\fITIMEZONE\fP" 4
 Permite configurar o timezone do sistema, por exemplo, 'Europe/Zurich'. O
 padrão é 'UTC'.
-.IP "\fBlive\-config.utc\fP=\fByes\fP|no | \fButc\fP=\fByes\fP|no" 4
-Permite definir se o sistema deve assumir que o relógio do hardware está
-configurado para UTC ou não. O padrão é 'yes'.
 .IP "\fBlive\-config.keyboard\-model\fP=\fIMODELO_DO_TECLADO\fP | \fBkeyboard\-model\fP=\fIMODELO_DO_TECLADO\fP" 4
 Permite configurar o modelo do teclado. Não há valor padrão definido.
 .IP "\fBlive\-config.keyboard\-layouts\fP=\fILEIAUTE1_DO_TECLADO\fP,\fILEIAUTE2_DO_TECLADO\fP ... \fILEIAUTEn_DO_TECLADO\fP | \fBkeyboard\-layouts\fP=\fILEIAUTE1_DO_TECLADO\fP,\fILEIAUTE2_DO_TECLADO\fP ... \fILEIAUTEn_DO_TECLADO\fP" 4
@@ -114,6 +111,9 @@ entre cada par leiaute/variante no X11. Não há valor padrão definido.
 Permite configurar as opções de teclado. Não há valor padrão definido.
 .IP "\fBlive\-config.sysv\-rc\fP=\fISERVIÇO1\fP,\fISERVIÇO2\fP ... \fISERVIÇOn\fP | \fBsysv\-rc\fP=\fISERVIÇO1\fP,\fISERVIÇO2\fP ... \fISERVIÇOn\fP" 4
 Permite desabilitar serviços sysv via update\-rc.d.
+.IP "\fBlive\-config.utc\fP=\fByes\fP|no | \fButc\fP=\fByes\fP|no" 4
+Permite definir se o sistema deve assumir que o relógio do hardware está
+configurado para UTC ou não. O padrão é 'yes'.
 .IP "\fBlive\-config.x\-session\-manager=\fP\fIGERENCIADOR_DE_SESSÕES_DO_X\fP | \fBx\-session\-manager\fP=\fIGERENCIADOR_DE_SESSÕES_DO_X\fP" 4
 Permite definir o gerenciador de sessões do X através do
 update\-alternatives.
@@ -222,8 +222,6 @@ Esta variável é equivalente ao parâmetro
 .IP \fBLIVE_TIMEZONE\fP=\fITIMEZONE\fP 4
 Esta variável é equivalente ao parâmetro
 \&'\fBlive\-config.timezone\fP=\fITIMEZONE\fP'.
-.IP \fBLIVE_UTC\fP=\fByes\fP|no 4
-Esta variável é equivalente ao parâmetro '\fBlive\-config.utc\fP=\fByes\fP|no'
 .IP \fBLIVE_KEYBOARD_MODEL\fP=\fIMODELO_DE_TECLADO\fP 4
 Esta variável é equivalente ao parâmetro
 \&'\fBlive\-config.keyboard\-model\fP=\fIMODELO_DE_TECLADO\fP'.
@@ -241,6 +239,8 @@ Esta variável é equivalente ao parâmetro
 .IP "\fBLIVE_SYSV_RC\fP=\fISERVIÇO1\fP,\fISERVIÇO2\fP ... \fISERVIÇOn\fP" 4
 Esta variável é equivalente ao parâmetro
 \&'\fBlive\-config.sysv\-rc\fP=\fISERVIÇO1\fP,\fISERVIÇO2\fP ... \fISERVIÇOn\fP'.
+.IP \fBLIVE_UTC\fP=\fByes\fP|no 4
+Esta variável é equivalente ao parâmetro '\fBlive\-config.utc\fP=\fByes\fP|no'
 .IP \fBLIVE_XORG_DRIVER\fP=\fIDRIVER_DO_XORG\fP 4
 Esta variável é equivalente ao parâmetro
 \&'\fBlive\-config.xorg\-driver\fP=\fIDRIVER_DO_XORG\fP'.

@@ -11,7 +11,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 06.12.2012 3.0.14\-1 "Projet Debian Live"
+.TH LIVE\-CONFIG 7 13.12.2012 3.0.14\-1 "Projet Debian Live"
 
 .SH NOM
 \fBlive\-config\fP \- Scripts de configuration du système
@@ -99,9 +99,6 @@ automatiquement générée à la volée.
 .IP "\fBlive\-config.timezone\fP=\fITIMEZONE\fP | \fBtimezone\fP=\fITIMEZONE\fP" 4
 Permet de spécifier la timezone du système, par exemple 'Europe/Paris'. Par
 défaut il s'agit de 'UTC'.
-.IP "\fBlive\-config.utc\fP=\fByes\fP|no | \fButc\fP=\fByes\fP|no" 4
-Permet de modifier si le système assume, ou non, que l'horloge hardware soit
-réglée sur UTC. Par défaut 'oui'.
 .IP "\fBlive\-config.keyboard\-model\fP=\fIMODELE_DE_CLAVIER\fP | \fBkeyboard\-model\fP=\fIMODELE_DE_CLAVIER\fP" 4
 Permet de changer le modèle de clavier. Aucune valeur par défaut n'est
 indiquée.
@@ -121,6 +118,9 @@ Permet de changer les options du clavier. Aucune valeur par défaut n'est
 spécifiée.
 .IP "\fBlive\-config.sysv\-rc\fP=\fISERVICE1\fP,\fISERVICE2\fP ... \fISERVICEn\fP | \fBsysv\-rc\fP=\fISERVICE1\fP,\fISERVICE2\fP ... \fISERVICEn\fP" 4
 Permet de désactiver des services du sysv via update\-rc.d.
+.IP "\fBlive\-config.utc\fP=\fByes\fP|no | \fButc\fP=\fByes\fP|no" 4
+Permet de modifier si le système assume, ou non, que l'horloge hardware soit
+réglée sur UTC. Par défaut 'oui'.
 .IP "\fBlive\-config.x\-session\-manager=\fP\fIX_SESSION_MANAGER\fP | \fBx\-session\-manager\fP=\fIX_SESSION_MANAGER\fP" 4
 Permet de spécifier le x\-session\-manager via update\-alternatives.
 .IP "\fBlive\-config.xorg\-driver\fP=\fIDRIVER_PAR_XORG\fP | \fBxorg\-driver\fP=\fIDRIVER_PAR_XORG\fP" 4
@@ -234,8 +234,6 @@ Cette variable correspond au paramètre
 .IP \fBLIVE_TIMEZONE\fP=\fITIMEZONE\fP 4
 Cette variable correspond au paramètre
 \&'\fBlive\-config.timezone\fP=\fITIMEZONE\fP'.
-.IP \fBLIVE_UTC\fP=\fByes\fP|no 4
-Cette variable correspond au paramètre '\fBlive\-config.utc\fP=\fByes\fP|no'.
 .IP \fBLIVE_KEYBOARD_MODEL\fP=\fIMODELE_DE_CLAVIER\fP 4
 Cette variable correspond au paramètre
 \&'\fBlive\-config.keyboard\-model\fP=\fIMODELE_DE_CLAVIER\fP'.
@@ -253,6 +251,8 @@ Cette variable correspond au paramètre
 .IP "\fBLIVE_SYSV_RC\fP=\fISERVICE1\fP,\fISERVICE2\fP ... \fISERVICEn\fP" 4
 Cette variable correspond au paramètre
 \&'\fBlive\-config.sysv\-rc\fP=\fISERVICE1\fP,\fISERVICE2\fP ... \fISERVICEn\fP'.
+.IP \fBLIVE_UTC\fP=\fByes\fP|no 4
+Cette variable correspond au paramètre '\fBlive\-config.utc\fP=\fByes\fP|no'.
 .IP \fBLIVE_XORG_DRIVER\fP=\fIDRIVER_PAR_XORG\fP 4
 Cette variable correspond au paramètre
 \&'\fBlive\-config.xorg\-driver\fP=\fIDRIVER_PAR_XORG\fP.

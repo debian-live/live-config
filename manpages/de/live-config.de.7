@@ -11,7 +11,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 06.12.2012 3.0.14\-1 "Debian Live Projekt"
+.TH LIVE\-CONFIG 7 13.12.2012 3.0.14\-1 "Debian Live Projekt"
 
 .SH NAME
 \fBlive\-config\fP \- System Konfiguration Skripte
@@ -98,9 +98,6 @@ bei Bedarf generiert.
 .IP "\fBlive\-config.timezone\fP=\fIZEITZONE\fP | \fBtimezone\fP=\fIZEITZONE\fP" 4
 Ermöglicht die Zeitzone des Systems einzustellen, zum Beispiel
 \&'Europe/Zurich'. Der Standard ist 'UTC'.
-.IP "\fBlive\-config.utc\fP=\fByes\fP|no | \fButc\fP=\fByes\fP|no" 4
-Ermöglicht zu bestimmen, ob das System davon ausgehen soll, dass die
-Hardwareuhr auf UTC gestellt ist oder nicht. Der Standard ist 'yes'.
 .IP "\fBlive\-config.keyboard\-model\fP=\fITASTATUR_MODELL\fP | \fBkeyboard\-model\fP=\fITASTATUR_MODELL\fP" 4
 Ermöglicht das Tastatur Modell zu bestimmen. Es ist kein Standardwert
 gesetzt.
@@ -120,6 +117,9 @@ Ermöglicht die Tastatur Optionen zu bestimmen. Es ist kein Standardwert
 gesetzt.
 .IP "\fBlive\-config.sysv\-rc\fP=\fISERVICE1\fP,\fISERVICE2\fP ... \fISERVICEn\fP | \fBsysv\-rc\fP=\fISERVICE1\fP,\fISERVICE2\fP ... \fISERVICEn\fP" 4
 Ermöglicht Services durch update\-rc.d abzuschalten.
+.IP "\fBlive\-config.utc\fP=\fByes\fP|no | \fButc\fP=\fByes\fP|no" 4
+Ermöglicht zu bestimmen, ob das System davon ausgehen soll, dass die
+Hardwareuhr auf UTC gestellt ist oder nicht. Der Standard ist 'yes'.
 .IP "\fBlive\-config.x\-session\-manager=\fP\fIX_SESSION_MANAGER\fP | \fBx\-session\-manager\fP=\fIX_SESSION_MANAGER\fP" 4
 Ermöglicht den x\-session\-manager durch update\-alternatives zu konfigurieren.
 .IP "\fBlive\-config.xorg\-driver\fP=\fIXORG_TREIBER\fP | \fBxorg\-driver\fP=\fIXORG_TREIBER\fP" 4
@@ -233,8 +233,6 @@ Diese Variable enspricht dem
 .IP \fBLIVE_TIMEZONE\fP=\fIZEITZONE\fP 4
 Diese Variable enspricht dem '\fBlive\-config.timezone\fP=\fIZEITZONE\fP'
 Parameter.
-.IP \fBLIVE_UTC\fP=\fByes\fP|no 4
-Diese Variable enspricht dem '\fBlive\-config.utc\fP=\fByes\fP|no' Parameter.
 .IP \fBLIVE_KEYBOARD_MODEL\fP=\fITASTATUR_MODELL\fP 4
 Diese Variable enspricht dem
 \&'\fBlive\-config.keyboard\-model\fP=\fITASTATUR_MODELL\fP' Parameter.
@@ -252,6 +250,8 @@ Diese Variable enspricht dem
 .IP "\fBLIVE_SYSV_RC\fP=\fISERVICE1\fP,\fISERVICE2\fP ... \fISERVICEn\fP" 4
 Diese Variable enspricht dem '\fBlive\-config.sysv\-rc\fP=\fISERVICE1\fP,\fISERVICE2\fP
 \&... \fISERVICEn\fP' Parameter.
+.IP \fBLIVE_UTC\fP=\fByes\fP|no 4
+Diese Variable enspricht dem '\fBlive\-config.utc\fP=\fByes\fP|no' Parameter.
 .IP \fBLIVE_XORG_DRIVER\fP=\fIXORG_TREIBER\fP 4
 Diese Variable enspricht dem '\fBlive\-config.xorg\-driver\fP=\fIXORG_TREIBER\fP'
 Parameter.
