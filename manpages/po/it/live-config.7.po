@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config 4.0~a8-1\n"
-"POT-Creation-Date: 2012-12-12 16:00+0100\n"
+"POT-Creation-Date: 2012-12-13 20:49+0100\n"
 "PO-Revision-Date: 2012-08-03 17:13+0200\n"
 "Last-Translator: skizzhg <skizzhg@gmx.com>\n"
 "Language-Team: none\n"
@@ -22,8 +22,9 @@ msgstr "LIVE-CONFIG"
 
 #. type: TH
 #: en/live-config.7:9
-msgid "2012-12-12"
-msgstr "12.12.2012"
+#, no-wrap
+msgid "2012-12-13"
+msgstr "13.12.2012"
 
 #. type: TH
 #: en/live-config.7:9
@@ -339,39 +340,24 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:59
 #, no-wrap
-msgid "B<live-config.utc>=B<yes>|no | B<utc>=B<yes>|no"
-msgstr "B<live-config.utc>=B<yes>|no | B<utc>=B<yes>|no"
-
-#. type: Plain text
-#: en/live-config.7:61
-msgid ""
-"Allows to change if the system is assuming that the hardware clock is set to "
-"UTC or not. The default is 'yes'."
-msgstr ""
-"Permette di scegliere se il sistema debba supporre che l'orologio hardware "
-"sia impostato o meno su UTC, il valore predefinito è \"yes\"."
-
-#. type: IP
-#: en/live-config.7:61
-#, no-wrap
 msgid "B<live-config.keyboard-model>=I<KEYBOARD_MODEL> | B<keyboard-model>=I<KEYBOARD_MODEL>"
 msgstr "B<live-config.keyboard-model>=I<MODELLO_TASTIERA> | B<keyboard-model>=I<MODELLO_TASTIERA>"
 
 #. type: Plain text
-#: en/live-config.7:63
+#: en/live-config.7:61
 msgid "Allows to change the keyboard model. There is no default value set."
 msgstr ""
 "Permette di scegliere il modello della tastiera, non è impostato alcun "
 "valore predefinito."
 
 #. type: IP
-#: en/live-config.7:63
+#: en/live-config.7:61
 #, no-wrap
 msgid "B<live-config.keyboard-layouts>=I<KEYBOARD_LAYOUT1>,I<KEYBOARD_LAYOUT2> ... I<KEYBOARD_LAYOUTn> | B<keyboard-layouts>=I<KEYBOARD_LAYOUT1>,I<KEYBOARD_LAYOUT2> ... I<KEYBOARD_LAYOUTn>"
 msgstr "B<live-config.keyboard-layouts>=I<LAYOUT_TASTIERA1>,I<LAYOUT_TASTIERA2> ... I<LAYOUT_TASTIERAn> | B<keyboard-layouts>=I<LAYOUT_TASTIERA1>,I<LAYOUT_TASTIERA2> ... I<LAYOUT_TASTIERAn>"
 
 #. type: Plain text
-#: en/live-config.7:65
+#: en/live-config.7:63
 msgid ""
 "Allows to change the keyboard layouts. If more than one is specified, the "
 "tools of the desktop environment will allow to switch it under X11. There is "
@@ -382,13 +368,13 @@ msgstr ""
 "X11. Non è impostato alcun valore predefinito."
 
 #. type: IP
-#: en/live-config.7:65
+#: en/live-config.7:63
 #, no-wrap
 msgid "B<live-config.keyboard-variants>=I<KEYBOARD_VARIANT1>,I<KEYBOARD_VARIANT2> ... I<KEYBOARD_VARIANTn> | B<keyboard-variants>=I<KEYBOARD_VARIANT1>,I<KEYBOARD_VARIANT2> ... I<KEYBOARD_VARIANTn>"
 msgstr "B<live-config.keyboard-variants>=I<SCHEMA_TASTIERA1>,I<SCHEMA_TASTIERA2> ... I<SCHEMA_TASTIERAn> | B<keyboard-variants>=I<SCHEMA_TASTIERA1>,I<SCHEMA_TASTIERA2> ... I<SCHEMA_TASTIERAn>"
 
 #. type: Plain text
-#: en/live-config.7:67
+#: en/live-config.7:65
 msgid ""
 "Allows to change the keyboard variants. If more than one is specified, the "
 "same number of values as keyboard-layouts values should be specified as they "
@@ -404,28 +390,43 @@ msgstr ""
 "è impostato alcun valore predefinito."
 
 #. type: IP
-#: en/live-config.7:67
+#: en/live-config.7:65
 #, no-wrap
 msgid "B<live-config.keyboard-options>=I<KEYBOARD_OPTIONS> | B<keyboard-options>=I<KEYBOARD_OPTIONS>"
 msgstr "B<live-config.keyboard-options>=I<OPZIONI_TASTIERA> | B<keyboard-options>=I<OPZIONI_TASTIERA>"
 
 #. type: Plain text
-#: en/live-config.7:69
+#: en/live-config.7:67
 msgid "Allows to change the keyboard options. There is no default value set."
 msgstr ""
 "Permette di modificare le opzioni della tastiera, non è impostato alcun "
 "valore predefinito."
 
 #. type: IP
-#: en/live-config.7:69
+#: en/live-config.7:67
 #, no-wrap
 msgid "B<live-config.sysv-rc>=I<SERVICE1>,I<SERVICE2> ... I<SERVICEn> | B<sysv-rc>=I<SERVICE1>,I<SERVICE2> ... I<SERVICEn>"
 msgstr "B<live-config.sysv-rc>=I<SERVIZIO1>,I<SERVIZIO2> ... I<SERVIZIOn> | B<sysv-rc>=I<SERVIZIO1>,I<SERVIZIO2> ... I<SERVIZIOn>"
 
 #. type: Plain text
-#: en/live-config.7:71
+#: en/live-config.7:69
 msgid "Allows to disable sysv services through update-rc.d."
 msgstr "Permette di disabilitare i servizi di sysv tramite update-rc.d."
+
+#. type: IP
+#: en/live-config.7:69
+#, no-wrap
+msgid "B<live-config.utc>=B<yes>|no | B<utc>=B<yes>|no"
+msgstr "B<live-config.utc>=B<yes>|no | B<utc>=B<yes>|no"
+
+#. type: Plain text
+#: en/live-config.7:71
+msgid ""
+"Allows to change if the system is assuming that the hardware clock is set to "
+"UTC or not. The default is 'yes'."
+msgstr ""
+"Permette di scegliere se il sistema debba supporre che l'orologio hardware "
+"sia impostato o meno su UTC, il valore predefinito è \"yes\"."
 
 #. type: IP
 #: en/live-config.7:71
@@ -814,23 +815,11 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:133
 #, no-wrap
-msgid "B<LIVE_UTC>=B<yes>|no"
-msgstr "B<LIVE_UTC>=B<yes>|no"
-
-#. type: Plain text
-#: en/live-config.7:135
-msgid "This variable equals the 'B<live-config.utc>=B<yes>|no' parameter."
-msgstr ""
-"Questa variabile equivale al parametro \"B<live-config.utc>=B<yes>|no\"."
-
-#. type: IP
-#: en/live-config.7:135
-#, no-wrap
 msgid "B<LIVE_KEYBOARD_MODEL>=I<KEYBOARD_MODEL>"
 msgstr "B<LIVE_KEYBOARD_MODEL>=I<MODELLO_TASTIERA>"
 
 #. type: Plain text
-#: en/live-config.7:137
+#: en/live-config.7:135
 msgid ""
 "This variable equals the 'B<live-config.keyboard-model>=I<KEYBOARD_MODEL>' "
 "parameter."
@@ -839,13 +828,13 @@ msgstr ""
 "model>=I<MODELLO_TASTIERA>\"."
 
 #. type: IP
-#: en/live-config.7:137
+#: en/live-config.7:135
 #, no-wrap
 msgid "B<LIVE_KEYBOARD_LAYOUTS>=I<KEYBOARD_LAYOUT1>,I<KEYBOARD_LAYOUT2> ... I<KEYBOARD_LAYOUTn>"
 msgstr "B<LIVE_KEYBOARD_LAYOUTS>=I<LAYOUT_TASTIERA1>,I<LAYOUT_TASTIERA2> ... I<LAYOUT_TASTIERAn>"
 
 #. type: Plain text
-#: en/live-config.7:139
+#: en/live-config.7:137
 msgid ""
 "This variable equals the 'B<live-config.keyboard-"
 "layouts>=I<KEYBOARD_LAYOUT1>,I<KEYBOARD_LAYOUT2> ... I<KEYBOARD_LAYOUTn>' "
@@ -855,13 +844,13 @@ msgstr ""
 "layouts>=I<LAYOUT_TASTIERA1>,I<LAYOUT_TASTIERA2> ... I<LAYOUT_TASTIERAn>\"."
 
 #. type: IP
-#: en/live-config.7:139
+#: en/live-config.7:137
 #, no-wrap
 msgid "B<LIVE_KEYBOARD_VARIANTS>=I<KEYBOARD_VARIANT1>,I<KEYBOARD_VARIANT2> ... I<KEYBOARD_VARIANTn>"
 msgstr "B<LIVE_KEYBOARD_VARIANTS>=I<SCHEMA_TASTIERA1>,I<SCHEMA_TASTIERA2> ... I<SCHEMA_TASTIERAn>"
 
 #. type: Plain text
-#: en/live-config.7:141
+#: en/live-config.7:139
 msgid ""
 "This variable equals the 'B<live-config.keyboard-"
 "variants>=I<KEYBOARD_VARIANT1>,I<KEYBOARD_VARIANT2> ... "
@@ -871,13 +860,13 @@ msgstr ""
 "layouts>=I<SCHEMA_TASTIERA1>,I<SCHEMA_TASTIERA2> ... I<SCHEMA_TASTIERAn>\"."
 
 #. type: IP
-#: en/live-config.7:141
+#: en/live-config.7:139
 #, no-wrap
 msgid "B<LIVE_KEYBOARD_OPTIONS>=I<KEYBOARD_OPTIONS>"
 msgstr "B<LIVE_KEYBOARD_OPTIONS>=I<OPZIONI_TASTIERA>"
 
 #. type: Plain text
-#: en/live-config.7:143
+#: en/live-config.7:141
 msgid ""
 "This variable equals the 'B<live-config.keyboard-"
 "options>=I<KEYBOARD_OPTIONS>' parameter."
@@ -886,19 +875,31 @@ msgstr ""
 "options>=I<OPZIONI_TASTIERA>\"."
 
 #. type: IP
-#: en/live-config.7:143
+#: en/live-config.7:141
 #, no-wrap
 msgid "B<LIVE_SYSV_RC>=I<SERVICE1>,I<SERVICE2> ... I<SERVICEn>"
 msgstr "B<LIVE_SYSV_RC>=I<SERVIZIO1>,I<SERVIZIO2> ... I<SERVIZIOn>"
 
 #. type: Plain text
-#: en/live-config.7:145
+#: en/live-config.7:143
 msgid ""
 "This variable equals the 'B<live-config.sysv-rc>=I<SERVICE1>,I<SERVICE2> ... "
 "I<SERVICEn>' parameter."
 msgstr ""
 "Questa variabile equivale al parametro \"B<live-config.sysv-rc>=I<SERVIZIO1>,"
 "I<SERVIZIO2> ... I<SERVIZIOn>\"."
+
+#. type: IP
+#: en/live-config.7:143
+#, no-wrap
+msgid "B<LIVE_UTC>=B<yes>|no"
+msgstr "B<LIVE_UTC>=B<yes>|no"
+
+#. type: Plain text
+#: en/live-config.7:145
+msgid "This variable equals the 'B<live-config.utc>=B<yes>|no' parameter."
+msgstr ""
+"Questa variabile equivale al parametro \"B<live-config.utc>=B<yes>|no\"."
 
 #. type: IP
 #: en/live-config.7:145

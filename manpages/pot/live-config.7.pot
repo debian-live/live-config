@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config VERSION\n"
-"POT-Creation-Date: 2012-12-12 16:00+0100\n"
+"POT-Creation-Date: 2012-12-13 20:49+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,7 +25,7 @@ msgstr ""
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "2012-12-12"
+msgid "2012-12-13"
 msgstr ""
 
 #. type: TH
@@ -289,35 +289,22 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:59
 #, no-wrap
-msgid "B<live-config.utc>=B<yes>|no | B<utc>=B<yes>|no"
-msgstr ""
-
-#. type: Plain text
-#: en/live-config.7:61
-msgid ""
-"Allows to change if the system is assuming that the hardware clock is set to "
-"UTC or not. The default is 'yes'."
-msgstr ""
-
-#. type: IP
-#: en/live-config.7:61
-#, no-wrap
 msgid "B<live-config.keyboard-model>=I<KEYBOARD_MODEL> | B<keyboard-model>=I<KEYBOARD_MODEL>"
 msgstr ""
 
 #. type: Plain text
-#: en/live-config.7:63
+#: en/live-config.7:61
 msgid "Allows to change the keyboard model. There is no default value set."
 msgstr ""
 
 #. type: IP
-#: en/live-config.7:63
+#: en/live-config.7:61
 #, no-wrap
 msgid "B<live-config.keyboard-layouts>=I<KEYBOARD_LAYOUT1>,I<KEYBOARD_LAYOUT2> ... I<KEYBOARD_LAYOUTn> | B<keyboard-layouts>=I<KEYBOARD_LAYOUT1>,I<KEYBOARD_LAYOUT2> ... I<KEYBOARD_LAYOUTn>"
 msgstr ""
 
 #. type: Plain text
-#: en/live-config.7:65
+#: en/live-config.7:63
 msgid ""
 "Allows to change the keyboard layouts. If more than one is specified, the "
 "tools of the desktop environment will allow to switch it under X11. There is "
@@ -325,13 +312,13 @@ msgid ""
 msgstr ""
 
 #. type: IP
-#: en/live-config.7:65
+#: en/live-config.7:63
 #, no-wrap
 msgid "B<live-config.keyboard-variants>=I<KEYBOARD_VARIANT1>,I<KEYBOARD_VARIANT2> ... I<KEYBOARD_VARIANTn> | B<keyboard-variants>=I<KEYBOARD_VARIANT1>,I<KEYBOARD_VARIANT2> ... I<KEYBOARD_VARIANTn>"
 msgstr ""
 
 #. type: Plain text
-#: en/live-config.7:67
+#: en/live-config.7:65
 msgid ""
 "Allows to change the keyboard variants. If more than one is specified, the "
 "same number of values as keyboard-layouts values should be specified as they "
@@ -341,25 +328,38 @@ msgid ""
 msgstr ""
 
 #. type: IP
-#: en/live-config.7:67
+#: en/live-config.7:65
 #, no-wrap
 msgid "B<live-config.keyboard-options>=I<KEYBOARD_OPTIONS> | B<keyboard-options>=I<KEYBOARD_OPTIONS>"
 msgstr ""
 
 #. type: Plain text
-#: en/live-config.7:69
+#: en/live-config.7:67
 msgid "Allows to change the keyboard options. There is no default value set."
 msgstr ""
 
 #. type: IP
-#: en/live-config.7:69
+#: en/live-config.7:67
 #, no-wrap
 msgid "B<live-config.sysv-rc>=I<SERVICE1>,I<SERVICE2> ... I<SERVICEn> | B<sysv-rc>=I<SERVICE1>,I<SERVICE2> ... I<SERVICEn>"
 msgstr ""
 
 #. type: Plain text
-#: en/live-config.7:71
+#: en/live-config.7:69
 msgid "Allows to disable sysv services through update-rc.d."
+msgstr ""
+
+#. type: IP
+#: en/live-config.7:69
+#, no-wrap
+msgid "B<live-config.utc>=B<yes>|no | B<utc>=B<yes>|no"
+msgstr ""
+
+#. type: Plain text
+#: en/live-config.7:71
+msgid ""
+"Allows to change if the system is assuming that the hardware clock is set to "
+"UTC or not. The default is 'yes'."
 msgstr ""
 
 #. type: IP
@@ -684,35 +684,24 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:133
 #, no-wrap
-msgid "B<LIVE_UTC>=B<yes>|no"
-msgstr ""
-
-#. type: Plain text
-#: en/live-config.7:135
-msgid "This variable equals the 'B<live-config.utc>=B<yes>|no' parameter."
-msgstr ""
-
-#. type: IP
-#: en/live-config.7:135
-#, no-wrap
 msgid "B<LIVE_KEYBOARD_MODEL>=I<KEYBOARD_MODEL>"
 msgstr ""
 
 #. type: Plain text
-#: en/live-config.7:137
+#: en/live-config.7:135
 msgid ""
 "This variable equals the 'B<live-config.keyboard-model>=I<KEYBOARD_MODEL>' "
 "parameter."
 msgstr ""
 
 #. type: IP
-#: en/live-config.7:137
+#: en/live-config.7:135
 #, no-wrap
 msgid "B<LIVE_KEYBOARD_LAYOUTS>=I<KEYBOARD_LAYOUT1>,I<KEYBOARD_LAYOUT2> ... I<KEYBOARD_LAYOUTn>"
 msgstr ""
 
 #. type: Plain text
-#: en/live-config.7:139
+#: en/live-config.7:137
 msgid ""
 "This variable equals the 'B<live-config.keyboard-"
 "layouts>=I<KEYBOARD_LAYOUT1>,I<KEYBOARD_LAYOUT2> ... I<KEYBOARD_LAYOUTn>' "
@@ -720,13 +709,13 @@ msgid ""
 msgstr ""
 
 #. type: IP
-#: en/live-config.7:139
+#: en/live-config.7:137
 #, no-wrap
 msgid "B<LIVE_KEYBOARD_VARIANTS>=I<KEYBOARD_VARIANT1>,I<KEYBOARD_VARIANT2> ... I<KEYBOARD_VARIANTn>"
 msgstr ""
 
 #. type: Plain text
-#: en/live-config.7:141
+#: en/live-config.7:139
 msgid ""
 "This variable equals the 'B<live-config.keyboard-"
 "variants>=I<KEYBOARD_VARIANT1>,I<KEYBOARD_VARIANT2> ... "
@@ -734,29 +723,40 @@ msgid ""
 msgstr ""
 
 #. type: IP
-#: en/live-config.7:141
+#: en/live-config.7:139
 #, no-wrap
 msgid "B<LIVE_KEYBOARD_OPTIONS>=I<KEYBOARD_OPTIONS>"
 msgstr ""
 
 #. type: Plain text
-#: en/live-config.7:143
+#: en/live-config.7:141
 msgid ""
 "This variable equals the 'B<live-config.keyboard-"
 "options>=I<KEYBOARD_OPTIONS>' parameter."
 msgstr ""
 
 #. type: IP
-#: en/live-config.7:143
+#: en/live-config.7:141
 #, no-wrap
 msgid "B<LIVE_SYSV_RC>=I<SERVICE1>,I<SERVICE2> ... I<SERVICEn>"
 msgstr ""
 
 #. type: Plain text
-#: en/live-config.7:145
+#: en/live-config.7:143
 msgid ""
 "This variable equals the 'B<live-config.sysv-rc>=I<SERVICE1>,I<SERVICE2> ... "
 "I<SERVICEn>' parameter."
+msgstr ""
+
+#. type: IP
+#: en/live-config.7:143
+#, no-wrap
+msgid "B<LIVE_UTC>=B<yes>|no"
+msgstr ""
+
+#. type: Plain text
+#: en/live-config.7:145
+msgid "This variable equals the 'B<live-config.utc>=B<yes>|no' parameter."
 msgstr ""
 
 #. type: IP

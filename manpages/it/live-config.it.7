@@ -11,7 +11,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 2012\-12\-12 4.0~a8\-1 "Progetto Debian Live"
+.TH LIVE\-CONFIG 7 13.12.2012 4.0~a8\-1 "Progetto Debian Live"
 
 .SH NOME
 \fBlive\-config\fP \- Script di configurazione del sistema
@@ -95,9 +95,6 @@ selezionata non è già disponibile viene generata al volo automaticamente.
 .IP "\fBlive\-config.timezone\fP=\fIFUSO ORARIO\fP | \fBtimezone\fP=\fIFUSO ORARIO\fP" 4
 Permette di impostare il fuso orario del sistema, ad esempio "Europe/Rome",
 il predefinito è "UTC".
-.IP "\fBlive\-config.utc\fP=\fByes\fP|no | \fButc\fP=\fByes\fP|no" 4
-Permette di scegliere se il sistema debba supporre che l'orologio hardware
-sia impostato o meno su UTC, il valore predefinito è "yes".
 .IP "\fBlive\-config.keyboard\-model\fP=\fIMODELLO_TASTIERA\fP | \fBkeyboard\-model\fP=\fIMODELLO_TASTIERA\fP" 4
 Permette di scegliere il modello della tastiera, non è impostato alcun
 valore predefinito.
@@ -117,6 +114,9 @@ Permette di modificare le opzioni della tastiera, non è impostato alcun
 valore predefinito.
 .IP "\fBlive\-config.sysv\-rc\fP=\fISERVIZIO1\fP,\fISERVIZIO2\fP ... \fISERVIZIOn\fP | \fBsysv\-rc\fP=\fISERVIZIO1\fP,\fISERVIZIO2\fP ... \fISERVIZIOn\fP" 4
 Permette di disabilitare i servizi di sysv tramite update\-rc.d.
+.IP "\fBlive\-config.utc\fP=\fByes\fP|no | \fButc\fP=\fByes\fP|no" 4
+Permette di scegliere se il sistema debba supporre che l'orologio hardware
+sia impostato o meno su UTC, il valore predefinito è "yes".
 .IP "\fBlive\-config.x\-session\-manager=\fP\fIX_SESSION_MANAGER\fP | \fBx\-session\-manager\fP=\fIX_SESSION_MANAGER\fP" 4
 Permette di impostare x\-session\-manager tramite update\-alternatives.
 .IP "\fBlive\-config.xorg\-driver\fP=\fIDRIVER_XORG\fP | \fBxorg\-driver\fP=\fIDRIVER_XORG\fP" 4
@@ -225,8 +225,6 @@ Questa variabile equivale al parametro
 .IP "\fBLIVE_TIMEZONE\fP=\fIFUSO ORARIO\fP" 4
 Questa variabile equivale al parametro "\fBlive\-config.timezone\fP=\fIFUSO
 ORARIO\fP".
-.IP \fBLIVE_UTC\fP=\fByes\fP|no 4
-Questa variabile equivale al parametro "\fBlive\-config.utc\fP=\fByes\fP|no".
 .IP \fBLIVE_KEYBOARD_MODEL\fP=\fIMODELLO_TASTIERA\fP 4
 Questa variabile equivale al parametro
 "\fBlive\-config.keyboard\-model\fP=\fIMODELLO_TASTIERA\fP".
@@ -244,6 +242,8 @@ Questa variabile equivale al parametro
 .IP "\fBLIVE_SYSV_RC\fP=\fISERVIZIO1\fP,\fISERVIZIO2\fP ... \fISERVIZIOn\fP" 4
 Questa variabile equivale al parametro
 "\fBlive\-config.sysv\-rc\fP=\fISERVIZIO1\fP,\fISERVIZIO2\fP ... \fISERVIZIOn\fP".
+.IP \fBLIVE_UTC\fP=\fByes\fP|no 4
+Questa variabile equivale al parametro "\fBlive\-config.utc\fP=\fByes\fP|no".
 .IP \fBLIVE_XORG_DRIVER\fP=\fIDRIVER_XORG\fP 4
 Questa variabile equivale al parametro
 "\fBlive\-config.xorg\-driver\fP=\fIDRIVER_XORG\fP".

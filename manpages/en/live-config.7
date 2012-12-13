@@ -6,7 +6,7 @@
 .\" under certain conditions; see COPYING for details.
 .\"
 .\"
-.TH LIVE\-CONFIG 7 2012\-12\-12 4.0~a8-1 "Debian Live Project"
+.TH LIVE\-CONFIG 7 2012\-12\-13 4.0~a8-1 "Debian Live Project"
 
 .SH NAME
 \fBlive\-config\fR \- System Configuration Scripts
@@ -56,8 +56,6 @@ Allows to set the fullname of the users that gets created for autologin. The def
 Allows to set the locale of the system, e.g. 'de_CH.UTF\-8'. The default is 'en_US.UTF\-8'. In case the selected locale is not already available on the system, it is automatically generated on the fly.
 .IP "\fBlive\-config.timezone\fR=\fITIMEZONE\fR | \fBtimezone\fR=\fITIMEZONE\fR" 4
 Allows to set the timezone of the system, e.g. 'Europe/Zurich'. The default is 'UTC'.
-.IP "\fBlive\-config.utc\fR=\fByes\fR|no | \fButc\fR=\fByes\fR|no" 4
-Allows to change if the system is assuming that the hardware clock is set to UTC or not. The default is 'yes'.
 .IP "\fBlive\-config.keyboard\-model\fR=\fIKEYBOARD_MODEL\fR | \fBkeyboard\-model\fR=\fIKEYBOARD_MODEL\fR" 4
 Allows to change the keyboard model. There is no default value set.
 .IP "\fBlive\-config.keyboard\-layouts\fR=\fIKEYBOARD_LAYOUT1\fR,\fIKEYBOARD_LAYOUT2\fR ... \fIKEYBOARD_LAYOUTn\fR | \fBkeyboard\-layouts\fR=\fIKEYBOARD_LAYOUT1\fR,\fIKEYBOARD_LAYOUT2\fR ... \fIKEYBOARD_LAYOUTn\fR" 4
@@ -68,6 +66,8 @@ Allows to change the keyboard variants. If more than one is specified, the same 
 Allows to change the keyboard options. There is no default value set.
 .IP "\fBlive\-config.sysv-rc\fR=\fISERVICE1\fR,\fISERVICE2\fR ... \fISERVICEn\fR | \fBsysv-rc\fR=\fISERVICE1\fR,\fISERVICE2\fR ... \fISERVICEn\fR" 4
 Allows to disable sysv services through update-rc.d.
+.IP "\fBlive\-config.utc\fR=\fByes\fR|no | \fButc\fR=\fByes\fR|no" 4
+Allows to change if the system is assuming that the hardware clock is set to UTC or not. The default is 'yes'.
 .IP "\fBlive\-config.x\-session\-manager=\fIX_SESSION_MANAGER\fR | \fBx\-session\-manager\fR=\fIX_SESSION_MANAGER\fR" 4
 Allows to set the x\-session\-manager through update\-alternatives.
 .IP "\fBlive\-config.xorg\-driver\fR=\fIXORG_DRIVER\fR | \fBxorg\-driver\fR=\fIXORG_DRIVER\fR" 4
@@ -130,8 +130,6 @@ This variable equals the '\fBlive\-config.user\-fullname\fR="\fIUSER FULLNAME\fR
 This variable equals the '\fBlive\-config.locales\fR=\fILOCALE1\fR,\fILOCALE2\fR ... \fILOCALEn\fR' parameter.
 .IP "\fBLIVE_TIMEZONE\fR=\fITIMEZONE\fR" 4
 This variable equals the '\fBlive\-config.timezone\fR=\fITIMEZONE\fR' parameter.
-.IP "\fBLIVE_UTC\fR=\fByes\fR|no" 4
-This variable equals the '\fBlive\-config.utc\fR=\fByes\fR|no' parameter.
 .IP "\fBLIVE_KEYBOARD_MODEL\fR=\fIKEYBOARD_MODEL\fR" 4
 This variable equals the '\fBlive\-config.keyboard\-model\fR=\fIKEYBOARD_MODEL\fR' parameter.
 .IP "\fBLIVE_KEYBOARD_LAYOUTS\fR=\fIKEYBOARD_LAYOUT1\fR,\fIKEYBOARD_LAYOUT2\fR ... \fIKEYBOARD_LAYOUTn\fR" 4
@@ -142,6 +140,8 @@ This variable equals the '\fBlive\-config.keyboard\-variants\fR=\fIKEYBOARD_VARI
 This variable equals the '\fBlive\-config.keyboard\-options\fR=\fIKEYBOARD_OPTIONS\fR' parameter.
 .IP "\fBLIVE_SYSV_RC\fR=\fISERVICE1\fR,\fISERVICE2\fR ... \fISERVICEn\fR" 4
 This variable equals the '\fBlive\-config.sysv-rc\fR=\fISERVICE1\fR,\fISERVICE2\fR ... \fISERVICEn\fR' parameter.
+.IP "\fBLIVE_UTC\fR=\fByes\fR|no" 4
+This variable equals the '\fBlive\-config.utc\fR=\fByes\fR|no' parameter.
 .IP "\fBLIVE_XORG_DRIVER\fR=\fIXORG_DRIVER\fR" 4
 This variable equals the '\fBlive\-config.xorg\-driver\fR=\fIXORG_DRIVER\fR' parameter.
 .IP "\fBLIVE_XORG_RESOLUTION\fR=\fIXORG_RESOLUTION\fR" 4
