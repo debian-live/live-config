@@ -56,7 +56,33 @@ EOF
 
 	if [ -n "${LIVE_UTC}" ]
 	then
-		sed -i -e "s|UTC=.*|UTC=${LIVE_UTC}|" /etc/default/rcS
+		if [ -e /run ]
+		then
+			# wheezy
+			case "${LIVE_UTC}" in
+				yes)
+
+cat > /etc/adjtime << EOF
+0.0 0 0.0
+0
+UTC
+EOF
+
+					;;
+
+				no)
+
+cat > /etc/adjtime << EOF
+0.0 0 0.0
+0
+EOF
+
+					;;
+			esac
+		else
+			# squeeze
+			sed -i -e "s|UTC=.*|UTC=${LIVE_UTC}|" /etc/default/rcS
+		fi
 	fi
 
 	# Creating state file
