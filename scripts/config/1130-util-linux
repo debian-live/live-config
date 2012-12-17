@@ -19,12 +19,53 @@ Util_linux ()
 
 	echo -n " util-linux"
 
+	# Reading kernel command line
+	for _PARAMETER in ${_CMDLINE}
+	do
+		case "${_PARAMETER}" in
+			live-config.utc=*|utc=*)
+				LIVE_UTC="${_PARAMETER#*utc=}"
+				;;
+		esac
+	done
+
 	Configure_util_linux
 }
 
 Configure_util_linux ()
 {
 	rm -f /etc/rc?.d/*hwclock*
+
+	if [ -n "${LIVE_UTC}" ]
+	then
+		if [ -e /run ]
+		then
+			# wheezy
+			case "${LIVE_UTC}" in
+				yes)
+
+cat > /etc/adjtime << EOF
+0.0 0 0.0
+0
+UTC
+EOF
+
+					;;
+
+				no)
+
+cat > /etc/adjtime << EOF
+0.0 0 0.0
+0
+EOF
+
+					;;
+			esac
+		else
+			# squeeze
+			sed -i -e "s|UTC=.*|UTC=${LIVE_UTC}|" /etc/default/rcS
+		fi
+	fi
 
 	# Creating state file
 	touch /var/lib/live/config/util-linux

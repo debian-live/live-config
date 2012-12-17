@@ -68,11 +68,12 @@ get_boot_device()
 	# search in /proc/mounts for the device that is mounted at /lib/live/mount/medium
 	while read DEVICE MOUNT REST
 	do
-		if [ "${MOUNT}" = "/lib/live/mount/medium" ]
-		then
-			echo "${DEVICE}"
-			exit 0
-		fi
+		case "${MOUNT}" in
+			/lib/live/mount/medium)
+				echo "${DEVICE}"
+				exit 0
+				;;
+		esac
 	done < /proc/mounts
 }
 
@@ -106,11 +107,11 @@ Eject ()
 		# "ejected" state even after reboot
 		MESSAGE="Please remove the USB flash drive"
 
-		if [ "${NOPROMPT}" = "usb" ]
-		then
-			prompt=
-		fi
-
+		case "${NOPROMPT}" in
+			usb)
+				prompt=
+				;;
+		esac
 	else
 		# ejecting is a very good idea here
 		MESSAGE="Please remove the disc, close the tray (if any)"
@@ -120,10 +121,11 @@ Eject ()
 			eject -p -m /lib/live/mount/medium >/dev/null 2>&1
 		fi
 
-		if [ "${NOPROMPT}" = "cd" ]
-		then
-			prompt=
-		fi
+		case "${NOPROMPT}" in
+			cd)
+				prompt=
+				;;
+		esac
 	fi
 
 	[ "$prompt" ] || return 0
@@ -144,10 +146,12 @@ Eject ()
 echo "live-boot: caching reboot files..."
 
 prompt=1
-if [ "${NOPROMPT}" = "Yes" ]
-then
-	prompt=
-fi
+
+case "${NOPROMPT}" in
+	yes)
+		prompt=
+		;;
+esac
 
 for path in $(which halt) $(which reboot) /etc/rc?.d /etc/default $(which stty) /bin/plymouth
 do

@@ -26,10 +26,6 @@ Tzdata ()
 			live-config.timezone=*|timezone=*)
 				LIVE_TIMEZONE="${_PARAMETER#*timezone=}"
 				;;
-
-			live-config.utc=*|utc=*)
-				LIVE_UTC="${_PARAMETER#*utc=}"
-				;;
 		esac
 	done
 
@@ -53,11 +49,6 @@ set tzdata/Zones/${_AREA} ${_ZONE}
 EOF
 
 	cp -f /usr/share/zoneinfo/${_AREA}/${_ZONE} /etc/localtime
-
-	if [ -n "${LIVE_UTC}" ]
-	then
-		sed -i -e "s|UTC=.*|UTC=${LIVE_UTC}|" /etc/default/rcS
-	fi
 
 	# Creating state file
 	touch /var/lib/live/config/tzdata
