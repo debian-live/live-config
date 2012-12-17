@@ -55,10 +55,11 @@ Configure_user_setup ()
 	fi
 
 	# Make sure user is not in sudo group if sudo is disabled
-	if [ "${_NOROOT}" = "true" ]
-	then
-		LIVE_USER_DEFAULT_GROUPS="$(echo ${LIVE_USER_DEFAULT_GROUPS} | sed -e 's|sudo||')"
-	fi
+	case "${_NOROOT}" in
+		true)
+			LIVE_USER_DEFAULT_GROUPS="$(echo ${LIVE_USER_DEFAULT_GROUPS} | sed -e 's|sudo||')"
+			;;
+	esac
 
 	# Default password is: live
 	# passwords can be generated with 'echo "live" | mkpasswd -s',
