@@ -1,3 +1,24 @@
+live-config (3.0.15-1) unstable; urgency=low
+
+  * Adding support for virtualbox in xserver-xorg script.
+  * Updating boot parameter handling to work as advertised in the manpage
+    when specifing multiple and conflicting options.
+  * Adding console-tools to recommends.
+  * Correcting already-run checks to be after parameter handling in
+    hostname and hooks script.
+  * Disabling module-init-tools on wheezy and newer systems.
+  * Using automatic driver selection based on pci-ids in xserver-xorg
+    script only when lspci is available.
+  * Correcting spelling typo in bug script.
+  * Updating UTC handling for wheezy.
+  * Moving utc handling from tzdata to util-linux script where it original
+    belongs to.
+  * Adding missing entry for x-session-manager in variable list in live-
+    config manpage.
+  * Replacing some if conditionals with case for consistency.
+
+ -- Daniel Baumann <daniel@debian.org>  Mon, 17 Dec 2012 21:22:00 +0100
+
 live-config (3.0.14-1) unstable; urgency=low
 
   * Correcting wrong order of boot parameter parsing.
