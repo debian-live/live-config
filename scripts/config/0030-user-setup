@@ -81,9 +81,6 @@ EOF
 
 	# Workaround for bug in shadow
 	set +e
-	touch /etc/passwd-
-	chmod 0600 /etc/passwd-
-
 	/usr/lib/user-setup/user-setup-apply 2>&1 \
 	| grep -v "Shadow passwords are now on"
 	set -e
