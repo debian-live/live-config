@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config 4.0~a9-1\n"
-"POT-Creation-Date: 2012-12-17 21:25+0100\n"
+"POT-Creation-Date: 2012-12-30 15:52+0100\n"
 "PO-Revision-Date: 2012-07-28 22:11+0100\n"
 "Last-Translator: Carlos Zuferri <chals@altorricon.com>\n"
 "Language-Team: none\n"
@@ -25,8 +25,8 @@ msgstr "LIVE-CONFIG"
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "2012-12-17"
-msgstr "17.12.2012"
+msgid "2012-12-30"
+msgstr "30.12.2012"
 
 #. type: TH
 #: en/live-config.7:9
@@ -141,14 +141,15 @@ msgstr "B<live-config>=I<SCRIPT1>,I<SCRIPT2>,·...·I<SCRIPTn>·|·B<config>=I<S
 #: en/live-config.7:29
 msgid ""
 "Only the specified scripts are run. Note that the order matters, e.g. 'live-"
-"config=sudo,user-setup' would not work since the user needs to be added "
-"before it can be configured for sudo. Look at the filenames of the scripts "
-"in /lib/live/config for their ordering number."
+"config=sudo,live-debconfig_passwd' would not work since the user needs to be "
+"added before it can be configured for sudo. Look at the filenames of the "
+"scripts in /lib/live/config for their ordering number."
 msgstr ""
 "Sólo se ejecutan los scripts especificados. Se debe tener en cuenta que el "
-"orden es importante. p.ej. «live-config=sudo,user-setup» no funcionaría ya "
-"que el usuario debe añadirse antes de configurarse como «sudo». Puede "
-"revisarse los nombres de los scripts en /lib/live/config para ver su orden."
+"orden es importante. p.ej. «live-config=sudo,live-debconfig_passwd» no "
+"funcionaría ya que el usuario debe añadirse antes de configurarse como "
+"«sudo». Puede revisarse los nombres de los scripts en /lib/live/config para "
+"ver su orden."
 
 #. type: IP
 #: en/live-config.7:29
@@ -1077,12 +1078,12 @@ msgstr "configura /etc/hostname y /etc/hosts."
 #. type: IP
 #: en/live-config.7:174
 #, no-wrap
-msgid "B<user-setup>"
-msgstr "B<user-setup>"
+msgid "B<live-debconfig_passwd>"
+msgstr "B<live-debconfig_passwd>"
 
 #. type: Plain text
 #: en/live-config.7:176
-msgid "adds an live user account."
+msgid "adds a live user account."
 msgstr "Añade una cuenta de usuario en vivo."
 
 #. type: IP

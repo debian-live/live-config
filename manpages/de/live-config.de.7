@@ -11,7 +11,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 17.12.2012 4.0~a9\-1 "Debian Live Projekt"
+.TH LIVE\-CONFIG 7 30.12.2012 4.0~a9\-1 "Debian Live Projekt"
 
 .SH NAME
 \fBlive\-config\fP \- System Konfiguration Skripte
@@ -44,9 +44,9 @@ Alle Skripte werden ausgeführt. Auf Debian Live Images ist dies das
 Standardverhalten.
 .IP "\fBlive\-config\fP=\fISKRIPT1\fP,\fISKRIPT2\fP, ... \fISKRIPTn\fP | \fBconfig\fP=\fISKRIPT1\fP,\fISKRIPT2\fP, ... \fISKRIPTn\fP" 4
 Nur angegebene Skripte werden ausgeführt. Die Reihenfolge ist wesentlich,
-d.h. 'live\-config=sudo,user\-setup' würde nicht funktionieren da der Benutzer
-zuerst angelegt werden muss bevor für ihn sudo konfiguriert werden
-kann. Siehe Dateinamen der Skripte in /lib/live/config für ihre
+d.h. 'live\-config=sudo,live\-debconfig_passwd' würde nicht funktionieren da
+der Benutzer zuerst angelegt werden muss bevor für ihn sudo konfiguriert
+werden kann. Siehe Dateinamen der Skripte in /lib/live/config für ihre
 Ordnungsnummer.
 .IP "\fBlive\-noconfig\fP | \fBnoconfig\fP" 4
 Kein Skript wird ausgeführt. Dies ist das Gleiche, wie wenn weder
@@ -300,7 +300,7 @@ erlaubt beliebige Preseed Dateien auf dem Live Medium oder von einem
 HTTP/FTP Server anzuwenden.
 .IP \fBhostname\fP 4
 konfiguriert /etc/hostname und /etc/hosts.
-.IP \fBuser\-setup\fP 4
+.IP \fBlive\-debconfig_passwd\fP 4
 fügt das Live Benutzerkonto hinzu.
 .IP \fBsudo\fP 4
 räumt dem Live Benutzer sudo Privilegien ein.

@@ -6,7 +6,7 @@
 .\" under certain conditions; see COPYING for details.
 .\"
 .\"
-.TH LIVE\-CONFIG 7 2012\-12\-17 4.0~a9-1 "Debian Live Project"
+.TH LIVE\-CONFIG 7 2012\-12\-30 4.0~a9-1 "Debian Live Project"
 
 .SH NAME
 \fBlive\-config\fR \- System Configuration Scripts
@@ -25,7 +25,7 @@ To configure the live\-config parameters used by default in a live image, see th
 .IP "\fBlive\-config\fR | \fBconfig\fR" 4
 All scripts are run. This is what Debian Live images use by default.
 .IP "\fBlive\-config\fR=\fISCRIPT1\fR,\fISCRIPT2\fR, ... \fISCRIPTn\fR | \fBconfig\fR=\fISCRIPT1\fR,\fISCRIPT2\fR, ... \fISCRIPTn\fR" 4
-Only the specified scripts are run. Note that the order matters, e.g. 'live\-config=sudo,user\-setup' would not work since the user needs to be added before it can be configured for sudo. Look at the filenames of the scripts in /lib/live/config for their ordering number.
+Only the specified scripts are run. Note that the order matters, e.g. 'live\-config=sudo,live\-debconfig_passwd' would not work since the user needs to be added before it can be configured for sudo. Look at the filenames of the scripts in /lib/live/config for their ordering number.
 .IP "\fBlive\-noconfig\fR | \fBnoconfig\fR" 4
 No script is run. This is the same as not using any of 'live\-config' or 'live\-noconfig'.
 .IP "\fBlive\-noconfig\fR=\fISCRIPT1\fR,\fISCRIPT2\fR, ... \fISCRIPTn\fR | \fBnoconfig\fR=\fISCRIPT1\fR,\fISCRIPT2\fR, ... \fISCRIPTn\fR" 4
@@ -171,8 +171,8 @@ The configuration files for the live system itself are best put into an own debi
 allows to apply arbitrary preseed files placed on the live media or an http/ftp server.
 .IP "\fBhostname\fR" 4
 configures /etc/hostname and /etc/hosts.
-.IP "\fBuser\-setup\fR" 4
-adds an live user account.
+.IP "\fBlive\-debconfig_passwd\fR" 4
+adds a live user account.
 .IP "\fBsudo\fR" 4
 grants sudo privileges to the live user.
 .IP "\fBlocales\fR" 4
