@@ -1,5 +1,5 @@
 # German translations for live-config
-# Copyright (C) 2006-2012 Daniel Baumann <daniel@debian.org>
+# Copyright (C) 2006-2013 Daniel Baumann <daniel@debian.org>
 # This file is distributed under the same license as the live-config package.
 #
 msgid ""
@@ -25,7 +25,7 @@ msgstr "LIVE-CONFIG"
 #: en/live-config.7:9
 #, no-wrap
 msgid "2013-01-02"
-msgstr "2013-01-02"
+msgstr "02.01.2013"
 
 #. type: TH
 #: en/live-config.7:9

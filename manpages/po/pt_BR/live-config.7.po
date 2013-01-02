@@ -1,6 +1,6 @@
 # Brazilian Portuguese translations for live-config
+# Copyright (C) 2012-2013 Tiago Bortoletto Vaz <tiago@debian.org>
 # Copyright (C) 2010-2012 Tassia Camoes Araujo <tassia@gmail.com>
-# Copyright (C) 2012 Tiago Bortoletto Vaz <tiago@debian.org>
 # This file is distributed under the same license as the live-config package.
 #
 msgid ""
@@ -26,7 +26,7 @@ msgstr "LIVE-CONFIG"
 #: en/live-config.7:9
 #, no-wrap
 msgid "2013-01-02"
-msgstr "2013-01-02"
+msgstr "02-01-2013"
 
 #. type: TH
 #: en/live-config.7:9
