@@ -117,7 +117,7 @@ Configure_xserver_xorg ()
 			if [ -z "${LIVE_XORG_DRIVER}" ]
 			then
 				# xorg-driver automatic override for virtualbox
-				if echo "${_DEVICE}" | grep -qs '^80EEBEEF'
+				if [ -e /var/lib/dpkg/info/virtualbox-guest-x11.list ] && echo "${_DEVICE}" | grep -qs '^80EEBEEF'
 				then
 					LIVE_XORG_DRIVER="vboxvideo"
 				fi
