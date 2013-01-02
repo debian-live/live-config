@@ -1,6 +1,6 @@
 # French translations for live-config
+# Copyright (C) 2011-2013 Carlos Zuferri "chals" <chals@altorricon.com>
 # Copyright (C) 2010 Thierry Lépicier <thierry.lepicier@free.fr>
-# Copyright (C) 2011-2012 Carlos Zuferri "chals" <chals@altorricon.com>
 # This file is distributed under the same license as the live-config package.
 #
 msgid ""
@@ -26,7 +26,7 @@ msgstr "LIVE-CONFIG"
 #: en/live-config.7:9
 #, no-wrap
 msgid "2013-01-02"
-msgstr "2013-01-02"
+msgstr "02.01.2013"
 
 #. type: TH
 #: en/live-config.7:9
