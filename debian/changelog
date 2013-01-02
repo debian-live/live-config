@@ -1,3 +1,13 @@
+live-config (3.0.16-1) unstable; urgency=low
+
+  * Correcting spelling typo in manpage.
+  * Updating year in all copyright notices.
+  * Only set vboxvideo driver automatically in xserver-xorg script for
+    virtualbox systems if virtualbox-guest-x11 is installed, thanks to
+    Eugenio Paolantonio <me@medesimo.eu> (Closes: #697146).
+
+ -- Daniel Baumann <daniel@debian.org>  Wed, 02 Jan 2013 12:13:55 +0100
+
 live-config (3.0.15-1) unstable; urgency=low
 
   * Adding support for virtualbox in xserver-xorg script.
