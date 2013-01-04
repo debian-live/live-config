@@ -217,19 +217,29 @@ Main ()
 			;;
 	esac
 
+	# Setting up log redirection
+	rm -f /var/log/live/config.log
+	rm -f /var/log/live/config.pipe
+
 	mkdir -p /var/log/live
+	mkfifo /var/log/live/config.pipe
+	tee < /var/log/live/config.pipe /var/log/live/config.log &
+	exec &> /var/log/live/config.pipe
 
 	# Configuring system
 	_SCRIPTS="$(echo ${_SCRIPTS} | sed -e 's| |\n|g' | sort -u)"
 
 	for _SCRIPT in ${_SCRIPTS}
 	do
-		[ "${LIVE_DEBUG}" = "true" ] && echo "[$(date +'%F %T')] live-config: ${_SCRIPT}" >> /var/log/live/config.log
+		[ "${LIVE_DEBUG}" = "true" ] && echo "[$(date +'%F %T')] live-config: ${_SCRIPT}" > /var/log/live/config.pipe
 
-		. ${_SCRIPT} 2>&1 | tee -a /var/log/live/config.log
+		. ${_SCRIPT} > /var/log/live/config.pipe 2>&1
 	done
 
-	echo "."
+	echo "." > /var/log/live/config.pipe
+
+	# Cleaning up log redirection
+	rm -f /var/log/live/config.pipe
 }
 
 Main ${@}
