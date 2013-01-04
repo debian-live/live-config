@@ -176,6 +176,14 @@ live-config (4.0~a1-1) experimental; urgency=low
 
  -- Daniel Baumann <daniel@debian.org>  Wed, 26 Sep 2012 15:05:07 +0200
 
+live-config (3.0.17-1) unstable; urgency=low
+
+  * Updating manpage year handling for 2013.
+  * Using fifo instead of pipe to catch logs from scripts (Closes:
+    #697320).
+
+ -- Daniel Baumann <daniel@debian.org>  Fri, 04 Jan 2013 09:57:16 +0100
+
 live-config (3.0.16-1) unstable; urgency=low
 
   * Correcting spelling typo in manpage.
