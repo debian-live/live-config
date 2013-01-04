@@ -10,6 +10,11 @@
 
 Hostname ()
 {
+	# Supporting variables within hostnames
+	LINK="$(ip -oneline -family link address show dev eth0 | awk '{ print $13 }' | sed -e 's|:|-|g')"
+	INET="$(ip -oneline -family inet address show dev eth0 | awk '{ print $4 }' | sed -e 's|\.|-|g' -e 's|/.*||')"
+	INET6="$(ip -oneline -family inet6 address show dev eth0 | awk '{ print $4 }' | sed -e 's|:|-|g' -e 's|/.*||' -e 's|--|-|')"
+
 	# Reading kernel command line
 	for _PARAMETER in ${_CMDLINE}
 	do
