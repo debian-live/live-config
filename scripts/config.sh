@@ -224,7 +224,7 @@ Main ()
 	mkdir -p /var/log/live
 	mkfifo /var/log/live/config.pipe
 	tee < /var/log/live/config.pipe /var/log/live/config.log &
-	exec &> /var/log/live/config.pipe
+	exec 2>&1 > /var/log/live/config.pipe
 
 	# Configuring system
 	_SCRIPTS="$(echo ${_SCRIPTS} | sed -e 's| |\n|g' | sort -u)"
