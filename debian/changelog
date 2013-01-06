@@ -1,3 +1,18 @@
+live-config (3.0.18-1) unstable; urgency=low
+
+  [ Daniel Baumann ]
+  * Adding support for variables (ip and mac addresses) in hostname
+    script.
+
+  [ Ben Armstrong ]
+  * Fixing illegal redirect to named pipe with equivalent that works.
+
+  [ Daniel Baumann ]
+  * Removing bashism in exec call for logfile pipe, thanks to
+    Алексей Шилин <rootlexx@mail.ru>.
+
+ -- Daniel Baumann <daniel@debian.org>  Sun, 06 Jan 2013 20:17:48 +0100
+
 live-config (3.0.17-1) unstable; urgency=low
 
   * Updating manpage year handling for 2013.
