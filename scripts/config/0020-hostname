@@ -10,14 +10,6 @@
 
 Hostname ()
 {
-	# Supporting variables within hostnames
-	if [ -e /bin/ip ]
-	then
-		LINK="$(ip -oneline -family link address show dev eth0 | awk '{ print $13 }' | sed -e 's|:|-|g')"
-		INET="$(ip -oneline -family inet address show dev eth0 | awk '{ print $4 }' | sed -e 's|\.|-|g' -e 's|/.*||')"
-		INET6="$(ip -oneline -family inet6 address show dev eth0 | awk '{ print $4 }' | sed -e 's|:|-|g' -e 's|/.*||' -e 's|--|-|')"
-	fi
-
 	# Reading kernel command line
 	for _PARAMETER in ${_CMDLINE}
 	do
@@ -46,6 +38,16 @@ Configure_hostname ()
 	if [ ! -e /etc/hostname ] || \
 	   grep -qs localhost\.localdomain /etc/hostname
 	then
+		# Supporting variables within hostnames
+		if [ -e /bin/ip ]
+		then
+			LINK="$(ip -oneline -family link address show dev eth0 | awk '{ print $13 }' | sed -e 's|:|-|g')"
+			INET="$(ip -oneline -family inet address show dev eth0 | awk '{ print $4 }' | sed -e 's|\.|-|g' -e 's|/.*||')"
+			INET6="$(ip -oneline -family inet6 address show dev eth0 | awk '{ print $4 }' | sed -e 's|:|-|g' -e 's|/.*||' -e 's|--|-|')"
+
+			eval LIVE_HOSTNAME="${LIVE_HOSTNAME}"
+		fi
+
 		echo "${LIVE_HOSTNAME}" > /etc/hostname
 	else
 		LIVE_HOSTNAME="$(cat /etc/hostname)"
