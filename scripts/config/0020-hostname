@@ -63,7 +63,7 @@ EOF
 
 	fi
 
-	hostname "${LIVE_HOSTNAME}"
+	hostname "${LIVE_HOSTNAME}" || true
 
 	# Creating state file
 	touch /var/lib/live/config/hostname
