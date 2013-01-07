@@ -16,7 +16,7 @@ Depends:
  ${misc:Depends}, live-config-sysvinit | live-config-backend,
  live-debconfig
 Recommends:
- live-config-doc, live-tools, console-tools, keyboard-configuration,
+ live-config-doc, live-tools, console-tools, iproute, keyboard-configuration,
  locales | locales-all, sudo
 Suggests: pciutils, wget
 Description: Live System Configuration Scripts
