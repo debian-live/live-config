@@ -195,7 +195,16 @@ Main ()
 		exit 0
 	fi
 
-	echo -n "live-config:"
+	# Setting up log redirection
+	rm -f /var/log/live/config.log
+	rm -f /var/log/live/config.pipe
+
+	mkdir -p /var/log/live
+	mkfifo /var/log/live/config.pipe
+	tee < /var/log/live/config.pipe /var/log/live/config.log &
+	exec > /var/log/live/config.pipe 2>&1
+
+	echo -n "live-config:" > /var/log/live/config.pipe 2>&1
 	trap 'Trap' EXIT HUP INT QUIT TERM
 
 	# Reading configuration files from filesystem and live-media
@@ -216,15 +225,6 @@ Main ()
 			set -x
 			;;
 	esac
-
-	# Setting up log redirection
-	rm -f /var/log/live/config.log
-	rm -f /var/log/live/config.pipe
-
-	mkdir -p /var/log/live
-	mkfifo /var/log/live/config.pipe
-	tee < /var/log/live/config.pipe /var/log/live/config.log &
-	exec > /var/log/live/config.pipe 2>&1
 
 	# Configuring system
 	_SCRIPTS="$(echo ${_SCRIPTS} | sed -e 's| |\n|g' | sort -u)"
