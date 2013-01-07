@@ -32,6 +32,7 @@ DEBIAN_FRONTEND="noninteractive"
 DEBIAN_PRIORITY="critical"
 DEBCONF_NOWARNINGS="yes"
 
+IP_SEPARATOR="-"
 PROC_OPTIONS="onodev,noexec,nosuid"
 
 Cmdline ()
