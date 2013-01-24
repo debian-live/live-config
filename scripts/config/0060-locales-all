@@ -43,7 +43,7 @@ Configure_locales_all ()
 
 	if [ -e /etc/progress-linux_version ]
 	then
-		sed -i -e "s|^ *LANG=.*|LANG=\"${LIVE_LOCALES}\"|" /etc/profile
+		sed -i -e "s|^ *export LANG=.*|export LANG=\"${LIVE_LOCALES}\"|" /etc/profile
 	else
 		printf 'export LANG="%s"\n' "${_LOCALE}" > /etc/profile.d/zz-live-config_locales-all.sh
 	fi
