@@ -41,7 +41,12 @@ Configure_locales_all ()
 		LIVE_LOCALES="en_US.UTF-8"
 	fi
 
-	printf 'export LANG="%s"\n' "${_LOCALE}" > /etc/profile.d/locales-all.sh
+	if [ -e /etc/progress-linux_version ]
+	then
+		sed -i -e "s|^ *LANG=.*|LANG=\"${LIVE_LOCALES}\"|" /etc/profile
+	else
+		printf 'export LANG="%s"\n' "${_LOCALE}" > /etc/profile.d/locales-all.sh
+	fi
 
 	# Creating state file
 	touch /var/lib/live/config/locales-all
