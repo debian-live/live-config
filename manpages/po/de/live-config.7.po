@@ -1279,7 +1279,7 @@ msgstr "schaltet lastlog ab."
 #: en/live-config.7:208
 #, no-wrap
 msgid "B<apport>"
-msgstr ""
+msgstr "B<apport>"
 
 #. type: Plain text
 #: en/live-config.7:210
@@ -1461,7 +1461,7 @@ msgstr "B<xfce4-panel>"
 #. type: Plain text
 #: en/live-config.7:244
 msgid "configures xfce4-panel to default settings."
-msgstr ""
+msgstr "konfiguriert Standarteinstellungen für xfce4-panel."
 
 #. type: IP
 #: en/live-config.7:244

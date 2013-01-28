@@ -1275,7 +1275,7 @@ msgstr "desabilita lastlog."
 #: en/live-config.7:208
 #, no-wrap
 msgid "B<apport>"
-msgstr ""
+msgstr "B<apport>"
 
 #. type: Plain text
 #: en/live-config.7:210
