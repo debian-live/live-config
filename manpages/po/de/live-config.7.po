@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config 4.0~a12-1\n"
-"POT-Creation-Date: 2013-01-24 12:20-0600\n"
+"POT-Creation-Date: 2013-01-28 13:56+0100\n"
 "PO-Revision-Date: 2010-05-24 09:59+0300\n"
 "Last-Translator: Daniel Baumann <daniel@debian.org>\n"
 "Language-Team: none\n"
@@ -24,8 +24,8 @@ msgstr "LIVE-CONFIG"
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "2013-01-24"
-msgstr "24.01.2013"
+msgid "2013-01-28"
+msgstr "28.01.2013"
 
 #. type: TH
 #: en/live-config.7:9
@@ -1280,7 +1280,7 @@ msgstr "schaltet lastlog ab."
 #: en/live-config.7:208
 #, no-wrap
 msgid "B<apport>"
-msgstr ""
+msgstr "B<apport>"
 
 #. type: Plain text
 #: en/live-config.7:210
@@ -1451,7 +1451,7 @@ msgstr "B<xfce4-panel>"
 #. type: Plain text
 #: en/live-config.7:242
 msgid "configures xfce4-panel to default settings."
-msgstr ""
+msgstr "konfiguriert Standarteinstellungen für xfce4-panel."
 
 #. type: IP
 #: en/live-config.7:242
