@@ -1,3 +1,53 @@
+live-config (4.0~a13-1) experimental; urgency=low
+
+  [ Daniel Baumann ]
+  * Moving log redirection to earlier point in time to capture the
+    initialization of live-config in the logfile too.
+  * Protecting hostname setting to avoid leaving live-config completely if
+    user sets an invalid hostname.
+  * Only support hostname variables when iproute is available.
+  * Making link/inet/inet6 variables in hostnames actually working.
+  * Using internal variable for /bin/ip separator when using variables in
+    hostname to allow local customizations.
+  * Moving ip separator variable to the beginning in order to overwrite it
+    through /etc/live/config, even if it's only use no separator at all.
+  * Dropping dpkg compression level.
+  * Correcting locales-all script to only write the default locale out in
+    case more than one has been specified.
+  * Edit existing LANG setting on Progress Linux in /etc/profile rather
+    than adding a new /etc/profile.d file.
+  * Using consistent naming scheme for automatic generated live-config
+    configuration files.
+  * Correct editing of /etc/profile for LANG in locales-all script on
+    Progress Linux systems.
+
+  [ Richard Nelson ]
+  * Adding script for initial xfce4-panel configuration.
+
+  [ Daniel Baumann ]
+  * Only running xfce4-panel configuration if the default configuration
+    file hasn't been installed already by other means (e.g. includes).
+
+  [ Richard Nelson ]
+  * Adding entry for xfce4-panel in manpages.
+
+  [ Daniel Baumann ]
+  * Updating German manpage translation.
+
+  [ chals ]
+  * Updating French manpage translation.
+  * Updating Spanish manpage translation.
+
+  [ skizzhg ]
+  * Updating Italian translation.
+
+  [ Daniel Baumann ]
+  * Enabling systemd job on installation of live-config-systemd.
+  * Dropping pre-wheezy conflicts/replaces on live-config.
+  * Adding 3.0.19-1 changelog entries.
+
+ -- Daniel Baumann <daniel@debian.org>  Sat, 09 Feb 2013 07:47:25 +0100
+
 live-config (4.0~a12-1) experimental; urgency=low
 
   [ Daniel Baumann ]
