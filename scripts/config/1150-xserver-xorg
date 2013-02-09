@@ -164,12 +164,12 @@ Configure_xserver_xorg ()
 		if [ -e "/usr/share/live/config/xserver-xorg/${LIVE_XORG_DRIVER}.conf" ]
 		then
 			# xorg-driver manual override
-			cp "/usr/share/live/config/xserver-xorg/${LIVE_XORG_DRIVER}.conf" /etc/X11/xorg.conf.d/99-live.conf
+			cp "/usr/share/live/config/xserver-xorg/${LIVE_XORG_DRIVER}.conf" /etc/X11/xorg.conf.d/zz-live-config_xserver-xorg.conf
 		else
 
 			# xorg-driver automatic override
 
-cat > /etc/X11/xorg.conf.d/99-live.conf << EOF
+cat > /etc/X11/xorg.conf.d/zz-live-config_xserver-xorg.conf << EOF
 Section "Device"
 	Identifier	"Default screen"
 	Driver		"${LIVE_XORG_DRIVER}"

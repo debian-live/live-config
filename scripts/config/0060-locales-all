@@ -34,9 +34,19 @@ Locales_all ()
 
 Configure_locales_all ()
 {
-	_LOCALE="${LIVE_LOCALES:-en_US.UTF-8}"
+	if [ -n "${LIVE_LOCALES}" ]
+	then
+		LIVE_LOCALES="$(echo ${LIVE_LOCALES} | awk -F, '{ print $1 }')"
+	else
+		LIVE_LOCALES="en_US.UTF-8"
+	fi
 
-	printf 'export LANG="%s"\n' "${_LOCALE}" > /etc/profile.d/locales-all.sh
+	if [ -e /etc/progress-linux_version ]
+	then
+		sed -i -e "s|^ *export LANG=.*|export LANG=\"${LIVE_LOCALES}\"|" /etc/profile
+	else
+		printf 'export LANG="%s"\n' "${_LOCALE}" > /etc/profile.d/zz-live-config_locales-all.sh
+	fi
 
 	# Creating state file
 	touch /var/lib/live/config/locales-all

@@ -4,8 +4,8 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: live-config 3.0.18-1\n"
-"POT-Creation-Date: 2013-01-06 20:16+0100\n"
+"Project-Id-Version: live-config 3.0.19-1\n"
+"POT-Creation-Date: 2013-02-09 07:40+0100\n"
 "PO-Revision-Date: 2012-08-03 17:13+0200\n"
 "Last-Translator: skizzhg <skizzhg@gmx.com>\n"
 "Language-Team: none\n"
@@ -23,14 +23,14 @@ msgstr "LIVE-CONFIG"
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "2013-01-06"
-msgstr "06.01.2013"
+msgid "2013-02-09"
+msgstr "09.02.2013"
 
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "3.0.18-1"
-msgstr "3.0.18-1"
+msgid "3.0.19-1"
+msgstr "3.0.19-1"
 
 #. type: TH
 #: en/live-config.7:9
@@ -668,7 +668,7 @@ msgstr ""
 "Sebbene i file di configurazione messi nelle directory conf.d non richiedano "
 "un nome o un suffisso particolari, per coerenza è suggerito di usare "
 "\"vendor.conf\"o \"project.conf\" come schema di denominazione (laddove "
-"\"vendor\" o \"project\"è sostituito con un nome reale, risultando in un "
+"\"vendor\" o \"project\" è sostituito con un nome reale, risultando in un "
 "nome di file come \"debian-eeepc.conf\")."
 
 #. type: Plain text
@@ -1444,11 +1444,22 @@ msgstr "ricrea le chiavi di openssh-server."
 #. type: IP
 #: en/live-config.7:242
 #, no-wrap
+msgid "B<xfce4-panel>"
+msgstr "B<xfce4-panel>"
+
+#. type: Plain text
+#: en/live-config.7:244
+msgid "configures xfce4-panel to default settings."
+msgstr "configura xfce4-panel con le impostazioni predefinite."
+
+#. type: IP
+#: en/live-config.7:244
+#, no-wrap
 msgid "B<hooks>"
 msgstr "B<hooks>"
 
 #. type: Plain text
-#: en/live-config.7:244
+#: en/live-config.7:246
 msgid ""
 "allows to run arbitrary commands from a script placed on the live media or "
 "an http/ftp server."
@@ -1457,112 +1468,112 @@ msgstr ""
 "live o su un server http/ftp."
 
 #. type: SH
-#: en/live-config.7:245
+#: en/live-config.7:247
 #, no-wrap
 msgid "FILES"
 msgstr "FILE"
 
 #. type: IP
-#: en/live-config.7:246
+#: en/live-config.7:248
 #, no-wrap
 msgid "B</etc/live/config.conf>"
 msgstr "B</etc/live/config.conf>"
 
 #. type: IP
-#: en/live-config.7:247
+#: en/live-config.7:249
 #, no-wrap
 msgid "B</etc/live/config/*>"
 msgstr "B</etc/live/config/*>"
 
 #. type: IP
-#: en/live-config.7:248
+#: en/live-config.7:250
 #, no-wrap
 msgid "B<live/config.conf>"
 msgstr "B<live/config.conf>"
 
 #. type: IP
-#: en/live-config.7:249
+#: en/live-config.7:251
 #, no-wrap
 msgid "B<live/config/*>"
 msgstr "B<live/config/*>"
 
 #. type: IP
-#: en/live-config.7:250
+#: en/live-config.7:252
 #, no-wrap
 msgid "B</lib/live/config.sh>"
 msgstr "B</lib/live/config.sh>"
 
 #. type: IP
-#: en/live-config.7:251
+#: en/live-config.7:253
 #, no-wrap
 msgid "B</lib/live/config/>"
 msgstr "B</lib/live/config/>"
 
 #. type: IP
-#: en/live-config.7:252
+#: en/live-config.7:254
 #, no-wrap
 msgid "B</var/lib/live/config/>"
 msgstr "B</var/lib/live/config/>"
 
 #. type: IP
-#: en/live-config.7:253
+#: en/live-config.7:255
 #, no-wrap
 msgid "B</var/log/live/config.log>"
 msgstr "B</var/log/live/config.log>"
 
 #. type: IP
-#: en/live-config.7:255
+#: en/live-config.7:257
 #, no-wrap
 msgid "B</live/config-hooks/*>"
 msgstr "B</live/config-hooks/*>"
 
 #. type: IP
-#: en/live-config.7:256
+#: en/live-config.7:258
 #, no-wrap
 msgid "B<live/config-hooks/*>"
 msgstr "B<live/config-hooks/*>"
 
 #. type: IP
-#: en/live-config.7:257
+#: en/live-config.7:259
 #, no-wrap
 msgid "B</live/config-preseed/*>"
 msgstr "B</live/config-preseed/*>"
 
 #. type: IP
-#: en/live-config.7:258
+#: en/live-config.7:260
 #, no-wrap
 msgid "B<live/config-preseed/* >"
 msgstr "B<live/config-preseed/* >"
 
 #. type: SH
-#: en/live-config.7:260
+#: en/live-config.7:262
 #, no-wrap
 msgid "SEE ALSO"
 msgstr "VEDERE ANCHE"
 
 #. type: Plain text
-#: en/live-config.7:262
+#: en/live-config.7:264
 msgid "I<live-boot>(7)"
 msgstr "I<live-boot>(7)"
 
 #. type: Plain text
-#: en/live-config.7:264
+#: en/live-config.7:266
 msgid "I<live-build>(7)"
 msgstr "I<live-build>(7)"
 
 #. type: Plain text
-#: en/live-config.7:266
+#: en/live-config.7:268
 msgid "I<live-tools>(7)"
 msgstr "I<live-tools>(7)"
 
 #. type: SH
-#: en/live-config.7:267
+#: en/live-config.7:269
 #, no-wrap
 msgid "HOMEPAGE"
 msgstr "HOMEPAGE"
 
 #. type: Plain text
-#: en/live-config.7:269
+#: en/live-config.7:271
 msgid ""
 "More information about live-config and the Debian Live project can be found "
 "on the homepage at E<lt>I<http://live.debian.net/>E<gt> and in the manual at "
@@ -1573,13 +1584,13 @@ msgstr ""
 "manuale all'indirizzo E<lt>I<http://live.debian.net/manual/>E<gt>."
 
 #. type: SH
-#: en/live-config.7:270
+#: en/live-config.7:272
 #, no-wrap
 msgid "BUGS"
 msgstr "BUG"
 
 #. type: Plain text
-#: en/live-config.7:272
+#: en/live-config.7:274
 msgid ""
 "Bugs can be reported by submitting a bugreport for the live-config package "
 "in the Debian Bug Tracking System at E<lt>I<http://bugs.debian.org/>E<gt> or "
@@ -1592,13 +1603,13 @@ msgstr ""
 "E<lt>I<debian-live@lists.debian.org>E<gt>."
 
 #. type: SH
-#: en/live-config.7:273
+#: en/live-config.7:275
 #, no-wrap
 msgid "AUTHOR"
 msgstr "AUTORE"
 
 #. type: Plain text
-#: en/live-config.7:274
+#: en/live-config.7:276
 msgid ""
 "live-config was written by Daniel Baumann E<lt>I<daniel@debian.org>E<gt>."
 msgstr ""

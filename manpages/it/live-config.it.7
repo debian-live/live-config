@@ -11,7 +11,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 06.01.2013 3.0.18\-1 "Progetto Debian Live"
+.TH LIVE\-CONFIG 7 09.02.2013 3.0.19\-1 "Progetto Debian Live"
 
 .SH NOME
 \fBlive\-config\fP \- Script di configurazione del sistema
@@ -190,7 +190,7 @@ entrambe le destinazioni, avrà la precedenza quello del supporto live.
 Sebbene i file di configurazione messi nelle directory conf.d non richiedano
 un nome o un suffisso particolari, per coerenza è suggerito di usare
 "vendor.conf"o "project.conf" come schema di denominazione (laddove "vendor"
-o "project"è sostituito con un nome reale, risultando in un nome di file
+o "project" è sostituito con un nome reale, risultando in un nome di file
 come "debian\-eeepc.conf").
 .PP
 Il contenuto effettivo dei file di configurazione è costituito da una o più
@@ -358,6 +358,8 @@ configura xserver\-xorg.
 disabilita ureadahead.
 .IP \fBopenssh\-server\fP 4
 ricrea le chiavi di openssh\-server.
+.IP \fBxfce4\-panel\fP 4
+configura xfce4\-panel con le impostazioni predefinite.
 .IP \fBhooks\fP 4
 permette di eseguire comandi arbitrari da uno script situato sul supporto
 live o su un server http/ftp.
