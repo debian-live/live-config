@@ -46,7 +46,7 @@ Description: Live System Configuration Scripts (systemd backend)
  live-config contains the scripts that configure a live system during the boot
  process (late userspace).
  .
- This package contains the systemd backend (experimental!).
+ This package contains the systemd backend.
 
 Package: live-config-sysvinit
 Architecture: all
