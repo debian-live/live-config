@@ -1,3 +1,14 @@
+live-config (4.0~a14-1) experimental; urgency=low
+
+  * Correcting systemctl call for system to enable live-config.service.
+  * Apparently lightdm doesn't do autologin with a non-zero autologin-
+    user-timeout.
+  * Adding 3.0.20-1 changelog entries.
+  * Removing experimental status for live-config-systemd, basics are
+    working properly now.
+
+ -- Daniel Baumann <daniel@debian.org>  Thu, 14 Feb 2013 13:16:11 +0100
+
 live-config (4.0~a13-1) experimental; urgency=low
 
   [ Daniel Baumann ]
