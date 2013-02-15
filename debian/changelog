@@ -262,6 +262,12 @@ live-config (4.0~a1-1) experimental; urgency=low
 
  -- Daniel Baumann <daniel@debian.org>  Wed, 26 Sep 2012 15:05:07 +0200
 
+live-config (3.0.21-1) unstable; urgency=low
+
+  * Calling systemctl with --quiet.
+
+ -- Daniel Baumann <daniel@debian.org>  Fri, 15 Feb 2013 09:32:13 +0100
+
 live-config (3.0.20-1) unstable; urgency=low
 
   * Correcting systemctl call for system to enable live-config.service.
