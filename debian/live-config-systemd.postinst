@@ -6,7 +6,7 @@ case "${1}" in
 	configure)
 		if [ -x /bin/systemctl ]
 		then
-			systemctl enable live-config.service
+			systemctl enable --quiet live-config.service
 		fi
 		;;
 
