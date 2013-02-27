@@ -34,6 +34,13 @@ Sudo ()
 
 Configure_sudo ()
 {
+	# Skip sudo configuration if username is root
+	case "${LIVE_USERNAME}" in
+		root)
+			return
+			;;
+	esac
+
 	# Checking if package is already configured differently
 	if grep -qs "^${LIVE_USERNAME}" /etc/sudoers.d/live
 	then
