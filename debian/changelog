@@ -1,3 +1,12 @@
+live-config (4.0~a16-1) experimental; urgency=low
+
+  * Skipping sudo script if username is root (Closes: #701788).
+  * Replacing systemctl call with manual symlink, which is error prone
+    wrt/ changes in systemd or the service file but doesn't require up and
+    running systemd (Closes: #700597).
+
+ -- Daniel Baumann <daniel@debian.org>  Fri, 01 Mar 2013 10:36:37 +0100
+
 live-config (4.0~a15-1) experimental; urgency=low
 
   * Calling systemctl with --quiet.
