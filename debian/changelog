@@ -1,3 +1,11 @@
+live-config (4.0~a17-1) experimental; urgency=low
+
+  * Correcting some spelling typos, thanks to Adam D. Barratt <adam@adam-
+    barratt.org.uk>.
+  * Updating default hostname on progress-linux systems.
+
+ -- Daniel Baumann <daniel@debian.org>  Sun, 10 Mar 2013 19:12:23 +0100
+
 live-config (4.0~a16-1) experimental; urgency=low
 
   * Skipping sudo script if username is root (Closes: #701788).
