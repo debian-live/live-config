@@ -1,13 +1,13 @@
 # German translations for live-config
-# Copyright (C) 2006-2013 Daniel Baumann <daniel@debian.org>
+# Copyright (C) 2006-2013 Daniel Baumann <mail@daniel-baumann.ch>
 # This file is distributed under the same license as the live-config package.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config 4.0~a17-1\n"
-"POT-Creation-Date: 2013-03-10 19:10+0100\n"
+"POT-Creation-Date: 2013-03-10 19:33+0100\n"
 "PO-Revision-Date: 2010-05-24 09:59+0300\n"
-"Last-Translator: Daniel Baumann <daniel@debian.org>\n"
+"Last-Translator: Daniel Baumann <mail@daniel-baumann.ch>\n"
 "Language-Team: none\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -1613,7 +1613,8 @@ msgstr "AUTOR"
 #. type: Plain text
 #: en/live-config.7:274
 msgid ""
-"live-config was written by Daniel Baumann E<lt>I<daniel@debian.org>E<gt>."
+"live-config was written by Daniel Baumann E<lt>I<mail@daniel-baumann."
+"ch>E<gt>."
 msgstr ""
-"live-config wurde von Daniel Baumann E<lt>I<daniel@debian.org>E<gt> "
+"live-config wurde von Daniel Baumann E<lt>I<mail@daniel-baumann.ch>E<gt> "
 "geschrieben."

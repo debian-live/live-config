@@ -12,4 +12,4 @@ point. The following things should minimally be changed:
   * Replace any mentioning of 'foobar', 'Foobar' and 'FOOBAR' with the name of
     your custom script or project name.
 
- -- Daniel Baumann <daniel@debian.org>  Tue, 01 Jan 2013 00:15:13 +0100
+ -- Daniel Baumann <mail@daniel-baumann.ch>  Tue, 01 Jan 2013 00:15:13 +0100
