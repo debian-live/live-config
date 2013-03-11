@@ -1,6 +1,6 @@
 #!/bin/sh
 
-## live-config-foobar(7) - Additional Configuration Scripts for Debian Live
+## live-config-foobar(7) - Additional Configuration Scripts for live systems
 ## Copyright (C) 2006-2013 Daniel Baumann <mail@daniel-baumann.ch>
 ## Copyright (C) 2013 John Doe <john@example.org>
 ##

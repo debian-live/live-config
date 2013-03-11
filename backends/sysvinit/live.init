@@ -1,6 +1,6 @@
 #!/bin/sh
 
-## live-boot contains the scripts that configure a Debian Live system during
+## live-boot contains the scripts that configure a live system during
 ## the boot process (early userspace).
 ##
 ## This is the sysvinit script for live-boot.
@@ -14,9 +14,9 @@
 # Should-Stop:		halt reboot
 # Default-Start:	S
 # Default-Stop:		0 6
-# Short-Description:	Debian Live - System Configuration Scripts
-# Description:		live-boot contains the scripts that configure a Debian
-#			Live system during the boot process (early userspace).
+# Short-Description:	live-boot - System Configuration Scripts
+# Description:		live-boot contains the scripts that configure a live
+#			system during the boot process (early userspace).
 # X-Start-Before:
 # X-Stop-After:		umountroot
 # X-Interactive:	true

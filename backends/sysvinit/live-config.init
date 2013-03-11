@@ -1,6 +1,6 @@
 #!/bin/sh
 
-## live-config contains the scripts that configure a Debian Live system during
+## live-config contains the scripts that configure a live system during
 ## the boot process (late userspace).
 ##
 ## This is the sysvinit script for live-config.
@@ -14,9 +14,9 @@
 # Should-Stop:
 # Default-Start:	S
 # Default-Stop:
-# Short-Description:	Debian Live - System Configuration Scripts
-# Description:		live-config contains the scripts that configure a Debian
-#			Live system during the boot process (late userspace).
+# Short-Description:	live-config - System Configuration Scripts
+# Description:		live-config contains the scripts that configure a live
+#			system during the boot process (late userspace).
 # X-Start-Before:	mountkernfs
 # X-Stop-After:
 # X-Interactive:	true

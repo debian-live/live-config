@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config 4.0~a18-1\n"
-"POT-Creation-Date: 2013-03-10 22:25+0100\n"
+"POT-Creation-Date: 2013-03-11 06:15+0100\n"
 "PO-Revision-Date: 2010-05-24 09:59+0300\n"
 "Last-Translator: Daniel Baumann <mail@daniel-baumann.ch>\n"
 "Language-Team: none\n"
@@ -23,9 +23,10 @@ msgstr "LIVE-CONFIG"
 
 #. type: TH
 #: en/live-config.7:9
-#, no-wrap
-msgid "2013-03-10"
-msgstr "10.03.2013"
+#, fuzzy, no-wrap
+#| msgid "2013-03-10"
+msgid "2013-03-11"
+msgstr "11.03.2013"
 
 #. type: TH
 #: en/live-config.7:9
@@ -35,8 +36,9 @@ msgstr "4.0~a18-1"
 
 #. type: TH
 #: en/live-config.7:9
-#, no-wrap
-msgid "Debian Live Project"
+#, fuzzy, no-wrap
+#| msgid "Debian Live Project"
+msgid "Live Systems Project"
 msgstr "Debian Live Projekt"
 
 #. type: SH
@@ -58,9 +60,13 @@ msgstr "BESCHREIBUNG"
 
 #. type: Plain text
 #: en/live-config.7:16
+#, fuzzy
+#| msgid ""
+#| "B<live-config> contains the scripts that configure a Debian Live system "
+#| "during the boot process (late userspace)."
 msgid ""
-"B<live-config> contains the scripts that configure a Debian Live system "
-"during the boot process (late userspace)."
+"B<live-config> contains the scripts that configure a live system during the "
+"boot process (late userspace)."
 msgstr ""
 "B<live-config> enthält die Skripte welche ein Debian Live System während des "
 "Startvorganges (late userspace) konfigurieren."
@@ -126,7 +132,9 @@ msgstr "B<live-config> | B<config>"
 
 #. type: Plain text
 #: en/live-config.7:27
-msgid "All scripts are run. This is what Debian Live images use by default."
+#, fuzzy
+#| msgid "All scripts are run. This is what Debian Live images use by default."
+msgid "All scripts are run. This is what live images use by default."
 msgstr ""
 "Alle Skripte werden ausgeführt. Auf Debian Live Images ist dies das "
 "Standardverhalten."
@@ -301,9 +309,13 @@ msgstr "B<live-config.user-fullname>=\"I<VOLLER BENUTZERNAME>\" | B<user-fullnam
 
 #. type: Plain text
 #: en/live-config.7:55
+#, fuzzy
+#| msgid ""
+#| "Allows to set the fullname of the users that gets created for autologin. "
+#| "The default is 'Debian Live user'."
 msgid ""
-"Allows to set the fullname of the users that gets created for autologin. The "
-"default is 'Debian Live user'."
+"Allows to set the fullname of the users that gets created for autologin. On "
+"Debian the default is 'Debian Live user'."
 msgstr ""
 "Ermöglicht den vollen Name für den Benutzer zu wählen, welcher für den "
 "automatischen Login angelegt wird. Der Standard ist 'Debian Live user'."
@@ -486,6 +498,15 @@ msgstr "B<live-config.hooks>=filesystem|medium|I<URL1>|I<URL2>| ... |I<URLn> | B
 
 #. type: Plain text
 #: en/live-config.7:79
+#, fuzzy
+#| msgid ""
+#| "Allows to fetch and execute one or more arbitrary files. Note that the "
+#| "URLs must be fetchable by wget (http, ftp or file://), the files are "
+#| "executed in /tmp of the running live system, and that the files needs "
+#| "their dependencies, if any, already installed, e.g. if a python script "
+#| "should be executed the system needs python installed. Some hooks for some "
+#| "common use-cases are available at /usr/share/doc/live-config/examples/"
+#| "hooks/ and E<lt>I<http://live-systems.org/other/hooks>E<gt>."
 msgid ""
 "Allows to fetch and execute one or more arbitrary files. Note that the URLs "
 "must be fetchable by wget (http, ftp or file://), the files are executed in /"
@@ -493,7 +514,7 @@ msgid ""
 "if any, already installed, e.g. if a python script should be executed the "
 "system needs python installed. Some hooks for some common use-cases are "
 "available at /usr/share/doc/live-config/examples/hooks/ and E<lt>I<http://"
-"live.debian.net/other/hooks>E<gt>."
+"live-systems.org/other/hooks>E<gt>."
 msgstr ""
 "Ermöglicht eine oder mehrere beliebige Dateien herunterzuladen und "
 "auszuführen. Die URLs müssen durch wget (http, ftp oder file://) aufösbar "
@@ -502,7 +523,7 @@ msgstr ""
 "sind,bereits installiert sein, zum Beispiel muss für ein Python Skript "
 "bereits Python auf dem System installiert sein. Einige Hooks für häufige "
 "Anwendungsfälle sind in /usr/share/doc/live-config/examples/hooks/ und "
-"unter  E<lt>I<http://live.debian.net/other/hooks>E<gt> verfügbar."
+"unter  E<lt>I<http://live-systems.org/other/hooks>E<gt> verfügbar."
 
 #. type: Plain text
 #: en/live-config.7:83
@@ -1575,14 +1596,19 @@ msgstr "HOMEPAGE"
 
 #. type: Plain text
 #: en/live-config.7:269
+#, fuzzy
+#| msgid ""
+#| "More information about live-config and the Debian Live project can be "
+#| "found on the homepage at E<lt>I<http://live-systems.org/>E<gt> and in the "
+#| "manual at E<lt>I<http://live-systems.org/manual/>E<gt>."
 msgid ""
-"More information about live-config and the Debian Live project can be found "
-"on the homepage at E<lt>I<http://live.debian.net/>E<gt> and in the manual at "
-"E<lt>I<http://live.debian.net/manual/>E<gt>."
+"More information about live-config and the Live Systems project can be found "
+"on the homepage at E<lt>I<http://live-systems.org/>E<gt> and in the manual "
+"at E<lt>I<http://live-systems.org/manual/>E<gt>."
 msgstr ""
 "Weitere Informationen über live-config und das Debian Live Projekt können "
-"auf der Homepage unter E<lt>I<http://live.debian.net/>E<gt> und im Handbuch "
-"unter E<lt>I<http://live.debian.net/manual/>E<gt> gefunden werden."
+"auf der Homepage unter E<lt>I<http://live-systems.org/>E<gt> und im Handbuch "
+"unter E<lt>I<http://live-systems.org/manual/>E<gt> gefunden werden."
 
 #. type: SH
 #: en/live-config.7:270
@@ -1592,11 +1618,17 @@ msgstr "FEHLER"
 
 #. type: Plain text
 #: en/live-config.7:272
+#, fuzzy
+#| msgid ""
+#| "Bugs can be reported by submitting a bugreport for the live-config "
+#| "package in the Debian Bug Tracking System at E<lt>I<http://bugs.debian."
+#| "org/>E<gt> or by writing a mail to the Debian Live mailing list at "
+#| "E<lt>I<debian-live@lists.debian.org>E<gt>."
 msgid ""
 "Bugs can be reported by submitting a bugreport for the live-config package "
-"in the Debian Bug Tracking System at E<lt>I<http://bugs.debian.org/>E<gt> or "
-"by writing a mail to the Debian Live mailing list at E<lt>I<debian-"
-"live@lists.debian.org>E<gt>."
+"in the Bug Tracking System at E<lt>I<http://bugs.debian.org/>E<gt> or by "
+"writing a mail to the Live Systems mailing list at E<lt>I<debian-live@lists."
+"debian.org>E<gt>."
 msgstr ""
 "Fehler können durch Einreichen eines Fehlerberichtes für das live-config "
 "Paket im Debian Bug Tracking System unter E<lt>I<http://bugs.debian.org/"
