@@ -1,3 +1,15 @@
+live-config (4.0~a19-1) experimental; urgency=low
+
+  [ Daniel Baumann ]
+  * Debranding package for derivatives.
+  * Correcting spelling typo in noroot variable name, thanks to Chris
+    Malton <chrism@cmalton.me.uk> (Closes: #703108).
+
+  [ Jun Nogata ]
+  * Updating gnome-screensaver locking for gnome3 (Closes: #703972).
+
+ -- Daniel Baumann <mail@daniel-baumann.ch>  Mon, 01 Apr 2013 08:32:26 +0200
+
 live-config (4.0~a18-1) experimental; urgency=low
 
   * Removing all references to my old email address.
