@@ -35,7 +35,6 @@ Gnome_screensaver ()
 Configure_gnome_screensaver ()
 {
 	# Disabling to lock the screen when the screensaver goes active.
-	sudo -u "${LIVE_USERNAME}" gconftool-2 -t bool -s /apps/gnome-screensaver/lock_enabled false
 	sudo -u "${LIVE_USERNAME}" gsettings set org.gnome.desktop.screensaver lock-enabled false
 
 	# Creating state file
