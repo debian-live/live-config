@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: live-config 3.0.21-1\n"
-"POT-Creation-Date: 2013-02-15 09:31+0100\n"
-"PO-Revision-Date: 2012-07-28 11:38-0400\n"
+"Project-Id-Version: live-config 3.0.22-1\n"
+"POT-Creation-Date: 2013-04-03 17:47+0300\n"
+"PO-Revision-Date: 2013-04-23 11:10-0400\n"
 "Last-Translator: Tiago Bortoletto Vaz <tiago@debian.org>\n"
 "Language-Team: none\n"
 "Language: pt_BR\n"
@@ -25,14 +25,14 @@ msgstr "LIVE-CONFIG"
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "2013-02-15"
-msgstr "15-02-2013"
+msgid "2013-04-03"
+msgstr "03-04-2013"
 
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "3.0.21-1"
-msgstr "3.0.21-1"
+msgid "3.0.22-1"
+msgstr "3.0.22-1"
 
 #. type: TH
 #: en/live-config.7:9
@@ -222,7 +222,7 @@ msgstr ""
 #: en/live-config.7:43
 msgid ""
 "All preseed files in /lib/live/config-preseed/ in the root filesystem of the "
-"live system can be automatically be enabled with the keyword 'filesystem'."
+"live system can be automatically enabled with the keyword 'filesystem'."
 msgstr ""
 "Todos os arquivos de preseeds em /lib/live/config-preseed/ no sistema de "
 "arquivos raiz do sistema live podem ser automaticamente ativados com a "
@@ -232,7 +232,7 @@ msgstr ""
 #: en/live-config.7:45
 msgid ""
 "All preseed files in /live/config-preseed/ of the live medium can be "
-"automatically be enabled with the keyword 'medium'."
+"automatically enabled with the keyword 'medium'."
 msgstr ""
 "Todos os arquivos de preseeds em /live/config-preseed/ da mídia live podem "
 "ser automaticamente ativados com a palavra-chave 'medium'."
@@ -444,13 +444,17 @@ msgstr "B<live-config.xorg-driver>=I<DRIVER_DO_XORG> | B<xorg-driver>=I<DRIVER_D
 
 #. type: Plain text
 #: en/live-config.7:75
-#, fuzzy
 msgid ""
 "Allows to set xorg driver instead of autodetecting it. If a PCI ID is "
 "specified in /usr/share/live/config/xserver-xorg/I<DRIVER>.ids within the "
 "live system, I<DRIVER> is enforced for these devices. If both a boot "
 "parameter and a override is found, the boot parameter takes precedence."
-msgstr "Permite definir o driver do xorg em vez de detectá-lo automaticamente."
+msgstr ""
+"Permite definir o driver do xorg em vez de detectá-lo automaticamente. Se um "
+"ID PCI é definido em /usr/share/live/config/xserver-xorg/I<DRIVER>.ids do "
+"sistema live, I<DRIVER> será aplicado para estes dispositivos. Se ambos um "
+"parâmatro de inicialização e um override forem encontrados, o parâmatro de "
+"inicialização prevalecerá."
 
 #. type: IP
 #: en/live-config.7:75
@@ -496,7 +500,7 @@ msgstr ""
 #: en/live-config.7:83
 msgid ""
 "All hooks in /lib/live/config-hooks/ in the root filesystem of the live "
-"system can be automatically be enabled with the keyword 'filesystem'."
+"system can be automatically enabled with the keyword 'filesystem'."
 msgstr ""
 "Todos os hooks no diretório /lib/live/config-hooks do sistema de arquivos "
 "raiz do sistema live podem ser automaticamente habilitados com a palavra-"
@@ -505,7 +509,7 @@ msgstr ""
 #. type: Plain text
 #: en/live-config.7:85
 msgid ""
-"All hooks in /live/config-hooks/ of the live medium can be automatically be "
+"All hooks in /live/config-hooks/ of the live medium can be automatically "
 "enabled with the keyword 'medium'."
 msgstr ""
 "Todos os hooks no diretório /live/config-hooks/ da mídia live podem ser "
@@ -1010,14 +1014,6 @@ msgstr "Removendo scripts de configuração existentes"
 
 #. type: Plain text
 #: en/live-config.7:164
-#, fuzzy
-#| msgid ""
-#| "It is not really possible to remove scripts itself in a sane way yet "
-#| "without requiring to ship a locally modified B<live-config> package. "
-#| "However, the same can be achieved by disabling the respective scripts "
-#| "through the live-noconfig mechanism, see above. To avoid to always need "
-#| "specifing disabled scripts through the boot parameter, a configuration "
-#| "file should be used, see above."
 msgid ""
 "It is not really possible to remove scripts itself in a sane way yet without "
 "requiring either to ship a locally modified B<live-config> package or using "
@@ -1027,11 +1023,12 @@ msgid ""
 "file should be used, see above."
 msgstr ""
 "De fato ainda não é possível remover scripts de forma segura sem que seja "
-"necessário distribuir um pacote B<live-config> modificado localmente. Porém, "
-"o mesmo pode ser alcançado desabilitando os scripts respectivos através do "
-"mecanismo live-noconfig, como indicado acima. Para evitar que sempre seja "
-"necessário especificar scripts desabilitados através de parâmetros de "
-"inicialização, um arquivo de configuração deve ser usado. Ver detalhes acima."
+"necessário distribuir um pacote B<live-config> modificado localmente ou "
+"utilisar o dpkg-divert. No entanto, o mesmo resultado pode ser alcançado "
+"desabilitando os respectivos scripts por meio do mecanismo live-noconfig, "
+"como indicado acima. Para evitar que sempre haja necessidade de especificar "
+"scripts desabilitados via parâmetros de inicialização, um arquivo de "
+"configuração deve ser usado. Veja detalhes acima."
 
 #. type: Plain text
 #: en/live-config.7:166
