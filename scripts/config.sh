@@ -97,7 +97,7 @@ Cmdline ()
 	done
 
 	# Exclude shortcuts specific scripts
-	case "${_NO_ROOT}" in
+	case "${_NOROOT}" in
 		true)
 			# Disable root access, no matter what mechanism
 			LIVE_NOCONFIGS="${LIVE_NOCONFIGS},sudo,policykit"
