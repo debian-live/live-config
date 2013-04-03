@@ -28,6 +28,8 @@ Package: live-config-doc
 Section: doc
 Architecture: all
 Depends: ${misc:Depends}
+Conflicts: live-config (<< 3.0)
+Replaces: live-config
 Description: Live System Configuration Scripts (documentation)
  live-config contains the scripts that configure a live system during the boot
  process (late userspace).
