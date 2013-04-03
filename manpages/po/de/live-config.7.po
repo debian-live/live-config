@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config 3.0.21-1\n"
-"POT-Creation-Date: 2013-02-15 09:31+0100\n"
+"POT-Creation-Date: 2013-04-03 07:43+0300\n"
 "PO-Revision-Date: 2010-05-24 09:59+0300\n"
 "Last-Translator: Daniel Baumann <daniel@debian.org>\n"
 "Language-Team: none\n"
@@ -23,9 +23,8 @@ msgstr "LIVE-CONFIG"
 
 #. type: TH
 #: en/live-config.7:9
-#, no-wrap
-msgid "2013-02-15"
-msgstr "15.02.2013"
+msgid "2013-04-03"
+msgstr "03.04.2013"
 
 #. type: TH
 #: en/live-config.7:9
@@ -223,7 +222,7 @@ msgstr ""
 #: en/live-config.7:43
 msgid ""
 "All preseed files in /lib/live/config-preseed/ in the root filesystem of the "
-"live system can be automatically be enabled with the keyword 'filesystem'."
+"live system can be automatically enabled with the keyword 'filesystem'."
 msgstr ""
 "Alle Preseed Dateien in /lib/live/config-preseed/ im Root Dateisystem des "
 "Live Systems können mit der Option 'filesystem' automatisch aktiviert werden."
@@ -232,7 +231,7 @@ msgstr ""
 #: en/live-config.7:45
 msgid ""
 "All preseed files in /live/config-preseed/ of the live medium can be "
-"automatically be enabled with the keyword 'medium'."
+"automatically enabled with the keyword 'medium'."
 msgstr ""
 "Alle Preseed Dateien in /live/config-preseed/ auf dem Live Medium können mit "
 "der Option 'medium' automatisch aktiviert werden."
@@ -507,7 +506,7 @@ msgstr ""
 #: en/live-config.7:83
 msgid ""
 "All hooks in /lib/live/config-hooks/ in the root filesystem of the live "
-"system can be automatically be enabled with the keyword 'filesystem'."
+"system can be automatically enabled with the keyword 'filesystem'."
 msgstr ""
 "Alle Dateien in /lib/live/config-hooks/ im Root Dateisystem des Live Systems "
 "können mit der Option 'filesystem' automatisch aktiviert werden."
@@ -515,7 +514,7 @@ msgstr ""
 #. type: Plain text
 #: en/live-config.7:85
 msgid ""
-"All hooks in /live/config-hooks/ of the live medium can be automatically be "
+"All hooks in /live/config-hooks/ of the live medium can be automatically "
 "enabled with the keyword 'medium'."
 msgstr ""
 "Alle Dateien in /live/config-hooks/ auf dem Live Medium können mit der "
