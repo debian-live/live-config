@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: live-config 4.0~a19-1\n"
 "POT-Creation-Date: 2013-04-13 20:22+0300\n"
-"PO-Revision-Date: 2013-04-13 20:23+0100\n"
+"PO-Revision-Date: 2013-04-13 20:35+0100\n"
 "Last-Translator: Carlos Zuferri <chals@altorricon.com>\n"
 "Language-Team: none\n"
 "Language: es\n"
@@ -24,7 +24,8 @@ msgstr "LIVE-CONFIG"
 
 #. type: TH
 #: en/live-config.7:9
-#, no-wrap
+#, fuzzy, no-wrap
+#| msgid "2013-04-01"
 msgid "2013-04-13"
 msgstr "13.04.2013"
 
@@ -36,10 +37,9 @@ msgstr "4.0~a19-1"
 
 #. type: TH
 #: en/live-config.7:9
-#, fuzzy, no-wrap
-#| msgid "Debian Live Project"
+#, no-wrap
 msgid "Live Systems Project"
-msgstr "Proyecto Debian Live"
+msgstr "Proyecto Live Systems"
 
 #. type: SH
 #: en/live-config.7:11
@@ -60,15 +60,11 @@ msgstr "DESCRIPCIÓN"
 
 #. type: Plain text
 #: en/live-config.7:16
-#, fuzzy
-#| msgid ""
-#| "B<live-config> contains the scripts that configure a Debian Live system "
-#| "during the boot process (late userspace)."
 msgid ""
 "B<live-config> contains the scripts that configure a live system during the "
 "boot process (late userspace)."
 msgstr ""
-"B<live-config> contiene los scripts que configuran un sistema Debian en vivo "
+"B<live-config> contiene los scripts que configuran un sistema en vivo "
 "durante el proceso de arranque (late userspace)."
 
 #. type: SH
@@ -131,18 +127,16 @@ msgstr "B<live-config> | B<config>"
 
 #. type: Plain text
 #: en/live-config.7:27
-#, fuzzy
-#| msgid "All scripts are run. This is what Debian Live images use by default."
 msgid "All scripts are run. This is what live images use by default."
 msgstr ""
-"Se ejecutan todos los scripts. Esto es lo que las imágenes Debian en vivo "
-"usan por omisión."
+"Se ejecutan todos los scripts. Esto es lo que las imágenes en vivo utilizan "
+"por defecto."
 
 #. type: IP
 #: en/live-config.7:27
 #, no-wrap
 msgid "B<live-config>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn> | B<config>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn>"
-msgstr "B<live-config>=I<SCRIPT1>,I<SCRIPT2>,·...·I<SCRIPTn>·|·B<config>=I<SCRIPT1>,I<SCRIPT2>,·...·I<SCRIPTn>"
+msgstr "B<live-config>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn> | B<config>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn>"
 
 #. type: Plain text
 #: en/live-config.7:29
@@ -177,7 +171,7 @@ msgstr ""
 #: en/live-config.7:31
 #, no-wrap
 msgid "B<live-noconfig>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn> | B<noconfig>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn>"
-msgstr "B<live-noconfig>=I<SCRIPT1>,I<SCRIPT2>,·...·I<SCRIPTn>·|·B<noconfig>=I<SCRIPT1>,I<SCRIPT2>,·...·I<SCRIPTn>"
+msgstr "B<live-noconfig>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn> | B<noconfig>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn>"
 
 #. type: Plain text
 #: en/live-config.7:33
@@ -222,7 +216,7 @@ msgid ""
 "live/mount/medium/I<FILE>, or with file:///I<FILE> if it is in the root "
 "filesystem of the live system itself."
 msgstr ""
-"Si el archivo está en el medio en vivo, se puede obtener con file:///lib/"
+"Si el fichero está en el medio en vivo, se puede obtener con file:///lib/"
 "live/mount/medium/I<FILE>, o con file:///I<FILE> si se encuentra en el "
 "directorio raíz del sistema en vivo."
 
@@ -264,7 +258,7 @@ msgstr "B<live-config.hostname>=I<HOSTNAME> | B<hostname>=I<HOSTNAME>"
 #. type: Plain text
 #: en/live-config.7:49
 msgid "Allows to set the hostname of the system. The default is 'debian'."
-msgstr "Permite establecer el hostname del sistema. Por omisión es «debian»."
+msgstr "Permite establecer el anfitrión del sistema. Por defecto es «debian»."
 
 #. type: IP
 #: en/live-config.7:49
@@ -279,7 +273,7 @@ msgid ""
 "'user'."
 msgstr ""
 "Permite establecer el nombre del usuario que se crea para iniciar sesión de "
-"forma automática. Por omisión es «user»."
+"forma automática. Por defecto es «user»."
 
 #. type: IP
 #: en/live-config.7:51
@@ -306,16 +300,12 @@ msgstr "B<live-config.user-fullname>=\"I<USER FULLNAME>\" | B<user-fullname>=\"I
 
 #. type: Plain text
 #: en/live-config.7:55
-#, fuzzy
-#| msgid ""
-#| "Allows to set the fullname of the users that gets created for autologin. "
-#| "The default is 'Debian Live user'."
 msgid ""
 "Allows to set the fullname of the users that gets created for autologin. On "
 "Debian the default is 'Debian Live user'."
 msgstr ""
 "Permite establecer el nombre completo del usuario que se crea para iniciar "
-"sesión de forma automática. Por omisión es «Debian Live user»."
+"sesión de forma automática. Por defecto es «Debian Live user»."
 
 #. type: IP
 #: en/live-config.7:55
@@ -331,7 +321,7 @@ msgid ""
 "system, it is automatically generated on the fly."
 msgstr ""
 "Permite establecer las variantes locales del sistema, p.ej. «es_ES.UTF-8». "
-"Por omisión es «en_US.UTF-8». En caso de que las variantes locales no estén "
+"Por defecto es «en_US.UTF-8». En caso de que las variantes locales no estén "
 "disponibles en el sistema, se generarán sobre la marcha."
 
 #. type: IP
@@ -347,7 +337,7 @@ msgid ""
 "is 'UTC'."
 msgstr ""
 "Permite establecer la zona horaria del sistema, p.ej. «Europa/Madrid». Por "
-"omisión es «UTC»."
+"defecto es «UTC»."
 
 #. type: IP
 #: en/live-config.7:59
@@ -358,7 +348,7 @@ msgstr "B<live-config.keyboard-model>=I<KEYBOARD_MODEL> | B<keyboard-model>=I<KE
 #. type: Plain text
 #: en/live-config.7:61
 msgid "Allows to change the keyboard model. There is no default value set."
-msgstr "Permite cambiar el modelo de teclado. No hay ningún valor por omisión."
+msgstr "Permite cambiar el modelo de teclado. No hay ningún valor por defecto."
 
 #. type: IP
 #: en/live-config.7:61
@@ -375,7 +365,7 @@ msgid ""
 msgstr ""
 "Permite cambiar la disposición del teclado. Si se especifica más de una, las "
 "herramientas de escritorio permitirán cambiarlas bajo X11. No hay ningún "
-"valor por omisión."
+"valor por defecto."
 
 #. type: IP
 #: en/live-config.7:63
@@ -396,7 +386,7 @@ msgstr ""
 "deben especificar el mismo número de variantes como de distribuciones de "
 "teclado, ya que se corresponderan una a una en el orden especificado. Se "
 "pueden dejar valores en blanco. Las herramientas de escritorio permitirán "
-"cambiarlas bajo X11. No hay ningún valor por omisión."
+"cambiarlas bajo X11. No hay ningún valor por defecto."
 
 #. type: IP
 #: en/live-config.7:65
@@ -407,7 +397,7 @@ msgstr "B<live-config.keyboard-options>=I<KEYBOARD_OPTIONS> | B<keyboard-options
 #. type: Plain text
 #: en/live-config.7:67
 msgid "Allows to change the keyboard options. There is no default value set."
-msgstr "Permite cambiar las opciones del teclado. No hay un valor por omisión."
+msgstr "Permite cambiar las opciones del teclado. No hay un valor por defecto."
 
 #. type: IP
 #: en/live-config.7:67
@@ -433,7 +423,7 @@ msgid ""
 "UTC or not. The default is 'yes'."
 msgstr ""
 "Permite cambiar si el sistema debe asumir que el reloj de la máquina está "
-"ajustado a la hora UTC o no. Por omisión es «Si»."
+"ajustado a la hora UTC o no. Por defecto es «Si»."
 
 #. type: IP
 #: en/live-config.7:71
@@ -490,15 +480,6 @@ msgstr "B<live-config.hooks>=filesystem|medium|I<URL1>|I<URL2>| ... |I<URLn> | B
 
 #. type: Plain text
 #: en/live-config.7:79
-#, fuzzy
-#| msgid ""
-#| "Allows to fetch and execute one or more arbitrary files. Note that the "
-#| "URLs must be fetchable by wget (http, ftp or file://), the files are "
-#| "executed in /tmp of the running live system, and that the files needs "
-#| "their dependencies, if any, already installed, e.g. if a python script "
-#| "should be executed the system needs python installed. Some hooks for some "
-#| "common use-cases are available at /usr/share/doc/live-config/examples/"
-#| "hooks/ and E<lt>I<http://live-systems.org/other/hooks>E<gt>."
 msgid ""
 "Allows to fetch and execute one or more arbitrary files. Note that the URLs "
 "must be fetchable by wget (http, ftp or file://), the files are executed in /"
@@ -508,10 +489,10 @@ msgid ""
 "available at /usr/share/doc/live-config/examples/hooks/ and E<lt>I<http://"
 "live-systems.org/other/hooks>E<gt>."
 msgstr ""
-"Permite buscar y ejecutar uno o más archivos de forma arbitraria. Tener en "
+"Permite buscar y ejecutar uno o más ficheros de forma arbitraria. Tener en "
 "cuenta que las URLs deben ser descargadas usando wget (http, ftp o file://), "
-"los ficheros se ejecutan en el directorio /tmp del sistema en ejecución en "
-"vivo y que los ficheros necesitan, si tienen dependencias, tenerlas "
+"los ficheros se ejecutan en el directorio /tmp del sistema en vivo en "
+"ejecución y que los ficheros necesitan, si tienen dependencias, tenerlas "
 "resueltas. p.ej. Si se debe ejecutar un script python, el sistema necesita "
 "tener python instalado. Hay algunos scripts gancho para varios casos de uso "
 "común disponibles en /usr/share/doc/live-config/examples/hooks/ y en "
@@ -541,7 +522,7 @@ msgid ""
 "If several mechanisms are combined, then filesystem hooks are executed "
 "first, then medium hooks, and last the network hooks."
 msgstr ""
-"Si se combinan varios mecanismos, los scripts gancho del sistema de archivos "
+"Si se combinan varios mecanismos, los scripts gancho del sistema de ficheros "
 "se ejecutan primero, después los del medio, y en último lugar los de red."
 
 #. type: SS
@@ -1580,19 +1561,14 @@ msgstr "PÁGINA PRINCIPAL"
 
 #. type: Plain text
 #: en/live-config.7:269
-#, fuzzy
-#| msgid ""
-#| "More information about live-config and the Debian Live project can be "
-#| "found on the homepage at E<lt>I<http://live-systems.org/>E<gt> and in the "
-#| "manual at E<lt>I<http://live-systems.org/manual/>E<gt>."
 msgid ""
 "More information about live-config and the Live Systems project can be found "
 "on the homepage at E<lt>I<http://live-systems.org/>E<gt> and in the manual "
 "at E<lt>I<http://live-systems.org/manual/>E<gt>."
 msgstr ""
-"Se puede encontrar más información acerca de live-config y el proyecto "
-"Debian Live en su página principal en E<lt>I<http://live-systems.org/>E<gt> "
-"y en el manual en E<lt>I<http://live-systems.org/manual/>E<gt>."
+"Se puede encontrar más información acerca de live-config y el proyecto Live "
+"Systems en su página principal en E<lt>I<http://live-systems.org/>E<gt> y en "
+"el manual en E<lt>I<http://live-systems.org/manual/>E<gt>."
 
 #. type: SH
 #: en/live-config.7:270
@@ -1602,12 +1578,6 @@ msgstr "ERRORES"
 
 #. type: Plain text
 #: en/live-config.7:272
-#, fuzzy
-#| msgid ""
-#| "Bugs can be reported by submitting a bugreport for the live-config "
-#| "package in the Debian Bug Tracking System at E<lt>I<http://bugs.debian."
-#| "org/>E<gt> or by writing a mail to the Debian Live mailing list at "
-#| "E<lt>I<debian-live@lists.debian.org>E<gt>."
 msgid ""
 "Bugs can be reported by submitting a bugreport for the live-config package "
 "in the Bug Tracking System at E<lt>I<http://bugs.debian.org/>E<gt> or by "
@@ -1615,9 +1585,9 @@ msgid ""
 "debian.org>E<gt>."
 msgstr ""
 "Se puede notificar los fallos enviando un informe de errores sobre el "
-"paquete live-config en el Debian Bug Tracking System en E<lt>I<http://bugs."
-"debian.org/>E<gt> o escribiendo un mensaje a la lista de correo de Debian "
-"Live a la dirección E<lt>I<debian-live@lists.debian.org>E<gt>."
+"paquete live-config al Sistema de Seguimiento de Errores en E<lt>I<http://"
+"bugs.debian.org/>E<gt> o escribiendo un mensaje a la lista de correo de Live "
+"Systems a la dirección E<lt>I<debian-live@lists.debian.org>E<gt>."
 
 #. type: SH
 #: en/live-config.7:273
