@@ -1,3 +1,10 @@
+live-config (3.0.23-1) unstable; urgency=low
+
+  * Loading fglrx module with --ignore-install like the nvidia ones too.
+  * Making module loading for fglrx and nvidia not fail.
+
+ -- Daniel Baumann <daniel@debian.org>  Thu, 25 Apr 2013 19:18:33 +0200
+
 live-config (3.0.22-1) unstable; urgency=low
 
   [ Daniel Baumann ]
