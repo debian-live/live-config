@@ -185,7 +185,7 @@ EOF
 					update-alternatives --quiet --set glx /usr/lib/fglrx
 				fi
 
-				modprobe fglrx
+				modprobe --ignore-install fglrx
 				;;
 
 			nvidia)
