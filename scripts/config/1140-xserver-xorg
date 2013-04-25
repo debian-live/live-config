@@ -182,14 +182,14 @@ EOF
 			fglrx)
 				update-alternatives --quiet --set glx /usr/lib/fglrx
 
-				modprobe --ignore-install fglrx
+				modprobe --ignore-install fglrx || true
 				;;
 
 			nvidia)
 				update-alternatives --quiet --set glx /usr/lib/nvidia
 				update-alternatives --quiet --set nvidia /usr/lib/nvidia/${_NVIDIA_VERSION:-current}
 
-				modprobe --ignore-install ${_NVIDIA_MODULE:-nvidia}
+				modprobe --ignore-install ${_NVIDIA_MODULE:-nvidia} || true
 				;;
 
 			*)
