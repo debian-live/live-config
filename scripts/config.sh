@@ -66,19 +66,23 @@ Cmdline ()
 				_SCRIPTS="${_SCRIPTS:-$(ls /lib/live/config/*)}"
 				LIVE_NOCONFIGS="${LIVE_NOCONFIGS},sudo,policykit"
 
-				_NO_ROOT="true"
+				_NOROOT="true"
 				;;
 
 			live-config.noautologin|noautologin)
 				# Disables both console and graphical autologin.
 				_SCRIPTS="${_SCRIPTS:-$(ls /lib/live/config/*)}"
 				LIVE_NOCONFIGS="${LIVE_NOCONFIGS},sysvinit,gdm,gdm3,kdm,lightdm,lxdm,nodm,slim,upstart,xinit"
+
+				_NOAUTOLOGIN="true"
 				;;
 
 			live-config.nottyautologin|nottyautologin)
 				# Disables console autologin.
 				_SCRIPTS="${_SCRIPTS:-$(ls /lib/live/config/*)}"
 				LIVE_NOCONFIGS="${LIVE_NOCONFIGS},sysvinit,upstart"
+
+				_NOTTYAUTOLOGIN="true"
 				;;
 
 			live-config.nox11autologin|nox11autologin)
@@ -86,6 +90,8 @@ Cmdline ()
 				# mechanism
 				_SCRIPTS="${_SCRIPTS:-$(ls /lib/live/config/*)}"
 				LIVE_NOCONFIGS="${LIVE_NOCONFIGS},gdm,gdm3,kdm,lightdm,lxdm,nodm,slim,xinit"
+
+				_NOX11AUTOLOGIN="true"
 				;;
 
 			# Special options

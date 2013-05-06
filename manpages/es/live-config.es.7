@@ -11,7 +11,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 13.11.2012 4.0~a6\-1 "Proyecto Debian Live"
+.TH LIVE\-CONFIG 7 30.11.2012 4.0~a7\-1 "Proyecto Debian Live"
 
 .SH NOMBRE
 \fBlive\-config\fP \- Scripts de configuración del sistema
@@ -120,7 +120,11 @@ Permite seleccionar el gestor de sesión gráfica «x\-session\-manager» median
 «update\-alternatives».
 .IP "\fBlive\-config.xorg\-driver\fP=\fIXORG_DRIVER\fP | \fBxorg\-driver\fP=\fIXORG_DRIVER\fP" 4
 Permite seleccionar el controlador xorg en lugar de detectarlo de forma
-automática.
+automática. Si se especifica un PCI ID en
+/usr/share/live/config/xserver\-xorg/\fIDRIVER\fP.ids dentro del sistema en
+vivo,  se aplica \fIDRIVER\fP para estos dispositivos. Si se encuentran juntos
+un parámetro de arranque y un override, el parámetro de arranque tiene
+prioridad.
 .IP \fBlive\-config.xorg\-resolution\fP=\fIXORG_RESOLUTION\fP·|·\fBxorg\-resolution\fP=\fIXORG_RESOLUTION\fP 4
 Permite seleccionar la resolución de xorg en lugar de detectarla de forma
 automática, p.ej. 1024x768.
@@ -262,13 +266,13 @@ Lo ideal sería incluir los scripts en su propio paquete debian. En
 un script de ejemplo.
 
 .SS "Eliminación de los scripts de configuración existentes."
-No es realmente posible eliminar los scripts en sí de una manera sensata sin
-incluir un paquete \fBlive\-config\fP modificado localmente. Sin embargo, se
-puede obtener el mismo resultado si se desactivan los scripts
-correspondientes a través del mecanismo live\-noconfig, como se ha indicado
-anteriormente. Para evitar que siempre haga falta especificar qué scripts se
-desactivan a través del parámetro de arranque, debería usarse un fichero de
-configuración, véase más arriba.
+No es realmente posible eliminar los scripts de una manera sensata sin
+incluir un paquete \fBlive\-config\fP modificado localmente o utilizando
+dpkg\-divert. Sin embargo, se puede obtener el mismo resultado si se
+desactivan los scripts correspondientes a través del mecanismo
+live\-noconfig, como se ha indicado anteriormente. Para evitar que siempre
+haga falta especificar qué scripts se desactivan a través del parámetro de
+arranque, debería usarse un fichero de configuración, véase más arriba.
 .PP
 Lo ideal sería incluir los ficheros de configuración para el sistema en vivo
 dentro de un paquete debian. Se puede encontrar un paquete de muestra con un
@@ -316,7 +320,7 @@ configura sysvinit.
 configura sysv\-rc desactivando los sevicios listados.
 .IP \fBlogin\fP 4
 Desactiva lastlog.
-.IP "\fBapport\fP (ubuntu solamente)" 4
+.IP \fBapport\fP 4
 Desactiva apport.
 .IP \fBgnome\-panel\-data\fP 4
 Desactiva el botón de bloqueo de la pantalla.

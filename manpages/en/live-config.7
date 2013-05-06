@@ -6,7 +6,7 @@
 .\" under certain conditions; see COPYING for details.
 .\"
 .\"
-.TH LIVE\-CONFIG 7 2012\-11\-13 4.0~a6-1 "Debian Live Project"
+.TH LIVE\-CONFIG 7 2012\-11\-30 4.0~a7-1 "Debian Live Project"
 
 .SH NAME
 \fBlive\-config\fR \- System Configuration Scripts
@@ -71,7 +71,7 @@ Allows to disable sysv services through update-rc.d.
 .IP "\fBlive\-config.x\-session\-manager=\fIX_SESSION_MANAGER\fR | \fBx\-session\-manager\fR=\fIX_SESSION_MANAGER\fR" 4
 Allows to set the x\-session\-manager through update\-alternatives.
 .IP "\fBlive\-config.xorg\-driver\fR=\fIXORG_DRIVER\fR | \fBxorg\-driver\fR=\fIXORG_DRIVER\fR" 4
-Allows to set xorg driver instead of autodetecting it.
+Allows to set xorg driver instead of autodetecting it. If a PCI ID is specified in /usr/share/live/config/xserver-xorg/\fIDRIVER\fR.ids within the live system, \fIDRIVER\fR is enforced for these devices. If both a boot parameter and a override is found, the boot parameter takes precedence.
 .IP "\fBlive\-config.xorg\-resolution\fR=\fIXORG_RESOLUTION\fR | \fBxorg\-resolution\fR=\fIXORG_RESOLUTION\fR" 4
 Allows to set xorg resolution instead of autodetecting it, e.g. 1024x768.
 .IP "\fBlive\-config.hooks\fR=filesystem|medium|\fIURL1\fR|\fIURL2\fR| ... |\fIURLn\fR | \fBhooks\fR=medium|filesystem|\fIURL1\fR|\fIURL2\fR| ... |\fIURLn\fR" 4
@@ -158,7 +158,7 @@ Downstream projects can put their scripts into /lib/live/config and do not need 
 The scripts are best put into an own debian package. A sample package containing an example script can be found in /usr/share/doc/live\-config/examples.
 
 .SS Removing existing config scripts
-It is not really possible to remove scripts itself in a sane way yet without requiring to ship a locally modified \fBlive\-config\fR package. However, the same can be achieved by disabling the respective scripts through the live\-noconfig mechanism, see above. To avoid to always need specifing disabled scripts through the boot parameter, a configuration file should be used, see above.
+It is not really possible to remove scripts itself in a sane way yet without requiring either to ship a locally modified \fBlive\-config\fR package or using dpkg-divert. However, the same can be achieved by disabling the respective scripts through the live\-noconfig mechanism, see above. To avoid to always need specifing disabled scripts through the boot parameter, a configuration file should be used, see above.
 .PP
 The configuration files for the live system itself are best put into an own debian package. A sample package containing an example configuration can be found in /usr/share/doc/live\-config/examples.
 
@@ -203,7 +203,7 @@ configures sysvinit.
 configures sysv-rc by disabling listed services.
 .IP "\fBlogin\fR" 4
 disables lastlog.
-.IP "\fBapport\fR (ubuntu only)" 4
+.IP "\fBapport\fR" 4
 disables apport.
 .IP "\fBgnome\-panel\-data\fR" 4
 disables lock button for the screen.
@@ -232,7 +232,7 @@ disables util-linux' hwclock.
 .IP "\fBlogin\fR" 4
 disables lastlog.
 .IP "\fBxserver\-xorg\fR" 4
-configures xserver-xorg.
+configures xserver\-xorg.
 .IP "\fBureadahead\fR (ubuntu only)" 4
 disables ureadahead.
 .IP "\fBopenssh-server\fR" 4
