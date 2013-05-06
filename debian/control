@@ -5,7 +5,7 @@ Maintainer: Debian Live Project <debian-live@lists.debian.org>
 Uploaders: Daniel Baumann <daniel@debian.org>
 Build-Depends: debhelper (>= 9)
 Build-Depends-Indep: lsb-release
-Standards-Version: 3.9.4
+Standards-Version: 3.9.3
 Homepage: http://live.debian.net/devel/live-config/
 Vcs-Browser: http://live.debian.net/gitweb/?p=live-config.git
 Vcs-Git: git://live.debian.net/git/live-config.git
@@ -14,12 +14,12 @@ Package: live-config
 Architecture: all
 Depends: ${misc:Depends}, live-config-sysvinit | live-config-backend
 Recommends:
- live-config-doc, live-tools, console-tools, iproute, keyboard-configuration,
- locales | locales-all, user-setup, sudo
-Suggests: pciutils, wget
-Description: Live System Configuration Scripts
- live-config contains the scripts that configure a live system during the boot
- process (late userspace).
+ live-config-doc, live-tools, keyboard-configuration, locales | locales-all,
+ user-setup, sudo
+Suggests: wget
+Description: Debian Live - System Configuration Scripts
+ live-config contains the scripts that configure a Debian Live system during
+ the boot process (late userspace).
  .
  In addition to live-config, a backend for an init system is required, such as
  live-config-sysvinit.
@@ -28,11 +28,11 @@ Package: live-config-doc
 Section: doc
 Architecture: all
 Depends: ${misc:Depends}
-Conflicts: live-config (<< 3.0)
+Conflicts: live-config (<< 3.0~a22~)
 Replaces: live-config
-Description: Live System Configuration Scripts (documentation)
- live-config contains the scripts that configure a live system during the boot
- process (late userspace).
+Description: Debian Live - System Configuration Scripts (documentation)
+ live-config contains the scripts that configure a Debian Live system during
+ the boot process (late userspace).
  .
  This package contains the documentation.
 
@@ -42,9 +42,9 @@ Depends: ${misc:Depends}, systemd
 Conflicts: live-config-backend
 Replaces: live-config-backend
 Provides: live-config-backend
-Description: Live System Configuration Scripts (systemd backend)
- live-config contains the scripts that configure a live system during the boot
- process (late userspace).
+Description: Debian Live - System Configuration Scripts (systemd backend)
+ live-config contains the scripts that configure a Debian Live system during
+ the boot process (late userspace).
  .
  This package contains the systemd backend (experimental!).
 
@@ -54,9 +54,9 @@ Depends: ${misc:Depends}, sysvinit (>= 2.86)
 Conflicts: live-config-backend
 Replaces: live-config-backend
 Provides: live-config-backend
-Description: Live System Configuration Scripts (sysvinit backend)
- live-config contains the scripts that configure a live system during the boot
- process (late userspace).
+Description: Debian Live - System Configuration Scripts (sysvinit backend)
+ live-config contains the scripts that configure a Debian Live system during
+ the boot process (late userspace).
  .
  This package contains the sysvinit backend.
 
@@ -66,8 +66,8 @@ Depends: ${misc:Depends}, upstart
 Conflicts: live-config-backend
 Replaces: live-config-backend
 Provides: live-config-backend
-Description: Live System Configuration Scripts (upstart backend)
- live-config contains the scripts that configure a live system during the boot
- process (late userspace).
+Description: Debian Live - System Configuration Scripts (upstart backend)
+ live-config contains the scripts that configure a Debian Live system during
+ the boot process (late userspace).
  .
  This package contains the upstart backend (experimental!).

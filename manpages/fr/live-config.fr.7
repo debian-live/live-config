@@ -1,5 +1,5 @@
 .\" live-config(7) - System Configuration Scripts
-.\" Copyright (C) 2006-2013 Daniel Baumann <daniel@debian.org>
+.\" Copyright (C) 2006-2012 Daniel Baumann <daniel@debian.org>
 .\"
 .\" This program comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
 .\" This is free software, and you are welcome to redistribute it
@@ -11,7 +11,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 25.04.2013 3.0.23\-1 "Projet Debian Live"
+.TH LIVE\-CONFIG 7 26.09.2012 4.0~a1\-1 "Projet Debian Live"
 
 .SH NOM
 \fBlive\-config\fP \- Scripts de configuration du système
@@ -64,15 +64,15 @@ préconfiguration debconf à la base de données debconf. Notez que les URLs
 doivent pouvoir être utilisées par wget (http, ftp or file://).
 .br
 Si le fichier est placé dans le média live, il peut être utilisé avec
-file:///lib/live/mount/medium/\fIFILE\fP, ou bien avec file:///\fIFILE\fP s'il est
-placé à la racine du système de fichiers du système live.
+file:///live/image/\fIFILE\fP, ou bien avec file:///\fIFILE\fP s'il est placé à la
+racine du système de fichiers du système live.
 .br
-Tous les fichiers de préconfiguration dans /lib/live/config\-preseed/ dans le
+Tous les fichiers de préconfiguration dans /lib/live/preseed/ dans le
 système de fichiers racine du système live peuvent être automatiquement
 activés avec le mot clé 'filesystem'.
 .br
-Tous les fichiers de préconfiguration dans /live/config\-preseed/ du média
-live peuvent être automatiquement activés avec le mot clé 'medium'
+Tous les fichiers de préconfiguration dans /live/preseed/ du média live
+peuvent être automatiquement activés avec le mot clé 'medium'
 .br
 Si plusieurs mécanismes sont combinés, les fichiers de préconfiguration du
 système de fichiers sont appliqués en premier, alors les fichiers de
@@ -99,6 +99,9 @@ automatiquement générée à la volée.
 .IP "\fBlive\-config.timezone\fP=\fITIMEZONE\fP | \fBtimezone\fP=\fITIMEZONE\fP" 4
 Permet de spécifier la timezone du système, par exemple 'Europe/Paris'. Par
 défaut il s'agit de 'UTC'.
+.IP "\fBlive\-config.utc\fP=\fByes\fP|no | \fButc\fP=\fByes\fP|no" 4
+Permet de modifier si le système assume, ou non, que l'horloge hardware soit
+réglée sur UTC. Par défaut 'oui'.
 .IP "\fBlive\-config.keyboard\-model\fP=\fIMODELE_DE_CLAVIER\fP | \fBkeyboard\-model\fP=\fIMODELE_DE_CLAVIER\fP" 4
 Permet de changer le modèle de clavier. Aucune valeur par défaut n'est
 indiquée.
@@ -118,17 +121,11 @@ Permet de changer les options du clavier. Aucune valeur par défaut n'est
 spécifiée.
 .IP "\fBlive\-config.sysv\-rc\fP=\fISERVICE1\fP,\fISERVICE2\fP ... \fISERVICEn\fP | \fBsysv\-rc\fP=\fISERVICE1\fP,\fISERVICE2\fP ... \fISERVICEn\fP" 4
 Permet de désactiver des services du sysv via update\-rc.d.
-.IP "\fBlive\-config.utc\fP=\fByes\fP|no | \fButc\fP=\fByes\fP|no" 4
-Permet de modifier si le système assume, ou non, que l'horloge hardware soit
-réglée sur UTC. Par défaut 'oui'.
 .IP "\fBlive\-config.x\-session\-manager=\fP\fIX_SESSION_MANAGER\fP | \fBx\-session\-manager\fP=\fIX_SESSION_MANAGER\fP" 4
 Permet de spécifier le x\-session\-manager via update\-alternatives.
 .IP "\fBlive\-config.xorg\-driver\fP=\fIDRIVER_PAR_XORG\fP | \fBxorg\-driver\fP=\fIDRIVER_PAR_XORG\fP" 4
-Permet de spécifier le pilote utilisé par xorg plutôt que d'utiliser
-l'auto\-détection. Si un ID PCI est spécifié dans
-/usr/share/live/config/xserver\-xorg/\fIDRIVER\fP.ids dans le système live, le
-\fIDRIVER\fP est appliqué pour ces appareils. Si un paramètre d'amorçage et un
-override sont trouvés à la fois, le paramètre de démarrage est prioritaire.
+Permet de spécifier le driver utilisé par xorg plutôt que d'utiliser
+l'auto\-détection.
 .IP "\fBlive\-config.xorg\-resolution\fP=\fIRESOLUTION_PAR_XORG\fP | \fBxorg\-resolution\fP=\fIRESOLUTION_PAR_XORG\fP" 4
 Permet de spécifier la résolution utilisée par xorg, plutôt que d'utiliser
 l'auto\-détection, par example 1024x768.
@@ -144,15 +141,14 @@ proposés dans /usr/share/doc/live\-config/examples/hooks/ et sur
 <\fIhttp://live.debian.net/other/hooks\fP>.
 .br
 Si le fichier est placé dans le média live, il peut être utilisé avec
-file:///lib/live/mount/medium/\fIFILE\fP, ou bien avec file:///\fIFILE\fP s'il est
-placé à la racine du système de fichiers du système live.
+file:///live/image/\fIFILE\fP, ou bien avec file:///\fIFILE\fP s'il est placé à la
+racine du système de fichiers du système live.
 .br
-Tous les hooks, placés dans /lib/live/config\-hooks/ à la racine du système
-de fichiers, peuvent être automatiquement activés avec le mot clé
-\&'filesystem'.
+Tous les hooks, placés dans /lib/live/hooks/ à la racine du système de
+fichiers, peuvent être automatiquement activés avec le mot clé 'filesystem'.
 .br
-Tous les hooks dans /live/config\-hooks/ du média live peuvent être
-automatiquement activés avec le mot clé 'medium'.
+Tous les hooks dans /live/hooks/ du média live peuvent être automatiquement
+activés avec le mot clé 'medium'.
 .br
 Si plusieurs mécanismes sont combinés, alors les hooks du système de
 fichiers sont exécutés prioritairement, suivis des hooks du media, et enfin
@@ -234,6 +230,8 @@ Cette variable correspond au paramètre
 .IP \fBLIVE_TIMEZONE\fP=\fITIMEZONE\fP 4
 Cette variable correspond au paramètre
 \&'\fBlive\-config.timezone\fP=\fITIMEZONE\fP'.
+.IP \fBLIVE_UTC\fP=\fByes\fP|no 4
+Cette variable correspond au paramètre '\fBlive\-config.utc\fP=\fByes\fP|no'.
 .IP \fBLIVE_KEYBOARD_MODEL\fP=\fIMODELE_DE_CLAVIER\fP 4
 Cette variable correspond au paramètre
 \&'\fBlive\-config.keyboard\-model\fP=\fIMODELE_DE_CLAVIER\fP'.
@@ -251,11 +249,6 @@ Cette variable correspond au paramètre
 .IP "\fBLIVE_SYSV_RC\fP=\fISERVICE1\fP,\fISERVICE2\fP ... \fISERVICEn\fP" 4
 Cette variable correspond au paramètre
 \&'\fBlive\-config.sysv\-rc\fP=\fISERVICE1\fP,\fISERVICE2\fP ... \fISERVICEn\fP'.
-.IP \fBLIVE_UTC\fP=\fByes\fP|no 4
-Cette variable correspond au paramètre '\fBlive\-config.utc\fP=\fByes\fP|no'.
-.IP \fBLIVE_X_SESSION_MANAGER\fP=\fIX_SESSION_MANAGER\fP 4
-Cette variable correspond au paramètre
-\&'\fBlive\-config.x\-session\-manager\fP=\fIX_SESSION_MANAGER\fP'.
 .IP \fBLIVE_XORG_DRIVER\fP=\fIDRIVER_PAR_XORG\fP 4
 Cette variable correspond au paramètre
 \&'\fBlive\-config.xorg\-driver\fP=\fIDRIVER_PAR_XORG\fP.
@@ -280,12 +273,12 @@ Debian. Un simple paquet contenant un script d'exemple est proposé dans
 /usr/share/doc/live\-config/examples.
 
 .SS "Enlever des scripts de configuration existants"
-Il n'est pas vraiment possible d'enlever sans problème les scripts sans
-avoir besoin d'utiliser un paquet \fBlive\-config\fP modifié localement ou à
-l'aide de dpkg\-divert. Cependant, on peut réaliser une chose similaire en
-désactivant les scripts respectifs via le mécanisme live\-noconfig, comme
-indiqué ci\-dessus. Afin d'éviter d'avoir à spécifier les scripts désactivés
-avec le paramètre d'amorçage, vous devriez utiliser un fichier de
+Il n'est pas encore vraiment possible d'enlever sans problème les scripts
+sans avoir besoin de charger un paquet \fBlive\-config\fP modifié
+localement. Cependant, on peut réaliser une chose similaire en désactivant
+les scripts respectifs via le mécanisme live\-noconfig, comme indiqué
+ci\-dessus. Afin d'éviter d'avoir à spécifier les scripts désactivés en
+passant par le paramètre de lancement, vous devriez utiliser un fichier de
 configuration, voir ci\-dessus.
 .PP
 Les fichiers de configuration pour le système live devront de préférence
@@ -335,7 +328,7 @@ configure sysvinit.
 configure sysv\-rc en désactivant les services listés.
 .IP \fBlogin\fP 4
 désactive lastlog.
-.IP \fBapport\fP 4
+.IP "\fBapport\fP (seulement ubuntu)" 4
 désactive apport.
 .IP \fBgnome\-panel\-data\fP 4
 désactive le bouton de verrouillage de l'écran.
@@ -370,8 +363,6 @@ configure xserver\-xorg.
 désactive ureadahead.
 .IP \fBopenssh\-server\fP 4
 regénère les clés de l'hôte openssh\-server.
-.IP \fBxfce4\-panel\fP 4
-configure xfce4\-panel avec les réglages par défaut.
 .IP \fBhooks\fP 4
 permet de lancer des commandes arbitraires d'un script placé sur le média
 live, ou sur un serveur http/ftp.
@@ -386,10 +377,10 @@ live, ou sur un serveur http/ftp.
 .IP \fB/var/lib/live/config/\fP 4
 .IP \fB/var/log/live/config.log\fP 4
 .PP
-.IP \fB/live/config\-hooks/*\fP 4
-.IP \fBlive/config\-hooks/*\fP 4
-.IP \fB/live/config\-preseed/*\fP 4
-.IP "\fBlive/config\-preseed/* \fP" 4
+.IP \fB/live/hooks/*\fP 4
+.IP \fBlive/hooks/*\fP 4
+.IP \fB/live/preseed/*\fP 4
+.IP "\fBlive/preseed/* \fP" 4
 
 .SH "VOIR AUSSI"
 \fIlive\-boot\fP(7)

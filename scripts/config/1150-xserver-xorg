@@ -1,7 +1,7 @@
 #!/bin/sh
 
 ## live-config(7) - System Configuration Scripts
-## Copyright (C) 2006-2013 Daniel Baumann <daniel@debian.org>
+## Copyright (C) 2006-2012 Daniel Baumann <daniel@debian.org>
 ##
 ## This program comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
 ## This is free software, and you are welcome to redistribute it
@@ -90,125 +90,18 @@ Configure_xserver_xorg ()
 		esac
 	fi
 
-	if [ -z "${LIVE_XORG_DRIVER}" ] && [ -e /usr/bin/lspci ]
-	then
-		# pci-id of the first graphic card
-		_DEVICE="$(lspci -mn | awk '/0300/ { print $3$4 }' | sed -e 's|"||g' | tr [a-z] [A-Z] | head -n1)"
-
-		if [ -n "${_DEVICE}" ]
-		then
-			if ls /usr/share/live/config/xserver-xorg/*.ids > /dev/null 2>&1
-			then
-				# xorg-driver manual overrides
-				for _OVERRIDE_IDS in /usr/share/live/config/xserver-xorg/*.ids
-				do
-					if [ -e "${_OVERRIDE_IDS}" ]
-					then
-						if grep -qs "${_DEVICE}" "${_OVERRIDE_IDS}"
-						then
-							LIVE_XORG_DRIVER="$(basename ${_OVERRIDE_IDS} .ids)"
-
-							break
-						fi
-					fi
-				done
-			fi
-
-			if [ -z "${LIVE_XORG_DRIVER}" ]
-			then
-				# xorg-driver automatic override for virtualbox
-				if [ -e /var/lib/dpkg/info/virtualbox-guest-x11.list ] && echo "${_DEVICE}" | grep -qs '^80EEBEEF'
-				then
-					LIVE_XORG_DRIVER="vboxvideo"
-				fi
-
-				# xorg-driver automatic override for fglrx
-				if echo "${_DEVICE}" | grep -qs '^1002'
-				then
-					if grep -qs "${_DEVICE}" /usr/share/fglrx/fglrx.ids
-					then
-						LIVE_XORG_DRIVER="fglrx"
-					fi
-				fi
-
-				# xorg-driver automatic override for nvidia
-				if echo "${_DEVICE}" | grep -qs -E '^(10DE|12D2)'
-				then
-					for _NVIDIA_IDS in /usr/lib/nvidia/current/nvidia.ids $(ls /usr/lib/nvidia/legacy-*/nvidia.ids | sort -V -r)
-					do
-						if [ -e "${_NVIDIA_IDS}" ]
-						then
-							if grep -qs "${_DEVICE}" ${_NVIDIA_IDS}
-							then
-								_NVIDIA_VERSION="$(basename $(dirname ${_NVIDIA_IDS}))"
-								_NVIDIA_MODULE="$(echo nvidia-${_NVIDIA_VERSION} | sed -e 's|-current$||')"
-
-								break
-							fi
-						fi
-					done
-
-					if [ -n "${_NVIDIA_VERSION}" ]
-					then
-						LIVE_XORG_DRIVER="nvidia"
-					fi
-				fi
-			fi
-		fi
-	fi
-
 	if [ -n "${LIVE_XORG_DRIVER}" ]
 	then
+
 		mkdir -p /etc/X11/xorg.conf.d
 
-		if [ -e "/usr/share/live/config/xserver-xorg/${LIVE_XORG_DRIVER}.conf" ]
-		then
-			# xorg-driver manual override
-			cp "/usr/share/live/config/xserver-xorg/${LIVE_XORG_DRIVER}.conf" /etc/X11/xorg.conf.d/zz-live-config_xserver-xorg.conf
-		else
-
-			# xorg-driver automatic override
-
-cat > /etc/X11/xorg.conf.d/zz-live-config_xserver-xorg.conf << EOF
+cat > /etc/X11/xorg.conf.d/99-live.conf << EOF
 Section "Device"
 	Identifier	"Default screen"
 	Driver		"${LIVE_XORG_DRIVER}"
 EndSection
 EOF
 
-		fi
-
-		case "${LIVE_XORG_DRIVER}" in
-			fglrx)
-				if [ -e /etc/alternatives/glx ]
-				then
-					update-alternatives --quiet --set glx /usr/lib/fglrx
-				fi
-
-				modprobe --ignore-install fglrx || true
-				;;
-
-			nvidia)
-				if [ -e /etc/alternatives/glx ]
-				then
-					update-alternatives --quiet --set glx /usr/lib/nvidia
-				fi
-
-				if [ -e /etc/alternatives/nvidia ]
-				then
-					update-alternatives --quiet --set nvidia /usr/lib/nvidia/${_NVIDIA_VERSION:-current}
-				fi
-
-				modprobe --ignore-install ${_NVIDIA_MODULE:-nvidia} || true
-				;;
-
-			*)
-				if [ -e /etc/alternatives/glx ]
-				then
-					update-alternatives --quiet --set glx /usr/lib/mesa-diverted
-				fi
-				;;
-		esac
 	fi
 
 	if [ -n "${LIVE_XORG_RESOLUTION}" ]

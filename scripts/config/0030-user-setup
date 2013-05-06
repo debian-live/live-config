@@ -1,7 +1,7 @@
 #!/bin/sh
 
 ## live-config(7) - System Configuration Scripts
-## Copyright (C) 2006-2013 Daniel Baumann <daniel@debian.org>
+## Copyright (C) 2006-2012 Daniel Baumann <daniel@debian.org>
 ##
 ## This program comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
 ## This is free software, and you are welcome to redistribute it
@@ -55,11 +55,10 @@ Configure_user_setup ()
 	fi
 
 	# Make sure user is not in sudo group if sudo is disabled
-	case "${_NOROOT}" in
-		true)
-			LIVE_USER_DEFAULT_GROUPS="$(echo ${LIVE_USER_DEFAULT_GROUPS} | sed -e 's|sudo||')"
-			;;
-	esac
+	if [ "${_NO_ROOT}" = "true" ]
+	then
+		LIVE_USER_DEFAULT_GROUPS="$(echo ${LIVE_USER_DEFAULT_GROUPS} | sed -e 's|sudo||')"
+	fi
 
 	# Default password is: live
 	# passwords can be generated with 'echo "live" | mkpasswd -s',

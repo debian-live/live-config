@@ -1,2 +1,2 @@
-compression = xz
+compression = gzip
 compression-level = 9

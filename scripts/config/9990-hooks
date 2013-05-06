@@ -1,7 +1,7 @@
 #!/bin/sh
 
 ## live-config(7) - System Configuration Scripts
-## Copyright (C) 2006-2013 Daniel Baumann <daniel@debian.org>
+## Copyright (C) 2006-2012 Daniel Baumann <daniel@debian.org>
 ##
 ## This program comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
 ## This is free software, and you are welcome to redistribute it
@@ -10,7 +10,13 @@
 
 Hooks ()
 {
-	# Reading kernel command line
+	if [ -z "${LIVE_HOOKS}" ]
+	then
+		return
+	fi
+
+	echo -n " hooks"
+
 	for _PARAMETER in ${_CMDLINE}
 	do
 		case "${_PARAMETER}" in
@@ -19,13 +25,6 @@ Hooks ()
 				;;
 		esac
 	done
-
-	if [ -z "${LIVE_HOOKS}" ]
-	then
-		return
-	fi
-
-	echo -n " hooks"
 
 	Process_hooks
 }
@@ -41,16 +40,16 @@ Process_hooks ()
 	do
 		case "${_HOOK}" in
 			filesystem)
-				if ls /lib/live/config-hooks/* 2>&1
+				if ls /lib/live/hooks/* 2>&1
 				then
-					_HOOKS="${_HOOKS} $(for _FILE in /lib/live/config-hooks/*; do echo file://${_FILE}; done)"
+					_HOOKS="${_HOOKS} $(for _FILE in /lib/live/hooks/*; do echo file://${_FILE}; done)"
 				fi
 				;;
 
 			medium)
-				if ls /lib/live/mount/medium/live/config-hooks/* 2>&1
+				if ls /live/image/live/hooks/* 2>&1
 				then
-					_HOOKS="${_HOOKS} $(for _FILE in /lib/live/mount/medium/live/config-hooks/*; do echo file://${_FILE}; done)"
+					_HOOKS="${_HOOKS} $(for _FILE in /live/image/live/hooks/*; do echo file://${_FILE}; done)"
 				fi
 				;;
 
@@ -70,7 +69,7 @@ Process_hooks ()
 			cp $(echo ${_HOOK} | sed 's|file://||') "${_TMPFILE}"
 		else
 			# remote file
-			Setup_network
+			Start_network
 
 			wget --quiet "${_HOOK}" -O "${_TMPFILE}"
 		fi

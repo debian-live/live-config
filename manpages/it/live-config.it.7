@@ -1,5 +1,5 @@
 .\" live-config(7) - System Configuration Scripts
-.\" Copyright (C) 2006-2013 Daniel Baumann <daniel@debian.org>
+.\" Copyright (C) 2006-2012 Daniel Baumann <daniel@debian.org>
 .\"
 .\" This program comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
 .\" This is free software, and you are welcome to redistribute it
@@ -11,7 +11,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 25.04.2013 3.0.23\-1 "Progetto Debian Live"
+.TH LIVE\-CONFIG 7 26.09.2012 4.0~a1\-1 "Progetto Debian Live"
 
 .SH NOME
 \fBlive\-config\fP \- Script di configurazione del sistema
@@ -63,14 +63,14 @@ preconfigurazione da applicare al database debconf. Si noti che gli URL
 devono essere scaricabili da wget (http, ftp o file://).
 .br
 Se il file è posizionato sul supporto live, questo  può essere prelevato con
-file:///lib/live/mount/medium/\fIFILE\fP, o con file:///\fIFILE\fP se è nella
-radice del filesystem del sistema live stesso.
+file:///live/image/\fIFILE\fP, o con file:///\fIFILE\fP se è nella radice del
+filesystem del sistema live stesso.
 .br
-Tutti i file di preconfigurazione in /lib/live/config\-preseed/ nella radice
-del sistema live possono essere abilitati automaticamente con la parola
-chiave "filesystem".
+Tutti i file di preconfigurazione in /lib/live/preseed/ nella radice del
+sistema live possono essere abilitati automaticamente con la parola chiave
+"filesystem".
 .br
-Tutti i file di preconfigurazione in /live/config\-preseed/ sul supporto live
+Tutti i file di preconfigurazione in /live/preseed/ sul supporto live
 possono essere abilitati automaticamente con la parola chiave "medium".
 .br
 Se vengono congiunti diversi meccanismi i file di preconfigurazione di tipo
@@ -95,6 +95,9 @@ selezionata non è già disponibile viene generata al volo automaticamente.
 .IP "\fBlive\-config.timezone\fP=\fIFUSO ORARIO\fP | \fBtimezone\fP=\fIFUSO ORARIO\fP" 4
 Permette di impostare il fuso orario del sistema, ad esempio "Europe/Rome",
 il predefinito è "UTC".
+.IP "\fBlive\-config.utc\fP=\fByes\fP|no | \fButc\fP=\fByes\fP|no" 4
+Permette di scegliere se il sistema debba supporre che l'orologio hardware
+sia impostato o meno su UTC, il valore predefinito è "yes".
 .IP "\fBlive\-config.keyboard\-model\fP=\fIMODELLO_TASTIERA\fP | \fBkeyboard\-model\fP=\fIMODELLO_TASTIERA\fP" 4
 Permette di scegliere il modello della tastiera, non è impostato alcun
 valore predefinito.
@@ -114,17 +117,11 @@ Permette di modificare le opzioni della tastiera, non è impostato alcun
 valore predefinito.
 .IP "\fBlive\-config.sysv\-rc\fP=\fISERVIZIO1\fP,\fISERVIZIO2\fP ... \fISERVIZIOn\fP | \fBsysv\-rc\fP=\fISERVIZIO1\fP,\fISERVIZIO2\fP ... \fISERVIZIOn\fP" 4
 Permette di disabilitare i servizi di sysv tramite update\-rc.d.
-.IP "\fBlive\-config.utc\fP=\fByes\fP|no | \fButc\fP=\fByes\fP|no" 4
-Permette di scegliere se il sistema debba supporre che l'orologio hardware
-sia impostato o meno su UTC, il valore predefinito è "yes".
 .IP "\fBlive\-config.x\-session\-manager=\fP\fIX_SESSION_MANAGER\fP | \fBx\-session\-manager\fP=\fIX_SESSION_MANAGER\fP" 4
 Permette di impostare x\-session\-manager tramite update\-alternatives.
 .IP "\fBlive\-config.xorg\-driver\fP=\fIDRIVER_XORG\fP | \fBxorg\-driver\fP=\fIDRIVER_XORG\fP" 4
 Permette di impostare il driver per xorg invece di riconoscerlo
-automaticamente. Se un ID PCI viene specificato in
-/usr/share/live/config/xserver\-xorg/\fIDRIVER\fP.ids all'interno del sistema
-live, \fIDRIVER\fP viene applicato a questi device. Se viene trovato sia un
-parametro di boot sia uno imposto, quello di boot ha la precedenza.
+automaticamente.
 .IP "\fBlive\-config.xorg\-resolution\fP=\fIRISOLUZIONE_XORG\fP | \fBxorg\-resolution\fP=\fIRISOLUZIONE_XORG\fP" 4
 Permette di impostare la risoluzione per xorg invece di riconoscerla
 automaticamente, ad esempio 1024x768.
@@ -139,14 +136,14 @@ disponibili alcuni hook per i casi d'uso più comuni in
 <\fIhttp://live.debian.net/other/hooks\fP>.
 .br
 Se il file è posizionato sul supporto live, questo  può essere prelevato con
-file:///lib/live/mount/medium/\fIFILE\fP, o con file:///\fIFILE\fP se è nella
-radice del filesystem del sistema live stesso.
+file:///live/image/\fIFILE\fP, o con file:///\fIFILE\fP se è nella radice del
+filesystem del sistema live stesso.
 .br
-Tutti gli hook nella directory /lib/live/config\-hooks/ del sistema live
-possono essere abilitati automaticamente con la parola chiave "filesystem".
+Tutti gli hook nella directory /lib/live/hooks/ del sistema live possono
+essere abilitati automaticamente con la parola chiave "filesystem".
 .br
-Tutti gli hook nella directory /live/config\-hooks/ del sistema live possono
-essere abilitati automaticamente con la parola chiave "medium".
+Tutti gli hook nella directory /live/hooks/ del sistema live possono essere
+abilitati automaticamente con la parola chiave "medium".
 .br
 Se vengono congiunti svariati meccanismi, gli hook di tipo filesystem
 vengono applicati per primi, seguiti dalla tipologia medium e quindi da
@@ -190,7 +187,7 @@ entrambe le destinazioni, avrà la precedenza quello del supporto live.
 Sebbene i file di configurazione messi nelle directory conf.d non richiedano
 un nome o un suffisso particolari, per coerenza è suggerito di usare
 "vendor.conf"o "project.conf" come schema di denominazione (laddove "vendor"
-o "project" è sostituito con un nome reale, risultando in un nome di file
+o "project"è sostituito con un nome reale, risultando in un nome di file
 come "debian\-eeepc.conf").
 .PP
 Il contenuto effettivo dei file di configurazione è costituito da una o più
@@ -225,6 +222,8 @@ Questa variabile equivale al parametro
 .IP "\fBLIVE_TIMEZONE\fP=\fIFUSO ORARIO\fP" 4
 Questa variabile equivale al parametro "\fBlive\-config.timezone\fP=\fIFUSO
 ORARIO\fP".
+.IP \fBLIVE_UTC\fP=\fByes\fP|no 4
+Questa variabile equivale al parametro "\fBlive\-config.utc\fP=\fByes\fP|no".
 .IP \fBLIVE_KEYBOARD_MODEL\fP=\fIMODELLO_TASTIERA\fP 4
 Questa variabile equivale al parametro
 "\fBlive\-config.keyboard\-model\fP=\fIMODELLO_TASTIERA\fP".
@@ -242,11 +241,6 @@ Questa variabile equivale al parametro
 .IP "\fBLIVE_SYSV_RC\fP=\fISERVIZIO1\fP,\fISERVIZIO2\fP ... \fISERVIZIOn\fP" 4
 Questa variabile equivale al parametro
 "\fBlive\-config.sysv\-rc\fP=\fISERVIZIO1\fP,\fISERVIZIO2\fP ... \fISERVIZIOn\fP".
-.IP \fBLIVE_UTC\fP=\fByes\fP|no 4
-Questa variabile equivale al parametro "\fBlive\-config.utc\fP=\fByes\fP|no".
-.IP \fBLIVE_X_SESSION_MANAGER\fP=\fIX_SESSION_MANAGER\fP 4
-Questa variabile equivale al parametro
-"\fBlive\-config.x\-session\-manager\fP=\fIX_SESSION_MANAGER\fP".
 .IP \fBLIVE_XORG_DRIVER\fP=\fIDRIVER_XORG\fP 4
 Questa variabile equivale al parametro
 "\fBlive\-config.xorg\-driver\fP=\fIDRIVER_XORG\fP".
@@ -271,12 +265,12 @@ trovare un esempio in /usr/share/doc/live\-config/examples.
 
 .SS "Rimuovere script config esistenti"
 Non è ancora realmente possibile rimuovere gli script in un modo sensato che
-non richieda di fornire un pacchetto di \fBlive\-config\fP modificato localmente
-o l'uso di dpkg\-divert. Tuttavia la stessa cosa si può ottenere
-disabilitando i rispettivi script tramite il meccanismo di live\-noconfig,
-come spiegato prima. Per evitare di dover specificare ogni volta con
-parametri di boot gli script da disabilitare, usare un file di
-configurazione come mostrato in precedenza.
+non richieda di fornire un pacchetto di \fBlive\-config\fP modificato
+localmente. Tuttavia la stessa cosa si può ottenere disabilitando i
+rispettivi script tramite il meccanismo di live\-noconfig, come spiegato
+prima. Per evitare di dover specificare ogni volta con parametri di boot gli
+script da disabilitare, usare un file di configurazione come mostrato in
+precedenza.
 .PP
 È consigliato mettere i file di configurazione per il sistema live in un
 pacchetto debian dedicato. Si può trovare un esempio in
@@ -324,7 +318,7 @@ configura sysvinit.
 configura sysv\-rc disabilitando i servizi elencati.
 .IP \fBlogin\fP 4
 disabilita lastlog.
-.IP \fBapport\fP 4
+.IP "\fBapport\fP (solo ubuntu)" 4
 disabilita apport.
 .IP \fBgnome\-panel\-data\fP 4
 disabilita il pulsante di blocco dello schermo.
@@ -358,8 +352,6 @@ configura xserver\-xorg.
 disabilita ureadahead.
 .IP \fBopenssh\-server\fP 4
 ricrea le chiavi di openssh\-server.
-.IP \fBxfce4\-panel\fP 4
-configura xfce4\-panel con le impostazioni predefinite.
 .IP \fBhooks\fP 4
 permette di eseguire comandi arbitrari da uno script situato sul supporto
 live o su un server http/ftp.
@@ -374,10 +366,10 @@ live o su un server http/ftp.
 .IP \fB/var/lib/live/config/\fP 4
 .IP \fB/var/log/live/config.log\fP 4
 .PP
-.IP \fB/live/config\-hooks/*\fP 4
-.IP \fBlive/config\-hooks/*\fP 4
-.IP \fB/live/config\-preseed/*\fP 4
-.IP "\fBlive/config\-preseed/* \fP" 4
+.IP \fB/live/hooks/*\fP 4
+.IP \fBlive/hooks/*\fP 4
+.IP \fB/live/preseed/*\fP 4
+.IP "\fBlive/preseed/* \fP" 4
 
 .SH "VEDERE ANCHE"
 \fIlive\-boot\fP(7)

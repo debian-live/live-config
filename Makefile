@@ -1,7 +1,7 @@
 # Makefile
 
 ## live-config(7) - System Configuration Scripts
-## Copyright (C) 2006-2013 Daniel Baumann <daniel@debian.org>
+## Copyright (C) 2006-2012 Daniel Baumann <daniel@debian.org>
 ##
 ## This program comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
 ## This is free software, and you are welcome to redistribute it
@@ -38,7 +38,7 @@ test:
 		echo " done."; \
 	else \
 		echo "W: checkbashisms - command not found"; \
-		echo "I: checkbashisms can be obtained from: "; \
+		echo "I: checkbashisms can be optained from: "; \
 		echo "I:   http://git.debian.org/?p=devscripts/devscripts.git"; \
 		echo "I: On Debian based systems, checkbashisms can be installed with:"; \
 		echo "I:   apt-get install devscripts"; \
@@ -56,8 +56,10 @@ install:
 	mkdir -p $(DESTDIR)/etc/init
 	cp backends/upstart/live-config.upstart $(DESTDIR)/etc/init/live-config.conf
 
-	mkdir -p $(DESTDIR)/lib/systemd/system
-	cp backends/systemd/live-config.systemd $(DESTDIR)/lib/systemd/system/live-config.service
+	mkdir -p $(DESTDIR)/etc/systemd/system
+	cp backends/systemd/live-config.systemd $(DESTDIR)/etc/systemd/system/live-config.service
+	mkdir -p $(DESTDIR)/etc/systemd/system/runlevel1.target.wants
+	ln -s ../live-config.service $(DESTDIR)/etc/systemd/system/runlevel1.target.wants/live-config.service
 
 	# Installing scripts
 	mkdir -p $(DESTDIR)/lib/live
@@ -67,10 +69,6 @@ install:
 	cp bin/boot-init.sh $(DESTDIR)/lib/live
 
 	mkdir -p $(DESTDIR)/sbin
-
-	# Installing shared data
-	mkdir -p $(DESTDIR)/usr/share/live/config
-	cp -r VERSION share/* $(DESTDIR)/usr/share/live/config
 
 	# Installing docs
 	mkdir -p $(DESTDIR)/usr/share/doc/live-config
@@ -93,7 +91,7 @@ install:
 	done
 
 uninstall:
-	# Uninstalling backends
+	# Uininstalling backends
 	rm -f $(DESTDIR)/etc/init.d/live
 	rm -f $(DESTDIR)/etc/init.d/live-config
 	rmdir --ignore-fail-on-non-empty $(DESTDIR)/etc/init.d > /dev/null 2>&1 || true
@@ -103,9 +101,11 @@ uninstall:
 	rmdir --ignore-fail-on-non-empty $(DESTDIR)/etc/init > /dev/null 2>&1 || true
 	rmdir --ignore-fail-on-non-empty $(DESTDIR)/etc > /dev/null 2>&1 || true
 
-	rm -f $(DESTDIR)/lib/systemd/system/live-config.service
-	rmdir --ignore-fail-on-non-empty $(DESTDIR)/lib/systemd/system > /dev/null 2>&1 || true
-	rmdir --ignore-fail-on-non-empty $(DESTDIR)/lib/systemd > /dev/null 2>&1 || true
+	rm -f $(DESTDIR)/etc/systemd/system/live-config.service
+	rm -f $(DESTDIR)/etc/systemd/system/runlevel1.target.wants/live-config.service
+	rmdir --ignore-fail-on-non-empty $(DESTDIR)/etc/systemd/system/runlevel1.target.wants > /dev/null 2>&1 || true
+	rmdir --ignore-fail-on-non-empty $(DESTDIR)/etc/systemd/system  > /dev/null 2>&1 || true
+	rmdir --ignore-fail-on-non-empty $(DESTDIR)/etc/systemd > /dev/null 2>&1 || true
 
 	# Uninstalling scripts
 	rm -f $(DESTDIR)/lib/live/boot-init.sh
@@ -118,10 +118,6 @@ uninstall:
 	rmdir --ignore-fail-on-non-empty $(DESTDIR)/var/lib/live > /dev/null 2>&1 || true
 	rmdir --ignore-fail-on-non-empty $(DESTDIR)/var/lib > /dev/null 2>&1 || true
 	rmdir --ignore-fail-on-non-empty $(DESTDIR)/var > /dev/null 2>&1 || true
-
-	# Uninstalling shared data
-	rm -rf $(DESTDIR)/usr/share/live/config
-	rmdir --ignore-fail-on-non-empty $(DESTDIR)/usr/share/live
 
 	# Uninstalling docs
 	rm -rf $(DESTDIR)/usr/share/doc/live-config

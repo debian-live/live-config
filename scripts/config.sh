@@ -1,7 +1,7 @@
 #!/bin/sh
 
 ## live-config(7) - System Configuration Scripts
-## Copyright (C) 2006-2013 Daniel Baumann <daniel@debian.org>
+## Copyright (C) 2006-2012 Daniel Baumann <daniel@debian.org>
 ##
 ## This program is free software: you can redistribute it and/or modify
 ## it under the terms of the GNU General Public License as published by
@@ -32,7 +32,6 @@ DEBIAN_FRONTEND="noninteractive"
 DEBIAN_PRIORITY="critical"
 DEBCONF_NOWARNINGS="yes"
 
-IP_SEPARATOR="-"
 PROC_OPTIONS="onodev,noexec,nosuid"
 
 Cmdline ()
@@ -40,53 +39,53 @@ Cmdline ()
 	for _PARAMETER in ${_CMDLINE}
 	do
 		case "${_PARAMETER}" in
+			live-config|config)
+				# Run all scripts
+				_SCRIPTS="$(ls /lib/live/config/*)"
+				;;
+
 			live-config=*|config=*)
 				# Only run requested scripts
 				LIVE_CONFIGS="${_PARAMETER#*config=}"
-				LIVE_NOCONFIGSS=""
-				_SCRIPTS=""
-				;;
-
-			live-config|config)
-				# Run all scripts
-				LIVE_CONFIGS=""
-				LIVE_NOCONFIGS=""
-				_SCRIPTS="$(ls /lib/live/config/*)"
-				;;
-
-			live-noconfig=*|noconfig=*)
-				# Don't run requested scripts
-				LIVE_CONFIGS=""
-				LIVE_NOCONFIGS="${_PARAMETER#*noconfig=}"
-				_SCRIPTS="$(ls /lib/live/config/*)"
 				;;
 
 			live-noconfig|noconfig)
 				# Don't run any script
-				LIVE_CONFIGS=""
-				LIVE_NOCONFIGS=""
 				_SCRIPTS=""
+				;;
+
+			live-noconfig=*|noconfig=*)
+				# Don't run requested scripts
+				_SCRIPTS="$(ls /lib/live/config/*)"
+				LIVE_NOCONFIGS="${_PARAMETER#*noconfig=}"
 				;;
 
 			# Shortcuts
 			live-config.noroot|noroot)
 				# Disable root access, no matter what mechanism
-				_NOROOT="true"
+				_SCRIPTS="${_SCRIPTS:-$(ls /lib/live/config/*)}"
+				LIVE_NOCONFIGS="${LIVE_NOCONFIGS},sudo,policykit"
+
+				_NO_ROOT="true"
 				;;
 
 			live-config.noautologin|noautologin)
 				# Disables both console and graphical autologin.
-				_NOAUTOLOGIN="true"
+				_SCRIPTS="${_SCRIPTS:-$(ls /lib/live/config/*)}"
+				LIVE_NOCONFIGS="${LIVE_NOCONFIGS},sysvinit,gdm,gdm3,kdm,lightdm,lxdm,nodm,slim,upstart,xinit"
 				;;
 
 			live-config.nottyautologin|nottyautologin)
 				# Disables console autologin.
-				_NOTTYAUTOLOGIN="true"
+				_SCRIPTS="${_SCRIPTS:-$(ls /lib/live/config/*)}"
+				LIVE_NOCONFIGS="${LIVE_NOCONFIGS},sysvinit,upstart"
 				;;
 
 			live-config.nox11autologin|nox11autologin)
-				# Disables graphical autologin, no matter what mechanism
-				_NOX11AUTOLOGIN="true"
+				# Disables graphical autologin, no matter what
+				# mechanism
+				_SCRIPTS="${_SCRIPTS:-$(ls /lib/live/config/*)}"
+				LIVE_NOCONFIGS="${LIVE_NOCONFIGS},gdm,gdm3,kdm,lightdm,lxdm,nodm,slim,xinit"
 				;;
 
 			# Special options
@@ -95,35 +94,6 @@ Cmdline ()
 				;;
 		esac
 	done
-
-	# Exclude shortcuts specific scripts
-	case "${_NOROOT}" in
-		true)
-			# Disable root access, no matter what mechanism
-			LIVE_NOCONFIGS="${LIVE_NOCONFIGS},sudo,policykit"
-			;;
-	esac
-
-	case "${_NOAUTOLOGIN}" in
-		true)
-			# Disables both console and graphical autologin.
-			LIVE_NOCONFIGS="${LIVE_NOCONFIGS},sysvinit,gdm,gdm3,kdm,lightdm,lxdm,nodm,slim,upstart,xinit"
-			;;
-	esac
-
-	case "${_NOTTYAUTOLOGIN}" in
-		true)
-			# Disables console autologin.
-			LIVE_NOCONFIGS="${LIVE_NOCONFIGS},sysvinit,upstart"
-			;;
-	esac
-
-	case "${_NOX11AUTOLOGIN}" in
-		true)
-			# Disables graphical autologin, no matter what mechanism
-			LIVE_NOCONFIGS="${LIVE_NOCONFIGS},gdm,gdm3,kdm,lightdm,lxdm,nodm,slim,xinit"
-			;;
-	esac
 
 	# Include requested scripts
 	if [ -n "${LIVE_CONFIGS}" ]
@@ -161,7 +131,7 @@ Trap ()
 	return ${_RETURN}
 }
 
-Setup_network ()
+Start_network ()
 {
 	if [ -z "${_NETWORK}" ] && [ -e /etc/init.d/live-config ]
 	then
@@ -196,21 +166,12 @@ Main ()
 		exit 0
 	fi
 
-	# Setting up log redirection
-	rm -f /var/log/live/config.log
-	rm -f /var/log/live/config.pipe
-
-	mkdir -p /var/log/live
-	mkfifo /var/log/live/config.pipe
-	tee < /var/log/live/config.pipe /var/log/live/config.log &
-	exec > /var/log/live/config.pipe 2>&1
-
-	echo -n "live-config:" > /var/log/live/config.pipe 2>&1
+	echo -n "live-config:"
 	trap 'Trap' EXIT HUP INT QUIT TERM
 
-	# Reading configuration files from filesystem and live-media
+	# Reading configuration file from filesystem and live-media
 	for _FILE in /etc/live/config.conf /etc/live/config/* \
-		     /lib/live/mount/medium/live/config.conf /lib/live/mount/medium/live/config/*
+		     /live/image/live/config.conf /live/image/live/config/*
 	do
 		if [ -e "${_FILE}" ]
 		then
@@ -218,7 +179,7 @@ Main ()
 		fi
 	done
 
-	# Processing command line
+	# Reading kernel command line
 	Cmdline
 
 	case "${LIVE_DEBUG}" in
@@ -227,20 +188,19 @@ Main ()
 			;;
 	esac
 
+	mkdir -p /var/log/live
+
 	# Configuring system
 	_SCRIPTS="$(echo ${_SCRIPTS} | sed -e 's| |\n|g' | sort -u)"
 
 	for _SCRIPT in ${_SCRIPTS}
 	do
-		[ "${LIVE_DEBUG}" = "true" ] && echo "[$(date +'%F %T')] live-config: ${_SCRIPT}" > /var/log/live/config.pipe
+		[ "${_LIVE_DEBUG}" = "true" ] && echo "[$(date +'%F %T')] live-config: ${_SCRIPT}" >> /var/log/live/config.log
 
-		. ${_SCRIPT} > /var/log/live/config.pipe 2>&1
+		. ${_SCRIPT} 2>&1 | tee -a /var/log/live/config.log
 	done
 
-	echo "." > /var/log/live/config.pipe
-
-	# Cleaning up log redirection
-	rm -f /var/log/live/config.pipe
+	echo "."
 }
 
-Main ${@}
+Main

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 ## live-config(7) - System Configuration Scripts
-## Copyright (C) 2006-2013 Daniel Baumann <daniel@debian.org>
+## Copyright (C) 2006-2012 Daniel Baumann <daniel@debian.org>
 ##
 ## This program comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
 ## This is free software, and you are welcome to redistribute it
@@ -45,7 +45,7 @@ Configure_lightdm ()
 	if [ -e /etc/lightdm/lightdm.conf ]
 	then
 		sed -i -r -e "s|^#.*autologin-user=.*\$|autologin-user=${LIVE_USERNAME}|" \
-			  -e "s|^#.*autologin-user-timeout=.*\$|autologin-user-timeout=0|" \
+			  -e "s|^#.*autologin-user-timeout=.*\$|autologin-user-timeout=5|" \
 		/etc/lightdm/lightdm.conf
 	fi
 

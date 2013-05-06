@@ -4,12 +4,12 @@ Upstream-Contact: John Doe <john@example.org>
 Source: http://www.example.org/foobar/
 Comment:
  This package is based on the live-config-foobar example package
- included in live-config which can be obtained from
+ included in live-config which can be optained from
  http://live.debian.net/devel/live-config/.
 
 Files: *
-Copyright: 2006-2013 Daniel Baumann <daniel@debian.org>
-           2013 John Doe <john@example.org>
+Copyright: 2006-2012 Daniel Baumann <daniel@debian.org>
+           2012 John Doe <john@example.org>
 License: GPL-3+
 
 License: GPL-3+

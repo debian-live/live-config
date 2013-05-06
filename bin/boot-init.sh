@@ -1,7 +1,7 @@
 #!/bin/sh
 
 ## live-config(7) - System Configuration Scripts
-## Copyright (C) 2006-2013 Daniel Baumann <daniel@debian.org>
+## Copyright (C) 2006-2012 Daniel Baumann <daniel@debian.org>
 ##
 ## This program comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
 ## This is free software, and you are welcome to redistribute it
@@ -65,15 +65,14 @@ cache_path()
 
 get_boot_device()
 {
-	# search in /proc/mounts for the device that is mounted at /lib/live/mount/medium
+	# search in /proc/mounts for the device that is mounted at /live/image
 	while read DEVICE MOUNT REST
 	do
-		case "${MOUNT}" in
-			/lib/live/mount/medium)
-				echo "${DEVICE}"
-				exit 0
-				;;
-		esac
+		if [ "${MOUNT}" = "/live/image" ]
+		then
+			echo "${DEVICE}"
+			exit 0
+		fi
 	done < /proc/mounts
 }
 
@@ -107,25 +106,24 @@ Eject ()
 		# "ejected" state even after reboot
 		MESSAGE="Please remove the USB flash drive"
 
-		case "${NOPROMPT}" in
-			usb)
-				prompt=
-				;;
-		esac
+		if [ "${NOPROMPT}" = "usb" ]
+		then
+			prompt=
+		fi
+
 	else
 		# ejecting is a very good idea here
 		MESSAGE="Please remove the disc, close the tray (if any)"
 
 		if [ -x /usr/bin/eject ]
 		then
-			eject -p -m /lib/live/mount/medium >/dev/null 2>&1
+			eject -p -m /live/image >/dev/null 2>&1
 		fi
 
-		case "${NOPROMPT}" in
-			cd)
-				prompt=
-				;;
-		esac
+		if [ "${NOPROMPT}" = "cd" ]
+		then
+			prompt=
+		fi
 	fi
 
 	[ "$prompt" ] || return 0
@@ -146,22 +144,20 @@ Eject ()
 echo "live-boot: caching reboot files..."
 
 prompt=1
-
-case "${NOPROMPT}" in
-	yes)
-		prompt=
-		;;
-esac
+if [ "${NOPROMPT}" = "Yes" ]
+then
+	prompt=
+fi
 
 for path in $(which halt) $(which reboot) /etc/rc?.d /etc/default $(which stty) /bin/plymouth
 do
 	cache_path "${path}"
 done
 
-mount -o remount,ro /lib/live/mount/overlay > /dev/null 2>&1
+mount -o remount,ro /live/overlay > /dev/null 2>&1
 
 # Remounting any persistence devices read-only
-for _MOUNT in $(awk '/\/lib\/live\/mount\/persistence/ { print $2 }' /proc/mounts)
+for _MOUNT in $(awk '/\/live\/persistence/ { print $2 }' /proc/mounts)
 do
 	mount -o remount,ro ${_MOUNT} > /dev/null 2>&1
 done
