@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config VERSION\n"
-"POT-Creation-Date: 2013-03-10 22:25+0100\n"
+"POT-Creation-Date: 2013-04-01 08:32+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,19 +25,19 @@ msgstr ""
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "2013-03-10"
+msgid "2013-04-01"
 msgstr ""
 
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "4.0~a18-1"
+msgid "4.0~a19-1"
 msgstr ""
 
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "Debian Live Project"
+msgid "Live Systems Project"
 msgstr ""
 
 #. type: SH
@@ -60,8 +60,8 @@ msgstr ""
 #. type: Plain text
 #: en/live-config.7:16
 msgid ""
-"B<live-config> contains the scripts that configure a Debian Live system "
-"during the boot process (late userspace)."
+"B<live-config> contains the scripts that configure a live system during the "
+"boot process (late userspace)."
 msgstr ""
 
 #. type: SH
@@ -111,7 +111,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/live-config.7:27
-msgid "All scripts are run. This is what Debian Live images use by default."
+msgid "All scripts are run. This is what live images use by default."
 msgstr ""
 
 #. type: IP
@@ -255,8 +255,8 @@ msgstr ""
 #. type: Plain text
 #: en/live-config.7:55
 msgid ""
-"Allows to set the fullname of the users that gets created for autologin. The "
-"default is 'Debian Live user'."
+"Allows to set the fullname of the users that gets created for autologin. On "
+"Debian the default is 'Debian Live user'."
 msgstr ""
 
 #. type: IP
@@ -415,7 +415,7 @@ msgid ""
 "if any, already installed, e.g. if a python script should be executed the "
 "system needs python installed. Some hooks for some common use-cases are "
 "available at /usr/share/doc/live-config/examples/hooks/ and E<lt>I<http://"
-"live.debian.net/other/hooks>E<gt>."
+"live-systems.org/other/hooks>E<gt>."
 msgstr ""
 
 #. type: Plain text
@@ -1391,9 +1391,9 @@ msgstr ""
 #. type: Plain text
 #: en/live-config.7:269
 msgid ""
-"More information about live-config and the Debian Live project can be found "
-"on the homepage at E<lt>I<http://live.debian.net/>E<gt> and in the manual at "
-"E<lt>I<http://live.debian.net/manual/>E<gt>."
+"More information about live-config and the Live Systems project can be found "
+"on the homepage at E<lt>I<http://live-systems.org/>E<gt> and in the manual "
+"at E<lt>I<http://live-systems.org/manual/>E<gt>."
 msgstr ""
 
 #. type: SH
@@ -1406,9 +1406,9 @@ msgstr ""
 #: en/live-config.7:272
 msgid ""
 "Bugs can be reported by submitting a bugreport for the live-config package "
-"in the Debian Bug Tracking System at E<lt>I<http://bugs.debian.org/>E<gt> or "
-"by writing a mail to the Debian Live mailing list at E<lt>I<debian-"
-"live@lists.debian.org>E<gt>."
+"in the Bug Tracking System at E<lt>I<http://bugs.debian.org/>E<gt> or by "
+"writing a mail to the Live Systems mailing list at E<lt>I<debian-live@lists."
+"debian.org>E<gt>."
 msgstr ""
 
 #. type: SH
