@@ -304,6 +304,37 @@ live-config (4.0~a1-1) experimental; urgency=low
 
  -- Daniel Baumann <mail@daniel-baumann.ch>  Wed, 26 Sep 2012 15:05:07 +0200
 
+live-config (3.0.23-1) unstable; urgency=low
+
+  * Loading fglrx module with --ignore-install like the nvidia ones too.
+  * Making module loading for fglrx and nvidia not fail.
+
+ -- Daniel Baumann <daniel@debian.org>  Thu, 25 Apr 2013 19:18:33 +0200
+
+live-config (3.0.22-1) unstable; urgency=low
+
+  [ Daniel Baumann ]
+  * Adding conflicts/replaces for squeeze upgrade (Closes: #704562).
+  * Skipping sudo script if username is root (Closes: #701788).
+  * Replacing systemctl call with manual symlink, which is error prone
+    wrt/ changes in systemd or the service file but doesn't require up and
+    running systemd (Closes: #700597).
+  * Correcting some spelling typos, thanks to Adam D. Barratt <adam@adam-
+    barratt.org.uk>.
+  * Correcting spelling typo in noroot variable name, thanks to Chris
+    Malton <chrism@cmalton.me.uk> (Closes: #703108).
+
+  [ Jun Nogata ]
+  * Updating gnome-screensaver locking for gnome3 (Closes: #703972).
+
+  [ Daniel Baumann ]
+  * Issueing gnome-screensaver disabling differently depending on wheezy
+    or squeeze.
+  * Adding updated Brazilian Portuguese manpage translations from Tiago
+    Bortoletto Vaz <tiago@debian.org>.
+
+ -- Daniel Baumann <daniel@debian.org>  Wed, 03 Apr 2013 17:47:25 +0200
+
 live-config (3.0.21-1) unstable; urgency=low
 
   * Calling systemctl with --quiet.
