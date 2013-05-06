@@ -1,12 +1,12 @@
-# Spanish translations for live-config package
+# Spanish translations for live-config
 # Copyright (C) 2011-2012 Carlos Zuferri "chals" <chals@altorricon.com>
 # Copyright (C) 2011-2012 José Luis Zabalza <jlz.3008@gmail.com>
 # This file is distributed under the same license as the live-config package.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: live-config 4.0~a3-1\n"
-"POT-Creation-Date: 2012-11-07 14:50+0100\n"
+"Project-Id-Version: live-config 4.0~a4-1\n"
+"POT-Creation-Date: 2012-11-08 11:03+0100\n"
 "PO-Revision-Date: 2012-07-28 22:11+0100\n"
 "Last-Translator: Carlos Zuferri <chals@altorricon.com>\n"
 "Language-Team: none\n"
@@ -25,14 +25,14 @@ msgstr "LIVE-CONFIG"
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "2012-11-07"
-msgstr "07.11.2012"
+msgid "2012-11-08"
+msgstr "08.11.2012"
 
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "4.0~a3-1"
-msgstr "4.0~a3-1"
+msgid "4.0~a4-1"
+msgstr "4.0~a4-1"
 
 #. type: TH
 #: en/live-config.7:9
