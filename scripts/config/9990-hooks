@@ -69,7 +69,7 @@ Process_hooks ()
 			cp $(echo ${_HOOK} | sed 's|file://||') "${_TMPFILE}"
 		else
 			# remote file
-			Start_network
+			Setup_network
 
 			wget --quiet "${_HOOK}" -O "${_TMPFILE}"
 		fi
