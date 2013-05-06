@@ -1,3 +1,26 @@
+live-config (4.0~a20-1) experimental; urgency=low
+
+  [ Daniel Baumann ]
+  * Dropping accidentally left-over gnome2 screensaver deactivation.
+  * Adding updated Brazilian-Portuguese manpage translation from Tiago.
+
+  [ chals ]
+  * Updating dates in the man pages.
+  * Updating Spanish translation of the man page.
+  * Updating French translation of the man page.
+
+  [ Daniel Baumann ]
+  * Loading fglrx module with --ignore-install like the nvidia ones too.
+  * Making module loading for fglrx and nvidia not fail.
+  * Correcting name for ssl-cert script (Closes: #706933).
+  * Adding 3.0.22-1 and 3.0.23-1 changelog entries.
+  * Replacing expr usage in initscript for eject boot media with something
+    less error prone.
+  * Don't error out if file is not installed in initscript for eject boot
+    media (Closes: #706679).
+
+ -- Daniel Baumann <mail@daniel-baumann.ch>  Mon, 06 May 2013 20:52:42 +0200
+
 live-config (4.0~a19-1) experimental; urgency=low
 
   [ Daniel Baumann ]
