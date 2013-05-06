@@ -11,14 +11,14 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 01.04.2013 4.0~a19\-1 "Live Systems Project"
+.TH LIVE\-CONFIG 7 06.05.2013 4.0~a20\-1 "Proyecto Live Systems"
 
 .SH NOMBRE
 \fBlive\-config\fP \- Scripts de configuración del sistema
 
 .SH DESCRIPCIÓN
-\fBlive\-config\fP contains the scripts that configure a live system during the
-boot process (late userspace).
+\fBlive\-config\fP contiene los scripts que configuran un sistema en vivo
+durante el proceso de arranque (late userspace).
 
 .SH CONFIGURACIÓN
 \fBlive\-config\fP se puede configurar mediante parámetros durante el proceso de
@@ -39,8 +39,9 @@ opciones «live\-config» y «live\-noconfig» a la vez, o si alguna de las dos 
 especifica varias veces, la última tiene prioridad sobre las anteriores.
 
 .IP "\fBlive\-config\fP | \fBconfig\fP" 4
-All scripts are run. This is what live images use by default.
-.IP \fBlive\-config\fP=\fISCRIPT1\fP,\fISCRIPT2\fP,·...·\fISCRIPTn\fP·|·\fBconfig\fP=\fISCRIPT1\fP,\fISCRIPT2\fP,·...·\fISCRIPTn\fP 4
+Se ejecutan todos los scripts. Esto es lo que las imágenes en vivo utilizan
+por defecto.
+.IP "\fBlive\-config\fP=\fISCRIPT1\fP,\fISCRIPT2\fP, ... \fISCRIPTn\fP | \fBconfig\fP=\fISCRIPT1\fP,\fISCRIPT2\fP, ... \fISCRIPTn\fP" 4
 Sólo se ejecutan los scripts especificados. Se debe tener en cuenta que el
 orden es importante. p.ej. «live\-config=sudo,live\-debconfig_passwd» no
 funcionaría ya que el usuario debe añadirse antes de configurarse como
@@ -49,7 +50,7 @@ ver su orden.
 .IP "\fBlive\-noconfig\fP | \fBnoconfig\fP" 4
 No se ejecuta ningún script. Es lo mismo que no usar ninguno de
 «live\-config» o «live\-noconfig».
-.IP \fBlive\-noconfig\fP=\fISCRIPT1\fP,\fISCRIPT2\fP,·...·\fISCRIPTn\fP·|·\fBnoconfig\fP=\fISCRIPT1\fP,\fISCRIPT2\fP,·...·\fISCRIPTn\fP 4
+.IP "\fBlive\-noconfig\fP=\fISCRIPT1\fP,\fISCRIPT2\fP, ... \fISCRIPTn\fP | \fBnoconfig\fP=\fISCRIPT1\fP,\fISCRIPT2\fP, ... \fISCRIPTn\fP" 4
 Se ejecutan todos los scripts, a excepción de los especificados.
 
 .SS "Parámetros de arranque (opciones)"
@@ -61,7 +62,7 @@ Permite buscar y aplicar uno o más ficheros de preconfiguración debconf a la
 base de datos de debconf. Tener en cuenta que las URLs deben poder ser
 descargadas por wget (http, ftp o file://).
 .br
-Si el archivo está en el medio en vivo, se puede obtener con
+Si el fichero está en el medio en vivo, se puede obtener con
 file:///lib/live/mount/medium/\fIFILE\fP, o con file:///\fIFILE\fP si se encuentra
 en el directorio raíz del sistema en vivo.
 .br
@@ -76,45 +77,45 @@ Si se combinan varios mecanismos, los ficheros de preconfiguración del
 sistema de ficheros se aplican primero, después los ficheros de
 preconfiguración del medio, y en último lugar los de red.
 .IP "\fBlive\-config.hostname\fP=\fIHOSTNAME\fP | \fBhostname\fP=\fIHOSTNAME\fP" 4
-Permite establecer el hostname del sistema. Por omisión es «debian».
+Permite establecer el anfitrión del sistema. Por defecto es «debian».
 .IP "\fBlive\-config.username\fP=\fIUSERNAME\fP | \fBusername\fP=\fIUSERNAME\fP" 4
 Permite establecer el nombre del usuario que se crea para iniciar sesión de
-forma automática. Por omisión es «user».
+forma automática. Por defecto es «user».
 .IP "\fBlive\-config.user\-default\-groups\fP=\fIGROUP1\fP,\fIGROUP2\fP ... \fIGROUPn\fP | \fBuser\-default\-groups\fP=\fIGROUP1\fP,\fIGROUP2\fP ... \fIGROUPn\fP" 4
 Permite establecer los grupos por defecto a los que pertenecen los usuarios
 que se crean para iniciar sesión automáticamente. Los grupos predeterminados
 son 'audio cdrom dip floppy video plugdev netdev powerdev scanner
 bluetooth'.
 .IP "\fBlive\-config.user\-fullname\fP=\(dq\fIUSER FULLNAME\fP\(dq | \fBuser\-fullname\fP=\(dq\fIUSER·FULLNAME\fP\(dq" 4
-Allows to set the fullname of the users that gets created for autologin. On
-Debian the default is 'Debian Live user'.
+Permite establecer el nombre completo del usuario que se crea para iniciar
+sesión de forma automática. Por defecto es «Debian Live user».
 .IP "\fBlive\-config.locales\fP=\fILOCALE1\fP,\fILOCALE2\fP·...·\fILOCALEn\fP | \fBlocales\fP=\fILOCALE1\fP,\fILOCALE2\fP·...·\fILOCALEn\fP" 4
 Permite establecer las variantes locales del sistema,
-p.ej. «es_ES.UTF\-8». Por omisión es «en_US.UTF\-8». En caso de que las
+p.ej. «es_ES.UTF\-8». Por defecto es «en_US.UTF\-8». En caso de que las
 variantes locales no estén disponibles en el sistema, se generarán sobre la
 marcha.
 .IP "\fBlive\-config.timezone\fP=\fITIMEZONE\fP | \fBtimezone\fP=\fITIMEZONE\fP" 4
 Permite establecer la zona horaria del sistema, p.ej. «Europa/Madrid». Por
-omisión es «UTC».
+defecto es «UTC».
 .IP "\fBlive\-config.keyboard\-model\fP=\fIKEYBOARD_MODEL\fP | \fBkeyboard\-model\fP=\fIKEYBOARD_MODEL\fP" 4
-Permite cambiar el modelo de teclado. No hay ningún valor por omisión.
+Permite cambiar el modelo de teclado. No hay ningún valor por defecto.
 .IP "\fBlive\-config.keyboard\-layouts\fP=\fIKEYBOARD_LAYOUT1\fP,\fIKEYBOARD_LAYOUT2\fP ... \fIKEYBOARD_LAYOUTn\fP | \fBkeyboard\-layouts\fP=\fIKEYBOARD_LAYOUT1\fP,\fIKEYBOARD_LAYOUT2\fP ... \fIKEYBOARD_LAYOUTn\fP" 4
 Permite cambiar la disposición del teclado. Si se especifica más de una, las
 herramientas de escritorio permitirán cambiarlas bajo X11. No hay ningún
-valor por omisión.
+valor por defecto.
 .IP "\fBlive\-config.keyboard\-variants\fP=\fIKEYBOARD_VARIANT1\fP,\fIKEYBOARD_VARIANT2\fP ... \fIKEYBOARD_VARIANTn\fP | \fBkeyboard\-variants\fP=\fIKEYBOARD_VARIANT1\fP,\fIKEYBOARD_VARIANT2\fP ... \fIKEYBOARD_VARIANTn\fP" 4
 Permite cambiar las variantes de teclado. Si se especifica más de una, se
 deben especificar el mismo número de variantes como de distribuciones de
 teclado, ya que se corresponderan una a una en el orden especificado. Se
 pueden dejar valores en blanco. Las herramientas de escritorio permitirán
-cambiarlas bajo X11. No hay ningún valor por omisión.
+cambiarlas bajo X11. No hay ningún valor por defecto.
 .IP "\fBlive\-config.keyboard\-options\fP=\fIKEYBOARD_OPTIONS\fP | \fBkeyboard\-options\fP=\fIKEYBOARD_OPTIONS\fP" 4
-Permite cambiar las opciones del teclado. No hay un valor por omisión.
+Permite cambiar las opciones del teclado. No hay un valor por defecto.
 .IP "\fBlive\-config.sysv\-rc\fP=\fISERVICE1\fP,\fISERVICE2\fP ... \fISERVICEn\fP | \fBsysv\-rc\fP=\fISERVICE1\fP,\fISERVICE2\fP ... \fISERVICEn\fP" 4
 Permite desactivar los servicios «sysv» mediante «update\-rc.d».
 .IP "\fBlive\-config.utc\fP=\fByes\fP|no | \fButc\fP=\fByes\fP|no" 4
 Permite cambiar si el sistema debe asumir que el reloj de la máquina está
-ajustado a la hora UTC o no. Por omisión es «Si».
+ajustado a la hora UTC o no. Por defecto es «Si».
 .IP "\fBlive\-config.x\-session\-manager=\fP\fIX_SESSION_MANAGER\fP | \fBx\-session\-manager\fP=\fIX_SESSION_MANAGER\fP" 4
 Permite seleccionar el gestor de sesión gráfica «x\-session\-manager» mediante
 «update\-alternatives».
@@ -129,15 +130,16 @@ prioridad.
 Permite seleccionar la resolución de xorg en lugar de detectarla de forma
 automática, p.ej. 1024x768.
 .IP "\fBlive\-config.hooks\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP | \fBhooks\fP=medium|filesystem|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
-Allows to fetch and execute one or more arbitrary files. Note that the URLs
-must be fetchable by wget (http, ftp or file://), the files are executed in
-/tmp of the running live system, and that the files needs their
-dependencies, if any, already installed, e.g. if a python script should be
-executed the system needs python installed. Some hooks for some common
-use\-cases are available at /usr/share/doc/live\-config/examples/hooks/ and
+Permite buscar y ejecutar uno o más ficheros de forma arbitraria. Tener en
+cuenta que las URLs deben ser descargadas usando wget (http, ftp o file://),
+los ficheros se ejecutan en el directorio /tmp del sistema en vivo en
+ejecución y que los ficheros necesitan, si tienen dependencias, tenerlas
+resueltas. p.ej. Si se debe ejecutar un script python, el sistema necesita
+tener python instalado. Hay algunos scripts gancho para varios casos de uso
+común disponibles en /usr/share/doc/live\-config/examples/hooks/ y en
 <\fIhttp://live\-systems.org/other/hooks\fP>.
 .br
-Si el archivo está en el medio en vivo, se puede obtener con
+Si el fichero está en el medio en vivo, se puede obtener con
 file:///lib/live/mount/medium/\fIFILE\fP, o con file:///\fIFILE\fP si se encuentra
 en el directorio raíz del sistema en vivo.
 .br
@@ -147,7 +149,7 @@ sistema en vivo pueden activarse con la palabra clave «filesystem».
 Todos los scripts gancho de /live/config\-hooks/ del medio en vivo pueden
 activarse con la palabra clave «medium».
 .br
-Si se combinan varios mecanismos, los scripts gancho del sistema de archivos
+Si se combinan varios mecanismos, los scripts gancho del sistema de ficheros
 se ejecutan primero, después los del medio, y en último lugar los de red.
 
 .SS "Parámetros de arranque (atajos)"
@@ -338,7 +340,7 @@ Desactiva algunos servicios de KDE no deseados (squeeze y superior).
 añade un icono del instalador de debian en el escritorio del usuario.
 .IP \fBpolicykit\fP 4
 garantiza privilegios de usuario mediante policykit.
-.IP \fBsslcert\fP 4
+.IP \fBssl\-cert\fP 4
 Regenera los certificados ssl snake\-oil.
 .IP \fBupdate\-notifier\fP 4
 Desactiva el update\-notifier.
@@ -383,14 +385,15 @@ el medio en vivo o en un servidor http/ftp.
 \fIlive\-tools\fP(7)
 
 .SH "PÁGINA PRINCIPAL"
-More information about live\-config and the Live Systems project can be found
-on the homepage at <\fIhttp://live\-systems.org/\fP> and in the manual
-at <\fIhttp://live\-systems.org/manual/\fP>.
+Se puede encontrar más información acerca de live\-config y el proyecto Live
+Systems en su página principal en <\fIhttp://live\-systems.org/\fP> y en
+el manual en <\fIhttp://live\-systems.org/manual/\fP>.
 
 .SH ERRORES
-Bugs can be reported by submitting a bugreport for the live\-config package
-in the Bug Tracking System at <\fIhttp://bugs.debian.org/\fP> or by
-writing a mail to the Live Systems mailing list at
+Se puede notificar los fallos enviando un informe de errores sobre el
+paquete live\-config al Sistema de Seguimiento de Errores en
+<\fIhttp://bugs.debian.org/\fP> o escribiendo un mensaje a la lista de
+correo de Live Systems a la dirección
 <\fIdebian\-live@lists.debian.org\fP>.
 
 .SH AUTOR

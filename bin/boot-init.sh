@@ -35,7 +35,7 @@ cache_path()
 		find "${path}" -type f | xargs cat > /dev/null 2>&1
 	elif [ -f "${path}" ]
 	then
-		if file -L "${path}" | grep -q 'dynamically linked'
+		if [ -x /usr/bin/file ] && file -L "${path}" | grep -q 'dynamically linked'
 		then
 			# ldd output can be of three forms:
 			# 1. linux-vdso.so.1 =>  (0x00007fffe3fb4000)
@@ -80,10 +80,17 @@ get_boot_device()
 device_is_USB_flash_drive()
 {
 	# remove leading "/dev/" and all trailing numbers from input
-	DEVICE=$(expr substr ${1} 6 3)
+	DEVICE=$(echo ${1} | sed -e 's|/dev/||' -e 's|[0-9].*$||')
 
 	# check that device starts with "sd"
-	[ "$(expr substr ${DEVICE} 1 2)" != "sd" ] && return 1
+	case "${DEVICE}" in
+		sd*)
+			;;
+
+		*)
+			return 1
+			;;
+	esac
 
 	# check that the device is an USB device
 	if readlink /sys/block/${DEVICE} | grep -q usb

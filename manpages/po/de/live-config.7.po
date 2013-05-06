@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: live-config 4.0~a19-1\n"
-"POT-Creation-Date: 2013-04-01 08:32+0300\n"
-"PO-Revision-Date: 2010-05-24 09:59+0300\n"
-"Last-Translator: Daniel Baumann <mail@daniel-baumann.ch>\n"
+"Project-Id-Version: live-config 4.0~a20-1\n"
+"POT-Creation-Date: 2013-05-06 20:51+0300\n"
+"PO-Revision-Date: 2013-04-13 20:24+0100\n"
+"Last-Translator: Carlos Zuferri <chals@altorricon.com>\n"
 "Language-Team: none\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -24,14 +24,14 @@ msgstr "LIVE-CONFIG"
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "2013-04-01"
-msgstr "01.04.2013"
+msgid "2013-05-06"
+msgstr "06.05.2013"
 
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "4.0~a19-1"
-msgstr "4.0~a19-1"
+msgid "4.0~a20-1"
+msgstr "4.0~a20-1"
 
 #. type: TH
 #: en/live-config.7:9
@@ -1388,8 +1388,8 @@ msgstr "räumt dem Benutzer Privilegien durch policykit ein."
 #. type: IP
 #: en/live-config.7:224
 #, no-wrap
-msgid "B<sslcert>"
-msgstr "B<sslcert>"
+msgid "B<ssl-cert>"
+msgstr "B<ssl-cert>"
 
 #. type: Plain text
 #: en/live-config.7:226

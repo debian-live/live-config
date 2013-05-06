@@ -11,14 +11,14 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 01.04.2013 4.0~a19\-1 "Live Systems Project"
+.TH LIVE\-CONFIG 7 06.05.2013 4.0~a20\-1 "Projet Live Systems"
 
 .SH NOM
 \fBlive\-config\fP \- Scripts de configuration du système
 
 .SH DESCRIPTION
-\fBlive\-config\fP contains the scripts that configure a live system during the
-boot process (late userspace).
+\fBlive\-config\fP contient les scripts chargés de configurer le système live
+lors du processus de démarrage (late userspace).
 
 .SH CONFIGURATION
 \fBlive\-config\fP peut être configuré en utilisant des paramètres d'amorçage ou
@@ -41,7 +41,8 @@ l'un d'eux est spécifié plusieurs fois, c'est toujours le dernier qui a la
 préséance sur ceux qui précèdent.
 
 .IP "\fBlive\-config\fP | \fBconfig\fP" 4
-All scripts are run. This is what live images use by default.
+Tous les scripts sont lancés. C'est la configuration par défaut des images
+live.
 .IP "\fBlive\-config\fP=\fISCRIPT1\fP,\fISCRIPT2\fP, ... \fISCRIPTn\fP | \fBconfig\fP=\fISCRIPT1\fP,\fISCRIPT2\fP, ... \fISCRIPTn\fP" 4
 Seuls les scripts spécifiés sont lancés. Notez que leur ordre importe, ainsi
 \&'live\-config=sudo,live\-debconfig_passwd' ne peut pas fonctionner tant que
@@ -88,8 +89,8 @@ Permet de spécifier les groupes par défaut des utilisateurs qui sont créés
 pour l'auto\-login. Le défaut est 'audio cdrom dip floppy video plugdev
 netdev powerdev scanner bluetooth'.
 .IP "\fBlive\-config.user\-fullname\fP=\(dq\fINOM_COMPLET_D_UTILISATEUR\fP\(dq | \fBuser\-fullname\fP=\(dq\fINOM_COMPLET_D_UTILISATEUR\fP\(dq" 4
-Allows to set the fullname of the users that gets created for autologin. On
-Debian the default is 'Debian Live user'.
+Permet de spécifier le nom complet des utilisateurs créés pour
+l'auto\-login. Par défaut il s'agit de 'Debian Live user'.
 .IP "\fBlive\-config.locales\fP=\fILOCALISATION1\fP,\fILOCALISATION2\fP ... \fILOCALISATIONn\fP | \fBlocales\fP=\fILOCALISATION1\fP,\fILOCALISATION2\fP ... \fILOCALISATIONn\fP" 4
 Permet de spécifier la localisation du système, par exemple
 \&'fr_FR.UTF\-8'. Par défaut il s'agit de 'en_US.UTF\-8'. Dans le cas où la
@@ -101,7 +102,7 @@ défaut il s'agit de 'UTC'.
 .IP "\fBlive\-config.keyboard\-model\fP=\fIMODELE_DE_CLAVIER\fP | \fBkeyboard\-model\fP=\fIMODELE_DE_CLAVIER\fP" 4
 Permet de changer le modèle de clavier. Aucune valeur par défaut n'est
 indiquée.
-.IP "\fBlive\-config.keyboard\-layouts\fP=\fICONFIGURATION1_DU_CLAVIER\fP,\fICONFIGURATION2_DU_CLAVIER\fP ... \fICONFIGURATIONn_DU_CLAVIER\fP | \fBkeyboard\-layouts\fP=\fICONFIGURATION1_DU_CLAVIER\fP,\fICONFIGURATION2_DU_CLAVIER\fP ... \fICONFIGURATIONn_DU_CLAVIER\fP" 4
+.IP "\fBlive\-config.keyboard\-layouts\fP=\fIKEYBOARD_LAYOUT1\fP,\fIKEYBOARD_LAYOUT2\fP ... \fIKEYBOARD_LAYOUTn\fP | \fBkeyboard\-layouts\fP=\fIKEYBOARD_LAYOUT1\fP,\fIKEYBOARD_LAYOUT2\fP ... \fIKEYBOARD_LAYOUTn\fP" 4
 Permet de changer la configuration du clavier. Si plus d'une configuration
 est spécifiée, les utilitaires de l'environnement de bureau permettront de
 passer de l'une à l'autre sous X11. Aucune valeur par défaut n'est
@@ -132,13 +133,15 @@ override sont trouvés à la fois, le paramètre de démarrage est prioritaire.
 Permet de spécifier la résolution utilisée par xorg, plutôt que d'utiliser
 l'auto\-détection, par example 1024x768.
 .IP "\fBlive\-config.hooks\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP | \fBhooks\fP=\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
-Allows to fetch and execute one or more arbitrary files. Note that the URLs
-must be fetchable by wget (http, ftp or file://), the files are executed in
-/tmp of the running live system, and that the files needs their
-dependencies, if any, already installed, e.g. if a python script should be
-executed the system needs python installed. Some hooks for some common
-use\-cases are available at /usr/share/doc/live\-config/examples/hooks/ and
-<\fIhttp://live\-systems.org/other/hooks\fP>.
+Permet de chercher et d'exécuter un ou plusieurs fichiers spécifiques. Notez
+que les URLs doivent pouvoir être téléchargées par wget (http, ftp or
+file://), que les fichiers sont exécutés dans /tmp sur le système live, et
+que les dépendances des fichiers doivent être préalablement installées; si
+vous devez en effet exécuter un script python, vous devez préalablement
+installer sur le système l'interpréteur python. Quelques hooks pour certains
+cas d'utilisation sont proposés dans
+/usr/share/doc/live\-config/examples/hooks/ et sur
+<\fIhttp://live.debian.net/other/hooks\fP>.
 .br
 Si le fichier est placé dans le média live, il peut être utilisé avec
 file:///lib/live/mount/medium/\fIFILE\fP, ou bien avec file:///\fIFILE\fP s'il est
@@ -349,7 +352,7 @@ ajoute l'installeur (debian\-installer\-launcher) sur le bureau des
 utilisateurs.
 .IP \fBpolicykit\fP 4
 accorde à l'utilisateur des privilèges via le policykit.
-.IP \fBsslcert\fP 4
+.IP \fBssl\-cert\fP 4
 regénère les certificats ssl.
 .IP \fBupdate\-notifier\fP 4
 désactive update\-notifier.
@@ -394,15 +397,16 @@ live, ou sur un serveur http/ftp.
 \fIlive\-tools\fP(7)
 
 .SH "PAGE D'ACCUEIL"
-More information about live\-config and the Live Systems project can be found
-on the homepage at <\fIhttp://live\-systems.org/\fP> and in the manual
-at <\fIhttp://live\-systems.org/manual/\fP>.
+Plus d'informations sur live\-config et le project Live Systems peuvent être
+trouvées sur la page <\fIhttp://live\-systems.org/\fP> et dans le manuel
+sur <\fIhttp://live\-systems.org/manual/\fP>.
 
 .SH BUGS
-Bugs can be reported by submitting a bugreport for the live\-config package
-in the Bug Tracking System at <\fIhttp://bugs.debian.org/\fP> or by
-writing a mail to the Live Systems mailing list at
-<\fIdebian\-live@lists.debian.org\fP>.
+Les bogues peuvent être signalés en soumettant un rapport de bogue à propos
+du paquet live\-config dans le système de gestion des bogues sur
+<\fIhttp://bugs.debian.org/\fP> ou en envoyant un courrier électronique
+à la liste de diffusion Live Systems à
+<\fIdebian\-live@lists.debian.org\fP>
 
 .SH AUTEUR
 live\-config a été conçu par Daniel Baumann
