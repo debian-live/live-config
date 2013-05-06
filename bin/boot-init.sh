@@ -65,10 +65,10 @@ cache_path()
 
 get_boot_device()
 {
-	# search in /proc/mounts for the device that is mounted at /lib/live/image
+	# search in /proc/mounts for the device that is mounted at /lib/live/mount/medium
 	while read DEVICE MOUNT REST
 	do
-		if [ "${MOUNT}" = "/lib/live/image" ]
+		if [ "${MOUNT}" = "/lib/live/mount/medium" ]
 		then
 			echo "${DEVICE}"
 			exit 0
@@ -117,7 +117,7 @@ Eject ()
 
 		if [ -x /usr/bin/eject ]
 		then
-			eject -p -m /lib/live/image >/dev/null 2>&1
+			eject -p -m /lib/live/mount/medium >/dev/null 2>&1
 		fi
 
 		if [ "${NOPROMPT}" = "cd" ]
@@ -154,10 +154,10 @@ do
 	cache_path "${path}"
 done
 
-mount -o remount,ro /lib/live/overlay > /dev/null 2>&1
+mount -o remount,ro /lib/live/mount/overlay > /dev/null 2>&1
 
 # Remounting any persistence devices read-only
-for _MOUNT in $(awk '/\/lib\/live\/persistence/ { print $2 }' /proc/mounts)
+for _MOUNT in $(awk '/\/lib\/live\/mount\/persistence/ { print $2 }' /proc/mounts)
 do
 	mount -o remount,ro ${_MOUNT} > /dev/null 2>&1
 done

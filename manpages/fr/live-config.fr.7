@@ -11,7 +11,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 27.09.2012 4.0~a2\-1 "Projet Debian Live"
+.TH LIVE\-CONFIG 7 07.11.2012 4.0~a3\-1 "Projet Debian Live"
 
 .SH NOM
 \fBlive\-config\fP \- Scripts de configuration du système
@@ -64,8 +64,8 @@ préconfiguration debconf à la base de données debconf. Notez que les URLs
 doivent pouvoir être utilisées par wget (http, ftp or file://).
 .br
 Si le fichier est placé dans le média live, il peut être utilisé avec
-file:///lib/live/image/\fIFILE\fP, ou bien avec file:///\fIFILE\fP s'il est placé
-à la racine du système de fichiers du système live.
+file:///lib/live/mount/medium/\fIFILE\fP, ou bien avec file:///\fIFILE\fP s'il est
+placé à la racine du système de fichiers du système live.
 .br
 Tous les fichiers de préconfiguration dans /lib/live/config\-preseed/ dans le
 système de fichiers racine du système live peuvent être automatiquement
@@ -141,8 +141,8 @@ proposés dans /usr/share/doc/live\-config/examples/hooks/ et sur
 <\fIhttp://live.debian.net/other/hooks\fP>.
 .br
 Si le fichier est placé dans le média live, il peut être utilisé avec
-file:///lib/live/image/\fIFILE\fP, ou bien avec file:///\fIFILE\fP s'il est placé
-à la racine du système de fichiers du système live.
+file:///lib/live/mount/medium/\fIFILE\fP, ou bien avec file:///\fIFILE\fP s'il est
+placé à la racine du système de fichiers du système live.
 .br
 Tous les hooks, placés dans /lib/live/config\-hooks/ à la racine du système
 de fichiers, peuvent être automatiquement activés avec le mot clé

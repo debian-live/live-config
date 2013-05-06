@@ -4,8 +4,8 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: live-config 4.0~a2-1\n"
-"POT-Creation-Date: 2012-09-27 13:12+0300\n"
+"Project-Id-Version: live-config 4.0~a3-1\n"
+"POT-Creation-Date: 2012-11-07 14:50+0100\n"
 "PO-Revision-Date: 2012-08-03 17:13+0200\n"
 "Last-Translator: skizzhg <skizzhg@gmx.com>\n"
 "Language-Team: none\n"
@@ -23,14 +23,14 @@ msgstr "LIVE-CONFIG"
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "2012-09-27"
-msgstr "27.09.2012"
+msgid "2012-11-07"
+msgstr "07.11.2012"
 
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "4.0~a2-1"
-msgstr "4.0~a2-1"
+msgid "4.0~a3-1"
+msgstr "4.0~a3-1"
 
 #. type: TH
 #: en/live-config.7:9
@@ -210,12 +210,12 @@ msgstr ""
 #: en/live-config.7:41 en/live-config.7:81
 msgid ""
 "If the file is placed on the live medium, it can be fetched with file:///lib/"
-"live/image/I<FILE>, or with file:///I<FILE> if it is in the root filesystem "
-"of the live system itself."
+"live/mount/medium/I<FILE>, or with file:///I<FILE> if it is in the root "
+"filesystem of the live system itself."
 msgstr ""
 "Se il file è posizionato sul supporto live, questo  può essere prelevato con "
-"file:///lib/live/image/I<FILE>, o con file:///I<FILE> se è nella radice del "
-"filesystem del sistema live stesso."
+"file:///lib/live/mount/medium/I<FILE>, o con file:///I<FILE> se è nella "
+"radice del filesystem del sistema live stesso."
 
 #. type: Plain text
 #: en/live-config.7:43
