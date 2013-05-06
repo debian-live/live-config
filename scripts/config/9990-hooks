@@ -40,16 +40,16 @@ Process_hooks ()
 	do
 		case "${_HOOK}" in
 			filesystem)
-				if ls /lib/live/hooks/* 2>&1
+				if ls /lib/live/config-hooks/* 2>&1
 				then
-					_HOOKS="${_HOOKS} $(for _FILE in /lib/live/hooks/*; do echo file://${_FILE}; done)"
+					_HOOKS="${_HOOKS} $(for _FILE in /lib/live/config-hooks/*; do echo file://${_FILE}; done)"
 				fi
 				;;
 
 			medium)
-				if ls /live/image/live/hooks/* 2>&1
+				if ls /lib/live/image/live/config-hooks/* 2>&1
 				then
-					_HOOKS="${_HOOKS} $(for _FILE in /live/image/live/hooks/*; do echo file://${_FILE}; done)"
+					_HOOKS="${_HOOKS} $(for _FILE in /lib/live/image/live/config-hooks/*; do echo file://${_FILE}; done)"
 				fi
 				;;
 

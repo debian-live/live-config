@@ -11,7 +11,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 26.09.2012 4.0~a1\-1 "Proyecto Debian Live"
+.TH LIVE\-CONFIG 7 27.09.2012 4.0~a2\-1 "Proyecto Debian Live"
 
 .SH NOMBRE
 \fBlive\-config\fP \- Scripts de configuración del sistema
@@ -62,15 +62,15 @@ base de datos de debconf. Tener en cuenta que las URLs deben poder ser
 descargadas por wget (http, ftp o file://).
 .br
 Si el archivo está en el medio en vivo, se puede obtener con
-file:///live/image/\fIFILE\fP, o con file:///\fIFILE\fP si se encuentra en el
+file:///lib/live/image/\fIFILE\fP, o con file:///\fIFILE\fP si se encuentra en el
 directorio raíz del sistema en vivo.
 .br
-Todos los ficheros de preconfiguración en /lib/live/preseed/ en el sistema
-de ficheros raíz del sistema en vivo pueden activarse automáticamente con la
-palabra clave «filesystem».
+Todos los ficheros de preconfiguración en /lib/live/config\-preseed/ en el
+sistema de ficheros raíz del sistema en vivo pueden activarse
+automáticamente con la palabra clave «filesystem».
 .br
-Todos los ficheros en /live/preseed/ del medio en vivo pueden activarse
-automáticamente con la palabra clave «medium».
+Todos los ficheros en /live/config\-preseed/ del medio en vivo pueden
+activarse automáticamente con la palabra clave «medium».
 .br
 Si se combinan varios mecanismos, los ficheros de preconfiguración del
 sistema de ficheros se aplican primero, después los ficheros de
@@ -135,14 +135,14 @@ común disponibles en /usr/share/doc/live\-config/examples/hooks/ y en
 <\fIhttp://live.debian.net/other/hooks\fP>.
 .br
 Si el archivo está en el medio en vivo, se puede obtener con
-file:///live/image/\fIFILE\fP, o con file:///\fIFILE\fP si se encuentra en el
+file:///lib/live/image/\fIFILE\fP, o con file:///\fIFILE\fP si se encuentra en el
 directorio raíz del sistema en vivo.
 .br
-Todos los scripts gancho de /lib/live/hooks/ del directorio raíz del sistema
-en vivo pueden activarse con la palabra clave «filesystem».
+Todos los scripts gancho de /lib/live/config\-hooks/ del directorio raíz del
+sistema en vivo pueden activarse con la palabra clave «filesystem».
 .br
-Todos los scripts gancho de /live/hooks/ del medio en vivo pueden activarse
-con la palabra clave «medium».
+Todos los scripts gancho de /live/config\-hooks/ del medio en vivo pueden
+activarse con la palabra clave «medium».
 .br
 Si se combinan varios mecanismos, los scripts gancho del sistema de archivos
 se ejecutan primero, después los del medio, y en último lugar los de red.
@@ -364,10 +364,10 @@ el medio en vivo o en un servidor http/ftp.
 .IP \fB/var/lib/live/config/\fP 4
 .IP \fB/var/log/live/config.log\fP 4
 .PP
-.IP \fB/live/hooks/*\fP 4
-.IP \fBlive/hooks/*\fP 4
-.IP \fB/live/preseed/*\fP 4
-.IP "\fBlive/preseed/* \fP" 4
+.IP \fB/live/config\-hooks/*\fP 4
+.IP \fBlive/config\-hooks/*\fP 4
+.IP \fB/live/config\-preseed/*\fP 4
+.IP "\fBlive/config\-preseed/* \fP" 4
 
 .SH "VER ADEMÁS"
 \fIlive\-boot\fP(7)

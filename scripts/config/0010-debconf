@@ -43,16 +43,16 @@ Configure_debconf ()
 	do
 		case "${_PRESEED}" in
 			filesystem)
-				if ls /lib/live/preseed/* 2>&1
+				if ls /lib/live/config-preseed/* 2>&1
 				then
-					_PRESEEDS="${_PRESEEDS} $(for _FILE in /lib/live/preseed/*; do echo file://${_FILE}; done)"
+					_PRESEEDS="${_PRESEEDS} $(for _FILE in /lib/live/config-preseed/*; do echo file://${_FILE}; done)"
 				fi
 				;;
 
 			medium)
-				if ls /live/image/live/preseed/* 2>&1
+				if ls /lib/live/image/live/config-preseed/* 2>&1
 				then
-					_PRESEEDS="${_PRESEEDS} $(for _FILE in /live/image/live/preseed/*; do echo file://${_FILE}; done)"
+					_PRESEEDS="${_PRESEEDS} $(for _FILE in /lib/live/image/live/config-preseed/*; do echo file://${_FILE}; done)"
 				fi
 				;;
 

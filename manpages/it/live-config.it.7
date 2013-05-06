@@ -11,7 +11,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 26.09.2012 4.0~a1\-1 "Progetto Debian Live"
+.TH LIVE\-CONFIG 7 27.09.2012 4.0~a2\-1 "Progetto Debian Live"
 
 .SH NOME
 \fBlive\-config\fP \- Script di configurazione del sistema
@@ -63,14 +63,14 @@ preconfigurazione da applicare al database debconf. Si noti che gli URL
 devono essere scaricabili da wget (http, ftp o file://).
 .br
 Se il file è posizionato sul supporto live, questo  può essere prelevato con
-file:///live/image/\fIFILE\fP, o con file:///\fIFILE\fP se è nella radice del
+file:///lib/live/image/\fIFILE\fP, o con file:///\fIFILE\fP se è nella radice del
 filesystem del sistema live stesso.
 .br
-Tutti i file di preconfigurazione in /lib/live/preseed/ nella radice del
-sistema live possono essere abilitati automaticamente con la parola chiave
-"filesystem".
+Tutti i file di preconfigurazione in /lib/live/config\-preseed/ nella radice
+del sistema live possono essere abilitati automaticamente con la parola
+chiave "filesystem".
 .br
-Tutti i file di preconfigurazione in /live/preseed/ sul supporto live
+Tutti i file di preconfigurazione in /live/config\-preseed/ sul supporto live
 possono essere abilitati automaticamente con la parola chiave "medium".
 .br
 Se vengono congiunti diversi meccanismi i file di preconfigurazione di tipo
@@ -136,14 +136,14 @@ disponibili alcuni hook per i casi d'uso più comuni in
 <\fIhttp://live.debian.net/other/hooks\fP>.
 .br
 Se il file è posizionato sul supporto live, questo  può essere prelevato con
-file:///live/image/\fIFILE\fP, o con file:///\fIFILE\fP se è nella radice del
+file:///lib/live/image/\fIFILE\fP, o con file:///\fIFILE\fP se è nella radice del
 filesystem del sistema live stesso.
 .br
-Tutti gli hook nella directory /lib/live/hooks/ del sistema live possono
-essere abilitati automaticamente con la parola chiave "filesystem".
+Tutti gli hook nella directory /lib/live/config\-hooks/ del sistema live
+possono essere abilitati automaticamente con la parola chiave "filesystem".
 .br
-Tutti gli hook nella directory /live/hooks/ del sistema live possono essere
-abilitati automaticamente con la parola chiave "medium".
+Tutti gli hook nella directory /live/config\-hooks/ del sistema live possono
+essere abilitati automaticamente con la parola chiave "medium".
 .br
 Se vengono congiunti svariati meccanismi, gli hook di tipo filesystem
 vengono applicati per primi, seguiti dalla tipologia medium e quindi da
@@ -366,10 +366,10 @@ live o su un server http/ftp.
 .IP \fB/var/lib/live/config/\fP 4
 .IP \fB/var/log/live/config.log\fP 4
 .PP
-.IP \fB/live/hooks/*\fP 4
-.IP \fBlive/hooks/*\fP 4
-.IP \fB/live/preseed/*\fP 4
-.IP "\fBlive/preseed/* \fP" 4
+.IP \fB/live/config\-hooks/*\fP 4
+.IP \fBlive/config\-hooks/*\fP 4
+.IP \fB/live/config\-preseed/*\fP 4
+.IP "\fBlive/config\-preseed/* \fP" 4
 
 .SH "VEDERE ANCHE"
 \fIlive\-boot\fP(7)
