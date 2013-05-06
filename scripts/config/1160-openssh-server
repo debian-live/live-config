@@ -35,11 +35,12 @@ Configure_openssh_server ()
 		fi
 	done
 
-	if [ "${_SSH}" = "true" ]
-	then
-		# Creating state file
-		touch /var/lib/live/config/openssh-server
-	fi
+	case "${_SSH}" in
+		true)
+			# Creating state file
+			touch /var/lib/live/config/openssh-server
+			;;
+	esac
 }
 
 Openssh_server

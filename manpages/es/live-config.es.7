@@ -11,7 +11,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 06.12.2012 4.0~a8\-1 "Proyecto Debian Live"
+.TH LIVE\-CONFIG 7 17.12.2012 4.0~a9\-1 "Proyecto Debian Live"
 
 .SH NOMBRE
 \fBlive\-config\fP \- Scripts de configuración del sistema
@@ -96,9 +96,6 @@ marcha.
 .IP "\fBlive\-config.timezone\fP=\fITIMEZONE\fP | \fBtimezone\fP=\fITIMEZONE\fP" 4
 Permite establecer la zona horaria del sistema, p.ej. «Europa/Madrid». Por
 omisión es «UTC».
-.IP "\fBlive\-config.utc\fP=\fByes\fP|no | \fButc\fP=\fByes\fP|no" 4
-Permite cambiar si el sistema debe asumir que el reloj de la máquina está
-ajustado a la hora UTC o no. Por omisión es «Si».
 .IP "\fBlive\-config.keyboard\-model\fP=\fIKEYBOARD_MODEL\fP | \fBkeyboard\-model\fP=\fIKEYBOARD_MODEL\fP" 4
 Permite cambiar el modelo de teclado. No hay ningún valor por omisión.
 .IP "\fBlive\-config.keyboard\-layouts\fP=\fIKEYBOARD_LAYOUT1\fP,\fIKEYBOARD_LAYOUT2\fP ... \fIKEYBOARD_LAYOUTn\fP | \fBkeyboard\-layouts\fP=\fIKEYBOARD_LAYOUT1\fP,\fIKEYBOARD_LAYOUT2\fP ... \fIKEYBOARD_LAYOUTn\fP" 4
@@ -115,6 +112,9 @@ cambiarlas bajo X11. No hay ningún valor por omisión.
 Permite cambiar las opciones del teclado. No hay un valor por omisión.
 .IP "\fBlive\-config.sysv\-rc\fP=\fISERVICE1\fP,\fISERVICE2\fP ... \fISERVICEn\fP | \fBsysv\-rc\fP=\fISERVICE1\fP,\fISERVICE2\fP ... \fISERVICEn\fP" 4
 Permite desactivar los servicios «sysv» mediante «update\-rc.d».
+.IP "\fBlive\-config.utc\fP=\fByes\fP|no | \fButc\fP=\fByes\fP|no" 4
+Permite cambiar si el sistema debe asumir que el reloj de la máquina está
+ajustado a la hora UTC o no. Por omisión es «Si».
 .IP "\fBlive\-config.x\-session\-manager=\fP\fIX_SESSION_MANAGER\fP | \fBx\-session\-manager\fP=\fIX_SESSION_MANAGER\fP" 4
 Permite seleccionar el gestor de sesión gráfica «x\-session\-manager» mediante
 «update\-alternatives».
@@ -223,8 +223,6 @@ Esta variable es igual al parámetro
 \&'\fBlive\-config.locales\fP=\fILOCALE1\fP,\fILOCALE2\fP ... \fILOCALEn\fP'
 .IP \fBLIVE_TIMEZONE\fP=\fITIMEZONE\fP 4
 Esta variable es igual al parámetro '\fBlive\-config.timezone\fP=\fITIMEZONE\fP'
-.IP \fBLIVE_UTC\fP=\fByes\fP|no 4
-Esta variable es igual al parámetro '\fBlive\-config.utc\fP=\fByes\fP|no'
 .IP \fBLIVE_KEYBOARD_MODEL\fP=\fIKEYBOARD_MODEL\fP 4
 Esta variable es igual al parámetro
 \&'\fBlive\-config.keyboard\-model\fP=\fIKEYBOARD_MODEL\fP'
@@ -242,6 +240,11 @@ parámetro'\fBlive\-config.keyboard\-options\fP=\fIKEYBOARD_OPTIONS\fP'
 .IP "\fBLIVE_SYSV_RC\fP=\fISERVICE1\fP,\fISERVICE2\fP ... \fISERVICEn\fP" 4
 Esta variable es igual al parámetro
 \&'\fBlive\-config.sysv\-rc\fP=\fISERVICE1\fP,\fISERVICE2\fP ... \fISERVICEn\fP'
+.IP \fBLIVE_UTC\fP=\fByes\fP|no 4
+Esta variable es igual al parámetro '\fBlive\-config.utc\fP=\fByes\fP|no'
+.IP \fBLIVE_X_SESSION_MANAGER\fP=\fIX_SESSION_MANAGER\fP 4
+Esta variable es igual al parámetro
+\&'\fBlive\-config.x\-session\-manager\fP=\fIX_SESSION_MANAGER\fP'
 .IP \fBLIVE_XORG_DRIVER\fP=\fIXORG_DRIVER\fP 4
 Esta variable es igual al parámetro
 \&'\fBlive\-config.xorg\-driver\fP=\fIXORG_DRIVER\fP'
@@ -334,8 +337,6 @@ Desactiva el asistente de migración de KDE (Squeeze y superior).
 Desactiva algunos servicios de KDE no deseados (squeeze y superior).
 .IP \fBdebian\-installer\-launcher\fP 4
 añade un icono del instalador de debian en el escritorio del usuario.
-.IP \fBmodule\-init\-tools\fP 4
-automáticamente carga algunos módulos en algunas arquitecturas.
 .IP \fBpolicykit\fP 4
 garantiza privilegios de usuario mediante policykit.
 .IP \fBsslcert\fP 4

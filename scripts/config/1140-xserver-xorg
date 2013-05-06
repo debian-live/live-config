@@ -90,7 +90,7 @@ Configure_xserver_xorg ()
 		esac
 	fi
 
-	if [ -z "${LIVE_XORG_DRIVER}" ]
+	if [ -z "${LIVE_XORG_DRIVER}" ] && [ -e /usr/bin/lspci ]
 	then
 		# pci-id of the first graphic card
 		_DEVICE="$(lspci -mn | awk '/0300/ { print $3$4 }' | sed -e 's|"||g' | tr [a-z] [A-Z] | head -n1)"
@@ -116,6 +116,12 @@ Configure_xserver_xorg ()
 
 			if [ -z "${LIVE_XORG_DRIVER}" ]
 			then
+				# xorg-driver automatic override for virtualbox
+				if echo "${_DEVICE}" | grep -qs '^80EEBEEF'
+				then
+					LIVE_XORG_DRIVER="vboxvideo"
+				fi
+
 				# xorg-driver automatic override for fglrx
 				if echo "${_DEVICE}" | grep -qs '^1002'
 				then
