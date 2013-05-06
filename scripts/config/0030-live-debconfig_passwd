@@ -1,23 +1,23 @@
 #!/bin/sh
 
 ## live-config(7) - System Configuration Scripts
-## Copyright (C) 2006-2012 Daniel Baumann <daniel@debian.org>
+## Copyright (C) 2006-2013 Daniel Baumann <daniel@debian.org>
 ##
 ## This program comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
 ## This is free software, and you are welcome to redistribute it
 ## under certain conditions; see COPYING for details.
 
 
-User_setup ()
+Live_debconfig_passwd ()
 {
 	# Checking if package is installed or already configured
-	if [ ! -e /var/lib/dpkg/info/user-setup.list ] || \
-	   [ -e /var/lib/live/config/user-setup ]
+	if [ ! -e /var/lib/dpkg/info/live-debconfig.list ] || \
+	   [ -e /var/lib/live/config/live-debconfig_passwd ]
 	then
 		return
 	fi
 
-	echo -n " user-setup"
+	echo -n " live-debconfig (passwd)"
 
 	# Reading kernel command line
 	for _PARAMETER in ${_CMDLINE}
@@ -37,10 +37,10 @@ User_setup ()
 		esac
 	done
 
-	Configure_user_setup
+	Configure_live_debconfig_passwd
 }
 
-Configure_user_setup ()
+Configure_live_debconfig_passwd ()
 {
 	# Checking if package is already configured differently
 	if grep -q "^${LIVE_USERNAME}:" /etc/passwd
@@ -67,29 +67,29 @@ Configure_user_setup ()
 	_PASSWORD="8Ab05sVQ4LLps"
 
 cat > /debconf.live << EOF
-user-setup passwd/make-user boolean true
-user-setup passwd/root-password-crypted string *
-user-setup passwd/user-password-crypted string ${_PASSWORD}
-user-setup passwd/user-default-groups string ${LIVE_USER_DEFAULT_GROUPS}
-user-setup passwd/user-fullname string ${LIVE_USER_FULLNAME}
-user-setup passwd/username string ${LIVE_USERNAME}
-user-setup passwd/user-uid string 1000
+live-debconfig live-debconfig/passwd/shadow boolean on
+#live-debconfig live-debconfig/passwd/root-password password 
+#live-debconfig live-debconfig/passwd/root-password-again password 
+live-debconfig live-debconfig/passwd/root-password-crypted string *
+live-debconfig live-debconfig/passwd/user-name string ${LIVE_USERNAME}
+live-debconfig live-debconfig/passwd/user-fullname string ${LIVE_USER_FULLNAME}
+#live-debconfig live-debconfig/passwd/user-password password 
+#live-debconfig live-debconfig/passwd/user-password-again password 
+live-debconfig live-debconfig/passwd/user-password-crypted string ${_PASSWORD}
+live-debconfig live-debconfig/passwd/user-home string /home/user
+live-debconfig live-debconfig/passwd/user-uid string 1000
+live-debconfig live-debconfig/passwd/user-gid string 1000
+live-debconfig live-debconfig/passwd/user-default-groups string ${LIVE_USER_DEFAULT_GROUPS}
+live-debconfig live-debconfig/passwd/user-system-user boolean false
 EOF
 
-	debconf-set-selections < /debconf.live
+	live-debconfig-set-selections /debconf.live
 	rm -f /debconf.live
 
-	# Workaround for bug in shadow
-	set +e
-	touch /etc/passwd-
-	chmod 0600 /etc/passwd-
-
-	/usr/lib/user-setup/user-setup-apply 2>&1 \
-	| grep -v "Shadow passwords are now on"
-	set -e
+	live-debconfig --debconfig=passwd
 
 	# Creating state file
-	touch /var/lib/live/config/user-setup
+	touch /var/lib/live/config/live-debconfig_passwd
 }
 
-User_setup
+Live_debconfig_passwd

@@ -11,7 +11,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 17.12.2012 4.0~a9\-1 "Progetto Debian Live"
+.TH LIVE\-CONFIG 7 2013\-01\-02 4.0~a10\-1 "Progetto Debian Live"
 
 .SH NOME
 \fBlive\-config\fP \- Script di configurazione del sistema
@@ -43,10 +43,10 @@ Vengono eseguiti tutti gli script; questo è ciò che le immagini di Debian
 Live fanno in modo predefinito.
 .IP "\fBlive\-config\fP=\fISCRIPT1\fP,\fISCRIPT2\fP, ... \fISCRIPTn\fP | \fBconfig\fP=\fISCRIPT1\fP,\fISCRIPT2\fP, ... \fISCRIPTn\fP" 4
 Vengono eseguiti solo gli script specificati. Si noti che l'ordine è
-importante, ad esempio "live\-config=sudo,user\-setup" non funzionerebbe in
-quanto prima di poter configurare l'utente per sudo è necessario
-aggiungerlo. Per l'ordinamento numerico vedere i nomi degli script in
-/lib/live/config.
+importante, ad esempio "live\-config=sudo,live\-debconfig_passwd" non
+funzionerebbe in quanto prima di poter configurare l'utente per sudo è
+necessario aggiungerlo. Per l'ordinamento numerico vedere i nomi degli
+script in /lib/live/config.
 .IP "\fBlive\-noconfig\fP | \fBnoconfig\fP" 4
 Non viene eseguito alcuno script, equivale a non utilizzare nessun parametro
 di "live\-config" o "live\-noconfig".
@@ -290,7 +290,7 @@ permette di applicare file di preconfigurazione arbitrai situati sul
 supporto live o su un server http/ftp.
 .IP \fBhostname\fP 4
 configura i file /etc/hostname e /etc/hosts.
-.IP \fBuser\-setup\fP 4
+.IP \fBlive\-debconfig_passwd\fP 4
 aggiunge un account per l'utente live.
 .IP \fBsudo\fP 4
 concede i privilegi per sudo all'utente live.

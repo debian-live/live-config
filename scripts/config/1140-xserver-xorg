@@ -1,7 +1,7 @@
 #!/bin/sh
 
 ## live-config(7) - System Configuration Scripts
-## Copyright (C) 2006-2012 Daniel Baumann <daniel@debian.org>
+## Copyright (C) 2006-2013 Daniel Baumann <daniel@debian.org>
 ##
 ## This program comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
 ## This is free software, and you are welcome to redistribute it
@@ -117,7 +117,7 @@ Configure_xserver_xorg ()
 			if [ -z "${LIVE_XORG_DRIVER}" ]
 			then
 				# xorg-driver automatic override for virtualbox
-				if echo "${_DEVICE}" | grep -qs '^80EEBEEF'
+				if [ -e /var/lib/dpkg/info/virtualbox-guest-x11.list ] && echo "${_DEVICE}" | grep -qs '^80EEBEEF'
 				then
 					LIVE_XORG_DRIVER="vboxvideo"
 				fi
