@@ -24,7 +24,7 @@ _RELEASE="${3:-$(lsb_release -cs | tr [A-Z] [a-z])}"
 if ( [ -z "${_DISTRIBUTION}" ] || [ -z "${_RELEASE}" ] ) && [ ! -x "$(which lsb_release 2>/dev/null)" ]
 then
 	echo "E: lsb_release: command not found."
-	echo "I: lsb_release can be optained from:"
+	echo "I: lsb_release can be obtained from:"
 	echo "I:   http://www.linux-foundation.org/en/LSB"
 	echo "I: On Debian based systems, lsb_release can be installed with:"
 	echo "I:   sudo apt-get install lsb-release"
@@ -46,7 +46,7 @@ case "${_DISTRIBUTION}" in
 	progress-linux)
 		NOSCRIPTS="apport gdm upstart ureadahead"
 
-		LIVE_HOSTNAME="progress"
+		LIVE_HOSTNAME="progress-linux"
 		LIVE_USERNAME="user"
 		LIVE_USER_FULLNAME="Live user"
 		LIVE_USER_DEFAULT_GROUPS="audio cdrom dip floppy video plugdev netdev powerdev scanner bluetooth debian-tor sudo"
