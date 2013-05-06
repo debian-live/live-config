@@ -18,7 +18,10 @@ then
 	exit 1
 fi
 
-if [ ! -x "$(which lsb_release 2>/dev/null)" ]
+_DISTRIBUTION="${2:-$(lsb_release -is | tr [A-Z] [a-z] | sed -e 's| |-|g')}"
+_RELEASE="${3:-$(lsb_release -cs | tr [A-Z] [a-z])}"
+
+if ( [ -z "${_DISTRIBUTION}" ] || [ -z "${_RELEASE}" ] ) && [ ! -x "$(which lsb_release 2>/dev/null)" ]
 then
 	echo "E: lsb_release: command not found."
 	echo "I: lsb_release can be optained from:"
@@ -27,9 +30,6 @@ then
 	echo "I:   sudo apt-get install lsb-release"
 	exit 1
 fi
-
-_DISTRIBUTION="$(lsb_release -is | tr [A-Z] [a-z] | sed -e 's| |-|g')"
-_RELEASE="$(lsb_release -cs | tr [A-Z] [a-z])"
 
 case "${_DISTRIBUTION}" in
 	debian)
@@ -66,7 +66,7 @@ case "${_DISTRIBUTION}" in
 		;;
 esac
 
-echo "Removing unused scripts..."
+echo "Removing unused scripts for ${_DISTRIBUTION} (${_RELEASE})..."
 
 for NOSCRIPT in ${NOSCRIPTS}
 do
@@ -76,7 +76,7 @@ do
 	fi
 done
 
-echo  "Setting distribution specific defaults..."
+echo  "Setting specific defaults for ${_DISTRIBUTION} (${_RELEASE}..."
 
 sed -i  -e "s|^LIVE_HOSTNAME=.*$|LIVE_HOSTNAME=\"${LIVE_HOSTNAME}\"|" \
 	-e "s|^LIVE_USERNAME=.*$|LIVE_USERNAME=\"${LIVE_USERNAME}\"|" \
