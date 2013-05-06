@@ -1,8 +1,8 @@
 #!/bin/sh
 
 ## live-config-foobar(7) - Additional Configuration Scripts for Debian Live
-## Copyright (C) 2006-2013 Daniel Baumann <daniel@debian.org>
-## Copyright (C) 2013 John Doe <john@example.org>
+## Copyright (C) 2006-2012 Daniel Baumann <daniel@debian.org>
+## Copyright (C) 2012 John Doe <john@example.org>
 ##
 ## live-config-foobar comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
 ## This is free software, and you are welcome to redistribute it
@@ -21,7 +21,7 @@ Foobar ()
 	echo -n " foobar"
 
 	# Boot parameters can be acted up either this way...
-	if ! echo ${_CMDLINE} | grep -qs "example.foobar" && \
+	if ! echo ${_CMDLINE} | grep -qs "live-config.foobar" && \
 	   ! echo ${_CMDLINE} | grep -qs "foobar"
 	then
 		return
@@ -31,8 +31,8 @@ Foobar ()
 	for _PARAMETER in ${_CMDLINE}
 	do
 		case "${_PARAMETER}" in
-			example.foobar=*|foobar=*)
-				EXAMPLE_FOOBAR="${_PARAMETER#*foobar=}"
+			live-config.foobar=*|foobar=*)
+				LIVE_FOOBAR="${_PARAMETER#*foobar=}"
 				;;
 		esac
 	done
@@ -42,18 +42,8 @@ Foobar ()
 
 Configure_foobar ()
 {
-	# Configuring foobar either this way...
-	if [ -n "${EXAMPLE_FOOBAR}" ]
-	then
-		sleep 1
-	fi
-
-	# ...or if you want to specify certain options:
-	case "${EXAMPLE_FOOBAR}" in
-		foo)
-			sleep 1
-			;;
-	esac
+	# Configuring foobar
+	sleep 1
 
 	# Creating state file
 	touch /var/lib/live/config/foobar

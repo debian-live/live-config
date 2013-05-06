@@ -1,12 +1,12 @@
 .\" live-config(7) - System Configuration Scripts
-.\" Copyright (C) 2006-2013 Daniel Baumann <daniel@debian.org>
+.\" Copyright (C) 2006-2012 Daniel Baumann <daniel@debian.org>
 .\"
 .\" This program comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
 .\" This is free software, and you are welcome to redistribute it
 .\" under certain conditions; see COPYING for details.
 .\"
 .\"
-.TH LIVE\-CONFIG 7 2013\-04\-25 3.0.23-1 "Debian Live Project"
+.TH LIVE\-CONFIG 7 2012\-09\-26 4.0~a1-1 "Debian Live Project"
 
 .SH NAME
 \fBlive\-config\fR \- System Configuration Scripts
@@ -37,11 +37,11 @@ Some individual scripts can change their behaviour upon a boot parameter.
 .IP "\fBlive\-config.debconf\-preseed\fR=filesystem|medium|\fIURL1\fR|\fIURL2\fR| ... |\fIURLn\fR | \fBdebconf\-preseed\fR=medium|filesystem|\fIURL1\fR|\fIURL2\fR| ... |\fIURLn\fR" 4
 Allows to fetch and apply one or more debconf preseed files to be applied to the debconf database. Note that the URLs must be fetchable by wget (http, ftp or file://).
 .br
-If the file is placed on the live medium, it can be fetched with file:///lib/live/mount/medium/\fIFILE\fR, or with file:///\fIFILE\fR if it is in the root filesystem of the live system itself.
+If the file is placed on the live medium, it can be fetched with file:///live/image/\fIFILE\fR, or with file:///\fIFILE\fR if it is in the root filesystem of the live system itself.
 .br
-All preseed files in /lib/live/config\-preseed/ in the root filesystem of the live system can be automatically enabled with the keyword 'filesystem'.
+All preseed files in /lib/live/preseed/ in the root filesystem of the live system can be automatically be enabled with the keyword 'filesystem'.
 .br
-All preseed files in /live/config\-preseed/ of the live medium can be automatically enabled with the keyword 'medium'.
+All preseed files in /live/preseed/ of the live medium can be automatically be enabled with the keyword 'medium'.
 .br
 If several mechanisms are combined, then filesystem preseed files are applied first, then medium preseed files, and last the network preseed files.
 .IP "\fBlive\-config.hostname\fR=\fIHOSTNAME\fR | \fBhostname\fR=\fIHOSTNAME\fR" 4
@@ -56,6 +56,8 @@ Allows to set the fullname of the users that gets created for autologin. The def
 Allows to set the locale of the system, e.g. 'de_CH.UTF\-8'. The default is 'en_US.UTF\-8'. In case the selected locale is not already available on the system, it is automatically generated on the fly.
 .IP "\fBlive\-config.timezone\fR=\fITIMEZONE\fR | \fBtimezone\fR=\fITIMEZONE\fR" 4
 Allows to set the timezone of the system, e.g. 'Europe/Zurich'. The default is 'UTC'.
+.IP "\fBlive\-config.utc\fR=\fByes\fR|no | \fButc\fR=\fByes\fR|no" 4
+Allows to change if the system is assuming that the hardware clock is set to UTC or not. The default is 'yes'.
 .IP "\fBlive\-config.keyboard\-model\fR=\fIKEYBOARD_MODEL\fR | \fBkeyboard\-model\fR=\fIKEYBOARD_MODEL\fR" 4
 Allows to change the keyboard model. There is no default value set.
 .IP "\fBlive\-config.keyboard\-layouts\fR=\fIKEYBOARD_LAYOUT1\fR,\fIKEYBOARD_LAYOUT2\fR ... \fIKEYBOARD_LAYOUTn\fR | \fBkeyboard\-layouts\fR=\fIKEYBOARD_LAYOUT1\fR,\fIKEYBOARD_LAYOUT2\fR ... \fIKEYBOARD_LAYOUTn\fR" 4
@@ -66,22 +68,20 @@ Allows to change the keyboard variants. If more than one is specified, the same 
 Allows to change the keyboard options. There is no default value set.
 .IP "\fBlive\-config.sysv-rc\fR=\fISERVICE1\fR,\fISERVICE2\fR ... \fISERVICEn\fR | \fBsysv-rc\fR=\fISERVICE1\fR,\fISERVICE2\fR ... \fISERVICEn\fR" 4
 Allows to disable sysv services through update-rc.d.
-.IP "\fBlive\-config.utc\fR=\fByes\fR|no | \fButc\fR=\fByes\fR|no" 4
-Allows to change if the system is assuming that the hardware clock is set to UTC or not. The default is 'yes'.
 .IP "\fBlive\-config.x\-session\-manager=\fIX_SESSION_MANAGER\fR | \fBx\-session\-manager\fR=\fIX_SESSION_MANAGER\fR" 4
 Allows to set the x\-session\-manager through update\-alternatives.
 .IP "\fBlive\-config.xorg\-driver\fR=\fIXORG_DRIVER\fR | \fBxorg\-driver\fR=\fIXORG_DRIVER\fR" 4
-Allows to set xorg driver instead of autodetecting it. If a PCI ID is specified in /usr/share/live/config/xserver-xorg/\fIDRIVER\fR.ids within the live system, \fIDRIVER\fR is enforced for these devices. If both a boot parameter and a override is found, the boot parameter takes precedence.
+Allows to set xorg driver instead of autodetecting it.
 .IP "\fBlive\-config.xorg\-resolution\fR=\fIXORG_RESOLUTION\fR | \fBxorg\-resolution\fR=\fIXORG_RESOLUTION\fR" 4
 Allows to set xorg resolution instead of autodetecting it, e.g. 1024x768.
 .IP "\fBlive\-config.hooks\fR=filesystem|medium|\fIURL1\fR|\fIURL2\fR| ... |\fIURLn\fR | \fBhooks\fR=medium|filesystem|\fIURL1\fR|\fIURL2\fR| ... |\fIURLn\fR" 4
 Allows to fetch and execute one or more arbitrary files. Note that the URLs must be fetchable by wget (http, ftp or file://), the files are executed in /tmp of the running live system, and that the files needs their dependencies, if any, already installed, e.g. if a python script should be executed the system needs python installed. Some hooks for some common use-cases are available at /usr/share/doc/live-config/examples/hooks/ and <\fIhttp://live.debian.net/other/hooks\fR>.
 .br
-If the file is placed on the live medium, it can be fetched with file:///lib/live/mount/medium/\fIFILE\fR, or with file:///\fIFILE\fR if it is in the root filesystem of the live system itself.
+If the file is placed on the live medium, it can be fetched with file:///live/image/\fIFILE\fR, or with file:///\fIFILE\fR if it is in the root filesystem of the live system itself.
 .br
-All hooks in /lib/live/config\-hooks/ in the root filesystem of the live system can be automatically enabled with the keyword 'filesystem'.
+All hooks in /lib/live/hooks/ in the root filesystem of the live system can be automatically be enabled with the keyword 'filesystem'.
 .br
-All hooks in /live/config\-hooks/ of the live medium can be automatically enabled with the keyword 'medium'.
+All hooks in /live/hooks/ of the live medium can be automatically be enabled with the keyword 'medium'.
 .br
 If several mechanisms are combined, then filesystem hooks are executed first, then medium hooks, and last the network hooks.
 
@@ -130,6 +130,8 @@ This variable equals the '\fBlive\-config.user\-fullname\fR="\fIUSER FULLNAME\fR
 This variable equals the '\fBlive\-config.locales\fR=\fILOCALE1\fR,\fILOCALE2\fR ... \fILOCALEn\fR' parameter.
 .IP "\fBLIVE_TIMEZONE\fR=\fITIMEZONE\fR" 4
 This variable equals the '\fBlive\-config.timezone\fR=\fITIMEZONE\fR' parameter.
+.IP "\fBLIVE_UTC\fR=\fByes\fR|no" 4
+This variable equals the '\fBlive\-config.utc\fR=\fByes\fR|no' parameter.
 .IP "\fBLIVE_KEYBOARD_MODEL\fR=\fIKEYBOARD_MODEL\fR" 4
 This variable equals the '\fBlive\-config.keyboard\-model\fR=\fIKEYBOARD_MODEL\fR' parameter.
 .IP "\fBLIVE_KEYBOARD_LAYOUTS\fR=\fIKEYBOARD_LAYOUT1\fR,\fIKEYBOARD_LAYOUT2\fR ... \fIKEYBOARD_LAYOUTn\fR" 4
@@ -140,10 +142,6 @@ This variable equals the '\fBlive\-config.keyboard\-variants\fR=\fIKEYBOARD_VARI
 This variable equals the '\fBlive\-config.keyboard\-options\fR=\fIKEYBOARD_OPTIONS\fR' parameter.
 .IP "\fBLIVE_SYSV_RC\fR=\fISERVICE1\fR,\fISERVICE2\fR ... \fISERVICEn\fR" 4
 This variable equals the '\fBlive\-config.sysv-rc\fR=\fISERVICE1\fR,\fISERVICE2\fR ... \fISERVICEn\fR' parameter.
-.IP "\fBLIVE_UTC\fR=\fByes\fR|no" 4
-This variable equals the '\fBlive\-config.utc\fR=\fByes\fR|no' parameter.
-.IP "\fBLIVE_X_SESSION_MANAGER\fR=\fIX_SESSION_MANAGER\fR" 4
-This variable equals the '\fBlive\-config.x\-session\-manager\fR=\fIX_SESSION_MANAGER\fR' parameter.
 .IP "\fBLIVE_XORG_DRIVER\fR=\fIXORG_DRIVER\fR" 4
 This variable equals the '\fBlive\-config.xorg\-driver\fR=\fIXORG_DRIVER\fR' parameter.
 .IP "\fBLIVE_XORG_RESOLUTION\fR=\fIXORG_RESOLUTION\fR" 4
@@ -160,7 +158,7 @@ Downstream projects can put their scripts into /lib/live/config and do not need 
 The scripts are best put into an own debian package. A sample package containing an example script can be found in /usr/share/doc/live\-config/examples.
 
 .SS Removing existing config scripts
-It is not really possible to remove scripts itself in a sane way yet without requiring either to ship a locally modified \fBlive\-config\fR package or using dpkg-divert. However, the same can be achieved by disabling the respective scripts through the live\-noconfig mechanism, see above. To avoid to always need specifing disabled scripts through the boot parameter, a configuration file should be used, see above.
+It is not really possible to remove scripts itself in a sane way yet without requiring to ship a locally modified \fBlive\-config\fR package. However, the same can be achieved by disabling the respective scripts through the live\-noconfig mechanism, see above. To avoid to always need specifing disabled scripts through the boot parameter, a configuration file should be used, see above.
 .PP
 The configuration files for the live system itself are best put into an own debian package. A sample package containing an example configuration can be found in /usr/share/doc/live\-config/examples.
 
@@ -172,7 +170,7 @@ allows to apply arbitrary preseed files placed on the live media or an http/ftp 
 .IP "\fBhostname\fR" 4
 configures /etc/hostname and /etc/hosts.
 .IP "\fBuser\-setup\fR" 4
-adds a live user account.
+adds an live user account.
 .IP "\fBsudo\fR" 4
 grants sudo privileges to the live user.
 .IP "\fBlocales\fR" 4
@@ -205,7 +203,7 @@ configures sysvinit.
 configures sysv-rc by disabling listed services.
 .IP "\fBlogin\fR" 4
 disables lastlog.
-.IP "\fBapport\fR" 4
+.IP "\fBapport\fR (ubuntu only)" 4
 disables apport.
 .IP "\fBgnome\-panel\-data\fR" 4
 disables lock button for the screen.
@@ -234,13 +232,11 @@ disables util-linux' hwclock.
 .IP "\fBlogin\fR" 4
 disables lastlog.
 .IP "\fBxserver\-xorg\fR" 4
-configures xserver\-xorg.
+configures xserver-xorg.
 .IP "\fBureadahead\fR (ubuntu only)" 4
 disables ureadahead.
 .IP "\fBopenssh-server\fR" 4
 recreates openssh-server host keys.
-.IP "\fBxfce4\-panel\fR" 4
-configures xfce4\-panel to default settings.
 .IP "\fBhooks\fR" 4
 allows to run arbitrary commands from a script placed on the live media or an http/ftp server.
 
@@ -254,10 +250,10 @@ allows to run arbitrary commands from a script placed on the live media or an ht
 .IP "\fB/var/lib/live/config/\fR" 4
 .IP "\fB/var/log/live/config.log\fR" 4
 .PP
-.IP "\fB/live/config\-hooks/*\fR" 4
-.IP "\fBlive/config\-hooks/*\fR" 4
-.IP "\fB/live/config\-preseed/*\fR" 4
-.IP "\fBlive/config\-preseed/* \fR" 4
+.IP "\fB/live/hooks/*\fR" 4
+.IP "\fBlive/hooks/*\fR" 4
+.IP "\fB/live/preseed/*\fR" 4
+.IP "\fBlive/preseed/* \fR" 4
 
 .SH SEE ALSO
 \fIlive\-boot\fR(7)

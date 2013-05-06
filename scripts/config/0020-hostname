@@ -1,7 +1,7 @@
 #!/bin/sh
 
 ## live-config(7) - System Configuration Scripts
-## Copyright (C) 2006-2013 Daniel Baumann <daniel@debian.org>
+## Copyright (C) 2006-2012 Daniel Baumann <daniel@debian.org>
 ##
 ## This program comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
 ## This is free software, and you are welcome to redistribute it
@@ -10,6 +10,15 @@
 
 Hostname ()
 {
+	# Checking if package is installed or already configured
+	if [ -z "${LIVE_HOSTNAME}" ] || \
+	   [ -e /var/lib/live/config/hostname ]
+	then
+		return
+	fi
+
+	echo -n " hostname"
+
 	# Reading kernel command line
 	for _PARAMETER in ${_CMDLINE}
 	do
@@ -20,15 +29,6 @@ Hostname ()
 		esac
 	done
 
-	# Checking if package is installed or already configured
-	if [ -z "${LIVE_HOSTNAME}" ] || \
-	   [ -e /var/lib/live/config/hostname ]
-	then
-		return
-	fi
-
-	echo -n " hostname"
-
 	Configure_hostname
 }
 
@@ -38,16 +38,6 @@ Configure_hostname ()
 	if [ ! -e /etc/hostname ] || \
 	   grep -qs localhost\.localdomain /etc/hostname
 	then
-		# Supporting variables within hostnames
-		if [ -e /bin/ip ]
-		then
-			LINK="$(ip -oneline -family link address show dev eth0 | awk '{ print $13 }' | sed -e "s|:|${IP_SEPARATOR}|g")"
-			INET="$(ip -oneline -family inet address show dev eth0 | awk '{ print $4 }' | sed -e "s|\.|${IP_SEPARATOR}|g" -e 's|/.*||')"
-			INET6="$(ip -oneline -family inet6 address show dev eth0 | awk '{ print $4 }' | sed -e "s|:|${IP_SEPARATOR}|g" -e 's|/.*||' -e 's|--|-|')"
-
-			eval LIVE_HOSTNAME="${LIVE_HOSTNAME}"
-		fi
-
 		echo "${LIVE_HOSTNAME}" > /etc/hostname
 	else
 		LIVE_HOSTNAME="$(cat /etc/hostname)"
@@ -68,7 +58,7 @@ EOF
 
 	fi
 
-	hostname "${LIVE_HOSTNAME}" || true
+	hostname "${LIVE_HOSTNAME}"
 
 	# Creating state file
 	touch /var/lib/live/config/hostname

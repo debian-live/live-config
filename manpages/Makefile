@@ -1,7 +1,7 @@
 # Makefile
 
 ## live-config(7) - System Configuration Scripts
-## Copyright (C) 2006-2013 Daniel Baumann <daniel@debian.org>
+## Copyright (C) 2006-2012 Daniel Baumann <daniel@debian.org>
 ##
 ## This program comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
 ## This is free software, and you are welcome to redistribute it
@@ -31,7 +31,7 @@ build: po4a.cfg
 	@if [ ! -x "$$(which po4a 2>/dev/null)" ]; \
 	then \
 		echo "E: po4a - command not found"; \
-		echo "I: po4a can be obtained from:"; \
+		echo "I: po4a can be optained from:"; \
 		echo "I:   http://po4a.alioth.debian.org/"; \
 		echo "I: On Debian based systems, po4a can be installed with:"; \
 		echo "I:   apt-get install po4a"; \
