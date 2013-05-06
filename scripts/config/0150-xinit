@@ -13,7 +13,7 @@ Xinit ()
 	# Checking if a display manager has been configured
 	case "${_X11}" in
 		true)
-			rm -f /etc/profile.d/zz-live.sh
+			rm -f /etc/profile.d/zz-live-config_xinit.sh
 
 			return
 			;;
@@ -34,12 +34,12 @@ Xinit ()
 Configure_xinit ()
 {
 	# Checking if package is already configured differently
-	if [ -e /etc/profile.d/zz-live.sh ]
+	if [ -e /etc/profile.d/zz-live-config_xinit.sh ]
 	then
 		return
 	fi
 
-cat > /etc/profile.d/zz-live.sh << EOF
+cat > /etc/profile.d/zz-live-config_xinit.sh << EOF
 if [ -z "\${DISPLAY}" ] && [ \$(tty) = /dev/tty1 ]
 then
 	while true
