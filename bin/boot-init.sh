@@ -35,7 +35,7 @@ cache_path()
 		find "${path}" -type f | xargs cat > /dev/null 2>&1
 	elif [ -f "${path}" ]
 	then
-		if file -L "${path}" | grep -q 'dynamically linked'
+		if [ -x /usr/bin/file ] && file -L "${path}" | grep -q 'dynamically linked'
 		then
 			# ldd output can be of three forms:
 			# 1. linux-vdso.so.1 =>  (0x00007fffe3fb4000)
