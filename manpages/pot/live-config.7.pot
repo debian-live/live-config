@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config VERSION\n"
-"POT-Creation-Date: 2013-05-06 20:51+0300\n"
+"POT-Creation-Date: 2013-05-07 11:52+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,7 +25,7 @@ msgstr ""
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "2013-05-06"
+msgid "2013-05-07"
 msgstr ""
 
 #. type: TH
@@ -462,7 +462,7 @@ msgstr ""
 #. type: Plain text
 #: en/live-config.7:93
 msgid ""
-"Disables the sudo and policykit, the user cannot gain root privileges on the "
+"Disables sudo and policykit, the user cannot gain root privileges on the "
 "system."
 msgstr ""
 

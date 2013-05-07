@@ -23,8 +23,8 @@ msgstr "LIVE-CONFIG"
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "2013-05-06"
-msgstr "06.05.2013"
+msgid "2013-05-07"
+msgstr "07.05.2013"
 
 #. type: TH
 #: en/live-config.7:9
@@ -574,7 +574,7 @@ msgstr "B<live-config.noroot> | B<noroot>"
 #. type: Plain text
 #: en/live-config.7:93
 msgid ""
-"Disables the sudo and policykit, the user cannot gain root privileges on the "
+"Disables sudo and policykit, the user cannot gain root privileges on the "
 "system."
 msgstr ""
 "Disabilita sudo e policykit, l'utente non può ottenere i privilegi di root "
