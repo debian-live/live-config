@@ -20,7 +20,7 @@ Live_debconfig_passwd ()
 	echo -n " live-debconfig (passwd)"
 
 	# Reading kernel command line
-	for _PARAMETER in ${_CMDLINE}
+	for _PARAMETER in ${LIVE_CONFIG_CMDLINE}
 	do
 		case "${_PARAMETER}" in
 			live-config.user-default-groups=*|user-default-groups=*)

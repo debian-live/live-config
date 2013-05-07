@@ -47,7 +47,7 @@ done
 
 Cmdline ()
 {
-	for _PARAMETER in ${_CMDLINE}
+	for _PARAMETER in ${LIVE_CONFIG_CMDLINE}
 	do
 		case "${_PARAMETER}" in
 			live-config=*|config=*)
@@ -199,9 +199,9 @@ Main ()
 		mount -n -t proc -o${PROC_OPTIONS} -odefaults proc /proc
 	fi
 
-	_CMDLINE="$(cat /proc/cmdline)"
+	LIVE_CONFIG_CMDLINE="${LIVE_CONFIG_CMDLINE:-$(cat /proc/cmdline)}"
 
-	if ! echo ${_CMDLINE} | grep -qs "boot=live"
+	if ! echo ${LIVE_CONFIG_CMDLINE} | grep -qs "boot=live"
 	then
 		exit 0
 	fi

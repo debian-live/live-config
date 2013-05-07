@@ -21,14 +21,14 @@ Foobar ()
 	echo -n " foobar"
 
 	# Boot parameters can be acted up either this way...
-	if ! echo ${_CMDLINE} | grep -qs "example.foobar" && \
-	   ! echo ${_CMDLINE} | grep -qs "foobar"
+	if ! echo ${LIVE_CONFIG_CMDLINE} | grep -qs "example.foobar" && \
+	   ! echo ${LIVE_CONFIG_CMDLINE} | grep -qs "foobar"
 	then
 		return
 	fi
 
 	# ...or if you want to specify certain options:
-	for _PARAMETER in ${_CMDLINE}
+	for _PARAMETER in ${LIVE_CONFIG_CMDLINE}
 	do
 		case "${_PARAMETER}" in
 			example.foobar=*|foobar=*)
