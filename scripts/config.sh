@@ -35,6 +35,16 @@ DEBCONF_NOWARNINGS="yes"
 IP_SEPARATOR="-"
 PROC_OPTIONS="onodev,noexec,nosuid"
 
+# Reading configuration files from filesystem and live-media
+for _FILE in /etc/live/config.conf /etc/live/config/* \
+	     /lib/live/mount/medium/live/config.conf /lib/live/mount/medium/live/config/*
+do
+	if [ -e "${_FILE}" ]
+	then
+		. "${_FILE}"
+	fi
+done
+
 Cmdline ()
 {
 	for _PARAMETER in ${_CMDLINE}
@@ -207,16 +217,6 @@ Main ()
 
 	echo -n "live-config:" > /var/log/live/config.pipe 2>&1
 	trap 'Trap' EXIT HUP INT QUIT TERM
-
-	# Reading configuration files from filesystem and live-media
-	for _FILE in /etc/live/config.conf /etc/live/config/* \
-		     /lib/live/mount/medium/live/config.conf /lib/live/mount/medium/live/config/*
-	do
-		if [ -e "${_FILE}" ]
-		then
-			. "${_FILE}"
-		fi
-	done
 
 	# Processing command line
 	Cmdline
