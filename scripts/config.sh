@@ -117,14 +117,14 @@ Cmdline ()
 	case "${_NOAUTOLOGIN}" in
 		true)
 			# Disables both console and graphical autologin.
-			LIVE_NOCONFIGS="${LIVE_NOCONFIGS},sysvinit,gdm,gdm3,kdm,lightdm,lxdm,nodm,slim,upstart,xinit"
+			LIVE_NOCONFIGS="${LIVE_NOCONFIGS},gdm,gdm3,kdm,lightdm,lxdm,nodm,slim,upstart,xinit"
 			;;
 	esac
 
 	case "${_NOTTYAUTOLOGIN}" in
 		true)
 			# Disables console autologin.
-			LIVE_NOCONFIGS="${LIVE_NOCONFIGS},sysvinit,upstart"
+			LIVE_NOCONFIGS="${LIVE_NOCONFIGS},upstart"
 			;;
 	esac
 
