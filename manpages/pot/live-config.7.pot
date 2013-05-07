@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config VERSION\n"
-"POT-Creation-Date: 2013-05-07 21:39+0300\n"
+"POT-Creation-Date: 2013-05-07 21:51+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -553,11 +553,11 @@ msgstr ""
 #. type: Plain text
 #: en/live-config.7:112
 msgid ""
-"Although the configuration files placed in the conf.d directories do not "
-"require a particular name or suffix, it is suggested for consistency reasons "
-"to either use 'vendor.conf' or 'project.conf' as a naming scheme (whereas "
-"'vendor' or 'project' is replaced with the actual name, resulting in a "
-"filename like 'progress-linux.conf')."
+"Although the configuration files placed in the configuration directories do "
+"not require a particular name or suffix, it is suggested for consistency "
+"reasons to either use 'vendor.conf' or 'project.conf' as a naming scheme "
+"(whereas 'vendor' or 'project' is replaced with the actual name, resulting "
+"in a filename like 'progress-linux.conf')."
 msgstr ""
 
 #. type: Plain text
