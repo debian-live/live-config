@@ -47,11 +47,14 @@ Configure_kdm ()
 		return
 	fi
 
-	# autologin
-	sed -i -r -e "s|^#.*AutoLoginEnable=.*\$|AutoLoginEnable=true|" \
-		  -e "s|^#.*AutoLoginAgain=.*\$|AutoLoginAgain=true|" \
-		  -e "s|^#.*AutoLoginUser=.*\$|AutoLoginUser=${LIVE_USERNAME}|" \
-	/etc/kde4/kdm/kdmrc
+	if [ "${LIVE_CONFIG_NOAUTOLOGIN}" != "true" ] && [ "${LIVE_CONFIG_NOX11AUTOLOGIN}" = "true" ]
+	then
+		# autologin
+		sed -i -r -e "s|^#.*AutoLoginEnable=.*\$|AutoLoginEnable=true|" \
+			  -e "s|^#.*AutoLoginAgain=.*\$|AutoLoginAgain=true|" \
+			  -e "s|^#.*AutoLoginUser=.*\$|AutoLoginUser=${LIVE_USERNAME}|" \
+		/etc/kde4/kdm/kdmrc
+	fi
 
 	# language
 	if [ -n "${_LANGUAGE}" ]
