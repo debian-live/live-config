@@ -11,7 +11,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 06\-05\-2013 4.0~a20\-1 "Live Systems Project"
+.TH LIVE\-CONFIG 7 08\-05\-2013 4.0~a21\-1 "Live Systems Project"
 
 .SH NOME
 \fBlive\-config\fP \- Scripts para Configuração do Sistema
@@ -185,11 +185,11 @@ arquivos raiz (/etc/live/config.conf, /etc/live/config/*) ou na mídia live
 determinada opção, as da mídia live assumem precedência sobre as do sistema
 de arquivo raiz.
 .PP
-Apesar de os arquivos de configuração localizados nos diretórios conf.d não
-necessitarem de um nome ou sufixo particular, por uma questão de
-consistência é recomendado usar 'distribuidor.conf' ou 'projeto.conf' como
-esquema de nomes (onde 'distribuidor' ou 'projeto' deve ser susbstituído
-pelo nome real, resultando num nome de arquivo como 'debian\-eeepc.conf').
+Although the configuration files placed in the configuration directories do
+not require a particular name or suffix, it is suggested for consistency
+reasons to either use 'vendor.conf' or 'project.conf' as a naming scheme
+(whereas 'vendor' or 'project' is replaced with the actual name, resulting
+in a filename like 'progress\-linux.conf').
 .PP
 O conteúdo atual dos arquivos de configuração consiste em uma ou mais das
 seguintes variáveis.
@@ -299,10 +299,8 @@ configura locales.
 configura locales\-all.
 .IP \fBtzdata\fP 4
 configura /etc/timezone.
-.IP \fBgdm\fP 4
-configura autologin no gdm.
 .IP \fBgdm3\fP 4
-configura autologin no gdm3 (squeeze e mais recentes).
+configura autologin no gdm3.
 .IP \fBkdm\fP 4
 configura autologin no kdm.
 .IP \fBlightdm\fP 4

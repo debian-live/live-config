@@ -20,7 +20,7 @@ Live_debconfig_passwd ()
 	echo -n " live-debconfig (passwd)"
 
 	# Reading kernel command line
-	for _PARAMETER in ${_CMDLINE}
+	for _PARAMETER in ${LIVE_CONFIG_CMDLINE}
 	do
 		case "${_PARAMETER}" in
 			live-config.user-default-groups=*|user-default-groups=*)
@@ -55,7 +55,7 @@ Configure_live_debconfig_passwd ()
 	fi
 
 	# Make sure user is not in sudo group if sudo is disabled
-	case "${_NOROOT}" in
+	case "${LIVE_CONFIG_NOROOT}" in
 		true)
 			LIVE_USER_DEFAULT_GROUPS="$(echo ${LIVE_USER_DEFAULT_GROUPS} | sed -e 's|sudo||')"
 			;;

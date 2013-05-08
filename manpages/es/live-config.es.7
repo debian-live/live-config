@@ -11,7 +11,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 06.05.2013 4.0~a20\-1 "Proyecto Live Systems"
+.TH LIVE\-CONFIG 7 08.05.2013 4.0~a21\-1 "Proyecto Live Systems"
 
 .SH NOMBRE
 \fBlive\-config\fP \- Scripts de configuración del sistema
@@ -190,11 +190,11 @@ raíz (/etc/live/config.conf, /etc/live/config/*), o en el medio en vivo
 determinada opción, la del medio en vivo tienen prioridad sobre la del
 sistema de ficheros raíz.
 .PP
-Aunque los ficheros de configuración situados en los directorios conf.d no
-requieren un nombre o sufijo en concreto, se sugiere por unificación usar
-como nomenclatura «vendor.conf» o «project.conf» (Siempre que «vendor» o
-«project» se sustituya por el nombre real, lo que resultará en un nombre de
-fichero como «debian\-eeepc.conf»).
+Although the configuration files placed in the configuration directories do
+not require a particular name or suffix, it is suggested for consistency
+reasons to either use 'vendor.conf' or 'project.conf' as a naming scheme
+(whereas 'vendor' or 'project' is replaced with the actual name, resulting
+in a filename like 'progress\-linux.conf').
 .PP
 El contenido de los ficheros de configuración consiste en una o más de las
 siguientes variables.
@@ -300,10 +300,8 @@ configura las variantes locales.
 configura las variantes locales\-all.
 .IP \fBtzdata\fP 4
 configura /etc/timezone.
-.IP \fBgdm\fP 4
-configura el inicio de sesión automático en gdm.
 .IP \fBgdm3\fP 4
-configura el inicio de sesión automático en gdm3 (Squeeze y superior)
+configura el inicio de sesión automático en gdm3.
 .IP \fBkdm\fP 4
 configura el inicio de sesión automático en kdm.
 .IP \fBlightdm\fP 4

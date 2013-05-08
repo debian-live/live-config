@@ -11,14 +11,14 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 06.05.2013 4.0~a20\-1 "Live Systems Project"
+.TH LIVE\-CONFIG 7 08.05.2013 4.0~a21\-1 "Live Systems Projekt"
 
 .SH NAME
 \fBlive\-config\fP \- System Konfiguration Skripte
 
 .SH BESCHREIBUNG
-\fBlive\-config\fP contains the scripts that configure a live system during the
-boot process (late userspace).
+\fBlive\-config\fP enthält die Skripte welche ein Live System während des
+Startvorganges (late userspace) konfigurieren.
 
 .SH KONFIGURATION
 \fBlive\-config\fP kann durch Boot Parameter oder Konfigurationsdateien
@@ -40,7 +40,8 @@ werden sollen. Werden beide beide Parameter oder mehrmals benützt, so geht
 der in der Reihenfolge lezte allen vorhergehenden vor.
 
 .IP "\fBlive\-config\fP | \fBconfig\fP" 4
-All scripts are run. This is what live images use by default.
+Alle Skripte werden ausgeführt. Auf Live Images ist dies das
+Standardverhalten.
 .IP "\fBlive\-config\fP=\fISKRIPT1\fP,\fISKRIPT2\fP, ... \fISKRIPTn\fP | \fBconfig\fP=\fISKRIPT1\fP,\fISKRIPT2\fP, ... \fISKRIPTn\fP" 4
 Nur angegebene Skripte werden ausgeführt. Die Reihenfolge ist wesentlich,
 d.h. 'live\-config=sudo,live\-debconfig_passwd' würde nicht funktionieren da
@@ -87,8 +88,9 @@ Ermöglicht die Standardgruppen für den Benutzer zu wählen, welcher für den
 automatischen Login angelegt wird. Der Standard ist 'audio cdrom dip floppy
 video plugdev netdev powerdev scanner bluetooth'.
 .IP "\fBlive\-config.user\-fullname\fP=\(dq\fIVOLLER BENUTZERNAME\fP\(dq | \fBuser\-fullname\fP=\(dq\fIVOLLER BENUTZERNAME\fP\(dq" 4
-Allows to set the fullname of the users that gets created for autologin. On
-Debian the default is 'Debian Live user'.
+Ermöglicht den vollen Name für den Benutzer zu wählen, welcher für den
+automatischen Login angelegt wird. Auf Debian Systemen ist der Standardwert
+\&'Debian Live user'.
 .IP "\fBlive\-config.locales\fP=\fIGEBIETSSCHEMA1\fP,\fIGEBIETSSCHEMA2\fP ... \fIGEBIETSSCHEMAn\fP | \fBlocales\fP=\fIGEBIETSSCHEMA1\fP,\fIGEBIETSSCHEMA2\fP ... \fIGEBIETSSCHEMAn\fP" 4
 Ermöglicht das Gebietsschema des Systems zu wählen, zum Beispiel
 \&'de_CH.UTF\-8'. Der Standard ist 'en_US.UTF\-8'. Falls das gewünschte
@@ -131,13 +133,14 @@ der Boot Parameter Vorrang.
 Ermöglicht die Xorg Auflösung manuell statt automatisch zu
 bestimmen. z.B. 1024x768.
 .IP "\fBlive\-config.hooks\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP | \fBhooks\fP=\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
-Allows to fetch and execute one or more arbitrary files. Note that the URLs
-must be fetchable by wget (http, ftp or file://), the files are executed in
-/tmp of the running live system, and that the files needs their
-dependencies, if any, already installed, e.g. if a python script should be
-executed the system needs python installed. Some hooks for some common
-use\-cases are available at /usr/share/doc/live\-config/examples/hooks/ and
-<\fIhttp://live\-systems.org/other/hooks\fP>.
+Ermöglicht eine oder mehrere beliebige Dateien herunterzuladen und
+auszuführen. Die URLs müssen durch wget (http, ftp oder file://) aufösbar
+sein, die Dateien werden in /tmp des laufenden Live Systems ausgeführt und
+es müssen alle Abhängigkeiten, die für das Ausführen der Dateien notwendig
+sind,bereits installiert sein, zum Beispiel muss für ein Python Skript
+bereits Python auf dem System installiert sein. Einige Hooks für häufige
+Anwendungsfälle sind in /usr/share/doc/live\-config/examples/hooks/ und unter
+<\fIhttp://live\-systems.org/other/hooks\fP> verfügbar.
 .br
 Falls die Datei sich auf dem Live Medium befindet, kann sie mittels
 file:///lib/live/mount/medium/\fIFILE\fP benutzt werden, falls sie sich im Root
@@ -160,8 +163,8 @@ müssten. Dies gewährleistet sowohl feine Kontrolle über alle Optionen, als
 einfache Benutzbarkeit.
 
 .IP "\fBlive\-config.noroot\fP | \fBnoroot\fP" 4
-Schaltet die sudo und policykit Skripte ab, ein Benutzer kann keine root
-Privilegien auf dem System mehr erlangen.
+Schaltet sudo und policykit ab, ein Benutzer kann keine root Privilegien auf
+dem System mehr erlangen.
 .IP "\fBlive\-config.nottyautologin\fP | \fBnoautologin\fP" 4
 Schaltet sowohl den den automatischen Login via TTY ab als auch den
 automatischen graphischen Login.
@@ -192,12 +195,12 @@ Live Medium (live/config.conf, live/config/*). Wenn beide Orte für eine
 bestimmte Option verwendet werden, geht die Konfigurationsdatei auf dem Live
 Medium dem der im Root Dateisystem enthaltenen vor.
 .PP
-Obwohl die Konfigurationsdateien welche in die conf.d Verzeichnisse abgelegt
-werden können keinen bestimmten Namen oder Endung brauchen, ist es aus
-Konsistenzgründen empfohlen, für diese 'vendor.conf' oder 'project.conf' als
-Namensschema zu verwenden (wobei 'vendor' oder 'project' mit dem
+Obwohl die Konfigurationsdateien welche in die Konfigurationsverzeichnisse
+abgelegt werden können keinen bestimmten Namen oder Endung brauchen, ist es
+aus Konsistenzgründen empfohlen, für diese 'vendor.conf' oder 'project.conf'
+als Namensschema zu verwenden (wobei 'vendor' oder 'project' mit dem
 eigentlichen Namen ersetzt wird, resultierend in einem Dateinamen wie
-\&'debian\-eeepc.conf').
+\&'progress\-linux.conf').
 .PP
 Der eigentliche Inhalt der Konfigurationsdateien besteht aus einer oder
 mehreren der folgenden Variablen.
@@ -308,10 +311,8 @@ konfiguriert locales.
 konfiguriert locales\-all.
 .IP \fBtzdata\fP 4
 konfiguriert /etc/timezone.
-.IP \fBgdm\fP 4
-konfiguriert Autologin in gdm.
 .IP \fBgdm3\fP 4
-konfiguriert Autologin in gdm3 (squeeze und neuer).
+konfiguriert Autologin in gdm3.
 .IP \fBkdm\fP 4
 konfiguriert Autologin in kdm.
 .IP \fBlightdm\fP 4
@@ -394,15 +395,16 @@ einem HTTP/FTP Server auszuführen.
 \fIlive\-tools\fP(7)
 
 .SH HOMEPAGE
-More information about live\-config and the Live Systems project can be found
-on the homepage at <\fIhttp://live\-systems.org/\fP> and in the manual
-at <\fIhttp://live\-systems.org/manual/\fP>.
+Weitere Informationen über live\-config und das Live Systems Projekt können
+auf der Homepage unter <\fIhttp://live\-systems.org/\fP> und im Handbuch
+unter <\fIhttp://live\-systems.org/manual/\fP> gefunden werden.
 
 .SH FEHLER
-Bugs can be reported by submitting a bugreport for the live\-config package
-in the Bug Tracking System at <\fIhttp://bugs.debian.org/\fP> or by
-writing a mail to the Live Systems mailing list at
-<\fIdebian\-live@lists.debian.org\fP>.
+Fehler können durch Einreichen eines Fehlerberichtes für das live\-config
+Paket im Debian Bug Tracking System unter
+<\fIhttp://bugs.debian.org/\fP> oder durch Senden einer E\-Mail an die
+Live Systems Mailing Liste unter <\fIdebian\-live@lists.debian.org\fP>
+(englischsprachig) mitgeteilt werden.
 
 .SH AUTOR
 live\-config wurde von Daniel Baumann <\fImail@daniel\-baumann.ch\fP>

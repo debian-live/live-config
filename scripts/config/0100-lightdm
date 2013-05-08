@@ -8,15 +8,15 @@
 ## under certain conditions; see COPYING for details.
 
 
-Kdm ()
+Lightdm ()
 {
 	# Checking if package is installed or already configured
-	if [ ! -e /var/lib/dpkg/info/kdm.list ]
+	if [ ! -e /var/lib/dpkg/info/lightdm.list ]
 	then
 		return
 	fi
 
-	if [ -e /var/lib/live/config/kdm ]
+	if [ -e /var/lib/live/config/lightdm ]
 	then
 		# Avoid xinit
 		_X11="true"
@@ -25,10 +25,10 @@ Kdm ()
 		return
 	fi
 
-	echo -n " kdm"
+	echo -n " lightdm"
 
 	# Reading kernel command line
-	for _PARAMETER in ${_CMDLINE}
+	for _PARAMETER in ${LIVE_CONFIG_CMDLINE}
 	do
 		case "${_PARAMETER}" in
 			live-config.username=*|username=*)
@@ -37,27 +37,16 @@ Kdm ()
 		esac
 	done
 
-	Configure_kdm
+	Configure_lightdm
 }
 
-Configure_kdm ()
+Configure_lightdm ()
 {
-	if [ ! -e /etc/kde4/kdm/kdmrc ]
+	if [ -e /etc/lightdm/lightdm.conf ]
 	then
-		return
-	fi
-
-	# autologin
-	sed -i -r -e "s|^#.*AutoLoginEnable=.*\$|AutoLoginEnable=true|" \
-		  -e "s|^#.*AutoLoginAgain=.*\$|AutoLoginAgain=true|" \
-		  -e "s|^#.*AutoLoginUser=.*\$|AutoLoginUser=${LIVE_USERNAME}|" \
-	/etc/kde4/kdm/kdmrc
-
-	# language
-	if [ -n "${_LANGUAGE}" ]
-	then
-		sed -i -r -e "s|^#.*Language=.*\$|Language=${_LANGUAGE}|" \
-			/etc/kde4/kdm/kdmrc
+		sed -i -r -e "s|^#.*autologin-user=.*\$|autologin-user=${LIVE_USERNAME}|" \
+			  -e "s|^#.*autologin-user-timeout=.*\$|autologin-user-timeout=0|" \
+		/etc/lightdm/lightdm.conf
 	fi
 
 	# Avoid xinit
@@ -65,7 +54,7 @@ Configure_kdm ()
 	export _X11
 
 	# Creating state file
-	touch /var/lib/live/config/kdm
+	touch /var/lib/live/config/lightdm
 }
 
-Kdm
+Lightdm

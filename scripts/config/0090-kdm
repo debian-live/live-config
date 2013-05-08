@@ -8,15 +8,15 @@
 ## under certain conditions; see COPYING for details.
 
 
-Lxdm ()
+Kdm ()
 {
 	# Checking if package is installed or already configured
-	if [ ! -e /var/lib/dpkg/info/lxdm.list ]
+	if [ ! -e /var/lib/dpkg/info/kdm.list ]
 	then
 		return
 	fi
 
-	if [ -e /var/lib/live/config/lxdm ]
+	if [ -e /var/lib/live/config/kdm ]
 	then
 		# Avoid xinit
 		_X11="true"
@@ -25,10 +25,10 @@ Lxdm ()
 		return
 	fi
 
-	echo -n " lxdm"
+	echo -n " kdm"
 
 	# Reading kernel command line
-	for _PARAMETER in ${_CMDLINE}
+	for _PARAMETER in ${LIVE_CONFIG_CMDLINE}
 	do
 		case "${_PARAMETER}" in
 			live-config.username=*|username=*)
@@ -37,25 +37,30 @@ Lxdm ()
 		esac
 	done
 
-	Configure_lxdm
+	Configure_kdm
 }
 
-Configure_lxdm ()
+Configure_kdm ()
 {
-	# Debian
-	if [ -e /etc/lxdm/lxdm.conf ]
+	if [ ! -e /etc/kde4/kdm/kdmrc ]
 	then
-		sed -i -r -e "s|^#.*autologin=.*\$|autologin=${LIVE_USERNAME}|" \
-			  -e "s|^#.*session.*\$|session|" \
-		/etc/lxdm/lxdm.conf
+		return
 	fi
 
-	# Ubuntu
-	if [ -e /etc/lxdm/default.conf ]
+	if [ "${LIVE_CONFIG_NOAUTOLOGIN}" != "true" ] && [ "${LIVE_CONFIG_NOX11AUTOLOGIN}" = "true" ]
 	then
-		sed -i -r -e "s|^#.*autologin=.*\$|autologin=${LIVE_USERNAME}|" \
-			  -e "s|^#.*session.*\$|session=/usr/bin/startlubuntu|" \
-		/etc/lxdm/default.conf
+		# autologin
+		sed -i -r -e "s|^#.*AutoLoginEnable=.*\$|AutoLoginEnable=true|" \
+			  -e "s|^#.*AutoLoginAgain=.*\$|AutoLoginAgain=true|" \
+			  -e "s|^#.*AutoLoginUser=.*\$|AutoLoginUser=${LIVE_USERNAME}|" \
+		/etc/kde4/kdm/kdmrc
+	fi
+
+	# language
+	if [ -n "${_LANGUAGE}" ]
+	then
+		sed -i -r -e "s|^#.*Language=.*\$|Language=${_LANGUAGE}|" \
+			/etc/kde4/kdm/kdmrc
 	fi
 
 	# Avoid xinit
@@ -63,7 +68,7 @@ Configure_lxdm ()
 	export _X11
 
 	# Creating state file
-	touch /var/lib/live/config/lxdm
+	touch /var/lib/live/config/kdm
 }
 
-Lxdm
+Kdm

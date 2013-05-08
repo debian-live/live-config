@@ -6,7 +6,7 @@
 .\" under certain conditions; see COPYING for details.
 .\"
 .\"
-.TH LIVE\-CONFIG 7 2013\-05\-06 4.0~a20-1 "Live Systems Project"
+.TH LIVE\-CONFIG 7 2013\-05\-08 4.0~a21-1 "Live Systems Project"
 
 .SH NAME
 \fBlive\-config\fR \- System Configuration Scripts
@@ -89,7 +89,7 @@ If several mechanisms are combined, then filesystem hooks are executed first, th
 For some common use cases where it would require to combine several individual parameters, \fBlive\-config\fR provides shortcuts. This allows both to have full granularity over all the options, as well keep things simple.
 
 .IP "\fBlive\-config.noroot\fR | \fBnoroot\fR" 4
-Disables the sudo and policykit, the user cannot gain root privileges on the system.
+Disables sudo and policykit, the user cannot gain root privileges on the system.
 .IP "\fBlive\-config.noautologin\fR | \fBnoautologin\fR" 4
 Disables both the automatic console login and the graphical autologin.
 .IP "\fBlive\-config.nottyautologin\fR | \fBnottyautologin\fR" 4
@@ -108,7 +108,7 @@ Enables debug output in live\-config.
 .PP
 Configuration files can be placed either in the root filesystem itself (/etc/live/config.conf, /etc/live/config/*), or on the live media (live/config.conf, live/config/*). If both places are used for a certain option, the ones from the live media take precedence over the ones from the root filesystem.
 .PP
-Although the configuration files placed in the conf.d directories do not require a particular name or suffix, it is suggested for consistency reasons to either use 'vendor.conf' or 'project.conf' as a naming scheme (whereas 'vendor' or 'project' is replaced with the actual name, resulting in a filename like 'debian\-eeepc.conf').
+Although the configuration files placed in the configuration directories do not require a particular name or suffix, it is suggested for consistency reasons to either use 'vendor.conf' or 'project.conf' as a naming scheme (whereas 'vendor' or 'project' is replaced with the actual name, resulting in a filename like 'progress\-linux.conf').
 .PP
 The actual content of the configuration files consists of one or more of the following variables.
 
@@ -181,10 +181,8 @@ configures locales.
 configures locales\-all.
 .IP "\fBtzdata\fR" 4
 configures /etc/timezone.
-.IP "\fBgdm\fR" 4
-configures autologin in gdm.
 .IP "\fBgdm3\fR" 4
-configures autologin in gdm3 (squeeze and newer).
+configures autologin in gdm3.
 .IP "\fBkdm\fR" 4
 configures autologin in kdm.
 .IP "\fBlightdm\fR" 4

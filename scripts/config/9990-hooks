@@ -11,7 +11,7 @@
 Hooks ()
 {
 	# Reading kernel command line
-	for _PARAMETER in ${_CMDLINE}
+	for _PARAMETER in ${LIVE_CONFIG_CMDLINE}
 	do
 		case "${_PARAMETER}" in
 			live-config.hooks=*|hooks=*)

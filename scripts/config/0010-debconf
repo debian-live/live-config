@@ -20,7 +20,7 @@ Debconf ()
 	echo -n " debconf"
 
 	# Reading kernel command line
-	for _PARAMETER in ${_CMDLINE}
+	for _PARAMETER in ${LIVE_CONFIG_CMDLINE}
 	do
 		case "${_PARAMETER}" in
 			live-config.debconf-preseed=*|debconf-preseed=*)
@@ -39,7 +39,7 @@ Configure_debconf ()
 		return
 	fi
 
-	for _PRESEED in $(echo ${LIVE_PRESEEDS} | sed -e 's/|/ /g')
+	for _PRESEED in $(echo ${LIVE_DEBCONF_PRESEED} | sed -e 's/|/ /g')
 	do
 		case "${_PRESEED}" in
 			filesystem)

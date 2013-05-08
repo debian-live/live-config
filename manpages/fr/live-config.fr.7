@@ -11,7 +11,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 06.05.2013 4.0~a20\-1 "Projet Live Systems"
+.TH LIVE\-CONFIG 7 08.05.2013 4.0~a21\-1 "Projet Live Systems"
 
 .SH NOM
 \fBlive\-config\fP \- Scripts de configuration du système
@@ -196,11 +196,11 @@ média live (live/config.conf, live/config/*). Si ces deux endroits sont
 utilisés pour une même option, ceux placés dans le média live ont la
 préséance sur ceux placés dans la racine du système.
 .PP
-Bien que les fichiers de configuration placés dans les répertoires conf.d ne
-requièrent pas de nom ou suffixe particulier, il est suggéré, par souci de
-cohérence, d'utiliser 'vendeur.conf' ou 'projet.conf' en tant que modèle de
-nommage ('vendeur' ou 'projet' étant remplacés par le nom réel issu du nom
-de fichier comme 'debian\-eeepc.conf').
+Although the configuration files placed in the configuration directories do
+not require a particular name or suffix, it is suggested for consistency
+reasons to either use 'vendor.conf' or 'project.conf' as a naming scheme
+(whereas 'vendor' or 'project' is replaced with the actual name, resulting
+in a filename like 'progress\-linux.conf').
 .PP
 Le contenu réel des fichiers de configuration se compose d'une ou plusieurs
 des variables suivantes.
@@ -311,10 +311,8 @@ configure les locales.
 configure les locales\-all.
 .IP \fBtzdata\fP 4
 configure /etc/timezone.
-.IP \fBgdm\fP 4
-configure l'auto\-login dans gdm.
 .IP \fBgdm3\fP 4
-configure l'auto\-login dans gdm3 (squeeze et plus récent).
+configure l'auto\-login dans gdm3.
 .IP \fBkdm\fP 4
 configure l'auto\-login dans kdm.
 .IP \fBlightdm\fP 4

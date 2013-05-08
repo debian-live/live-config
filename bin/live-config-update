@@ -33,7 +33,7 @@ fi
 
 case "${_DISTRIBUTION}" in
 	debian)
-		NOSCRIPTS="apport gdm ureadahead"
+		NOSCRIPTS="apport ureadahead"
 
 		LIVE_HOSTNAME="debian"
 		LIVE_USERNAME="user"
@@ -44,7 +44,7 @@ case "${_DISTRIBUTION}" in
 		;;
 
 	progress-linux)
-		NOSCRIPTS="apport gdm upstart ureadahead"
+		NOSCRIPTS="apport upstart ureadahead"
 
 		LIVE_HOSTNAME="progress-linux"
 		LIVE_USERNAME="user"
