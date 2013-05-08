@@ -39,7 +39,7 @@ Configure_debconf ()
 		return
 	fi
 
-	for _PRESEED in $(echo ${LIVE_PRESEEDS} | sed -e 's/|/ /g')
+	for _PRESEED in $(echo ${LIVE_DEBCONF_PRESEED} | sed -e 's/|/ /g')
 	do
 		case "${_PRESEED}" in
 			filesystem)
