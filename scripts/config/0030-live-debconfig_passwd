@@ -55,7 +55,7 @@ Configure_live_debconfig_passwd ()
 	fi
 
 	# Make sure user is not in sudo group if sudo is disabled
-	case "${_NOROOT}" in
+	case "${LIVE_CONFIG_NOROOT}" in
 		true)
 			LIVE_USER_DEFAULT_GROUPS="$(echo ${LIVE_USER_DEFAULT_GROUPS} | sed -e 's|sudo||')"
 			;;

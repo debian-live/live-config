@@ -38,7 +38,7 @@ Configure_sysvinit ()
 	sed -i -e 's|^ *RAMTMP=.*|RAMTMP=no|' /etc/default/rcS
 
 	# Configure autologin
-	case "${_NOAUTOLOGIN}" in
+	case "${LIVE_CONFIG_NOAUTOLOGIN}" in
 		true)
 			;;
 

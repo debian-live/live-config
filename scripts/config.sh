@@ -54,49 +54,49 @@ Cmdline ()
 				# Only run requested scripts
 				LIVE_CONFIGS="${_PARAMETER#*config=}"
 				LIVE_NOCONFIGSS=""
-				_SCRIPTS=""
+				LIVE_CONFIG_SCRIPTS=""
 				;;
 
 			live-config|config)
 				# Run all scripts
 				LIVE_CONFIGS=""
 				LIVE_NOCONFIGS=""
-				_SCRIPTS="$(ls /lib/live/config/*)"
+				LIVE_CONFIG_SCRIPTS="$(ls /lib/live/config/*)"
 				;;
 
 			live-noconfig=*|noconfig=*)
 				# Don't run requested scripts
 				LIVE_CONFIGS=""
 				LIVE_NOCONFIGS="${_PARAMETER#*noconfig=}"
-				_SCRIPTS="$(ls /lib/live/config/*)"
+				LIVE_CONFIG_SCRIPTS="$(ls /lib/live/config/*)"
 				;;
 
 			live-noconfig|noconfig)
 				# Don't run any script
 				LIVE_CONFIGS=""
 				LIVE_NOCONFIGS=""
-				_SCRIPTS=""
+				LIVE_CONFIG_SCRIPTS=""
 				;;
 
 			# Shortcuts
 			live-config.noroot|noroot)
 				# Disable root access, no matter what mechanism
-				_NOROOT="true"
+				LIVE_CONFIG_NOROOT="true"
 				;;
 
 			live-config.noautologin|noautologin)
 				# Disables both console and graphical autologin.
-				_NOAUTOLOGIN="true"
+				LIVE_CONFIG_NOAUTOLOGIN="true"
 				;;
 
 			live-config.nottyautologin|nottyautologin)
 				# Disables console autologin.
-				_NOTTYAUTOLOGIN="true"
+				LIVE_CONFIG_NOTTYAUTOLOGIN="true"
 				;;
 
 			live-config.nox11autologin|nox11autologin)
 				# Disables graphical autologin, no matter what mechanism
-				_NOX11AUTOLOGIN="true"
+				LIVE_CONFIG_NOX11AUTOLOGIN="true"
 				;;
 
 			# Special options
@@ -107,28 +107,28 @@ Cmdline ()
 	done
 
 	# Exclude shortcuts specific scripts
-	case "${_NOROOT}" in
+	case "${LIVE_CONFIG_NOROOT}" in
 		true)
 			# Disable root access, no matter what mechanism
 			LIVE_NOCONFIGS="${LIVE_NOCONFIGS},sudo,policykit"
 			;;
 	esac
 
-	case "${_NOAUTOLOGIN}" in
+	case "${LIVE_CONFIG_NOAUTOLOGIN}" in
 		true)
 			# Disables both console and graphical autologin.
 			LIVE_NOCONFIGS="${LIVE_NOCONFIGS},gdm,gdm3,kdm,lightdm,lxdm,nodm,slim,upstart,xinit"
 			;;
 	esac
 
-	case "${_NOTTYAUTOLOGIN}" in
+	case "${LIVE_CONFIG_NOTTYAUTOLOGIN}" in
 		true)
 			# Disables console autologin.
 			LIVE_NOCONFIGS="${LIVE_NOCONFIGS},upstart"
 			;;
 	esac
 
-	case "${_NOX11AUTOLOGIN}" in
+	case "${LIVE_CONFIG_NOX11AUTOLOGIN}" in
 		true)
 			# Disables graphical autologin, no matter what mechanism
 			LIVE_NOCONFIGS="${LIVE_NOCONFIGS},gdm,gdm3,kdm,lightdm,lxdm,nodm,slim,xinit"
@@ -140,7 +140,7 @@ Cmdline ()
 	then
 		for _CONFIG in $(echo ${LIVE_CONFIGS} | sed -e 's|,| |g')
 		do
-			_SCRIPTS="${_SCRIPTS} $(ls /lib/live/config/????-${_CONFIG} 2> /dev/null || true)"
+			LIVE_CONFIG_SCRIPTS="${LIVE_CONFIG_SCRIPTS} $(ls /lib/live/config/????-${_CONFIG} 2> /dev/null || true)"
 		done
 	fi
 
@@ -149,7 +149,7 @@ Cmdline ()
 	then
 		for _NOCONFIG in $(echo ${LIVE_NOCONFIGS} | sed -e 's|,| |g')
 		do
-			_SCRIPTS="$(echo ${_SCRIPTS} | sed -e "s|$(ls /lib/live/config/????-${_NOCONFIG} 2> /dev/null || echo none)||")"
+			LIVE_CONFIG_SCRIPTS="$(echo ${LIVE_CONFIG_SCRIPTS} | sed -e "s|$(ls /lib/live/config/????-${_NOCONFIG} 2> /dev/null || echo none)||")"
 		done
 	fi
 }
@@ -221,18 +221,18 @@ Main ()
 	# Processing command line
 	Cmdline
 
-	case "${LIVE_DEBUG}" in
+	case "${LIVE_CONFIG_DEBUG}" in
 		true)
 			set -x
 			;;
 	esac
 
 	# Configuring system
-	_SCRIPTS="$(echo ${_SCRIPTS} | sed -e 's| |\n|g' | sort -u)"
+	LIVE_CONFIG_SCRIPTS="$(echo ${LIVE_CONFIG_SCRIPTS} | sed -e 's| |\n|g' | sort -u)"
 
-	for _SCRIPT in ${_SCRIPTS}
+	for _SCRIPT in ${LIVE_CONFIG_SCRIPTS}
 	do
-		[ "${LIVE_DEBUG}" = "true" ] && echo "[$(date +'%F %T')] live-config: ${_SCRIPT}" > /var/log/live/config.pipe
+		[ "${LIVE_CONFIG_DEBUG}" = "true" ] && echo "[$(date +'%F %T')] live-config: ${_SCRIPT}" > /var/log/live/config.pipe
 
 		. ${_SCRIPT} > /var/log/live/config.pipe 2>&1
 	done
