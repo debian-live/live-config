@@ -1,3 +1,29 @@
+live-config (4.0~a21-1) experimental; urgency=low
+
+  * Correcting spelling typo in manpage about disabling sudo and policykit
+    scripts.
+  * Updating German manpage translations.
+  * Reading configuration files before cmdline options.
+  * Declaring LIVE_CONFIG_CMDLINE an exported variable and make it usable
+    through configuration files.
+  * Running sysvinit script even when noautologin is used, but run
+    enabling of autologins only when no noautologin is not set.
+  * Updating configuration filename example to more current real-world
+    example name.
+  * Spelling out 'conf.d directories' as 'configuration directories' in
+    manpage to avoid wrong assumptions of a /etc/live/config.d directory
+    (where it's /etc/live/config instead).
+  * Making shortcut option variables exported too.
+  * Making check for noautologin in sysvinit script also work with only
+    tty autologin disabled.
+  * Correcting variable typo in debconf script.
+  * Dropping pre-wheezy gdm script.
+  * Renumbering scripts.
+  * Running kdm script even when noautologin is used, but run enabling of
+    autologin only when noautologin is not set.
+
+ -- Daniel Baumann <mail@daniel-baumann.ch>  Wed, 08 May 2013 09:21:23 +0200
+
 live-config (4.0~a20-1) experimental; urgency=low
 
   [ Daniel Baumann ]
