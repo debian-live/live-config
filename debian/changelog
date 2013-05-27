@@ -1,3 +1,15 @@
+live-config (4.0~a22-1) experimental; urgency=low
+
+  [ chals ]
+  * Updating dates in live-config man pages.
+  * Updating French translation of man page.
+  * Updating Spanish translation of man page.
+
+  [ Daniel Baumann ]
+  * Dropping support for upstart, nobody stepped up maintaining this.
+
+ -- Daniel Baumann <mail@daniel-baumann.ch>  Mon, 27 May 2013 16:56:08 +0200
+
 live-config (4.0~a21-1) experimental; urgency=low
 
   * Correcting spelling typo in manpage about disabling sudo and policykit
