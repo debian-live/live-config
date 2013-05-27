@@ -11,10 +11,6 @@ override_dh_auto_install:
 	mv debian/tmp/lib/live/config/*-sysvinit debian/live-config-sysvinit/lib/live/config
 	mv debian/tmp/lib/live/config/*-sysv-rc debian/live-config-sysvinit/lib/live/config
 
-	# live-config-upstart
-	mkdir -p debian/live-config-upstart/lib/live/config
-	mv debian/tmp/lib/live/config/*-upstart debian/live-config-upstart/lib/live/config
-
 	# Removing unused files
 	rm -f debian/tmp/usr/share/doc/live-config/COPYING
 	bin/live-config-update debian/tmp/lib/live/config
@@ -31,5 +27,3 @@ override_dh_install:
 override_dh_installinit:
 	dh_installinit -p live-config-sysvinit --no-restart-on-upgrade --no-start --update-rcd-params='start 00 S .' --name live-config --onlyscripts
 	dh_installinit -p live-config-sysvinit --no-restart-on-upgrade --no-start --update-rcd-params='start 89 0 6 .' --name live --onlyscripts
-
-	dh_installinit -p live-config-upstart --no-restart-on-upgrade --no-start --name live-config --onlyscripts

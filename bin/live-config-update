@@ -44,7 +44,7 @@ case "${_DISTRIBUTION}" in
 		;;
 
 	progress-linux)
-		NOSCRIPTS="apport upstart ureadahead"
+		NOSCRIPTS="apport ureadahead"
 
 		LIVE_HOSTNAME="progress-linux"
 		LIVE_USERNAME="user"

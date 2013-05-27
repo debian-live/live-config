@@ -59,15 +59,3 @@ Description: Live System Configuration Scripts (sysvinit backend)
  process (late userspace).
  .
  This package contains the sysvinit backend.
-
-Package: live-config-upstart
-Architecture: all
-Depends: ${misc:Depends}, upstart
-Conflicts: live-config-backend
-Replaces: live-config-backend
-Provides: live-config-backend
-Description: Live System Configuration Scripts (upstart backend)
- live-config contains the scripts that configure a live system during the boot
- process (late userspace).
- .
- This package contains the upstart backend (experimental!).

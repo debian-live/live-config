@@ -53,9 +53,6 @@ install:
 	cp backends/sysvinit/live-config.init $(DESTDIR)/etc/init.d/live-config
 	cp backends/sysvinit/live.init $(DESTDIR)/etc/init.d/live
 
-	mkdir -p $(DESTDIR)/etc/init
-	cp backends/upstart/live-config.upstart $(DESTDIR)/etc/init/live-config.conf
-
 	mkdir -p $(DESTDIR)/lib/systemd/system
 	cp backends/systemd/live-config.systemd $(DESTDIR)/lib/systemd/system/live-config.service
 
