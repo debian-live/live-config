@@ -24,7 +24,10 @@ Ssl_cert ()
 
 Configure_ssl_cert ()
 {
-	make-ssl-cert generate-default-snakeoil --force-overwrite
+	if [ ! -e /etc/ssl/certs/ssl-cert-snakeoil.pem ] && [ ! -e /etc/ssl/private/ssl-cert-snakeoil.key ]
+	then
+		make-ssl-cert generate-default-snakeoil --force-overwrite
+	fi
 
 	# Creating state file
 	touch /var/lib/live/config/ssl-cert
