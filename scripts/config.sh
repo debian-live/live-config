@@ -53,7 +53,7 @@ Cmdline ()
 			live-config=*|config=*)
 				# Only run requested scripts
 				LIVE_CONFIGS="${_PARAMETER#*config=}"
-				LIVE_NOCONFIGSS=""
+				LIVE_NOCONFIGS=""
 				LIVE_CONFIG_SCRIPTS=""
 				;;
 
