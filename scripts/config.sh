@@ -101,7 +101,7 @@ Cmdline ()
 
 			# Special options
 			live-config.debug|debug)
-				LIVE_DEBUG="true"
+				LIVE_CONFIG_DEBUG="true"
 				;;
 		esac
 	done
