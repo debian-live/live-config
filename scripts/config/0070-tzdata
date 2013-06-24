@@ -43,12 +43,15 @@ Configure_tzdata ()
 		_ZONE="UTC"
 	fi
 
-debconf-communicate -fnoninteractive live-config > /dev/null << EOF
+	cp -f /usr/share/zoneinfo/${_AREA}/${_ZONE} /etc/localtime
+
+cat > /tmp/live-config.cfg << EOF
 set tzdata/Areas ${_AREA}
 set tzdata/Zones/${_AREA} ${_ZONE}
 EOF
 
-	cp -f /usr/share/zoneinfo/${_AREA}/${_ZONE} /etc/localtime
+	debconf-set-selections < /tmp/live-config.cfg
+	rm -f /tmp/live-config.cfg
 
 	# Creating state file
 	touch /var/lib/live/config/tzdata
