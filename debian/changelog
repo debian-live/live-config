@@ -1,3 +1,26 @@
+live-config (4.0~a23-1) experimental; urgency=low
+
+  * Readding accidentally dropped ssl-cert script.
+  * Only recreating ssl-cert-snakeoil in ssl-cert script if it's not
+    already existing.
+  * Correcting typo when cleaning out config scripts in initial variable
+    assembling.
+  * Correcting debug variable assignment.
+  * Adding LIVE_CONFIG_CMDLINE variable in manpage.
+  * Using 'correspond' rather than 'equal' when talking about variables
+    and parameter relation in manpage to avoid misunderstandings from
+    people taking 'equal' too strict.
+  * Adding LIVE_CONFIG_DEBUG variable in manpage.
+  * Setting default LIVE_CONFIG_SCRIPTS before parsing cmdline and
+    conffiles.
+  * Demoting LIVE_CONFIG_SCRIPTS to an internal variable again, there is
+    no need to set it manually anymore in any circumstance.
+  * Adding note to manpage about users responsibility to ensure correct
+    set of variables when assigning individual variables in configuration
+    files.
+
+ -- Daniel Baumann <mail@daniel-baumann.ch>  Mon, 24 Jun 2013 13:48:53 +0200
+
 live-config (4.0~a22-1) experimental; urgency=low
 
   [ chals ]
