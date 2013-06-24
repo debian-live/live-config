@@ -10,6 +10,19 @@
 
 set -e
 
+Cmdline ()
+{
+	# Reading kernel command line
+	for _PARAMETER in ${LIVE_CONFIG_CMDLINE}
+	do
+		case "${_PARAMETER}" in
+			live-config.username=*|username=*)
+				LIVE_USERNAME="${_PARAMETER#*username=}"
+				;;
+		esac
+	done
+}
+
 Init ()
 {
 	# Checking if package is installed or already configured
@@ -20,16 +33,6 @@ Init ()
 	fi
 
 	echo -n " gdm3"
-
-	# Reading kernel command line
-	for _PARAMETER in ${LIVE_CONFIG_CMDLINE}
-	do
-		case "${_PARAMETER}" in
-			live-config.username=*|username=*)
-				LIVE_USERNAME="${_PARAMETER#*username=}"
-				;;
-		esac
-	done
 }
 
 Config ()
@@ -55,5 +58,6 @@ TimedLoginDelay=5"
 	touch /var/lib/live/config/gdm3
 }
 
+Cmdline
 Init
 Config

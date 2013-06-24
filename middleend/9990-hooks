@@ -10,7 +10,7 @@
 
 set -e
 
-Init ()
+Cmdline ()
 {
 	# Reading kernel command line
 	for _PARAMETER in ${LIVE_CONFIG_CMDLINE}
@@ -21,7 +21,10 @@ Init ()
 				;;
 		esac
 	done
+}
 
+Init ()
+{
 	if [ -z "${LIVE_HOOKS}" ]
 	then
 		exit 0
@@ -32,11 +35,6 @@ Init ()
 
 Config ()
 {
-	if [ -z "${LIVE_HOOKS}" ]
-	then
-		exit 0
-	fi
-
 	for _HOOK in $(echo ${LIVE_HOOKS} | sed -e 's/|/ /g')
 	do
 		case "${_HOOK}" in
@@ -81,5 +79,6 @@ Config ()
 	done
 }
 
+Cmdline
 Init
 Config

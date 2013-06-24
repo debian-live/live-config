@@ -10,6 +10,19 @@
 
 set -e
 
+Cmdline ()
+{
+	# Reading kernel command line
+	for _PARAMETER in ${LIVE_CONFIG_CMDLINE}
+	do
+		case "${_PARAMETER}" in
+			live-config.debconf-preseed=*|debconf-preseed=*)
+				LIVE_DEBCONF_PRESEED="${_PARAMETER#*debconf-preseed=}"
+				;;
+		esac
+	done
+}
+
 Init ()
 {
 	# Checking if package is installed or already configured
@@ -20,16 +33,6 @@ Init ()
 	fi
 
 	echo -n " debconf"
-
-	# Reading kernel command line
-	for _PARAMETER in ${LIVE_CONFIG_CMDLINE}
-	do
-		case "${_PARAMETER}" in
-			live-config.debconf-preseed=*|debconf-preseed=*)
-				LIVE_DEBCONF_PRESEED="${_PARAMETER#*debconf-preseed=}"
-				;;
-		esac
-	done
 }
 
 Config ()
@@ -85,5 +88,6 @@ Config ()
 	touch /var/lib/live/config/debconf
 }
 
+Cmdline
 Init
 Config

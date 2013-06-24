@@ -10,7 +10,7 @@
 
 set -e
 
-Init ()
+Cmdline ()
 {
 	# Reading kernel command line
 	for _PARAMETER in ${LIVE_CONFIG_CMDLINE}
@@ -21,7 +21,10 @@ Init ()
 				;;
 		esac
 	done
+}
 
+Init ()
+{
 	# Checking if package is installed or already configured
 	if [ -z "${LIVE_HOSTNAME}" ] || \
 	   [ -e /var/lib/live/config/hostname ]
@@ -74,5 +77,6 @@ EOF
 	touch /var/lib/live/config/hostname
 }
 
+Cmdline
 Init
 Config

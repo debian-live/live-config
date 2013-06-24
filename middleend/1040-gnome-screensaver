@@ -10,17 +10,8 @@
 
 set -e
 
-Init ()
+Cmdline ()
 {
-	# Checking if package is installed or already configured
-	if [ ! -e /var/lib/dpkg/info/gnome-screensaver.list ] || \
-	   [ -e /var/lib/live/config/gnome-screensaver ]
-	then
-		exit 0
-	fi
-
-	echo -n " gnome-screensaver"
-
 	# Reading kernel command line
 	for _PARAMETER in ${LIVE_CONFIG_CMDLINE}
 	do
@@ -32,6 +23,18 @@ Init ()
 	done
 }
 
+Init ()
+{
+	# Checking if package is installed or already configured
+	if [ ! -e /var/lib/dpkg/info/gnome-screensaver.list ] || \
+	   [ -e /var/lib/live/config/gnome-screensaver ]
+	then
+		exit 0
+	fi
+
+	echo -n " gnome-screensaver"
+}
+
 Config ()
 {
 	# Disabling to lock the screen when the screensaver goes active.
@@ -41,5 +44,6 @@ Config ()
 	touch /var/lib/live/config/gnome-screensaver
 }
 
+Cmdline
 Init
 Config

@@ -10,6 +10,19 @@
 
 set -e
 
+Cmdline ()
+{
+	# Reading kernel command line
+	for _PARAMETER in ${LIVE_CONFIG_CMDLINE}
+	do
+		case "${_PARAMETER}" in
+			live-config.sysv-rc=*|sysv-rc=*)
+				LIVE_SYSV_RC="${_PARAMETER#*sysv-rc=}"
+				;;
+		esac
+	done
+}
+
 Init ()
 {
 	# Checking if package is installed or already configured
@@ -20,16 +33,6 @@ Init ()
 	fi
 
 	echo -n " sysv-rc"
-
-	# Reading kernel command line
-	for _PARAMETER in ${LIVE_CONFIG_CMDLINE}
-	do
-		case "${_PARAMETER}" in
-			live-config.sysv-rc=*|sysv-rc=*)
-				LIVE_SYSV_RC="${_PARAMETER#*sysv-rc=}"
-				;;
-		esac
-	done
 }
 
 Config ()
@@ -47,5 +50,6 @@ Config ()
 	touch /var/lib/live/config/sysv-rc
 }
 
+Cmdline
 Init
 Config

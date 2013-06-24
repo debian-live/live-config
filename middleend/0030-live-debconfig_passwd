@@ -10,17 +10,8 @@
 
 set -e
 
-Init ()
+Cmdline ()
 {
-	# Checking if package is installed or already configured
-	if [ ! -e /var/lib/dpkg/info/live-debconfig.list ] || \
-	   [ -e /var/lib/live/config/live-debconfig_passwd ]
-	then
-		exit 0
-	fi
-
-	echo -n " live-debconfig (passwd)"
-
 	# Reading kernel command line
 	for _PARAMETER in ${LIVE_CONFIG_CMDLINE}
 	do
@@ -38,6 +29,18 @@ Init ()
 				;;
 		esac
 	done
+}
+
+Init ()
+{
+	# Checking if package is installed or already configured
+	if [ ! -e /var/lib/dpkg/info/live-debconfig.list ] || \
+	   [ -e /var/lib/live/config/live-debconfig_passwd ]
+	then
+		exit 0
+	fi
+
+	echo -n " live-debconfig (passwd)"
 }
 
 Config ()
@@ -92,5 +95,6 @@ EOF
 	touch /var/lib/live/config/live-debconfig_passwd
 }
 
+Cmdline
 Init
 Config

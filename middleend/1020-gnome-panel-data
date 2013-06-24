@@ -10,17 +10,8 @@
 
 set -e
 
-Init ()
+Cmdline ()
 {
-	# Checking if package is installed or already configured
-	if [ ! -e /var/lib/dpkg/info/gnome-panel-data.list ] || \
-	   [ -e /var/lib/live/config/gnome-panel-data ]
-	then
-		exit 0
-	fi
-
-	echo -n " gnome-panel-data"
-
 	# Reading kernel command line
 	for _PARAMETER in ${LIVE_CONFIG_CMDLINE}
 	do
@@ -32,6 +23,18 @@ Init ()
 	done
 }
 
+Init ()
+{
+	# Checking if package is installed or already configured
+	if [ ! -e /var/lib/dpkg/info/gnome-panel-data.list ] || \
+	   [ -e /var/lib/live/config/gnome-panel-data ]
+	then
+		exit 0
+	fi
+
+	echo -n " gnome-panel-data"
+}
+
 Config ()
 {
 	sudo -u "${LIVE_USERNAME}" gconftool-2 -s -t bool /apps/panel/global/disable_lock_screen true
@@ -40,5 +43,6 @@ Config ()
 	touch /var/lib/live/config/gnome-panel-data
 }
 
+Cmdline
 Init
 Config

@@ -10,17 +10,8 @@
 
 set -e
 
-Init ()
+Cmdline ()
 {
-	# Checking if package is installed or already configured
-	if [ ! -e /usr/share/kde4 ] || \
-	   [ -e /var/lib/live/config/kde-services ]
-	then
-		exit 0
-	fi
-
-	echo -n " kde-services"
-
 	# Reading kernel command line
 	for _PARAMETER in ${LIVE_CONFIG_CMDLINE}
 	do
@@ -34,6 +25,18 @@ Init ()
 				;;
 		esac
 	done
+}
+
+Init ()
+{
+	# Checking if package is installed or already configured
+	if [ ! -e /usr/share/kde4 ] || \
+	   [ -e /var/lib/live/config/kde-services ]
+	then
+		exit 0
+	fi
+
+	echo -n " kde-services"
 }
 
 Config ()
@@ -79,5 +82,6 @@ EOF
 	touch /var/lib/live/config/kde-services
 }
 
+Cmdline
 Init
 Config

@@ -10,17 +10,8 @@
 
 set -e
 
-Init ()
+Cmdline ()
 {
-	# Checking if package is installed or already configured
-	if [ ! -e /var/lib/dpkg/info/keyboard-configuration.list ] || \
-	   [ -e /var/lib/live/config/keyboard-configuration ]
-	then
-		exit 0
-	fi
-
-	echo -n " keyboard-configuration"
-
 	# Reading kernel command line
 	for _PARAMETER in ${LIVE_CONFIG_CMDLINE}
 	do
@@ -42,6 +33,18 @@ Init ()
 				;;
 		esac
 	done
+}
+
+Init ()
+{
+	# Checking if package is installed or already configured
+	if [ ! -e /var/lib/dpkg/info/keyboard-configuration.list ] || \
+	   [ -e /var/lib/live/config/keyboard-configuration ]
+	then
+		exit 0
+	fi
+
+	echo -n " keyboard-configuration"
 }
 
 Config ()
@@ -84,5 +87,6 @@ Config ()
 	fi
 }
 
+Cmdline
 Init
 Config

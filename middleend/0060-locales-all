@@ -10,6 +10,19 @@
 
 set -e
 
+Cmdline ()
+{
+	# Reading kernel command line
+	for _PARAMETER in ${LIVE_CONFIG_CMDLINE}
+	do
+		case "${_PARAMETER}" in
+			live-config.locales=*|locales=*)
+				LIVE_LOCALES="${_PARAMETER#*locales=}"
+				;;
+		esac
+	done
+}
+
 Init ()
 {
 	# Checking if package is installed or already configured
@@ -20,16 +33,6 @@ Init ()
 	fi
 
 	echo -n " locales-all"
-
-	# Reading kernel command line
-	for _PARAMETER in ${LIVE_CONFIG_CMDLINE}
-	do
-		case "${_PARAMETER}" in
-			live-config.locales=*|locales=*)
-				LIVE_LOCALES="${_PARAMETER#*locales=}"
-				;;
-		esac
-	done
 }
 
 Config ()
@@ -52,5 +55,6 @@ Config ()
 	touch /var/lib/live/config/locales-all
 }
 
+Cmdline
 Init
 Config

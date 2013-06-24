@@ -10,17 +10,8 @@
 
 set -e
 
-Init ()
+Cmdline ()
 {
-	# Checking if package is installed
-	if [ ! -e /var/lib/dpkg/info/xserver-xorg.list ] || \
-	   [ -e /var/lib/live/config/xserver-xorg ]
-	then
-		exit 0
-	fi
-
-	echo -n " xserver-xorg"
-
 	for _PARAMETER in ${LIVE_CONFIG_CMDLINE}
 	do
 		case "${_PARAMETER}" in
@@ -53,6 +44,18 @@ Init ()
 				;;
 		esac
 	done
+}
+
+Init ()
+{
+	# Checking if package is installed
+	if [ ! -e /var/lib/dpkg/info/xserver-xorg.list ] || \
+	   [ -e /var/lib/live/config/xserver-xorg ]
+	then
+		exit 0
+	fi
+
+	echo -n " xserver-xorg"
 }
 
 Config ()
@@ -220,5 +223,6 @@ EOF
 	fi
 }
 
+Cmdline
 Init
 Config
