@@ -59,22 +59,22 @@ Configure_xserver_xorg ()
 {
 	if [ -n "${LIVE_KEYBOARD_MODEL}" ]
 	then
-		echo "xserver-xorg xserver-xorg/config/inputdevice/keyboard/model select ${LIVE_KEYBOARD_MODEL}" >> /tmp/debconf.live
+		echo "xserver-xorg xserver-xorg/config/inputdevice/keyboard/model select ${LIVE_KEYBOARD_MODEL}" >> /tmp/live-config.cfg
 	fi
 
 	if [ -n "${LIVE_KEYBOARD_LAYOUTS}" ]
 	then
-		echo "xserver-xorg xserver-xorg/config/inputdevice/keyboard/layout select ${LIVE_KEYBOARD_LAYOUTS}" >> /tmp/debconf.live
+		echo "xserver-xorg xserver-xorg/config/inputdevice/keyboard/layout select ${LIVE_KEYBOARD_LAYOUTS}" >> /tmp/live-config.cfg
 	fi
 
 	if [ -n "${LIVE_KEYBOARD_VARIANTS}" ]
 	then
-		echo "xserver-xorg xserver-xorg/config/inputdevice/keyboard/variant select ${LIVE_KEYBOARD_VARIANTS}" >> /tmp/debconf.live
+		echo "xserver-xorg xserver-xorg/config/inputdevice/keyboard/variant select ${LIVE_KEYBOARD_VARIANTS}" >> /tmp/live-config.cfg
 	fi
 
 	if [ -n "${LIVE_KEYBOARD_OPTIONS}" ]
 	then
-		echo "xserver-xorg xserver-xorg/config/inputdevice/keyboard/options string ${LIVE_KEYBOARD_OPTIONS}" >> /tmp/debconf.live
+		echo "xserver-xorg xserver-xorg/config/inputdevice/keyboard/options string ${LIVE_KEYBOARD_OPTIONS}" >> /tmp/live-config.cfg
 	fi
 
 	if [ -n "${LIVE_X_SESSION_MANAGER}" ]
@@ -205,10 +205,10 @@ EOF
 		rm -f /etc/X11/Xsession.d/21xvidemode
 	fi
 
-	if [ -e /tmp/debconf.live ]
+	if [ -e /tmp/live-config.cfg ]
 	then
-		debconf-set-selections < /tmp/debconf.live
-		rm -f /tmp/debconf.live
+		debconf-set-selections < /tmp/live-config.cfg
+		rm -f /tmp/live-config.cfg
 
 		dpkg-reconfigure -f noninteractive -p critical \
 			xserver-xorg 2>&1 \

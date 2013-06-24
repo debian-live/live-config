@@ -47,13 +47,13 @@ Configure_nodm ()
 		  -e "s|^NODM_USER=.*\$|NODM_USER=${LIVE_USERNAME}|" \
 	/etc/default/nodm
 
-cat > /tmp/debconf.live << EOF
+cat > /tmp/live-config.cfg << EOF
 nodm nodm/enabled boolean true
 nodm nodm/user string ${LIVE_USERNAME}
 EOF
 
-	debconf-set-selections < /tmp/debconf.live
-	rm -f /tmp/debconf.live
+	debconf-set-selections < /tmp/live-config.cfg
+	rm -f /tmp/live-config.cfg
 
 	# Avoid xinit
 	_X11="true"
