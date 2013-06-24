@@ -10,7 +10,7 @@
 
 set -e
 
-_DIRECTORY="${1:-/lib/live/config}"
+_DIRECTORY="${1:-/}"
 
 if [ ! -e "${_DIRECTORY}" ]
 then
@@ -70,9 +70,9 @@ echo "Removing unused components for ${_DISTRIBUTION} (${_RELEASE})..."
 
 for NOCOMPONENT in ${NOCOMPONENT}
 do
-	if ls "${_DIRECTORY}"/*-"${NOCOMPONENT}" > /dev/null 2>&1
+	if ls "${_DIRECTORY}"/lib/live/config/*-"${NOCOMPONENT}" > /dev/null 2>&1
 	then
-		rm -f "${_DIRECTORY}"/*-"${NOCOMPONENT}"
+		rm -f "${_DIRECTORY}"/lib/live/config/*-"${NOCOMPONENT}"
 	fi
 done
 
@@ -82,4 +82,4 @@ sed -i  -e "s|^LIVE_HOSTNAME=.*$|LIVE_HOSTNAME=\"${LIVE_HOSTNAME}\"|" \
 	-e "s|^LIVE_USERNAME=.*$|LIVE_USERNAME=\"${LIVE_USERNAME}\"|" \
 	-e "s|^LIVE_USER_FULLNAME=.*$|LIVE_USER_FULLNAME=\"${LIVE_USER_FULLNAME}\"|" \
 	-e "s|^PROC_OPTIONS=.*$|PROC_OPTIONS=\"${PROC_OPTIONS}\"|" \
-"$(dirname ${_DIRECTORY})/config.sh"
+"${_DIRECTORY}/bin/live-config"
