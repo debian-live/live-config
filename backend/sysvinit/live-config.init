@@ -24,9 +24,9 @@
 
 case "${1}" in
 	start)
-		if [ -e /sbin/live-config ]
+		if [ -e /bin/live-config ]
 		then
-			/sbin/live-config ${@}
+			/bin/live-config ${@}
 		fi
 		;;
 

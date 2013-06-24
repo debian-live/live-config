@@ -11,13 +11,13 @@ Description=live-config contains the components that configure a live system dur
 Documentation=man:live-config
 Before=basic.target
 DefaultDependencies=no
-ConditionPathExists=/sbin/live-config
+ConditionPathExists=/bin/live-config
 ConditionKernelCommandLine=boot=live
 
 [Service]
 Type=oneshot
 RemainAfterExit=yes
-ExecStart=/sbin/live-config
+ExecStart=/bin/live-config
 
 [Install]
 WantedBy=basic.target

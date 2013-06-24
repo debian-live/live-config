@@ -56,8 +56,8 @@ install:
 	cp backend/systemd/live-config.systemd $(DESTDIR)/lib/systemd/system/live-config.service
 
 	# Installing frontend
-	mkdir -p $(DESTDIR)/sbin
-	cp frontend/* $(DESTDIR)/sbin
+	mkdir -p $(DESTDIR)/bin
+	cp frontend/* $(DESTDIR)/bin
 
 	# Installing middleend
 	mkdir -p $(DESTDIR)/lib/live/config
