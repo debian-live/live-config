@@ -27,14 +27,18 @@ LIVE_HOSTNAME="debian"
 LIVE_USERNAME="user"
 LIVE_USER_FULLNAME="Debian Live user"
 LIVE_USER_DEFAULT_GROUPS="audio cdrom dip floppy video plugdev netdev powerdev scanner bluetooth debian-tor"
+export LIVE_HOSTNAME LIVE_USERNAME LIVE_USER_FULLNAME LIVE_USER_DEFAULT_GROUPS
 
 DEBIAN_FRONTEND="noninteractive"
 DEBIAN_PRIORITY="critical"
 DEBCONF_NOWARNINGS="yes"
+export DEBIAN_FRONTEND DEBIAN_PRIORITY DEBCONF_NOWARNINGS
 
-_SCRIPTS="$(ls /lib/live/config/*)"
 _IP_SEPARATOR="-"
 _PROC_OPTIONS="onodev,noexec,nosuid"
+export _IP_SEPARATOR _PROC_OPTIONS
+
+_SCRIPTS="$(ls /lib/live/config/*)"
 
 # Reading configuration files from filesystem and live-media
 for _FILE in /etc/live/config.conf /etc/live/config/* \
@@ -194,6 +198,7 @@ Main ()
 	fi
 
 	LIVE_CONFIG_CMDLINE="${LIVE_CONFIG_CMDLINE:-$(cat /proc/cmdline)}"
+	export LIVE_CONFIG_CMDLINE
 
 	if ! echo ${LIVE_CONFIG_CMDLINE} | grep -qs "boot=live"
 	then
