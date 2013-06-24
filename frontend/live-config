@@ -55,31 +55,32 @@ Cmdline ()
 	for _PARAMETER in ${LIVE_CONFIG_CMDLINE}
 	do
 		case "${_PARAMETER}" in
-			live-config=*|config=*)
+			# Components
+			live-config.components=*|components=*)
 				# Only run requested components
-				LIVE_CONFIGS="${_PARAMETER#*config=}"
-				LIVE_NOCONFIGS=""
+				LIVE_CONFIG_COMPONENTS="${_PARAMETER#*components=}"
+				LIVE_CONFIG_NOCOMPONENTS=""
 				_COMPONENTS=""
 				;;
 
-			live-config|config)
+			live-config.components|components)
 				# Run all components
-				LIVE_CONFIGS=""
-				LIVE_NOCONFIGS=""
+				LIVE_CONFIG_COMPONENTS=""
+				LIVE_CONFIG_NOCOMPONENTS=""
 				_COMPONENTS="$(ls /lib/live/config/*)"
 				;;
 
-			live-noconfig=*|noconfig=*)
+			live-config.nocomponents=*|nocomponents=*)
 				# Don't run requested components
-				LIVE_CONFIGS=""
-				LIVE_NOCONFIGS="${_PARAMETER#*noconfig=}"
+				LIVE_CONFIG_COMPONENTS=""
+				LIVE_CONFIG_NOCOMPONENTS="${_PARAMETER#*nocomponents=}"
 				_COMPONENTS="$(ls /lib/live/config/*)"
 				;;
 
-			live-noconfig|noconfig)
+			live-config.nocomponents|nocomponents)
 				# Don't run any component
-				LIVE_CONFIGS=""
-				LIVE_NOCONFIGS=""
+				LIVE_CONFIG_COMPONENTS=""
+				LIVE_CONFIG_NOCOMPONENTS=""
 				_COMPONENTS=""
 				;;
 
@@ -115,39 +116,39 @@ Cmdline ()
 	case "${LIVE_CONFIG_NOROOT}" in
 		true)
 			# Disable root access, no matter what mechanism
-			LIVE_NOCONFIGS="${LIVE_NOCONFIGS},sudo,policykit"
+			LIVE_CONFIG_NOCOMPONENTS="${LIVE_CONFIG_NOCOMPONENTS},sudo,policykit"
 			;;
 	esac
 
 	case "${LIVE_CONFIG_NOAUTOLOGIN}" in
 		true)
 			# Disables both console and graphical autologin.
-			LIVE_NOCONFIGS="${LIVE_NOCONFIGS},gdm,gdm3,lightdm,lxdm,nodm,slim,,xinit"
+			LIVE_CONFIG_NOCOMPONENTS="${LIVE_CONFIG_NOCOMPONENTS},gdm,gdm3,lightdm,lxdm,nodm,slim,,xinit"
 			;;
 	esac
 
 	case "${LIVE_CONFIG_NOX11AUTOLOGIN}" in
 		true)
 			# Disables graphical autologin, no matter what mechanism
-			LIVE_NOCONFIGS="${LIVE_NOCONFIGS},gdm,gdm3,lightdm,lxdm,nodm,slim,xinit"
+			LIVE_CONFIG_NOCOMPONENTS="${LIVE_CONFIG_NOCOMPONENTS},gdm,gdm3,lightdm,lxdm,nodm,slim,xinit"
 			;;
 	esac
 
 	# Include requested components
-	if [ -n "${LIVE_CONFIGS}" ]
+	if [ -n "${LIVE_CONFIG_COMPONENTS}" ]
 	then
-		for _CONFIG in $(echo ${LIVE_CONFIGS} | sed -e 's|,| |g')
+		for _COMPONENT in $(echo ${LIVE_CONFIG_COMPONENTS} | sed -e 's|,| |g')
 		do
-			_COMPONENTS="${_COMPONENTS} $(ls /lib/live/config/????-${_CONFIG} 2> /dev/null || true)"
+			_COMPONENTS="${_COMPONENTS} $(ls /lib/live/config/????-${_COMPONENT} 2> /dev/null || true)"
 		done
 	fi
 
 	# Exclude requested components
-	if [ -n "${LIVE_NOCONFIGS}" ]
+	if [ -n "${LIVE_CONFIG_NOCOMPONENTS}" ]
 	then
-		for _NOCONFIG in $(echo ${LIVE_NOCONFIGS} | sed -e 's|,| |g')
+		for _NOCOMPONENT in $(echo ${LIVE_CONFIG_NOCOMPONENTS} | sed -e 's|,| |g')
 		do
-			_COMPONENTS="$(echo ${_COMPONENTS} | sed -e "s|$(ls /lib/live/config/????-${_NOCONFIG} 2> /dev/null || echo none)||")"
+			_COMPONENTS="$(echo ${_COMPONENTS} | sed -e "s|$(ls /lib/live/config/????-${_NOCOMPONENT} 2> /dev/null || echo none)||")"
 		done
 	fi
 }
