@@ -12,7 +12,7 @@ SHELL := sh -e
 
 LANGUAGES = $(shell cd manpages/po && ls)
 
-SCRIPTS = backends/*/*.init bin/* scripts/*.sh scripts/*/*
+SCRIPTS = backend/*/*.init bin/* scripts/*.sh scripts/*/*
 
 all: build
 
@@ -48,12 +48,12 @@ build:
 	@echo "Nothing to build."
 
 install:
-	# Installing backends
+	# Installing backend
 	mkdir -p $(DESTDIR)/etc/init.d
-	cp backends/sysvinit/live-config.init $(DESTDIR)/etc/init.d/live-config
+	cp backend/sysvinit/live-config.init $(DESTDIR)/etc/init.d/live-config
 
 	mkdir -p $(DESTDIR)/lib/systemd/system
-	cp backends/systemd/live-config.systemd $(DESTDIR)/lib/systemd/system/live-config.service
+	cp backend/systemd/live-config.systemd $(DESTDIR)/lib/systemd/system/live-config.service
 
 	# Installing scripts
 	mkdir -p $(DESTDIR)/lib/live
@@ -87,7 +87,7 @@ install:
 	done
 
 uninstall:
-	# Uninstalling backends
+	# Uninstalling backend
 	rm -f $(DESTDIR)/etc/init.d/live
 	rm -f $(DESTDIR)/etc/init.d/live-config
 	rmdir --ignore-fail-on-non-empty $(DESTDIR)/etc/init.d > /dev/null 2>&1 || true
