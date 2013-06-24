@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config VERSION\n"
-"POT-Creation-Date: 2013-06-24 11:55+0300\n"
+"POT-Creation-Date: 2013-06-24 12:41+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -575,7 +575,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/live-config.7:117
-msgid "This varaible equals the bootloader command line."
+msgid "This varaible corresponds to the bootloader command line."
 msgstr ""
 
 #. type: IP
@@ -587,7 +587,7 @@ msgstr ""
 #. type: Plain text
 #: en/live-config.7:119
 msgid ""
-"This variable equals the 'B<live-config>=I<SCRIPT1>,I<SCRIPT2>, ... "
+"This variable corresponds to the 'B<live-config>=I<SCRIPT1>,I<SCRIPT2>, ... "
 "I<SCRIPTn>' parameter."
 msgstr ""
 
@@ -600,8 +600,8 @@ msgstr ""
 #. type: Plain text
 #: en/live-config.7:121
 msgid ""
-"This variable equals the 'B<live-noconfig>=I<SCRIPT1>,I<SCRIPT2>, ... "
-"I<SCRIPTn>' parameter."
+"This variable corresponds to the 'B<live-noconfig>=I<SCRIPT1>,"
+"I<SCRIPT2>, ... I<SCRIPTn>' parameter."
 msgstr ""
 
 #. type: IP
@@ -613,8 +613,8 @@ msgstr ""
 #. type: Plain text
 #: en/live-config.7:123
 msgid ""
-"This variable equals the 'B<live-config.debconf-preseed>=filesystem|medium|"
-"I<URL1>|I<URL2>| ... |I<URLn>' parameter."
+"This variable corresponds to the 'B<live-config.debconf-preseed>=filesystem|"
+"medium|I<URL1>|I<URL2>| ... |I<URLn>' parameter."
 msgstr ""
 
 #. type: IP
@@ -626,7 +626,8 @@ msgstr ""
 #. type: Plain text
 #: en/live-config.7:125
 msgid ""
-"This variable equals the 'B<live-config.hostname>=I<HOSTNAME>' parameter."
+"This variable corresponds to the 'B<live-config.hostname>=I<HOSTNAME>' "
+"parameter."
 msgstr ""
 
 #. type: IP
@@ -638,7 +639,8 @@ msgstr ""
 #. type: Plain text
 #: en/live-config.7:127
 msgid ""
-"This variable equals the 'B<live-config.username>=I<USERNAME>' parameter."
+"This variable corresponds to the 'B<live-config.username>=I<USERNAME>' "
+"parameter."
 msgstr ""
 
 #. type: IP
@@ -650,8 +652,8 @@ msgstr ""
 #. type: Plain text
 #: en/live-config.7:129
 msgid ""
-"This variable equals the 'B<live-config.user-default-groups>=\"I<GROUP1>,"
-"I<GROUP2> ... I<GROUPn>\"' parameter."
+"This variable corresponds to the 'B<live-config.user-default-groups>="
+"\"I<GROUP1>,I<GROUP2> ... I<GROUPn>\"' parameter."
 msgstr ""
 
 #. type: IP
@@ -663,8 +665,8 @@ msgstr ""
 #. type: Plain text
 #: en/live-config.7:131
 msgid ""
-"This variable equals the 'B<live-config.user-fullname>=\"I<USER FULLNAME>\"' "
-"parameter."
+"This variable corresponds to the 'B<live-config.user-fullname>=\"I<USER "
+"FULLNAME>\"' parameter."
 msgstr ""
 
 #. type: IP
@@ -676,8 +678,8 @@ msgstr ""
 #. type: Plain text
 #: en/live-config.7:133
 msgid ""
-"This variable equals the 'B<live-config.locales>=I<LOCALE1>,I<LOCALE2> ... "
-"I<LOCALEn>' parameter."
+"This variable corresponds to the 'B<live-config.locales>=I<LOCALE1>,"
+"I<LOCALE2> ... I<LOCALEn>' parameter."
 msgstr ""
 
 #. type: IP
@@ -689,7 +691,8 @@ msgstr ""
 #. type: Plain text
 #: en/live-config.7:135
 msgid ""
-"This variable equals the 'B<live-config.timezone>=I<TIMEZONE>' parameter."
+"This variable corresponds to the 'B<live-config.timezone>=I<TIMEZONE>' "
+"parameter."
 msgstr ""
 
 #. type: IP
@@ -701,8 +704,8 @@ msgstr ""
 #. type: Plain text
 #: en/live-config.7:137
 msgid ""
-"This variable equals the 'B<live-config.keyboard-model>=I<KEYBOARD_MODEL>' "
-"parameter."
+"This variable corresponds to the 'B<live-config.keyboard-"
+"model>=I<KEYBOARD_MODEL>' parameter."
 msgstr ""
 
 #. type: IP
@@ -714,7 +717,7 @@ msgstr ""
 #. type: Plain text
 #: en/live-config.7:139
 msgid ""
-"This variable equals the 'B<live-config.keyboard-"
+"This variable corresponds to the 'B<live-config.keyboard-"
 "layouts>=I<KEYBOARD_LAYOUT1>,I<KEYBOARD_LAYOUT2> ... I<KEYBOARD_LAYOUTn>' "
 "parameter."
 msgstr ""
@@ -728,7 +731,7 @@ msgstr ""
 #. type: Plain text
 #: en/live-config.7:141
 msgid ""
-"This variable equals the 'B<live-config.keyboard-"
+"This variable corresponds to the 'B<live-config.keyboard-"
 "variants>=I<KEYBOARD_VARIANT1>,I<KEYBOARD_VARIANT2> ... "
 "I<KEYBOARD_VARIANTn>' parameter."
 msgstr ""
@@ -742,7 +745,7 @@ msgstr ""
 #. type: Plain text
 #: en/live-config.7:143
 msgid ""
-"This variable equals the 'B<live-config.keyboard-"
+"This variable corresponds to the 'B<live-config.keyboard-"
 "options>=I<KEYBOARD_OPTIONS>' parameter."
 msgstr ""
 
@@ -755,8 +758,8 @@ msgstr ""
 #. type: Plain text
 #: en/live-config.7:145
 msgid ""
-"This variable equals the 'B<live-config.sysv-rc>=I<SERVICE1>,I<SERVICE2> ... "
-"I<SERVICEn>' parameter."
+"This variable corresponds to the 'B<live-config.sysv-rc>=I<SERVICE1>,"
+"I<SERVICE2> ... I<SERVICEn>' parameter."
 msgstr ""
 
 #. type: IP
@@ -767,7 +770,8 @@ msgstr ""
 
 #. type: Plain text
 #: en/live-config.7:147
-msgid "This variable equals the 'B<live-config.utc>=B<yes>|no' parameter."
+msgid ""
+"This variable corresponds to the 'B<live-config.utc>=B<yes>|no' parameter."
 msgstr ""
 
 #. type: IP
@@ -779,7 +783,7 @@ msgstr ""
 #. type: Plain text
 #: en/live-config.7:149
 msgid ""
-"This variable equals the 'B<live-config.x-session-"
+"This variable corresponds to the 'B<live-config.x-session-"
 "manager>=I<X_SESSION_MANAGER>' parameter."
 msgstr ""
 
@@ -792,7 +796,7 @@ msgstr ""
 #. type: Plain text
 #: en/live-config.7:151
 msgid ""
-"This variable equals the 'B<live-config.xorg-driver>=I<XORG_DRIVER>' "
+"This variable corresponds to the 'B<live-config.xorg-driver>=I<XORG_DRIVER>' "
 "parameter."
 msgstr ""
 
@@ -805,8 +809,8 @@ msgstr ""
 #. type: Plain text
 #: en/live-config.7:153
 msgid ""
-"This variable equals the 'B<live-config.xorg-resolution>=I<XORG_RESOLUTION>' "
-"parameter."
+"This variable corresponds to the 'B<live-config.xorg-"
+"resolution>=I<XORG_RESOLUTION>' parameter."
 msgstr ""
 
 #. type: IP
@@ -818,8 +822,8 @@ msgstr ""
 #. type: Plain text
 #: en/live-config.7:155
 msgid ""
-"This variable equals the 'B<live-config.hooks>=filesystem|medium|I<URL1>|"
-"I<URL2>| ... |I<URLn>' parameter."
+"This variable corresponds to the 'B<live-config.hooks>=filesystem|medium|"
+"I<URL1>|I<URL2>| ... |I<URLn>' parameter."
 msgstr ""
 
 #. type: SH

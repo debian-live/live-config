@@ -195,66 +195,68 @@ O conteúdo atual dos arquivos de configuração consiste em uma ou mais das
 seguintes variáveis.
 
 .IP "\fBLIVE_CONFIG_CMDLINE\fP=\fIPARAMETER1\fP \fIPARAMETER2\fP ... \fIPARAMETERn\fP" 4
-This varaible equals the bootloader command line.
+This varaible corresponds to the bootloader command line.
 .IP "\fBLIVE_CONFIGS\fP=\fISCRIPT1\fP,\fISCRIPT2\fP, ... \fISCRIPTn\fP" 4
-Esta variável é equivalente ao parâmetro
-\&'\fBlive\-config\fP=\fISCRIPT1\fP,\fISCRIPT2\fP, ... \fISCRIPTn\fP'.
+This variable corresponds to the '\fBlive\-config\fP=\fISCRIPT1\fP,\fISCRIPT2\fP,
+\&... \fISCRIPTn\fP' parameter.
 .IP "\fBLIVE_NOCONFIGS\fP=\fISCRIPT1\fP,\fISCRIPT2\fP, ... \fISCRIPTn\fP" 4
-Esta variável é equivalente ao parâmetro
-\&'\fBlive\-noconfig\fP=\fISCRIPT1\fP,\fISCRIPT2\fP, ... \fISCRIPTn\fP'.
+This variable corresponds to the '\fBlive\-noconfig\fP=\fISCRIPT1\fP,\fISCRIPT2\fP,
+\&... \fISCRIPTn\fP' parameter.
 .IP "\fBLIVE_DEBCONF_PRESEED\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
-Esta variável é equivalente ao parâmetro
+This variable corresponds to the
 \&'\fBlive\-config.debconf\-preseed\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP|
-\&... |\fIURLn\fP'.
+\&... |\fIURLn\fP' parameter.
 .IP \fBLIVE_HOSTNAME\fP=\fIHOSTNAME\fP 4
-Esta variável é equivalente ao parâmetro
-\&'\fBlive\-config.hostname\fP=\fIHOSTNAME\fP'.
+This variable corresponds to the '\fBlive\-config.hostname\fP=\fIHOSTNAME\fP'
+parameter.
 .IP \fBLIVE_USERNAME\fP=\fIUSERNAME\fP 4
-Esta variável é equivalente ao parâmetro
-\&'\fBlive\-config.username\fP=\fIUSERNAME\fP'.
+This variable corresponds to the '\fBlive\-config.username\fP=\fIUSERNAME\fP'
+parameter.
 .IP "\fBLIVE_USER_DEFAULT_GROUPS\fP=\fIGROUPO1\fP,\fIGROUPO2\fP ... \fIGROUPOn\fP" 4
-Esta variável é equivalente ao parâmetro
-\&'\fBlive\-config.user\-default\-groups\fP="\fIGROUPO1\fP,\fIGROUPO2\fP ... \fIGROUPOn\fP"'.
+This variable corresponds to the
+\&'\fBlive\-config.user\-default\-groups\fP="\fIGROUP1\fP,\fIGROUP2\fP ... \fIGROUPn\fP"'
+parameter.
 .IP \fBLIVE_USER_FULLNAME\fP=\(dq\fINOME_COMPLETO_DO_USUÁRIO\(dq\fP 4
-Esta variável é equivalente ao parâmetro
-\&'\fBlive\-config.user\-fullname\fP="\fINOME_COMPLETO_DO_USUÁRIO\fP"'.
+This variable corresponds to the '\fBlive\-config.user\-fullname\fP="\fIUSER
+FULLNAME\fP"' parameter.
 .IP "\fBLIVE_LOCALES\fP=\fILOCALE1\fP,\fILOCALE2\fP ... \fILOCALEn\fP" 4
-Esta variável é equivalente ao parâmetro
-\&'\fBlive\-config.locales\fP=\fILOCALE1\fP,\fILOCALE2\fP ... \fILOCALEn\fP'.
+This variable corresponds to the
+\&'\fBlive\-config.locales\fP=\fILOCALE1\fP,\fILOCALE2\fP ... \fILOCALEn\fP' parameter.
 .IP \fBLIVE_TIMEZONE\fP=\fITIMEZONE\fP 4
-Esta variável é equivalente ao parâmetro
-\&'\fBlive\-config.timezone\fP=\fITIMEZONE\fP'.
+This variable corresponds to the '\fBlive\-config.timezone\fP=\fITIMEZONE\fP'
+parameter.
 .IP \fBLIVE_KEYBOARD_MODEL\fP=\fIMODELO_DE_TECLADO\fP 4
-Esta variável é equivalente ao parâmetro
-\&'\fBlive\-config.keyboard\-model\fP=\fIMODELO_DE_TECLADO\fP'.
+This variable corresponds to the
+\&'\fBlive\-config.keyboard\-model\fP=\fIKEYBOARD_MODEL\fP' parameter.
 .IP "\fBLIVE_KEYBOARD_LAYOUTS\fP=\fILEIAUTE1_DE_TECLADO\fP,\fILEIAUTE2_DE_TECLADO\fP ... \fILEIAUTEn_DE_TECLADO\fP" 4
-Esta variável é equivalente ao parâmetro
-\&'\fBlive\-config.keyboard\-variants\fP=\fILEIAUTE1_DE_TECLADO\fP,\fILEIAUTE2_DE_TECLADO\fP
-\&... \fILEIAUTEn_DE_TECLADO\fP'.
+This variable corresponds to the
+\&'\fBlive\-config.keyboard\-layouts\fP=\fIKEYBOARD_LAYOUT1\fP,\fIKEYBOARD_LAYOUT2\fP
+\&... \fIKEYBOARD_LAYOUTn\fP' parameter.
 .IP "\fBLIVE_KEYBOARD_VARIANTS\fP=\fIVARIANTE1_DE_TECLADO\fP,\fIVARIANTE2_DE_TECLADO\fP ... \fIVARIANTEn_DE_TECLADO\fP" 4
-Esta variável é equivalente ao parâmetro
-\&'\fBlive\-config.keyboard\-variants\fP=\fIVARIANTE1_DE_TECLADO\fP,\fIVARIANTE2_DE_TECLADO\fP
-\&... \fIVARIANTEn_DE_TECLADO\fP'.
+This variable corresponds to the
+\&'\fBlive\-config.keyboard\-variants\fP=\fIKEYBOARD_VARIANT1\fP,\fIKEYBOARD_VARIANT2\fP
+\&... \fIKEYBOARD_VARIANTn\fP' parameter.
 .IP \fBLIVE_KEYBOARD_OPTIONS\fP=\fIOPÇÕES_DE_TECLADO\fP 4
-Esta variável é equivalente ao parâmetro
-\&'\fBlive\-config.keyboard\-options\fP=\fIOPÇÕES_DE_TECLADO\fP'.
+This variable corresponds to the
+\&'\fBlive\-config.keyboard\-options\fP=\fIKEYBOARD_OPTIONS\fP' parameter.
 .IP "\fBLIVE_SYSV_RC\fP=\fISERVIÇO1\fP,\fISERVIÇO2\fP ... \fISERVIÇOn\fP" 4
-Esta variável é equivalente ao parâmetro
-\&'\fBlive\-config.sysv\-rc\fP=\fISERVIÇO1\fP,\fISERVIÇO2\fP ... \fISERVIÇOn\fP'.
+This variable corresponds to the
+\&'\fBlive\-config.sysv\-rc\fP=\fISERVICE1\fP,\fISERVICE2\fP ... \fISERVICEn\fP' parameter.
 .IP \fBLIVE_UTC\fP=\fByes\fP|no 4
-Esta variável é equivalente ao parâmetro '\fBlive\-config.utc\fP=\fByes\fP|no'
+This variable corresponds to the '\fBlive\-config.utc\fP=\fByes\fP|no' parameter.
 .IP \fBLIVE_X_SESSION_MANAGER\fP=\fIGERENCIADOR_DE_SESSÕES_DO_X\fP 4
-Esta variável é equivalente ao parâmetro
-\&'\fBlive\-config.x\-session\-manager\fP=\fIGERENCIADOR_DE_SESSÕES_DO_X\fP'.
+This variable corresponds to the
+\&'\fBlive\-config.x\-session\-manager\fP=\fIX_SESSION_MANAGER\fP' parameter.
 .IP \fBLIVE_XORG_DRIVER\fP=\fIDRIVER_DO_XORG\fP 4
-Esta variável é equivalente ao parâmetro
-\&'\fBlive\-config.xorg\-driver\fP=\fIDRIVER_DO_XORG\fP'.
+This variable corresponds to the '\fBlive\-config.xorg\-driver\fP=\fIXORG_DRIVER\fP'
+parameter.
 .IP \fBLIVE_XORG_RESOLUTION\fP=\fIRESOLUÇÃO_DO_XORG\fP 4
-Esta variável é equivalente ao parâmetro
-\&'\fBlive\-config.xorg\-resolution\fP=\fIRESOLUÇÃO_DO_XORG\fP'.
+This variable corresponds to the
+\&'\fBlive\-config.xorg\-resolution\fP=\fIXORG_RESOLUTION\fP' parameter.
 .IP "\fBLIVE_HOOKS\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
-Esta variável é equivalente ao parâmetro
-\&'\fBlive\-config.hooks\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP'.
+This variable corresponds to the
+\&'\fBlive\-config.hooks\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP'
+parameter.
 
 .SH CUSTOMIZAÇÃO
 \fBlive\-config\fP pode ser facilmente customizado para projetos derivados ou

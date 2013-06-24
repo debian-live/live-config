@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config 4.0~a22-1\n"
-"POT-Creation-Date: 2013-06-24 11:55+0300\n"
+"POT-Creation-Date: 2013-06-24 12:41+0300\n"
 "PO-Revision-Date: 2013-04-13 20:23+0100\n"
 "Last-Translator: Carlos Zuferri <chals@altorricon.com>\n"
 "Language-Team: none\n"
@@ -717,7 +717,7 @@ msgstr "B<LIVE_CONFIG_CMDLINE>=I<PARAMETER1> I<PARAMETER2> ... I<PARAMETERn>"
 
 #. type: Plain text
 #: en/live-config.7:117
-msgid "This varaible equals the bootloader command line."
+msgid "This varaible corresponds to the bootloader command line."
 msgstr ""
 
 #. type: IP
@@ -728,8 +728,12 @@ msgstr "B<LIVE_CONFIGS>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn>"
 
 #. type: Plain text
 #: en/live-config.7:119
+#, fuzzy
+#| msgid ""
+#| "This variable equals the 'B<live-config>=I<SCRIPT1>,I<SCRIPT2>, ... "
+#| "I<SCRIPTn>' parameter."
 msgid ""
-"This variable equals the 'B<live-config>=I<SCRIPT1>,I<SCRIPT2>, ... "
+"This variable corresponds to the 'B<live-config>=I<SCRIPT1>,I<SCRIPT2>, ... "
 "I<SCRIPTn>' parameter."
 msgstr ""
 "Esta variável é equivalente ao parâmetro 'B<live-config>=I<SCRIPT1>,"
@@ -743,9 +747,13 @@ msgstr "B<LIVE_NOCONFIGS>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn>"
 
 #. type: Plain text
 #: en/live-config.7:121
+#, fuzzy
+#| msgid ""
+#| "This variable equals the 'B<live-noconfig>=I<SCRIPT1>,I<SCRIPT2>, ... "
+#| "I<SCRIPTn>' parameter."
 msgid ""
-"This variable equals the 'B<live-noconfig>=I<SCRIPT1>,I<SCRIPT2>, ... "
-"I<SCRIPTn>' parameter."
+"This variable corresponds to the 'B<live-noconfig>=I<SCRIPT1>,"
+"I<SCRIPT2>, ... I<SCRIPTn>' parameter."
 msgstr ""
 "Esta variável é equivalente ao parâmetro 'B<live-noconfig>=I<SCRIPT1>,"
 "I<SCRIPT2>, ... I<SCRIPTn>'."
@@ -758,9 +766,13 @@ msgstr "B<LIVE_DEBCONF_PRESEED>=filesystem|medium|I<URL1>|I<URL2>| ... |I<URLn>"
 
 #. type: Plain text
 #: en/live-config.7:123
+#, fuzzy
+#| msgid ""
+#| "This variable equals the 'B<live-config.debconf-preseed>=filesystem|"
+#| "medium|I<URL1>|I<URL2>| ... |I<URLn>' parameter."
 msgid ""
-"This variable equals the 'B<live-config.debconf-preseed>=filesystem|medium|"
-"I<URL1>|I<URL2>| ... |I<URLn>' parameter."
+"This variable corresponds to the 'B<live-config.debconf-preseed>=filesystem|"
+"medium|I<URL1>|I<URL2>| ... |I<URLn>' parameter."
 msgstr ""
 "Esta variável é equivalente ao parâmetro 'B<live-config.debconf-"
 "preseed>=filesystem|medium|I<URL1>|I<URL2>| ... |I<URLn>'."
@@ -773,8 +785,12 @@ msgstr "B<LIVE_HOSTNAME>=I<HOSTNAME>"
 
 #. type: Plain text
 #: en/live-config.7:125
+#, fuzzy
+#| msgid ""
+#| "This variable equals the 'B<live-config.hostname>=I<HOSTNAME>' parameter."
 msgid ""
-"This variable equals the 'B<live-config.hostname>=I<HOSTNAME>' parameter."
+"This variable corresponds to the 'B<live-config.hostname>=I<HOSTNAME>' "
+"parameter."
 msgstr ""
 "Esta variável é equivalente ao parâmetro 'B<live-config."
 "hostname>=I<HOSTNAME>'."
@@ -787,8 +803,12 @@ msgstr "B<LIVE_USERNAME>=I<USERNAME>"
 
 #. type: Plain text
 #: en/live-config.7:127
+#, fuzzy
+#| msgid ""
+#| "This variable equals the 'B<live-config.username>=I<USERNAME>' parameter."
 msgid ""
-"This variable equals the 'B<live-config.username>=I<USERNAME>' parameter."
+"This variable corresponds to the 'B<live-config.username>=I<USERNAME>' "
+"parameter."
 msgstr ""
 "Esta variável é equivalente ao parâmetro 'B<live-config."
 "username>=I<USERNAME>'."
@@ -801,9 +821,13 @@ msgstr "B<LIVE_USER_DEFAULT_GROUPS>=I<GROUPO1>,I<GROUPO2> ... I<GROUPOn>"
 
 #. type: Plain text
 #: en/live-config.7:129
+#, fuzzy
+#| msgid ""
+#| "This variable equals the 'B<live-config.user-default-groups>=\"I<GROUP1>,"
+#| "I<GROUP2> ... I<GROUPn>\"' parameter."
 msgid ""
-"This variable equals the 'B<live-config.user-default-groups>=\"I<GROUP1>,"
-"I<GROUP2> ... I<GROUPn>\"' parameter."
+"This variable corresponds to the 'B<live-config.user-default-groups>="
+"\"I<GROUP1>,I<GROUP2> ... I<GROUPn>\"' parameter."
 msgstr ""
 "Esta variável é equivalente ao parâmetro 'B<live-config.user-default-groups>="
 "\"I<GROUPO1>,I<GROUPO2> ... I<GROUPOn>\"'."
@@ -816,9 +840,13 @@ msgstr "B<LIVE_USER_FULLNAME>=\"I<NOME_COMPLETO_DO_USUÁRIO\">"
 
 #. type: Plain text
 #: en/live-config.7:131
+#, fuzzy
+#| msgid ""
+#| "This variable equals the 'B<live-config.user-fullname>=\"I<USER FULLNAME>"
+#| "\"' parameter."
 msgid ""
-"This variable equals the 'B<live-config.user-fullname>=\"I<USER FULLNAME>\"' "
-"parameter."
+"This variable corresponds to the 'B<live-config.user-fullname>=\"I<USER "
+"FULLNAME>\"' parameter."
 msgstr ""
 "Esta variável é equivalente ao parâmetro 'B<live-config.user-fullname>="
 "\"I<NOME_COMPLETO_DO_USUÁRIO>\"'."
@@ -831,9 +859,13 @@ msgstr "B<LIVE_LOCALES>=I<LOCALE1>,I<LOCALE2> ... I<LOCALEn>"
 
 #. type: Plain text
 #: en/live-config.7:133
+#, fuzzy
+#| msgid ""
+#| "This variable equals the 'B<live-config.locales>=I<LOCALE1>,"
+#| "I<LOCALE2> ... I<LOCALEn>' parameter."
 msgid ""
-"This variable equals the 'B<live-config.locales>=I<LOCALE1>,I<LOCALE2> ... "
-"I<LOCALEn>' parameter."
+"This variable corresponds to the 'B<live-config.locales>=I<LOCALE1>,"
+"I<LOCALE2> ... I<LOCALEn>' parameter."
 msgstr ""
 "Esta variável é equivalente ao parâmetro 'B<live-config.locales>=I<LOCALE1>,"
 "I<LOCALE2> ... I<LOCALEn>'."
@@ -846,8 +878,12 @@ msgstr "B<LIVE_TIMEZONE>=I<TIMEZONE>"
 
 #. type: Plain text
 #: en/live-config.7:135
+#, fuzzy
+#| msgid ""
+#| "This variable equals the 'B<live-config.timezone>=I<TIMEZONE>' parameter."
 msgid ""
-"This variable equals the 'B<live-config.timezone>=I<TIMEZONE>' parameter."
+"This variable corresponds to the 'B<live-config.timezone>=I<TIMEZONE>' "
+"parameter."
 msgstr ""
 "Esta variável é equivalente ao parâmetro 'B<live-config."
 "timezone>=I<TIMEZONE>'."
@@ -860,9 +896,13 @@ msgstr "B<LIVE_KEYBOARD_MODEL>=I<MODELO_DE_TECLADO>"
 
 #. type: Plain text
 #: en/live-config.7:137
+#, fuzzy
+#| msgid ""
+#| "This variable equals the 'B<live-config.keyboard-"
+#| "model>=I<KEYBOARD_MODEL>' parameter."
 msgid ""
-"This variable equals the 'B<live-config.keyboard-model>=I<KEYBOARD_MODEL>' "
-"parameter."
+"This variable corresponds to the 'B<live-config.keyboard-"
+"model>=I<KEYBOARD_MODEL>' parameter."
 msgstr ""
 "Esta variável é equivalente ao parâmetro 'B<live-config.keyboard-"
 "model>=I<MODELO_DE_TECLADO>'."
@@ -875,8 +915,13 @@ msgstr "B<LIVE_KEYBOARD_LAYOUTS>=I<LEIAUTE1_DE_TECLADO>,I<LEIAUTE2_DE_TECLADO> .
 
 #. type: Plain text
 #: en/live-config.7:139
+#, fuzzy
+#| msgid ""
+#| "This variable equals the 'B<live-config.keyboard-"
+#| "layouts>=I<KEYBOARD_LAYOUT1>,I<KEYBOARD_LAYOUT2> ... I<KEYBOARD_LAYOUTn>' "
+#| "parameter."
 msgid ""
-"This variable equals the 'B<live-config.keyboard-"
+"This variable corresponds to the 'B<live-config.keyboard-"
 "layouts>=I<KEYBOARD_LAYOUT1>,I<KEYBOARD_LAYOUT2> ... I<KEYBOARD_LAYOUTn>' "
 "parameter."
 msgstr ""
@@ -892,8 +937,13 @@ msgstr "B<LIVE_KEYBOARD_VARIANTS>=I<VARIANTE1_DE_TECLADO>,I<VARIANTE2_DE_TECLADO
 
 #. type: Plain text
 #: en/live-config.7:141
+#, fuzzy
+#| msgid ""
+#| "This variable equals the 'B<live-config.keyboard-"
+#| "variants>=I<KEYBOARD_VARIANT1>,I<KEYBOARD_VARIANT2> ... "
+#| "I<KEYBOARD_VARIANTn>' parameter."
 msgid ""
-"This variable equals the 'B<live-config.keyboard-"
+"This variable corresponds to the 'B<live-config.keyboard-"
 "variants>=I<KEYBOARD_VARIANT1>,I<KEYBOARD_VARIANT2> ... "
 "I<KEYBOARD_VARIANTn>' parameter."
 msgstr ""
@@ -909,8 +959,12 @@ msgstr "B<LIVE_KEYBOARD_OPTIONS>=I<OPÇÕES_DE_TECLADO>"
 
 #. type: Plain text
 #: en/live-config.7:143
+#, fuzzy
+#| msgid ""
+#| "This variable equals the 'B<live-config.keyboard-"
+#| "options>=I<KEYBOARD_OPTIONS>' parameter."
 msgid ""
-"This variable equals the 'B<live-config.keyboard-"
+"This variable corresponds to the 'B<live-config.keyboard-"
 "options>=I<KEYBOARD_OPTIONS>' parameter."
 msgstr ""
 "Esta variável é equivalente ao parâmetro 'B<live-config.keyboard-"
@@ -924,9 +978,13 @@ msgstr "B<LIVE_SYSV_RC>=I<SERVIÇO1>,I<SERVIÇO2> ... I<SERVIÇOn>"
 
 #. type: Plain text
 #: en/live-config.7:145
+#, fuzzy
+#| msgid ""
+#| "This variable equals the 'B<live-config.sysv-rc>=I<SERVICE1>,"
+#| "I<SERVICE2> ... I<SERVICEn>' parameter."
 msgid ""
-"This variable equals the 'B<live-config.sysv-rc>=I<SERVICE1>,I<SERVICE2> ... "
-"I<SERVICEn>' parameter."
+"This variable corresponds to the 'B<live-config.sysv-rc>=I<SERVICE1>,"
+"I<SERVICE2> ... I<SERVICEn>' parameter."
 msgstr ""
 "Esta variável é equivalente ao parâmetro 'B<live-config.sysv-rc>=I<SERVIÇO1>,"
 "I<SERVIÇO2> ... I<SERVIÇOn>'."
@@ -939,7 +997,10 @@ msgstr "B<LIVE_UTC>=B<yes>|no"
 
 #. type: Plain text
 #: en/live-config.7:147
-msgid "This variable equals the 'B<live-config.utc>=B<yes>|no' parameter."
+#, fuzzy
+#| msgid "This variable equals the 'B<live-config.utc>=B<yes>|no' parameter."
+msgid ""
+"This variable corresponds to the 'B<live-config.utc>=B<yes>|no' parameter."
 msgstr ""
 "Esta variável é equivalente ao parâmetro 'B<live-config.utc>=B<yes>|no'"
 
@@ -951,8 +1012,12 @@ msgstr "B<LIVE_X_SESSION_MANAGER>=I<GERENCIADOR_DE_SESSÕES_DO_X>"
 
 #. type: Plain text
 #: en/live-config.7:149
+#, fuzzy
+#| msgid ""
+#| "This variable equals the 'B<live-config.x-session-"
+#| "manager>=I<X_SESSION_MANAGER>' parameter."
 msgid ""
-"This variable equals the 'B<live-config.x-session-"
+"This variable corresponds to the 'B<live-config.x-session-"
 "manager>=I<X_SESSION_MANAGER>' parameter."
 msgstr ""
 "Esta variável é equivalente ao parâmetro 'B<live-config.x-session-"
@@ -966,8 +1031,12 @@ msgstr "B<LIVE_XORG_DRIVER>=I<DRIVER_DO_XORG>"
 
 #. type: Plain text
 #: en/live-config.7:151
+#, fuzzy
+#| msgid ""
+#| "This variable equals the 'B<live-config.xorg-driver>=I<XORG_DRIVER>' "
+#| "parameter."
 msgid ""
-"This variable equals the 'B<live-config.xorg-driver>=I<XORG_DRIVER>' "
+"This variable corresponds to the 'B<live-config.xorg-driver>=I<XORG_DRIVER>' "
 "parameter."
 msgstr ""
 "Esta variável é equivalente ao parâmetro 'B<live-config.xorg-"
@@ -981,9 +1050,13 @@ msgstr "B<LIVE_XORG_RESOLUTION>=I<RESOLUÇÃO_DO_XORG>"
 
 #. type: Plain text
 #: en/live-config.7:153
+#, fuzzy
+#| msgid ""
+#| "This variable equals the 'B<live-config.xorg-"
+#| "resolution>=I<XORG_RESOLUTION>' parameter."
 msgid ""
-"This variable equals the 'B<live-config.xorg-resolution>=I<XORG_RESOLUTION>' "
-"parameter."
+"This variable corresponds to the 'B<live-config.xorg-"
+"resolution>=I<XORG_RESOLUTION>' parameter."
 msgstr ""
 "Esta variável é equivalente ao parâmetro 'B<live-config.xorg-"
 "resolution>=I<RESOLUÇÃO_DO_XORG>'."
@@ -996,9 +1069,13 @@ msgstr "B<LIVE_HOOKS>=filesystem|medium|I<URL1>|I<URL2>| ... |I<URLn>"
 
 #. type: Plain text
 #: en/live-config.7:155
+#, fuzzy
+#| msgid ""
+#| "This variable equals the 'B<live-config.hooks>=filesystem|medium|I<URL1>|"
+#| "I<URL2>| ... |I<URLn>' parameter."
 msgid ""
-"This variable equals the 'B<live-config.hooks>=filesystem|medium|I<URL1>|"
-"I<URL2>| ... |I<URLn>' parameter."
+"This variable corresponds to the 'B<live-config.hooks>=filesystem|medium|"
+"I<URL1>|I<URL2>| ... |I<URLn>' parameter."
 msgstr ""
 "Esta variável é equivalente ao parâmetro 'B<live-config.hooks>=filesystem|"
 "medium|I<URL1>|I<URL2>| ... |I<URLn>'."
