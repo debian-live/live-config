@@ -190,11 +190,12 @@ configuré via un ou plusieurs fichiers. Si des fichiers de configuration
 sont utilisés, le paramètre 'boot=live' est toujours requis pour activer
 \fBlive\-config\fP.
 .PP
-\fBNote:\fP If configuration files are used, either (preferably) all boot
-parameters should be put into the \fBLIVE_CONFIG_CMDLINE\fP variable, or
-individual variables can be set. If individual variables are used, the user
-is required to ensure that all the necessary variables are set to create a
-valid configuration.
+\fBRemarque:\fP Si vous utilisez des fichiers de configuration, tous les
+paramètres d'amorçage devraient (de préférence) être mis dans la variable
+\fBLIVE_CONFIG_CMDLINE\fP ou des variables individuelles peuvent être
+réglées. Si des variables individuelles sont utilisées, l'utilisateur doit
+s'assurer que toutes les variables nécessaires sont réglées pour créer une
+configuration correcte.
 .PP
 Les fichiers de configuration peuvent être placés soit dans la racine du
 système de fichiers (/etc/live/config.conf, /etc/live/config/*), soit sur le
@@ -213,70 +214,69 @@ Le contenu réel des fichiers de configuration se compose d'une ou plusieurs
 des variables suivantes.
 
 .IP "\fBLIVE_CONFIG_CMDLINE\fP=\fIPARAMETER1\fP \fIPARAMETER2\fP ... \fIPARAMETERn\fP" 4
-This variable corresponds to the bootloader command line.
+Cette variable correspond à la ligne de commande du chargeur d'amorçage.
 .IP "\fBLIVE_CONFIGS\fP=\fISCRIPT1\fP,\fISCRIPT2\fP, ... \fISCRIPTn\fP" 4
-This variable corresponds to the '\fBlive\-config\fP=\fISCRIPT1\fP,\fISCRIPT2\fP,
-\&... \fISCRIPTn\fP' parameter.
+Cette variable correspond au paramètre
+\&'\fBlive\-config\fP=\fISCRIPT1\fP,\fISCRIPT2\fP, ... \fISCRIPTn\fP'.
 .IP "\fBLIVE_NOCONFIGS\fP=\fISCRIPT1\fP,\fISCRIPT2\fP, ... \fISCRIPTn\fP" 4
-This variable corresponds to the '\fBlive\-noconfig\fP=\fISCRIPT1\fP,\fISCRIPT2\fP,
-\&... \fISCRIPTn\fP' parameter.
+Cette variable correspond au paramètre
+\&'\fBlive\-noconfig\fP=\fISCRIPT1\fP,\fISCRIPT2\fP, ... \fISCRIPTn\fP'.
 .IP "\fBLIVE_DEBCONF_PRESEED\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
-This variable corresponds to the
+Cette variable correspond au paramètre
 \&'\fBlive\-config.debconf\-preseed\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP|
-\&... |\fIURLn\fP' parameter.
+\&... |\fIURLn\fP'.
 .IP \fBLIVE_HOSTNAME\fP=\fINOM_D_HÔTE\fP 4
-This variable corresponds to the '\fBlive\-config.hostname\fP=\fIHOSTNAME\fP'
-parameter.
+Cette variable correspond au paramètre
+\&'\fBlive\-config.hostname\fP=\fINOM_D_HÔTE\fP'.
 .IP \fBLIVE_USERNAME\fP=\fINOM_D_UTILISATEUR\fP 4
-This variable corresponds to the '\fBlive\-config.username\fP=\fIUSERNAME\fP'
-parameter.
+Cette variable correspond au paramètre
+\&'\fBlive\-config.username\fP=\fINOM_D_UTILISATEUR\fP'.
 .IP "\fBLIVE_USER_DEFAULT_GROUPS\fP=\fIGROUP1\fP,\fIGROUP2\fP ... \fIGROUPn\fP" 4
-This variable corresponds to the
+Cette variable correspond au paramètre
 \&'\fBlive\-config.user\-default\-groups\fP="\fIGROUP1\fP,\fIGROUP2\fP ... \fIGROUPn\fP"'
-parameter.
 .IP \fBLIVE_USER_FULLNAME\fP=\(dq\fINOM_COMPLET_D_UTILISATEUR\(dq\fP 4
-This variable corresponds to the '\fBlive\-config.user\-fullname\fP="\fIUSER
-FULLNAME\fP"' parameter.
+Cette variable correspond au paramètre
+\&'\fBlive\-config.user\-fullname\fP="\fINOM_COMPLET_D_UTILISATEUR"\fP'.
 .IP "\fBLIVE_LOCALES\fP=\fILOCALISATION1\fP,\fILOCALISATION2\fP ... \fILOCALISATIONn\fP" 4
-This variable corresponds to the
-\&'\fBlive\-config.locales\fP=\fILOCALE1\fP,\fILOCALE2\fP ... \fILOCALEn\fP' parameter.
+Cette variable correspond au paramètre
+\&'\fBlive\-config.locales\fP=\fILOCALISATION1\fP,\fILOCALISATION2\fP
+\&... \fILOCALISATIONn\fP'.
 .IP \fBLIVE_TIMEZONE\fP=\fITIMEZONE\fP 4
-This variable corresponds to the '\fBlive\-config.timezone\fP=\fITIMEZONE\fP'
-parameter.
+Cette variable correspond au paramètre
+\&'\fBlive\-config.timezone\fP=\fITIMEZONE\fP'.
 .IP \fBLIVE_KEYBOARD_MODEL\fP=\fIMODELE_DE_CLAVIER\fP 4
-This variable corresponds to the
-\&'\fBlive\-config.keyboard\-model\fP=\fIKEYBOARD_MODEL\fP' parameter.
+Cette variable correspond au paramètre
+\&'\fBlive\-config.keyboard\-model\fP=\fIMODELE_DE_CLAVIER\fP'.
 .IP "\fBLIVE_KEYBOARD_LAYOUTS\fP=\fICONFIGURATION1_DU_CLAVIER\fP,\fICONFIGURATION2_DU_CLAVIER\fP ... \fICONFIGURATIONn_DU_CLAVIER\fP" 4
-This variable corresponds to the
-\&'\fBlive\-config.keyboard\-layouts\fP=\fIKEYBOARD_LAYOUT1\fP,\fIKEYBOARD_LAYOUT2\fP
-\&... \fIKEYBOARD_LAYOUTn\fP' parameter.
+Cette variable correspond au paramètre
+\&'\fBlive\-config.keyboard\-layouts\fP=\fICONFIGURATION1_DU_CLAVIER\fP,\fICONFIGURATION2_DU_CLAVIER\fP
+\&... \fICONFIGURATIONn_DU_CLAVIER\fP'.
 .IP "\fBLIVE_KEYBOARD_VARIANTS\fP=\fIKEYBOARD_VARIANT1\fP,\fIKEYBOARD_VARIANT2\fP ... \fIKEYBOARD_VARIANTn\fP" 4
-This variable corresponds to the
-\&'\fBlive\-config.keyboard\-variants\fP=\fIKEYBOARD_VARIANT1\fP,\fIKEYBOARD_VARIANT2\fP
-\&... \fIKEYBOARD_VARIANTn\fP' parameter.
+Cette variable correspond au paramètre
+\&'\fBlive\-config.keyboard\-variants\fP=\fICONFIGURATION1_DU_CLAVIER\fP,\fICONFIGURATION2_DU_CLAVIER\fP
+\&... \fICONFIGURATIONn_DU_CLAVIER\fP'.
 .IP \fBLIVE_KEYBOARD_OPTIONS\fP=\fIOPTIONS_DU_CLAVIER\fP 4
-This variable corresponds to the
-\&'\fBlive\-config.keyboard\-options\fP=\fIKEYBOARD_OPTIONS\fP' parameter.
+Cette variable correspond au paramètre
+\&'\fBlive\-config.keyboard\-options\fP=\fIOPTIONS_DU_CLAVIER\fP'.
 .IP "\fBLIVE_SYSV_RC\fP=\fISERVICE1\fP,\fISERVICE2\fP ... \fISERVICEn\fP" 4
-This variable corresponds to the
-\&'\fBlive\-config.sysv\-rc\fP=\fISERVICE1\fP,\fISERVICE2\fP ... \fISERVICEn\fP' parameter.
+Cette variable correspond au paramètre
+\&'\fBlive\-config.sysv\-rc\fP=\fISERVICE1\fP,\fISERVICE2\fP ... \fISERVICEn\fP'.
 .IP \fBLIVE_UTC\fP=\fByes\fP|no 4
-This variable corresponds to the '\fBlive\-config.utc\fP=\fByes\fP|no' parameter.
+Cette variable correspond au paramètre '\fBlive\-config.utc\fP=\fByes\fP|no'.
 .IP \fBLIVE_X_SESSION_MANAGER\fP=\fIX_SESSION_MANAGER\fP 4
-This variable corresponds to the
-\&'\fBlive\-config.x\-session\-manager\fP=\fIX_SESSION_MANAGER\fP' parameter.
+Cette variable correspond au paramètre
+\&'\fBlive\-config.x\-session\-manager\fP=\fIX_SESSION_MANAGER\fP'.
 .IP \fBLIVE_XORG_DRIVER\fP=\fIDRIVER_PAR_XORG\fP 4
-This variable corresponds to the '\fBlive\-config.xorg\-driver\fP=\fIXORG_DRIVER\fP'
-parameter.
+Cette variable correspond au paramètre
+\&'\fBlive\-config.xorg\-driver\fP=\fIDRIVER_PAR_XORG\fP.
 .IP \fBLIVE_XORG_RESOLUTION\fP=\fIRESOLUTION_PAR_XORG\fP 4
-This variable corresponds to the
-\&'\fBlive\-config.xorg\-resolution\fP=\fIXORG_RESOLUTION\fP' parameter.
+Cette variable correspond au paramètre
+\&'\fBlive\-config.xorg\-resolution\fP=\fIRESOLUTION_PAR_XORG\fP'.
 .IP "\fBLIVE_HOOKS\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
-This variable corresponds to the
-\&'\fBlive\-config.hooks\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP'
-parameter.
+Cette variable correspond au paramètre
+\&'\fBlive\-config.hooks\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP'.
 .IP \fBLIVE_CONFIG_DEBUG\fP= true|false\(dq
-This variable corresponds to the '\fBlive\-config.debug\fP' parameter.
+Cette variable correspond au paramètre '\fBlive\-config.debug\fP'.
 
 .SH CUSTOMISATION
 \fBlive\-config\fP peut être facilement personnalisé pour des projets dérivés,
