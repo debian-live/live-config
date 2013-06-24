@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config 4.0~a23-1\n"
-"POT-Creation-Date: 2013-06-24 13:47+0300\n"
+"POT-Creation-Date: 2013-06-24 13:56+0300\n"
 "PO-Revision-Date: 2013-05-11 19:48+0100\n"
 "Last-Translator: Carlos Zuferri <chals@altorricon.com>\n"
 "Language-Team: none\n"
@@ -709,8 +709,10 @@ msgstr "B<LIVE_CONFIG_CMDLINE>=I<PARAMETER1> I<PARAMETER2> ... I<PARAMETERn>"
 
 #. type: Plain text
 #: en/live-config.7:119
-msgid "This varaible corresponds to the bootloader command line."
-msgstr ""
+#, fuzzy
+#| msgid "This variable equals the 'B<live-config.utc>=B<yes>|no' parameter."
+msgid "This variable corresponds to the bootloader command line."
+msgstr "Cette variable correspond au paramètre 'B<live-config.utc>=B<yes>|no'."
 
 #. type: IP
 #: en/live-config.7:119

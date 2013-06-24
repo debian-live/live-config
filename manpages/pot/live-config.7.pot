@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config VERSION\n"
-"POT-Creation-Date: 2013-06-24 13:47+0300\n"
+"POT-Creation-Date: 2013-06-24 13:56+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -585,7 +585,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/live-config.7:119
-msgid "This varaible corresponds to the bootloader command line."
+msgid "This variable corresponds to the bootloader command line."
 msgstr ""
 
 #. type: IP
