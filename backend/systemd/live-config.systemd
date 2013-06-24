@@ -1,13 +1,13 @@
-## live-config - System Configuration Scripts
+## live-config - System Configuration Components
 ##
-## live-config contains the scripts that configure a live system during
+## live-config contains the components that configure a live system during
 ## the boot process (late userspace).
 ##
 ## This is the systemd service for live-config.
 
 
 [Unit]
-Description=live-config contains the scripts that configure a live system during the boot process (late userspace).
+Description=live-config contains the components that configure a live system during the boot process (late userspace).
 Documentation=man:live-config
 Before=basic.target
 DefaultDependencies=no

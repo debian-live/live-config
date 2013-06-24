@@ -1,6 +1,6 @@
 #!/bin/sh
 
-## live-config(7) - System Configuration Scripts
+## live-config(7) - System Configuration Components
 ## Copyright (C) 2006-2013 Daniel Baumann <mail@daniel-baumann.ch>
 ##
 ## This program comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
@@ -33,7 +33,7 @@ fi
 
 case "${_DISTRIBUTION}" in
 	debian)
-		NOSCRIPTS="apport ureadahead"
+		NOCOMPONENT="apport ureadahead"
 
 		LIVE_HOSTNAME="debian"
 		LIVE_USERNAME="user"
@@ -44,7 +44,7 @@ case "${_DISTRIBUTION}" in
 		;;
 
 	progress-linux)
-		NOSCRIPTS="apport ureadahead"
+		NOCOMPONENT="apport ureadahead"
 
 		LIVE_HOSTNAME="progress-linux"
 		LIVE_USERNAME="user"
@@ -55,7 +55,7 @@ case "${_DISTRIBUTION}" in
 		;;
 
 	ubuntu)
-		NOSCRIPTS="gdm3"
+		NOCOMPONENT="gdm3"
 
 		LIVE_HOSTNAME="ubuntu"
 		LIVE_USERNAME="user"
@@ -66,13 +66,13 @@ case "${_DISTRIBUTION}" in
 		;;
 esac
 
-echo "Removing unused scripts for ${_DISTRIBUTION} (${_RELEASE})..."
+echo "Removing unused components for ${_DISTRIBUTION} (${_RELEASE})..."
 
-for NOSCRIPT in ${NOSCRIPTS}
+for NOCOMPONENT in ${NOCOMPONENT}
 do
-	if ls "${_DIRECTORY}"/*-"${NOSCRIPT}" > /dev/null 2>&1
+	if ls "${_DIRECTORY}"/*-"${NOCOMPONENT}" > /dev/null 2>&1
 	then
-		rm -f "${_DIRECTORY}"/*-"${NOSCRIPT}"
+		rm -f "${_DIRECTORY}"/*-"${NOCOMPONENT}"
 	fi
 done
 

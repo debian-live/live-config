@@ -1,6 +1,6 @@
 #!/bin/sh
 
-## live-config(7) - System Configuration Scripts
+## live-config(7) - System Configuration Components
 ## Copyright (C) 2006-2013 Daniel Baumann <mail@daniel-baumann.ch>
 ##
 ## This program comes with ABSOLUTELY NO WARRANTY; for details see COPYING.

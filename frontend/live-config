@@ -1,6 +1,6 @@
 #!/bin/sh
 
-## live-config(7) - System Configuration Scripts
+## live-config(7) - System Configuration Components
 ## Copyright (C) 2006-2013 Daniel Baumann <mail@daniel-baumann.ch>
 ##
 ## This program is free software: you can redistribute it and/or modify
@@ -38,7 +38,7 @@ _IP_SEPARATOR="-"
 _PROC_OPTIONS="onodev,noexec,nosuid"
 export _IP_SEPARATOR _PROC_OPTIONS
 
-_SCRIPTS="$(ls /lib/live/config/*)"
+_COMPONENTS="$(ls /lib/live/config/*)"
 
 # Reading configuration files from filesystem and live-media
 for _FILE in /etc/live/config.conf /etc/live/config/* \
@@ -56,31 +56,31 @@ Cmdline ()
 	do
 		case "${_PARAMETER}" in
 			live-config=*|config=*)
-				# Only run requested scripts
+				# Only run requested components
 				LIVE_CONFIGS="${_PARAMETER#*config=}"
 				LIVE_NOCONFIGS=""
-				_SCRIPTS=""
+				_COMPONENTS=""
 				;;
 
 			live-config|config)
-				# Run all scripts
+				# Run all components
 				LIVE_CONFIGS=""
 				LIVE_NOCONFIGS=""
-				_SCRIPTS="$(ls /lib/live/config/*)"
+				_COMPONENTS="$(ls /lib/live/config/*)"
 				;;
 
 			live-noconfig=*|noconfig=*)
-				# Don't run requested scripts
+				# Don't run requested components
 				LIVE_CONFIGS=""
 				LIVE_NOCONFIGS="${_PARAMETER#*noconfig=}"
-				_SCRIPTS="$(ls /lib/live/config/*)"
+				_COMPONENTS="$(ls /lib/live/config/*)"
 				;;
 
 			live-noconfig|noconfig)
-				# Don't run any script
+				# Don't run any component
 				LIVE_CONFIGS=""
 				LIVE_NOCONFIGS=""
-				_SCRIPTS=""
+				_COMPONENTS=""
 				;;
 
 			# Shortcuts
@@ -111,7 +111,7 @@ Cmdline ()
 		esac
 	done
 
-	# Exclude shortcuts specific scripts
+	# Exclude shortcuts specific components
 	case "${LIVE_CONFIG_NOROOT}" in
 		true)
 			# Disable root access, no matter what mechanism
@@ -133,21 +133,21 @@ Cmdline ()
 			;;
 	esac
 
-	# Include requested scripts
+	# Include requested components
 	if [ -n "${LIVE_CONFIGS}" ]
 	then
 		for _CONFIG in $(echo ${LIVE_CONFIGS} | sed -e 's|,| |g')
 		do
-			_SCRIPTS="${_SCRIPTS} $(ls /lib/live/config/????-${_CONFIG} 2> /dev/null || true)"
+			_COMPONENTS="${_COMPONENTS} $(ls /lib/live/config/????-${_CONFIG} 2> /dev/null || true)"
 		done
 	fi
 
-	# Exclude requested scripts
+	# Exclude requested components
 	if [ -n "${LIVE_NOCONFIGS}" ]
 	then
 		for _NOCONFIG in $(echo ${LIVE_NOCONFIGS} | sed -e 's|,| |g')
 		do
-			_SCRIPTS="$(echo ${_SCRIPTS} | sed -e "s|$(ls /lib/live/config/????-${_NOCONFIG} 2> /dev/null || echo none)||")"
+			_COMPONENTS="$(echo ${_COMPONENTS} | sed -e "s|$(ls /lib/live/config/????-${_NOCONFIG} 2> /dev/null || echo none)||")"
 		done
 	fi
 }
@@ -227,13 +227,13 @@ Main ()
 	esac
 
 	# Configuring system
-	_SCRIPTS="$(echo ${_SCRIPTS} | sed -e 's| |\n|g' | sort -u)"
+	_COMPONENTS="$(echo ${_COMPONENTS} | sed -e 's| |\n|g' | sort -u)"
 
-	for _SCRIP in ${_SCRIPTS}
+	for _COMPONENT in ${_COMPONENTS}
 	do
-		[ "${LIVE_CONFIG_DEBUG}" = "true" ] && echo "[$(date +'%F %T')] live-config: ${_SCRIPT}" > /tmp/live-config.pipe
+		[ "${LIVE_CONFIG_DEBUG}" = "true" ] && echo "[$(date +'%F %T')] live-config: ${_COMPONENT}" > /tmp/live-config.pipe
 
-		${_SCRIPT} > /tmp/live-config.pipe 2>&1
+		${_COMPONENT} > /tmp/live-config.pipe 2>&1
 	done
 
 	echo "." > /tmp/live-config.pipe

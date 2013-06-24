@@ -19,9 +19,9 @@ Recommends:
  live-config-doc, live-tools, console-tools, iproute, keyboard-configuration,
  locales | locales-all, sudo
 Suggests: pciutils, wget
-Description: Live System Configuration Scripts
- live-config contains the scripts that configure a live system during the boot
- process (late userspace).
+Description: Live System Configuration Components
+ live-config contains the components that configure a live system during the
+ boot process (late userspace).
  .
  In addition to live-config, a backend for an init system is required, such as
  live-config-sysvinit.
@@ -30,9 +30,9 @@ Package: live-config-doc
 Section: doc
 Architecture: all
 Depends: ${misc:Depends}
-Description: Live System Configuration Scripts (documentation)
- live-config contains the scripts that configure a live system during the boot
- process (late userspace).
+Description: Live System Configuration Components (documentation)
+ live-config contains the components that configure a live system during the
+ boot process (late userspace).
  .
  This package contains the documentation.
 
@@ -42,9 +42,9 @@ Depends: ${misc:Depends}, systemd
 Conflicts: live-config-backend
 Replaces: live-config-backend
 Provides: live-config-backend
-Description: Live System Configuration Scripts (systemd backend)
- live-config contains the scripts that configure a live system during the boot
- process (late userspace).
+Description: Live System Configuration Components (systemd backend)
+ live-config contains the components that configure a live system during the
+ boot process (late userspace).
  .
  This package contains the systemd backend.
 
@@ -54,8 +54,8 @@ Depends: ${misc:Depends}, sysvinit (>= 2.86)
 Conflicts: live-config-backend
 Replaces: live-config-backend
 Provides: live-config-backend
-Description: Live System Configuration Scripts (sysvinit backend)
- live-config contains the scripts that configure a live system during the boot
- process (late userspace).
+Description: Live System Configuration Components (sysvinit backend)
+ live-config contains the components that configure a live system during the
+ boot process (late userspace).
  .
  This package contains the sysvinit backend.
