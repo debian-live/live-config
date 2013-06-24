@@ -25,7 +25,7 @@ To configure the live\-config parameters used by default in a live image, see th
 .IP "\fBlive\-config.components\fR | \fBcomponents\fR" 4
 All components are run. This is what live images use by default.
 .IP "\fBlive\-config.components\fR=\fICOMPONENT1\fR,\fICOMPONENT2\fR, ... \fICOMPONENTn\fR | \fBcomponents\fR=\fICOMPONENT1\fR,\fICOMPONENT2\fR, ... \fICOMPONENTn\fR" 4
-Only the specified components are run. Note that the order matters, e.g. 'live\-config.components=sudo,live\-debconfig_passwd' would not work since the user needs to be added before it can be configured for sudo. Look at the filenames of the components in /lib/live/config for their ordering number.
+Only the specified components are run. Note that the order matters, e.g. 'live\-config.components=sudo,user\-setup' would not work since the user needs to be added before it can be configured for sudo. Look at the filenames of the components in /lib/live/config for their ordering number.
 .IP "\fBlive\-config.nocomponents\fR | \fBnocomponents\fR" 4
 No component is run. This is the same as not using any of 'live\-config.components' or 'live\-config.nocomponents'.
 .IP "\fBlive\-config.nocomponents\fR=\fICOMPONENT1\fR,\fICOMPONENT2\fR, ... \fICOMPONENTn\fR | \fBnocomponents\fR=\fICOMPONENT1\fR,\fICOMPONENT2\fR, ... \fICOMPONENTn\fR" 4
@@ -177,7 +177,7 @@ The configuration files for the live system itself are best put into an own debi
 allows to apply arbitrary preseed files placed on the live media or an http/ftp server.
 .IP "\fBhostname\fR" 4
 configures /etc/hostname and /etc/hosts.
-.IP "\fBlive\-debconfig_passwd\fR" 4
+.IP "\fBuser\-setup\fR" 4
 adds a live user account.
 .IP "\fBsudo\fR" 4
 grants sudo privileges to the live user.

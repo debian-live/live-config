@@ -41,11 +41,10 @@ previous one(s).
 .IP "\fBlive\-config.components\fP | \fBcomponents\fP" 4
 All components are run. This is what live images use by default.
 .IP "\fBlive\-config.components\fP=\fICOMPONENT1\fP,\fICOMPONENT2\fP, ... \fICOMPONENTn\fP | \fBcomponents\fP=\fICOMPONENT1\fP,\fICOMPONENT2\fP, ... \fICOMPONENTn\fP" 4
-Only the specified components are run. Note that the order matters,
-e.g. 'live\-config.components=sudo,live\-debconfig_passwd' would not work
-since the user needs to be added before it can be configured for sudo. Look
-at the filenames of the components in /lib/live/config for their ordering
-number.
+Sólo se ejecutan los scripts especificados. Se debe tener en cuenta que el
+orden es importante. p.ej. «live\-config=sudo,user\-setup» no funcionaría ya
+que el usuario debe añadirse antes de configurarse como «sudo». Puede
+revisarse los nombres de los scripts en /lib/live/config para ver su orden.
 .IP "\fBlive\-config.nocomponents\fP | \fBnocomponents\fP" 4
 No component is run. This is the same as not using any of
 \&'live\-config.components' or 'live\-config.nocomponents'.
@@ -300,7 +299,7 @@ permite aplicar de forma arbitraria ficheros de preconfiguración situados en
 el medios en vivo o en un servidor http/ftp.
 .IP \fBhostname\fP 4
 configura /etc/hostname y /etc/hosts.
-.IP \fBlive\-debconfig_passwd\fP 4
+.IP \fBuser\-setup\fP 4
 Añade una cuenta de usuario en vivo.
 .IP \fBsudo\fP 4
 garantiza privilegios de sudo al usuario del sistema en vivo.

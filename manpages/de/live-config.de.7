@@ -45,9 +45,9 @@ Alle Komponenten werden ausgeführt. Auf Live Images ist dies das
 Standardverhalten.
 .IP "\fBlive\-config.components\fP=\fIKOMPONENTE1\fP,\fIKOMPONENTE2\fP, ... \fIKOMPONENTEn\fP | \fBconfig\fP=\fIKOMPONENTE1\fP,\fIKOMPONENTE2\fP, ... \fIKOMPONENTEn\fP" 4
 Nur angegebene Komponenten werden ausgeführt. Die Reihenfolge ist
-wesentlich, d.h. 'live\-config.components=sudo,live\-debconfig_passwd' würde
-nicht funktionieren da der Benutzer zuerst angelegt werden muss bevor für
-ihn sudo konfiguriert werden kann. Siehe Dateinamen der Komponenten in
+wesentlich, d.h. 'live\-config.components=sudo,user\-setup' würde nicht
+funktionieren da der Benutzer zuerst angelegt werden muss bevor für ihn sudo
+konfiguriert werden kann. Siehe Dateinamen der Komponenten in
 /lib/live/config für ihre Ordnungsnummer.
 .IP "\fBlive\-config.nocomponents\fP | \fBnocomponents\fP" 4
 Keine Komponente wird ausgeführt. Dies ist das Gleiche, wie wenn weder
@@ -315,7 +315,7 @@ erlaubt beliebige Preseed Dateien auf dem Live Medium oder von einem
 HTTP/FTP Server anzuwenden.
 .IP \fBhostname\fP 4
 konfiguriert /etc/hostname und /etc/hosts.
-.IP \fBlive\-debconfig_passwd\fP 4
+.IP \fBuser\-setup\fP 4
 fügt das Live Benutzerkonto hinzu.
 .IP \fBsudo\fP 4
 räumt dem Live Benutzer sudo Privilegien ein.

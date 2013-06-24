@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config 4.0~a23-1\n"
-"POT-Creation-Date: 2013-06-24 19:23+0300\n"
+"POT-Creation-Date: 2013-06-24 20:19+0300\n"
 "PO-Revision-Date: 2013-04-13 20:23+0100\n"
 "Last-Translator: Carlos Zuferri <chals@altorricon.com>\n"
 "Language-Team: none\n"
@@ -164,30 +164,23 @@ msgstr "B<live-config>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn> | B<config>=I<SCRIP
 
 #. type: Plain text
 #: en/live-config.7:29
-#, fuzzy
-#| msgid ""
-#| "Only the specified scripts are run. Note that the order matters, e.g. "
-#| "'live-config=sudo,live-debconfig_passwd' would not work since the user "
-#| "needs to be added before it can be configured for sudo. Look at the "
-#| "filenames of the scripts in /lib/live/config for their ordering number."
 msgid ""
 "Only the specified components are run. Note that the order matters, e.g. "
-"'live-config.components=sudo,live-debconfig_passwd' would not work since the "
-"user needs to be added before it can be configured for sudo. Look at the "
-"filenames of the components in /lib/live/config for their ordering number."
+"'live-config.components=sudo,user-setup' would not work since the user needs "
+"to be added before it can be configured for sudo. Look at the filenames of "
+"the components in /lib/live/config for their ordering number."
 msgstr ""
 "Vengono eseguiti solo gli script specificati. Si noti che l'ordine è "
-"importante, ad esempio \"live-config=sudo,live-debconfig_passwd\" non "
-"funzionerebbe in quanto prima di poter configurare l'utente per sudo è "
-"necessario aggiungerlo. Per l'ordinamento numerico vedere i nomi degli "
-"script in /lib/live/config."
+"importante, ad esempio \"live-config=sudo,user-setup\" non funzionerebbe in "
+"quanto prima di poter configurare l'utente per sudo è necessario "
+"aggiungerlo. Per l'ordinamento numerico vedere i nomi degli script in /lib/"
+"live/config."
 
 #. type: IP
 #: en/live-config.7:29
-#, fuzzy, no-wrap
-#| msgid "B<live-config.noroot> | B<noroot>"
+#, no-wrap
 msgid "B<live-config.nocomponents> | B<nocomponents>"
-msgstr "B<live-config.noroot> | B<noroot>"
+msgstr "B<live-config.nocomponents> | B<nocomponents>"
 
 #. type: Plain text
 #: en/live-config.7:31
@@ -1288,8 +1281,8 @@ msgstr "configura i file /etc/hostname e /etc/hosts."
 #. type: IP
 #: en/live-config.7:180
 #, no-wrap
-msgid "B<live-debconfig_passwd>"
-msgstr "B<live-debconfig_passwd>"
+msgid "B<user-setup>"
+msgstr ""
 
 #. type: Plain text
 #: en/live-config.7:182

@@ -12,12 +12,10 @@ Vcs-Git: git://live-systems.org/git/live-config.git
 
 Package: live-config
 Architecture: all
-Depends:
- ${misc:Depends}, live-config-sysvinit | live-config-backend,
- live-debconfig
+Depends: ${misc:Depends}, live-config-sysvinit | live-config-backend,
 Recommends:
  live-config-doc, live-tools, console-tools, iproute, keyboard-configuration,
- locales | locales-all, sudo
+ locales | locales-all, user-setup, sudo
 Suggests: pciutils, wget
 Description: Live System Configuration Components
  live-config contains the components that configure a live system during the

@@ -11,6 +11,9 @@ override_dh_auto_install:
 	mv debian/tmp/lib/live/config/*-sysvinit debian/live-config-sysvinit/lib/live/config
 	mv debian/tmp/lib/live/config/*-sysv-rc debian/live-config-sysvinit/lib/live/config
 
+	# Using user-setup instead of live-debconfig
+	rm -f debian/tmp/live/config/*live-debconfig*
+
 	# Removing unused files
 	rm -f debian/tmp/usr/share/doc/live-config/COPYING
 	bin/live-config-update debian/tmp/lib/live/config
