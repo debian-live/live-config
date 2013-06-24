@@ -12,7 +12,7 @@ SHELL := sh -e
 
 LANGUAGES = $(shell cd manpages/po && ls)
 
-SCRIPTS = backend/*/*.init bin/* scripts/*.sh scripts/*/*
+SCRIPTS = backend/*/*.init frontend/* scripts/*/*
 
 all: build
 
@@ -55,12 +55,14 @@ install:
 	mkdir -p $(DESTDIR)/lib/systemd/system
 	cp backend/systemd/live-config.systemd $(DESTDIR)/lib/systemd/system/live-config.service
 
+	# Installing frontend
+	mkdir -p $(DESTDIR)/sbin
+	cp frontend/* $(DESTDIR)/sbin
+
 	# Installing scripts
 	mkdir -p $(DESTDIR)/lib/live
-	cp -r scripts/config.sh scripts/config $(DESTDIR)/lib/live
+	cp -r scripts/config $(DESTDIR)/lib/live
 	mkdir -p $(DESTDIR)/var/lib/live/config
-
-	mkdir -p $(DESTDIR)/sbin
 
 	# Installing shared data
 	mkdir -p $(DESTDIR)/usr/share/live/config
@@ -102,7 +104,7 @@ uninstall:
 	rmdir --ignore-fail-on-non-empty $(DESTDIR)/lib/systemd > /dev/null 2>&1 || true
 
 	# Uninstalling scripts
-	rm -rf $(DESTDIR)/lib/live/config.sh $(DESTDIR)/lib/live/config
+	rm -rf $(DESTDIR)/lib/live/config
 	rmdir --ignore-fail-on-non-empty $(DESTDIR)/lib/live > /dev/null 2>&1 || true
 	rmdir --ignore-fail-on-non-empty $(DESTDIR)/lib > /dev/null 2>&1 || true
 
