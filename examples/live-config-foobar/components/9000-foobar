@@ -1,6 +1,6 @@
 #!/bin/sh
 
-## live-config-foobar(7) - Additional Configuration Scripts for live systems
+## live-config-foobar(7) - Additional Configuration Components for live systems
 ## Copyright (C) 2006-2013 Daniel Baumann <mail@daniel-baumann.ch>
 ## Copyright (C) 2013 John Doe <john@example.org>
 ##
@@ -9,17 +9,10 @@
 ## under certain conditions; see COPYING for details.
 
 
-Foobar ()
+set -e
+
+Cmdline ()
 {
-	# Checking if package is installed or already configured
-	if [ ! -e /var/lib/dpkg/info/foobar.list ] || \
-	   [ -e /var/lib/live/config/foobar ]
-	then
-		return
-	fi
-
-	echo -n " foobar"
-
 	# Boot parameters can be acted up either this way...
 	if ! echo ${LIVE_CONFIG_CMDLINE} | grep -qs "example.foobar" && \
 	   ! echo ${LIVE_CONFIG_CMDLINE} | grep -qs "foobar"
@@ -36,11 +29,21 @@ Foobar ()
 				;;
 		esac
 	done
-
-	Configure_foobar
 }
 
-Configure_foobar ()
+Init ()
+{
+	# Checking if package is installed or already configured
+	if [ ! -e /var/lib/dpkg/info/foobar.list ] || \
+	   [ -e /var/lib/live/config/foobar ]
+	then
+		exit 0
+	fi
+
+	echo -n " foobar"
+}
+
+Config ()
 {
 	# Configuring foobar either this way...
 	if [ -n "${EXAMPLE_FOOBAR}" ]
@@ -59,4 +62,6 @@ Configure_foobar ()
 	touch /var/lib/live/config/foobar
 }
 
-Foobar
+Cmdline
+Init
+Config

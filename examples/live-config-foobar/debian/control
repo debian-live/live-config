@@ -11,8 +11,8 @@ Vcs-Git: git://git.example.org/git/live-config-foobar.git
 Package: live-config-foobar
 Architecture: all
 Depends: ${misc:Depends}, live-config (>= 4), live-config (<< 5)
-Description: Additional Live System Configuration Scripts (foobar)
- live-config contains the scripts that configure a live system during the boot
- process (late userspace).
+Description: Additional Live System Configuration Components (foobar)
+ live-config contains the components that configure a live system during the
+ boot process (late userspace).
  .
- This package contains the additional foobar script(s).
+ This package contains the additional foobar component(s).
