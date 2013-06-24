@@ -23,6 +23,8 @@
 set -e
 
 # Defaults
+LIVE_CONFIG_SCRIPTS="$(ls /lib/live/config/*)"
+
 LIVE_HOSTNAME="debian"
 LIVE_USERNAME="user"
 LIVE_USER_FULLNAME="Debian Live user"
