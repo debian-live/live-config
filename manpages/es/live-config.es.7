@@ -184,6 +184,12 @@ parámetro de arranque, puede ser, alternativamente, configurado a través de
 uno o más ficheros. Aunque se utilicen los ficheros de configuración, el
 parámetro «boot =live» es necesario para activar \fBlive\-config\fP.
 .PP
+\fBNote:\fP If configuration files are used, either (preferably) all boot
+parameters should be put into the \fBLIVE_CONFIG_CMDLINE\fP variable, or
+individual variables can be set. If individual variables are used, the user
+is required to ensure that all the necessary variables are set to create a
+valid configuration.
+.PP
 Los ficheros de configuración se pueden colocar en el sistema de ficheros
 raíz (/etc/live/config.conf, /etc/live/config/*), o en el medio en vivo
 (live/config.conf, live/config/*). Si ambos directorios se utilizan para una

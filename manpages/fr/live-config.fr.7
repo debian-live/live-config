@@ -190,6 +190,12 @@ configuré via un ou plusieurs fichiers. Si des fichiers de configuration
 sont utilisés, le paramètre 'boot=live' est toujours requis pour activer
 \fBlive\-config\fP.
 .PP
+\fBNote:\fP If configuration files are used, either (preferably) all boot
+parameters should be put into the \fBLIVE_CONFIG_CMDLINE\fP variable, or
+individual variables can be set. If individual variables are used, the user
+is required to ensure that all the necessary variables are set to create a
+valid configuration.
+.PP
 Les fichiers de configuration peuvent être placés soit dans la racine du
 système de fichiers (/etc/live/config.conf, /etc/live/config/*), soit sur le
 média live (live/config.conf, live/config/*). Si ces deux endroits sont

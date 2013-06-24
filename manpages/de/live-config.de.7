@@ -189,6 +189,12 @@ Dateien konfiguriert werden. Wenn Konfigurationsdateien benützt werden, so
 ist der 'boot=live' Parameter trotzdem noch notwendig um \fBlive\-config\fP zu
 aktivieren.
 .PP
+\fBHinweis:\fP Werden Konfigurationsdateien verwendet, dann sollen entweder
+(vorzugsweise) alle Boot Parameter in die \fBLIVE_CONFIG_CMDLINE\fP Variable
+gesetzt werden, oder Variablen indivuell gesetzt werden. Werden Variablen
+individuell gesetzt, muss der Benutzer selbst sicherstellen, dass alle
+nötigen Variablen gesetzt sind um eine gültige Konfiguration zu erstellen.
+.PP
 Die Konfigurationsdateien können entweder im Root Dateisystem selbst
 plaziert werden (/etc/live/config.conf, /etc/live/config/*) oder auf dem
 Live Medium (live/config.conf, live/config/*). Wenn beide Orte für eine
