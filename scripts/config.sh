@@ -202,14 +202,14 @@ Main ()
 
 	# Setting up log redirection
 	rm -f /var/log/live/config.log
-	rm -f /var/log/live/config.pipe
+	rm -f /tmp/live-config.pipe
 
 	mkdir -p /var/log/live
-	mkfifo /var/log/live/config.pipe
-	tee < /var/log/live/config.pipe /var/log/live/config.log &
-	exec > /var/log/live/config.pipe 2>&1
+	mkfifo /tmp/live-config.pipe
+	tee < /tmp/live-config.pipe /var/log/live/config.log &
+	exec > /tmp/live-config.pipe 2>&1
 
-	echo -n "live-config:" > /var/log/live/config.pipe 2>&1
+	echo -n "live-config:" > /tmp/live-config.pipe 2>&1
 	trap 'Trap' EXIT HUP INT QUIT TERM
 
 	# Processing command line
@@ -226,15 +226,15 @@ Main ()
 
 	for _SCRIP in ${_SCRIPTS}
 	do
-		[ "${LIVE_CONFIG_DEBUG}" = "true" ] && echo "[$(date +'%F %T')] live-config: ${_SCRIPT}" > /var/log/live/config.pipe
+		[ "${LIVE_CONFIG_DEBUG}" = "true" ] && echo "[$(date +'%F %T')] live-config: ${_SCRIPT}" > /tmp/live-config.pipe
 
-		. ${_SCRIPT} > /var/log/live/config.pipe 2>&1
+		. ${_SCRIPT} > /tmp/live-config.pipe 2>&1
 	done
 
-	echo "." > /var/log/live/config.pipe
+	echo "." > /tmp/live-config.pipe
 
 	# Cleaning up log redirection
-	rm -f /var/log/live/config.pipe
+	rm -f /tmp/live-config.pipe
 }
 
 Main ${@}
