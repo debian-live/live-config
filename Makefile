@@ -12,7 +12,7 @@ SHELL := sh -e
 
 LANGUAGES = $(shell cd manpages/po && ls)
 
-SCRIPTS = backend/*/*.init frontend/* middleend/*
+SCRIPTS = backend/*/*.init frontend/* components/*
 
 all: build
 
@@ -59,9 +59,9 @@ install:
 	mkdir -p $(DESTDIR)/bin
 	cp frontend/* $(DESTDIR)/bin
 
-	# Installing middleend
+	# Installing components
 	mkdir -p $(DESTDIR)/lib/live/config
-	cp middleend/* $(DESTDIR)/lib/live/config
+	cp components/* $(DESTDIR)/lib/live/config
 
 	mkdir -p $(DESTDIR)/var/lib/live/config
 
@@ -104,7 +104,7 @@ uninstall:
 	rmdir --ignore-fail-on-non-empty $(DESTDIR)/lib/systemd/system > /dev/null 2>&1 || true
 	rmdir --ignore-fail-on-non-empty $(DESTDIR)/lib/systemd > /dev/null 2>&1 || true
 
-	# Uninstalling middleend
+	# Uninstalling components
 	rm -rf $(DESTDIR)/lib/live/config
 	rmdir --ignore-fail-on-non-empty $(DESTDIR)/lib/live > /dev/null 2>&1 || true
 	rmdir --ignore-fail-on-non-empty $(DESTDIR)/lib > /dev/null 2>&1 || true
