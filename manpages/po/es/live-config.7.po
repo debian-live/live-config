@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config 4.0~a23-1\n"
-"POT-Creation-Date: 2013-06-24 18:47+0300\n"
+"POT-Creation-Date: 2013-06-24 19:23+0300\n"
 "PO-Revision-Date: 2013-06-24 15:01+0100\n"
 "Last-Translator: Carlos Zuferri <chals@altorricon.com>\n"
 "Language-Team: none\n"
@@ -127,10 +127,11 @@ msgstr "Parámetros de arranque (opciones)"
 msgid ""
 "B<live-config> is only activated if 'boot=live' is used as a boot parameter. "
 "Additionally, B<live-config> needs to be told which components to run "
-"through the 'live-config' parameter or which components to not run through "
-"the 'live-noconfig' parameter. If both 'live-config' and 'live-noconfig' are "
-"used, or, if either one is specified multiple times, always the later one "
-"takes precedence over the previous one(s)."
+"through the 'live-config.components' parameter or which components to not "
+"run through the 'live-config.nocomponents' parameter. If both 'live-config' "
+"and 'live-config.nocomponents' are used, or, if either one is specified "
+"multiple times, always the later one takes precedence over the previous one"
+"(s)."
 msgstr ""
 "B<live-config> sólo se activa si se usa como parámetro de arranque "
 "«boot=live». Adicionalmente, se debe especificar a B<live-config> qué "
@@ -141,9 +142,10 @@ msgstr ""
 
 #. type: IP
 #: en/live-config.7:25
-#, no-wrap
-msgid "B<live-config> | B<config>"
-msgstr "B<live-config> | B<config>"
+#, fuzzy, no-wrap
+#| msgid "B<live-config.noroot> | B<noroot>"
+msgid "B<live-config.components> | B<components>"
+msgstr "B<live-config.noroot> | B<noroot>"
 
 #. type: Plain text
 #: en/live-config.7:27
@@ -158,7 +160,7 @@ msgstr ""
 #: en/live-config.7:27
 #, fuzzy, no-wrap
 #| msgid "B<live-config>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn> | B<config>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn>"
-msgid "B<live-config>=I<COMPONENT1>,I<COMPONENT2>, ... I<COMPONENTn> | B<config>=I<COMPONENT1>,I<COMPONENT2>, ... I<COMPONENTn>"
+msgid "B<live-config.components>=I<COMPONENT1>,I<COMPONENT2>, ... I<COMPONENTn> | B<components>=I<COMPONENT1>,I<COMPONENT2>, ... I<COMPONENTn>"
 msgstr "B<live-config>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn> | B<config>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn>"
 
 #. type: Plain text
@@ -171,9 +173,9 @@ msgstr "B<live-config>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn> | B<config>=I<SCRIP
 #| "filenames of the scripts in /lib/live/config for their ordering number."
 msgid ""
 "Only the specified components are run. Note that the order matters, e.g. "
-"'live-config=sudo,live-debconfig_passwd' would not work since the user needs "
-"to be added before it can be configured for sudo. Look at the filenames of "
-"the components in /lib/live/config for their ordering number."
+"'live-config.components=sudo,live-debconfig_passwd' would not work since the "
+"user needs to be added before it can be configured for sudo. Look at the "
+"filenames of the components in /lib/live/config for their ordering number."
 msgstr ""
 "Sólo se ejecutan los scripts especificados. Se debe tener en cuenta que el "
 "orden es importante. p.ej. «live-config=sudo,live-debconfig_passwd» no "
@@ -183,9 +185,10 @@ msgstr ""
 
 #. type: IP
 #: en/live-config.7:29
-#, no-wrap
-msgid "B<live-noconfig> | B<noconfig>"
-msgstr "B<live-noconfig> | B<noconfig>"
+#, fuzzy, no-wrap
+#| msgid "B<live-config.noroot> | B<noroot>"
+msgid "B<live-config.nocomponents> | B<nocomponents>"
+msgstr "B<live-config.noroot> | B<noroot>"
 
 #. type: Plain text
 #: en/live-config.7:31
@@ -194,8 +197,8 @@ msgstr "B<live-noconfig> | B<noconfig>"
 #| "No script is run. This is the same as not using any of 'live-config' or "
 #| "'live-noconfig'."
 msgid ""
-"No component is run. This is the same as not using any of 'live-config' or "
-"'live-noconfig'."
+"No component is run. This is the same as not using any of 'live-config."
+"components' or 'live-config.nocomponents'."
 msgstr ""
 "No se ejecuta ningún script. Es lo mismo que no usar ninguno de «live-"
 "config» o «live-noconfig»."
@@ -204,7 +207,7 @@ msgstr ""
 #: en/live-config.7:31
 #, fuzzy, no-wrap
 #| msgid "B<live-noconfig>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn> | B<noconfig>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn>"
-msgid "B<live-noconfig>=I<COMPONENT1>,I<COMPONENT2>, ... I<COMPONENTn> | B<noconfig>=I<COMPONENT1>,I<COMPONENT2>, ... I<COMPONENTn>"
+msgid "B<live-config.nocomponents>=I<COMPONENT1>,I<COMPONENT2>, ... I<COMPONENTn> | B<nocomponents>=I<COMPONENT1>,I<COMPONENT2>, ... I<COMPONENTn>"
 msgstr "B<live-noconfig>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn> | B<noconfig>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn>"
 
 #. type: Plain text
@@ -753,7 +756,7 @@ msgstr ""
 #: en/live-config.7:119
 #, fuzzy, no-wrap
 #| msgid "B<LIVE_CONFIGS>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn>"
-msgid "B<LIVE_CONFIGS>=I<COMPONENT1>,I<COMPONENT2>, ... I<COMPONENTn>"
+msgid "B<LIVE_CONFIG_COMPONENTS>=I<COMPONENT1>,I<COMPONENT2>, ... I<COMPONENTn>"
 msgstr "B<LIVE_CONFIGS>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn>"
 
 #. type: Plain text
@@ -763,7 +766,7 @@ msgstr "B<LIVE_CONFIGS>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn>"
 #| "This variable corresponds to the 'B<live-config>=I<SCRIPT1>,"
 #| "I<SCRIPT2>, ... I<SCRIPTn>' parameter."
 msgid ""
-"This variable corresponds to the 'B<live-config>=I<COMPONENT1>,"
+"This variable corresponds to the 'B<live-config.components>=I<COMPONENT1>,"
 "I<COMPONENT2>, ... I<COMPONENTn>' parameter."
 msgstr ""
 "Esta variable corresponde al parámetro 'B<live-config>=I<SCRIPT1>,"
@@ -772,21 +775,21 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:121
 #, fuzzy, no-wrap
-#| msgid "B<LIVE_NOCONFIGS>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn>"
-msgid "B<LIVE_NOCONFIGS>=I<COMPONENT1>,I<COMPONENT2>, ... I<COMPONENTn>"
-msgstr "B<LIVE_NOCONFIGS>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn>"
+#| msgid "B<LIVE_CONFIGS>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn>"
+msgid "B<LIVE_CONFIG_NOCOMPONENTS>=I<COMPONENT1>,I<COMPONENT2>, ... I<COMPONENTn>"
+msgstr "B<LIVE_CONFIGS>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn>"
 
 #. type: Plain text
 #: en/live-config.7:123
 #, fuzzy
 #| msgid ""
-#| "This variable corresponds to the 'B<live-noconfig>=I<SCRIPT1>,"
+#| "This variable corresponds to the 'B<live-config>=I<SCRIPT1>,"
 #| "I<SCRIPT2>, ... I<SCRIPTn>' parameter."
 msgid ""
-"This variable corresponds to the 'B<live-noconfig>=I<COMPONENT1>,"
+"This variable corresponds to the 'B<live-config.nocomponents>=I<COMPONENT1>,"
 "I<COMPONENT2>, ... I<COMPONENTn>' parameter."
 msgstr ""
-"Esta variable corresponde al parámetro 'B<live-noconfig>=I<SCRIPT1>,"
+"Esta variable corresponde al parámetro 'B<live-config>=I<SCRIPT1>,"
 "I<SCRIPT2>, ... I<SCRIPTn>'"
 
 #. type: IP
@@ -1126,9 +1129,9 @@ msgid ""
 "It is not really possible to remove components itself in a sane way yet "
 "without requiring either to ship a locally modified B<live-config> package "
 "or using dpkg-divert. However, the same can be achieved by disabling the "
-"respective components through the live-noconfig mechanism, see above. To "
-"avoid to always need specifing disabled components through the boot "
-"parameter, a configuration file should be used, see above."
+"respective components through the live-config.nocomponents mechanism, see "
+"above. To avoid to always need specifing disabled components through the "
+"boot parameter, a configuration file should be used, see above."
 msgstr ""
 "No es realmente posible eliminar los scripts de una manera sensata sin "
 "incluir un paquete B<live-config> modificado localmente o utilizando dpkg-"

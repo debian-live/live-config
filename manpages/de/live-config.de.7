@@ -34,24 +34,25 @@ der \fIlb_config\fP(1) Manpage.
 .SS "Boot Parameter (Komponenten)"
 \fBlive\-config\fP ist nur aktiviert, wenn 'boot=live' als Boot Parameter
 benutzt wird. Zusätzlich muss \fBlive\-config\fP durch den Parameter
-\&'live\-config' angegeben werden, welche Komponenten ausgeführt werden sollen,
-oder mit dem Parameter 'live\-noconfig', welche Komponenten nicht ausgeführt
-werden sollen. Werden beide beide Parameter oder mehrmals benützt, so geht
-der in der Reihenfolge lezte allen vorhergehenden vor.
+\&'live\-config.components' angegeben werden, welche Komponenten ausgeführt
+werden sollen, oder mit dem Parameter 'live\-config.nocomponents', welche
+Komponenten nicht ausgeführt werden sollen. Werden beide beide Parameter
+oder mehrmals benützt, so geht der in der Reihenfolge lezte allen
+vorhergehenden vor.
 
-.IP "\fBlive\-config\fP | \fBconfig\fP" 4
+.IP "\fBlive\-config.components\fP | \fBcomponents\fP" 4
 Alle Komponenten werden ausgeführt. Auf Live Images ist dies das
 Standardverhalten.
-.IP "\fBlive\-config\fP=\fIKOMPONENTE1\fP,\fIKOMPONENTE2\fP, ... \fIKOMPONENTEn\fP | \fBconfig\fP=\fIKOMPONENTE1\fP,\fIKOMPONENTE2\fP, ... \fIKOMPONENTEn\fP" 4
+.IP "\fBlive\-config.components\fP=\fIKOMPONENTE1\fP,\fIKOMPONENTE2\fP, ... \fIKOMPONENTEn\fP | \fBconfig\fP=\fIKOMPONENTE1\fP,\fIKOMPONENTE2\fP, ... \fIKOMPONENTEn\fP" 4
 Nur angegebene Komponenten werden ausgeführt. Die Reihenfolge ist
-wesentlich, d.h. 'live\-config=sudo,live\-debconfig_passwd' würde nicht
-funktionieren da der Benutzer zuerst angelegt werden muss bevor für ihn sudo
-konfiguriert werden kann. Siehe Dateinamen der Komponenten in
+wesentlich, d.h. 'live\-config.components=sudo,live\-debconfig_passwd' würde
+nicht funktionieren da der Benutzer zuerst angelegt werden muss bevor für
+ihn sudo konfiguriert werden kann. Siehe Dateinamen der Komponenten in
 /lib/live/config für ihre Ordnungsnummer.
-.IP "\fBlive\-noconfig\fP | \fBnoconfig\fP" 4
+.IP "\fBlive\-config.nocomponents\fP | \fBnocomponents\fP" 4
 Keine Komponente wird ausgeführt. Dies ist das Gleiche, wie wenn weder
-\&'live\-config' noch 'live\-noconfig' verwendet wird.
-.IP "\fBlive\-noconfig\fP=\fIKOMPONENTE1\fP,\fIKOMPONENTE2\fP, ... \fIKOMPONENTEn\fP | \fBnoconfig\fP=\fIKOMPONENTE1\fP,\fIKOMPONENTE2\fP, ... \fIKOMPONENTEn\fP" 4
+\&'live\-config.components' noch 'live\-config.nocomponents' verwendet wird.
+.IP "\fBlive\-config.nocomponents\fP=\fIKOMPONENTE1\fP,\fIKOMPONENTE2\fP, ... \fIKOMPONENTEn\fP | \fBnocomponents\fP=\fIKOMPONENTE1\fP,\fIKOMPONENTE2\fP, ... \fIKOMPONENTEn\fP" 4
 Alle Komponenten werden ausgeführt, ausser die hier spezifizierten
 Ausnahmen.
 
@@ -214,13 +215,14 @@ mehreren der folgenden Variablen.
 
 .IP "\fBLIVE_CONFIG_CMDLINE\fP=\fIPARAMETER1\fP \fIPARAMETER2\fP ... \fIPARAMETERn\fP" 4
 Diese Variable enspricht der Kommandozeile des Bootloaders.
-.IP "\fBLIVE_CONFIGS\fP=\fIKOMPONENTE1\fP,\fIKOMPONENTE2\fP, ... \fIKOMPONENTEn\fP" 4
-Diese Variable enspricht dem '\fBlive\-config\fP=\fIKOMPONENTE1\fP,\fIKOMPONENTE2\fP,
-\&... \fIKOMPONENTEn\fP' Parameter.
-.IP "\fBLIVE_NOCONFIGS\fP=\fIKOMPONENTE1\fP,\fIKOMPONENTE2\fP, ... \fIKOMPONENTEn\fP" 4
+.IP "\fBLIVE_CONFIG_COMPONENTS\fP=\fIKOMPONENTE1\fP,\fIKOMPONENTE2\fP, ... \fIKOMPONENTEn\fP" 4
 Diese Variable enspricht dem
-\&'\fBlive\-noconfig\fP=\fIKOMPONENTE1\fP,\fIKOMPONENTE2\fP, ... \fIKOMPONENTEn\fP'
-Parameter.
+\&'\fBlive\-config.components\fP=\fIKOMPONENTE1\fP,\fIKOMPONENTE2\fP,
+\&... \fIKOMPONENTEn\fP' Parameter.
+.IP "\fBLIVE_CONFIG_NOCOMPONENTS\fP=\fIKOMPONENTE1\fP,\fIKOMPONENTE2\fP, ... \fIKOMPONENTEn\fP" 4
+Diese Variable enspricht dem
+\&'\fBlive\-config.nocomponents\fP=\fIKOMPONENTE1\fP,\fIKOMPONENTE2\fP,
+\&... \fIKOMPONENTEn\fP' Parameter.
 .IP "\fBLIVE_DEBCONF_PRESEED\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
 Diese Variable enspricht dem
 \&'\fBlive\-config.debconf\-preseed\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP|
@@ -296,10 +298,10 @@ untergebracht. Ein Beispielpaket und \-komponente befindet sich in
 Es ist derzeit nicht möglich in einer vernünftigen Art und Weise Komponenten
 zu entfernen ohne das ein lokal verändertes \fBlive\-config\fP Paket oder
 dpkg\-divert verwendet werden muss. Jedoch kann das selbe erreicht werden,
-indem bestimmte Komponenten durch den live\-noconfig Mechanismus abgeschaltet
-werden, siehe oben. Um zu verhindern, dass die abzuschaltenden Komponenten
-immer durch einen Boot Parameter angegeben werden müssen, kann eine
-Konfigurationsdatei verwendet werden, siehe oben.
+indem bestimmte Komponenten durch den live\-config.nocomponents Mechanismus
+abgeschaltet werden, siehe oben. Um zu verhindern, dass die abzuschaltenden
+Komponenten immer durch einen Boot Parameter angegeben werden müssen, kann
+eine Konfigurationsdatei verwendet werden, siehe oben.
 .PP
 Die Konfigurationsdateien für das Live System selber werden am Besten in
 einem eigenen Debian Paket untergebracht. Ein Beispielpaket und
