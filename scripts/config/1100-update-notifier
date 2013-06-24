@@ -29,10 +29,10 @@ Configure_update_notifier ()
 	# update-notifier for crash report handling.
 
 	# Diverting /usr/lib/update-notifier/apt-check
-	dpkg-divert --quiet --package live-config --add --rename --divert /usr/lib/update-notifier/apt-check.debian /usr/lib/update-notifier/apt-check
-
-	if [ -e /usr/lib/update-notifier/apt-check ]
+	if [ ! -e /usr/lib/update-notifier/apt-check.orig.update-notifier-common ]
 	then
+		dpkg-divert --quiet --package live-config --add --rename --divert /usr/lib/update-notifier/apt-check.orig.update-notifier-common /usr/lib/update-notifier/apt-check
+
 		ln -sf /bin/true /usr/lib/update-notifier/apt-check
 	fi
 

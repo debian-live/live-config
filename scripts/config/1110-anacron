@@ -26,9 +26,14 @@ Configure_anacron ()
 {
 	# This has the nice side effect of the cron.{daily,weekly,monthly} jobs
 	# in /etc/crontab remaining disabled, yet also not run by anacron
-	dpkg-divert --quiet --package live-config --add --rename --divert /usr/sbin/anacron.debian /usr/sbin/anacron
 
-	ln -s /bin/true /usr/sbin/anacron
+	# Diverting /usr/sbin/anacron
+	if [ ! -e /usr/sbin/anacron.orig.anacron ]
+	then
+		dpkg-divert --quiet --package live-config --add --rename --divert /usr/sbin/anacron.orig.anacron /usr/sbin/anacron
+
+		ln -s /bin/true /usr/sbin/anacron
+	fi
 
 	# Creating state file
 	touch /var/lib/live/config/anacron
