@@ -76,7 +76,7 @@ do
 	fi
 done
 
-echo  "Setting specific defaults for ${_DISTRIBUTION} (${_RELEASE}..."
+echo  "Setting specific defaults for ${_DISTRIBUTION} (${_RELEASE})..."
 
 sed -i  -e "s|^LIVE_HOSTNAME=.*$|LIVE_HOSTNAME=\"${LIVE_HOSTNAME}\"|" \
 	-e "s|^LIVE_USERNAME=.*$|LIVE_USERNAME=\"${LIVE_USERNAME}\"|" \
