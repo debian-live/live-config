@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config VERSION\n"
-"POT-Creation-Date: 2013-06-24 13:47+0300\n"
+"POT-Creation-Date: 2013-06-24 20:39+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,7 +31,7 @@ msgstr ""
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "4.0~a23-1"
+msgid "4.0~a24-1"
 msgstr ""
 
 #. type: TH
@@ -48,7 +48,7 @@ msgstr ""
 
 #. type: Plain text
 #: en/live-config.7:13
-msgid "B<live-config> - System Configuration Scripts"
+msgid "B<live-config> - System Configuration Components"
 msgstr ""
 
 #. type: SH
@@ -60,8 +60,8 @@ msgstr ""
 #. type: Plain text
 #: en/live-config.7:16
 msgid ""
-"B<live-config> contains the scripts that configure a live system during the "
-"boot process (late userspace)."
+"B<live-config> contains the components that configure a live system during "
+"the boot process (late userspace)."
 msgstr ""
 
 #. type: SH
@@ -76,7 +76,7 @@ msgid ""
 "B<live-config> can be configured through boot parameters or configuration "
 "files. If both mechanisms are used for a certain option, the boot parameters "
 "take precedence over the configuration files. When using persistency, B<live-"
-"config> scripts are only run once."
+"config> components are only run once."
 msgstr ""
 
 #. type: Plain text
@@ -89,68 +89,69 @@ msgstr ""
 #. type: SS
 #: en/live-config.7:22
 #, no-wrap
-msgid "Boot Parameters (scripts)"
+msgid "Boot Parameters (components)"
 msgstr ""
 
 #. type: Plain text
 #: en/live-config.7:24
 msgid ""
 "B<live-config> is only activated if 'boot=live' is used as a boot parameter. "
-"Additionally, B<live-config> needs to be told which scripts to run through "
-"the 'live-config' parameter or which scripts to not run through the 'live-"
-"noconfig' parameter. If both 'live-config' and 'live-noconfig' are used, or, "
-"if either one is specified multiple times, always the later one takes "
-"precedence over the previous one(s)."
+"Additionally, B<live-config> needs to be told which components to run "
+"through the 'live-config.components' parameter or which components to not "
+"run through the 'live-config.nocomponents' parameter. If both 'live-config' "
+"and 'live-config.nocomponents' are used, or, if either one is specified "
+"multiple times, always the later one takes precedence over the previous one"
+"(s)."
 msgstr ""
 
 #. type: IP
 #: en/live-config.7:25
 #, no-wrap
-msgid "B<live-config> | B<config>"
+msgid "B<live-config.components> | B<components>"
 msgstr ""
 
 #. type: Plain text
 #: en/live-config.7:27
-msgid "All scripts are run. This is what live images use by default."
+msgid "All components are run. This is what live images use by default."
 msgstr ""
 
 #. type: IP
 #: en/live-config.7:27
 #, no-wrap
-msgid "B<live-config>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn> | B<config>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn>"
+msgid "B<live-config.components>=I<COMPONENT1>,I<COMPONENT2>, ... I<COMPONENTn> | B<components>=I<COMPONENT1>,I<COMPONENT2>, ... I<COMPONENTn>"
 msgstr ""
 
 #. type: Plain text
 #: en/live-config.7:29
 msgid ""
-"Only the specified scripts are run. Note that the order matters, e.g. 'live-"
-"config=sudo,live-debconfig_passwd' would not work since the user needs to be "
-"added before it can be configured for sudo. Look at the filenames of the "
-"scripts in /lib/live/config for their ordering number."
+"Only the specified components are run. Note that the order matters, e.g. "
+"'live-config.components=sudo,user-setup' would not work since the user needs "
+"to be added before it can be configured for sudo. Look at the filenames of "
+"the components in /lib/live/config for their ordering number."
 msgstr ""
 
 #. type: IP
 #: en/live-config.7:29
 #, no-wrap
-msgid "B<live-noconfig> | B<noconfig>"
+msgid "B<live-config.nocomponents> | B<nocomponents>"
 msgstr ""
 
 #. type: Plain text
 #: en/live-config.7:31
 msgid ""
-"No script is run. This is the same as not using any of 'live-config' or "
-"'live-noconfig'."
+"No component is run. This is the same as not using any of 'live-config."
+"components' or 'live-config.nocomponents'."
 msgstr ""
 
 #. type: IP
 #: en/live-config.7:31
 #, no-wrap
-msgid "B<live-noconfig>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn> | B<noconfig>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn>"
+msgid "B<live-config.nocomponents>=I<COMPONENT1>,I<COMPONENT2>, ... I<COMPONENTn> | B<nocomponents>=I<COMPONENT1>,I<COMPONENT2>, ... I<COMPONENTn>"
 msgstr ""
 
 #. type: Plain text
 #: en/live-config.7:33
-msgid "All scripts are run, except the specified ones."
+msgid "All components are run, except the specified ones."
 msgstr ""
 
 #. type: SS
@@ -162,7 +163,7 @@ msgstr ""
 #. type: Plain text
 #: en/live-config.7:36
 msgid ""
-"Some individual scripts can change their behaviour upon a boot parameter."
+"Some individual components can change their behaviour upon a boot parameter."
 msgstr ""
 
 #. type: IP
@@ -585,33 +586,33 @@ msgstr ""
 
 #. type: Plain text
 #: en/live-config.7:119
-msgid "This varaible corresponds to the bootloader command line."
+msgid "This variable corresponds to the bootloader command line."
 msgstr ""
 
 #. type: IP
 #: en/live-config.7:119
 #, no-wrap
-msgid "B<LIVE_CONFIGS>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn>"
+msgid "B<LIVE_CONFIG_COMPONENTS>=I<COMPONENT1>,I<COMPONENT2>, ... I<COMPONENTn>"
 msgstr ""
 
 #. type: Plain text
 #: en/live-config.7:121
 msgid ""
-"This variable corresponds to the 'B<live-config>=I<SCRIPT1>,I<SCRIPT2>, ... "
-"I<SCRIPTn>' parameter."
+"This variable corresponds to the 'B<live-config.components>=I<COMPONENT1>,"
+"I<COMPONENT2>, ... I<COMPONENTn>' parameter."
 msgstr ""
 
 #. type: IP
 #: en/live-config.7:121
 #, no-wrap
-msgid "B<LIVE_NOCONFIGS>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn>"
+msgid "B<LIVE_CONFIG_NOCOMPONENTS>=I<COMPONENT1>,I<COMPONENT2>, ... I<COMPONENTn>"
 msgstr ""
 
 #. type: Plain text
 #: en/live-config.7:123
 msgid ""
-"This variable corresponds to the 'B<live-noconfig>=I<SCRIPT1>,"
-"I<SCRIPT2>, ... I<SCRIPTn>' parameter."
+"This variable corresponds to the 'B<live-config.nocomponents>=I<COMPONENT1>,"
+"I<COMPONENT2>, ... I<COMPONENTn>' parameter."
 msgstr ""
 
 #. type: IP
@@ -863,40 +864,40 @@ msgstr ""
 #. type: SS
 #: en/live-config.7:163
 #, no-wrap
-msgid "Adding new config scripts"
+msgid "Adding new config components"
 msgstr ""
 
 #. type: Plain text
 #: en/live-config.7:165
 msgid ""
-"Downstream projects can put their scripts into /lib/live/config and do not "
-"need to do anything else, the scripts will be called automatically during "
-"boot."
+"Downstream projects can put their components into /lib/live/config and do "
+"not need to do anything else, the components will be called automatically "
+"during boot."
 msgstr ""
 
 #. type: Plain text
 #: en/live-config.7:167
 msgid ""
-"The scripts are best put into an own debian package. A sample package "
-"containing an example script can be found in /usr/share/doc/live-config/"
+"The components are best put into an own debian package. A sample package "
+"containing an example component can be found in /usr/share/doc/live-config/"
 "examples."
 msgstr ""
 
 #. type: SS
 #: en/live-config.7:168
 #, no-wrap
-msgid "Removing existing config scripts"
+msgid "Removing existing config components"
 msgstr ""
 
 #. type: Plain text
 #: en/live-config.7:170
 msgid ""
-"It is not really possible to remove scripts itself in a sane way yet without "
-"requiring either to ship a locally modified B<live-config> package or using "
-"dpkg-divert. However, the same can be achieved by disabling the respective "
-"scripts through the live-noconfig mechanism, see above. To avoid to always "
-"need specifing disabled scripts through the boot parameter, a configuration "
-"file should be used, see above."
+"It is not really possible to remove components itself in a sane way yet "
+"without requiring either to ship a locally modified B<live-config> package "
+"or using dpkg-divert. However, the same can be achieved by disabling the "
+"respective components through the live-config.nocomponents mechanism, see "
+"above. To avoid to always need specifing disabled components through the "
+"boot parameter, a configuration file should be used, see above."
 msgstr ""
 
 #. type: Plain text
@@ -910,13 +911,14 @@ msgstr ""
 #. type: SH
 #: en/live-config.7:173
 #, no-wrap
-msgid "SCRIPTS"
+msgid "COMPONENTS"
 msgstr ""
 
 #. type: Plain text
 #: en/live-config.7:175
 msgid ""
-"B<live-config> currently features the following scripts in /lib/live/config."
+"B<live-config> currently features the following components in /lib/live/"
+"config."
 msgstr ""
 
 #. type: IP
@@ -946,7 +948,7 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:180
 #, no-wrap
-msgid "B<live-debconfig_passwd>"
+msgid "B<user-setup>"
 msgstr ""
 
 #. type: Plain text
@@ -1304,8 +1306,8 @@ msgstr ""
 #. type: Plain text
 #: en/live-config.7:248
 msgid ""
-"allows to run arbitrary commands from a script placed on the live media or "
-"an http/ftp server."
+"allows to run arbitrary commands from a file placed on the live media or an "
+"http/ftp server."
 msgstr ""
 
 #. type: SH

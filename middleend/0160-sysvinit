@@ -1,0 +1,57 @@
+#!/bin/sh
+
+## live-config(7) - System Configuration Components
+## Copyright (C) 2006-2013 Daniel Baumann <mail@daniel-baumann.ch>
+##
+## This program comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
+## This is free software, and you are welcome to redistribute it
+## under certain conditions; see COPYING for details.
+
+
+set -e
+
+Cmdline ()
+{
+	# Reading kernel command line
+	for _PARAMETER in ${LIVE_CONFIG_CMDLINE}
+	do
+		case "${_PARAMETER}" in
+			live-config.username=*|username=*)
+				LIVE_USERNAME="${_PARAMETER#*username=}"
+				;;
+		esac
+	done
+}
+
+Init ()
+{
+	# Checking if package is installed or already configured
+	if [ ! -e /var/lib/dpkg/info/sysvinit.list ] || \
+	   [ -e /var/lib/live/config/sysvinit ]
+	then
+		exit 0
+	fi
+
+	echo -n " sysvinit"
+}
+
+Config ()
+{
+	# Disable tmpfs on /tmp
+	sed -i -e 's|^ *RAMTMP=.*|RAMTMP=no|' /etc/default/rcS
+
+	# Configure autologin
+	if [ "${LIVE_CONFIG_NOAUTOLOGIN}" != "true" ] && [ "${LIVE_CONFIG_NOTTYAUTOLOGIN}" != "true" ]
+	then
+		sed -i -e "s|^\([^:]*:[^:]*:[^:]*\):.*getty.*\<\(tty[0-9]*\).*$|\1:/bin/login -f ${LIVE_USERNAME} </dev/\2 >/dev/\2 2>\&1|" /etc/inittab
+
+		init q
+	fi
+
+	# Creating state file
+	touch /var/lib/live/config/sysvinit
+}
+
+Cmdline
+Init
+Config

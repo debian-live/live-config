@@ -1,6 +1,6 @@
 # Makefile
 
-## live-config(7) - System Configuration Scripts
+## live-config(7) - System Configuration Components
 ## Copyright (C) 2006-2013 Daniel Baumann <mail@daniel-baumann.ch>
 ##
 ## This program comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
@@ -12,7 +12,7 @@ SHELL := sh -e
 
 LANGUAGES = $(shell cd manpages/po && ls)
 
-SCRIPTS = backends/*/*.init bin/* scripts/*.sh scripts/*/*
+SCRIPTS = backend/*/*.init frontend/* middleend/*
 
 all: build
 
@@ -48,22 +48,22 @@ build:
 	@echo "Nothing to build."
 
 install:
-	# Installing backends
+	# Installing backend
 	mkdir -p $(DESTDIR)/etc/init.d
-	cp backends/sysvinit/live-config.init $(DESTDIR)/etc/init.d/live-config
-	cp backends/sysvinit/live.init $(DESTDIR)/etc/init.d/live
+	cp backend/sysvinit/live-config.init $(DESTDIR)/etc/init.d/live-config
 
 	mkdir -p $(DESTDIR)/lib/systemd/system
-	cp backends/systemd/live-config.systemd $(DESTDIR)/lib/systemd/system/live-config.service
+	cp backend/systemd/live-config.systemd $(DESTDIR)/lib/systemd/system/live-config.service
 
-	# Installing scripts
-	mkdir -p $(DESTDIR)/lib/live
-	cp -r scripts/config.sh scripts/config $(DESTDIR)/lib/live
+	# Installing frontend
+	mkdir -p $(DESTDIR)/bin
+	cp frontend/* $(DESTDIR)/bin
+
+	# Installing middleend
+	mkdir -p $(DESTDIR)/lib/live/config
+	cp middleend/* $(DESTDIR)/lib/live/config
+
 	mkdir -p $(DESTDIR)/var/lib/live/config
-
-	cp bin/boot-init.sh $(DESTDIR)/lib/live
-
-	mkdir -p $(DESTDIR)/sbin
 
 	# Installing shared data
 	mkdir -p $(DESTDIR)/usr/share/live/config
@@ -90,7 +90,7 @@ install:
 	done
 
 uninstall:
-	# Uninstalling backends
+	# Uninstalling backend
 	rm -f $(DESTDIR)/etc/init.d/live
 	rm -f $(DESTDIR)/etc/init.d/live-config
 	rmdir --ignore-fail-on-non-empty $(DESTDIR)/etc/init.d > /dev/null 2>&1 || true
@@ -104,10 +104,8 @@ uninstall:
 	rmdir --ignore-fail-on-non-empty $(DESTDIR)/lib/systemd/system > /dev/null 2>&1 || true
 	rmdir --ignore-fail-on-non-empty $(DESTDIR)/lib/systemd > /dev/null 2>&1 || true
 
-	# Uninstalling scripts
-	rm -f $(DESTDIR)/lib/live/boot-init.sh
-
-	rm -rf $(DESTDIR)/lib/live/config.sh $(DESTDIR)/lib/live/config
+	# Uninstalling middleend
+	rm -rf $(DESTDIR)/lib/live/config
 	rmdir --ignore-fail-on-non-empty $(DESTDIR)/lib/live > /dev/null 2>&1 || true
 	rmdir --ignore-fail-on-non-empty $(DESTDIR)/lib > /dev/null 2>&1 || true
 

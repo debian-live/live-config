@@ -1,4 +1,4 @@
-.\" live-config(7) - System Configuration Scripts
+.\" live-config(7) - System Configuration Components
 .\" Copyright (C) 2006-2013 Daniel Baumann <mail@daniel-baumann.ch>
 .\"
 .\" This program comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
@@ -11,52 +11,49 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 24.06.2013 4.0~a23\-1 "Projet Live Systems"
+.TH LIVE\-CONFIG 7 24.06.2013 4.0~a24\-1 "Projet Live Systems"
 
 .SH NOM
-\fBlive\-config\fP \- Scripts de configuration du système
+\fBlive\-config\fP \- System Configuration Components
 
 .SH DESCRIPTION
-\fBlive\-config\fP contient les scripts chargés de configurer le système live
-lors du processus de démarrage (late userspace).
+\fBlive\-config\fP contains the components that configure a live system during
+the boot process (late userspace).
 
 .SH CONFIGURATION
-\fBlive\-config\fP peut être configuré en utilisant des paramètres d'amorçage ou
-des fichiers de configuration. Si ces deux mécanismes sont utilisés pour
-certaines options, les paramètres d'amorçage sont prioritaires sur les
-fichiers de configuration. Lorsque l'on utilise la persistance, les scripts
-\fBlive\-config\fP ne sont lancés qu'une seule fois.
+\fBlive\-config\fP can be configured through boot parameters or configuration
+files. If both mechanisms are used for a certain option, the boot parameters
+take precedence over the configuration files. When using persistency,
+\fBlive\-config\fP components are only run once.
 .PP
 Pour configurer les paramètres de live\-config utilisés par défaut dans une
 image live, consultez l'option \-\-bootappend\-live dans la page de manuel
 \fIlb_config\fP(1)
 
-.SS "Parametères d'amorçage (scripts)"
-\fBlive\-config\fP est uniquement activé si 'boot=live' est utilisé en tant que
-paramètre d'amorçage. Additionnellement, \fBlive\-config\fP a besoin d'être
-informé des scripts qui seront lancés via le paramètre 'live\-config' ou de
-ceux qui ne doivent pas être lancés via en utilisant le paramètre
-\&'live\-noconfig'. Si 'live\-config' et 'live\-noconfig' sont utilisés, ou, si
-l'un d'eux est spécifié plusieurs fois, c'est toujours le dernier qui a la
-préséance sur ceux qui précèdent.
+.SS "Boot Parameters (components)"
+\fBlive\-config\fP is only activated if 'boot=live' is used as a boot
+parameter. Additionally, \fBlive\-config\fP needs to be told which components to
+run through the 'live\-config.components' parameter or which components to
+not run through the 'live\-config.nocomponents' parameter. If both
+\&'live\-config' and 'live\-config.nocomponents' are used, or, if either one is
+specified multiple times, always the later one takes precedence over the
+previous one(s).
 
-.IP "\fBlive\-config\fP | \fBconfig\fP" 4
-Tous les scripts sont lancés. C'est la configuration par défaut des images
-live.
-.IP "\fBlive\-config\fP=\fISCRIPT1\fP,\fISCRIPT2\fP, ... \fISCRIPTn\fP | \fBconfig\fP=\fISCRIPT1\fP,\fISCRIPT2\fP, ... \fISCRIPTn\fP" 4
+.IP "\fBlive\-config.components\fP | \fBcomponents\fP" 4
+All components are run. This is what live images use by default.
+.IP "\fBlive\-config.components\fP=\fICOMPONENT1\fP,\fICOMPONENT2\fP, ... \fICOMPONENTn\fP | \fBcomponents\fP=\fICOMPONENT1\fP,\fICOMPONENT2\fP, ... \fICOMPONENTn\fP" 4
 Seuls les scripts spécifiés sont lancés. Notez que leur ordre importe, ainsi
-\&'live\-config=sudo,live\-debconfig_passwd' ne peut pas fonctionner tant que
-l'utilisateur configuré pour utiliser sudo n'a pas été créé. Regardez les
-noms des scripts dans /lib/live/config pour les ordonner numériquement.
-.IP "\fBlive\-noconfig\fP | \fBnoconfig\fP" 4
-Aucun script n'est lancé. Celà revient au même que de n'utiliser ni
-\&'live\-config' ni 'live\-noconfig'.
-.IP "\fBlive\-noconfig\fP=\fISCRIPT1\fP,\fISCRIPT2\fP, ... \fISCRIPTn\fP | \fBnoconfig\fP=\fISCRIPT1\fP,\fISCRIPT2\fP, ... \fISCRIPTn\fP" 4
-Tous les scripts sont lancés, à l'exception de ceux spécifiés.
+\&'live\-config=sudo,user\-setup' ne peut pas fonctionner tant que l'utilisateur
+configuré pour utiliser sudo n'a pas été créé. Regardez les noms des scripts
+dans /lib/live/config pour les ordonner numériquement.
+.IP "\fBlive\-config.nocomponents\fP | \fBnocomponents\fP" 4
+No component is run. This is the same as not using any of
+\&'live\-config.components' or 'live\-config.nocomponents'.
+.IP "\fBlive\-config.nocomponents\fP=\fICOMPONENT1\fP,\fICOMPONENT2\fP, ... \fICOMPONENTn\fP | \fBnocomponents\fP=\fICOMPONENT1\fP,\fICOMPONENT2\fP, ... \fICOMPONENTn\fP" 4
+All components are run, except the specified ones.
 
 .SS "Paramètres d'amorçage (options)"
-Quelques scripts particuliers peuvent changer leur comportement sur un
-paramètre d'amorçage.
+Some individual components can change their behaviour upon a boot parameter.
 
 .IP "\fBlive\-config.debconf\-preseed\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP | \fBdebconf\-preseed\fP=medium|filesystem|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
 Permet de chercher et d'appliquer un ou plusieurs fichiers de
@@ -190,11 +187,12 @@ configuré via un ou plusieurs fichiers. Si des fichiers de configuration
 sont utilisés, le paramètre 'boot=live' est toujours requis pour activer
 \fBlive\-config\fP.
 .PP
-\fBNote:\fP If configuration files are used, either (preferably) all boot
-parameters should be put into the \fBLIVE_CONFIG_CMDLINE\fP variable, or
-individual variables can be set. If individual variables are used, the user
-is required to ensure that all the necessary variables are set to create a
-valid configuration.
+\fBRemarque:\fP Si vous utilisez des fichiers de configuration, tous les
+paramètres d'amorçage devraient (de préférence) être mis dans la variable
+\fBLIVE_CONFIG_CMDLINE\fP ou des variables individuelles peuvent être
+réglées. Si des variables individuelles sont utilisées, l'utilisateur doit
+s'assurer que toutes les variables nécessaires sont réglées pour créer une
+configuration correcte.
 .PP
 Les fichiers de configuration peuvent être placés soit dans la racine du
 système de fichiers (/etc/live/config.conf, /etc/live/config/*), soit sur le
@@ -213,107 +211,108 @@ Le contenu réel des fichiers de configuration se compose d'une ou plusieurs
 des variables suivantes.
 
 .IP "\fBLIVE_CONFIG_CMDLINE\fP=\fIPARAMETER1\fP \fIPARAMETER2\fP ... \fIPARAMETERn\fP" 4
-This varaible corresponds to the bootloader command line.
-.IP "\fBLIVE_CONFIGS\fP=\fISCRIPT1\fP,\fISCRIPT2\fP, ... \fISCRIPTn\fP" 4
-This variable corresponds to the '\fBlive\-config\fP=\fISCRIPT1\fP,\fISCRIPT2\fP,
-\&... \fISCRIPTn\fP' parameter.
-.IP "\fBLIVE_NOCONFIGS\fP=\fISCRIPT1\fP,\fISCRIPT2\fP, ... \fISCRIPTn\fP" 4
-This variable corresponds to the '\fBlive\-noconfig\fP=\fISCRIPT1\fP,\fISCRIPT2\fP,
-\&... \fISCRIPTn\fP' parameter.
+Cette variable correspond à la ligne de commande du chargeur d'amorçage.
+.IP "\fBLIVE_CONFIG_COMPONENTS\fP=\fICOMPONENT1\fP,\fICOMPONENT2\fP, ... \fICOMPONENTn\fP" 4
+This variable corresponds to the
+\&'\fBlive\-config.components\fP=\fICOMPONENT1\fP,\fICOMPONENT2\fP, ... \fICOMPONENTn\fP'
+parameter.
+.IP "\fBLIVE_CONFIG_NOCOMPONENTS\fP=\fICOMPONENT1\fP,\fICOMPONENT2\fP, ... \fICOMPONENTn\fP" 4
+This variable corresponds to the
+\&'\fBlive\-config.nocomponents\fP=\fICOMPONENT1\fP,\fICOMPONENT2\fP, ... \fICOMPONENTn\fP'
+parameter.
 .IP "\fBLIVE_DEBCONF_PRESEED\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
-This variable corresponds to the
+Cette variable correspond au paramètre
 \&'\fBlive\-config.debconf\-preseed\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP|
-\&... |\fIURLn\fP' parameter.
+\&... |\fIURLn\fP'.
 .IP \fBLIVE_HOSTNAME\fP=\fINOM_D_HÔTE\fP 4
-This variable corresponds to the '\fBlive\-config.hostname\fP=\fIHOSTNAME\fP'
-parameter.
+Cette variable correspond au paramètre
+\&'\fBlive\-config.hostname\fP=\fINOM_D_HÔTE\fP'.
 .IP \fBLIVE_USERNAME\fP=\fINOM_D_UTILISATEUR\fP 4
-This variable corresponds to the '\fBlive\-config.username\fP=\fIUSERNAME\fP'
-parameter.
+Cette variable correspond au paramètre
+\&'\fBlive\-config.username\fP=\fINOM_D_UTILISATEUR\fP'.
 .IP "\fBLIVE_USER_DEFAULT_GROUPS\fP=\fIGROUP1\fP,\fIGROUP2\fP ... \fIGROUPn\fP" 4
-This variable corresponds to the
+Cette variable correspond au paramètre
 \&'\fBlive\-config.user\-default\-groups\fP="\fIGROUP1\fP,\fIGROUP2\fP ... \fIGROUPn\fP"'
-parameter.
 .IP \fBLIVE_USER_FULLNAME\fP=\(dq\fINOM_COMPLET_D_UTILISATEUR\(dq\fP 4
-This variable corresponds to the '\fBlive\-config.user\-fullname\fP="\fIUSER
-FULLNAME\fP"' parameter.
+Cette variable correspond au paramètre
+\&'\fBlive\-config.user\-fullname\fP="\fINOM_COMPLET_D_UTILISATEUR"\fP'.
 .IP "\fBLIVE_LOCALES\fP=\fILOCALISATION1\fP,\fILOCALISATION2\fP ... \fILOCALISATIONn\fP" 4
-This variable corresponds to the
-\&'\fBlive\-config.locales\fP=\fILOCALE1\fP,\fILOCALE2\fP ... \fILOCALEn\fP' parameter.
+Cette variable correspond au paramètre
+\&'\fBlive\-config.locales\fP=\fILOCALISATION1\fP,\fILOCALISATION2\fP
+\&... \fILOCALISATIONn\fP'.
 .IP \fBLIVE_TIMEZONE\fP=\fITIMEZONE\fP 4
-This variable corresponds to the '\fBlive\-config.timezone\fP=\fITIMEZONE\fP'
-parameter.
+Cette variable correspond au paramètre
+\&'\fBlive\-config.timezone\fP=\fITIMEZONE\fP'.
 .IP \fBLIVE_KEYBOARD_MODEL\fP=\fIMODELE_DE_CLAVIER\fP 4
-This variable corresponds to the
-\&'\fBlive\-config.keyboard\-model\fP=\fIKEYBOARD_MODEL\fP' parameter.
+Cette variable correspond au paramètre
+\&'\fBlive\-config.keyboard\-model\fP=\fIMODELE_DE_CLAVIER\fP'.
 .IP "\fBLIVE_KEYBOARD_LAYOUTS\fP=\fICONFIGURATION1_DU_CLAVIER\fP,\fICONFIGURATION2_DU_CLAVIER\fP ... \fICONFIGURATIONn_DU_CLAVIER\fP" 4
-This variable corresponds to the
-\&'\fBlive\-config.keyboard\-layouts\fP=\fIKEYBOARD_LAYOUT1\fP,\fIKEYBOARD_LAYOUT2\fP
-\&... \fIKEYBOARD_LAYOUTn\fP' parameter.
+Cette variable correspond au paramètre
+\&'\fBlive\-config.keyboard\-layouts\fP=\fICONFIGURATION1_DU_CLAVIER\fP,\fICONFIGURATION2_DU_CLAVIER\fP
+\&... \fICONFIGURATIONn_DU_CLAVIER\fP'.
 .IP "\fBLIVE_KEYBOARD_VARIANTS\fP=\fIKEYBOARD_VARIANT1\fP,\fIKEYBOARD_VARIANT2\fP ... \fIKEYBOARD_VARIANTn\fP" 4
-This variable corresponds to the
-\&'\fBlive\-config.keyboard\-variants\fP=\fIKEYBOARD_VARIANT1\fP,\fIKEYBOARD_VARIANT2\fP
-\&... \fIKEYBOARD_VARIANTn\fP' parameter.
+Cette variable correspond au paramètre
+\&'\fBlive\-config.keyboard\-variants\fP=\fICONFIGURATION1_DU_CLAVIER\fP,\fICONFIGURATION2_DU_CLAVIER\fP
+\&... \fICONFIGURATIONn_DU_CLAVIER\fP'.
 .IP \fBLIVE_KEYBOARD_OPTIONS\fP=\fIOPTIONS_DU_CLAVIER\fP 4
-This variable corresponds to the
-\&'\fBlive\-config.keyboard\-options\fP=\fIKEYBOARD_OPTIONS\fP' parameter.
+Cette variable correspond au paramètre
+\&'\fBlive\-config.keyboard\-options\fP=\fIOPTIONS_DU_CLAVIER\fP'.
 .IP "\fBLIVE_SYSV_RC\fP=\fISERVICE1\fP,\fISERVICE2\fP ... \fISERVICEn\fP" 4
-This variable corresponds to the
-\&'\fBlive\-config.sysv\-rc\fP=\fISERVICE1\fP,\fISERVICE2\fP ... \fISERVICEn\fP' parameter.
+Cette variable correspond au paramètre
+\&'\fBlive\-config.sysv\-rc\fP=\fISERVICE1\fP,\fISERVICE2\fP ... \fISERVICEn\fP'.
 .IP \fBLIVE_UTC\fP=\fByes\fP|no 4
-This variable corresponds to the '\fBlive\-config.utc\fP=\fByes\fP|no' parameter.
+Cette variable correspond au paramètre '\fBlive\-config.utc\fP=\fByes\fP|no'.
 .IP \fBLIVE_X_SESSION_MANAGER\fP=\fIX_SESSION_MANAGER\fP 4
-This variable corresponds to the
-\&'\fBlive\-config.x\-session\-manager\fP=\fIX_SESSION_MANAGER\fP' parameter.
+Cette variable correspond au paramètre
+\&'\fBlive\-config.x\-session\-manager\fP=\fIX_SESSION_MANAGER\fP'.
 .IP \fBLIVE_XORG_DRIVER\fP=\fIDRIVER_PAR_XORG\fP 4
-This variable corresponds to the '\fBlive\-config.xorg\-driver\fP=\fIXORG_DRIVER\fP'
-parameter.
+Cette variable correspond au paramètre
+\&'\fBlive\-config.xorg\-driver\fP=\fIDRIVER_PAR_XORG\fP.
 .IP \fBLIVE_XORG_RESOLUTION\fP=\fIRESOLUTION_PAR_XORG\fP 4
-This variable corresponds to the
-\&'\fBlive\-config.xorg\-resolution\fP=\fIXORG_RESOLUTION\fP' parameter.
+Cette variable correspond au paramètre
+\&'\fBlive\-config.xorg\-resolution\fP=\fIRESOLUTION_PAR_XORG\fP'.
 .IP "\fBLIVE_HOOKS\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
-This variable corresponds to the
-\&'\fBlive\-config.hooks\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP'
-parameter.
+Cette variable correspond au paramètre
+\&'\fBlive\-config.hooks\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP'.
 .IP \fBLIVE_CONFIG_DEBUG\fP= true|false\(dq
-This variable corresponds to the '\fBlive\-config.debug\fP' parameter.
+Cette variable correspond au paramètre '\fBlive\-config.debug\fP'.
 
 .SH CUSTOMISATION
 \fBlive\-config\fP peut être facilement personnalisé pour des projets dérivés,
 ou pour un usage local.
 
-.SS "Ajout de nouveaux scripts de configuration"
-Les projets dérivés peuvent utiliser leurs propres scripts dans
-/lib/live/config et n'ont besoin de rien d'autre, les scripts seront appelés
-lors du démarrage.
+.SS "Adding new config components"
+Downstream projects can put their components into /lib/live/config and do
+not need to do anything else, the components will be called automatically
+during boot.
 .PP
-Il est préférable que les scripts soient mis dans leur propre paquet
-Debian. Un simple paquet contenant un script d'exemple est proposé dans
+The components are best put into an own debian package. A sample package
+containing an example component can be found in
 /usr/share/doc/live\-config/examples.
 
-.SS "Enlever des scripts de configuration existants"
-Il n'est pas vraiment possible d'enlever sans problème les scripts sans
-avoir besoin d'utiliser un paquet \fBlive\-config\fP modifié localement ou à
-l'aide de dpkg\-divert. Cependant, on peut réaliser une chose similaire en
-désactivant les scripts respectifs via le mécanisme live\-noconfig, comme
-indiqué ci\-dessus. Afin d'éviter d'avoir à spécifier les scripts désactivés
-avec le paramètre d'amorçage, vous devriez utiliser un fichier de
-configuration, voir ci\-dessus.
+.SS "Removing existing config components"
+It is not really possible to remove components itself in a sane way yet
+without requiring either to ship a locally modified \fBlive\-config\fP package
+or using dpkg\-divert. However, the same can be achieved by disabling the
+respective components through the live\-config.nocomponents mechanism, see
+above. To avoid to always need specifing disabled components through the
+boot parameter, a configuration file should be used, see above.
 .PP
 Les fichiers de configuration pour le système live devront de préférence
 être inclus dans leur propre paquet debian. Un simple paquet contenant un
 exemple de configuration est proposé dans
 /usr/share/doc/live\-config/examples.
 
-.SH SCRIPTS
-\fBlive\-config\fP actuellement a les scripts suivants dans /lib/live/config.
+.SH COMPONENTS
+\fBlive\-config\fP currently features the following components in
+/lib/live/config.
 
 .IP \fBdebconf\fP 4
 permet d'appliquer fichiers de préconfiguration arbitraires placés sur les
 médias live ou un serveur http/ftp.
 .IP \fBhostname\fP 4
 configure /etc/hostname et /etc/hosts.
-.IP \fBlive\-debconfig_passwd\fP 4
+.IP \fBuser\-setup\fP 4
 ajoute un compte d'utilisateur live.
 .IP \fBsudo\fP 4
 offre les privilèges sudo à l'utilisateur live.
@@ -381,8 +380,8 @@ regénère les clés de l'hôte openssh\-server.
 .IP \fBxfce4\-panel\fP 4
 configure xfce4\-panel avec les réglages par défaut.
 .IP \fBhooks\fP 4
-permet de lancer des commandes arbitraires d'un script placé sur le média
-live, ou sur un serveur http/ftp.
+allows to run arbitrary commands from a file placed on the live media or an
+http/ftp server.
 
 .SH FICHIERS
 .IP \fB/etc/live/config.conf\fP 4

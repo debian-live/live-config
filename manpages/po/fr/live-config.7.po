@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: live-config 4.0~a23-1\n"
-"POT-Creation-Date: 2013-06-24 13:47+0300\n"
-"PO-Revision-Date: 2013-05-11 19:48+0100\n"
+"Project-Id-Version: live-config 4.0~a24-1\n"
+"POT-Creation-Date: 2013-06-24 20:39+0300\n"
+"PO-Revision-Date: 2013-06-24 14:52+0100\n"
 "Last-Translator: Carlos Zuferri <chals@altorricon.com>\n"
 "Language-Team: none\n"
 "Language: fr\n"
@@ -31,8 +31,8 @@ msgstr "24.06.2013"
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "4.0~a23-1"
-msgstr "4.0~a23-1"
+msgid "4.0~a24-1"
+msgstr "4.0~a24-1"
 
 #. type: TH
 #: en/live-config.7:9
@@ -48,7 +48,9 @@ msgstr "NOM"
 
 #. type: Plain text
 #: en/live-config.7:13
-msgid "B<live-config> - System Configuration Scripts"
+#, fuzzy
+#| msgid "B<live-config> - System Configuration Scripts"
+msgid "B<live-config> - System Configuration Components"
 msgstr "B<live-config> - Scripts de configuration du système"
 
 #. type: SH
@@ -59,9 +61,13 @@ msgstr "DESCRIPTION"
 
 #. type: Plain text
 #: en/live-config.7:16
+#, fuzzy
+#| msgid ""
+#| "B<live-config> contains the scripts that configure a live system during "
+#| "the boot process (late userspace)."
 msgid ""
-"B<live-config> contains the scripts that configure a live system during the "
-"boot process (late userspace)."
+"B<live-config> contains the components that configure a live system during "
+"the boot process (late userspace)."
 msgstr ""
 "B<live-config> contient les scripts chargés de configurer le système live "
 "lors du processus de démarrage (late userspace)."
@@ -74,11 +80,17 @@ msgstr "CONFIGURATION"
 
 #. type: Plain text
 #: en/live-config.7:19
+#, fuzzy
+#| msgid ""
+#| "B<live-config> can be configured through boot parameters or configuration "
+#| "files. If both mechanisms are used for a certain option, the boot "
+#| "parameters take precedence over the configuration files. When using "
+#| "persistency, B<live-config> scripts are only run once."
 msgid ""
 "B<live-config> can be configured through boot parameters or configuration "
 "files. If both mechanisms are used for a certain option, the boot parameters "
 "take precedence over the configuration files. When using persistency, B<live-"
-"config> scripts are only run once."
+"config> components are only run once."
 msgstr ""
 "B<live-config> peut être configuré en utilisant des paramètres d'amorçage ou "
 "des fichiers de configuration. Si ces deux mécanismes sont utilisés pour "
@@ -98,19 +110,29 @@ msgstr ""
 
 #. type: SS
 #: en/live-config.7:22
-#, no-wrap
-msgid "Boot Parameters (scripts)"
-msgstr "Parametères d'amorçage (scripts)"
+#, fuzzy, no-wrap
+#| msgid "Boot Parameters (options)"
+msgid "Boot Parameters (components)"
+msgstr "Paramètres d'amorçage (options)"
 
 #. type: Plain text
 #: en/live-config.7:24
+#, fuzzy
+#| msgid ""
+#| "B<live-config> is only activated if 'boot=live' is used as a boot "
+#| "parameter. Additionally, B<live-config> needs to be told which scripts to "
+#| "run through the 'live-config' parameter or which scripts to not run "
+#| "through the 'live-noconfig' parameter. If both 'live-config' and 'live-"
+#| "noconfig' are used, or, if either one is specified multiple times, always "
+#| "the later one takes precedence over the previous one(s)."
 msgid ""
 "B<live-config> is only activated if 'boot=live' is used as a boot parameter. "
-"Additionally, B<live-config> needs to be told which scripts to run through "
-"the 'live-config' parameter or which scripts to not run through the 'live-"
-"noconfig' parameter. If both 'live-config' and 'live-noconfig' are used, or, "
-"if either one is specified multiple times, always the later one takes "
-"precedence over the previous one(s)."
+"Additionally, B<live-config> needs to be told which components to run "
+"through the 'live-config.components' parameter or which components to not "
+"run through the 'live-config.nocomponents' parameter. If both 'live-config' "
+"and 'live-config.nocomponents' are used, or, if either one is specified "
+"multiple times, always the later one takes precedence over the previous one"
+"(s)."
 msgstr ""
 "B<live-config> est uniquement activé si 'boot=live' est utilisé en tant que "
 "paramètre d'amorçage. Additionnellement, B<live-config> a besoin d'être "
@@ -122,60 +144,71 @@ msgstr ""
 
 #. type: IP
 #: en/live-config.7:25
-#, no-wrap
-msgid "B<live-config> | B<config>"
-msgstr "B<live-config> | B<config>"
+#, fuzzy, no-wrap
+#| msgid "B<live-config.noroot> | B<noroot>"
+msgid "B<live-config.components> | B<components>"
+msgstr "B<live-config.noroot> | B<noroot>"
 
 #. type: Plain text
 #: en/live-config.7:27
-msgid "All scripts are run. This is what live images use by default."
+#, fuzzy
+#| msgid "All scripts are run. This is what live images use by default."
+msgid "All components are run. This is what live images use by default."
 msgstr ""
 "Tous les scripts sont lancés. C'est la configuration par défaut des images "
 "live."
 
 #. type: IP
 #: en/live-config.7:27
-#, no-wrap
-msgid "B<live-config>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn> | B<config>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn>"
+#, fuzzy, no-wrap
+#| msgid "B<live-config>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn> | B<config>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn>"
+msgid "B<live-config.components>=I<COMPONENT1>,I<COMPONENT2>, ... I<COMPONENTn> | B<components>=I<COMPONENT1>,I<COMPONENT2>, ... I<COMPONENTn>"
 msgstr "B<live-config>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn> | B<config>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn>"
 
 #. type: Plain text
 #: en/live-config.7:29
 msgid ""
-"Only the specified scripts are run. Note that the order matters, e.g. 'live-"
-"config=sudo,live-debconfig_passwd' would not work since the user needs to be "
-"added before it can be configured for sudo. Look at the filenames of the "
-"scripts in /lib/live/config for their ordering number."
+"Only the specified components are run. Note that the order matters, e.g. "
+"'live-config.components=sudo,user-setup' would not work since the user needs "
+"to be added before it can be configured for sudo. Look at the filenames of "
+"the components in /lib/live/config for their ordering number."
 msgstr ""
 "Seuls les scripts spécifiés sont lancés. Notez que leur ordre importe, ainsi "
-"'live-config=sudo,live-debconfig_passwd' ne peut pas fonctionner tant que "
-"l'utilisateur configuré pour utiliser sudo n'a pas été créé. Regardez les "
-"noms des scripts dans /lib/live/config pour les ordonner numériquement."
+"'live-config=sudo,user-setup' ne peut pas fonctionner tant que l'utilisateur "
+"configuré pour utiliser sudo n'a pas été créé. Regardez les noms des scripts "
+"dans /lib/live/config pour les ordonner numériquement."
 
 #. type: IP
 #: en/live-config.7:29
 #, no-wrap
-msgid "B<live-noconfig> | B<noconfig>"
-msgstr "B<live-noconfig> | B<noconfig>"
+msgid "B<live-config.nocomponents> | B<nocomponents>"
+msgstr "B<live-config.nocomponents> | B<nocomponents>"
 
 #. type: Plain text
 #: en/live-config.7:31
+#, fuzzy
+#| msgid ""
+#| "No script is run. This is the same as not using any of 'live-config' or "
+#| "'live-noconfig'."
 msgid ""
-"No script is run. This is the same as not using any of 'live-config' or "
-"'live-noconfig'."
+"No component is run. This is the same as not using any of 'live-config."
+"components' or 'live-config.nocomponents'."
 msgstr ""
 "Aucun script n'est lancé. Celà revient au même que de n'utiliser ni 'live-"
 "config' ni 'live-noconfig'."
 
 #. type: IP
 #: en/live-config.7:31
-#, no-wrap
-msgid "B<live-noconfig>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn> | B<noconfig>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn>"
+#, fuzzy, no-wrap
+#| msgid "B<live-noconfig>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn> | B<noconfig>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn>"
+msgid "B<live-config.nocomponents>=I<COMPONENT1>,I<COMPONENT2>, ... I<COMPONENTn> | B<nocomponents>=I<COMPONENT1>,I<COMPONENT2>, ... I<COMPONENTn>"
 msgstr "B<live-noconfig>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn> | B<noconfig>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn>"
 
 #. type: Plain text
 #: en/live-config.7:33
-msgid "All scripts are run, except the specified ones."
+#, fuzzy
+#| msgid "All scripts are run, except the specified ones."
+msgid "All components are run, except the specified ones."
 msgstr "Tous les scripts sont lancés, à l'exception de ceux spécifiés."
 
 #. type: SS
@@ -186,8 +219,11 @@ msgstr "Paramètres d'amorçage (options)"
 
 #. type: Plain text
 #: en/live-config.7:36
+#, fuzzy
+#| msgid ""
+#| "Some individual scripts can change their behaviour upon a boot parameter."
 msgid ""
-"Some individual scripts can change their behaviour upon a boot parameter."
+"Some individual components can change their behaviour upon a boot parameter."
 msgstr ""
 "Quelques scripts particuliers peuvent changer leur comportement sur un "
 "paramètre d'amorçage."
@@ -661,6 +697,12 @@ msgid ""
 "is required to ensure that all the necessary variables are set to create a "
 "valid configuration."
 msgstr ""
+"B<Remarque:> Si vous utilisez des fichiers de configuration, tous les "
+"paramètres d'amorçage devraient (de préférence) être mis dans la variable "
+"B<LIVE_CONFIG_CMDLINE> ou des variables individuelles peuvent être réglées. "
+"Si des variables individuelles sont utilisées, l'utilisateur doit s'assurer "
+"que toutes les variables nécessaires sont réglées pour créer une "
+"configuration correcte."
 
 #. type: Plain text
 #: en/live-config.7:112
@@ -702,52 +744,54 @@ msgstr ""
 
 #. type: IP
 #: en/live-config.7:117
-#, fuzzy, no-wrap
-#| msgid "B<LIVE_CONFIGS>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn>"
+#, no-wrap
 msgid "B<LIVE_CONFIG_CMDLINE>=I<PARAMETER1> I<PARAMETER2> ... I<PARAMETERn>"
 msgstr "B<LIVE_CONFIG_CMDLINE>=I<PARAMETER1> I<PARAMETER2> ... I<PARAMETERn>"
 
 #. type: Plain text
 #: en/live-config.7:119
-msgid "This varaible corresponds to the bootloader command line."
+msgid "This variable corresponds to the bootloader command line."
 msgstr ""
+"Cette variable correspond à la ligne de commande du chargeur d'amorçage."
 
 #. type: IP
 #: en/live-config.7:119
-#, no-wrap
-msgid "B<LIVE_CONFIGS>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn>"
+#, fuzzy, no-wrap
+#| msgid "B<LIVE_CONFIGS>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn>"
+msgid "B<LIVE_CONFIG_COMPONENTS>=I<COMPONENT1>,I<COMPONENT2>, ... I<COMPONENTn>"
 msgstr "B<LIVE_CONFIGS>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn>"
 
 #. type: Plain text
 #: en/live-config.7:121
 #, fuzzy
 #| msgid ""
-#| "This variable equals the 'B<live-config>=I<SCRIPT1>,I<SCRIPT2>, ... "
-#| "I<SCRIPTn>' parameter."
+#| "This variable corresponds to the 'B<live-config>=I<SCRIPT1>,"
+#| "I<SCRIPT2>, ... I<SCRIPTn>' parameter."
 msgid ""
-"This variable corresponds to the 'B<live-config>=I<SCRIPT1>,I<SCRIPT2>, ... "
-"I<SCRIPTn>' parameter."
+"This variable corresponds to the 'B<live-config.components>=I<COMPONENT1>,"
+"I<COMPONENT2>, ... I<COMPONENTn>' parameter."
 msgstr ""
 "Cette variable correspond au paramètre 'B<live-config>=I<SCRIPT1>,"
 "I<SCRIPT2>, ... I<SCRIPTn>'."
 
 #. type: IP
 #: en/live-config.7:121
-#, no-wrap
-msgid "B<LIVE_NOCONFIGS>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn>"
-msgstr "B<LIVE_NOCONFIGS>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn>"
+#, fuzzy, no-wrap
+#| msgid "B<LIVE_CONFIGS>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn>"
+msgid "B<LIVE_CONFIG_NOCOMPONENTS>=I<COMPONENT1>,I<COMPONENT2>, ... I<COMPONENTn>"
+msgstr "B<LIVE_CONFIGS>=I<SCRIPT1>,I<SCRIPT2>, ... I<SCRIPTn>"
 
 #. type: Plain text
 #: en/live-config.7:123
 #, fuzzy
 #| msgid ""
-#| "This variable equals the 'B<live-noconfig>=I<SCRIPT1>,I<SCRIPT2>, ... "
-#| "I<SCRIPTn>' parameter."
+#| "This variable corresponds to the 'B<live-config>=I<SCRIPT1>,"
+#| "I<SCRIPT2>, ... I<SCRIPTn>' parameter."
 msgid ""
-"This variable corresponds to the 'B<live-noconfig>=I<SCRIPT1>,"
-"I<SCRIPT2>, ... I<SCRIPTn>' parameter."
+"This variable corresponds to the 'B<live-config.nocomponents>=I<COMPONENT1>,"
+"I<COMPONENT2>, ... I<COMPONENTn>' parameter."
 msgstr ""
-"Cette variable correspond au paramètre 'B<live-noconfig>=I<SCRIPT1>,"
+"Cette variable correspond au paramètre 'B<live-config>=I<SCRIPT1>,"
 "I<SCRIPT2>, ... I<SCRIPTn>'."
 
 #. type: IP
@@ -758,10 +802,6 @@ msgstr "B<LIVE_DEBCONF_PRESEED>=filesystem|medium|I<URL1>|I<URL2>| ... |I<URLn>"
 
 #. type: Plain text
 #: en/live-config.7:125
-#, fuzzy
-#| msgid ""
-#| "This variable equals the 'B<live-config.debconf-preseed>=filesystem|"
-#| "medium|I<URL1>|I<URL2>| ... |I<URLn>' parameter."
 msgid ""
 "This variable corresponds to the 'B<live-config.debconf-preseed>=filesystem|"
 "medium|I<URL1>|I<URL2>| ... |I<URLn>' parameter."
@@ -777,9 +817,6 @@ msgstr "B<LIVE_HOSTNAME>=I<NOM_D_HÔTE>"
 
 #. type: Plain text
 #: en/live-config.7:127
-#, fuzzy
-#| msgid ""
-#| "This variable equals the 'B<live-config.hostname>=I<HOSTNAME>' parameter."
 msgid ""
 "This variable corresponds to the 'B<live-config.hostname>=I<HOSTNAME>' "
 "parameter."
@@ -795,9 +832,6 @@ msgstr "B<LIVE_USERNAME>=I<NOM_D_UTILISATEUR>"
 
 #. type: Plain text
 #: en/live-config.7:129
-#, fuzzy
-#| msgid ""
-#| "This variable equals the 'B<live-config.username>=I<USERNAME>' parameter."
 msgid ""
 "This variable corresponds to the 'B<live-config.username>=I<USERNAME>' "
 "parameter."
@@ -813,10 +847,6 @@ msgstr "B<LIVE_USER_DEFAULT_GROUPS>=I<GROUP1>,I<GROUP2> ... I<GROUPn>"
 
 #. type: Plain text
 #: en/live-config.7:131
-#, fuzzy
-#| msgid ""
-#| "This variable equals the 'B<live-config.user-default-groups>=\"I<GROUP1>,"
-#| "I<GROUP2> ... I<GROUPn>\"' parameter."
 msgid ""
 "This variable corresponds to the 'B<live-config.user-default-groups>="
 "\"I<GROUP1>,I<GROUP2> ... I<GROUPn>\"' parameter."
@@ -832,10 +862,6 @@ msgstr "B<LIVE_USER_FULLNAME>=\"I<NOM_COMPLET_D_UTILISATEUR\">"
 
 #. type: Plain text
 #: en/live-config.7:133
-#, fuzzy
-#| msgid ""
-#| "This variable equals the 'B<live-config.user-fullname>=\"I<USER FULLNAME>"
-#| "\"' parameter."
 msgid ""
 "This variable corresponds to the 'B<live-config.user-fullname>=\"I<USER "
 "FULLNAME>\"' parameter."
@@ -851,10 +877,6 @@ msgstr "B<LIVE_LOCALES>=I<LOCALISATION1>,I<LOCALISATION2> ... I<LOCALISATIONn>"
 
 #. type: Plain text
 #: en/live-config.7:135
-#, fuzzy
-#| msgid ""
-#| "This variable equals the 'B<live-config.locales>=I<LOCALE1>,"
-#| "I<LOCALE2> ... I<LOCALEn>' parameter."
 msgid ""
 "This variable corresponds to the 'B<live-config.locales>=I<LOCALE1>,"
 "I<LOCALE2> ... I<LOCALEn>' parameter."
@@ -870,9 +892,6 @@ msgstr "B<LIVE_TIMEZONE>=I<TIMEZONE>"
 
 #. type: Plain text
 #: en/live-config.7:137
-#, fuzzy
-#| msgid ""
-#| "This variable equals the 'B<live-config.timezone>=I<TIMEZONE>' parameter."
 msgid ""
 "This variable corresponds to the 'B<live-config.timezone>=I<TIMEZONE>' "
 "parameter."
@@ -887,10 +906,6 @@ msgstr "B<LIVE_KEYBOARD_MODEL>=I<MODELE_DE_CLAVIER>"
 
 #. type: Plain text
 #: en/live-config.7:139
-#, fuzzy
-#| msgid ""
-#| "This variable equals the 'B<live-config.keyboard-"
-#| "model>=I<KEYBOARD_MODEL>' parameter."
 msgid ""
 "This variable corresponds to the 'B<live-config.keyboard-"
 "model>=I<KEYBOARD_MODEL>' parameter."
@@ -906,11 +921,6 @@ msgstr "B<LIVE_KEYBOARD_LAYOUTS>=I<CONFIGURATION1_DU_CLAVIER>,I<CONFIGURATION2_D
 
 #. type: Plain text
 #: en/live-config.7:141
-#, fuzzy
-#| msgid ""
-#| "This variable equals the 'B<live-config.keyboard-"
-#| "layouts>=I<KEYBOARD_LAYOUT1>,I<KEYBOARD_LAYOUT2> ... I<KEYBOARD_LAYOUTn>' "
-#| "parameter."
 msgid ""
 "This variable corresponds to the 'B<live-config.keyboard-"
 "layouts>=I<KEYBOARD_LAYOUT1>,I<KEYBOARD_LAYOUT2> ... I<KEYBOARD_LAYOUTn>' "
@@ -928,11 +938,6 @@ msgstr "B<LIVE_KEYBOARD_VARIANTS>=I<KEYBOARD_VARIANT1>,I<KEYBOARD_VARIANT2> ... 
 
 #. type: Plain text
 #: en/live-config.7:143
-#, fuzzy
-#| msgid ""
-#| "This variable equals the 'B<live-config.keyboard-"
-#| "variants>=I<KEYBOARD_VARIANT1>,I<KEYBOARD_VARIANT2> ... "
-#| "I<KEYBOARD_VARIANTn>' parameter."
 msgid ""
 "This variable corresponds to the 'B<live-config.keyboard-"
 "variants>=I<KEYBOARD_VARIANT1>,I<KEYBOARD_VARIANT2> ... "
@@ -950,10 +955,6 @@ msgstr "B<LIVE_KEYBOARD_OPTIONS>=I<OPTIONS_DU_CLAVIER>"
 
 #. type: Plain text
 #: en/live-config.7:145
-#, fuzzy
-#| msgid ""
-#| "This variable equals the 'B<live-config.keyboard-"
-#| "options>=I<KEYBOARD_OPTIONS>' parameter."
 msgid ""
 "This variable corresponds to the 'B<live-config.keyboard-"
 "options>=I<KEYBOARD_OPTIONS>' parameter."
@@ -969,10 +970,6 @@ msgstr "B<LIVE_SYSV_RC>=I<SERVICE1>,I<SERVICE2> ... I<SERVICEn>"
 
 #. type: Plain text
 #: en/live-config.7:147
-#, fuzzy
-#| msgid ""
-#| "This variable equals the 'B<live-config.sysv-rc>=I<SERVICE1>,"
-#| "I<SERVICE2> ... I<SERVICEn>' parameter."
 msgid ""
 "This variable corresponds to the 'B<live-config.sysv-rc>=I<SERVICE1>,"
 "I<SERVICE2> ... I<SERVICEn>' parameter."
@@ -988,8 +985,6 @@ msgstr "B<LIVE_UTC>=B<yes>|no"
 
 #. type: Plain text
 #: en/live-config.7:149
-#, fuzzy
-#| msgid "This variable equals the 'B<live-config.utc>=B<yes>|no' parameter."
 msgid ""
 "This variable corresponds to the 'B<live-config.utc>=B<yes>|no' parameter."
 msgstr "Cette variable correspond au paramètre 'B<live-config.utc>=B<yes>|no'."
@@ -1002,10 +997,6 @@ msgstr "B<LIVE_X_SESSION_MANAGER>=I<X_SESSION_MANAGER>"
 
 #. type: Plain text
 #: en/live-config.7:151
-#, fuzzy
-#| msgid ""
-#| "This variable equals the 'B<live-config.x-session-"
-#| "manager>=I<X_SESSION_MANAGER>' parameter."
 msgid ""
 "This variable corresponds to the 'B<live-config.x-session-"
 "manager>=I<X_SESSION_MANAGER>' parameter."
@@ -1021,10 +1012,6 @@ msgstr "B<LIVE_XORG_DRIVER>=I<DRIVER_PAR_XORG>"
 
 #. type: Plain text
 #: en/live-config.7:153
-#, fuzzy
-#| msgid ""
-#| "This variable equals the 'B<live-config.xorg-driver>=I<XORG_DRIVER>' "
-#| "parameter."
 msgid ""
 "This variable corresponds to the 'B<live-config.xorg-driver>=I<XORG_DRIVER>' "
 "parameter."
@@ -1040,10 +1027,6 @@ msgstr "B<LIVE_XORG_RESOLUTION>=I<RESOLUTION_PAR_XORG>"
 
 #. type: Plain text
 #: en/live-config.7:155
-#, fuzzy
-#| msgid ""
-#| "This variable equals the 'B<live-config.xorg-"
-#| "resolution>=I<XORG_RESOLUTION>' parameter."
 msgid ""
 "This variable corresponds to the 'B<live-config.xorg-"
 "resolution>=I<XORG_RESOLUTION>' parameter."
@@ -1059,10 +1042,6 @@ msgstr "B<LIVE_HOOKS>=filesystem|medium|I<URL1>|I<URL2>| ... |I<URLn>"
 
 #. type: Plain text
 #: en/live-config.7:157
-#, fuzzy
-#| msgid ""
-#| "This variable equals the 'B<live-config.hooks>=filesystem|medium|I<URL1>|"
-#| "I<URL2>| ... |I<URLn>' parameter."
 msgid ""
 "This variable corresponds to the 'B<live-config.hooks>=filesystem|medium|"
 "I<URL1>|I<URL2>| ... |I<URLn>' parameter."
@@ -1072,17 +1051,14 @@ msgstr ""
 
 #. type: IP
 #: en/live-config.7:157
-#, fuzzy, no-wrap
-#| msgid "LIVE-CONFIG"
+#, no-wrap
 msgid "B<LIVE_CONFIG_DEBUG>="
-msgstr "LIVE-CONFIG"
+msgstr "B<LIVE_CONFIG_DEBUG>="
 
 #. type: Plain text
 #: en/live-config.7:159
-#, fuzzy
-#| msgid "This variable equals the 'B<live-config.utc>=B<yes>|no' parameter."
 msgid "This variable corresponds to the 'B<live-config.debug>' parameter."
-msgstr "Cette variable correspond au paramètre 'B<live-config.utc>=B<yes>|no'."
+msgstr "Cette variable correspond au paramètre 'B<live-config.debug>'."
 
 #. type: SH
 #: en/live-config.7:160
@@ -1101,16 +1077,22 @@ msgstr ""
 
 #. type: SS
 #: en/live-config.7:163
-#, no-wrap
-msgid "Adding new config scripts"
+#, fuzzy, no-wrap
+#| msgid "Adding new config scripts"
+msgid "Adding new config components"
 msgstr "Ajout de nouveaux scripts de configuration"
 
 #. type: Plain text
 #: en/live-config.7:165
+#, fuzzy
+#| msgid ""
+#| "Downstream projects can put their scripts into /lib/live/config and do "
+#| "not need to do anything else, the scripts will be called automatically "
+#| "during boot."
 msgid ""
-"Downstream projects can put their scripts into /lib/live/config and do not "
-"need to do anything else, the scripts will be called automatically during "
-"boot."
+"Downstream projects can put their components into /lib/live/config and do "
+"not need to do anything else, the components will be called automatically "
+"during boot."
 msgstr ""
 "Les projets dérivés peuvent utiliser leurs propres scripts dans /lib/live/"
 "config et n'ont besoin de rien d'autre, les scripts seront appelés lors du "
@@ -1118,9 +1100,14 @@ msgstr ""
 
 #. type: Plain text
 #: en/live-config.7:167
+#, fuzzy
+#| msgid ""
+#| "The scripts are best put into an own debian package. A sample package "
+#| "containing an example script can be found in /usr/share/doc/live-config/"
+#| "examples."
 msgid ""
-"The scripts are best put into an own debian package. A sample package "
-"containing an example script can be found in /usr/share/doc/live-config/"
+"The components are best put into an own debian package. A sample package "
+"containing an example component can be found in /usr/share/doc/live-config/"
 "examples."
 msgstr ""
 "Il est préférable que les scripts soient mis dans leur propre paquet Debian. "
@@ -1129,19 +1116,28 @@ msgstr ""
 
 #. type: SS
 #: en/live-config.7:168
-#, no-wrap
-msgid "Removing existing config scripts"
+#, fuzzy, no-wrap
+#| msgid "Removing existing config scripts"
+msgid "Removing existing config components"
 msgstr "Enlever des scripts de configuration existants"
 
 #. type: Plain text
 #: en/live-config.7:170
+#, fuzzy
+#| msgid ""
+#| "It is not really possible to remove scripts itself in a sane way yet "
+#| "without requiring either to ship a locally modified B<live-config> "
+#| "package or using dpkg-divert. However, the same can be achieved by "
+#| "disabling the respective scripts through the live-noconfig mechanism, see "
+#| "above. To avoid to always need specifing disabled scripts through the "
+#| "boot parameter, a configuration file should be used, see above."
 msgid ""
-"It is not really possible to remove scripts itself in a sane way yet without "
-"requiring either to ship a locally modified B<live-config> package or using "
-"dpkg-divert. However, the same can be achieved by disabling the respective "
-"scripts through the live-noconfig mechanism, see above. To avoid to always "
-"need specifing disabled scripts through the boot parameter, a configuration "
-"file should be used, see above."
+"It is not really possible to remove components itself in a sane way yet "
+"without requiring either to ship a locally modified B<live-config> package "
+"or using dpkg-divert. However, the same can be achieved by disabling the "
+"respective components through the live-config.nocomponents mechanism, see "
+"above. To avoid to always need specifing disabled components through the "
+"boot parameter, a configuration file should be used, see above."
 msgstr ""
 "Il n'est pas vraiment possible d'enlever sans problème les scripts sans "
 "avoir besoin d'utiliser un paquet B<live-config> modifié localement ou à "
@@ -1166,13 +1162,18 @@ msgstr ""
 #. type: SH
 #: en/live-config.7:173
 #, no-wrap
-msgid "SCRIPTS"
-msgstr "SCRIPTS"
+msgid "COMPONENTS"
+msgstr ""
 
 #. type: Plain text
 #: en/live-config.7:175
+#, fuzzy
+#| msgid ""
+#| "B<live-config> currently features the following scripts in /lib/live/"
+#| "config."
 msgid ""
-"B<live-config> currently features the following scripts in /lib/live/config."
+"B<live-config> currently features the following components in /lib/live/"
+"config."
 msgstr ""
 "B<live-config> actuellement a les scripts suivants dans /lib/live/config."
 
@@ -1205,8 +1206,8 @@ msgstr "configure /etc/hostname et /etc/hosts."
 #. type: IP
 #: en/live-config.7:180
 #, no-wrap
-msgid "B<live-debconfig_passwd>"
-msgstr "B<live-debconfig_passwd>"
+msgid "B<user-setup>"
+msgstr ""
 
 #. type: Plain text
 #: en/live-config.7:182
@@ -1564,9 +1565,13 @@ msgstr "B<hooks>"
 
 #. type: Plain text
 #: en/live-config.7:248
+#, fuzzy
+#| msgid ""
+#| "allows to run arbitrary commands from a script placed on the live media "
+#| "or an http/ftp server."
 msgid ""
-"allows to run arbitrary commands from a script placed on the live media or "
-"an http/ftp server."
+"allows to run arbitrary commands from a file placed on the live media or an "
+"http/ftp server."
 msgstr ""
 "permet de lancer des commandes arbitraires d'un script placé sur le média "
 "live, ou sur un serveur http/ftp."
