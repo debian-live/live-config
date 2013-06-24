@@ -11,13 +11,13 @@ Description=live-config contains the scripts that configure a live system during
 Documentation=man:live-config
 Before=basic.target
 DefaultDependencies=no
-ConditionPathExists=/lib/live/config.sh
+ConditionPathExists=/sbin/live-config
 ConditionKernelCommandLine=boot=live
 
 [Service]
 Type=oneshot
 RemainAfterExit=yes
-ExecStart=/lib/live/config.sh
+ExecStart=/sbin/live-config
 
 [Install]
 WantedBy=basic.target
