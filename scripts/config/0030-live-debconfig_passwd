@@ -66,7 +66,7 @@ Configure_live_debconfig_passwd ()
 	# a blank password is 'U6aMy0wojraho'.
 	_PASSWORD="8Ab05sVQ4LLps"
 
-cat > /debconf.live << EOF
+cat > /tmp/debconf.live << EOF
 live-debconfig live-debconfig/passwd/shadow boolean on
 #live-debconfig live-debconfig/passwd/root-password password 
 #live-debconfig live-debconfig/passwd/root-password-again password 
@@ -83,8 +83,8 @@ live-debconfig live-debconfig/passwd/user-default-groups string ${LIVE_USER_DEFA
 live-debconfig live-debconfig/passwd/user-system-user boolean false
 EOF
 
-	live-debconfig-set-selections /debconf.live
-	rm -f /debconf.live
+	live-debconfig-set-selections /tmp/debconf.live
+	rm -f /tmp/debconf.live
 
 	live-debconfig --debconfig=passwd
 
