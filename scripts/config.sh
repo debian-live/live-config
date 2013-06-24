@@ -32,9 +32,9 @@ DEBIAN_FRONTEND="noninteractive"
 DEBIAN_PRIORITY="critical"
 DEBCONF_NOWARNINGS="yes"
 
-SCRIPTS="$(ls /lib/live/config/*)"
-IP_SEPARATOR="-"
-PROC_OPTIONS="onodev,noexec,nosuid"
+_SCRIPTS="$(ls /lib/live/config/*)"
+_IP_SEPARATOR="-"
+_PROC_OPTIONS="onodev,noexec,nosuid"
 
 # Reading configuration files from filesystem and live-media
 for _FILE in /etc/live/config.conf /etc/live/config/* \
@@ -55,28 +55,28 @@ Cmdline ()
 				# Only run requested scripts
 				LIVE_CONFIGS="${_PARAMETER#*config=}"
 				LIVE_NOCONFIGS=""
-				SCRIPTS=""
+				_SCRIPTS=""
 				;;
 
 			live-config|config)
 				# Run all scripts
 				LIVE_CONFIGS=""
 				LIVE_NOCONFIGS=""
-				SCRIPTS="$(ls /lib/live/config/*)"
+				_SCRIPTS="$(ls /lib/live/config/*)"
 				;;
 
 			live-noconfig=*|noconfig=*)
 				# Don't run requested scripts
 				LIVE_CONFIGS=""
 				LIVE_NOCONFIGS="${_PARAMETER#*noconfig=}"
-				SCRIPTS="$(ls /lib/live/config/*)"
+				_SCRIPTS="$(ls /lib/live/config/*)"
 				;;
 
 			live-noconfig|noconfig)
 				# Don't run any script
 				LIVE_CONFIGS=""
 				LIVE_NOCONFIGS=""
-				SCRIPTS=""
+				_SCRIPTS=""
 				;;
 
 			# Shortcuts
@@ -134,7 +134,7 @@ Cmdline ()
 	then
 		for _CONFIG in $(echo ${LIVE_CONFIGS} | sed -e 's|,| |g')
 		do
-			SCRIPTS="${SCRIPTS} $(ls /lib/live/config/????-${_CONFIG} 2> /dev/null || true)"
+			_SCRIPTS="${_SCRIPTS} $(ls /lib/live/config/????-${_CONFIG} 2> /dev/null || true)"
 		done
 	fi
 
@@ -143,7 +143,7 @@ Cmdline ()
 	then
 		for _NOCONFIG in $(echo ${LIVE_NOCONFIGS} | sed -e 's|,| |g')
 		do
-			SCRIPTS="$(echo ${SCRIPTS} | sed -e "s|$(ls /lib/live/config/????-${_NOCONFIG} 2> /dev/null || echo none)||")"
+			_SCRIPTS="$(echo ${_SCRIPTS} | sed -e "s|$(ls /lib/live/config/????-${_NOCONFIG} 2> /dev/null || echo none)||")"
 		done
 	fi
 }
@@ -190,7 +190,7 @@ Main ()
 {
 	if [ ! -e /proc/version ]
 	then
-		mount -n -t proc -o${PROC_OPTIONS} -odefaults proc /proc
+		mount -n -t proc -o${_PROC_OPTIONS} -odefaults proc /proc
 	fi
 
 	LIVE_CONFIG_CMDLINE="${LIVE_CONFIG_CMDLINE:-$(cat /proc/cmdline)}"
@@ -222,13 +222,13 @@ Main ()
 	esac
 
 	# Configuring system
-	SCRIPTS="$(echo ${SCRIPTS} | sed -e 's| |\n|g' | sort -u)"
+	_SCRIPTS="$(echo ${_SCRIPTS} | sed -e 's| |\n|g' | sort -u)"
 
-	for SCRIPT in ${SCRIPTS}
+	for _SCRIP in ${_SCRIPTS}
 	do
-		[ "${LIVE_CONFIG_DEBUG}" = "true" ] && echo "[$(date +'%F %T')] live-config: ${SCRIPT}" > /var/log/live/config.pipe
+		[ "${LIVE_CONFIG_DEBUG}" = "true" ] && echo "[$(date +'%F %T')] live-config: ${_SCRIPT}" > /var/log/live/config.pipe
 
-		. ${SCRIPT} > /var/log/live/config.pipe 2>&1
+		. ${_SCRIPT} > /var/log/live/config.pipe 2>&1
 	done
 
 	echo "." > /var/log/live/config.pipe

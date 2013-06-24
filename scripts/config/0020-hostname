@@ -41,9 +41,9 @@ Configure_hostname ()
 		# Supporting variables within hostnames
 		if [ -e /bin/ip ]
 		then
-			LINK="$(ip -oneline -family link address show dev eth0 | awk '{ print $13 }' | sed -e "s|:|${IP_SEPARATOR}|g")"
-			INET="$(ip -oneline -family inet address show dev eth0 | awk '{ print $4 }' | sed -e "s|\.|${IP_SEPARATOR}|g" -e 's|/.*||')"
-			INET6="$(ip -oneline -family inet6 address show dev eth0 | awk '{ print $4 }' | sed -e "s|:|${IP_SEPARATOR}|g" -e 's|/.*||' -e 's|--|-|')"
+			LINK="$(ip -oneline -family link address show dev eth0 | awk '{ print $13 }' | sed -e "s|:|${_IP_SEPARATOR}|g")"
+			INET="$(ip -oneline -family inet address show dev eth0 | awk '{ print $4 }' | sed -e "s|\.|${_IP_SEPARATOR}|g" -e 's|/.*||')"
+			INET6="$(ip -oneline -family inet6 address show dev eth0 | awk '{ print $4 }' | sed -e "s|:|${_IP_SEPARATOR}|g" -e 's|/.*||' -e 's|--|-|')"
 
 			eval LIVE_HOSTNAME="${LIVE_HOSTNAME}"
 		fi
