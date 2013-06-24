@@ -6,7 +6,7 @@
 .\" under certain conditions; see COPYING for details.
 .\"
 .\"
-.TH LIVE\-CONFIG 7 2013\-05\-27 4.0~a22-1 "Live Systems Project"
+.TH LIVE\-CONFIG 7 2013\-06\-24 4.0~a22-1 "Live Systems Project"
 
 .SH NAME
 \fBlive\-config\fR \- System Configuration Scripts
@@ -112,6 +112,8 @@ Although the configuration files placed in the configuration directories do not 
 .PP
 The actual content of the configuration files consists of one or more of the following variables.
 
+.IP "\fBLIVE_CONFIG_CMDLINE\fR=\fIPARAMETER1\fR \fIPARAMETER2\fR ... \fIPARAMETERn\fR" 4
+This varaible equals the bootloader command line.
 .IP "\fBLIVE_CONFIGS\fR=\fISCRIPT1\fR,\fISCRIPT2\fR, ... \fISCRIPTn\fR" 4
 This variable equals the '\fBlive\-config\fR=\fISCRIPT1\fR,\fISCRIPT2\fR, ... \fISCRIPTn\fR' parameter.
 .IP "\fBLIVE_NOCONFIGS\fR=\fISCRIPT1\fR,\fISCRIPT2\fR, ... \fISCRIPTn\fR" 4
