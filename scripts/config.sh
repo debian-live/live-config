@@ -32,6 +32,7 @@ DEBIAN_FRONTEND="noninteractive"
 DEBIAN_PRIORITY="critical"
 DEBCONF_NOWARNINGS="yes"
 
+SCRIPTS="$(ls /lib/live/config/*)"
 IP_SEPARATOR="-"
 PROC_OPTIONS="onodev,noexec,nosuid"
 
@@ -53,29 +54,29 @@ Cmdline ()
 			live-config=*|config=*)
 				# Only run requested scripts
 				LIVE_CONFIGS="${_PARAMETER#*config=}"
-				LIVE_NOCONFIGSS=""
-				LIVE_CONFIG_SCRIPTS=""
+				LIVE_NOCONFIGS=""
+				SCRIPTS=""
 				;;
 
 			live-config|config)
 				# Run all scripts
 				LIVE_CONFIGS=""
 				LIVE_NOCONFIGS=""
-				LIVE_CONFIG_SCRIPTS="$(ls /lib/live/config/*)"
+				SCRIPTS="$(ls /lib/live/config/*)"
 				;;
 
 			live-noconfig=*|noconfig=*)
 				# Don't run requested scripts
 				LIVE_CONFIGS=""
 				LIVE_NOCONFIGS="${_PARAMETER#*noconfig=}"
-				LIVE_CONFIG_SCRIPTS="$(ls /lib/live/config/*)"
+				SCRIPTS="$(ls /lib/live/config/*)"
 				;;
 
 			live-noconfig|noconfig)
 				# Don't run any script
 				LIVE_CONFIGS=""
 				LIVE_NOCONFIGS=""
-				LIVE_CONFIG_SCRIPTS=""
+				SCRIPTS=""
 				;;
 
 			# Shortcuts
@@ -101,7 +102,7 @@ Cmdline ()
 
 			# Special options
 			live-config.debug|debug)
-				LIVE_DEBUG="true"
+				LIVE_CONFIG_DEBUG="true"
 				;;
 		esac
 	done
@@ -133,7 +134,7 @@ Cmdline ()
 	then
 		for _CONFIG in $(echo ${LIVE_CONFIGS} | sed -e 's|,| |g')
 		do
-			LIVE_CONFIG_SCRIPTS="${LIVE_CONFIG_SCRIPTS} $(ls /lib/live/config/????-${_CONFIG} 2> /dev/null || true)"
+			SCRIPTS="${SCRIPTS} $(ls /lib/live/config/????-${_CONFIG} 2> /dev/null || true)"
 		done
 	fi
 
@@ -142,7 +143,7 @@ Cmdline ()
 	then
 		for _NOCONFIG in $(echo ${LIVE_NOCONFIGS} | sed -e 's|,| |g')
 		do
-			LIVE_CONFIG_SCRIPTS="$(echo ${LIVE_CONFIG_SCRIPTS} | sed -e "s|$(ls /lib/live/config/????-${_NOCONFIG} 2> /dev/null || echo none)||")"
+			SCRIPTS="$(echo ${SCRIPTS} | sed -e "s|$(ls /lib/live/config/????-${_NOCONFIG} 2> /dev/null || echo none)||")"
 		done
 	fi
 }
@@ -221,13 +222,13 @@ Main ()
 	esac
 
 	# Configuring system
-	LIVE_CONFIG_SCRIPTS="$(echo ${LIVE_CONFIG_SCRIPTS} | sed -e 's| |\n|g' | sort -u)"
+	SCRIPTS="$(echo ${SCRIPTS} | sed -e 's| |\n|g' | sort -u)"
 
-	for _SCRIPT in ${LIVE_CONFIG_SCRIPTS}
+	for SCRIPT in ${SCRIPTS}
 	do
-		[ "${LIVE_CONFIG_DEBUG}" = "true" ] && echo "[$(date +'%F %T')] live-config: ${_SCRIPT}" > /var/log/live/config.pipe
+		[ "${LIVE_CONFIG_DEBUG}" = "true" ] && echo "[$(date +'%F %T')] live-config: ${SCRIPT}" > /var/log/live/config.pipe
 
-		. ${_SCRIPT} > /var/log/live/config.pipe 2>&1
+		. ${SCRIPT} > /var/log/live/config.pipe 2>&1
 	done
 
 	echo "." > /var/log/live/config.pipe
