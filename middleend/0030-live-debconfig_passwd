@@ -8,13 +8,15 @@
 ## under certain conditions; see COPYING for details.
 
 
-Live_debconfig_passwd ()
+set -e
+
+Init ()
 {
 	# Checking if package is installed or already configured
 	if [ ! -e /var/lib/dpkg/info/live-debconfig.list ] || \
 	   [ -e /var/lib/live/config/live-debconfig_passwd ]
 	then
-		return
+		exit 0
 	fi
 
 	echo -n " live-debconfig (passwd)"
@@ -36,16 +38,14 @@ Live_debconfig_passwd ()
 				;;
 		esac
 	done
-
-	Configure_live_debconfig_passwd
 }
 
-Configure_live_debconfig_passwd ()
+Config ()
 {
 	# Checking if package is already configured differently
 	if grep -q "^${LIVE_USERNAME}:" /etc/passwd
 	then
-		return
+		exit 0
 	fi
 
 	# Adjust formating of groups
@@ -92,4 +92,5 @@ EOF
 	touch /var/lib/live/config/live-debconfig_passwd
 }
 
-Live_debconfig_passwd
+Init
+Config

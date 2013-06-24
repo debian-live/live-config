@@ -8,21 +8,21 @@
 ## under certain conditions; see COPYING for details.
 
 
-Anacron ()
+set -e
+
+Init ()
 {
 	# Checking if package is installed
 	if [ ! -e /var/lib/dpkg/info/anacron.list ] || \
 	   [ -e /var/lib/live/config/anacron ]
 	then
-		return
+		exit 0
 	fi
 
 	echo -n " anacron"
-
-	Configure_anacron
 }
 
-Configure_anacron ()
+Config ()
 {
 	# This has the nice side effect of the cron.{daily,weekly,monthly} jobs
 	# in /etc/crontab remaining disabled, yet also not run by anacron
@@ -39,4 +39,5 @@ Configure_anacron ()
 	touch /var/lib/live/config/anacron
 }
 
-Anacron
+Init
+Config

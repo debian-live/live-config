@@ -8,21 +8,15 @@
 ## under certain conditions; see COPYING for details.
 
 
-Lxdm ()
+set -e
+
+Init ()
 {
 	# Checking if package is installed or already configured
-	if [ ! -e /var/lib/dpkg/info/lxdm.list ]
+	if [ ! -e /var/lib/dpkg/info/lxdm.list ] || \
+	   [ -e /var/lib/live/config/lxdm ]
 	then
-		return
-	fi
-
-	if [ -e /var/lib/live/config/lxdm ]
-	then
-		# Avoid xinit
-		_X11="true"
-		export _X11
-
-		return
+		exit 0
 	fi
 
 	echo -n " lxdm"
@@ -36,11 +30,9 @@ Lxdm ()
 				;;
 		esac
 	done
-
-	Configure_lxdm
 }
 
-Configure_lxdm ()
+Config ()
 {
 	# Debian
 	if [ -e /etc/lxdm/lxdm.conf ]
@@ -59,11 +51,11 @@ Configure_lxdm ()
 	fi
 
 	# Avoid xinit
-	_X11="true"
-	export _X11
+	touch /var/lib/live/config/xinit
 
 	# Creating state file
 	touch /var/lib/live/config/lxdm
 }
 
-Lxdm
+Init
+Config

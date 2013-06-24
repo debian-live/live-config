@@ -8,13 +8,15 @@
 ## under certain conditions; see COPYING for details.
 
 
-Kde_services ()
+set -e
+
+Init ()
 {
 	# Checking if package is installed or already configured
 	if [ ! -e /usr/share/kde4 ] || \
 	   [ -e /var/lib/live/config/kde-services ]
 	then
-		return
+		exit 0
 	fi
 
 	echo -n " kde-services"
@@ -32,11 +34,9 @@ Kde_services ()
 				;;
 		esac
 	done
-
-	Configure_kde_services
 }
 
-Configure_kde_services ()
+Config ()
 {
 	# Enabling keyboard selector
 	if echo "${LIVE_KEYBOARD_LAYOUTS}" | grep -qs ','
@@ -79,4 +79,5 @@ EOF
 	touch /var/lib/live/config/kde-services
 }
 
-Kde_services
+Init
+Config

@@ -8,13 +8,15 @@
 ## under certain conditions; see COPYING for details.
 
 
-Debconf ()
+set -e
+
+Init ()
 {
 	# Checking if package is installed or already configured
 	if [ ! -e /var/lib/dpkg/info/debconf.list ] || \
 	   [ -e /var/lib/live/config/debconf ]
 	then
-		return
+		exit 0
 	fi
 
 	echo -n " debconf"
@@ -28,15 +30,13 @@ Debconf ()
 				;;
 		esac
 	done
-
-	Configure_debconf
 }
 
-Configure_debconf ()
+Config ()
 {
 	if [ -z "${LIVE_DEBCONF_PRESEED}" ]
 	then
-		return
+		exit 0
 	fi
 
 	for _PRESEED in $(echo ${LIVE_DEBCONF_PRESEED} | sed -e 's/|/ /g')
@@ -85,4 +85,5 @@ Configure_debconf ()
 	touch /var/lib/live/config/debconf
 }
 
-Debconf
+Init
+Config

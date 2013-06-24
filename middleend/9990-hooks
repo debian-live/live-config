@@ -8,7 +8,9 @@
 ## under certain conditions; see COPYING for details.
 
 
-Hooks ()
+set -e
+
+Init ()
 {
 	# Reading kernel command line
 	for _PARAMETER in ${LIVE_CONFIG_CMDLINE}
@@ -22,19 +24,17 @@ Hooks ()
 
 	if [ -z "${LIVE_HOOKS}" ]
 	then
-		return
+		exit 0
 	fi
 
 	echo -n " hooks"
-
-	Process_hooks
 }
 
-Process_hooks ()
+Config ()
 {
 	if [ -z "${LIVE_HOOKS}" ]
 	then
-		return
+		exit 0
 	fi
 
 	for _HOOK in $(echo ${LIVE_HOOKS} | sed -e 's/|/ /g')
@@ -81,4 +81,5 @@ Process_hooks ()
 	done
 }
 
-Hooks
+Init
+Config

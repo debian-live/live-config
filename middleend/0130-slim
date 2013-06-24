@@ -8,21 +8,15 @@
 ## under certain conditions; see COPYING for details.
 
 
-Slim ()
+set -e
+
+Init ()
 {
 	# Checking if package is installed or already configured
-	if [ ! -e /var/lib/dpkg/info/slim.list ]
+	if [ ! -e /var/lib/dpkg/info/slim.list ] || \
+	   [ -e /var/lib/live/config/slim ]
 	then
-		return
-	fi
-
-	if [ -e /var/lib/live/config/slim ]
-	then
-		# Avoid xinit
-		_X11="true"
-		export _X11
-
-		return
+		exit 0
 	fi
 
 	echo -n " slim"
@@ -36,16 +30,14 @@ Slim ()
 				;;
 		esac
 	done
-
-	Configure_slim
 }
 
-Configure_slim ()
+Config ()
 {
 	# Checking if package is already configured differently
 	if grep -qs "^auto_login" /etc/slim.conf
 	then
-		return
+		exit 0
 	fi
 
 	# autologin
@@ -54,11 +46,11 @@ Configure_slim ()
 	/etc/slim.conf
 
 	# Avoid xinit
-	_X11="true"
-	export _X11
+	touch /var/lib/live/config/xinit
 
 	# Creating state file
 	touch /var/lib/live/config/slim
 }
 
-Slim
+Init
+Config

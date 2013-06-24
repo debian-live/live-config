@@ -8,13 +8,15 @@
 ## under certain conditions; see COPYING for details.
 
 
-Xserver_xorg ()
+set -e
+
+Init ()
 {
 	# Checking if package is installed
 	if [ ! -e /var/lib/dpkg/info/xserver-xorg.list ] || \
 	   [ -e /var/lib/live/config/xserver-xorg ]
 	then
-		return
+		exit 0
 	fi
 
 	echo -n " xserver-xorg"
@@ -51,11 +53,9 @@ Xserver_xorg ()
 				;;
 		esac
 	done
-
-	Configure_xserver_xorg
 }
 
-Configure_xserver_xorg ()
+Config ()
 {
 	if [ -n "${LIVE_KEYBOARD_MODEL}" ]
 	then
@@ -220,4 +220,5 @@ EOF
 	fi
 }
 
-Xserver_xorg
+Init
+Config

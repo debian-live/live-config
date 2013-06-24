@@ -8,13 +8,15 @@
 ## under certain conditions; see COPYING for details.
 
 
-Locales_all ()
+set -e
+
+Init ()
 {
 	# Checking if package is installed or already configured
 	if [ ! -e /var/lib/dpkg/info/locales-all.list ] || \
 	   [ -e /var/lib/live/config/locales-all ]
 	then
-		return
+		exit 0
 	fi
 
 	echo -n " locales-all"
@@ -28,11 +30,9 @@ Locales_all ()
 				;;
 		esac
 	done
-
-	Configure_locales_all
 }
 
-Configure_locales_all ()
+Config ()
 {
 	if [ -n "${LIVE_LOCALES}" ]
 	then
@@ -52,4 +52,5 @@ Configure_locales_all ()
 	touch /var/lib/live/config/locales-all
 }
 
-Locales_all
+Init
+Config

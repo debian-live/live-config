@@ -8,13 +8,15 @@
 ## under certain conditions; see COPYING for details.
 
 
-Gnome_panel_data ()
+set -e
+
+Init ()
 {
 	# Checking if package is installed or already configured
 	if [ ! -e /var/lib/dpkg/info/gnome-panel-data.list ] || \
 	   [ -e /var/lib/live/config/gnome-panel-data ]
 	then
-		return
+		exit 0
 	fi
 
 	echo -n " gnome-panel-data"
@@ -28,11 +30,9 @@ Gnome_panel_data ()
 				;;
 		esac
 	done
-
-	Configure_gnome_panel_data
 }
 
-Configure_gnome_panel_data ()
+Config ()
 {
 	sudo -u "${LIVE_USERNAME}" gconftool-2 -s -t bool /apps/panel/global/disable_lock_screen true
 
@@ -40,4 +40,5 @@ Configure_gnome_panel_data ()
 	touch /var/lib/live/config/gnome-panel-data
 }
 
-Gnome_panel_data
+Init
+Config

@@ -8,21 +8,15 @@
 ## under certain conditions; see COPYING for details.
 
 
-Gdm3 ()
+set -e
+
+Init ()
 {
 	# Checking if package is installed or already configured
-	if [ ! -e /var/lib/dpkg/info/gdm3.list ]
+	if [ ! -e /var/lib/dpkg/info/gdm3.list ] || \
+	   [ -e /var/lib/live/config/gdm3 ]
 	then
-		return
-	fi
-
-	if [ -e /var/lib/live/config/gdm3 ]
-	then
-		# Avoid xinit
-		_X11="true"
-		export _X11
-
-		return
+		exit 0
 	fi
 
 	echo -n " gdm3"
@@ -36,16 +30,14 @@ Gdm3 ()
 				;;
 		esac
 	done
-
-	Configure_gdm3
 }
 
-Configure_gdm3 ()
+Config ()
 {
 	# Checking if package is already configured
 	if grep -qs AutomaticLoginEnable=true /etc/gdm3/daemon.conf
 	then
-		return
+		exit 0
 	fi
 
 	_GDM3_OPTIONS="AutomaticLoginEnable=true\n\
@@ -57,11 +49,11 @@ TimedLoginDelay=5"
 	sed -i -e "s|\[daemon\]|\[daemon\]\n${_GDM3_OPTIONS}|" /etc/gdm3/daemon.conf
 
 	# Avoid xinit
-	_X11="true"
-	export _X11
+	touch /var/lib/live/config/xinit
 
 	# Creating state file
 	touch /var/lib/live/config/gdm3
 }
 
-Gdm3
+Init
+Config

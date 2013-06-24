@@ -8,21 +8,21 @@
 ## under certain conditions; see COPYING for details.
 
 
-Openssh_server ()
+set -e
+
+Init ()
 {
 	# Checking if package is installed or already configured
 	if [ ! -e /var/lib/dpkg/info/openssh-server.list ] || \
 	   [ -e /var/lib/live/config/openssh-server ]
 	then
-		return
+		exit 0
 	fi
 
 	echo -n " openssh-server"
-
-	Configure_openssh_server
 }
 
-Configure_openssh_server ()
+Config ()
 {
 	for _PROTOCOL in dsa rsa ecdsa
 	do
@@ -43,4 +43,5 @@ Configure_openssh_server ()
 	esac
 }
 
-Openssh_server
+Init
+Config

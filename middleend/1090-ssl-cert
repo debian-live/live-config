@@ -8,21 +8,21 @@
 ## under certain conditions; see COPYING for details.
 
 
-Ssl_cert ()
+set -e
+
+Init ()
 {
 	# Checking if package is installed
 	if [ ! -e /var/lib/dpkg/info/ssl-cert.list ] || \
 	   [ -e /var/lib/live/config/ssl-cert ]
 	then
-		return
+		exit 0
 	fi
 
 	echo -n " ssl-cert"
-
-	Configure_ssl_cert
 }
 
-Configure_ssl_cert ()
+Config ()
 {
 	if [ ! -e /etc/ssl/certs/ssl-cert-snakeoil.pem ] && [ ! -e /etc/ssl/private/ssl-cert-snakeoil.key ]
 	then
@@ -33,4 +33,5 @@ Configure_ssl_cert ()
 	touch /var/lib/live/config/ssl-cert
 }
 
-Ssl_cert
+Init
+Config

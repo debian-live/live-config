@@ -8,13 +8,15 @@
 ## under certain conditions; see COPYING for details.
 
 
-Sudo ()
+set -e
+
+Init ()
 {
 	# Checking if package is installed or already configured
 	if [ ! -e /var/lib/dpkg/info/sudo.list ] || \
 	   [ -e /var/lib/live/config/sudo ]
 	then
-		return
+		exit 0
 	fi
 
 	echo -n " sudo"
@@ -28,23 +30,21 @@ Sudo ()
 				;;
 		esac
 	done
-
-	Configure_sudo
 }
 
-Configure_sudo ()
+Config ()
 {
 	# Skip sudo configuration if username is root
 	case "${LIVE_USERNAME}" in
 		root)
-			return
+			exit 0
 			;;
 	esac
 
 	# Checking if package is already configured differently
 	if grep -qs "^${LIVE_USERNAME}" /etc/sudoers.d/live
 	then
-		return
+		exit 0
 	fi
 
 	echo "${LIVE_USERNAME} ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers.d/live
@@ -77,4 +77,5 @@ EOF
 	touch /var/lib/live/config/sudo
 }
 
-Sudo
+Init
+Config

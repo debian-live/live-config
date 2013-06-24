@@ -8,14 +8,16 @@
 ## under certain conditions; see COPYING for details.
 
 
-Xinit ()
+set -e
+
+Init ()
 {
 	# Checking if a display manager has been configured
 	case "${_X11}" in
 		true)
 			rm -f /etc/profile.d/zz-live-config_xinit.sh
 
-			return
+			exit 0
 			;;
 	esac
 
@@ -23,20 +25,18 @@ Xinit ()
 	if [ ! -e /var/lib/dpkg/info/xinit.list ] || \
 	   [ -e /var/lib/live/config/xinit ]
 	then
-		return
+		exit 0
 	fi
 
 	echo -n " xinit"
-
-	Configure_xinit
 }
 
-Configure_xinit ()
+Config ()
 {
 	# Checking if package is already configured differently
 	if [ -e /etc/profile.d/zz-live-config_xinit.sh ]
 	then
-		return
+		exit 0
 	fi
 
 cat > /etc/profile.d/zz-live-config_xinit.sh << EOF
@@ -58,4 +58,5 @@ EOF
 	touch /var/lib/live/config/xinit
 }
 
-Xinit
+Init
+Config

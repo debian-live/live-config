@@ -8,21 +8,15 @@
 ## under certain conditions; see COPYING for details.
 
 
-Kdm ()
+set -e
+
+Init ()
 {
 	# Checking if package is installed or already configured
-	if [ ! -e /var/lib/dpkg/info/kdm.list ]
+	if [ ! -e /var/lib/dpkg/info/kdm.list ] || \
+	   [ -e /var/lib/live/config/kdm ]
 	then
-		return
-	fi
-
-	if [ -e /var/lib/live/config/kdm ]
-	then
-		# Avoid xinit
-		_X11="true"
-		export _X11
-
-		return
+		exit 0
 	fi
 
 	echo -n " kdm"
@@ -36,15 +30,13 @@ Kdm ()
 				;;
 		esac
 	done
-
-	Configure_kdm
 }
 
-Configure_kdm ()
+Config ()
 {
 	if [ ! -e /etc/kde4/kdm/kdmrc ]
 	then
-		return
+		exit 0
 	fi
 
 	if [ "${LIVE_CONFIG_NOAUTOLOGIN}" != "true" ] && [ "${LIVE_CONFIG_NOX11AUTOLOGIN}" = "true" ]
@@ -64,11 +56,11 @@ Configure_kdm ()
 	fi
 
 	# Avoid xinit
-	_X11="true"
-	export _X11
+	touch /var/lib/live/config/xinit
 
 	# Creating state file
 	touch /var/lib/live/config/kdm
 }
 
-Kdm
+Init
+Config

@@ -8,21 +8,21 @@
 ## under certain conditions; see COPYING for details.
 
 
-Apport ()
+set -e
+
+Init ()
 {
 	# Checking if package is installed or already configured
 	if [ ! -e /var/lib/dpkg/info/apport.list ] || \
 	   [ -e /var/lib/live/config/apport ]
 	then
-		return
+		exit 0
 	fi
 
 	echo -n " apport"
-
-	Configure_apport
 }
 
-Configure_apport ()
+Config ()
 {
 	# Enabling detection of crashes
 	sed -i -e 's|enabled=0|enabled=1|' /etc/default/apport
@@ -31,4 +31,5 @@ Configure_apport ()
 	touch /var/lib/live/config/apport
 }
 
-Apport
+Init
+Config

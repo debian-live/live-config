@@ -8,7 +8,9 @@
 ## under certain conditions; see COPYING for details.
 
 
-Hostname ()
+set -e
+
+Init ()
 {
 	# Reading kernel command line
 	for _PARAMETER in ${LIVE_CONFIG_CMDLINE}
@@ -24,15 +26,13 @@ Hostname ()
 	if [ -z "${LIVE_HOSTNAME}" ] || \
 	   [ -e /var/lib/live/config/hostname ]
 	then
-		return
+		exit 0
 	fi
 
 	echo -n " hostname"
-
-	Configure_hostname
 }
 
-Configure_hostname ()
+Config ()
 {
 	# Change hostname only if it is not set
 	if [ ! -e /etc/hostname ] || \
@@ -74,4 +74,5 @@ EOF
 	touch /var/lib/live/config/hostname
 }
 
-Hostname
+Init
+Config

@@ -8,21 +8,15 @@
 ## under certain conditions; see COPYING for details.
 
 
-Nodm ()
+set -e
+
+Init ()
 {
 	# Checking if package is installed or already configured
-	if [ ! -e /var/lib/dpkg/info/nodm.list ]
+	if [ ! -e /var/lib/dpkg/info/nodm.list ] || \
+	   [ -e /var/lib/live/config/nodm ]
 	then
-		return
-	fi
-
-	if [ -e /var/lib/live/config/nodm ]
-	then
-		# Avoid xinit
-		_X11="true"
-		export _X11
-
-		return
+		exit 0
 	fi
 
 	echo -n " nodm"
@@ -36,11 +30,9 @@ Nodm ()
 				;;
 		esac
 	done
-
-	Configure_nodm
 }
 
-Configure_nodm ()
+Config ()
 {
 	# autologin
 	sed -i -r -e "s|^NODM_ENABLED=.*\$|NODM_ENABLED=true|" \
@@ -56,11 +48,11 @@ EOF
 	rm -f /tmp/live-config.cfg
 
 	# Avoid xinit
-	_X11="true"
-	export _X11
+	touch /var/lib/live/config/xinit
 
 	# Creating state file
 	touch /var/lib/live/config/nodm
 }
 
-Nodm
+Init
+Config

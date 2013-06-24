@@ -8,21 +8,21 @@
 ## under certain conditions; see COPYING for details.
 
 
-Update_notifier ()
+set -e
+
+Init ()
 {
 	# Checking if package is installed
 	if [ ! -e /var/lib/dpkg/info/update-notifier.list ] || \
 	   [ -e /var/lib/live/config/update-notifier ]
 	then
-		return
+		exit 0
 	fi
 
 	echo -n " update-notifier"
-
-	Configure_update_notifier
 }
 
-Configure_update_notifier ()
+Config ()
 {
 	# For GNOME, we divert away apt-check to avoid a regular
 	# 'apt-get update' equivalent in the live session. We want to run
@@ -44,4 +44,5 @@ Configure_update_notifier ()
 	touch /var/lib/live/config/update-notifier
 }
 
-Update_notifier
+Init
+Config

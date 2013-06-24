@@ -8,13 +8,15 @@
 ## under certain conditions; see COPYING for details.
 
 
-Policykit ()
+set -e
+
+Init ()
 {
 	# Checking if package is installed
 	if [ ! -e /var/lib/dpkg/info/policykit-1.list ] || \
 	   [ -e /var/lib/live/config/policykit ]
 	then
-		return
+		exit 0
 	fi
 
 	echo -n " policykit"
@@ -28,11 +30,9 @@ Policykit ()
 				;;
 		esac
 	done
-
-	Configure_policykit
 }
 
-Configure_policykit ()
+Config ()
 {
 	# Grant administrative PolicyKit pivilieges to default user
 
@@ -86,4 +86,5 @@ EOF
 	touch /var/lib/live/config/policykit
 }
 
-Policykit
+Init
+Config

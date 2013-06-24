@@ -8,13 +8,15 @@
 ## under certain conditions; see COPYING for details.
 
 
-Util_linux ()
+set -e
+
+Init ()
 {
 	# Checking if package is installed
 	if [ ! -e /var/lib/dpkg/info/util-linux.list ] || \
 	   [ -e /var/lib/live/config/util-linux ]
 	then
-		return
+		exit 0
 	fi
 
 	echo -n " util-linux"
@@ -28,11 +30,9 @@ Util_linux ()
 				;;
 		esac
 	done
-
-	Configure_util_linux
 }
 
-Configure_util_linux ()
+Config ()
 {
 	rm -f /etc/rc?.d/*hwclock*
 
@@ -64,4 +64,5 @@ EOF
 	touch /var/lib/live/config/util-linux
 }
 
-Util_linux
+Init
+Config

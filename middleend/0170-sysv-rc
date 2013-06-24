@@ -8,13 +8,15 @@
 ## under certain conditions; see COPYING for details.
 
 
-Sysv_rc ()
+set -e
+
+Init ()
 {
 	# Checking if package is installed or already configured
 	if [ ! -e /var/lib/dpkg/info/sysv-rc.list ] || \
 	   [ -e /var/lib/live/config/sysv-rc ]
 	then
-		return
+		exit 0
 	fi
 
 	echo -n " sysv-rc"
@@ -28,11 +30,9 @@ Sysv_rc ()
 				;;
 		esac
 	done
-
-	Configure_sysv_rc
 }
 
-Configure_sysv_rc ()
+Config ()
 {
 	if [ -n "${LIVE_SYSV_RC}" ]
 	then
@@ -47,4 +47,5 @@ Configure_sysv_rc ()
 	touch /var/lib/live/config/sysv-rc
 }
 
-Sysv_rc
+Init
+Config

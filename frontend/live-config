@@ -228,7 +228,7 @@ Main ()
 	do
 		[ "${LIVE_CONFIG_DEBUG}" = "true" ] && echo "[$(date +'%F %T')] live-config: ${_SCRIPT}" > /tmp/live-config.pipe
 
-		. ${_SCRIPT} > /tmp/live-config.pipe 2>&1
+		${_SCRIPT} > /tmp/live-config.pipe 2>&1
 	done
 
 	echo "." > /tmp/live-config.pipe

@@ -8,13 +8,15 @@
 ## under certain conditions; see COPYING for details.
 
 
-Keyboard_configuration ()
+set -e
+
+Init ()
 {
 	# Checking if package is installed or already configured
 	if [ ! -e /var/lib/dpkg/info/keyboard-configuration.list ] || \
 	   [ -e /var/lib/live/config/keyboard-configuration ]
 	then
-		return
+		exit 0
 	fi
 
 	echo -n " keyboard-configuration"
@@ -40,11 +42,9 @@ Keyboard_configuration ()
 				;;
 		esac
 	done
-
-	Configure_keyboard_configuration
 }
 
-Configure_keyboard_configuration ()
+Config ()
 {
 	if [ -n "${LIVE_KEYBOARD_LAYOUTS}" ]
 	then
@@ -84,4 +84,5 @@ Configure_keyboard_configuration ()
 	fi
 }
 
-Keyboard_configuration
+Init
+Config

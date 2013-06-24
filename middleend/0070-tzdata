@@ -8,13 +8,15 @@
 ## under certain conditions; see COPYING for details.
 
 
-Tzdata ()
+set -e
+
+Init ()
 {
 	# Checking if package is installed or already configured
 	if [ ! -e /var/lib/dpkg/info/tzdata.list ] || \
 	   [ -e /var/lib/live/config/tzdata ]
 	then
-		return
+		exit 0
 	fi
 
 	echo -n " tzdata"
@@ -28,11 +30,9 @@ Tzdata ()
 				;;
 		esac
 	done
-
-	Configure_tzdata
 }
 
-Configure_tzdata ()
+Config ()
 {
 	if [ -n "${LIVE_TIMEZONE}" ]
 	then
@@ -57,4 +57,5 @@ EOF
 	touch /var/lib/live/config/tzdata
 }
 
-Tzdata
+Init
+Config

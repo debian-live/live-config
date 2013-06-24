@@ -8,13 +8,15 @@
 ## under certain conditions; see COPYING for details.
 
 
-Sysvinit ()
+set -e
+
+Init ()
 {
 	# Checking if package is installed or already configured
 	if [ ! -e /var/lib/dpkg/info/sysvinit.list ] || \
 	   [ -e /var/lib/live/config/sysvinit ]
 	then
-		return
+		exit 0
 	fi
 
 	echo -n " sysvinit"
@@ -28,11 +30,9 @@ Sysvinit ()
 				;;
 		esac
 	done
-
-	Configure_sysvinit
 }
 
-Configure_sysvinit ()
+Config ()
 {
 	# Disable tmpfs on /tmp
 	sed -i -e 's|^ *RAMTMP=.*|RAMTMP=no|' /etc/default/rcS
@@ -49,4 +49,5 @@ Configure_sysvinit ()
 	touch /var/lib/live/config/sysvinit
 }
 
-Sysvinit
+Init
+Config

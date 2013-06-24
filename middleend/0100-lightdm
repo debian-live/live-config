@@ -8,21 +8,15 @@
 ## under certain conditions; see COPYING for details.
 
 
-Lightdm ()
+set -e
+
+Init ()
 {
 	# Checking if package is installed or already configured
-	if [ ! -e /var/lib/dpkg/info/lightdm.list ]
+	if [ ! -e /var/lib/dpkg/info/lightdm.list ] || \
+	   [ -e /var/lib/live/config/lightdm ]
 	then
-		return
-	fi
-
-	if [ -e /var/lib/live/config/lightdm ]
-	then
-		# Avoid xinit
-		_X11="true"
-		export _X11
-
-		return
+		exit 0
 	fi
 
 	echo -n " lightdm"
@@ -36,11 +30,9 @@ Lightdm ()
 				;;
 		esac
 	done
-
-	Configure_lightdm
 }
 
-Configure_lightdm ()
+Config ()
 {
 	if [ -e /etc/lightdm/lightdm.conf ]
 	then
@@ -50,11 +42,11 @@ Configure_lightdm ()
 	fi
 
 	# Avoid xinit
-	_X11="true"
-	export _X11
+	touch /var/lib/live/config/xinit
 
 	# Creating state file
 	touch /var/lib/live/config/lightdm
 }
 
-Lightdm
+Init
+Config

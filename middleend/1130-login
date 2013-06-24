@@ -8,21 +8,21 @@
 ## under certain conditions; see COPYING for details.
 
 
-Login ()
+set -e
+
+Init ()
 {
 	# Checking if package is installed
 	if [ ! -e /var/lib/dpkg/info/login.list ] || \
 	   [ -e /var/lib/live/config/login ]
 	then
-		return
+		exit 0
 	fi
 
 	echo -n " login"
-
-	Configure_login
 }
 
-Configure_login ()
+Config ()
 {
 	# lastlog with autologin doesn't make sense
 	sed -i '/^[^#].*pam_lastlog\.so/s/^/# /' /etc/pam.d/login
@@ -31,4 +31,5 @@ Configure_login ()
 	touch /var/lib/live/config/login
 }
 
-Login
+Init
+Config
