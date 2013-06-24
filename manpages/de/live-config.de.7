@@ -1,4 +1,4 @@
-.\" live-config(7) - System Configuration Scripts
+.\" live-config(7) - System Configuration Components
 .\" Copyright (C) 2006-2013 Daniel Baumann <mail@daniel-baumann.ch>
 .\"
 .\" This program comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
@@ -14,48 +14,49 @@
 .TH LIVE\-CONFIG 7 24.06.2013 4.0~a23\-1 "Live Systems Projekt"
 
 .SH NAME
-\fBlive\-config\fP \- System Konfiguration Skripte
+\fBlive\-config\fP \- System Konfiguration Komponenten
 
 .SH BESCHREIBUNG
-\fBlive\-config\fP enthält die Skripte welche ein Live System während des
+\fBlive\-config\fP enthält die Komponenten welche ein Live System während des
 Startvorganges (late userspace) konfigurieren.
 
 .SH KONFIGURATION
 \fBlive\-config\fP kann durch Boot Parameter oder Konfigurationsdateien
 konfiguriert werden. Werden beide Mechanismen für eine bestimmte Option
 benutzt, so gehen die Boot Parameter den Konfigurationsdateien vor. Wird
-Persistenz benutzt, so werden die \fBlive\-config\fP Skripte nur einmal
+Persistenz benutzt, so werden die \fBlive\-config\fP Komponenten nur einmal
 ausgeführt.
 .PP
 Um die Boot Parameter von live\-config welche standardmässig in einem Live
 System benutzt werden zu konfigurieren, siehe \-\-bootappend\-live Option in
 der \fIlb_config\fP(1) Manpage.
 
-.SS "Boot Parameter (Skripte)"
+.SS "Boot Parameter (Komponenten)"
 \fBlive\-config\fP ist nur aktiviert, wenn 'boot=live' als Boot Parameter
 benutzt wird. Zusätzlich muss \fBlive\-config\fP durch den Parameter
-\&'live\-config' angegeben werden, welche Skripte ausgeführt werden sollen,
-oder mit dem Parameter 'live\-noconfig', welche Skripte nicht ausgeführt
+\&'live\-config' angegeben werden, welche Komponenten ausgeführt werden sollen,
+oder mit dem Parameter 'live\-noconfig', welche Komponenten nicht ausgeführt
 werden sollen. Werden beide beide Parameter oder mehrmals benützt, so geht
 der in der Reihenfolge lezte allen vorhergehenden vor.
 
 .IP "\fBlive\-config\fP | \fBconfig\fP" 4
-Alle Skripte werden ausgeführt. Auf Live Images ist dies das
+Alle Komponenten werden ausgeführt. Auf Live Images ist dies das
 Standardverhalten.
-.IP "\fBlive\-config\fP=\fISKRIPT1\fP,\fISKRIPT2\fP, ... \fISKRIPTn\fP | \fBconfig\fP=\fISKRIPT1\fP,\fISKRIPT2\fP, ... \fISKRIPTn\fP" 4
-Nur angegebene Skripte werden ausgeführt. Die Reihenfolge ist wesentlich,
-d.h. 'live\-config=sudo,live\-debconfig_passwd' würde nicht funktionieren da
-der Benutzer zuerst angelegt werden muss bevor für ihn sudo konfiguriert
-werden kann. Siehe Dateinamen der Skripte in /lib/live/config für ihre
-Ordnungsnummer.
+.IP "\fBlive\-config\fP=\fIKOMPONENTE1\fP,\fIKOMPONENTE2\fP, ... \fIKOMPONENTEn\fP | \fBconfig\fP=\fIKOMPONENTE1\fP,\fIKOMPONENTE2\fP, ... \fIKOMPONENTEn\fP" 4
+Nur angegebene Komponenten werden ausgeführt. Die Reihenfolge ist
+wesentlich, d.h. 'live\-config=sudo,live\-debconfig_passwd' würde nicht
+funktionieren da der Benutzer zuerst angelegt werden muss bevor für ihn sudo
+konfiguriert werden kann. Siehe Dateinamen der Komponenten in
+/lib/live/config für ihre Ordnungsnummer.
 .IP "\fBlive\-noconfig\fP | \fBnoconfig\fP" 4
-Kein Skript wird ausgeführt. Dies ist das Gleiche, wie wenn weder
+Keine Komponente wird ausgeführt. Dies ist das Gleiche, wie wenn weder
 \&'live\-config' noch 'live\-noconfig' verwendet wird.
-.IP "\fBlive\-noconfig\fP=\fISKRIPT1\fP,\fISKRIPT2\fP, ... \fISKRIPTn\fP | \fBnoconfig\fP=\fISKRIPT1\fP,\fISKRIPT2\fP, ... \fISKRIPTn\fP" 4
-Alle Skripte werden ausgeführt, ausser die hier spezifizierten Ausnahmen.
+.IP "\fBlive\-noconfig\fP=\fIKOMPONENTE1\fP,\fIKOMPONENTE2\fP, ... \fIKOMPONENTEn\fP | \fBnoconfig\fP=\fIKOMPONENTE1\fP,\fIKOMPONENTE2\fP, ... \fIKOMPONENTEn\fP" 4
+Alle Komponenten werden ausgeführt, ausser die hier spezifizierten
+Ausnahmen.
 
 .SS "Boot Parameter (Optionen)"
-Manche einzelne Skripte können durch Boot Parameter in ihrem Verhalten
+Manche einzelne Komponenten können durch Boot Parameter in ihrem Verhalten
 beinflusst werden.
 
 .IP "\fBlive\-config.debconf\-preseed\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP | \fBdebconf\-preseed\fP=medium|filesystem|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
@@ -212,13 +213,14 @@ Der eigentliche Inhalt der Konfigurationsdateien besteht aus einer oder
 mehreren der folgenden Variablen.
 
 .IP "\fBLIVE_CONFIG_CMDLINE\fP=\fIPARAMETER1\fP \fIPARAMETER2\fP ... \fIPARAMETERn\fP" 4
-This variable corresponds to the bootloader command line.
-.IP "\fBLIVE_CONFIGS\fP=\fISKRIPT1\fP,\fISKRIPT2\fP, ... \fISKRIPTn\fP" 4
-Diese Variable enspricht dem '\fBlive\-config\fP=\fISKRIPT1\fP,\fISKRIPT2\fP,
-\&... \fISKRIPTn\fP' Parameter.
-.IP "\fBLIVE_NOCONFIGS\fP=\fISKRIPT1\fP,\fISKRIPT2\fP, ... \fISKRIPTn\fP" 4
-Diese Variable enspricht dem '\fBlive\-noconfig\fP=\fISKRIPT1\fP,\fISKRIPT2\fP,
-\&... \fISKRIPTn\fP' Parameter.
+Diese Variable enspricht der Kommandozeile des Bootloaders.
+.IP "\fBLIVE_CONFIGS\fP=\fIKOMPONENTE1\fP,\fIKOMPONENTE2\fP, ... \fIKOMPONENTEn\fP" 4
+Diese Variable enspricht dem '\fBlive\-config\fP=\fIKOMPONENTE1\fP,\fIKOMPONENTE2\fP,
+\&... \fIKOMPONENTEn\fP' Parameter.
+.IP "\fBLIVE_NOCONFIGS\fP=\fIKOMPONENTE1\fP,\fIKOMPONENTE2\fP, ... \fIKOMPONENTEn\fP" 4
+Diese Variable enspricht dem
+\&'\fBlive\-noconfig\fP=\fIKOMPONENTE1\fP,\fIKOMPONENTE2\fP, ... \fIKOMPONENTEn\fP'
+Parameter.
 .IP "\fBLIVE_DEBCONF_PRESEED\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
 Diese Variable enspricht dem
 \&'\fBlive\-config.debconf\-preseed\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP|
@@ -281,30 +283,30 @@ Diese Variable enspricht dem '\fBlive\-config.debug\fP' Parameter.
 \fBlive\-config\fP kann sehr einfach angepasst werden für Downstream Projekte
 oder lokale Verwendung.
 
-.SS "Hinzufügen von neuen Konfigurationsskripten"
-Downstream Projekte können ihre Skripte in /lib/live/config ablegen und
-müssen nichts weiteres tun, die Skripte werden automatisch während des
+.SS "Hinzufügen von neuen Konfigurationskomponenten"
+Downstream Projekte können ihre Komponenten in /lib/live/config ablegen und
+müssen nichts weiteres tun, die Komponenten werden automatisch während des
 Startens ausgeführt.
 .PP
-Am Besten werden die Skripte in ein eigenes Debian Paket untergebracht. Ein
-Beispielpaket und \-skript befindet sich in
+Am Besten werden die Komponenten in ein eigenes Debian Paket
+untergebracht. Ein Beispielpaket und \-komponente befindet sich in
 /usr/share/doc/live\-config/examples.
 
-.SS "Entfernen von neuen Konfigurationsskripten"
-Es ist derzeit nicht möglich in einer vernünftigen Art und Weise Skripte zu
-entfernen ohne das ein lokal verändertes \fBlive\-config\fP Paket oder
+.SS "Entfernen von neuen Konfigurationskomponenten"
+Es ist derzeit nicht möglich in einer vernünftigen Art und Weise Komponenten
+zu entfernen ohne das ein lokal verändertes \fBlive\-config\fP Paket oder
 dpkg\-divert verwendet werden muss. Jedoch kann das selbe erreicht werden,
-indem bestimmte Skripte durch den live\-noconfig Mechanismus abgeschaltet
-werden, siehe oben. Um zu verhindern, dass die abzuschaltenden Skripte immer
-durch einen Boot Parameter angegeben werden müssen, kann eine
+indem bestimmte Komponenten durch den live\-noconfig Mechanismus abgeschaltet
+werden, siehe oben. Um zu verhindern, dass die abzuschaltenden Komponenten
+immer durch einen Boot Parameter angegeben werden müssen, kann eine
 Konfigurationsdatei verwendet werden, siehe oben.
 .PP
 Die Konfigurationsdateien für das Live System selber werden am Besten in
 einem eigenen Debian Paket untergebracht. Ein Beispielpaket und
 \-konfigurationsdatei befindet sich in /usr/share/doc/live\-config/examples.
 
-.SH SKRIPTE
-\fBlive\-config\fP enthält derzeit folgende Skripte in /lib/live/config.
+.SH COMPONENTS
+\fBlive\-config\fP enthält derzeit folgende Komponenten in /lib/live/config.
 
 .IP \fBdebconf\fP 4
 erlaubt beliebige Preseed Dateien auf dem Live Medium oder von einem
@@ -379,8 +381,8 @@ erstellt OpenSSH\-Server Host Schlüssel.
 .IP \fBxfce4\-panel\fP 4
 konfiguriert Standarteinstellungen für xfce4\-panel.
 .IP \fBhooks\fP 4
-erlaubt beliebige Kommands von einem Skript auf dem Live Medium oder von
-einem HTTP/FTP Server auszuführen.
+erlaubt beliebige Kommandos einer Datei auf dem Live Medium oder von einem
+HTTP/FTP Server auszuführen.
 
 .SH DATEIEN
 .IP \fB/etc/live/config.conf\fP 4
