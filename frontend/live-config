@@ -39,6 +39,7 @@ _PROC_OPTIONS="onodev,noexec,nosuid"
 export _IP_SEPARATOR _PROC_OPTIONS
 
 _COMPONENTS="$(ls /lib/live/config/*)"
+_PERSISTENCE_COMPONENTS="$(ls /lib/live/config/*)"
 
 # Reading configuration files from filesystem and live-media
 for _FILE in /etc/live/config.conf /etc/live/config/* \
@@ -82,6 +83,35 @@ Cmdline ()
 				LIVE_CONFIG_COMPONENTS=""
 				LIVE_CONFIG_NOCOMPONENTS=""
 				_COMPONENTS=""
+				;;
+
+			# Persistence
+			live-config.persistence-components=*|persistence-components=*)
+				# Only run requested components persistent
+				LIVE_CONFIG_PERSISTENCE_COMPONENTS="${_PARAMETER#*persistence-components=}"
+				LIVE_CONFIG_PERSISTENCE_NOCOMPONENTS=""
+				_PERSISTENCE_COMPONENTS=""
+				;;
+
+			live-config.persistence-components|persistence-components)
+				# Run all components persistent
+				LIVE_CONFIG_PERSISTENCE_COMPONENTS=""
+				LIVE_CONFIG_PERSISTENCE_NOCOMPONENTS=""
+				_PERSISTENCE_COMPONENTS="$(ls /lib/live/config/*)"
+				;;
+
+			live-config.nopersistence-components=*|nopersistence-components=*)
+				# Don't run requested components persistent
+				LIVE_CONFIG_PERSISTENCE_COMPONENTS=""
+				LIVE_CONFIG_PERSISTENCE_NOCOMPONENTS="${_PARAMETER#*nopersistence-components=}"
+				_PERSISTENCE_COMPONENTS="$(ls /lib/live/config/*)"
+				;;
+
+			live-config.nopersistence-components|nopersistence-components)
+				# Don't run any component persistent
+				LIVE_CONFIG_PERSISTENCE_COMPONENTS=""
+				LIVE_CONFIG_PERSISTENCE_NOCOMPONENTS=""
+				_PERSISTENCE_COMPONENTS=""
 				;;
 
 			# Shortcuts
@@ -151,6 +181,24 @@ Cmdline ()
 			_COMPONENTS="$(echo ${_COMPONENTS} | sed -e "s|$(ls /lib/live/config/????-${_NOCOMPONENT} 2> /dev/null || echo none)||")"
 		done
 	fi
+
+	# Include requested persistence components
+	if [ -n "${LIVE_CONFIG_PERSISTENCE_COMPONENTS}" ]
+	then
+		for _PERSISTENCE_COMPONENT in $(echo ${LIVE_CONFIG_PERSISTENCE_COMPONENTS} | sed -e 's|,| |g')
+		do
+			_PERSISTENCE_COMPONENTS="${_PERSISTENCE_COMPONENTS} $(ls /lib/live/config/????-${_PERSISTENCE_COMPONENT} 2> /dev/null || true)"
+		done
+	fi
+
+	# Exclude requested persistence components
+	if [ -n "${LIVE_CONFIG_NOPERSISTENCE_COMPONENTS}" ]
+	then
+		for _NOPERSISTENCE_COMPONENT in $(echo ${LIVE_CONFIG_NOPERSISTENCE_COMPONENTS} | sed -e 's|,| |g')
+		do
+			_PERSISTENCE_COMPONENTS="$(echo ${_PERSISTENCE_COMPONENTS} | sed -e "s|$(ls /lib/live/config/????-${_NOPERSISTENCE_COMPONENT} 2> /dev/null || echo none)||")"
+		done
+	fi
 }
 
 Trap ()
@@ -206,6 +254,8 @@ Main ()
 		exit 0
 	fi
 
+	mkdir -p /var/lib/live/config
+
 	# Setting up log redirection
 	rm -f /var/log/live/config.log
 	rm -f /tmp/live-config.pipe
@@ -229,10 +279,17 @@ Main ()
 
 	# Configuring system
 	_COMPONENTS="$(echo ${_COMPONENTS} | sed -e 's| |\n|g' | sort -u)"
+	_PERSISTENCE_COMPONENTS="$(echo ${_PERSISTENCE_COMPONENTS} | sed -e 's| |\n|g' | sort -u)"
 
 	for _COMPONENT in ${_COMPONENTS}
 	do
 		[ "${LIVE_CONFIG_DEBUG}" = "true" ] && echo "[$(date +'%F %T')] live-config: ${_COMPONENT}" > /tmp/live-config.pipe
+
+		if ! echo " ${_PERSISTENCE_COMPONENTS} " | grep -qs " ${_COMPONENT} "
+		then
+			# Running component without persistence
+			rm -f "/var/lib/live/config/$(basename ${_COMPONENT} | sed -e 's|[0-9][0-9][0-9][0-9]-||')"
+		fi
 
 		${_COMPONENT} > /tmp/live-config.pipe 2>&1
 	done
