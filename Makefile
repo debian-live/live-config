@@ -51,7 +51,6 @@ install:
 	# Installing backends
 	mkdir -p $(DESTDIR)/etc/init.d
 	cp backends/sysvinit/live-config.init $(DESTDIR)/etc/init.d/live-config
-	cp backends/sysvinit/live.init $(DESTDIR)/etc/init.d/live
 
 	mkdir -p $(DESTDIR)/lib/systemd/system
 	cp backends/systemd/live-config.systemd $(DESTDIR)/lib/systemd/system/live-config.service
@@ -60,8 +59,6 @@ install:
 	mkdir -p $(DESTDIR)/lib/live
 	cp -r scripts/config.sh scripts/config $(DESTDIR)/lib/live
 	mkdir -p $(DESTDIR)/var/lib/live/config
-
-	cp bin/boot-init.sh $(DESTDIR)/lib/live
 
 	mkdir -p $(DESTDIR)/sbin
 
@@ -105,8 +102,6 @@ uninstall:
 	rmdir --ignore-fail-on-non-empty $(DESTDIR)/lib/systemd > /dev/null 2>&1 || true
 
 	# Uninstalling scripts
-	rm -f $(DESTDIR)/lib/live/boot-init.sh
-
 	rm -rf $(DESTDIR)/lib/live/config.sh $(DESTDIR)/lib/live/config
 	rmdir --ignore-fail-on-non-empty $(DESTDIR)/lib/live > /dev/null 2>&1 || true
 	rmdir --ignore-fail-on-non-empty $(DESTDIR)/lib > /dev/null 2>&1 || true

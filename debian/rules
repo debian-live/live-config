@@ -26,4 +26,3 @@ override_dh_install:
 
 override_dh_installinit:
 	dh_installinit -p live-config-sysvinit --no-restart-on-upgrade --no-start --update-rcd-params='start 00 S .' --name live-config --onlyscripts
-	dh_installinit -p live-config-sysvinit --no-restart-on-upgrade --no-start --update-rcd-params='start 89 0 6 .' --name live --onlyscripts
