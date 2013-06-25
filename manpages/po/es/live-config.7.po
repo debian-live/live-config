@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: live-config 4.0~a24-1\n"
 "POT-Creation-Date: 2013-06-25 19:47+0300\n"
-"PO-Revision-Date: 2013-06-25 14:24+0100\n"
+"PO-Revision-Date: 2013-06-25 19:56+0100\n"
 "Last-Translator: Carlos Zuferri <chals@altorricon.com>\n"
 "Language-Team: none\n"
 "Language: es\n"
@@ -88,17 +88,12 @@ msgstr ""
 
 #. type: Plain text
 #: en/live-config.7:21
-#, fuzzy
-#| msgid ""
-#| "If I<live-build>(7) is used to built the live system, the live-config "
-#| "parameters used by default can be set through the --bootappend-live "
-#| "option, see I<lb_config>(1) manual page."
 msgid ""
 "If I<live-build>(7) is used to build the live system, the live-config "
 "parameters used by default can be set through the --bootappend-live option, "
 "see I<lb_config>(1) manual page."
 msgstr ""
-"Si se utiliza I<live-build>(7) para construir el sistema en vivo,  los "
+"Si se utiliza I<live-build>(7) para construir el sistema en vivo, los "
 "parámetros de live-config utilizados por defecto se pueden establecer "
 "mediante la opción --bootappend-live, ver la página del manual I<lb_config>"
 "(1)"
@@ -111,15 +106,6 @@ msgstr "Parámetros de arranque (componentes)"
 
 #. type: Plain text
 #: en/live-config.7:24
-#, fuzzy
-#| msgid ""
-#| "B<live-config> is only activated if 'boot=live' is used as a boot "
-#| "parameter. Additionally, B<live-config> needs to be told which components "
-#| "to run through the 'live-config.components' parameter or which components "
-#| "to not run through the 'live-config.nocomponents' parameter. If both "
-#| "'live-config' and 'live-config.nocomponents' are used, or, if either one "
-#| "is specified multiple times, always the later one takes precedence over "
-#| "the previous one(s)."
 msgid ""
 "B<live-config> is only activated if 'boot=live' is used as a boot parameter. "
 "Additionally, B<live-config> needs to be told which components to run "
@@ -133,9 +119,9 @@ msgstr ""
 "«boot=live». Adicionalmente, se debe especificar a B<live-config> qué "
 "componentes tiene que ejecutar mediante el parámetro «live-config."
 "components» o qué componentes no tiene que ejecutar mediante la opción «live-"
-"config.nocomponents». Si se usan las dos opciones «live-config» y «live-"
-"config.nocomponents» a la vez, o si alguna de las dos se especifica varias "
-"veces, la última tiene prioridad sobre las anteriores."
+"config.nocomponents». Si se usan las dos opciones «live-config.components» y "
+"«live-config.nocomponents» a la vez, o si alguna de las dos se especifica "
+"varias veces, la última tiene prioridad sobre las anteriores."
 
 #. type: IP
 #: en/live-config.7:25
