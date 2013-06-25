@@ -123,7 +123,7 @@ Cmdline ()
 	case "${LIVE_CONFIG_NOAUTOLOGIN}" in
 		true)
 			# Disables both console and graphical autologin.
-			LIVE_CONFIG_NOCOMPONENTS="${LIVE_CONFIG_NOCOMPONENTS},gdm,gdm3,lightdm,lxdm,nodm,slim,,xinit"
+			LIVE_CONFIG_NOCOMPONENTS="${LIVE_CONFIG_NOCOMPONENTS},gdm,gdm3,lightdm,lxdm,nodm,slim,xinit"
 			;;
 	esac
 
