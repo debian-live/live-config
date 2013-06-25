@@ -20,7 +20,7 @@
 If \fIlive\-build\fR(7) is used to build the live system, the live\-config parameters used by default can be set through the \-\-bootappend\-live option, see \fIlb_config\fR(1) manual page.
 
 .SS Boot Parameters (components)
-\fBlive\-config\fR is only activated if 'boot=live' is used as a boot parameter. Additionally, \fBlive\-config\fR needs to be told which components to run through the 'live\-config.components' parameter or which components to not run through the 'live\-config.nocomponents' parameter. If both 'live\-config' and 'live\-config.nocomponents' are used, or, if either one is specified multiple times, always the later one takes precedence over the previous one(s).
+\fBlive\-config\fR is only activated if 'boot=live' is used as a boot parameter. Additionally, \fBlive\-config\fR needs to be told which components to run through the 'live\-config.components' parameter or which components to not run through the 'live\-config.nocomponents' parameter. If both 'live\-config.components' and 'live\-config.nocomponents' are used, or, if either one is specified multiple times, always the later one takes precedence over the previous one(s).
 
 .IP "\fBlive\-config.components\fR | \fBcomponents\fR" 4
 All components are run. This is what live images use by default.
