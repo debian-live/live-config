@@ -27,19 +27,18 @@ una misma opción, los parámetros de arranque tienen preferencia sobre los
 ficheros de configuración. Cuando se utiliza la persistencia, los
 componentes de \fBlive\-config\fP sólo se ejecutan una vez.
 .PP
-Si se utiliza \fIlive\-build\fP(7) para construir el sistema en vivo,  los
-parámetros de live\-config utilizados por defecto se pueden establecer
-mediante la opción \-\-bootappend\-live, ver la página del manual
-\fIlb_config\fP(1)
+If \fIlive\-build\fP(7) is used to build the live system, the live\-config
+parameters used by default can be set through the \-\-bootappend\-live option,
+see \fIlb_config\fP(1) manual page.
 
 .SS "Parámetros de arranque (componentes)"
-\fBlive\-config\fP sólo se activa si se utiliza como parámetro de arranque
-«boot=live». Adicionalmente, se debe especificar a \fBlive\-config\fP qué
-componentes tiene que ejecutar mediante el parámetro
-«live\-config.components» o qué componentes no tiene que ejecutar mediante la
-opción «live\-config.nocomponents». Si se usan las dos opciones «live\-config»
-y «live\-config.nocomponents» a la vez, o si alguna de las dos se especifica
-varias veces, la última tiene prioridad sobre las anteriores.
+\fBlive\-config\fP is only activated if 'boot=live' is used as a boot
+parameter. Additionally, \fBlive\-config\fP needs to be told which components to
+run through the 'live\-config.components' parameter or which components to
+not run through the 'live\-config.nocomponents' parameter. If both
+\&'live\-config.components' and 'live\-config.nocomponents' are used, or, if
+either one is specified multiple times, always the later one takes
+precedence over the previous one(s).
 
 .IP "\fBlive\-config.components\fP | \fBcomponents\fP" 4
 Se ejecutan todos los componentes. Esto es lo que las imágenes en vivo

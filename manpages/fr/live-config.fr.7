@@ -26,7 +26,7 @@ files. If both mechanisms are used for a certain option, the boot parameters
 take precedence over the configuration files. When using persistency,
 \fBlive\-config\fP components are only run once.
 .PP
-If \fIlive\-build\fP(7) is used to built the live system, the live\-config
+If \fIlive\-build\fP(7) is used to build the live system, the live\-config
 parameters used by default can be set through the \-\-bootappend\-live option,
 see \fIlb_config\fP(1) manual page.
 
@@ -35,9 +35,9 @@ see \fIlb_config\fP(1) manual page.
 parameter. Additionally, \fBlive\-config\fP needs to be told which components to
 run through the 'live\-config.components' parameter or which components to
 not run through the 'live\-config.nocomponents' parameter. If both
-\&'live\-config' and 'live\-config.nocomponents' are used, or, if either one is
-specified multiple times, always the later one takes precedence over the
-previous one(s).
+\&'live\-config.components' and 'live\-config.nocomponents' are used, or, if
+either one is specified multiple times, always the later one takes
+precedence over the previous one(s).
 
 .IP "\fBlive\-config.components\fP | \fBcomponents\fP" 4
 All components are run. This is what live images use by default.
