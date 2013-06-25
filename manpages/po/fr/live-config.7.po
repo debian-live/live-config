@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config 4.0~a24-1\n"
-"POT-Creation-Date: 2013-06-24 20:39+0300\n"
+"POT-Creation-Date: 2013-06-25 07:17+0300\n"
 "PO-Revision-Date: 2013-06-24 14:52+0100\n"
 "Last-Translator: Carlos Zuferri <chals@altorricon.com>\n"
 "Language-Team: none\n"
@@ -25,8 +25,8 @@ msgstr "LIVE-CONFIG"
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "2013-06-24"
-msgstr "24.06.2013"
+msgid "2013-06-25"
+msgstr "25.06.2013"
 
 #. type: TH
 #: en/live-config.7:9
@@ -100,9 +100,14 @@ msgstr ""
 
 #. type: Plain text
 #: en/live-config.7:21
+#, fuzzy
+#| msgid ""
+#| "To configure the live-config parameters used by default in a live image, "
+#| "see the --bootappend-live option in the I<lb_config>(1) manual page."
 msgid ""
-"To configure the live-config parameters used by default in a live image, see "
-"the --bootappend-live option in the I<lb_config>(1) manual page."
+"If I<live-build>(7) is used to built the live system, the live-config "
+"parameters used by default can be set through the --bootappend-live option, "
+"see I<lb_config>(1) manual page."
 msgstr ""
 "Pour configurer les paramètres de live-config utilisés par défaut dans une "
 "image live, consultez l'option --bootappend-live dans la page de manuel "

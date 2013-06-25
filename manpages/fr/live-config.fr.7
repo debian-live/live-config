@@ -11,7 +11,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 24.06.2013 4.0~a24\-1 "Projet Live Systems"
+.TH LIVE\-CONFIG 7 25.06.2013 4.0~a24\-1 "Projet Live Systems"
 
 .SH NOM
 \fBlive\-config\fP \- System Configuration Components
@@ -26,9 +26,9 @@ files. If both mechanisms are used for a certain option, the boot parameters
 take precedence over the configuration files. When using persistency,
 \fBlive\-config\fP components are only run once.
 .PP
-Pour configurer les paramètres de live\-config utilisés par défaut dans une
-image live, consultez l'option \-\-bootappend\-live dans la page de manuel
-\fIlb_config\fP(1)
+If \fIlive\-build\fP(7) is used to built the live system, the live\-config
+parameters used by default can be set through the \-\-bootappend\-live option,
+see \fIlb_config\fP(1) manual page.
 
 .SS "Boot Parameters (components)"
 \fBlive\-config\fP is only activated if 'boot=live' is used as a boot
