@@ -3,7 +3,7 @@ Section: misc
 Priority: optional
 Maintainer: Live Systems Maintainers <debian-live@lists.debian.org>
 Uploaders: Daniel Baumann <mail@daniel-baumann.ch>
-Build-Depends: debhelper (>= 9)
+Build-Depends: debhelper (>= 9), dh-systemd
 Build-Depends-Indep: lsb-release
 Standards-Version: 3.9.4
 Homepage: http://live-systems.org/devel/live-config/
