@@ -123,7 +123,7 @@ Cmdline ()
 	case "${LIVE_CONFIG_NOAUTOLOGIN}" in
 		true)
 			# Disables both console and graphical autologin.
-			LIVE_CONFIG_NOCOMPONENTS="${LIVE_CONFIG_NOCOMPONENTS},gdm,gdm3,lightdm,lxdm,nodm,slim,,xinit"
+			LIVE_CONFIG_NOCOMPONENTS="${LIVE_CONFIG_NOCOMPONENTS},gdm,gdm3,lightdm,lxdm,nodm,slim,xinit"
 			;;
 	esac
 
@@ -176,8 +176,6 @@ Setup_network ()
 	then
 		/etc/init.d/mountkernfs.sh start > /dev/null 2>&1
 		/etc/init.d/mountdevsubfs.sh start > /dev/null 2>&1
-		/etc/init.d/ifupdown-clean start > /dev/null 2>&1
-		/etc/init.d/ifupdown start > /dev/null 2>&1
 		/etc/init.d/networking start > /dev/null 2>&1
 
 		# Now force adapter up if specified with ethdevice= on cmdline

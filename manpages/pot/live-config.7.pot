@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config VERSION\n"
-"POT-Creation-Date: 2013-06-24 20:39+0300\n"
+"POT-Creation-Date: 2013-09-05 11:20+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,13 +25,13 @@ msgstr ""
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "2013-06-24"
+msgid "2013-09-05"
 msgstr ""
 
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "4.0~a24-1"
+msgid "4.0~a25-1"
 msgstr ""
 
 #. type: TH
@@ -82,8 +82,9 @@ msgstr ""
 #. type: Plain text
 #: en/live-config.7:21
 msgid ""
-"To configure the live-config parameters used by default in a live image, see "
-"the --bootappend-live option in the I<lb_config>(1) manual page."
+"If I<live-build>(7) is used to build the live system, the live-config "
+"parameters used by default can be set through the --bootappend-live option, "
+"see I<lb_config>(1) manual page."
 msgstr ""
 
 #. type: SS
@@ -98,10 +99,10 @@ msgid ""
 "B<live-config> is only activated if 'boot=live' is used as a boot parameter. "
 "Additionally, B<live-config> needs to be told which components to run "
 "through the 'live-config.components' parameter or which components to not "
-"run through the 'live-config.nocomponents' parameter. If both 'live-config' "
-"and 'live-config.nocomponents' are used, or, if either one is specified "
-"multiple times, always the later one takes precedence over the previous one"
-"(s)."
+"run through the 'live-config.nocomponents' parameter. If both 'live-config."
+"components' and 'live-config.nocomponents' are used, or, if either one is "
+"specified multiple times, always the later one takes precedence over the "
+"previous one(s)."
 msgstr ""
 
 #. type: IP

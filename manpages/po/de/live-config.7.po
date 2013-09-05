@@ -4,8 +4,8 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: live-config 4.0~a24-1\n"
-"POT-Creation-Date: 2013-06-24 20:39+0300\n"
+"Project-Id-Version: live-config 4.0~a25-1\n"
+"POT-Creation-Date: 2013-09-05 11:20+0300\n"
 "PO-Revision-Date: 2013-04-13 20:24+0100\n"
 "Last-Translator: Carlos Zuferri <chals@altorricon.com>\n"
 "Language-Team: none\n"
@@ -24,14 +24,14 @@ msgstr "LIVE-CONFIG"
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "2013-06-24"
-msgstr "24.06.2013"
+msgid "2013-09-05"
+msgstr "05.09.2013"
 
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "4.0~a24-1"
-msgstr "4.0~a24-1"
+msgid "4.0~a25-1"
+msgstr "4.0~a25-1"
 
 #. type: TH
 #: en/live-config.7:9
@@ -87,13 +87,19 @@ msgstr ""
 
 #. type: Plain text
 #: en/live-config.7:21
+#, fuzzy
+#| msgid ""
+#| "If I<live-build>(7) is used to built the live system, the live-config "
+#| "parameters used by default can be set through the --bootappend-live "
+#| "option, see I<lb_config>(1) manual page."
 msgid ""
-"To configure the live-config parameters used by default in a live image, see "
-"the --bootappend-live option in the I<lb_config>(1) manual page."
+"If I<live-build>(7) is used to build the live system, the live-config "
+"parameters used by default can be set through the --bootappend-live option, "
+"see I<lb_config>(1) manual page."
 msgstr ""
-"Um die Boot Parameter von live-config welche standardmässig in einem Live "
-"System benutzt werden zu konfigurieren, siehe --bootappend-live Option in "
-"der I<lb_config>(1) Manpage."
+"Wird I<live-build>(7) benutzt um das Live System zu erstellen, können die "
+"Boot Parameter welche standardmässig benutzt werden durch die --bootappend-"
+"live Option gesetzt werden, siehe I<lb_config>(1) Manpage."
 
 #. type: SS
 #: en/live-config.7:22
@@ -103,14 +109,23 @@ msgstr "Boot Parameter (Komponenten)"
 
 #. type: Plain text
 #: en/live-config.7:24
+#, fuzzy
+#| msgid ""
+#| "B<live-config> is only activated if 'boot=live' is used as a boot "
+#| "parameter. Additionally, B<live-config> needs to be told which components "
+#| "to run through the 'live-config.components' parameter or which components "
+#| "to not run through the 'live-config.nocomponents' parameter. If both "
+#| "'live-config' and 'live-config.nocomponents' are used, or, if either one "
+#| "is specified multiple times, always the later one takes precedence over "
+#| "the previous one(s)."
 msgid ""
 "B<live-config> is only activated if 'boot=live' is used as a boot parameter. "
 "Additionally, B<live-config> needs to be told which components to run "
 "through the 'live-config.components' parameter or which components to not "
-"run through the 'live-config.nocomponents' parameter. If both 'live-config' "
-"and 'live-config.nocomponents' are used, or, if either one is specified "
-"multiple times, always the later one takes precedence over the previous one"
-"(s)."
+"run through the 'live-config.nocomponents' parameter. If both 'live-config."
+"components' and 'live-config.nocomponents' are used, or, if either one is "
+"specified multiple times, always the later one takes precedence over the "
+"previous one(s)."
 msgstr ""
 "B<live-config> ist nur aktiviert, wenn 'boot=live' als Boot Parameter "
 "benutzt wird. Zusätzlich muss B<live-config> durch den Parameter 'live-"

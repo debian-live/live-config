@@ -11,7 +11,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 24.06.2013 4.0~a24\-1 "Live Systems Projekt"
+.TH LIVE\-CONFIG 7 05.09.2013 4.0~a25\-1 "Live Systems Projekt"
 
 .SH NAME
 \fBlive\-config\fP \- System Konfiguration Komponenten
@@ -27,18 +27,18 @@ benutzt, so gehen die Boot Parameter den Konfigurationsdateien vor. Wird
 Persistenz benutzt, so werden die \fBlive\-config\fP Komponenten nur einmal
 ausgeführt.
 .PP
-Um die Boot Parameter von live\-config welche standardmässig in einem Live
-System benutzt werden zu konfigurieren, siehe \-\-bootappend\-live Option in
-der \fIlb_config\fP(1) Manpage.
+If \fIlive\-build\fP(7) is used to build the live system, the live\-config
+parameters used by default can be set through the \-\-bootappend\-live option,
+see \fIlb_config\fP(1) manual page.
 
 .SS "Boot Parameter (Komponenten)"
-\fBlive\-config\fP ist nur aktiviert, wenn 'boot=live' als Boot Parameter
-benutzt wird. Zusätzlich muss \fBlive\-config\fP durch den Parameter
-\&'live\-config.components' angegeben werden, welche Komponenten ausgeführt
-werden sollen, oder mit dem Parameter 'live\-config.nocomponents', welche
-Komponenten nicht ausgeführt werden sollen. Werden beide beide Parameter
-oder mehrmals benützt, so geht der in der Reihenfolge lezte allen
-vorhergehenden vor.
+\fBlive\-config\fP is only activated if 'boot=live' is used as a boot
+parameter. Additionally, \fBlive\-config\fP needs to be told which components to
+run through the 'live\-config.components' parameter or which components to
+not run through the 'live\-config.nocomponents' parameter. If both
+\&'live\-config.components' and 'live\-config.nocomponents' are used, or, if
+either one is specified multiple times, always the later one takes
+precedence over the previous one(s).
 
 .IP "\fBlive\-config.components\fP | \fBcomponents\fP" 4
 Alle Komponenten werden ausgeführt. Auf Live Images ist dies das
