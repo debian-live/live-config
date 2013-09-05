@@ -1,3 +1,30 @@
+live-config (4.0~a25-1) experimental; urgency=low
+
+  [ Daniel Baumann ]
+  * Moving middleend to components within source tree for constency with
+    jargon used in the manpages.
+  * Adding reference to live-build in manpage when talking about
+    lb_config.
+  * Removing cosmetically superfluous comma in assembling of nocomponents
+    when noroot is used.
+
+  [ chals ]
+  * Updating Spanish translation of live-config man page.
+  * Fixing typo 'build'.
+  * Adding '.components' to man page.
+  * Updating translation files from the English sources.
+  * Updating Spanish translation of live-config man page.
+  * Updating French translation of live-config man page.
+
+  [ Daniel Baumann ]
+  * Building with dh-systemd.
+  * Improve boot order in systemd service file before getting a final
+    (upstream) solution, thanks to Michael Stapelberg
+    <stapelberg@debian.org>.
+  * Removing squeeze-only ifupdown initscript callings.
+
+ -- Daniel Baumann <mail@daniel-baumann.ch>  Thu, 05 Sep 2013 11:21:14 +0200
+
 live-config (4.0~a24-1) experimental; urgency=low
 
   [ chals ]
