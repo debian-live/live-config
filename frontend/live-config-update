@@ -46,7 +46,7 @@ case "${_DISTRIBUTION}" in
 	progress-linux)
 		NOCOMPONENT="apport ureadahead"
 
-		LIVE_HOSTNAME="progress-linux"
+		LIVE_HOSTNAME="system"
 		LIVE_USERNAME="user"
 		LIVE_USER_FULLNAME="Live user"
 		LIVE_USER_DEFAULT_GROUPS="audio cdrom dip floppy video plugdev netdev powerdev scanner bluetooth debian-tor sudo"
