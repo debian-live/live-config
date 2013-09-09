@@ -38,7 +38,7 @@ Init ()
 Config ()
 {
 	# Disabling to lock the screen when the screensaver goes active.
-	sudo -u "${LIVE_USERNAME}" gsettings set org.gnome.desktop.screensaver lock-enabled false
+	sudo -u "${LIVE_USERNAME}" dbus-launch --exit-with-session gsettings set org.gnome.desktop.screensaver lock-enabled false
 
 	# Creating state file
 	touch /var/lib/live/config/gnome-screensaver
