@@ -26,22 +26,24 @@ Cmdline ()
 Init ()
 {
 	# Checking if package is installed or already configured
-	if [ ! -e /var/lib/dpkg/info/gnome-screensaver.list ] || \
-	   [ -e /var/lib/live/config/gnome-screensaver ]
+	if [ ! -e /var/lib/dpkg/info/xscreensaver.list ] || \
+	   [ -e /var/lib/live/config/xscreensaver ]
 	then
 		exit 0
 	fi
 
-	echo -n " gnome-screensaver"
+	echo -n " xscreensaver"
 }
 
 Config ()
 {
-	# Disabling to lock the screen when the screensaver goes active.
-	sudo -u "${LIVE_USERNAME}" dbus-launch --exit-with-session gsettings set org.gnome.desktop.screensaver lock-enabled false
+	if ! grep -qs '^lock:' "/home/${LIVE_USERNAME}/.xscreensaver"
+	then
+		echo "lock: False" >> "/home/${LIVE_USERNAME}/.xscreensaver"
+	fi
 
 	# Creating state file
-	touch /var/lib/live/config/gnome-screensaver
+	touch /var/lib/live/config/xscreensaver
 }
 
 Cmdline
