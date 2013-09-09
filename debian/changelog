@@ -1,3 +1,11 @@
+live-config (4.0~a26-1) experimental; urgency=low
+
+  * Setting default hostname for progress-linux to system.
+  * Adding xscreensaver component to disable locking during live session.
+  * Using gsettings within one-time dbus session call (Closes: #706587).
+
+ -- Daniel Baumann <mail@daniel-baumann.ch>  Mon, 09 Sep 2013 20:56:10 +0200
+
 live-config (4.0~a25-1) experimental; urgency=low
 
   [ Daniel Baumann ]
