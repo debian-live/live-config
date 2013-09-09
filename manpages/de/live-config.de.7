@@ -11,7 +11,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 05.09.2013 4.0~a25\-1 "Live Systems Projekt"
+.TH LIVE\-CONFIG 7 09.09.2013 4.0~a25\-1 "Live Systems Projekt"
 
 .SH NAME
 \fBlive\-config\fP \- System Konfiguration Komponenten
@@ -27,18 +27,18 @@ benutzt, so gehen die Boot Parameter den Konfigurationsdateien vor. Wird
 Persistenz benutzt, so werden die \fBlive\-config\fP Komponenten nur einmal
 ausgeführt.
 .PP
-If \fIlive\-build\fP(7) is used to build the live system, the live\-config
-parameters used by default can be set through the \-\-bootappend\-live option,
-see \fIlb_config\fP(1) manual page.
+Wird \fIlive\-build\fP(7) benutzt um das Live System zu erstellen, können die
+Boot Parameter welche standardmässig benutzt werden durch die
+\-\-bootappend\-live Option gesetzt werden, siehe \fIlb_config\fP(1) Manpage.
 
 .SS "Boot Parameter (Komponenten)"
-\fBlive\-config\fP is only activated if 'boot=live' is used as a boot
-parameter. Additionally, \fBlive\-config\fP needs to be told which components to
-run through the 'live\-config.components' parameter or which components to
-not run through the 'live\-config.nocomponents' parameter. If both
-\&'live\-config.components' and 'live\-config.nocomponents' are used, or, if
-either one is specified multiple times, always the later one takes
-precedence over the previous one(s).
+\fBlive\-config\fP ist nur aktiviert, wenn 'boot=live' als Boot Parameter
+benutzt wird. Zusätzlich muss \fBlive\-config\fP durch den Parameter
+\&'live\-config.components' angegeben werden, welche Komponenten ausgeführt
+werden sollen, oder mit dem Parameter 'live\-config.nocomponents', welche
+Komponenten nicht ausgeführt werden sollen. Werden beide beide Parameter
+oder mehrmals benützt, so geht der in der Reihenfolge lezte allen
+vorhergehenden vor.
 
 .IP "\fBlive\-config.components\fP | \fBcomponents\fP" 4
 Alle Komponenten werden ausgeführt. Auf Live Images ist dies das
@@ -382,6 +382,9 @@ schaltet ureadahead ab.
 erstellt OpenSSH\-Server Host Schlüssel.
 .IP \fBxfce4\-panel\fP 4
 konfiguriert Standarteinstellungen für xfce4\-panel.
+.IP \fBxscreensaver\fP 4
+schaltet das Sperren des Bildschirmes während der Bildschirmschoner läuft
+ab.
 .IP \fBhooks\fP 4
 erlaubt beliebige Kommandos einer Datei auf dem Live Medium oder von einem
 HTTP/FTP Server auszuführen.
