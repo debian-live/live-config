@@ -1,0 +1,22 @@
+#!/bin/sh
+
+set -e
+
+case "${1}" in
+	install)
+		dpkg-divert --package live-config --quiet --add --rename --divert /sbin/init.orig /sbin/init
+		;;
+
+	upgrade|abort-upgrade)
+
+		;;
+
+	*)
+		echo "preinst called with unknown argument \`$1'" >&2
+		exit 1
+		;;
+esac
+
+#DEBHELPER#
+
+exit 0

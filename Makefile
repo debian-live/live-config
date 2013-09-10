@@ -12,7 +12,7 @@ SHELL := sh -e
 
 LANGUAGES = $(shell cd manpages/po && ls)
 
-SCRIPTS = backend/*/*.init frontend/* components/*
+SCRIPTS = frontend/* components/*
 
 all: build
 
@@ -48,13 +48,6 @@ build:
 	@echo "Nothing to build."
 
 install:
-	# Installing backend
-	mkdir -p $(DESTDIR)/etc/init.d
-	cp backend/sysvinit/live-config.init $(DESTDIR)/etc/init.d/live-config
-
-	mkdir -p $(DESTDIR)/lib/systemd/system
-	cp backend/systemd/live-config.systemd $(DESTDIR)/lib/systemd/system/live-config.service
-
 	# Installing frontend
 	mkdir -p $(DESTDIR)/bin
 	cp frontend/* $(DESTDIR)/bin
@@ -90,20 +83,6 @@ install:
 	done
 
 uninstall:
-	# Uninstalling backend
-	rm -f $(DESTDIR)/etc/init.d/live
-	rm -f $(DESTDIR)/etc/init.d/live-config
-	rmdir --ignore-fail-on-non-empty $(DESTDIR)/etc/init.d > /dev/null 2>&1 || true
-	rmdir --ignore-fail-on-non-empty $(DESTDIR)/etc > /dev/null 2>&1 || true
-
-	rm -f $(DESTDIR)/etc/init/live-config.conf
-	rmdir --ignore-fail-on-non-empty $(DESTDIR)/etc/init > /dev/null 2>&1 || true
-	rmdir --ignore-fail-on-non-empty $(DESTDIR)/etc > /dev/null 2>&1 || true
-
-	rm -f $(DESTDIR)/lib/systemd/system/live-config.service
-	rmdir --ignore-fail-on-non-empty $(DESTDIR)/lib/systemd/system > /dev/null 2>&1 || true
-	rmdir --ignore-fail-on-non-empty $(DESTDIR)/lib/systemd > /dev/null 2>&1 || true
-
 	# Uninstalling components
 	rm -rf $(DESTDIR)/lib/live/config
 	rmdir --ignore-fail-on-non-empty $(DESTDIR)/lib/live > /dev/null 2>&1 || true

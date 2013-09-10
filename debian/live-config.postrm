@@ -3,6 +3,10 @@
 set -e
 
 case "${1}" in
+	remove)
+		dpkg-divert --package live-config --quiet --remove --rename --divert /sbin/init.orig /sbin/init
+		;;
+
 	purge)
 		rm -f /etc/sudoers.d/live
 		rm -f /etc/profile.d/zz-live-config_*.sh
@@ -15,7 +19,7 @@ case "${1}" in
 		rmdir --ignore-fail-on-non-empty /var/lib/live > /dev/null 2>&1 || true
 		;;
 
-	remove|upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)
+	upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)
 
 		;;
 

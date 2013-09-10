@@ -1,15 +1,10 @@
 #!/usr/bin/make -f
 
 %:
-	dh ${@} --with systemd
+	dh ${@}
 
 override_dh_auto_install:
 	dh_auto_install -- DESTDIR=debian/tmp
-
-	# live-config-sysvinit
-	mkdir -p debian/live-config-sysvinit/lib/live/config
-	mv debian/tmp/lib/live/config/*-sysvinit debian/live-config-sysvinit/lib/live/config
-	mv debian/tmp/lib/live/config/*-sysv-rc debian/live-config-sysvinit/lib/live/config
 
 	# Using user-setup instead of live-debconfig
 	rm -f debian/tmp/live/config/*live-debconfig*
@@ -26,6 +21,3 @@ override_dh_compress:
 
 override_dh_install:
 	dh_install --fail-missing
-
-override_dh_installinit:
-	dh_installinit -p live-config-sysvinit --no-restart-on-upgrade --no-start --update-rcd-params='start 00 S .' --name live-config --onlyscripts
