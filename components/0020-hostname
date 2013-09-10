@@ -56,9 +56,28 @@ Config ()
 		LIVE_HOSTNAME="$(cat /etc/hostname)"
 	fi
 
-	# Create /etc/hosts only if it is not present or empty
-	if [ ! -s /etc/hosts ]
+	# Updating hostname in /etc/hosts
+	if [ -s /etc/hosts ]
 	then
+		# /etc/hosts exists but has no 127.0.0.1
+		if ! grep -Eq "^ *127.0.0.1" /etc/hosts
+		then
+			mv /etc/hosts /etc/hosts.tmp
+
+			echo "127.0.0.1       localhost ${LIVE_HOSTNAME}" > /etc/hosts
+			cat /etc/hosts.tmp >> /etc/hosts
+
+			rm -f /etc/hosts.tmp
+		# /etc/hosts exists and has no matching 127.0.0.1
+		elif ! grep -Eq "^ *127.0.0.1.*${LIVE_HOSTNAME}" /etc/hosts
+		then
+			_HOSTS="$(grep -E "^ *127.0.0.1" /etc/hosts | awk '{ $1=""; print $0 }' | sed -e 's|localhost||')"
+			_HOSTS="$(echo localhost ${_HOSTS} ${LIVE_HOSTNAME} | sed -e 's|^ ||' -e 's|  | |g')"
+
+			sed -i -e "s|^ *127.0.0.1.*|127.0.0.1       ${_HOSTS}|" /etc/hosts
+		fi
+	else
+		# /etc/hosts does not exist
 
 cat > /etc/hosts << EOF
 127.0.0.1       localhost ${LIVE_HOSTNAME}
