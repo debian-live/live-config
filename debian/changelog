@@ -1,3 +1,10 @@
+live-config (4.0~a27-1) experimental; urgency=low
+
+  * Updating /etc/hosts handling to also update existing but incomplete
+    hosts files.
+
+ -- Daniel Baumann <mail@daniel-baumann.ch>  Tue, 10 Sep 2013 09:30:51 +0200
+
 live-config (4.0~a26-1) experimental; urgency=low
 
   * Setting default hostname for progress-linux to system.
