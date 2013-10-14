@@ -18,8 +18,11 @@ Recommends:
  locales | locales-all, user-setup, sudo
 Suggests: pciutils, wget
 Description: Live System Configuration Components
- live-config contains the components that configure a live system during the
- boot process (late userspace).
+ The Live Systems project maintains the components to build Debian based Live
+ systems and the official Debian Live images themselves.
+ .
+ live-config contains the components to configure a live system during the boot
+ process (late userspace).
  .
  In addition to live-config, a backend for an init system is required, such as
  live-config-sysvinit.
@@ -41,8 +44,11 @@ Conflicts: live-config-backend
 Replaces: live-config-backend
 Provides: live-config-backend
 Description: Live System Configuration Components (systemd backend)
- live-config contains the components that configure a live system during the
- boot process (late userspace).
+ The Live Systems project maintains the components to build Debian based Live
+ systems and the official Debian Live images themselves.
+ .
+ live-config contains the components to configure a live system during the boot
+ process (late userspace).
  .
  This package contains the systemd backend.
 
@@ -53,7 +59,10 @@ Conflicts: live-config-backend
 Replaces: live-config-backend
 Provides: live-config-backend
 Description: Live System Configuration Components (sysvinit backend)
- live-config contains the components that configure a live system during the
- boot process (late userspace).
+ The Live Systems project maintains the components to build Debian based Live
+ systems and the official Debian Live images themselves.
+ .
+ live-config contains the components to configure a live system during the boot
+ process (late userspace).
  .
  This package contains the sysvinit backend.
