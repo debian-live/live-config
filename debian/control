@@ -3,7 +3,9 @@ Section: misc
 Priority: optional
 Maintainer: Live Systems Maintainers <debian-live@lists.debian.org>
 Uploaders: Daniel Baumann <mail@daniel-baumann.ch>
-Build-Depends: debhelper (>= 9), dh-systemd
+Build-Depends:
+ debhelper (>= 9),
+ dh-systemd,
 Build-Depends-Indep: lsb-release
 Standards-Version: 3.9.4
 Homepage: http://live-systems.org/devel/live-config/
@@ -12,11 +14,21 @@ Vcs-Git: git://live-systems.org/git/live-config.git
 
 Package: live-config
 Architecture: all
-Depends: ${misc:Depends}, live-config-sysvinit | live-config-backend,
+Depends:
+ ${misc:Depends},
+ live-config-sysvinit | live-config-backend,
 Recommends:
- live-config-doc, live-tools, console-tools, iproute, keyboard-configuration,
- locales | locales-all, user-setup, sudo
-Suggests: pciutils, wget
+ live-config-doc,
+ live-tools,
+ console-tools,
+ iproute,
+ keyboard-configuration,
+ locales | locales-all,
+ user-setup,
+ sudo,
+Suggests:
+ pciutils,
+ wget,
 Description: Live System Configuration Components
  The Live Systems project maintains the components to build Debian based Live
  systems and the official Debian Live images themselves.
@@ -39,7 +51,9 @@ Description: Live System Configuration Components (documentation)
 
 Package: live-config-systemd
 Architecture: all
-Depends: ${misc:Depends}, systemd
+Depends:
+ ${misc:Depends},
+ systemd,
 Conflicts: live-config-backend
 Replaces: live-config-backend
 Provides: live-config-backend
@@ -54,7 +68,9 @@ Description: Live System Configuration Components (systemd backend)
 
 Package: live-config-sysvinit
 Architecture: all
-Depends: ${misc:Depends}, sysvinit (>= 2.86)
+Depends:
+ ${misc:Depends},
+ sysvinit (>= 2.86),
 Conflicts: live-config-backend
 Replaces: live-config-backend
 Provides: live-config-backend
