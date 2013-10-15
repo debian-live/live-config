@@ -62,18 +62,27 @@ EOF
 		fi
 	fi
 
-	# Disabling unnecessary KDE services
-	rm -f /usr/share/autostart/kab2kabc.desktop
-	rm -f /usr/share/autostart/kaddressbookmigrator.desktop
-	rm -f /usr/share/autostart/korgac.desktop
-	rm -f /usr/share/autostart/printer-applet.desktop
-	rm -f /usr/share/autostart/nepomukserver.desktop
-	rm -f /usr/share/kde4/services/kwalletd.desktop
-	rm -f /usr/share/kde4/services/kded/kpackagekitd.desktop
-	rm -f /usr/share/kde4/services/kded/freespacenotifier.desktop
-	rm -f /usr/share/kde4/services/plasma-runner-contacts.desktop  # starts akonadi
-	rm -f /usr/share/kde4/services/kded/notificationhelper.desktop
-	rm -f /usr/share/kde4/services/plasma-dataengine-calendar.desktop # starts akonadi
+	# Disable addressbook migrator
+	sudo -u "${LIVE_USERNAME}" kwriteconfig --file kres-migratorrc --group Migration --key Enabled --type bool false
+
+	# Disable korganizer reminder daemon
+	sudo -u "${LIVE_USERNAME}" kwriteconfig --file korgacrc --group "General" --key "Autostart" --type bool false
+	sudo -u "${LIVE_USERNAME}" kwriteconfig --file korgacrc --group "General" --key "Enabled" --type bool false
+
+	# Disable nepomuk
+	sudo -u "${LIVE_USERNAME}" kwriteconfig --file nepomukserverrc --group "Basic Settings" --key "Start Nepomuk" --type bool false
+
+	# Disbable nepomuk krunner plugin (depends on nepomuk)
+	#sudo -u "${LIVE_USERNAME}" kwriteconfig --file krunnerrc --group "Plugins" --key "nepomuksearchEnabled" --type bool false
+
+	# Disable freespace notifier
+	kwriteconfig --file /usr/share/kde4/services/kded/freespacenotifier.desktop --group "Desktop Entry" --key X-KDE-Kded-autoload --type bool false
+
+	# Disable searching contacts through krunner (depends on akonadi)
+	sudo -u "${LIVE_USERNAME}" kwriteconfig --file krunnerrc --group "Plugins" --key "kabccontactsEnabled" --type bool false
+
+	# Disable searching calendar events through krunner (depends on akonadi)
+	sudo -u "${LIVE_USERNAME}" kwriteconfig --file krunnerrc --group "Plugins" --key "org.kde.events_runnerEnabled" --type bool false
 
 	# should enable kxkb in ~/.kde/share/config/kxkbrc
 	# if multiple layouts are specified. gnome does it per default.
