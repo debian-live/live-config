@@ -76,7 +76,7 @@ EOF
 	#sudo -u "${LIVE_USERNAME}" kwriteconfig --file krunnerrc --group "Plugins" --key "nepomuksearchEnabled" --type bool false
 
 	# Disable freespace notifier
-	kwriteconfig --file /usr/share/kde4/services/kded/freespacenotifier.desktop --group "Desktop Entry" --key X-KDE-Kded-autoload --type bool false
+	sudo -u "${LIVE_USERNAME}" kwriteconfig --file kdekrc --group Module-freespacenotifier --key autoload --type bool false
 
 	# Disable searching contacts through krunner (depends on akonadi)
 	sudo -u "${LIVE_USERNAME}" kwriteconfig --file krunnerrc --group "Plugins" --key "kabccontactsEnabled" --type bool false
