@@ -1,3 +1,13 @@
+live-config (4.0~alpha28-1) experimental; urgency=low
+
+  [ skizzhg ]
+  * Italian translation update.
+
+  [ Daniel Baumann ]
+  * Updating package descriptions.
+
+ -- Daniel Baumann <mail@daniel-baumann.ch>  Tue, 15 Oct 2013 09:20:32 +0200
+
 live-config (4.0~a27-1) experimental; urgency=low
 
   * Updating /etc/hosts handling to also update existing but incomplete
