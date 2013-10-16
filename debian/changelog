@@ -1,3 +1,13 @@
+live-config (4.0~alpha29-1) experimental; urgency=low
+
+  [ Daniel Baumann ]
+  * Rewrapping control file.
+
+  [ Diederik de Haas ]
+  * Changed disabling of freespacenotifier from global to (user) local.
+
+ -- Daniel Baumann <mail@daniel-baumann.ch>  Wed, 16 Oct 2013 09:18:16 +0200
+
 live-config (4.0~alpha28-1) experimental; urgency=low
 
   [ skizzhg ]
