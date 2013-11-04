@@ -1,3 +1,14 @@
+live-config (4.0~alpha30-1) experimental; urgency=low
+
+  [ Diederik de Haas ]
+  * Fixed the file parameter for disabling the freespacenotifier to
+    kdedrc.
+
+  [ Daniel Baumann ]
+  * Updating to standards version 3.9.5.
+
+ -- Daniel Baumann <mail@daniel-baumann.ch>  Mon, 04 Nov 2013 07:53:01 +0100
+
 live-config (4.0~alpha29-1) experimental; urgency=low
 
   [ Daniel Baumann ]
