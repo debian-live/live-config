@@ -444,7 +444,7 @@ msgstr "B<live-config.xorg-driver>=I<XORGドライバ> | B<xorg-driver>=I<XORG�
 msgid ""
 "Allows to set xorg driver instead of autodetecting it. If a PCI ID is "
 "specified in /usr/share/live/config/xserver-xorg/I<DRIVER>.ids within the "
-"live system, I<DRIVER> is enforced for these devices. If both a boot "
+"live system, the I<DRIVER> is enforced for these devices. If both a boot "
 "parameter and an override are found, the boot parameter takes precedence."
 msgstr ""
 "xorg ドライバを自動検出に代えてセットします。Live システム内の /usr/share/"
