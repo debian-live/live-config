@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config VERSION\n"
-"POT-Creation-Date: 2013-11-04 07:53+0100\n"
+"POT-Creation-Date: 2013-12-28 20:42+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,7 +25,7 @@ msgstr ""
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "2013-11-04"
+msgid "2013-12-28"
 msgstr ""
 
 #. type: TH
@@ -538,9 +538,9 @@ msgstr ""
 msgid ""
 "B<live-config> can be configured (but not activated) through configuration "
 "files. Everything but the shortcuts that can be configured with a boot "
-"parameter can also alternatively be configured through one or more files. "
-"If configuration files are used, the 'boot=live' parameter is still required "
-"to activate B<live-config>."
+"parameter can also alternatively be configured through one or more files. If "
+"configuration files are used, the 'boot=live' parameter is still required to "
+"activate B<live-config>."
 msgstr ""
 
 #. type: Plain text
@@ -841,7 +841,7 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:157
 #, no-wrap
-msgid "B<LIVE_CONFIG_DEBUG>="
+msgid "B<LIVE_CONFIG_DEBUG>=true|false"
 msgstr ""
 
 #. type: Plain text

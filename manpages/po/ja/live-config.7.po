@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config 4.0~alpha30-1\n"
-"POT-Creation-Date: 2013-11-04 07:53+0100\n"
+"POT-Creation-Date: 2013-12-28 20:42+0100\n"
 "PO-Revision-Date: 2013-11-04 15:53+0900\n"
 "Last-Translator: victory <victory.deb@gmail.com>\n"
 "Language-Team: none\n"
@@ -23,7 +23,7 @@ msgstr "LIVE-CONFIG"
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "2013-11-04"
+msgid "2013-12-28"
 msgstr "2013-11-04"
 
 #. type: TH
@@ -79,9 +79,9 @@ msgid ""
 "config> components are only run once."
 msgstr ""
 "B<live-config> はブートパラメータまたは設定ファイルから設定できます。両方の仕"
-"組みで特定のオプションの設定が指示された場合はブートパラメータを設定ファイルよ"
-"りも優先します。保持機能を使っている場合、B<live-config> 構成要素は一度だけ実"
-"行されます。"
+"組みで特定のオプションの設定が指示された場合はブートパラメータを設定ファイル"
+"よりも優先します。保持機能を使っている場合、B<live-config> 構成要素は一度だけ"
+"実行されます。"
 
 #. type: Plain text
 #: en/live-config.7:21
@@ -91,8 +91,8 @@ msgid ""
 "see I<lb_config>(1) manual page."
 msgstr ""
 "I<live-build>(7) を使って Live システムをビルドした場合にデフォルトで利用され"
-"る live-config パラメータは --bootappend-live オプションによりセットできます。"
-"I<lb_config>(1) マニュアルページを見てください。"
+"る live-config パラメータは --bootappend-live オプションによりセットできま"
+"す。I<lb_config>(1) マニュアルページを見てください。"
 
 #. type: SS
 #: en/live-config.7:22
@@ -104,20 +104,20 @@ msgstr "ブートパラメータ (構成要素)"
 #: en/live-config.7:24
 msgid ""
 "B<live-config> is only activated if 'boot=live' is used as a boot parameter. "
-"Additionally, B<live-config> needs to be told which components to run through "
-"the 'live-config.components' parameter or which components to not run through "
-"the 'live-config.nocomponents' parameter. If both 'live-config.components' "
-"and 'live-config.nocomponents' are used, or, if either one is specified "
-"multiple times, always the later one takes precedence over the previous one"
-"(s)."
+"Additionally, B<live-config> needs to be told which components to run "
+"through the 'live-config.components' parameter or which components to not "
+"run through the 'live-config.nocomponents' parameter. If both 'live-config."
+"components' and 'live-config.nocomponents' are used, or, if either one is "
+"specified multiple times, always the later one takes precedence over the "
+"previous one(s)."
 msgstr ""
-"B<live-config> はブートパラメータとして「boot=live」が与えられた場合にのみ有効"
-"になります。さらに、B<live-config> は「live-config.components」パラメータによ"
-"りどの構成要素を実行するか、あるいは「live-config.nocomponents」パラメータによ"
-"りどの構成要素を実行しないのか指示する必要があります。「live-config."
-"components」と「live-config.nocomponents」が両方とも使われた、あるいは一方が複"
-"数回指定された場合は、後で指定されたものが先に指定されたものよりも常に優先され"
-"ます。"
+"B<live-config> はブートパラメータとして「boot=live」が与えられた場合にのみ有"
+"効になります。さらに、B<live-config> は「live-config.components」パラメータに"
+"よりどの構成要素を実行するか、あるいは「live-config.nocomponents」パラメータ"
+"によりどの構成要素を実行しないのか指示する必要があります。「live-config."
+"components」と「live-config.nocomponents」が両方とも使われた、あるいは一方が"
+"複数回指定された場合は、後で指定されたものが先に指定されたものよりも常に優先"
+"されます。"
 
 #. type: IP
 #: en/live-config.7:25
@@ -144,10 +144,10 @@ msgid ""
 "to be added before it can be configured for sudo. Look at the filenames of "
 "the components in /lib/live/config for their ordering number."
 msgstr ""
-"指定した構成要素だけが実行されます。順序が重要であることに注意してください。例"
-"えば「live-config.components=sudo,user-setup」は、sudo の設定前にユーザを追加"
-"しておく必要があるため機能しません。実行順については /lib/live/config にある構"
-"成要素のファイル名を見てください。"
+"指定した構成要素だけが実行されます。順序が重要であることに注意してください。"
+"例えば「live-config.components=sudo,user-setup」は、sudo の設定前にユーザを追"
+"加しておく必要があるため機能しません。実行順については /lib/live/config にあ"
+"る構成要素のファイル名を見てください。"
 
 #. type: IP
 #: en/live-config.7:29
@@ -161,8 +161,8 @@ msgid ""
 "No component is run. This is the same as not using any of 'live-config."
 "components' or 'live-config.nocomponents'."
 msgstr ""
-"構成要素は何も実行されません。これは「live-config.components」や「live-config."
-"nocomponents」を何も指定しないのと同じです。"
+"構成要素は何も実行されません。これは「live-config.components」や「live-"
+"config.nocomponents」を何も指定しないのと同じです。"
 
 #. type: IP
 #: en/live-config.7:31
@@ -197,12 +197,12 @@ msgstr "B<live-config.debconf-preseed>=filesystem|medium|I<URL1>|I<URL2>| ... |I
 #: en/live-config.7:39
 msgid ""
 "Allows to fetch and apply one or more debconf preseed files to be applied to "
-"the debconf database. Note that the URLs must be fetchable by wget (http, ftp "
-"or file://)."
+"the debconf database. Note that the URLs must be fetchable by wget (http, "
+"ftp or file://)."
 msgstr ""
-"debconf データベースに適用する debconf の preseed ファイルを取得、適用します。"
-"URL は wget により取得できるもの (http、 ftp、 file:// のどれか) でないといけ"
-"ないことに注意してください"
+"debconf データベースに適用する debconf の preseed ファイルを取得、適用しま"
+"す。URL は wget により取得できるもの (http、 ftp、 file:// のどれか) でないと"
+"いけないことに注意してください"
 
 #. type: Plain text
 #: en/live-config.7:41 en/live-config.7:81
@@ -212,8 +212,8 @@ msgid ""
 "filesystem of the live system itself."
 msgstr ""
 "ファイルが Live メディア上にある場合は file:///lib/live/mount/medium/I<ファイ"
-"ル>、Live システム自体のルートファイルシステムにある場合は file:///I<ファイ"
-"ル> で取得できます。"
+"ル>、Live システム自体のルートファイルシステムにある場合は file:///I<ファイル"
+"> で取得できます。"
 
 #. type: Plain text
 #: en/live-config.7:43
@@ -222,8 +222,8 @@ msgid ""
 "live system can be automatically enabled with the keyword 'filesystem'."
 msgstr ""
 "「filesystem」というキーワードを使って、Live システムのルートファイルシステム"
-"中の /lib/live/config-preseed/ にある preseed ファイルを全て自動的に有効化でき"
-"ます。"
+"中の /lib/live/config-preseed/ にある preseed ファイルを全て自動的に有効化で"
+"きます。"
 
 #. type: Plain text
 #: en/live-config.7:45
@@ -231,18 +231,18 @@ msgid ""
 "All preseed files in /live/config-preseed/ of the live medium can be "
 "automatically enabled with the keyword 'medium'."
 msgstr ""
-"「medium」というキーワードを使って、Live メディアの /live/config-preseed/ にあ"
-"る preseed ファイルを全て自動的に有効化できます。"
+"「medium」というキーワードを使って、Live メディアの /live/config-preseed/ に"
+"ある preseed ファイルを全て自動的に有効化できます。"
 
 #. type: Plain text
 #: en/live-config.7:47
 msgid ""
-"If several mechanisms are combined, then filesystem preseed files are applied "
-"first, then medium preseed files, and last the network preseed files."
+"If several mechanisms are combined, then filesystem preseed files are "
+"applied first, then medium preseed files, and last the network preseed files."
 msgstr ""
 "複数の仕組みを組み合わせた場合はファイルシステムの preseed ファイルがまず適用"
-"され、それからメディアの preseed ファイル、最後にネットワークの preseed ファイ"
-"ルが適用されます。"
+"され、それからメディアの preseed ファイル、最後にネットワークの preseed ファ"
+"イルが適用されます。"
 
 #. type: IP
 #: en/live-config.7:47
@@ -267,7 +267,8 @@ msgid ""
 "Allows to set the username that gets created for autologin. The default is "
 "'user'."
 msgstr ""
-"自動ログイン用に作成するユーザの名前をセットします。デフォルトは「user」です。"
+"自動ログイン用に作成するユーザの名前をセットします。デフォルトは「user」で"
+"す。"
 
 #. type: IP
 #: en/live-config.7:51
@@ -278,12 +279,12 @@ msgstr "B<live-config.user-default-groups>=I<グループ1>,I<グループ2> ...
 #. type: Plain text
 #: en/live-config.7:53
 msgid ""
-"Allows to set the default groups of the users that gets created for autologin "
-"is member of. The default is 'audio cdrom dip floppy video plugdev netdev "
-"powerdev scanner bluetooth'."
+"Allows to set the default groups of the users that gets created for "
+"autologin is member of. The default is 'audio cdrom dip floppy video plugdev "
+"netdev powerdev scanner bluetooth'."
 msgstr ""
-"自動ログイン用に作成するユーザがメンバーとなるデフォルトのグループをセットしま"
-"す。デフォルトは「audio cdrom dip floppy video plugdev netdev powerdev "
+"自動ログイン用に作成するユーザがメンバーとなるデフォルトのグループをセットし"
+"ます。デフォルトは「audio cdrom dip floppy video plugdev netdev powerdev "
 "scanner bluetooth」です。"
 
 #. type: IP
@@ -362,7 +363,8 @@ msgid ""
 "no default value set."
 msgstr ""
 "キーボードレイアウトを変更します。複数指定した場合は X11 からデスクトップ環境"
-"のツールを使うと切り替えることができます。デフォルト値はセットされていません。"
+"のツールを使うと切り替えることができます。デフォルト値はセットされていませ"
+"ん。"
 
 # Translator's NOTE: KEYBOARD_VARIANT is such as dvorak
 #. type: IP
@@ -377,13 +379,14 @@ msgid ""
 "Allows to change the keyboard variants. If more than one is specified, the "
 "same number of values as keyboard-layouts values should be specified as they "
 "will be matched one-to-one in the order specified. Blank values are allowed. "
-"The tools of the desktop environment will allow to switch between each layout "
-"and variant pair under X11. There is no default value set."
+"The tools of the desktop environment will allow to switch between each "
+"layout and variant pair under X11. There is no default value set."
 msgstr ""
-"キーボード配列を変更します。複数指定する場合は指定した順にキーボードレイアウト"
-"の設定と一対一で対応するため、値をそれぞれ同数指定するようにしてください。空白"
-"を指定できます。X11 からデスクトップ環境のツールを使うとレイアウトと配列のそれ"
-"ぞれの組を切り替えることができます。デフォルト値はセットされていません。"
+"キーボード配列を変更します。複数指定する場合は指定した順にキーボードレイアウ"
+"トの設定と一対一で対応するため、値をそれぞれ同数指定するようにしてください。"
+"空白を指定できます。X11 からデスクトップ環境のツールを使うとレイアウトと配列"
+"のそれぞれの組を切り替えることができます。デフォルト値はセットされていませ"
+"ん。"
 
 #. type: IP
 #: en/live-config.7:65
@@ -482,13 +485,13 @@ msgid ""
 "live-systems.org/other/hooks>E<gt>."
 msgstr ""
 "任意のファイルを取得、実行します。URL は wget により取得できるもの (http、 "
-"ftp、 file:// のどれか) でないといけないことと、そのファイルは実行中の Live シ"
-"ステムの /tmp で実行されること、そのファイルが何かに依存している場合はそれが既"
-"にインストールされている必要があることに注意してください。例えば python スクリ"
-"プトを実行するのであればそのシステムには python がインストールされている必要が"
-"あります。一般的な活用事例の一部について、そのためのフックが /usr/share/doc/"
-"live-config/examples/hooks/ や E<lt>I<http://live-systems.org/other/hooks>"
-"E<gt> からいくらか利用できるようになっています。"
+"ftp、 file:// のどれか) でないといけないことと、そのファイルは実行中の Live "
+"システムの /tmp で実行されること、そのファイルが何かに依存している場合はそれ"
+"が既にインストールされている必要があることに注意してください。例えば python "
+"スクリプトを実行するのであればそのシステムには python がインストールされてい"
+"る必要があります。一般的な活用事例の一部について、そのためのフックが /usr/"
+"share/doc/live-config/examples/hooks/ や E<lt>I<http://live-systems.org/"
+"other/hooks>E<gt> からいくらか利用できるようになっています。"
 
 #. type: Plain text
 #: en/live-config.7:83
@@ -496,8 +499,9 @@ msgid ""
 "All hooks in /lib/live/config-hooks/ in the root filesystem of the live "
 "system can be automatically enabled with the keyword 'filesystem'."
 msgstr ""
-"「filesystem」というキーワードにより、Live システムのルートファイルシステムの "
-"/lib/live/config-hooks/ にあるフックを全て自動的に有効化することができます。"
+"「filesystem」というキーワードにより、Live システムのルートファイルシステム"
+"の /lib/live/config-hooks/ にあるフックを全て自動的に有効化することができま"
+"す。"
 
 #. type: Plain text
 #: en/live-config.7:85
@@ -511,11 +515,11 @@ msgstr ""
 #. type: Plain text
 #: en/live-config.7:87
 msgid ""
-"If several mechanisms are combined, then filesystem hooks are executed first, "
-"then medium hooks, and last the network hooks."
+"If several mechanisms are combined, then filesystem hooks are executed "
+"first, then medium hooks, and last the network hooks."
 msgstr ""
-"複数の仕組みを組み合わせた場合はファイルシステムのフックがまず実行され、それか"
-"らメディアのフック、最後にネットワークのフックが実行されます。"
+"複数の仕組みを組み合わせた場合はファイルシステムのフックがまず実行され、それ"
+"からメディアのフック、最後にネットワークのフックが実行されます。"
 
 #. type: SS
 #: en/live-config.7:88
@@ -527,8 +531,8 @@ msgstr "ブートパラメータ (ショートカット)"
 #: en/live-config.7:90
 msgid ""
 "For some common use cases where it would require to combine several "
-"individual parameters, B<live-config> provides shortcuts. This allows both to "
-"have full granularity over all the options, as well keep things simple."
+"individual parameters, B<live-config> provides shortcuts. This allows both "
+"to have full granularity over all the options, as well keep things simple."
 msgstr ""
 "個々のパラメータを複数組み合わせる必要がある一般的な活用事例の一部については "
 "B<live-config> がショートカットを提供しています。これにより、全オプションにつ"
@@ -547,8 +551,8 @@ msgid ""
 "Disables sudo and policykit, the user cannot gain root privileges on the "
 "system."
 msgstr ""
-"sudo と policykit を無効にします。ユーザがそのシステムの root 権限を得ることは"
-"できなくなります。"
+"sudo と policykit を無効にします。ユーザがそのシステムの root 権限を得ること"
+"はできなくなります。"
 
 #. type: IP
 #: en/live-config.7:93
@@ -575,8 +579,8 @@ msgid ""
 "Disables the automatic login on the console, not affecting the graphical "
 "autologin."
 msgstr ""
-"自動化でのコンソールログインを無効にします。グラフィカルな自動ログインには影響"
-"しません。"
+"自動化でのコンソールログインを無効にします。グラフィカルな自動ログインには影"
+"響しません。"
 
 #. type: IP
 #: en/live-config.7:97
@@ -590,8 +594,8 @@ msgid ""
 "Disables the automatic login with any display manager, not affecting tty "
 "autologin."
 msgstr ""
-"あらゆるディスプレイマネージャによる自動化でのログインを無効にします。tty の自"
-"動ログインには影響しません。"
+"あらゆるディスプレイマネージャによる自動化でのログインを無効にします。tty の"
+"自動ログインには影響しません。"
 
 #. type: SS
 #: en/live-config.7:100
@@ -626,14 +630,14 @@ msgstr "設定ファイル"
 msgid ""
 "B<live-config> can be configured (but not activated) through configuration "
 "files. Everything but the shortcuts that can be configured with a boot "
-"parameter can also alternatively be configured through one or more files. "
-"If configuration files are used, the 'boot=live' parameter is still required "
-"to activate B<live-config>."
+"parameter can also alternatively be configured through one or more files. If "
+"configuration files are used, the 'boot=live' parameter is still required to "
+"activate B<live-config>."
 msgstr ""
 "B<live-config> は設定ファイルにより設定 (ただし有効化しない) することができま"
-"す。ブートパラメータにより設定できるものはショートカットを除いて全てファイルに"
-"よる設定もできます。設定ファイルを使う場合でも B<live-config> を有効化するため"
-"には「boot=live」パラメータが必要となります。"
+"す。ブートパラメータにより設定できるものはショートカットを除いて全てファイル"
+"による設定もできます。設定ファイルを使う場合でも B<live-config> を有効化する"
+"ためには「boot=live」パラメータが必要となります。"
 
 #. type: Plain text
 #: en/live-config.7:110
@@ -644,10 +648,10 @@ msgid ""
 "is required to ensure that all the necessary variables are set to create a "
 "valid configuration."
 msgstr ""
-"B<注意:> 設定ファイルを使う場合はブートパラメータを全て B<LIVE_CONFIG_"
-"CMDLINE> 変数に配置する (好ましい) か、変数を個々にセットすることができます。"
-"個々にセットする場合、有効な設定を作成するためにユーザは必ず必要な変数を全て"
-"セットすることが要求されます。"
+"B<注意:> 設定ファイルを使う場合はブートパラメータを全て "
+"B<LIVE_CONFIG_CMDLINE> 変数に配置する (好ましい) か、変数を個々にセットするこ"
+"とができます。個々にセットする場合、有効な設定を作成するためにユーザは必ず必"
+"要な変数を全てセットすることが要求されます。"
 
 #. type: Plain text
 #: en/live-config.7:112
@@ -658,9 +662,9 @@ msgid ""
 "from the live media take precedence over the ones from the root filesystem."
 msgstr ""
 "設定ファイルはルートファイルシステム自体 (/etc/live/config.conf、 /etc/live/"
-"config/*)、 または Live メディア (live/config.conf、 live/config/*) に配置でき"
-"ます。特定のオプションについて両方に配置されている場合はルートファイルシステム"
-"にあるものよりも Live メディアにあるものを優先します。"
+"config/*)、 または Live メディア (live/config.conf、 live/config/*) に配置で"
+"きます。特定のオプションについて両方に配置されている場合はルートファイルシス"
+"テムにあるものよりも Live メディアにあるものを優先します。"
 
 #. type: Plain text
 #: en/live-config.7:114
@@ -668,13 +672,13 @@ msgid ""
 "Although the configuration files placed in the configuration directories do "
 "not require a particular name or suffix, it is suggested for consistency "
 "reasons to either use 'vendor.conf' or 'project.conf' as a naming scheme "
-"(whereas 'vendor' or 'project' is replaced with the actual name, resulting in "
-"a filename like 'progress-linux.conf')."
+"(whereas 'vendor' or 'project' is replaced with the actual name, resulting "
+"in a filename like 'progress-linux.conf')."
 msgstr ""
-"設定ディレクトリに置かれる設定ファイルには特定の名前や拡張子が要求されるわけで"
-"はありませんが、命名規則を整合性のため「vendor.conf」や「project.conf」のよう"
-"にすることを提案します (「vendor」や「project」は実際の名前に置き換え、ファイ"
-"ル名は「progress-linux.conf」のようになります)。"
+"設定ディレクトリに置かれる設定ファイルには特定の名前や拡張子が要求されるわけ"
+"ではありませんが、命名規則を整合性のため「vendor.conf」や「project.conf」のよ"
+"うにすることを提案します (「vendor」や「project」は実際の名前に置き換え、ファ"
+"イル名は「progress-linux.conf」のようになります)。"
 
 #. type: Plain text
 #: en/live-config.7:116
@@ -706,8 +710,8 @@ msgid ""
 "This variable corresponds to the 'B<live-config.components>=I<COMPONENT1>,"
 "I<COMPONENT2>, ... I<COMPONENTn>' parameter."
 msgstr ""
-"この変数は「B<live-config.components>=I<構成要素1>,I<構成要素2>, ... "
-"I<構成要素n>」パラメータに相当します。"
+"この変数は「B<live-config.components>=I<構成要素1>,I<構成要素2>, ... I<構成要"
+"素n>」パラメータに相当します。"
 
 #. type: IP
 #: en/live-config.7:121
@@ -721,8 +725,8 @@ msgid ""
 "This variable corresponds to the 'B<live-config.nocomponents>=I<COMPONENT1>,"
 "I<COMPONENT2>, ... I<COMPONENTn>' parameter."
 msgstr ""
-"この変数は「B<live-config.nocomponents>=I<構成要素1>,I<構成要素2>, ... "
-"I<構成要素n>」パラメータに相当します。"
+"この変数は「B<live-config.nocomponents>=I<構成要素1>,I<構成要素2>, ... I<構成"
+"要素n>」パラメータに相当します。"
 
 #. type: IP
 #: en/live-config.7:123
@@ -736,8 +740,8 @@ msgid ""
 "This variable corresponds to the 'B<live-config.debconf-preseed>=filesystem|"
 "medium|I<URL1>|I<URL2>| ... |I<URLn>' parameter."
 msgstr ""
-"この変数は「B<live-config.debconf-preseed>=filesystem|medium|I<URL1>|I<URL2>| "
-"... |I<URLn>」パラメータに相当します。"
+"この変数は「B<live-config.debconf-preseed>=filesystem|medium|I<URL1>|"
+"I<URL2>| ... |I<URLn>」パラメータに相当します。"
 
 #. type: IP
 #: en/live-config.7:125
@@ -779,8 +783,8 @@ msgid ""
 "This variable corresponds to the 'B<live-config.user-default-groups>="
 "\"I<GROUP1>,I<GROUP2> ... I<GROUPn>\"' parameter."
 msgstr ""
-"この変数は「B<live-config.user-default-groups>=\"I<グループ1>,I<グループ2> "
-"... I<グループn>\"」パラメータに相当します。"
+"この変数は「B<live-config.user-default-groups>=\"I<グループ1>,I<グループ"
+"2> ... I<グループn>\"」パラメータに相当します。"
 
 #. type: IP
 #: en/live-config.7:131
@@ -794,8 +798,8 @@ msgid ""
 "This variable corresponds to the 'B<live-config.user-fullname>=\"I<USER "
 "FULLNAME>\"' parameter."
 msgstr ""
-"この変数は「B<live-config.user-fullname>=\"I<ユーザのフルネーム>\"」パラメータ"
-"に相当します。"
+"この変数は「B<live-config.user-fullname>=\"I<ユーザのフルネーム>\"」パラメー"
+"タに相当します。"
 
 #. type: IP
 #: en/live-config.7:133
@@ -809,8 +813,8 @@ msgid ""
 "This variable corresponds to the 'B<live-config.locales>=I<LOCALE1>,"
 "I<LOCALE2> ... I<LOCALEn>' parameter."
 msgstr ""
-"この変数は「B<live-config.locales>=I<ロケール1>,I<ロケール2> ... "
-"I<ロケールn>」パラメータに相当します。"
+"この変数は「B<live-config.locales>=I<ロケール1>,I<ロケール2> ... I<ロケール"
+"n>」パラメータに相当します。"
 
 #. type: IP
 #: en/live-config.7:135
@@ -867,11 +871,11 @@ msgstr "B<LIVE_KEYBOARD_VARIANTS>=I<キーボード配列1>,I<キーボード配
 #: en/live-config.7:143
 msgid ""
 "This variable corresponds to the 'B<live-config.keyboard-"
-"variants>=I<KEYBOARD_VARIANT1>,I<KEYBOARD_VARIANT2> ... I<KEYBOARD_VARIANTn>' "
-"parameter."
+"variants>=I<KEYBOARD_VARIANT1>,I<KEYBOARD_VARIANT2> ... "
+"I<KEYBOARD_VARIANTn>' parameter."
 msgstr ""
-"この変数は「B<live-config.keyboard-variants>=I<キーボード配列1>,I<キーボード配"
-"列2> ... I<キーボード配列n>」パラメータに相当します。"
+"この変数は「B<live-config.keyboard-variants>=I<キーボード配列1>,I<キーボード"
+"配列2> ... I<キーボード配列n>」パラメータに相当します。"
 
 #. type: IP
 #: en/live-config.7:143
@@ -900,8 +904,8 @@ msgid ""
 "This variable corresponds to the 'B<live-config.sysv-rc>=I<SERVICE1>,"
 "I<SERVICE2> ... I<SERVICEn>' parameter."
 msgstr ""
-"この変数は「B<live-config.sysv-rc>=I<サービス1>,I<サービス2> ... "
-"I<サービスn>」パラメータに相当します。"
+"この変数は「B<live-config.sysv-rc>=I<サービス1>,I<サービス2> ... I<サービス"
+"n>」パラメータに相当します。"
 
 #. type: IP
 #: en/live-config.7:147
@@ -957,8 +961,8 @@ msgid ""
 "This variable corresponds to the 'B<live-config.xorg-"
 "resolution>=I<XORG_RESOLUTION>' parameter."
 msgstr ""
-"この変数は「B<live-config.xorg-resolution>=I<XORG解像度>」パラメータに相当しま"
-"す。"
+"この変数は「B<live-config.xorg-resolution>=I<XORG解像度>」パラメータに相当し"
+"ます。"
 
 #. type: IP
 #: en/live-config.7:155
@@ -972,14 +976,14 @@ msgid ""
 "This variable corresponds to the 'B<live-config.hooks>=filesystem|medium|"
 "I<URL1>|I<URL2>| ... |I<URLn>' parameter."
 msgstr ""
-"この変数は「B<live-config.hooks>=filesystem|medium|I<URL1>|I<URL2>| ... "
-"|I<URLn>」パラメータに相当します。"
+"この変数は「B<live-config.hooks>=filesystem|medium|I<URL1>|I<URL2>| ... |"
+"I<URLn>」パラメータに相当します。"
 
 #. type: IP
 #: en/live-config.7:157
 #, no-wrap
-msgid "B<LIVE_CONFIG_DEBUG>="
-msgstr "B<LIVE_CONFIG_DEBUG>="
+msgid "B<LIVE_CONFIG_DEBUG>=true|false"
+msgstr "B<LIVE_CONFIG_DEBUG>=true|false"
 
 #. type: Plain text
 #: en/live-config.7:159
@@ -1009,12 +1013,12 @@ msgstr "新しい設定構成要素の追加"
 #. type: Plain text
 #: en/live-config.7:165
 msgid ""
-"Downstream projects can put their components into /lib/live/config and do not "
-"need to do anything else, the components will be called automatically during "
-"boot."
+"Downstream projects can put their components into /lib/live/config and do "
+"not need to do anything else, the components will be called automatically "
+"during boot."
 msgstr ""
-"下流プロジェクトは /lib/live/config に自分の構成要素を配置するだけで用は済みま"
-"す。他に何かする必要はなく、その構成要素はブート中に自動的に呼ばれます。"
+"下流プロジェクトは /lib/live/config に自分の構成要素を配置するだけで用は済み"
+"ます。他に何かする必要はなく、その構成要素はブート中に自動的に呼ばれます。"
 
 #. type: Plain text
 #: en/live-config.7:167
@@ -1023,8 +1027,8 @@ msgid ""
 "containing an example component can be found in /usr/share/doc/live-config/"
 "examples."
 msgstr ""
-"構成要素は自分専用の Debian パッケージに配置するのが最善です。構成要素の例を収"
-"録した見本のパッケージが /usr/share/doc/live-config/examples にあります。"
+"構成要素は自分専用の Debian パッケージに配置するのが最善です。構成要素の例を"
+"収録した見本のパッケージが /usr/share/doc/live-config/examples にあります。"
 
 #. type: SS
 #: en/live-config.7:168
@@ -1036,18 +1040,18 @@ msgstr "既存の設定構成要素の削除"
 #: en/live-config.7:170
 msgid ""
 "It is not really possible to remove components itself in a sane way yet "
-"without requiring either to ship a locally modified B<live-config> package or "
-"using dpkg-divert. However, the same can be achieved by disabling the "
+"without requiring either to ship a locally modified B<live-config> package "
+"or using dpkg-divert. However, the same can be achieved by disabling the "
 "respective components through the live-config.nocomponents mechanism, see "
-"above. To avoid to always need specifing disabled components through the boot "
-"parameter, a configuration file should be used, see above."
+"above. To avoid to always need specifing disabled components through the "
+"boot parameter, a configuration file should be used, see above."
 msgstr ""
 "独自に改変した B<live-config> パッケージの作成や dpkg-divert の利用を要求せず"
-"に健全な方法で構成要素自体を実際に削除することは今のところできません。しかし、"
-"上記で説明した live-config.nocomponents の仕組みにより該当する構成要素を無効に"
-"すれば同じことが実現できます。無効にする構成要素を常にブートパラメータから指定"
-"しないといけないということを避けるためには、上記で説明した設定ファイルを使うよ"
-"うにしてください。"
+"に健全な方法で構成要素自体を実際に削除することは今のところできません。しか"
+"し、上記で説明した live-config.nocomponents の仕組みにより該当する構成要素を"
+"無効にすれば同じことが実現できます。無効にする構成要素を常にブートパラメータ"
+"から指定しないといけないということを避けるためには、上記で説明した設定ファイ"
+"ルを使うようにしてください。"
 
 #. type: Plain text
 #: en/live-config.7:172
@@ -1085,7 +1089,8 @@ msgid ""
 "allows to apply arbitrary preseed files placed on the live media or an http/"
 "ftp server."
 msgstr ""
-"Live メディアや http/ftp サーバに置かれた任意の preseed ファイルを適用します。"
+"Live メディアや http/ftp サーバに置かれた任意の preseed ファイルを適用しま"
+"す。"
 
 #. type: IP
 #: en/live-config.7:178
@@ -1580,8 +1585,8 @@ msgstr "ホームページ"
 #: en/live-config.7:275
 msgid ""
 "More information about live-config and the Live Systems project can be found "
-"on the homepage at E<lt>I<http://live-systems.org/>E<gt> and in the manual at "
-"E<lt>I<http://live-systems.org/manual/>E<gt>."
+"on the homepage at E<lt>I<http://live-systems.org/>E<gt> and in the manual "
+"at E<lt>I<http://live-systems.org/manual/>E<gt>."
 msgstr ""
 "live-config 及び Live システムプロジェクトについてのさらなる情報は、"
 "E<lt>I<http://live-systems.org/>E<gt> のホームページや E<lt>I<http://live-"
@@ -1596,15 +1601,15 @@ msgstr "バグ"
 #. type: Plain text
 #: en/live-config.7:278
 msgid ""
-"Bugs can be reported by submitting a bugreport for the live-config package in "
-"the Bug Tracking System at E<lt>I<http://bugs.debian.org/>E<gt> or by writing "
-"a mail to the Live Systems mailing list at E<lt>I<debian-live@lists.debian."
-"org>E<gt>."
+"Bugs can be reported by submitting a bugreport for the live-config package "
+"in the Bug Tracking System at E<lt>I<http://bugs.debian.org/>E<gt> or by "
+"writing a mail to the Live Systems mailing list at E<lt>I<debian-live@lists."
+"debian.org>E<gt>."
 msgstr ""
 "バグは E<lt>I<http://bugs.debian.org/>E<gt> にあるバグ追跡システムに live-"
 "config パッケージのバグ報告として提出するか、E<lt>I<debian-live@lists.debian."
-"org>E<gt> にある Live システムのメーリングリスト宛てにメールを書くことにより報"
-"告できます。"
+"org>E<gt> にある Live システムのメーリングリスト宛てにメールを書くことにより"
+"報告できます。"
 
 #. type: SH
 #: en/live-config.7:279
@@ -1615,7 +1620,8 @@ msgstr "作者"
 #. type: Plain text
 #: en/live-config.7:280
 msgid ""
-"live-config was written by Daniel Baumann E<lt>I<mail@daniel-baumann.ch>E<gt>."
+"live-config was written by Daniel Baumann E<lt>I<mail@daniel-baumann."
+"ch>E<gt>."
 msgstr ""
 "live-config は Daniel Baumann さん E<lt>I<mail@daniel-baumann.ch>E<gt> により"
 "書かれました。"
