@@ -46,6 +46,7 @@ Config ()
 		_ZONE="UTC"
 	fi
 
+	echo "${_AREA}/${_ZONE}" > /etc/timezone
 	cp -f /usr/share/zoneinfo/${_AREA}/${_ZONE} /etc/localtime
 
 cat > /tmp/live-config.cfg << EOF
