@@ -1,5 +1,5 @@
 # Italian translations for live-config
-# Copyright (C) 2011-2013 skizzhg <skizzhg@gmx.com>
+# Copyright (C) 2011-2014 skizzhg <skizzhg@gmx.com>
 # This file is distributed under the same license as the live-config package.
 #
 msgid ""

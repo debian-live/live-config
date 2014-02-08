@@ -1,5 +1,5 @@
 # Japenese translations for live-config package
-# Copyright (C) 2013 victory <victory.deb@gmail.com>
+# Copyright (C) 2013-2014 victory <victory.deb@gmail.com>
 # This file is distributed under the same license as the live-config package.
 #
 msgid ""

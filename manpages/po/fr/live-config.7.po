@@ -1,5 +1,5 @@
 # French translations for live-config
-# Copyright (C) 2011-2013 Carlos Zuferri "chals" <chals@altorricon.com>
+# Copyright (C) 2011-2014 Carlos Zuferri "chals" <chals@altorricon.com>
 # Copyright (C) 2010 Thierry Lépicier <thierry.lepicier@free.fr>
 # This file is distributed under the same license as the live-config package.
 #

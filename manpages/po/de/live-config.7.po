@@ -1,5 +1,5 @@
 # German translations for live-config
-# Copyright (C) 2006-2013 Daniel Baumann <mail@daniel-baumann.ch>
+# Copyright (C) 2006-2014 Daniel Baumann <mail@daniel-baumann.ch>
 # This file is distributed under the same license as the live-config package.
 #
 msgid ""
