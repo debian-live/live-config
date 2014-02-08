@@ -5,8 +5,8 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: live-config 4.0~alpha30-1\n"
-"POT-Creation-Date: 2013-11-04 07:53+0100\n"
+"Project-Id-Version: live-config 4.0~alpha31-1\n"
+"POT-Creation-Date: 2014-02-08 17:16+0100\n"
 "PO-Revision-Date: 2013-06-25 20:32+0100\n"
 "Last-Translator: Carlos Zuferri <chals@altorricon.com>\n"
 "Language-Team: none\n"
@@ -25,14 +25,14 @@ msgstr "LIVE-CONFIG"
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "2013-11-04"
-msgstr "04.11.2013"
+msgid "2014-02-08"
+msgstr ""
 
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "4.0~alpha30-1"
-msgstr "4.0~alpha30-1"
+msgid "4.0~alpha31-1"
+msgstr "4.0~alpha31-1"
 
 #. type: TH
 #: en/live-config.7:9
@@ -458,8 +458,8 @@ msgstr "B<live-config.xorg-driver>=I<DRIVER_PAR_XORG> | B<xorg-driver>=I<DRIVER_
 msgid ""
 "Allows to set xorg driver instead of autodetecting it. If a PCI ID is "
 "specified in /usr/share/live/config/xserver-xorg/I<DRIVER>.ids within the "
-"live system, I<DRIVER> is enforced for these devices. If both a boot "
-"parameter and a override is found, the boot parameter takes precedence."
+"live system, the I<DRIVER> is enforced for these devices. If both a boot "
+"parameter and an override are found, the boot parameter takes precedence."
 msgstr ""
 "Permet de spécifier le pilote utilisé par xorg plutôt que d'utiliser l'auto-"
 "détection. Si un ID PCI est spécifié dans /usr/share/live/config/xserver-"
@@ -644,9 +644,9 @@ msgstr "Fichiers de configuration"
 msgid ""
 "B<live-config> can be configured (but not activated) through configuration "
 "files. Everything but the shortcuts that can be configured with a boot "
-"parameter can be alternatively also be configured through one or more files. "
-"If configuration files are used, the 'boot=live' parameter is still required "
-"to activate B<live-config>."
+"parameter can also alternatively be configured through one or more files. If "
+"configuration files are used, the 'boot=live' parameter is still required to "
+"activate B<live-config>."
 msgstr ""
 "B<live-config> peut être configuré (mais pas activé) par certains fichiers "
 "de configuration. Tout, sauf les touches de raccourcis qui peuvent être "
@@ -1009,8 +1009,8 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:157
 #, no-wrap
-msgid "B<LIVE_CONFIG_DEBUG>="
-msgstr "B<LIVE_CONFIG_DEBUG>="
+msgid "B<LIVE_CONFIG_DEBUG>=true|false"
+msgstr "B<LIVE_CONFIG_DEBUG>=true|false"
 
 #. type: Plain text
 #: en/live-config.7:159

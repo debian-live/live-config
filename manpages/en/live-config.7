@@ -6,7 +6,7 @@
 .\" under certain conditions; see COPYING for details.
 .\"
 .\"
-.TH LIVE\-CONFIG 7 2013\-11\-04 4.0~alpha30-1 "Live Systems Project"
+.TH LIVE\-CONFIG 7 2014\-02\-08 4.0~alpha31-1 "Live Systems Project"
 
 .SH NAME
 \fBlive\-config\fR \- System Configuration Components
@@ -71,7 +71,7 @@ Allows to change if the system is assuming that the hardware clock is set to UTC
 .IP "\fBlive\-config.x\-session\-manager=\fIX_SESSION_MANAGER\fR | \fBx\-session\-manager\fR=\fIX_SESSION_MANAGER\fR" 4
 Allows to set the x\-session\-manager through update\-alternatives.
 .IP "\fBlive\-config.xorg\-driver\fR=\fIXORG_DRIVER\fR | \fBxorg\-driver\fR=\fIXORG_DRIVER\fR" 4
-Allows to set xorg driver instead of autodetecting it. If a PCI ID is specified in /usr/share/live/config/xserver-xorg/\fIDRIVER\fR.ids within the live system, \fIDRIVER\fR is enforced for these devices. If both a boot parameter and a override is found, the boot parameter takes precedence.
+Allows to set xorg driver instead of autodetecting it. If a PCI ID is specified in /usr/share/live/config/xserver-xorg/\fIDRIVER\fR.ids within the live system, the \fIDRIVER\fR is enforced for these devices. If both a boot parameter and an override are found, the boot parameter takes precedence.
 .IP "\fBlive\-config.xorg\-resolution\fR=\fIXORG_RESOLUTION\fR | \fBxorg\-resolution\fR=\fIXORG_RESOLUTION\fR" 4
 Allows to set xorg resolution instead of autodetecting it, e.g. 1024x768.
 .IP "\fBlive\-config.hooks\fR=filesystem|medium|\fIURL1\fR|\fIURL2\fR| ... |\fIURLn\fR | \fBhooks\fR=medium|filesystem|\fIURL1\fR|\fIURL2\fR| ... |\fIURLn\fR" 4
@@ -104,7 +104,7 @@ For special use cases there are some special boot paramters.
 Enables debug output in live\-config.
 
 .SS Configuration Files
-\fBlive\-config\fR can be configured (but not activated) through configuration files. Everything but the shortcuts that can be configured with a boot parameter can be alternatively also be configured through one or more files. If configuration files are used, the 'boot=live' parameter is still required to activate \fBlive\-config\fR.
+\fBlive\-config\fR can be configured (but not activated) through configuration files. Everything but the shortcuts that can be configured with a boot parameter can also alternatively be configured through one or more files. If configuration files are used, the 'boot=live' parameter is still required to activate \fBlive\-config\fR.
 .PP
 \fBNote:\fR If configuration files are used, either (preferably) all boot parameters should be put into the \fBLIVE_CONFIG_CMDLINE\fR variable, or individual variables can be set. If individual variables are used, the user is required to ensure that all the necessary variables are set to create a valid configuration.
 .PP
@@ -154,7 +154,7 @@ This variable corresponds to the '\fBlive\-config.xorg\-driver\fR=\fIXORG_DRIVER
 This variable corresponds to the '\fBlive\-config.xorg\-resolution\fR=\fIXORG_RESOLUTION\fR' parameter.
 .IP "\fBLIVE_HOOKS\fR=filesystem|medium|\fIURL1\fR|\fIURL2\fR| ... |\fIURLn\fR" 4
 This variable corresponds to the '\fBlive\-config.hooks\fR=filesystem|medium|\fIURL1\fR|\fIURL2\fR| ... |\fIURLn\fR' parameter.
-.IP "\fBLIVE_CONFIG_DEBUG\fR="true|false" 4
+.IP "\fBLIVE_CONFIG_DEBUG\fR=true|false" 4
 This variable corresponds to the '\fBlive\-config.debug\fR' parameter.
 
 .SH CUSTOMIZATION
