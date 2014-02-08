@@ -1,3 +1,22 @@
+live-config (4.0~alpha31-1) experimental; urgency=low
+
+  [ victory ]
+  * Improve English sentenses; add a definite article, fix an indefinite
+    article, verb, and typo-like disorder.
+  * Sync/unfuzzzy translations for 2eeb5f1.
+  * [live-config] Adding initial Japanese manpage translation.
+  * [config:man:ja] Unfuzzy 1 string.
+
+  [ Daniel Baumann ]
+  * Removing superfluous quote in LIVE_CONFIG_DEBUG manpage entry.
+  * Checking for /usr/bin/kwriteconfig instead of /usr/share/kde4 in kde-
+    services component, thanks to Cavit Vural <cavit.vural@adak.com.tr>.
+  * Manually configuring /etc/timezone too to workaround #510908.
+  * Let tzdata debconf values be automatically taken from /etc/timezone
+    (Closes: #738118).
+
+ -- Daniel Baumann <mail@daniel-baumann.ch>  Sat, 08 Feb 2014 17:17:22 +0100
+
 live-config (4.0~alpha30-1) experimental; urgency=low
 
   [ Diederik de Haas ]
