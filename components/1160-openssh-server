@@ -35,6 +35,8 @@ Config ()
 		fi
 	done
 
+	sed -i -e 's|#\(PasswordAuthentication\) yes|\1 no|' /etc/ssh/sshd_config
+
 	case "${_SSH}" in
 		true)
 			# Creating state file
