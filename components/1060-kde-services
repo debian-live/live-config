@@ -30,7 +30,7 @@ Cmdline ()
 Init ()
 {
 	# Checking if package is installed or already configured
-	if [ ! -e /usr/bin/kwriteconfig ] \
+	if [ ! -e /usr/bin/kwriteconfig ] || \
 	   [ -e /var/lib/live/config/kde-services ]
 	then
 		exit 0
