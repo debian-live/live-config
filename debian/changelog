@@ -1,3 +1,12 @@
+live-config (4.0~alpha33-1) unstable; urgency=low
+
+  * Correcting syntax error in 'already configured' test of the kde-
+    services component, thanks to Antony Messerli <amesserl@rackspace.com>
+    (Closes: #745861).
+  * Disbaling ssh password authentication by default (Closes: #741678).
+
+ -- Daniel Baumann <mail@daniel-baumann.ch>  Sun, 27 Apr 2014 12:13:54 +0200
+
 live-config (4.0~alpha32-1) unstable; urgency=low
 
   * Building with dh --parallel.
