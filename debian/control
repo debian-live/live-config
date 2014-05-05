@@ -20,7 +20,6 @@ Depends:
 Recommends:
  live-config-doc,
  live-tools,
- console-tools,
  iproute,
  keyboard-configuration,
  locales | locales-all,
