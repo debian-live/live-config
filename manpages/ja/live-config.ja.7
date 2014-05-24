@@ -11,7 +11,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 2014\-04\-27 4.0~alpha33\-1 "Live システムプロジェクト"
+.TH LIVE\-CONFIG 7 2014\-05\-24 4.0~alpha33\-1 "Live システムプロジェクト"
 
 .SH 名前
 \fBlive\-config\fP \- システム設定構成要素
@@ -94,6 +94,11 @@ xorg ドライバを自動検出に代えてセットします。Live システ�
 が指定された場合は対象デバイスについてその\fIドライバ\fPを強制的に使います。ブートパラメータと別の設定が両方ともある場合はブートパラメータが優先されます。
 .IP "\fBlive\-config.xorg\-resolution\fP=\fIXORG解像度\fP | \fBxorg\-resolution\fP=\fIXORG解像度\fP" 4
 xorg 解像度を自動検出に代えてセットします。例えば 1024x768。
+.IP "\fBlive\-config.wlan\-driver\fP=\fIWLAN_DRIVER\fP | \fBwlan\-driver\fP=\fIWLAN_DRIVER\fP" 4
+Allows to set WLAN driver instead of autodetecting it. If a PCI ID is
+specified in /usr/share/live/config/broadcom\-sta/\fIDRIVER\fP.ids within the
+live system, the \fIDRIVER\fP is enforced for these devices. If both a boot
+parameter and an override are found, the boot parameter takes precedence.
 .IP "\fBlive\-config.hooks\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP | \fBhooks\fP=medium|filesystem|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
 任意のファイルを取得、実行します。URL は wget により取得できるもの (http、 ftp、 file:// のどれか)
 でないといけないことと、そのファイルは実行中の Live システムの /tmp
@@ -192,6 +197,9 @@ live\-config のデバッグ用出力を有効化します。
 この変数は「\fBlive\-config.xorg\-driver\fP=\fIXORGドライバ\fP」パラメータに相当します。
 .IP \fBLIVE_XORG_RESOLUTION\fP=\fIXORG解像度\fP 4
 この変数は「\fBlive\-config.xorg\-resolution\fP=\fIXORG解像度\fP」パラメータに相当します。
+.IP \fBLIVE_WLAN_DRIVER\fP=\fIWLAN_DRIVER\fP 4
+This variable corresponds to the '\fBlive\-config.wlan\-driver\fP=\fIWLAN_DRIVER\fP'
+parameter.
 .IP "\fBLIVE_HOOKS\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
 この変数は「\fBlive\-config.hooks\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP|
 \&... |\fIURLn\fP」パラメータに相当します。
@@ -284,6 +292,8 @@ util\-linux の hwclock を無効にします。
 lastlog を無効にします。
 .IP \fBxserver\-xorg\fP 4
 xserver\-xorg を設定します。
+.IP \fBbroadcom\-sta\fP 4
+configures broadcom\-sta WLAN drivers.
 .IP "\fBureadahead\fP (ubuntu のみ)" 4
 ureadahead を無効にします。
 .IP \fBopenssh\-server\fP 4

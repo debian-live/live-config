@@ -6,7 +6,7 @@
 .\" under certain conditions; see COPYING for details.
 .\"
 .\"
-.TH LIVE\-CONFIG 7 2014\-04\-27 4.0~alpha33-1 "Live Systems Project"
+.TH LIVE\-CONFIG 7 2014\-05\-24 4.0~alpha33-1 "Live Systems Project"
 
 .SH NAME
 \fBlive\-config\fR \- System Configuration Components
@@ -74,6 +74,8 @@ Allows to set the x\-session\-manager through update\-alternatives.
 Allows to set xorg driver instead of autodetecting it. If a PCI ID is specified in /usr/share/live/config/xserver-xorg/\fIDRIVER\fR.ids within the live system, the \fIDRIVER\fR is enforced for these devices. If both a boot parameter and an override are found, the boot parameter takes precedence.
 .IP "\fBlive\-config.xorg\-resolution\fR=\fIXORG_RESOLUTION\fR | \fBxorg\-resolution\fR=\fIXORG_RESOLUTION\fR" 4
 Allows to set xorg resolution instead of autodetecting it, e.g. 1024x768.
+.IP "\fBlive\-config.wlan\-driver\fR=\fIWLAN_DRIVER\fR | \fBwlan\-driver\fR=\fIWLAN_DRIVER\fR" 4
+Allows to set WLAN driver instead of autodetecting it. If a PCI ID is specified in /usr/share/live/config/broadcom-sta/\fIDRIVER\fR.ids within the live system, the \fIDRIVER\fR is enforced for these devices. If both a boot parameter and an override are found, the boot parameter takes precedence.
 .IP "\fBlive\-config.hooks\fR=filesystem|medium|\fIURL1\fR|\fIURL2\fR| ... |\fIURLn\fR | \fBhooks\fR=medium|filesystem|\fIURL1\fR|\fIURL2\fR| ... |\fIURLn\fR" 4
 Allows to fetch and execute one or more arbitrary files. Note that the URLs must be fetchable by wget (http, ftp or file://), the files are executed in /tmp of the running live system, and that the files needs their dependencies, if any, already installed, e.g. if a python script should be executed the system needs python installed. Some hooks for some common use-cases are available at /usr/share/doc/live-config/examples/hooks/ and <\fIhttp://live-systems.org/other/hooks\fR>.
 .br
@@ -152,6 +154,8 @@ This variable corresponds to the '\fBlive\-config.x\-session\-manager\fR=\fIX_SE
 This variable corresponds to the '\fBlive\-config.xorg\-driver\fR=\fIXORG_DRIVER\fR' parameter.
 .IP "\fBLIVE_XORG_RESOLUTION\fR=\fIXORG_RESOLUTION\fR" 4
 This variable corresponds to the '\fBlive\-config.xorg\-resolution\fR=\fIXORG_RESOLUTION\fR' parameter.
+.IP "\fBLIVE_WLAN_DRIVER\fR=\fIWLAN_DRIVER\fR" 4
+This variable corresponds to the '\fBlive\-config.wlan\-driver\fR=\fIWLAN_DRIVER\fR' parameter.
 .IP "\fBLIVE_HOOKS\fR=filesystem|medium|\fIURL1\fR|\fIURL2\fR| ... |\fIURLn\fR" 4
 This variable corresponds to the '\fBlive\-config.hooks\fR=filesystem|medium|\fIURL1\fR|\fIURL2\fR| ... |\fIURLn\fR' parameter.
 .IP "\fBLIVE_CONFIG_DEBUG\fR=true|false" 4
@@ -237,6 +241,8 @@ disables util-linux' hwclock.
 disables lastlog.
 .IP "\fBxserver\-xorg\fR" 4
 configures xserver\-xorg.
+.IP "\fBbroadcom\-sta\fR" 4
+configures broadcom\-sta WLAN drivers.
 .IP "\fBureadahead\fR (ubuntu only)" 4
 disables ureadahead.
 .IP "\fBopenssh-server\fR" 4

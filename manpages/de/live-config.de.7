@@ -11,7 +11,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 2014\-04\-27 4.0~alpha33\-1 "Live Systems Projekt"
+.TH LIVE\-CONFIG 7 2014\-05\-24 4.0~alpha33\-1 "Live Systems Projekt"
 
 .SH NAME
 \fBlive\-config\fP \- System Konfiguration Komponenten
@@ -134,6 +134,12 @@ der Boot Parameter Vorrang.
 .IP "\fBlive\-config.xorg\-resolution\fP=\fIXORG_AUFLÖSUNG\fP | \fBxorg\-resolution\fP=\fIXORG_AUFLÖSUNG\fP" 4
 Ermöglicht die Xorg Auflösung manuell statt automatisch zu
 bestimmen. z.B. 1024x768.
+.IP "\fBlive\-config.wlan\-driver\fP=\fIWLAN_TREIBER\fP | \fBwlan\-driver\fP=\fIWLAN_TREIBER\fP" 4
+Ermöglicht den WLAN Treiber manuell statt automatisch zu bestimmen. Wird
+eine PCI ID in /usr/share/live/config/broadcom\-sta/\fITREIBER\fP.ids innerhalb
+des Live Systems angegeben, wird \fITREIBER\fP für diese Geräte verwended. Wird
+sowohl ein Boot Parameter als auch ein Vorgabe mittels PCI ID gemacht, hat
+der Boot Parameter Vorrang.
 .IP "\fBlive\-config.hooks\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP | \fBhooks\fP=\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
 Ermöglicht eine oder mehrere beliebige Dateien herunterzuladen und
 auszuführen. Die URLs müssen durch wget (http, ftp oder file://) aufösbar
@@ -274,6 +280,9 @@ Parameter.
 .IP \fBLIVE_XORG_RESOLUTION\fP=\fIXORG_AUFLÖSUNG\fP 4
 Diese Variable enspricht dem
 \&'\fBlive\-config.xorg\-resolution\fP=\fIXORG_AUFLÖSUNG\fP' Parameter.
+.IP \fBLIVE_WLAN_DRIVER\fP=\fIXORG_TREIBER\fP 4
+Diese Variable enspricht dem '\fBlive\-config.wlan\-driver\fP=\fIWLAN_TREIBER\fP'
+Parameter.
 .IP "\fBLIVE_HOOKS\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
 Diese Variable enspricht dem
 \&'\fBlive\-config.hooks\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP'
@@ -376,6 +385,8 @@ schaltet hwclock von util\-linux ab.
 schaltet lastlog ab.
 .IP \fBxserver\-xorg\fP 4
 konfiguriert xserver\-xorg.
+.IP \fBbroadcom\-sta\fP 4
+konfiguriert broadcom\-sta WLAN Treiber.
 .IP "\fBureadahead\fP (nur Ubuntu)" 4
 schaltet ureadahead ab.
 .IP \fBopenssh\-server\fP 4
