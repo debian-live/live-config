@@ -20,7 +20,7 @@ Depends:
 Recommends:
  live-config-doc,
  live-tools,
- iproute,
+ iproute2 | iproute,
  keyboard-configuration,
  locales | locales-all,
  user-setup,
