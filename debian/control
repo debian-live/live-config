@@ -69,7 +69,7 @@ Package: live-config-sysvinit
 Architecture: all
 Depends:
  ${misc:Depends},
- sysvinit (>= 2.86),
+ sysvinit-core | sysvinit (<< 2.88dsf-44)
 Conflicts: live-config-backend
 Replaces: live-config-backend
 Provides: live-config-backend
