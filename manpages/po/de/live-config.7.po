@@ -1175,7 +1175,7 @@ msgstr "konfiguriert /etc/hostname und /etc/hosts."
 #: en/live-config.7:184
 #, no-wrap
 msgid "B<user-setup>"
-msgstr ""
+msgstr "B<user-setup>"
 
 #. type: Plain text
 #: en/live-config.7:186
@@ -1495,7 +1495,7 @@ msgstr "konfiguriert xserver-xorg."
 #: en/live-config.7:244
 #, no-wrap
 msgid "B<broadcom-sta>"
-msgstr ""
+msgstr "B<broadcom-sta>"
 
 #. type: Plain text
 #: en/live-config.7:246

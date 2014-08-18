@@ -129,11 +129,12 @@ parametro di boot sia uno imposto, quello di boot ha la precedenza.
 .IP "\fBlive\-config.xorg\-resolution\fP=\fIRISOLUZIONE_XORG\fP | \fBxorg\-resolution\fP=\fIRISOLUZIONE_XORG\fP" 4
 Permette di impostare la risoluzione per xorg invece di riconoscerla
 automaticamente, ad esempio 1024x768.
-.IP "\fBlive\-config.wlan\-driver\fP=\fIWLAN_DRIVER\fP | \fBwlan\-driver\fP=\fIWLAN_DRIVER\fP" 4
-Allows to set WLAN driver instead of autodetecting it. If a PCI ID is
-specified in /usr/share/live/config/broadcom\-sta/\fIDRIVER\fP.ids within the
-live system, the \fIDRIVER\fP is enforced for these devices. If both a boot
-parameter and an override are found, the boot parameter takes precedence.
+.IP "\fBlive\-config.wlan\-driver\fP=\fIDRIVER_WLAN\fP | \fBwlan\-driver\fP=\fIDRIVER_WLAN\fP" 4
+Permette di impostare il driver per WLAN invece di riconoscerlo
+automaticamente. Se un ID PCI viene specificato in
+/usr/share/live/config/broadcom\-sta/\fIDRIVER\fP.ids all'interno del sistema
+live, \fIDRIVER\fP viene applicato a questi device. Se viene trovato sia un
+parametro di boot sia uno imposto, quello di boot ha la precedenza.
 .IP "\fBlive\-config.hooks\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP | \fBhooks\fP=medium|filesystem|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
 Permette di prelevare ed eseguire uno o più file arbitrari. Si noti che gli
 URL devono essere scaricabili da wget (http, ftp o file://), i file vengono
@@ -268,9 +269,9 @@ Questa variabile corrisponde al parametro
 .IP \fBLIVE_XORG_RESOLUTION\fP=\fIRISOLUZIONE_XORG\fP 4
 Questa variabile corrisponde al parametro
 "\fBlive\-config.xorg\-resolution\fP=\fIRISOLUZIONE_XORG\fP".
-.IP \fBLIVE_WLAN_DRIVER\fP=\fIWLAN_DRIVER\fP 4
-This variable corresponds to the '\fBlive\-config.wlan\-driver\fP=\fIWLAN_DRIVER\fP'
-parameter.
+.IP \fBLIVE_WLAN_DRIVER\fP=\fIDRIVER_WLAN\fP 4
+Questa variabile corrisponde al parametro
+"\fBlive\-config.wlan\-driver\fP=\fIDRIVER_WLAN\fP".
 .IP "\fBLIVE_HOOKS\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
 Questa variabile corrisponde al parametro
 "\fBlive\-config.hooks\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP".

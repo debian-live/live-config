@@ -134,11 +134,12 @@ override sont trouvés à la fois, le paramètre de démarrage est prioritaire.
 .IP "\fBlive\-config.xorg\-resolution\fP=\fIRESOLUTION_PAR_XORG\fP | \fBxorg\-resolution\fP=\fIRESOLUTION_PAR_XORG\fP" 4
 Permet de spécifier la résolution utilisée par xorg, plutôt que d'utiliser
 l'auto\-détection, par example 1024x768.
-.IP "\fBlive\-config.wlan\-driver\fP=\fIWLAN_DRIVER\fP | \fBwlan\-driver\fP=\fIWLAN_DRIVER\fP" 4
-Allows to set WLAN driver instead of autodetecting it. If a PCI ID is
-specified in /usr/share/live/config/broadcom\-sta/\fIDRIVER\fP.ids within the
-live system, the \fIDRIVER\fP is enforced for these devices. If both a boot
-parameter and an override are found, the boot parameter takes precedence.
+.IP "\fBlive\-config.wlan\-driver\fP=\fIDRIVER_PAR_WLAN\fP | \fBwlan\-driver\fP=\fIDRIVER_PAR_WLAN\fP" 4
+Permet de spécifier le pilote utilisé par WLAN plutôt que d'utiliser
+l'auto\-détection. Si un ID PCI est spécifié dans
+/usr/share/live/config/broadcom\-sta/\fIDRIVER\fP.ids dans le système live, le
+\fIDRIVER\fP est appliqué pour ces appareils. Si un paramètre d'amorçage et un
+override sont trouvés à la fois, le paramètre de démarrage est prioritaire.
 .IP "\fBlive\-config.hooks\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP | \fBhooks\fP=\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
 Permet de chercher et d'exécuter un ou plusieurs fichiers spécifiques. Notez
 que les URLs doivent pouvoir être téléchargées par wget (http, ftp or
@@ -279,9 +280,9 @@ Cette variable correspond au paramètre
 .IP \fBLIVE_XORG_RESOLUTION\fP=\fIRESOLUTION_PAR_XORG\fP 4
 Cette variable correspond au paramètre
 \&'\fBlive\-config.xorg\-resolution\fP=\fIRESOLUTION_PAR_XORG\fP'.
-.IP \fBLIVE_WLAN_DRIVER\fP=\fIWLAN_DRIVER\fP 4
-This variable corresponds to the '\fBlive\-config.wlan\-driver\fP=\fIWLAN_DRIVER\fP'
-parameter.
+.IP \fBLIVE_WLAN_DRIVER\fP=\fIDRIVER_PAR_WLAN\fP 4
+Cette variable correspond au paramètre
+\&'\fBlive\-config.wlan\-driver\fP=\fIDRIVER_PAR_WLAN\fP.
 .IP "\fBLIVE_HOOKS\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
 Cette variable correspond au paramètre
 \&'\fBlive\-config.hooks\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP'.

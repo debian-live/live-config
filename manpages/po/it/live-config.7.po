@@ -478,28 +478,21 @@ msgstr ""
 
 #. type: IP
 #: en/live-config.7:77
-#, fuzzy, no-wrap
-#| msgid "B<live-config.xorg-driver>=I<XORG_DRIVER> | B<xorg-driver>=I<XORG_DRIVER>"
+#, no-wrap
 msgid "B<live-config.wlan-driver>=I<WLAN_DRIVER> | B<wlan-driver>=I<WLAN_DRIVER>"
-msgstr "B<live-config.xorg-driver>=I<DRIVER_XORG> | B<xorg-driver>=I<DRIVER_XORG>"
+msgstr "B<live-config.wlan-driver>=I<DRIVER_WLAN> | B<wlan-driver>=I<DRIVER_WLAN>"
 
 #. type: Plain text
 #: en/live-config.7:79
-#, fuzzy
-#| msgid ""
-#| "Allows to set xorg driver instead of autodetecting it. If a PCI ID is "
-#| "specified in /usr/share/live/config/xserver-xorg/I<DRIVER>.ids within the "
-#| "live system, the I<DRIVER> is enforced for these devices. If both a boot "
-#| "parameter and an override are found, the boot parameter takes precedence."
 msgid ""
 "Allows to set WLAN driver instead of autodetecting it. If a PCI ID is "
 "specified in /usr/share/live/config/broadcom-sta/I<DRIVER>.ids within the "
 "live system, the I<DRIVER> is enforced for these devices. If both a boot "
 "parameter and an override are found, the boot parameter takes precedence."
 msgstr ""
-"Permette di impostare il driver per xorg invece di riconoscerlo "
+"Permette di impostare il driver per WLAN invece di riconoscerlo "
 "automaticamente. Se un ID PCI viene specificato in /usr/share/live/config/"
-"xserver-xorg/I<DRIVER>.ids all'interno del sistema live, I<DRIVER> viene "
+"broadcom-sta/I<DRIVER>.ids all'interno del sistema live, I<DRIVER> viene "
 "applicato a questi device. Se viene trovato sia un parametro di boot sia uno "
 "imposto, quello di boot ha la precedenza."
 
@@ -1009,23 +1002,18 @@ msgstr ""
 
 #. type: IP
 #: en/live-config.7:157
-#, fuzzy, no-wrap
-#| msgid "B<LIVE_XORG_DRIVER>=I<XORG_DRIVER>"
+#, no-wrap
 msgid "B<LIVE_WLAN_DRIVER>=I<WLAN_DRIVER>"
-msgstr "B<LIVE_XORG_DRIVER>=I<DRIVER_XORG>"
+msgstr "B<LIVE_WLAN_DRIVER>=I<DRIVER_WLAN>"
 
 #. type: Plain text
 #: en/live-config.7:159
-#, fuzzy
-#| msgid ""
-#| "This variable corresponds to the 'B<live-config.xorg-"
-#| "driver>=I<XORG_DRIVER>' parameter."
 msgid ""
 "This variable corresponds to the 'B<live-config.wlan-driver>=I<WLAN_DRIVER>' "
 "parameter."
 msgstr ""
-"Questa variabile corrisponde al parametro \"B<live-config.xorg-"
-"driver>=I<DRIVER_XORG>\"."
+"Questa variabile corrisponde al parametro \"B<live-config.wlan-"
+"driver>=I<DRIVER_WLAN>\"."
 
 #. type: IP
 #: en/live-config.7:159
@@ -1494,7 +1482,7 @@ msgstr "configura xserver-xorg."
 #: en/live-config.7:244
 #, no-wrap
 msgid "B<broadcom-sta>"
-msgstr ""
+msgstr "B<broadcom-sta>"
 
 #. type: Plain text
 #: en/live-config.7:246

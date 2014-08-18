@@ -133,10 +133,12 @@ prioridad.
 Permite seleccionar la resolución de xorg en lugar de detectarla de forma
 automática, p.ej. 1024x768.
 .IP "\fBlive\-config.wlan\-driver\fP=\fIWLAN_DRIVER\fP | \fBwlan\-driver\fP=\fIWLAN_DRIVER\fP" 4
-Allows to set WLAN driver instead of autodetecting it. If a PCI ID is
-specified in /usr/share/live/config/broadcom\-sta/\fIDRIVER\fP.ids within the
-live system, the \fIDRIVER\fP is enforced for these devices. If both a boot
-parameter and an override are found, the boot parameter takes precedence.
+Permite seleccionar el controlador WLAN en lugar de detectarlo de forma
+automática. Si se especifica un PCI ID en
+/usr/share/live/config/broadcom\-sta/\fIDRIVER\fP.ids dentro del sistema en
+vivo,  se aplica \fIDRIVER\fP para estos dispositivos. Si se encuentran juntos
+un parámetro de arranque y un override, el parámetro de arranque tiene
+prioridad.
 .IP "\fBlive\-config.hooks\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP | \fBhooks\fP=medium|filesystem|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
 Permite buscar y ejecutar uno o más ficheros de forma arbitraria. Tener en
 cuenta que las URLs deben ser descargadas usando wget (http, ftp o file://),
@@ -269,8 +271,8 @@ Esta variable corresponde al parámetro
 Esta variable corresponde al parámetro
 \&'\fBlive\-config.xorg\-resolution\fP=\fIXORG_RESOLUTION\fP'
 .IP \fBLIVE_WLAN_DRIVER\fP=\fIWLAN_DRIVER\fP 4
-This variable corresponds to the '\fBlive\-config.wlan\-driver\fP=\fIWLAN_DRIVER\fP'
-parameter.
+Esta variable corresponde al parámetro
+\&'\fBlive\-config.wlan\-driver\fP=\fIWLAN_DRIVER\fP'
 .IP "\fBLIVE_HOOKS\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
 Esta variable corresponde al parámetro
 \&'\fBlive\-config.hooks\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP'
