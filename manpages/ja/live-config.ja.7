@@ -94,11 +94,10 @@ xorg ドライバを自動検出に代えてセットします。Live システ�
 が指定された場合は対象デバイスについてその\fIドライバ\fPを強制的に使います。ブートパラメータと別の設定が両方ともある場合はブートパラメータが優先されます。
 .IP "\fBlive\-config.xorg\-resolution\fP=\fIXORG解像度\fP | \fBxorg\-resolution\fP=\fIXORG解像度\fP" 4
 xorg 解像度を自動検出に代えてセットします。例えば 1024x768。
-.IP "\fBlive\-config.wlan\-driver\fP=\fIWLAN_DRIVER\fP | \fBwlan\-driver\fP=\fIWLAN_DRIVER\fP" 4
-Allows to set WLAN driver instead of autodetecting it. If a PCI ID is
-specified in /usr/share/live/config/broadcom\-sta/\fIDRIVER\fP.ids within the
-live system, the \fIDRIVER\fP is enforced for these devices. If both a boot
-parameter and an override are found, the boot parameter takes precedence.
+.IP "\fBlive\-config.wlan\-driver\fP=\fIWLANドライバ\fP | \fBwlan\-driver\fP=\fIWLANドライバ\fP" 4
+WLAN ドライバを自動検出に代えてセットします。Live システム内の
+/usr/share/live/config/broadcom\-sta/\fIドライバ\fP.ids で PCI ID
+が指定された場合は対象デバイスについてその\fIドライバ\fPを強制的に使います。ブートパラメータと別の設定が両方ともある場合はブートパラメータが優先されます。
 .IP "\fBlive\-config.hooks\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP | \fBhooks\fP=medium|filesystem|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
 任意のファイルを取得、実行します。URL は wget により取得できるもの (http、 ftp、 file:// のどれか)
 でないといけないことと、そのファイルは実行中の Live システムの /tmp
@@ -197,9 +196,8 @@ live\-config のデバッグ用出力を有効化します。
 この変数は「\fBlive\-config.xorg\-driver\fP=\fIXORGドライバ\fP」パラメータに相当します。
 .IP \fBLIVE_XORG_RESOLUTION\fP=\fIXORG解像度\fP 4
 この変数は「\fBlive\-config.xorg\-resolution\fP=\fIXORG解像度\fP」パラメータに相当します。
-.IP \fBLIVE_WLAN_DRIVER\fP=\fIWLAN_DRIVER\fP 4
-This variable corresponds to the '\fBlive\-config.wlan\-driver\fP=\fIWLAN_DRIVER\fP'
-parameter.
+.IP \fBLIVE_WLAN_DRIVER\fP=\fIWLANドライバ\fP 4
+この変数は「\fBlive\-config.wlan\-driver\fP=\fIWLANドライバ\fP」パラメータに相当します。
 .IP "\fBLIVE_HOOKS\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
 この変数は「\fBlive\-config.hooks\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP|
 \&... |\fIURLn\fP」パラメータに相当します。
@@ -226,7 +224,7 @@ Live システム自体の設定ファイルは自分の Debian パッケージ�
 /usr/share/doc/live\-config/examples にあります。
 
 .SH 構成要素
-\fBlive\-config\fP では/lib/live/config 中の以下の構成要素が現在有効です。
+\fBlive\-config\fP では /lib/live/config 中の以下の構成要素が現在有効です。
 
 .IP \fBdebconf\fP 4
 Live メディアや http/ftp サーバに置かれた任意の preseed ファイルを適用します。
@@ -281,7 +279,7 @@ KDE 移行ウイザードを無効にします (squeeze 以降)。
 .IP \fBpolicykit\fP 4
 policykit を使ってユーザ権限を与えます。
 .IP \fBssl\-cert\fP 4
-ssl の snake\-oil 証明書を再生成します。
+SSL の snake\-oil 証明書を再生成します。
 .IP \fBupdate\-notifier\fP 4
 update\-notifier を無効にします。
 .IP \fBanacron\fP 4
@@ -293,7 +291,7 @@ lastlog を無効にします。
 .IP \fBxserver\-xorg\fP 4
 xserver\-xorg を設定します。
 .IP \fBbroadcom\-sta\fP 4
-configures broadcom\-sta WLAN drivers.
+broadcom\-sta WLAN ドライバを設定します。
 .IP "\fBureadahead\fP (ubuntu のみ)" 4
 ureadahead を無効にします。
 .IP \fBopenssh\-server\fP 4
