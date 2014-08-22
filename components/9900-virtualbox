@@ -1,0 +1,245 @@
+#!/bin/sh
+
+# Setting up VirtualBox.
+# This script setups all necessary things to do a complete deployment of
+# VirtualBox player based live systems.
+#
+# The script tests for boot parameter of
+# live-config.virtualbox=ACTION:IMAGEPATH:VDINAME
+#
+# ACTION: The operation to perform on the workstation (none|scratch)
+# IMAGEPATH: The folder path to the Virtual image you want to run.
+# VDINAME: The name of the Virtual image you want to run.
+#
+# Notes:To use this file with VirtualBox images you will need to have a few things
+# setup:
+#
+# 1. VirtualBox needs to be installed with virtualbox-qt and virtualbox-dkms.
+# 2. This script tests for a partition names for writing image data and is used as
+#    scratch space. This scratch space should be a file system with linux permissions
+#    such as ext2.
+# 3. VM image(s) should be in a mounted folder and setup as follows:
+#    - Image(s) set to snapshot mode.
+#    - For each image, the image folder needs to have a file called
+#      image-release with a variable CRELEASE. An example: CRELEASE="1.0.0"
+#
+# The image-release file is used by the image maintainer and this script to tell
+# workstation(s) using a given image, to erase locally stored Virtual image files
+# and setup with the newly configure image. The operation of erasing locally
+# stored Virtual image files, is referred to as a scratch.
+
+Virtualbox ()
+{
+	if ! echo ${_CMDLINE} | grep -qs "live-config.virtualbox="
+	then
+		return
+	fi
+
+	echo -n " VirtualBox"
+
+	Configure_virtualbox
+}
+
+Configure_virtualbox ()
+{
+	for _PARAMETER in ${_CMDLINE}
+	do
+		case "${_PARAMETER}" in
+			live-config.virtualbox=*)
+				ACTION="$(echo ${_PARAMETER#live-config.virtualbox=} | awk -F: '{ print $1 }')"
+				IMAGEPATH="$(echo ${_PARAMETER#live-config.virtualbox=} | awk -F: '{ print $2 }')"
+				VDINAME="$(echo ${_PARAMETER#live-config.virtualbox=} | awk -F: '{ print $3 }')"
+				echo "live-config.virtualbox options passed are ACTION=${ACTION}, IMAGEPATH=${IMAGEPATH}, VDINAME=${VDINAME} ."
+				;;
+			live-config.username=*|username=*)
+				LIVE_USERNAME="${_PARAMETER#*username=}"
+				;;
+		esac
+	done
+
+	echo "Checking for a local scratch device."
+
+	# Try to find a partition labeled virtualbox and if not then try first partition on first drive of the unit.
+	MOUNTDEV="$(blkid | grep virtualbox | awk -F: '{ print $1 }')"
+
+	if [ -z "${MOUNTDEV}" ]
+	then
+		MOUNTDEV="$(fdisk -l | grep a1 | awk '{ print $1 }')"
+	fi
+
+	echo "Potential scratch devices of: ${MOUNTDEV}"
+
+	echo "Checking for clean scratch file system on ${MOUNTDEV}!"
+	fsck -C -a ${MOUNTDEV}
+
+	# Check for the mount point directory and take correct action.
+	if [ -d '${IMAGEPATH}' ]
+	then
+		echo "The ${IMAGEPATH} directory exists and is where we will compose the operations for the image."
+	else
+		echo "Making the ${IMAGEPATH} directory where we will compose the operations for the image."
+		mkdir -p ${IMAGEPATH}
+	fi
+
+	echo "Attempting to mount local scratch device."
+	mount -v ${MOUNTDEV} ${IMAGEPATH}
+
+	echo "Setting the session type with /var/cache/gdm/dmrc for gdm3."
+	# Check for the mount point directory and take correct action.
+	if [ -d "/var/cache/gdm/${LIVE_USERNAME}" ]
+	then
+		echo "The /var/cache/gdm/${LIVE_USERNAME} directory exists where we compose the dmrc."
+	else
+		echo "Making the /var/cache/gdm/${LIVE_USERNAME} directory where we compose the dmrc."
+		mkdir -p "/var/cache/gdm/${LIVE_USERNAME}"
+	fi
+
+	# Add user to vboxusers group and compose the /etc/fstab accordingly
+	echo "Setup ${LIVE_USERNAME} vboxusers and correct settings on /etc/fstab."
+	usermod -a -G vboxusers ${LIVE_USERNAME}
+	_VBOXGID=$(grep vboxusers /etc/group | awk -F: '{print $3}')
+	echo "none     /proc/bus/usb     usbfs      devgid=${_VBOXGID},devmode=664    0    0" >> /etc/fstab
+
+cat > /var/cache/gdm/${LIVE_USERNAME}/dmrc << EOF
+[Desktop]
+Session=virtualbox
+EOF
+
+	echo "Setting the PostSession Default for the gdm3 to shutdown when we end the VirtualBox stops."
+
+cat > /etc/gdm3/PostSession/Default << EOF
+#!/bin/sh
+rm -f /home/${LIVE_USERNAME}/.dmrc
+rm -f /var/cache/gdm/${LIVE_USERNAME}/dmrc
+/sbin/halt
+EOF
+
+	echo "Setting up the virtualbox.desktop option."
+
+cat > /usr/share/xsessions/virtualbox.desktop << EOF
+[Desktop Entry]
+Encoding=UTF-8
+Name=VirtualBox
+Comment=This session logs you into a VirtualBox session.
+Exec=/usr/bin/vmwrapper
+# no icon yet, only the top three are currently used
+Icon=
+Type=Application
+EOF
+
+	echo "Setup the vmwrapper which starts VirtualBox with a window manager."
+
+cat > /usr/bin/vmwrapper << EOF
+#!/bin/sh
+
+##########################################################
+# Unremark the below lines to disable screen from blanking.
+#setterm -blank 0 -powersave off -powerdown 0
+#xset -dpms
+#xset s off
+#xset s noblank
+
+amixer set Master 98% unmute
+amixer set PCM 98% unmute
+amixer set Headphones 98% unmute
+amixer set Speaker 98% unmute
+
+/usr/bin/metacity &
+/usr/bin/nm-applet &
+/usr/bin/stalonetray &
+/usr/lib/virtualbox/VirtualBox --fullscreen --startvm ${VDINAME}
+EOF
+
+	echo "Setting chmod on the vmwrapper."
+	chmod 0755 /usr/bin/vmwrapper
+
+	# Adjust the default session for the display manager should it ignore other settings
+	ln -sf /usr/bin/vmwrapper /etc/alternatives/x-session-manager
+
+	########################################################################
+	# Make sure that the .VirtualBox information is setup in /etc/skel or stacked in.
+	########################################################################
+
+	########################################################################
+	# Below is where I use a variable named CRELEASE which is sourced in
+	# from the image directory.
+	# This file is created by the person managing the images so he can
+	# modify an image and all workstations using the image will know to auto
+	# scratch (erase local snapshot info) on next boot when the difference
+	# is detected between the image mainter variable in image-relase and the
+	# file local-release (with variable RELEASE).
+	########################################################################
+	# This is the test for when we want to upgrade an image and deploy to
+	# all workstations. Workstations will scratch upon CRELEASE != RELEASE.
+
+	if [ -f "${IMAGEPATH}/${VDINAME}/image-release" ]
+	then
+		. "${IMAGEPATH}/${VDINAME}/image-release"
+		echo "Found image-release: ${CRELEASE} "
+	else
+		echo "******* No image-release found to set the CRELEASE variable! *******"
+		CRELEASE="NONE"
+	fi
+
+	echo "Preparing VirtualBox image version ${CRELEASE}"
+
+	echo "Checking to see if scratch was requested at boot."
+
+	if [ "${ACTION}" = "scratch" ]
+	then
+		echo "Scratching everything in scratch dir on the fly!"
+		# On VirtualBox remove a couple of directories.
+		rm -rf ${IMAGEPATH}/Logs
+		rm -rf ${IMAGEPATH}/Snapshots
+		# Only doing *.* opposed to * since folders with VirtualBox images may be on the same block device.
+		rm -f ${IMAGEPATH}/*.*
+		# Also now have to remove local-release.
+		rm -f ${IMAGEPATH}/local-release
+		echo "Scratching completed!"
+	fi
+
+	if [ -f ${IMAGEPATH}/local-release ]
+	then
+		. ${IMAGEPATH}/local-release
+		echo "Found local-release: ${RELEASE} "
+
+		if [ "${RELEASE}" != "${CRELEASE}" ]
+		then
+			echo "Upgrading release from version ${RELEASE} to ${CRELEASE}."
+			echo "We will take scratch actions."
+
+			# On VirtualBox remove a couple of directories.
+			rm -rf ${IMAGEPATH}/Logs
+			rm -rf ${IMAGEPATH}/Snapshots
+			# Only doing *.* opposed to * since folders with VirtualBox images may be on the same block device.
+			rm -f ${IMAGEPATH}/*.*
+			# Also now have to remove local-release.
+			rm -f ${IMAGEPATH}/local-release
+			echo "Scratching completed!"
+
+			echo RELEASE=\"${CRELEASE}\" > ${IMAGEPATH}/local-release
+			echo "Rsyncing in some stuff to ${IMAGEPATH}."
+			rsync --exclude ${VDINAME}.vdi -r ${IMAGEPATH}/${VDINAME}/ ${IMAGEPATH}/
+
+			# Link in the big chunks.
+			ln -s ${IMAGEPATH}/${VDINAME}/${VDINAME}.vdi ${IMAGEPATH}
+		else
+			echo "Version match no scratch action taken!"
+		fi
+	else
+		echo "Looks like an initial release setup for version ${CRELEASE}."
+		echo RELEASE=\"${CRELEASE}\" > ${IMAGEPATH}/local-release
+		echo "Rsyncing in some stuff to ${IMAGEPATH}."
+		rsync --exclude ${VDINAME}.vdi -r ${IMAGEPATH}/${VDINAME}/ ${IMAGEPATH}/
+
+		# Link in the big chunks.
+		ln -s ${IMAGEPATH}/${VDINAME}/${VDINAME}.vdi ${IMAGEPATH}
+	fi
+
+	echo "Setting the permissions on the ${IMAGEPATH} folder."
+	chown -R ${LIVE_USERNAME}:${LIVE_USERNAME} ${IMAGEPATH}
+
+	echo "Completed custom options for username = ${LIVE_USERNAME} !"
+}
+
+Virtualbox

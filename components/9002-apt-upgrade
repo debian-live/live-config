@@ -1,0 +1,26 @@
+#!/bin/sh
+
+Apt_upgrade ()
+{
+	if ! echo ${_CMDLINE} | grep -qs "live-config.apt-upgrade"
+	then
+		return
+	fi
+
+	echo -n " apt-upgrade"
+
+	Do_apt_upgrade
+}
+
+Do_apt_upgrade ()
+{
+	Start_network
+
+	DEBIAN_FRONTEND="noninteractive"
+	export DEBIAN_FRONTEND
+
+	apt-get -q=2 update
+	apt-get -q -y -o DPkg::Options::=--force-confdef -u dist-upgrade
+}
+
+Apt_upgrade

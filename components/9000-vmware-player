@@ -1,0 +1,229 @@
+#!/bin/sh
+
+# Setting up VMware Player.
+# This script setups all necessary things to do a complete deployment of VMware
+# Player based live systems.
+#
+# The script tests for boot parameter of
+# live-config.vmware-player=ACTION:IMAGEPATH:VMXNAME
+#
+# ACTION: The operation to perform on the workstation (none|scratch)
+# IMAGEPATH: The folder path to the VMware image you want to run.
+# VMXNAME: The name of the VMware image you want to run.
+#
+# Notes:To use this file with WMWare images you will need to have a few things
+# setup:
+#
+# 1. The VMware Player needs to be installed in the image.
+# 2. This script uses (s|h)da1 for writing image data, and is used as a scratch
+#    space. This scratch space should be a file system with linux permissions
+#    such as ext2.
+# 3. VMware image(s) should be in a mounted folder and setup as follows:
+#    - Image(s) set to snapshot mode.
+#    - For each image, the image folder needs to have a file called
+#      image-release with a variable CRELEASE. An example: CRELEASE="1.0.0"
+#
+# The image-release file is used by the image maintainer and this script to tell
+# workstation(s) using a given image, to erase locally stored vmware image files
+# and setup with the newly configure image. The operation of erasing locally
+# stored vmare image files, is referred to as a scratch.
+
+
+Vmware_player ()
+{
+	if ! echo ${_CMDLINE} | grep -qs "live-config.vmware-player="
+	then
+		return
+	fi
+
+	echo -n " vmware-player"
+
+	Configure_vmware_player
+}
+
+Configure_vmware_player ()
+{
+	for _PARAMETER in ${_CMDLINE}
+	do
+		case "${_PARAMETER}" in
+			live-config.vmware-player=*)
+				ACTION="$(echo ${_PARAMETER#live-config.vmware-player=} | awk -F: '{ print $1 }')"
+				IMAGEPATH="$(echo ${_PARAMETER#live-config.vmware-player=} | awk -F: '{ print $2 }')"
+				VMXNAME="$(echo ${_PARAMETER#live-config.vmware-player=} | awk -F: '{ print $3 }')"
+				;;
+		esac
+	done
+
+	echo "Starting custom options of ${_PARAMETER#live-config.vmware-player=} for VMPlayer setup." >> /var/log/live-vmware-player.log
+
+	echo "Checking for a local scratch device." >> /var/log/live-vmware-player.log
+
+	# Try to find a partition labeled vmware and if not then try first partition on first drive of the unit.
+	MOUNTDEV="$(blkid | grep vmware | awk -F: '{ print $1 }')"
+
+	if [ -z "${MOUNTDEV}" ]
+	then
+		MOUNTDEV="$(fdisk -l | grep a1 | awk '{ print $1 }')"
+	fi
+
+	echo "Potential scratch devices of: ${MOUNTDEV}" >> /var/log/live-vmware-player.log
+
+	echo "Checking for clean scratch file system on ${MOUNTDEV}!" >> /var/log/live-vmware-player.log
+	fsck -C -a ${MOUNTDEV}
+
+	# Check for the mount point directory and take correct action.
+	if [ -d '/vmware' ]
+	then
+		echo "The /vmware directory exists and is where we will compose the operations for the image." >> /var/log/live-vmware-player.log
+	else
+		echo "Making the /vmware directory where we will compose the operations for the image." >> /var/log/live-vmware-player.log
+		mkdir -p /vmware
+	fi
+
+	echo "Attempting to mount local scratch device." >> /var/log/live-vmware-player.log
+	mount -v ${MOUNTDEV} /vmware
+
+	#echo "Setting up a symlink to the image we are going to use from the image pool." >> //var/log/live-vmware-player.log
+	#ln -s ${IMAGEPATH} ${IMAGEPATH}/${VMXNAME}
+	#ln -s ${IMAGEPATH} /vmware/${VMXNAME}
+
+	echo "Setting the session type with /var/cache/gdm/dmrc for gdm3." >> /var/log/live-vmware-player.log
+
+cat > /var/cache/gdm/${LIVE_USERNAME}/dmrc << EOF
+[Desktop]
+Session=vmware
+EOF
+
+	echo "Setting the PostSession Default for the gdm3 to shutdown when we end the VMPlayer stops." >> /var/log/live-vmware-player.log
+
+cat > /etc/gdm3/PostSession/Default << EOF
+#!/bin/sh
+rm -f /home/${LIVE_USERNAME}/.dmrc
+rm -f /var/cache/gdm/${LIVE_USERNAME}/dmrc
+/sbin/halt
+EOF
+
+	echo "Setting up the vmware.desktop option." >> /var/log/live-vmware-player.log
+
+cat > /usr/share/xsessions/vmware.desktop << EOF
+[Desktop Entry]
+Encoding=UTF-8
+Name=VMware Player
+Comment=This session logs you into a VMware session.
+Exec=/usr/bin/vmwrapper
+# no icon yet, only the top three are currently used
+Icon=
+Type=Application
+EOF
+
+	echo "Setup the vmwrapper which starts the vmplayer with a window manager." >> /var/log/live-vmware-player.log
+
+cat > /usr/bin/vmwrapper << EOF
+#!/bin/sh
+
+##########################################################
+# Unremark the below lines to disable screen from blanking.
+#setterm -blank 0 -powersave off -powerdown 0
+#xset -dpms
+#xset s off
+#xset s noblank
+
+/usr/bin/metacity &
+/usr/bin/nm-applet &
+/usr/bin/stalonetray &
+/usr/bin/vmplayer -X "/vmware/${VMXNAME}.vmx"
+EOF
+
+	echo "Setting chmod on the vmwrapper." >> /var/log/live-vmware-player.log
+	chmod 0755 /usr/bin/vmwrapper
+
+	# Here is where once the player prompts are agreed it is injected.
+	echo "Copying over vmware settings for the user account ${LIVE_USERNAME}." >> /var/log/live-vmware-player.log
+	if [ -e /etc/vmware/.vmware ]
+	then
+		cp -R /etc/vmware/.vmware /home/${LIVE_USERNAME}
+
+		echo "Setting permissions on the users .vmware folder." >> /var/log/live-vmware-player.log
+		chown -R ${LIVE_USERNAME}:${LIVE_USERNAME} /home/${LIVE_USERNAME}/.vmware
+	fi
+
+	########################################################################
+	# Below is where I use a variable named CRELEASE which is sourced in
+	# from the image directory.
+	# This file is created by the person managing the images so he can
+	# modify an image and all workstations using the image will know to auto
+	# scratch (erase local snapshot info) on next boot when the difference
+	# is detected between the image mainter variable in image-relase and the
+	# file local-release (with variable RELEASE).
+	########################################################################
+	# This is the test for when we want to upgrade an image and deploy to
+	# all workstations. Workstations will scratch upon CRELEASE != RELEASE.
+
+	if [ -f "${IMAGEPATH}/${VMXNAME}/image-release" ]
+	then
+		. "${IMAGEPATH}/${VMXNAME}/image-release"
+		echo "Found image-release: ${CRELEASE} " >> /var/log/live-vmware-player.log
+	else
+		echo "******* No image-release found to set the CRELEASE variable! *******" >> /var/log/live-vmware-player.log
+		CRELEASE="NONE"
+	fi
+
+	echo "Preparing VMware image version ${CRELEASE}" >> /var/log/live-vmware-player.log
+
+	echo "Checking to see if scratch was requested at boot." >> /var/log/live-vmware-player.log
+
+	if [ "${ACTION}" = "scratch" ]
+	then
+		echo "Scratching everything in scratch dir on the fly!" >> /var/log/live-vmware-player.log
+		# Only doing *.* opposed to * since folders with vmware images may be on the same block device.
+		rm -rf /vmware/*.*
+		# Also now have to remove local-release.
+		rm -f /vmware/local-release
+		echo "Scratching completed!" >> /var/log/live-vmware-player.log
+	fi
+
+	if [ -f /vmware/local-release ]
+	then
+		. /vmware/local-release
+		echo "Found local-release: ${RELEASE} " >> /var/log/live-vmware-player.log
+
+		if [ "${RELEASE}" != "${CRELEASE}" ]
+		then
+			echo "Upgrading release from version ${RELEASE} to ${CRELEASE}." >> /var/log/live-vmware-player.log
+			echo "We will take scratch actions." >> /var/log/live-vmware-player.log
+
+			# Only doing *.* opposed to * since folders with vmware images may be on the same block device.
+			rm -rf /vmware/*.*
+
+			# Also now have to remove local-release.
+			rm -f /vmware/local-release
+			echo "Scratching completed!" >> /var/log/live-vmware-player.log
+
+			echo RELEASE=\"${CRELEASE}\" > /vmware/local-release
+			echo "Rsyncing in some stuff to /vmware." >> /var/log/live-vmware-player.log
+			rsync --exclude ${VMXNAME}-????.vmdk -r ${IMAGEPATH}/${VMXNAME}/ /vmware/
+
+			# Link in the big chunks.
+			ln -s ${IMAGEPATH}/${VMXNAME}/${VMXNAME}-????.vmdk /vmware
+		else
+			echo "Version match no scratch action taken!" >> /var/log/live-vmware-player.log
+			echo "Removing any temp old lock files!" >> /var/log/live-vmware-player.log
+			rm -f /vmware/*LOCK
+		fi
+	else
+		echo "Looks like an initial release setup for version ${CRELEASE}." >> /var/log/live-vmware-player.log
+		echo RELEASE=\"${CRELEASE}\" > /vmware/local-release
+		echo "Rsyncing in some stuff to /vmware." >> /var/log/live-vmware-player.log
+		rsync --exclude ${VMXNAME}-????.vmdk -r ${IMAGEPATH}/${VMXNAME}/ /vmware/
+
+		# Link in the big chunks.
+		ln -s ${IMAGEPATH}/${VMXNAME}/${VMXNAME}-????.vmdk /vmware
+	fi
+
+	echo "Setting the permissions on the /vmware folder." >> /var/log/live-vmware-player.log
+	chown -R ${LIVE_USERNAME}:${LIVE_USERNAME} /vmware
+
+	echo "Completed custom options for username = ${LIVE_USERNAME} !" >> /var/log/live-vmware-player.log
+}
+
+Vmware_player

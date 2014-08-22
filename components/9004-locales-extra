@@ -1,0 +1,50 @@
+#!/bin/sh
+
+Locales_extra ()
+{
+	if ! echo ${_CMDLINE} | grep -qs "live-config.locales-extra"
+	then
+		return
+	fi
+
+	echo -n " locales-extra"
+
+	Do_locales_extra
+}
+
+Do_locales_extra ()
+{
+	DEBIAN_FRONTEND="noninteractive"
+	export DEBIAN_FRONTEND
+
+	case "${LIVE_LOCALES}" in
+		ja_JP.UTF-8)
+			# Japanese
+			Start_network
+
+			apt-get -q=2 update
+			apt-get -q -y -o DPkg::Options::=--force-confdef install ttf-vlgothic scim-anthy scim-uim scim-skk scim-prime scim-canna scim-tables-ja
+			apt-get clean
+			;;
+
+		ko_KR.UTF-8)
+			# Korean
+			Start_network
+
+			apt-get -q=2 update
+			apt-get -q -y -o DPkg::Options::=--force-confdef install scim-hangul scim-tables-ko scim-uim ttf-unfonts ttf-alee xfonts-baekmuk
+			apt-get clean
+			;;
+
+		zh_CN.UTF-8)
+			# Chinese
+			Start_network
+
+			apt-get -q=2 update
+			apt-get -q -y -o DPkg::Options::=--force-confdef install scim-chinese scim-tables-zh scim-uim xfonts-intl-chinese ttf-arphic-ukai ttf-arphic-uming xfonts-wqy
+			apt-get clean
+			;;
+	esac
+}
+
+Locales_extra

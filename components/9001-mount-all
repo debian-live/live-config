@@ -1,0 +1,120 @@
+#!/bin/sh
+
+Mount_all ()
+{
+	if ! echo ${_CMDLINE} | grep -qs "live-config.mount-all"
+	then
+		return
+	fi
+
+	echo -n " mount-all"
+
+	Do_mount_all
+}
+
+################################################################################
+# FIXME
+sys2dev ()
+{
+	sysdev=${1#/sys}
+	echo "/dev/$($udevinfo -q name -p ${sysdev} 2>/dev/null|| echo ${sysdev##*/})"
+}
+
+subdevices ()
+{
+	sysblock=${1}
+	r=""
+
+	for dev in "${sysblock}" "${sysblock}"/*
+	do
+		if [ -e "${dev}/dev" ]
+		then
+			r="${r} ${dev}"
+		fi
+	done
+
+	echo ${r}
+}
+
+get_fstype ()
+{
+	local FSTYPE
+	local FSSIZE
+
+	# fstype misreports LUKS devices
+	if is_luks "${1}"
+	then
+	    /lib/udev/vol_id -t ${1} 2>/dev/null
+	    return
+	fi
+
+	eval $(/usr/lib/klibc/bin/fstype ${1} 2>/dev/null)
+
+	if [ "${FSTYPE}" != "unknown" ]
+	then
+		echo ${FSTYPE}
+		return 0
+	fi
+
+	/lib/udev/vol_id -t ${1} 2>/dev/null
+}
+
+is_luks()
+{
+    devname="${1}"
+    if [ -x /sbin/cryptsetup ]
+    then
+	/sbin/cryptsetup isLuks "${devname}" 2>/dev/null || ret=${?}
+	return ${ret}
+    else
+	return 1
+    fi
+
+}
+# FIXME
+################################################################################
+
+Do_mount_all ()
+{
+	# Scanning block devices
+	for SYSBLOCK in $(echo /sys/block/* | tr ' ' '\n' | grep -vE "/(loop|ram|dm-|fd)")
+	do
+		PARTITIONS="$(subdevices ${SYSBLOCK})"
+
+		for ITEM in ${PARTITIONS}
+		do
+			DEVICE="$(sys2dev ${ITEM})"
+			FS="$(get_fstype ${DEVICE})"
+			MOUNTPOINT="/media/$(basename ${DEVICE})"
+
+			case "${FS}" in
+				ntfs)
+					FS="ntfs-3g"
+					OPTIONS=""
+					;;
+
+				ext*)
+					OPTIONS=""
+					;;
+
+				*)
+					OPTIONS="-o uid=1000,gid=1000"
+					;;
+			esac
+
+			if [ "${FS}" != "iso9660" ]
+			then
+				mkdir -p ${MOUNTPOINT}
+				mount -t ${FS} ${OPTIONS} ${DEVICE} ${MOUNTPOINT} > /dev/null 2>&1
+
+				# Prepare normal partition for later mkswapfile usage.
+				#echo "${DEVICE} /media/$(basename ${DEVICE}) ${FS} defaults,noauto 0 0" >> /etc/fstab
+			fi
+		done
+	done
+
+	# Creating state file
+	touch /var/lib/live/config/mount-all
+}
+
+Mount_all

@@ -1,0 +1,34 @@
+#!/bin/sh
+
+Iptables ()
+{
+	# Checking if package is installed or already configured
+	if [ ! -e /var/lib/dpkg/info/iptables.list ]
+	then
+		return
+	fi
+
+	echo -n " iptables"
+
+	if ! echo ${_CMDLINE} | grep -qs "live-helper.iptables"
+	then
+		return
+	fi
+
+	Configure_iptables
+}
+
+Configure_iptables ()
+{
+	echo 1 > /proc/sys/net/ipv4/ip_forward
+
+	iptables -N block
+
+	iptables -A block -m state --state ESTABLISHED,RELATED -j ACCEPT
+	iptables -A block -m state --state NEW -i ! eth0 -j ACCEPT
+	iptables -A block -j DROP
+	iptables -A INPUT -j block
+	iptables -A FORWARD -j block
+}
+
+Iptables
