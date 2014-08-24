@@ -1,3 +1,27 @@
+live-config (4.0~alpha34-1) unstable; urgency=low
+
+  [ Daniel Baumann ]
+  * Dropping console-tools from recommends.
+  * Adding initial broadcom-sta component based on the same logic we
+    already do for nvidia/fglrx handling (Closes: #749109).
+
+  [ Carlos Zuferri ]
+  * Removing obsolete flag '--no-backups' from po4a options.
+  * Adding '--package-version' to po4a options.
+  * Adding .po integrity check target to manpages/Makefile.
+
+  [ Daniel Baumann ]
+  * Making wheezy-compatible alternative recommends to iproute2 (Closes:
+    #753708).
+  * Making weezy-compatible alternative depends on sysvinit (Closes:
+    #756043).
+
+  [ victory ]
+  * Sync Japanese translation of live-config man page.
+  * Unfuzzy some strings in the translations of live-config man page.
+
+ -- Daniel Baumann <mail@daniel-baumann.ch>  Sun, 24 Aug 2014 09:53:28 +0200
+
 live-config (4.0~alpha33-1) unstable; urgency=low
 
   * Correcting syntax error in 'already configured' test of the kde-
