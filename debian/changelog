@@ -1,3 +1,11 @@
+live-config (4.0~alpha35-1) unstable; urgency=low
+
+  * Updating sysvinit component to leave serial tty in inittab intact,
+    thanks to Niels Laukens <niels@dest-unreach.be> (Closes: #754274).
+  * Correcting execution of hooks (Closes: #752118).
+
+ -- Daniel Baumann <mail@daniel-baumann.ch>  Sun, 24 Aug 2014 17:40:09 +0200
+
 live-config (4.0~alpha34-1) unstable; urgency=low
 
   [ Daniel Baumann ]
