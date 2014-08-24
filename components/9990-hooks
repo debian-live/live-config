@@ -74,7 +74,7 @@ Config ()
 		fi
 
 		chmod 0755 "${_TMPFILE}"
-		./"${_TMPFILE}"
+		"${_TMPFILE}"
 		rm -f "${_TMPFILE}"
 	done
 }
