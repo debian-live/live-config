@@ -11,7 +11,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 2014\-04\-27 4.0~alpha33\-1 "Live Systems Project"
+.TH LIVE\-CONFIG 7 2014\-08\-24 4.0~alpha34\-1 "Live Systems Project"
 
 .SH NOME
 \fBlive\-config\fP \- System Configuration Components
@@ -125,13 +125,20 @@ inicialização prevalecerá.
 .IP "\fBlive\-config.xorg\-resolution\fP=\fIRESOLUÇÃO_DO_XORG\fP | \fBxorg\-resolution\fP=\fIRESOLUÇÃO_DO_XORG\fP" 4
 Permite definir a resolução do xorg em vez de detectá\-la automaticamente,
 por exemplo, 1024x768.
+.IP "\fBlive\-config.wlan\-driver\fP=\fIDRIVER_DO_WLAN\fP | \fBwlan\-driver\fP=\fIDRIVER_DO_WLAN\fP" 4
+Permite definir o driver do WLAN em vez de detectá\-lo automaticamente. Se um
+ID PCI é definido em /usr/share/live/config/broadcom\-sta/\fIDRIVER\fP.ids do
+sistema live, \fIDRIVER\fP será aplicado para estes dispositivos. Se ambos um
+parâmatro de inicialização e um override forem encontrados, o parâmatro de
+inicialização prevalecerá.
 .IP "\fBlive\-config.hooks\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP | \fBhooks\fP=medium|filesystem|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
-Allows to fetch and execute one or more arbitrary files. Note that the URLs
-must be fetchable by wget (http, ftp or file://), the files are executed in
-/tmp of the running live system, and that the files needs their
-dependencies, if any, already installed, e.g. if a python script should be
-executed the system needs python installed. Some hooks for some common
-use\-cases are available at /usr/share/doc/live\-config/examples/hooks/ and
+Permite obter e executar um ou mais arquivos arbitrários. Note que as URLs
+precisam ser acessíveis por wget (http, ftp ou file://), que os arquivos são
+executados no diretório /tmp do sistema de arquivos em execução, e que os
+arquivos precisam que suas dependências, se houverem, estejam
+instaladas. Por exemplo, se um script python necessita ser executado, python
+deve estar instalado no sistema. Alguns hooks para casos de uso comuns estão
+disponíveis em /usr/share/doc/live\-config/examples/hooks/ e
 <\fIhttp://live\-systems.org/other/hooks\fP>.
 .br
 Se o arquivo estiver na mídia live, ele pode ser obtido através de
@@ -260,6 +267,9 @@ parameter.
 .IP \fBLIVE_XORG_RESOLUTION\fP=\fIRESOLUÇÃO_DO_XORG\fP 4
 This variable corresponds to the
 \&'\fBlive\-config.xorg\-resolution\fP=\fIXORG_RESOLUTION\fP' parameter.
+.IP \fBLIVE_WLAN_DRIVER\fP=\fIWLAN_DRIVER\fP 4
+This variable corresponds to the '\fBlive\-config.wlan\-driver\fP=\fIWLAN_DRIVER\fP'
+parameter.
 .IP "\fBLIVE_HOOKS\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
 This variable corresponds to the
 \&'\fBlive\-config.hooks\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP'
@@ -363,6 +373,8 @@ desabilita o hwclock do util\-linux
 desabilita lastlog.
 .IP \fBxserver\-xorg\fP 4
 configura o xserver\-xorg.
+.IP \fBbroadcom\-sta\fP 4
+configures broadcom\-sta WLAN drivers.
 .IP "\fBureadahead\fP (apenas ubuntu)" 4
 desabilita ureadahead.
 .IP \fBopenssh\-server\fP 4

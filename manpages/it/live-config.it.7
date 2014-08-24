@@ -11,7 +11,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 2014\-04\-27 4.0~alpha33\-1 "Progetto Live Systems"
+.TH LIVE\-CONFIG 7 2014\-08\-24 4.0~alpha34\-1 "Progetto Live Systems"
 
 .SH NOME
 \fBlive\-config\fP \- Componenti di configurazione del sistema
@@ -129,6 +129,12 @@ parametro di boot sia uno imposto, quello di boot ha la precedenza.
 .IP "\fBlive\-config.xorg\-resolution\fP=\fIRISOLUZIONE_XORG\fP | \fBxorg\-resolution\fP=\fIRISOLUZIONE_XORG\fP" 4
 Permette di impostare la risoluzione per xorg invece di riconoscerla
 automaticamente, ad esempio 1024x768.
+.IP "\fBlive\-config.wlan\-driver\fP=\fIDRIVER_WLAN\fP | \fBwlan\-driver\fP=\fIDRIVER_WLAN\fP" 4
+Permette di impostare il driver per WLAN invece di riconoscerlo
+automaticamente. Se un ID PCI viene specificato in
+/usr/share/live/config/broadcom\-sta/\fIDRIVER\fP.ids all'interno del sistema
+live, \fIDRIVER\fP viene applicato a questi device. Se viene trovato sia un
+parametro di boot sia uno imposto, quello di boot ha la precedenza.
 .IP "\fBlive\-config.hooks\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP | \fBhooks\fP=medium|filesystem|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
 Permette di prelevare ed eseguire uno o più file arbitrari. Si noti che gli
 URL devono essere scaricabili da wget (http, ftp o file://), i file vengono
@@ -263,6 +269,9 @@ Questa variabile corrisponde al parametro
 .IP \fBLIVE_XORG_RESOLUTION\fP=\fIRISOLUZIONE_XORG\fP 4
 Questa variabile corrisponde al parametro
 "\fBlive\-config.xorg\-resolution\fP=\fIRISOLUZIONE_XORG\fP".
+.IP \fBLIVE_WLAN_DRIVER\fP=\fIDRIVER_WLAN\fP 4
+Questa variabile corrisponde al parametro
+"\fBlive\-config.wlan\-driver\fP=\fIDRIVER_WLAN\fP".
 .IP "\fBLIVE_HOOKS\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
 Questa variabile corrisponde al parametro
 "\fBlive\-config.hooks\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP".
@@ -362,6 +371,8 @@ disabilita hwclock (parte di util\-linux).
 disabilita lastlog.
 .IP \fBxserver\-xorg\fP 4
 configura xserver\-xorg.
+.IP \fBbroadcom\-sta\fP 4
+configures broadcom\-sta WLAN drivers.
 .IP "\fBureadahead\fP (solo ubuntu)" 4
 disabilita ureadahead.
 .IP \fBopenssh\-server\fP 4

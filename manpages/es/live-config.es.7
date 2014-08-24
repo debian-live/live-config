@@ -11,7 +11,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 2014\-04\-27 4.0~alpha33\-1 "Proyecto Live Systems"
+.TH LIVE\-CONFIG 7 2014\-08\-24 4.0~alpha34\-1 "Proyecto Live Systems"
 
 .SH NOMBRE
 \fBlive\-config\fP \- Componentes de configuración del sistema
@@ -132,6 +132,13 @@ prioridad.
 .IP \fBlive\-config.xorg\-resolution\fP=\fIXORG_RESOLUTION\fP·|·\fBxorg\-resolution\fP=\fIXORG_RESOLUTION\fP 4
 Permite seleccionar la resolución de xorg en lugar de detectarla de forma
 automática, p.ej. 1024x768.
+.IP "\fBlive\-config.wlan\-driver\fP=\fIWLAN_DRIVER\fP | \fBwlan\-driver\fP=\fIWLAN_DRIVER\fP" 4
+Permite seleccionar el controlador WLAN en lugar de detectarlo de forma
+automática. Si se especifica un PCI ID en
+/usr/share/live/config/broadcom\-sta/\fIDRIVER\fP.ids dentro del sistema en
+vivo,  se aplica \fIDRIVER\fP para estos dispositivos. Si se encuentran juntos
+un parámetro de arranque y un override, el parámetro de arranque tiene
+prioridad.
 .IP "\fBlive\-config.hooks\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP | \fBhooks\fP=medium|filesystem|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
 Permite buscar y ejecutar uno o más ficheros de forma arbitraria. Tener en
 cuenta que las URLs deben ser descargadas usando wget (http, ftp o file://),
@@ -263,6 +270,9 @@ Esta variable corresponde al parámetro
 .IP \fBLIVE_XORG_RESOLUTION\fP=\fIXORG_RESOLUTION\fP 4
 Esta variable corresponde al parámetro
 \&'\fBlive\-config.xorg\-resolution\fP=\fIXORG_RESOLUTION\fP'
+.IP \fBLIVE_WLAN_DRIVER\fP=\fIWLAN_DRIVER\fP 4
+Esta variable corresponde al parámetro
+\&'\fBlive\-config.wlan\-driver\fP=\fIWLAN_DRIVER\fP'
 .IP "\fBLIVE_HOOKS\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP" 4
 Esta variable corresponde al parámetro
 \&'\fBlive\-config.hooks\fP=filesystem|medium|\fIURL1\fP|\fIURL2\fP| ... |\fIURLn\fP'
@@ -364,6 +374,8 @@ Desactiva util\-linux' hwclock.
 Desactiva lastlog.
 .IP \fBxserver\-xorg\fP 4
 configura xserver\-xorg.
+.IP \fBbroadcom\-sta\fP 4
+configures broadcom\-sta WLAN drivers.
 .IP "\fBureadahead\fP (ubuntu solamente)" 4
 Desactiva ureadahead.
 .IP \fBopenssh\-server\fP 4
