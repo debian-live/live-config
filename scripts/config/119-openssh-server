@@ -38,6 +38,8 @@ Configure_openssh_server ()
 		_SSH="true"
 	fi
 
+	sed -i -e 's|#\(PasswordAuthentication\) yes|\1 no|' /etc/ssh/sshd_config
+
 	if [ "${_SSH}" = "true" ]
 	then
 		# Creating state file
