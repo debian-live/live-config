@@ -1,3 +1,12 @@
+live-config (2.0.15-1.1+deb6u1) squeeze-lts; urgency=medium
+
+  * Non-maintainer upload.
+  * Disabling ssh password authentication by default (Closes: #741678).
+    This fix is from: http://live.debian.net/gitweb/?p=live-config.git;
+    a=commitdiff;h=e776761a3cff82912e4e1edecaa894dfe52ffb61
+
+ -- Luciano Bello <luciano@debian.org>  Wed, 27 Aug 2014 01:42:16 +0200
+
 live-config (2.0.15-1) unstable; urgency=low
 
   * Removing systemd support for 2.0 branch (Closes: #608326).
