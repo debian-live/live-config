@@ -1,3 +1,9 @@
+live-config (4.0.0-1) unstable; urgency=low
+
+  * Correcting inverted logic when enabling/disabling broadcom-sta.
+
+ -- Daniel Baumann <mail@daniel-baumann.ch>  Wed, 27 Aug 2014 19:33:39 +0200
+
 live-config (4.0~alpha35-1) unstable; urgency=low
 
   * Updating sysvinit component to leave serial tty in inittab intact,
