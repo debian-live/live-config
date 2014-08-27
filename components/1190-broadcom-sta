@@ -88,17 +88,17 @@ Config ()
 			then
 				case "${LIVE_WLAN_DRIVER}" in
 					broadcom-sta)
-						sed -i -e 's|^# *blacklist|blacklist|g' /etc/modprobe.d/broadcom-sta-dkms.conf
-						sed -i -e 's|^blacklist wl|#blacklist wl|g' /etc/modprobe.d/broadcom-sta-dkms.conf
-						;;
-
-					*)
 						sed -i -e 's|^ *blacklist|# blacklist|' /etc/modprobe.d/broadcom-sta-dkms.conf
 
 						if ! grep -qs "^blacklist wl" /etc/modprobe.d/broadcom-sta-dkms.conf
 						then
 							echo "blacklist wl" >> /etc/modprobe.d/broadcom-sta-dkms.conf
 						fi
+						;;
+
+					*)
+						sed -i -e 's|^# *blacklist|blacklist|g' /etc/modprobe.d/broadcom-sta-dkms.conf
+						sed -i -e 's|^blacklist wl|#blacklist wl|g' /etc/modprobe.d/broadcom-sta-dkms.conf
 						;;
 				esac
 			fi
