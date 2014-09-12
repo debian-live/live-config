@@ -42,7 +42,7 @@ Config ()
 		exit 0
 	fi
 
-	if [ "${LIVE_CONFIG_NOAUTOLOGIN}" != "true" ] && [ "${LIVE_CONFIG_NOX11AUTOLOGIN}" = "true" ]
+	if [ "${LIVE_CONFIG_NOAUTOLOGIN}" != "true" ] && [ "${LIVE_CONFIG_NOX11AUTOLOGIN}" != "true" ]
 	then
 		# autologin
 		sed -i -r -e "s|^#.*AutoLoginEnable=.*\$|AutoLoginEnable=true|" \
