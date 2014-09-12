@@ -1,3 +1,10 @@
+live-config (4.0.1-1) unstable; urgency=low
+
+  [ Joerg Schirottke ]
+  * KDM: fix nox11autologin logic
+
+ -- Daniel Baumann <mail@daniel-baumann.ch>  Fri, 12 Sep 2014 14:14:03 +0200
+
 live-config (4.0.0-1) unstable; urgency=low
 
   * Correcting inverted logic when enabling/disabling broadcom-sta.
