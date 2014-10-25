@@ -1,3 +1,13 @@
+live-config (4.0.2-1) unstable; urgency=low
+
+  * Updating to standards version 3.9.6.
+  * Dropping update-notifier component, not needed anymore (Closes:
+    #764773).
+  * Dropping incomplete German manpage translations.
+  * Dropping incomplete Brazilian Portuguese manpage translations.
+
+ -- Daniel Baumann <mail@daniel-baumann.ch>  Sat, 25 Oct 2014 14:46:58 +0200
+
 live-config (4.0.1-1) unstable; urgency=low
 
   [ Joerg Schirottke ]
