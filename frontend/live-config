@@ -20,7 +20,7 @@
 ## can be found in /usr/share/common-licenses/GPL-3 file.
 
 
-set -e
+#set -e
 
 # Defaults
 LIVE_HOSTNAME="debian"
