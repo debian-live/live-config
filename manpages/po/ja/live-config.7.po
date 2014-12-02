@@ -1,4 +1,4 @@
-# Japenese translations for live-config package
+# Japanese translations for live-config package
 # Copyright (C) 2013-2014 victory <victory.deb@gmail.com>
 # This file is distributed under the same license as the live-config package.
 #
@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: live-config\n"
 "POT-Creation-Date: 2014-10-25 14:43+0200\n"
-"PO-Revision-Date: 2014-05-24 18:21+0900\n"
+"PO-Revision-Date: 2014-10-25 21:43+0900\n"
 "Last-Translator: victory <victory.deb@gmail.com>\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -24,13 +24,13 @@ msgstr "LIVE-CONFIG"
 #: en/live-config.7:9
 #, no-wrap
 msgid "2014-10-25"
-msgstr ""
+msgstr "2014-10-25"
 
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
 msgid "4.0.2-1"
-msgstr ""
+msgstr "4.0.2-1"
 
 #. type: TH
 #: en/live-config.7:9
