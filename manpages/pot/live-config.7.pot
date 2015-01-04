@@ -6,8 +6,8 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: live-config 4.0.3-1\n"
-"POT-Creation-Date: 2014-12-10 10:22+0100\n"
+"Project-Id-Version: live-config 4.0.4-1\n"
+"POT-Creation-Date: 2015-01-04 21:55+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,13 +25,13 @@ msgstr ""
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "2014-12-10"
+msgid "2015-01-04"
 msgstr ""
 
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "4.0.3-1"
+msgid "4.0.4-1"
 msgstr ""
 
 #. type: TH
