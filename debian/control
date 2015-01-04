@@ -53,6 +53,7 @@ Architecture: all
 Depends:
  ${misc:Depends},
  systemd,
+Recommends: dbus
 Conflicts: live-config-backend
 Replaces: live-config-backend
 Provides: live-config-backend
