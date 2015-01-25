@@ -29,7 +29,7 @@ msgstr ""
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "4.0.4-1"
+msgid "5.0~a1-1"
 msgstr ""
 
 #. type: TH
