@@ -1,3 +1,11 @@
+live-config (5.0~a2-1) unstable; urgency=low
+
+  * Updating year to 2015.
+  * Updating live-config version to 5 in live-config-foobar example
+    packaging.
+
+ -- Daniel Baumann <mail@daniel-baumann.ch>  Sun, 26 Apr 2015 20:32:07 +0200
+
 live-config (5.0~a1-1) experimental; urgency=low
 
   * Dropping debian-installer-launcher component, not needed for current
