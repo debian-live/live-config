@@ -19,6 +19,10 @@ Cmdline ()
 			live-config.noautologin|noautologin)
 				LIVE_CONFIG_NOAUTOLOGIN="true"
 				;;
+
+			live-config.nox11autologin|nox11autologin)
+				LIVE_CONFIG_NOX11AUTOLOGIN="true"
+				;;
 		esac
 	done
 }
@@ -27,6 +31,13 @@ Init ()
 {
 	# Disables both console and graphical autologin.
 	case "${LIVE_CONFIG_NOAUTOLOGIN}" in
+		true)
+			exit 0
+			;;
+	esac
+
+	# Disables graphical autologin, no matter what mechanism
+	case "${LIVE_CONFIG_NOX11AUTOLOGIN}" in
 		true)
 			exit 0
 			;;

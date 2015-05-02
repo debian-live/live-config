@@ -90,25 +90,12 @@ Cmdline ()
 				LIVE_CONFIG_NOTTYAUTOLOGIN="true"
 				;;
 
-			live-config.nox11autologin|nox11autologin)
-				# Disables graphical autologin, no matter what mechanism
-				LIVE_CONFIG_NOX11AUTOLOGIN="true"
-				;;
-
 			# Special options
 			live-config.debug|debug)
 				LIVE_CONFIG_DEBUG="true"
 				;;
 		esac
 	done
-
-	# Exclude shortcuts specific components
-	case "${LIVE_CONFIG_NOX11AUTOLOGIN}" in
-		true)
-			# Disables graphical autologin, no matter what mechanism
-			LIVE_CONFIG_NOCOMPONENTS="${LIVE_CONFIG_NOCOMPONENTS},gdm,gdm3,lightdm,lxdm,nodm,slim,xinit"
-			;;
-	esac
 
 	# Include requested components
 	if [ -n "${LIVE_CONFIG_COMPONENTS}" ]

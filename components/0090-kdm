@@ -20,6 +20,10 @@ Cmdline ()
 				LIVE_CONFIG_NOAUTOLOGIN="true"
 				;;
 
+			live-config.nox11autologin|nox11autologin)
+				LIVE_CONFIG_NOX11AUTOLOGIN="true"
+				;;
+
 			live-config.username=*|username=*)
 				LIVE_USERNAME="${_PARAMETER#*username=}"
 				;;
