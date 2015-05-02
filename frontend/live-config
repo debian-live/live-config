@@ -85,11 +85,6 @@ Cmdline ()
 				;;
 
 			# Shortcuts
-			live-config.noautologin|noautologin)
-				# Disables both console and graphical autologin.
-				LIVE_CONFIG_NOAUTOLOGIN="true"
-				;;
-
 			live-config.nottyautologin|nottyautologin)
 				# Disables console autologin.
 				LIVE_CONFIG_NOTTYAUTOLOGIN="true"
@@ -108,13 +103,6 @@ Cmdline ()
 	done
 
 	# Exclude shortcuts specific components
-	case "${LIVE_CONFIG_NOAUTOLOGIN}" in
-		true)
-			# Disables both console and graphical autologin.
-			LIVE_CONFIG_NOCOMPONENTS="${LIVE_CONFIG_NOCOMPONENTS},gdm,gdm3,lightdm,lxdm,nodm,slim,xinit"
-			;;
-	esac
-
 	case "${LIVE_CONFIG_NOX11AUTOLOGIN}" in
 		true)
 			# Disables graphical autologin, no matter what mechanism

@@ -16,6 +16,10 @@ Cmdline ()
 	for _PARAMETER in ${LIVE_CONFIG_CMDLINE}
 	do
 		case "${_PARAMETER}" in
+			live-config.noautologin|noautologin)
+				LIVE_CONFIG_NOAUTOLOGIN="true"
+				;;
+
 			live-config.username=*|username=*)
 				LIVE_USERNAME="${_PARAMETER#*username=}"
 				;;

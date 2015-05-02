@@ -10,8 +10,28 @@
 
 #set -e
 
+Cmdline ()
+{
+	# Reading kernel command line
+	for _PARAMETER in ${LIVE_CONFIG_CMDLINE}
+	do
+		case "${_PARAMETER}" in
+			live-config.noautologin|noautologin)
+				LIVE_CONFIG_NOAUTOLOGIN="true"
+				;;
+		esac
+	done
+}
+
 Init ()
 {
+	# Disables both console and graphical autologin.
+	case "${LIVE_CONFIG_NOAUTOLOGIN}" in
+		true)
+			exit 0
+			;;
+	esac
+
 	# Checking if a display manager has been configured
 	case "${_X11}" in
 		true)
@@ -58,5 +78,6 @@ EOF
 	touch /var/lib/live/config/xinit
 }
 
+Cmdline
 Init
 Config

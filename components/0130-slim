@@ -16,6 +16,10 @@ Cmdline ()
 	for _PARAMETER in ${LIVE_CONFIG_CMDLINE}
 	do
 		case "${_PARAMETER}" in
+			live-config.noautologin|noautologin)
+				LIVE_CONFIG_NOAUTOLOGIN="true"
+				;;
+
 			live-config.username=*|username=*)
 				LIVE_USERNAME="${_PARAMETER#*username=}"
 				;;
@@ -25,6 +29,13 @@ Cmdline ()
 
 Init ()
 {
+	# Disables both console and graphical autologin.
+	case "${LIVE_CONFIG_NOAUTOLOGIN}" in
+		true)
+			exit 0
+			;;
+	esac
+
 	# Checking if package is installed or already configured
 	if [ ! -e /var/lib/dpkg/info/slim.list ] || \
 	   [ -e /var/lib/live/config/slim ]
