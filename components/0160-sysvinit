@@ -59,9 +59,6 @@ Init ()
 
 Config ()
 {
-	# Disable tmpfs on /tmp
-	sed -i -e 's|^ *RAMTMP=.*|RAMTMP=no|' /etc/default/rcS
-
 	# Configure autologin
 	if [ -n "${LIVE_USERNAME}" ]
 	then
