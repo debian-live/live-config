@@ -33,6 +33,20 @@ Cmdline ()
 
 Init ()
 {
+	# Disables both console and graphical autologin.
+	case "${LIVE_CONFIG_NOAUTOLOGIN}" in
+		true)
+			exit 0
+			;;
+	esac
+
+	# Disables graphical autologin, no matter what mechanism
+	case "${LIVE_CONFIG_NOX11AUTOLOGIN}" in
+		true)
+			exit 0
+			;;
+	esac
+
 	# Checking if package is installed or already configured
 	if [ ! -e /var/lib/dpkg/info/kdm.list ] || \
 	   [ -e /var/lib/live/config/kdm ]
@@ -50,9 +64,9 @@ Config ()
 		exit 0
 	fi
 
-	if [ "${LIVE_CONFIG_NOAUTOLOGIN}" != "true" ] && [ "${LIVE_CONFIG_NOX11AUTOLOGIN}" != "true" ]
+	# autologin
+	if [ -n "${LIVE_USERNAME}" ]
 	then
-		# autologin
 		sed -i -r -e "s|^#.*AutoLoginEnable=.*\$|AutoLoginEnable=true|" \
 			  -e "s|^#.*AutoLoginAgain=.*\$|AutoLoginAgain=true|" \
 			  -e "s|^#.*AutoLoginUser=.*\$|AutoLoginUser=${LIVE_USERNAME}|" \
