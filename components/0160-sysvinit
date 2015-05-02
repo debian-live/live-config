@@ -20,6 +20,10 @@ Cmdline ()
 				LIVE_CONFIG_NOAUTOLOGIN="true"
 				;;
 
+			live-config.nottyautologin|nottyautologin)
+				LIVE_CONFIG_NOTTYAUTOLOGIN="true"
+				;;
+
 			live-config.username=*|username=*)
 				LIVE_USERNAME="${_PARAMETER#*username=}"
 				;;

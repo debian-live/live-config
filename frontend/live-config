@@ -84,12 +84,6 @@ Cmdline ()
 				_COMPONENTS=""
 				;;
 
-			# Shortcuts
-			live-config.nottyautologin|nottyautologin)
-				# Disables console autologin.
-				LIVE_CONFIG_NOTTYAUTOLOGIN="true"
-				;;
-
 			# Special options
 			live-config.debug|debug)
 				LIVE_CONFIG_DEBUG="true"
