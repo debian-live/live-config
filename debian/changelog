@@ -1,3 +1,20 @@
+live-config (5.0~a3-1) unstable; urgency=low
+
+  * Making noroot bootparameter selfcontained within components.
+  * Making noautologin bootparameter selfcontained within components.
+  * Making nox11autologin bootparameter selfcontained within components.
+  * Making nottyautologin bootparameter selfcontained within components.
+  * Fixing kdm component to be selfcontained.
+  * Fixing sysvinit component to be selfcontained.
+  * Removing hack to configure sysvinit to not mount /tmp as tmpfs, this
+    is done at build time now through live-build.
+  * Also recreating ed25519 hostkeys in openssh-server component, now that
+    we only support jessie and newer here.
+  * Dropping obsolete ubuntu support, no special treatment necessary
+    anymore.
+
+ -- Daniel Baumann <mail@daniel-baumann.ch>  Mon, 04 May 2015 20:06:12 +0200
+
 live-config (5.0~a2-1) unstable; urgency=low
 
   * Updating year to 2015.
