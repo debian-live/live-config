@@ -11,7 +11,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 2015\-05\-04 5.0~a3\-1 "Live システムプロジェクト"
+.TH LIVE\-CONFIG 7 2015\-08\-19 5.0~a3\-1 "Live システムプロジェクト"
 
 .SH 名前
 \fBlive\-config\fP \- システム設定構成要素
@@ -144,8 +144,9 @@ live\-config のデバッグ用出力を有効化します。
 \fB注意:\fP 設定ファイルを使う場合はブートパラメータを全て \fBLIVE_CONFIG_CMDLINE\fP 変数に配置する (好ましい)
 か、変数を個々にセットすることができます。個々にセットする場合、有効な設定を作成するためにユーザは必ず必要な変数を全てセットすることが要求されます。
 .PP
-設定ファイルはルートファイルシステム自体 (/etc/live/config.conf、 /etc/live/config/*)、 または Live
-メディア (live/config.conf、 live/config/*)
+設定ファイルはルートファイルシステム自体 (/etc/live/config.conf、
+/etc/live/config.conf.d/*.conf)、 または Live メディア (live/config.conf、
+live/config.conf.d/*.conf)
 に配置できます。特定のオプションについて両方に配置されている場合はルートファイルシステムにあるものよりも Live メディアにあるものを優先します。
 .PP
 設定ディレクトリに置かれる設定ファイルには特定の名前や拡張子が要求されるわけではありませんが、命名規則を整合性のため「vendor.conf」や「project.conf」のようにすることを提案します
@@ -299,9 +300,9 @@ Live メディアや http/ftp サーバに置かれたファイルから任意�
 
 .SH ファイル
 .IP \fB/etc/live/config.conf\fP 4
-.IP \fB/etc/live/config/*\fP 4
+.IP \fB/etc/live/config.conf.d/*.conf\fP 4
 .IP \fBlive/config.conf\fP 4
-.IP \fBlive/config/*\fP 4
+.IP \fBlive/config.conf.d/*.conf\fP 4
 .IP \fB/lib/live/config.sh\fP 4
 .IP \fB/lib/live/config/\fP 4
 .IP \fB/var/lib/live/config/\fP 4

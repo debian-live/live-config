@@ -6,7 +6,7 @@
 .\" under certain conditions; see COPYING for details.
 .\"
 .\"
-.TH LIVE\-CONFIG 7 2015\-05\-04 5.0~a3-1 "Live Systems Project"
+.TH LIVE\-CONFIG 7 2015\-08\-19 5.0~a3-1 "Live Systems Project"
 
 .SH NAME
 \fBlive\-config\fR \- System Configuration Components
@@ -110,7 +110,7 @@ Enables debug output in live\-config.
 .PP
 \fBNote:\fR If configuration files are used, either (preferably) all boot parameters should be put into the \fBLIVE_CONFIG_CMDLINE\fR variable, or individual variables can be set. If individual variables are used, the user is required to ensure that all the necessary variables are set to create a valid configuration.
 .PP
-Configuration files can be placed either in the root filesystem itself (/etc/live/config.conf, /etc/live/config/*), or on the live media (live/config.conf, live/config/*). If both places are used for a certain option, the ones from the live media take precedence over the ones from the root filesystem.
+Configuration files can be placed either in the root filesystem itself (/etc/live/config.conf, /etc/live/config.conf.d/*), or on the live media (live/config.conf, live/config.conf.d/*.conf). If both places are used for a certain option, the ones from the live media take precedence over the ones from the root filesystem.
 .PP
 Although the configuration files placed in the configuration directories do not require a particular name or suffix, it is suggested for consistency reasons to either use 'vendor.conf' or 'project.conf' as a naming scheme (whereas 'vendor' or 'project' is replaced with the actual name, resulting in a filename like 'progress\-linux.conf').
 .PP
@@ -250,9 +250,9 @@ allows to run arbitrary commands from a file placed on the live media or an http
 
 .SH FILES
 .IP "\fB/etc/live/config.conf\fR" 4
-.IP "\fB/etc/live/config/*\fR" 4
+.IP "\fB/etc/live/config.conf.d/*.conf\fR" 4
 .IP "\fBlive/config.conf\fR" 4
-.IP "\fBlive/config/*\fR" 4
+.IP "\fBlive/config.conf.d/*.conf\fR" 4
 .IP "\fB/lib/live/config.sh\fR" 4
 .IP "\fB/lib/live/config/\fR" 4
 .IP "\fB/var/lib/live/config/\fR" 4

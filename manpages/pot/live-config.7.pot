@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config 5.0~a3-1\n"
-"POT-Creation-Date: 2015-05-04 20:05+0200\n"
+"POT-Creation-Date: 2015-08-19 18:17+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,7 +25,7 @@ msgstr ""
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "2015-05-04"
+msgid "2015-08-19"
 msgstr ""
 
 #. type: TH
@@ -572,9 +572,10 @@ msgstr ""
 #: en/live-config.7:114
 msgid ""
 "Configuration files can be placed either in the root filesystem itself (/etc/"
-"live/config.conf, /etc/live/config/*), or on the live media (live/config."
-"conf, live/config/*). If both places are used for a certain option, the ones "
-"from the live media take precedence over the ones from the root filesystem."
+"live/config.conf, /etc/live/config.conf.d/*), or on the live media (live/"
+"config.conf, live/config.conf.d/*.conf). If both places are used for a "
+"certain option, the ones from the live media take precedence over the ones "
+"from the root filesystem."
 msgstr ""
 
 #. type: Plain text
@@ -1338,7 +1339,7 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:253
 #, no-wrap
-msgid "B</etc/live/config/*>"
+msgid "B</etc/live/config.conf.d/*.conf>"
 msgstr ""
 
 #. type: IP
@@ -1350,7 +1351,7 @@ msgstr ""
 #. type: IP
 #: en/live-config.7:255
 #, no-wrap
-msgid "B<live/config/*>"
+msgid "B<live/config.conf.d/*.conf>"
 msgstr ""
 
 #. type: IP

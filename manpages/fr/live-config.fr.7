@@ -11,7 +11,7 @@
 .\" This file was generated with po4a. Translate the source file.
 .\"
 .\"*******************************************************************
-.TH LIVE\-CONFIG 7 2015\-05\-04 5.0~a3\-1 "Projet Live Systems"
+.TH LIVE\-CONFIG 7 2015\-08\-19 5.0~a3\-1 "Projet Live Systems"
 
 .SH NOM
 \fBlive\-config\fP \- Composants de configuration du système
@@ -206,10 +206,11 @@ s'assurer que toutes les variables nécessaires sont réglées pour créer une
 configuration correcte.
 .PP
 Les fichiers de configuration peuvent être placés soit dans la racine du
-système de fichiers (/etc/live/config.conf, /etc/live/config/*), soit sur le
-dispositif live (live/config.conf, live/config/*). Si ces deux endroits sont
-utilisés pour une même option, ceux placés dans le média live ont la
-préséance sur ceux placés dans la racine du système.
+système de fichiers (/etc/live/config.conf, /etc/live/config.conf.d/*.conf),
+soit sur le dispositif live (live/config.conf,
+live/config.conf.d/*.conf). Si ces deux endroits sont utilisés pour une même
+option, ceux placés dans le média live ont la préséance sur ceux placés dans
+la racine du système.
 .PP
 Bien que les fichiers de configuration placés dans les répertoires de
 configuration ne nécessitent pas un nom ou suffixe particulier, il est
@@ -394,9 +395,9 @@ dispositif live, ou sur un serveur http/ftp.
 
 .SH FICHIERS
 .IP \fB/etc/live/config.conf\fP 4
-.IP \fB/etc/live/config/*\fP 4
+.IP \fB/etc/live/config.conf.d/*.conf\fP 4
 .IP \fBlive/config.conf\fP 4
-.IP \fBlive/config/*\fP 4
+.IP \fBlive/config.conf.d/*.conf\fP 4
 .IP \fB/lib/live/config.sh\fP 4
 .IP \fB/lib/live/config/\fP 4
 .IP \fB/var/lib/live/config/\fP 4
