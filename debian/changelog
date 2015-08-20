@@ -1,3 +1,15 @@
+live-config (5.0~a4-1) unstable; urgency=low
+
+  * Wrap and sort debian control file.
+  * Using the common and intuitive way of live/config.conf.d/*.conf as
+    includes for config snippets consistently (Closes: #791670).
+  * Adding slightly adjusted systemd component from Daniel Gollub
+    <dgollub@brocade.com>.
+  * Removing generated live-config_autoconfig.conf files from systemd
+    component in postrm script.
+
+ -- Daniel Baumann <mail@daniel-baumann.ch>  Thu, 20 Aug 2015 11:41:02 +0200
+
 live-config (5.0~a3-1) unstable; urgency=low
 
   * Making noroot bootparameter selfcontained within components.
