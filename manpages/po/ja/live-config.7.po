@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config\n"
-"POT-Creation-Date: 2015-08-20 11:41+0200\n"
+"POT-Creation-Date: 2015-08-21 11:15+0200\n"
 "PO-Revision-Date: 2014-10-25 21:43+0900\n"
 "Last-Translator: victory <victory.deb@gmail.com>\n"
 "Language-Team: none\n"
@@ -23,7 +23,7 @@ msgstr "LIVE-CONFIG"
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
-msgid "2015-08-20"
+msgid "2015-08-21"
 msgstr ""
 
 #. type: TH
@@ -1285,205 +1285,219 @@ msgstr "キーボードを設定します。"
 
 #. type: IP
 #: en/live-config.7:210
+#, fuzzy, no-wrap
+#| msgid "B<sysvinit>"
+msgid "B<systemd>"
+msgstr "B<sysvinit>"
+
+#. type: Plain text
+#: en/live-config.7:212
+#, fuzzy
+#| msgid "configures autologin in kdm."
+msgid "configures systemd autologin."
+msgstr "kdm の自動ログインを設定します。"
+
+#. type: IP
+#: en/live-config.7:212
 #, no-wrap
 msgid "B<sysvinit>"
 msgstr "B<sysvinit>"
 
 #. type: Plain text
-#: en/live-config.7:212
+#: en/live-config.7:214
 msgid "configures sysvinit."
 msgstr "sysvinit を設定します。"
 
 #. type: IP
-#: en/live-config.7:212
+#: en/live-config.7:214
 #, no-wrap
 msgid "B<sysv-rc>"
 msgstr "B<sysv-rc>"
 
 #. type: Plain text
-#: en/live-config.7:214
+#: en/live-config.7:216
 msgid "configures sysv-rc by disabling listed services."
 msgstr "一覧にあるサービスを無効にして sysv-rc を設定します。"
 
 #. type: IP
-#: en/live-config.7:214 en/live-config.7:236
+#: en/live-config.7:216 en/live-config.7:238
 #, no-wrap
 msgid "B<login>"
 msgstr "B<login>"
 
 #. type: Plain text
-#: en/live-config.7:216 en/live-config.7:238
+#: en/live-config.7:218 en/live-config.7:240
 msgid "disables lastlog."
 msgstr "lastlog を無効にします。"
 
 #. type: IP
-#: en/live-config.7:216
+#: en/live-config.7:218
 #, no-wrap
 msgid "B<apport>"
 msgstr "B<apport>"
 
 #. type: Plain text
-#: en/live-config.7:218
+#: en/live-config.7:220
 msgid "disables apport."
 msgstr "apport を無効にします。"
 
 #. type: IP
-#: en/live-config.7:218
+#: en/live-config.7:220
 #, no-wrap
 msgid "B<gnome-panel-data>"
 msgstr "B<gnome-panel-data>"
 
 #. type: Plain text
-#: en/live-config.7:220
+#: en/live-config.7:222
 msgid "disables lock button for the screen."
 msgstr "を無効にします。"
 
 #. type: IP
-#: en/live-config.7:220
+#: en/live-config.7:222
 #, no-wrap
 msgid "B<gnome-power-manager>"
 msgstr "B<gnome-power-manager>"
 
 #. type: Plain text
-#: en/live-config.7:222
+#: en/live-config.7:224
 msgid "disables hibernation."
 msgstr "ハイバネーションを無効にします。"
 
 #. type: IP
-#: en/live-config.7:222
+#: en/live-config.7:224
 #, no-wrap
 msgid "B<gnome-screensaver>"
 msgstr "B<gnome-screensaver>"
 
 #. type: Plain text
-#: en/live-config.7:224 en/live-config.7:248
+#: en/live-config.7:226 en/live-config.7:250
 msgid "disables the screensaver locking the screen."
 msgstr "画面をロックするスクリーンセーバーを無効にします。"
 
 #. type: IP
-#: en/live-config.7:224
+#: en/live-config.7:226
 #, no-wrap
 msgid "B<kaboom>"
 msgstr "B<kaboom>"
 
 #. type: Plain text
-#: en/live-config.7:226
+#: en/live-config.7:228
 msgid "disables KDE migration wizard (squeeze and newer)."
 msgstr "KDE 移行ウイザードを無効にします (squeeze 以降)。"
 
 #. type: IP
-#: en/live-config.7:226
+#: en/live-config.7:228
 #, no-wrap
 msgid "B<kde-services>"
 msgstr "B<kde-services>"
 
 #. type: Plain text
-#: en/live-config.7:228
+#: en/live-config.7:230
 msgid "disables some unwanted KDE services (squeeze and newer)."
 msgstr "望まれていない KDE サービスの一部を無効にします (squeeze 以降)。"
 
 #. type: IP
-#: en/live-config.7:228
+#: en/live-config.7:230
 #, no-wrap
 msgid "B<policykit>"
 msgstr "B<policykit>"
 
 #. type: Plain text
-#: en/live-config.7:230
+#: en/live-config.7:232
 msgid "grant user privilegies through policykit."
 msgstr "policykit を使ってユーザ権限を与えます。"
 
 #. type: IP
-#: en/live-config.7:230
+#: en/live-config.7:232
 #, no-wrap
 msgid "B<ssl-cert>"
 msgstr "B<ssl-cert>"
 
 #. type: Plain text
-#: en/live-config.7:232
+#: en/live-config.7:234
 msgid "regenerating ssl snake-oil certificates."
 msgstr "SSL の snake-oil 証明書を再生成します。"
 
 #. type: IP
-#: en/live-config.7:232
+#: en/live-config.7:234
 #, no-wrap
 msgid "B<anacron>"
 msgstr "B<anacron>"
 
 #. type: Plain text
-#: en/live-config.7:234
+#: en/live-config.7:236
 msgid "disables anacron."
 msgstr "anacron を無効にします。"
 
 #. type: IP
-#: en/live-config.7:234
+#: en/live-config.7:236
 #, no-wrap
 msgid "B<util-linux>"
 msgstr "B<util-linux>"
 
 #. type: Plain text
-#: en/live-config.7:236
+#: en/live-config.7:238
 msgid "disables util-linux' hwclock."
 msgstr "util-linux の hwclock を無効にします。"
 
 #. type: IP
-#: en/live-config.7:238
+#: en/live-config.7:240
 #, no-wrap
 msgid "B<xserver-xorg>"
 msgstr "B<xserver-xorg>"
 
 #. type: Plain text
-#: en/live-config.7:240
+#: en/live-config.7:242
 msgid "configures xserver-xorg."
 msgstr "xserver-xorg を設定します。"
 
 #. type: IP
-#: en/live-config.7:240
+#: en/live-config.7:242
 #, no-wrap
 msgid "B<broadcom-sta>"
 msgstr "B<broadcom-sta>"
 
 #. type: Plain text
-#: en/live-config.7:242
+#: en/live-config.7:244
 msgid "configures broadcom-sta WLAN drivers."
 msgstr "broadcom-sta WLAN ドライバを設定します。"
 
 #. type: IP
-#: en/live-config.7:242
+#: en/live-config.7:244
 #, no-wrap
 msgid "B<openssh-server>"
 msgstr "B<openssh-server>"
 
 #. type: Plain text
-#: en/live-config.7:244
+#: en/live-config.7:246
 msgid "recreates openssh-server host keys."
 msgstr "openssh-server のホストキーを再生成します。"
 
 #. type: IP
-#: en/live-config.7:244
+#: en/live-config.7:246
 #, no-wrap
 msgid "B<xfce4-panel>"
 msgstr "B<xfce4-panel>"
 
 #. type: Plain text
-#: en/live-config.7:246
+#: en/live-config.7:248
 msgid "configures xfce4-panel to default settings."
 msgstr "xfce4-panel をデフォルト設定にします。"
 
 #. type: IP
-#: en/live-config.7:246
+#: en/live-config.7:248
 #, no-wrap
 msgid "B<xscreensaver>"
 msgstr "B<xscreensaver>"
 
 #. type: IP
-#: en/live-config.7:248
+#: en/live-config.7:250
 #, no-wrap
 msgid "B<hooks>"
 msgstr "B<hooks>"
 
 #. type: Plain text
-#: en/live-config.7:250
+#: en/live-config.7:252
 msgid ""
 "allows to run arbitrary commands from a file placed on the live media or an "
 "http/ftp server."
@@ -1492,112 +1506,112 @@ msgstr ""
 "行します。"
 
 #. type: SH
-#: en/live-config.7:251
+#: en/live-config.7:253
 #, no-wrap
 msgid "FILES"
 msgstr "ファイル"
 
 #. type: IP
-#: en/live-config.7:252
+#: en/live-config.7:254
 #, no-wrap
 msgid "B</etc/live/config.conf>"
 msgstr "B</etc/live/config.conf>"
 
 #. type: IP
-#: en/live-config.7:253
+#: en/live-config.7:255
 #, no-wrap
 msgid "B</etc/live/config.conf.d/*.conf>"
 msgstr "B</etc/live/config.conf.d/*.conf>"
 
 #. type: IP
-#: en/live-config.7:254
+#: en/live-config.7:256
 #, no-wrap
 msgid "B<live/config.conf>"
 msgstr "B<live/config.conf>"
 
 #. type: IP
-#: en/live-config.7:255
+#: en/live-config.7:257
 #, no-wrap
 msgid "B<live/config.conf.d/*.conf>"
 msgstr "B<live/config.conf.d/*.conf>"
 
 #. type: IP
-#: en/live-config.7:256
+#: en/live-config.7:258
 #, no-wrap
 msgid "B</lib/live/config.sh>"
 msgstr "B</lib/live/config.sh>"
 
 #. type: IP
-#: en/live-config.7:257
+#: en/live-config.7:259
 #, no-wrap
 msgid "B</lib/live/config/>"
 msgstr "B</lib/live/config/>"
 
 #. type: IP
-#: en/live-config.7:258
+#: en/live-config.7:260
 #, no-wrap
 msgid "B</var/lib/live/config/>"
 msgstr "B</var/lib/live/config/>"
 
 #. type: IP
-#: en/live-config.7:259
+#: en/live-config.7:261
 #, no-wrap
 msgid "B</var/log/live/config.log>"
 msgstr "B</var/log/live/config.log>"
 
 #. type: IP
-#: en/live-config.7:261
+#: en/live-config.7:263
 #, no-wrap
 msgid "B</live/config-hooks/*>"
 msgstr "B</live/config-hooks/*>"
 
 #. type: IP
-#: en/live-config.7:262
+#: en/live-config.7:264
 #, no-wrap
 msgid "B<live/config-hooks/*>"
 msgstr "B<live/config-hooks/*>"
 
 #. type: IP
-#: en/live-config.7:263
+#: en/live-config.7:265
 #, no-wrap
 msgid "B</live/config-preseed/*>"
 msgstr "B</live/config-preseed/*>"
 
 #. type: IP
-#: en/live-config.7:264
+#: en/live-config.7:266
 #, no-wrap
 msgid "B<live/config-preseed/* >"
 msgstr "B<live/config-preseed/* >"
 
 #. type: SH
-#: en/live-config.7:266
+#: en/live-config.7:268
 #, no-wrap
 msgid "SEE ALSO"
 msgstr "関連項目"
 
 #. type: Plain text
-#: en/live-config.7:268
+#: en/live-config.7:270
 msgid "I<live-boot>(7)"
 msgstr "I<live-boot>(7)"
 
 #. type: Plain text
-#: en/live-config.7:270
+#: en/live-config.7:272
 msgid "I<live-build>(7)"
 msgstr "I<live-build>(7)"
 
 #. type: Plain text
-#: en/live-config.7:272
+#: en/live-config.7:274
 msgid "I<live-tools>(7)"
 msgstr "I<live-tools>(7)"
 
 #. type: SH
-#: en/live-config.7:273
+#: en/live-config.7:275
 #, no-wrap
 msgid "HOMEPAGE"
 msgstr "ホームページ"
 
 #. type: Plain text
-#: en/live-config.7:275
+#: en/live-config.7:277
 msgid ""
 "More information about live-config and the Live Systems project can be found "
 "on the homepage at E<lt>I<http://live-systems.org/>E<gt> and in the manual "
@@ -1608,13 +1622,13 @@ msgstr ""
 "systems.org/manual/>E<gt> のマニュアルにあります。"
 
 #. type: SH
-#: en/live-config.7:276
+#: en/live-config.7:278
 #, no-wrap
 msgid "BUGS"
 msgstr "バグ"
 
 #. type: Plain text
-#: en/live-config.7:278
+#: en/live-config.7:280
 msgid ""
 "Bugs can be reported by submitting a bugreport for the live-config package "
 "in the Bug Tracking System at E<lt>I<http://bugs.debian.org/>E<gt> or by "
@@ -1627,13 +1641,13 @@ msgstr ""
 "報告できます。"
 
 #. type: SH
-#: en/live-config.7:279
+#: en/live-config.7:281
 #, no-wrap
 msgid "AUTHOR"
 msgstr "作者"
 
 #. type: Plain text
-#: en/live-config.7:280
+#: en/live-config.7:282
 msgid ""
 "live-config was written by Daniel Baumann E<lt>I<mail@daniel-baumann."
 "ch>E<gt>."
