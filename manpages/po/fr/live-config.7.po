@@ -1,5 +1,5 @@
 # French translations for live-config
-# Copyright (C) 2011-2014 Carlos Zuferri "chals" <chals@altorricon.com>
+# Copyright (C) 2011-2015 Carlos Zuferri <chals@altorricon.com>
 # Copyright (C) 2010 Thierry Lépicier <thierry.lepicier@free.fr>
 # This file is distributed under the same license as the live-config package.
 #
@@ -1317,17 +1317,14 @@ msgstr "configure le clavier."
 
 #. type: IP
 #: en/live-config.7:210
-#, fuzzy, no-wrap
-#| msgid "B<sysvinit>"
+#, no-wrap
 msgid "B<systemd>"
-msgstr "B<sysvinit>"
+msgstr "B<systemd>"
 
 #. type: Plain text
 #: en/live-config.7:212
-#, fuzzy
-#| msgid "configures autologin in kdm."
 msgid "configures systemd autologin."
-msgstr "configure l'auto-login dans kdm."
+msgstr "configure l'auto-login avec systemd."
 
 #. type: IP
 #: en/live-config.7:212
