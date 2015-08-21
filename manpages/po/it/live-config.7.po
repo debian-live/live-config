@@ -1305,17 +1305,14 @@ msgstr "configura la tastiera."
 
 #. type: IP
 #: en/live-config.7:210
-#, fuzzy, no-wrap
-#| msgid "B<sysvinit>"
+#, no-wrap
 msgid "B<systemd>"
-msgstr "B<sysvinit>"
+msgstr "B<systemd>"
 
 #. type: Plain text
 #: en/live-config.7:212
-#, fuzzy
-#| msgid "configures autologin in kdm."
 msgid "configures systemd autologin."
-msgstr "configura il login automatico per kdm."
+msgstr "configura il login automatico con systemd."
 
 #. type: IP
 #: en/live-config.7:212
