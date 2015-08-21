@@ -16,6 +16,10 @@ Cmdline ()
 	for _PARAMETER in ${LIVE_CONFIG_CMDLINE}
 	do
 		case "${_PARAMETER}" in
+			live-config.debug|debug)
+				LIVE_CONFIG_DEBUG="true"
+				;;
+
 			live-config.noautologin|noautologin)
 				LIVE_CONFIG_NOAUTOLOGIN="true"
 				;;
@@ -73,6 +77,11 @@ ExecStart=
 ExecStart=-/sbin/agetty --autologin ${LIVE_USERNAME} --noclear %I \$TERM
 EOF
 
+			case "${LIVE_CONFIG_DEBUG}" in
+				true)
+					echo "TTYVTDisallocate=no" >> /etc/systemd/system/getty@tty${NUMBER}.service.d/live-config_autologin.conf
+					;;
+			esac
 		done
 
 		for NUMBER in $(seq 1 6)
