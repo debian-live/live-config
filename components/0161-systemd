@@ -70,7 +70,7 @@ cat > /etc/systemd/system/getty@tty${NUMBER}.service.d/live-config_autologin.con
 [Service]
 Type=idle
 ExecStart=
-ExecStart=-/sbin/agetty --autologin ${LIVE_USERNAME} --noclear %I 38400 linux
+ExecStart=-/sbin/agetty --autologin ${LIVE_USERNAME} --noclear %I \$TERM
 EOF
 
 		done
