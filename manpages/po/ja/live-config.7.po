@@ -1,12 +1,12 @@
 # Japanese translations for live-config package
-# Copyright (C) 2013-2014 victory <victory.deb@gmail.com>
+# Copyright (C) 2013-2015 victory <victory.deb@gmail.com>
 # This file is distributed under the same license as the live-config package.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config\n"
 "POT-Creation-Date: 2015-08-21 11:15+0200\n"
-"PO-Revision-Date: 2014-10-25 21:43+0900\n"
+"PO-Revision-Date: 2015-08-21 18:15+0900\n"
 "Last-Translator: victory <victory.deb@gmail.com>\n"
 "Language-Team: none\n"
 "Language: ja\n"
@@ -24,13 +24,13 @@ msgstr "LIVE-CONFIG"
 #: en/live-config.7:9
 #, no-wrap
 msgid "2015-08-21"
-msgstr ""
+msgstr "2015-08-21"
 
 #. type: TH
 #: en/live-config.7:9
 #, no-wrap
 msgid "5.0~a4-1"
-msgstr ""
+msgstr "5.0~a4-1"
 
 #. type: TH
 #: en/live-config.7:9
@@ -1285,17 +1285,14 @@ msgstr "キーボードを設定します。"
 
 #. type: IP
 #: en/live-config.7:210
-#, fuzzy, no-wrap
-#| msgid "B<sysvinit>"
+#, no-wrap
 msgid "B<systemd>"
-msgstr "B<sysvinit>"
+msgstr "B<systemd>"
 
 #. type: Plain text
 #: en/live-config.7:212
-#, fuzzy
-#| msgid "configures autologin in kdm."
 msgid "configures systemd autologin."
-msgstr "kdm の自動ログインを設定します。"
+msgstr "systemd の自動ログインを設定します。"
 
 #. type: IP
 #: en/live-config.7:212
