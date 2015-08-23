@@ -1,3 +1,24 @@
+live-config (5.0~a5-1) unstable; urgency=low
+
+  [ Daniel Baumann ]
+  * Dropping baudrate from agetty call in systemd component to use the
+    same options as the normal system does.
+  * Renumbering systemd and sysv-rc components.
+  * Don't clear the terminal in systemd component if live-config.debug
+    boot parameter is used.
+  * Adding systemd component in manpage.
+
+  [ Carlos Zuferri ]
+  * Updating Spanish translation of manpage.
+  * Updating French translation of manpage.
+  * Updating Italian translation of manpage.
+
+  [ victory ]
+  * Sync Japanese translation.
+  * Updating copyright notices for 2015.
+
+ -- Daniel Baumann <mail@daniel-baumann.ch>  Sun, 23 Aug 2015 10:59:56 +0200
+
 live-config (5.0~a4-1) unstable; urgency=low
 
   * Wrap and sort debian control file.
