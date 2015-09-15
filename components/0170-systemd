@@ -86,8 +86,8 @@ EOF
 
 		for NUMBER in $(seq 1 6)
 		do
-			systemctl daemon-reload
-			systemctl restart getty@tty${NUMBER}.service
+			systemctl --no-block daemon-reload
+			systemctl --no-block restart getty@tty${NUMBER}.service
 		done
 	fi
 
