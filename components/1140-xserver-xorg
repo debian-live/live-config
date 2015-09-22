@@ -84,7 +84,11 @@ Config ()
 	then
 		case "${LIVE_X_SESSION_MANAGER}" in
 			none)
-				rm -f /etc/X11/default-display-manager
+				_DM_FILE="/etc/X11/default-display-manager"
+				if [ -e "${_DM_FILE}" ]
+				then
+					sed -i "s|\(.*\)|\1 # disabled by live-config:|" -- "${_DM_FILE}"
+				fi
 				;;
 
 			*)
