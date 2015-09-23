@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-config\n"
-"POT-Creation-Date: 2015-09-17 20:33+0200\n"
+"POT-Creation-Date: 2015-09-23 16:59+0200\n"
 "PO-Revision-Date: 2015-08-21 18:15+0900\n"
 "Last-Translator: victory <victory.deb@gmail.com>\n"
 "Language-Team: none\n"
@@ -22,14 +22,16 @@ msgstr "LIVE-CONFIG"
 
 #. type: TH
 #: en/live-config.7:9
-#, no-wrap
-msgid "2015-08-21"
+#, fuzzy, no-wrap
+#| msgid "2015-08-21"
+msgid "2015-09-23"
 msgstr "2015-08-21"
 
 #. type: TH
 #: en/live-config.7:9
-#, no-wrap
-msgid "5.0~a4-1"
+#, fuzzy, no-wrap
+#| msgid "5.0~a4-1"
+msgid "5.0~a5-1"
 msgstr "5.0~a4-1"
 
 #. type: TH
